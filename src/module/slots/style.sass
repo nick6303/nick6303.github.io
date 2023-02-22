@@ -1,0 +1,99 @@
+@keyframes getReward
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes poleMove
+  0%
+    transform: rotate(0) translate(0)
+  50%
+    transform: perspective(500px) rotate(45deg) translate3d(20px,35px,40px)
+  100%
+    transform: rotate(0) translate(0)
+
+.slotMachine
+  width: 100%
+  margin: 0 auto
+  position: relative
+  &.close
+    &::after,&::before
+      @media (min-width: 1200px)
+        content: ''
+        position: absolute
+        left: 50%
+        transform: translate(-50%,-50%)
+    &::after
+      @media (min-width: 1200px)
+        width: 1209px
+        height: 1321px
+        top: 50%
+        z-index: 1
+    &::before
+      @media (min-width: 1200px)
+        width: 630px
+        height: 233px
+        top: 41%
+        z-index: 2
+
+.slotMachine-main
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  background: #430404
+  max-width: 100%
+  width: 934px
+  margin: 0 auto
+  @media (max-width: 1200px)
+    flex-direction: column
+    box-shadow: inset 10px -10px 100px rgba(#000,0.8)
+
+.slotMachine-reels
+  width: 686px
+  max-width: 100%
+  position: relative
+  @media (max-width: 1200px)
+    height: 50vmin
+
+.slotMachine-reels-inner
+  display: flex
+  width: 558px
+  height: 255px
+  max-width: 100%
+  margin: auto
+  @media (max-width: 1200px)
+    max-width: 82%
+    height: 70%
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 100%
+    height: 126px
+    @media (max-width: 1200px)
+      height: 40%
+
+.reel
+  width: 140px
+  height: 100%
+  overflow: hidden
+
+.reel-inner
+  position: relative
+  top: -120%
+  display: flex
+  flex-direction: column
+
+.reel.move
+  filter: blur(4px)
+  .reel-inner
+    transition: transform 0.04s linear
+    transform: translateY(90px)
+
+.reel-image
+  max-width: 60%
+  margin: 45px auto
+  @media (max-width: 1200px)
+    margin: 6.35vmin auto

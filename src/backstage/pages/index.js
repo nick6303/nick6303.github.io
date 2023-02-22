@@ -1,0 +1,8 @@
+export { default as EditIndex } from './index/Index.vue'
+export { default as EditWork } from './workManagement'
+export { default as EditTecnic } from './tecnicManagement'
+export { default as EditNote } from './noteManageMent'
+export { default as EditBanner }  from './bannerManagament'
+export { default as EditMenu }  from './menuManagement'
+export { default as EditUser }  from './userManagement'
+export { default as EditGroup }  from './groupManagement'

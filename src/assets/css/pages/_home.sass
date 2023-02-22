@@ -1,0 +1,310 @@
+#home
+	.banner
+		height: 100vh
+		color: #fff
+		position: relative
+
+		&.blackWord
+			color: #000
+		picture
+			@media (max-width: 1024px)
+				position: relative
+				width: 100%
+				height: 100vh
+				display: block
+			img
+				width: 100%
+				@media (max-width: 1024px)
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%,-50%)
+					max-width: none
+					height: 100%
+					width: auto
+		.scrollDown
+			position: absolute
+			bottom: 10vh
+			left: 30px
+			z-index: 1
+			padding: 20px
+			cursor: pointer
+	.work
+		width: 100%
+		margin: auto
+		position: relative
+		overflow: hidden
+		padding: 200px 0
+		display: flex
+		flex-wrap: wrap
+		@media (max-width: 1200px)
+			padding: 20vmin 0
+		h3
+			font-size: px(30)
+			width: 100%
+			text-align: center
+		.swiper-container.img
+			width: 58%
+			position: relative
+			transform: translate(0,30px)
+			overflow: visible
+			@media (max-width: 1024px)
+				width: 225%
+				transform: translate(0,0)
+			@media (max-width: 700px)
+				width: 100%
+				left: auto
+				transform: none
+			.swiper-slide
+				padding: 50px 0
+				transition: transform .8s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+				@media (max-width: 1024px)
+					padding: 50px 2.5vw
+				@media (max-width: 700px)
+					padding: 20px 5vw
+				&.swiper-slide-active
+					transform: translateY(-50px)
+					transition: transform .8s cubic-bezier(0.23, 1, 0.32, 1)
+					@media (max-width: 700px)
+						transform: none
+			.box
+				overflow: hidden
+				position: relative
+				a
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+				&:hover
+					._text
+						&:before,&:after
+							transform: translateX(0)
+							transition: all .5s ease .1s
+						h6,p,span
+							opacity: 1
+							transform: translateY(0)
+							transition: all .6s ease .2s
+				._text
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					color: #fff
+					display: flex
+					justify-content: flex-end
+					align-items: flex-start
+					flex-direction: column
+					padding: 10px 20px
+					&:before,&:after
+						+fakeLine(100%,100%,rgba(0,0,0,.5))
+						position: absolute
+						top: 0
+						left: 0
+						transition: all .6s ease
+						z-index: 0
+					&:before
+						transform: translateX(-100%)
+					&:after
+						transform: translateX(100%)
+					&>*
+						opacity: 0
+						position: relative
+						z-index: 1
+						transition: all .5s ease
+					p
+						font-size: px(18)
+						transform: translateY(20px)
+					span
+						position: absolute
+						top: 0
+						right: 0
+						display: flex
+						padding: 10px 15px
+						transform: translateY(-20px)
+						i
+							color: yellow
+							display: block
+							transition: all .4s ease
+							&:hover
+								transform: rotateY(180deg)
+		.arrows
+			color: #fff
+			position: absolute
+			z-index: 1
+			top: calc(50% + 14.7vw)
+			right: calc(50% - 29vw + 40px)
+			padding: 0 20px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			@media (max-width: 1024px)
+				right: calc(50% - 38.75vw)
+			@media (max-width: 700px)
+				position: relative
+				top: auto
+				right: auto
+				width: 100%
+			.more
+				padding: 5px 30px 5px 10px
+				+link
+				@media (max-width: 1024px)
+					padding: 5px 10px 5px 5px
+			span
+				cursor: pointer
+				padding: 5px 20px
+				font-size: px(13)
+				position: relative
+				&:last-child:after
+					position: absolute
+					top: 50%
+					left: 0
+					transform: translate(0,-50%)
+					+fakeLine(1px,13px,#fff)
+		.swiper-container.name
+			position: absolute
+			top: calc(50% + 14.7vw - 7px)
+			left: calc(50% - 29vw + 50px)
+			color: #fff
+			width: calc(29vw - 50px)
+			font-size: px(24)
+			font-weight: bold
+			margin: 0 20px
+			@media (max-width: 1024px)
+				font-size: px(20)
+				width: 38.75vw
+				left: calc(50% - 36.25vw - 5px)
+			@media (max-width: 700px)
+				width: calc(40% - 40px)
+				left: auto
+				top: auto
+				position: relative
+				.swiper-slide,.swiper-wrapper
+					height: auto
+	.tecnic
+		color: #fff
+		display: flex
+		flex-direction: row-reverse
+		padding: 100px 50px 0
+		width: 80%
+		margin: auto
+		flex-wrap: wrap
+		@media (max-width: 1600px)
+			width: 100%	
+		@media (max-width: 1024px)
+			padding: 100px 5vw 0
+		@media (max-width: 900px)
+			padding: 100px 0 0
+		._title,.box
+			width: 50%
+			@media (max-width: 900px)
+				width: 100%
+		._title
+			+flex-center
+			padding: 0 10vw 25vh 0
+			@media (max-width: 900px)
+				padding: 0 5vw 80px
+			div
+				display: flex
+				flex-direction: column
+				@media (max-width: 900px)
+					width: 100%
+					align-items: flex-end
+			h6
+				font-size: px(24)
+				@media (max-width: 900px)
+					&:not(:last-child)
+						margin: 0 0 10px
+			p
+				font-size: px(16)
+			a
+				margin: 15px 0 0 auto
+				display: block
+				+link
+				padding: 5px 10px 5px 30px
+				@media (max-width: 900px)
+					padding: 5px 10px
+					margin: 15px 0 0 auto
+		.box
+			display: flex
+			flex-direction: column
+			margin: 0 0 80px
+			position: relative
+			&:nth-child(odd)
+				justify-content: flex-start
+				transform: translateY(-180px)
+				padding: 0 0 0 30px
+				@media (max-width: 1600px)
+					transform: translateY(-11vw)
+				@media (max-width: 1024px)
+					transform: translateY(-25vw)
+				@media (max-width: 900px)
+					transform: none
+					padding: 0 0 0 10vw
+			&:nth-child(even)
+				justify-content: flex-end
+				padding: 0 30px 0 0
+				@media (max-width: 900px)
+					padding: 0 10vw 0 0
+					text-align: right
+			&:hover .sample .hoverBox
+				opacity: 1
+				span
+					transform: scale(1)
+					&:before
+						width: 14px
+					&:after
+						height: 14px
+			.sample
+				position: relative
+				width: 100%
+				.hoverBox
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					background-color: rgba(0,0,0,.65)
+					+flex-center
+					flex-direction: column
+					opacity: 0
+					transition: all .5s ease
+					z-index: 1
+					span
+						+cross(40px,40px)
+						border-radius: 50%
+						display: block
+						border: 1px solid rgba(255,255,255,.8)
+						transform: scale(0.5)
+						transition: all .5s ease
+						&:before
+							transition: all .5s ease
+							+cross_before(0px,#fff)
+						&:after
+							transition: all .5s ease
+							+cross_after(0px,#fff)
+				.time
+					width: 100%
+					height: 200px
+					background-color: #fff
+					color: #000
+					+flex-center
+					flex-direction: column
+					text-align: center
+					font-size: px(20)
+					line-height: 1.8
+			h6
+				font-size: px(16)
+				line-height: 1.5
+				padding: 10px 0 0 5px
+				font-weight: bold
+				@media (max-width: 900px)
+					padding: 10px 10px 0
+			a
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				z-index: 1

@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0a4020"],{"0538":function(n,e,r){"use strict";r.r(e);var u=r("c60b");r.d(e,"NewFolder",(function(){return u["default"]}));var d=r("b61f");r.d(e,"RenameFolder",(function(){return d["default"]}))}}]);

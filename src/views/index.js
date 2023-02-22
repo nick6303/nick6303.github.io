@@ -1,0 +1,6 @@
+export { default as Index } from './Index.vue'
+export { default as Login } from './Login.vue'
+export { default as Notes } from './Notes.vue'
+export { default as Tecnic } from './Tecnic.vue'
+export { default as Work } from './Work.vue'
+export { default as Test } from './Test.vue'

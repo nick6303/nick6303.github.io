@@ -1,0 +1,158 @@
+header .navbar
+	padding: 10px 100px 10px 50px
+	display: flex
+	align-items: center
+	justify-content: space-between
+	position: fixed
+	z-index: 2
+	top: 50px
+	left: 0
+	width: 100%
+	color: #fff
+	text-shadow: 0 0 20px #000
+	transition: all .4s ease
+	@media (max-width: 1024px)
+		padding: 10px 5vw
+	&.blackWord
+		color: #000
+		text-shadow: 0 0 10px rgba(255,255,255,.8)
+		.manage ul li .openMenu span
+			background-color: #000
+			box-shadow: 0 0 10px 2px rgba(255,255,255,.4)
+	&.onlyWhite
+		color: #fff
+		text-shadow: 0 0 10px rgba(0,0,0,.8)
+		.manage ul li .openMenu span
+			background-color: #fff
+			box-shadow: 0 0 10px 2px rgba(0,0,0,.2)
+	.logo
+		font-weight: bold
+		padding: 10px 0
+		span
+			font-size: px(12)
+			font-weight: normal
+	.mainLink ul
+		+flex-center
+		color: #fff
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		@media (max-width: 800px)
+			display: none
+		li
+			padding: 0 20px
+	.manage ul
+		+flex-center
+		color: #fff
+		li
+			.openMenu
+				width: 25px
+				height: 13px
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				align-items: center
+				cursor: pointer
+				position: relative
+				span
+					width: 25px
+					height: 1px
+					display: block
+					background-color: #fff
+					transition: all .8s ease
+					box-shadow: 0 0 10px 2px rgba(0,0,0,.2)
+					&:nth-child(2)
+						position: absolute
+						top: calc(50% - 1px)
+						left: 5px
+				&:hover span:nth-child(2)
+					left: -5px
+		button
+			color: #fff
+			border: none
+			background-color: transparent
+	.menuLibox
+		display: none
+		+basicLibox
+		opacity: 1 !important
+
+		&.open
+			display: block
+			.cover
+				animation: w100 .6s both
+			section
+				animation: slideInRight .8s both .2s
+			.liboxClose
+				animation: slideInDown .8s both .8s
+		&.close
+			display: block
+			.cover
+				animation: w0 .6s both
+			section
+				animation: slideOutRight .6s both .2s
+			.liboxClose
+				animation: slideOutUp .8s both
+		.cover
+			width: 0%
+			height: 100%
+			background-color: rgba(0,0,0,.5)
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 0
+			cursor: url(~@img/XW.png),default
+		section
+			width: 50%
+			max-width: 500px
+			height: 100%
+			display: flex
+			align-items: center
+			justify-content: space-around
+			flex-direction: column
+			color: #fff
+			background-color: #000
+			margin: 0 0 0 auto
+			position: relative
+			z-index: 1
+			cursor: default
+			padding: 80px 50px 0
+			@media (max-width: 700px)
+				max-width: none
+				width: auto
+		.liboxClose
+			width: 50px
+			height: 50px
+			position: absolute
+			top: 0
+			right: 50px
+			+flex-center
+			cursor: pointer
+			background-color: #fff
+			@media (max-width: 1024px)
+				right: 5vw
+			@media (max-width: 700px)
+				right: 0
+			&:hover span
+				transform: rotate(225deg)
+			span
+				transition: all .4s ease
+				+cross(20px,20px)
+				display: block
+				transform: rotate(45deg)
+				&:before
+					+cross_before(100%,#000)
+				&:after
+					+cross_after(100%,#000)
+		.icon-home
+			font-size: px(30)
+		ul
+			+flex-center
+			flex-direction: column
+			li
+				margin: 20px 0
+		.mainLink
+			font-size: px(20)
+		.user
+			font-size: px(12)
+			padding: 100px 0 0

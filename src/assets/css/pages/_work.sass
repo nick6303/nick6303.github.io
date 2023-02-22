@@ -1,0 +1,89 @@
+#work
+	padding: 200px 0 
+	@media (max-width: 700px)
+		padding: 200px 0 40px
+	.rows
+		display: flex
+		flex-wrap: wrap
+		max-width: 1920px
+		width: 100%
+		.row
+			width: calc(50% - 100px)
+			position: relative
+			@media (max-width: 1024px)
+				width: calc(50% - 7.5vw)
+			@media (max-width: 700px)
+				width: 100%
+			&:nth-child(odd)
+				margin: 0 50px 100px
+				@media (max-width: 1024px)
+					margin: 0 2.5vw 100px 5vw
+				@media (max-width: 700px)
+					padding: 0 5vw
+					margin: 0 0 80px 
+			&:nth-child(even)
+				margin: 100px 50px 0 
+				@media (max-width: 1024px)
+					margin: 100px 5vw 0 2.5vw
+				@media (max-width: 700px)
+					padding: 0 5vw
+					margin: 0 0 80px 
+			&:hover
+				._text
+					opacity: 1
+					span,h6,p
+						transform: translateY(0)
+					h6,p
+						transition: all .6s ease
+			._text
+				display: flex
+				flex-direction: column
+				justify-content: flex-end
+				padding: 20px
+				transition: all .5s ease
+				overflow: hidden
+				@media (min-width: 1025px)
+					opacity: 0
+					position: absolute
+					top: 0 
+					left: 0 
+					width: 100%
+					height: 100%
+					background-color: rgba(0,0,0,.65)
+				@media (max-width: 1024px)
+					padding: 10px 10px 0
+				span,h6,p
+					transition: all .5s ease
+				span
+					display: flex
+					padding: 10px 15px
+					@media (min-width: 1025px)
+						transform: translateY(-20px)
+						position: absolute
+						top: 0
+						right: 0
+					@media (max-width: 1024px)
+						padding: 10px 0
+					i
+						color: yellow
+						display: block
+						transition: all .4s ease
+						&:hover
+							transform: rotateY(180deg)
+				h6
+					font-size: px(18)
+					font-weight: bold
+					@media (min-width: 1025px)
+						transform: translateY(-20px)
+					&:not(:last-child)
+						margin: 0 0 10px
+				p
+					font-size: px(14)
+					@media (min-width: 1025px)
+						transform: translateY(20px)
+			a
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
