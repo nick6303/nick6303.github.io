@@ -1,0 +1,101 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var socialMedia = [
+        { type:"facebook",color:"#3b5998"},
+        { type:"line",color:"#00c300"},
+        { type:"twitter",color:"#00aced"},
+    ]
+
+
+
+section
+    .liboxClose
+        span
+    .topTitle
+        .typeAndDate
+            .type
+                p INSPIRATON
+            .date
+                p.year 2018
+                p.month APR
+                p.day 13
+        .share
+            button
+                span.icon-share2
+                p SHARE
+            ul
+                each item in socialMedia
+                    li
+                        a(href=java)
+                            span(class=("icon-")+item.type style=("color:"+item.color))
+        h2 The industry's first! White Horse Tiles "Taiwan excellence award" seven consecutive fighters the industry's first
+    ._slick
+        ul
+            li
+                figure
+                    img(data-lazy="../../upload/fa2/news/detail/liboxImg.jpg", alt="alt")
+                b (Above) good life, the most authentic happiness, warm and elegant home 
+            li
+                figure
+                    img(data-lazy="../../upload/fa2/news/detail/liboxImg.jpg", alt="alt")
+                b (Above) good life, the most authentic happiness, warm and elegant home 
+        .arrows
+            span.icon-triangle_left
+            span.icon-triangle_right
+    .contentBox
+        // 後端請注意:此處有三種樣式
+            1.純文字  onlyText
+            2.一半文字一半圖片  half  (誰在左右邊由先後順需決定)
+            3.兩張圖片  twoImg
+        .onlyText
+            p Looking at the world, the only "Taiwan excellence award" with all-round selection, based on product development, quality, design, marketing and other four aspects, with a rigorous attitude to conduct comprehensive comprehensive review, and highlight the innovative value of Taiwan manufacturing It is the only comprehensive and authoritative product selection activity in Taiwan.
+        .onlyText
+            h6 Awarded the Taiwan Excellence Award for seven consecutive years !
+            p White Horse Tiles, once again stand out this year, from 518 manufacturers, 1188 entries, won the favor of professional review, became the leader of the tile industry, won the Taiwan Excellence Award for seven consecutive years, and once again set the highest consecutive awards in the industry. A good life, the most authentic happiness, a warm and elegant home living space, invite consumers to come to the big family of White Horse as a guest. Baima Kiln has shown consumers a variety of new products and a variety of effects of brick design, allowing consumers to understand the trends and trends of tile building materials.
+        .half
+            ._text
+                h6 The design of the product  has both aesthetic and human needs
+                p The award-winning products include Manhattan Series Digital Crystal Glazed Porcelain Plate", "Baby Series - Digital Crystal Glazed Porcelain Plate" and Flower Series - Digital Floor Tiles. White Horse Tile not only has the largest and latest equipment and technology in China but in addition constantly pursuing perfection in quality, the design of the product also has both aesthetic and human needs. At the same time, it appeals to energy conservation  environmental protection.It not only receives the MIT smile mark.
+            ._img
+                figure
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/news/detail/liboxImg2.jpg", alt="alt")
+                b
+        .twoImg
+            ._img
+                figure
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/news/detail/liboxImg3.jpg", alt="alt")
+                b Continue to uphold the concept of real materials, the direction of the boutique strides forward!
+            ._img
+                figure
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/news/detail/liboxImg4.jpg", alt="alt")
+                b The only comprehensive selection criteria
+    .mayNeed
+        div
+            h6 You may also need
+        ul
+            li
+                a(href=java)
+                    span.icon-download
+                    p Latest catalogue download
+            li
+                a(href=java)
+                    span.icon-exhibition
+                    p World Trade BuildingExhibition
+    .otherNews
+        a(href=java)
+            .date
+                p.year 2018
+                p.month APR
+                p.day 20
+            .words
+                p White Horse Tiles "Taiwan excellence award"seven consecutive fighters
+        a(href=java)
+            .date
+                p.year 2018
+                p.month APR
+                p.day 13
+            .words
+                p Running on the parent-child road - with you to the future!
+

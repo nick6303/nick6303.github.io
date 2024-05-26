@@ -1,0 +1,77 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var dropDown = [
+        {
+            h6:"select  brand",
+            selectMenu:"choose a brand",
+            ul:["whitehorse","devanno","whitehorse","devanno"]
+        },{
+            h6:"select category",
+            selectMenu:"choose a category",
+            ul:["stone","wood","china","stone","wood","china"]
+        },
+        {
+            h6:"select series",
+            selectMenu:"choose a series",
+            ul:["freya series","diana series","cameo series","freya series","diana series","cameo series"]
+        },
+        {
+            h6:"select tile",
+            selectMenu:"choose a tile",
+            ul:["1","2","3","1","2","3","1","2","3","1","2","3"]
+        }
+    ]
+
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#staff.index
+    include ../layout/_header.pug
+    
+    main
+        article.b-lazy(data-src='../../upload/fa2/staff/bg_1920_1080.jpg' data-src-small="../../upload/fa2/staff/footerBg_1920_1080.jpg")
+            section._title
+                p.en Downloads
+                span ////////////////
+                p.words Provide white horse employees to download high definition picture, including all tiles in each brand.
+            section.form
+                form
+                    each val in dropDown
+                        .box
+                            h6=val.h6
+                            .dropDown
+                                span.selectMenu
+                                    p=val.selectMenu
+                                ul
+                                    each item in val.ul
+                                        li=item
+                    .buttons
+                        // 後端請注意:下方的onclick事件僅展示用 記得要改
+                        button(type="button" onclick="location.href='../staff/detail.html'")
+                            span.icon-magnifier
+                            p Search
+
+
+
+
+
+
+
+
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

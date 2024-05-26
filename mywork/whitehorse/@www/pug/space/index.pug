@@ -1,0 +1,118 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var breadcrumb =[
+        {name:"products",link:"../product/index.html"},
+        {name:"Space aspect",link:"../space/index.html"},
+    ]
+
+    var space = [
+        {
+            name:"Living room",
+            type:"Indoor series",
+            img:"../../upload/fa2/space/index/img1_600_850.jpg",
+            whiteOne:"true"},
+        {
+            name:"Bathroom",
+            type:"Indoor series",
+            img:"../../upload/fa2/space/index/img2_600_850.jpg",
+            whiteOne:"true"},
+        {
+            name:"Bedroom",
+            type:"Indoor series",
+            img:"../../upload/fa2/space/index/img3_600_850.jpg",
+            whiteOne:"true"},
+        {
+            name:"Kitchen",
+            type:"Indoor series",
+            img:"../../upload/fa2/space/index/img4_600_850.jpg",
+            whiteOne:"true"},
+        {
+            name:"Outdoor",
+            type:"Outdoor series",
+            img:"../../upload/fa2/space/index/img5_600_850.jpg",
+            whiteOne:"false"},
+        {
+            name:"Business",
+            type:"Indoor series",
+            img:"../../upload/fa2/space/index/img6_600_850.jpg",
+            whiteOne:"false"},
+    ]
+
+
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#space.index(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article.banner 
+            section.background(style="background-color: #fff")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/space/index/bannerBg_1920_1080.jpg" alt="")
+            // 麵包屑 SEO結構化標籤
+            section.breadcrumb
+                ul(itemscope itemtype="https://schema.org/Product")
+                    each val in breadcrumb
+                        li(itemprop="name")
+                            if val==breadcrumb[1]
+                                h1
+                                    a(href=val.link itemprop="url")=val.name
+                            else
+                                a(href=val.link itemprop="url")=val.name
+                                span.bgColor
+            section._title
+                h6 Space aspect
+                p It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+            section.anchor
+                h6 overview
+                ul
+                    each val in space
+                        li
+                            p=val.name
+                            span.bgColor
+        article.content
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg4_1920_1080.jpg" alt="")
+            section.boxs
+                each val in space
+                    .box
+                        a(href="../space/detail.html")
+                            .bgColor
+                            figure
+                                // 圖片建議大小 600*850
+                                img.b-lazy(src=blazy data-src=val.img, alt="")
+                            // 後端請注意:須讓客戶決定文字顏色
+                            .hoverbox(style=(val.whiteOne=="true")?"color:#fff":"")
+                                p.name=val.name
+                                p.type=val.type
+                                span
+
+
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

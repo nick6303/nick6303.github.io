@@ -1,0 +1,63 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-   
+    var breadcrumb =[
+        {name:"about us",link:"../about/index.html"},
+        {name:"History",link:"javascript:void(0)"},
+    ]
+
+section.liboxBanner
+    figure
+        // 後端請注意:電腦圖片大小
+        img(src="../../upload/fa2/about/history/bgImg_1590_600.jpg" alt="")
+    .liboxClose
+        span
+    .nav
+        .share
+            button
+                span.icon-share2
+                p SHARE
+            ul
+                li
+                    a(href=java)
+                        span.icon-facebook(style="color:#3b5998")
+                li
+                    a(href=java)
+                        span.icon-line(style="color:#00c300")
+                li
+                    a(href=java)
+                        span.icon-twitter(style="color:#00aced")
+        .breadcrumb
+            ul(itemscope itemtype="https://schema.org/Product")
+                each val in breadcrumb
+                    li(itemprop="name")
+                        if val==breadcrumb[1]
+                            h1
+                                a(href=val.link itemprop="url")=val.name
+                        else
+                            a(href=val.link itemprop="url")=val.name
+                            span
+section.history
+    ._title
+        h6 History
+        h5 White Horse was established in 1947 in Yingge, Taiwan, the town renowned for ceramic arts and crafts. 
+    .row
+        figure
+            img.b-lazy(src=blazy data-src="../../upload/fa2/about/history/rowImg_520_700.jpg", alt="")
+        ._text
+            h6 Presence across continents and serves international customers.
+            p The company began its business of producing pottery and ceramic building materials.
+            p In 1975, the company decided to dedicate its business to ceramic tiles manufacturing. Since then, White Horse has devoted herself in developing and providing customers with a full-fledged range of superior quality ceramic tiles. 
+            p The company, together with our sister companies,started overseas business in 1991. Today, White Horse has its presence across continents and serves international customers.
+    .row
+        picture
+            // [if IE 9]><video style="display: none;"><![endif]
+            // 後端請注意:手機圖片大小 
+            source(srcset="../../upload/fa2/about/history/rowImg2small_570_570.jpg" media="(max-width:1000px)")
+            // 後端請注意:電腦圖片大小 1270*570
+            img.b-lazy(src=blazy data-src="../../upload/fa2/about/history/rowImg2_1270_570.jpg" alt="")
+        ._text
+            h6 Our commitment and corporate values
+            p In order to strive for sustainability and excellence, White Horse not only brings in the latest state-of-the-art technologies, but also continue to enhance customer service, product development, and product designs. 
+            p These efforts have been recognized by attaining numerous awards and international certifications. The recognition demonstrates our commitment and corporate values.

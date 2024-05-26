@@ -1,0 +1,149 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var dropDown = [
+        {
+            h6:"select  brand",
+            selectMenu:"choose a brand",
+            ul:["whitehorse","devanno","whitehorse","devanno"]
+        },{
+            h6:"select category",
+            selectMenu:"choose a category",
+            ul:["stone","wood","china","stone","wood","china"]
+        },
+        {
+            h6:"select series",
+            selectMenu:"choose a series",
+            ul:["freya series","diana series","cameo series","freya series","diana series","cameo series"]
+        },
+        {
+            h6:"select tile",
+            selectMenu:"choose a tile",
+            ul:["1","2","3","1","2","3","1","2","3","1","2","3"]
+        }
+    ]
+
+    var collection =[
+        "../../upload/fa2/product/detail/introductionImg1_390_170.jpg",
+        "../../upload/fa2/product/detail/introductionImg2_390_170.jpg",
+        "../../upload/fa2/product/detail/introductionImg3_390_70.jpg",
+        "../../upload/fa2/product/detail/introductionImg4_195_170.jpg"
+    ]
+
+    var texture = [
+        "../../upload/fa2/product/detail/bannerImgRWDsmall_1030_1200.jpg",
+        "../../upload/fa2/product/detail/bannerImgRWDsmall_1030_1200.jpg",
+        "../../upload/fa2/product/detail/bannerImgRWDsmall_1030_1200.jpg",
+        "../../upload/fa2/product/detail/bannerImgRWDsmall_1030_1200.jpg"
+    ]
+
+    var tile = [
+        {
+            img:"../../upload/fa2/product/detail/collageImg2_600_760.jpg",
+            name:"Alignment method method"},
+        {
+            img:"../../upload/fa2/product/detail/collageImg_600_760.jpg",
+            name:"Herringbone stickers method"},
+        {
+            img:"../../upload/fa2/product/detail/collageImg2_600_760.jpg",
+            name:"Handing over method"}
+    ]
+
+    var environment = [
+        "../../upload/fa2/product/detail/photoLiboxImg1_1060_710.jpg",
+        "../../upload/fa2/product/detail/photoLiboxImg2_730_970.jpg",
+        "../../upload/fa2/product/detail/photoLiboxImg3_680_900.jpg",
+        "../../upload/fa2/product/detail/photoLiboxImg4_400_370.jpg",
+        "../../upload/fa2/product/detail/photoLiboxImg5_830_590.jpg",
+        "../../upload/fa2/product/detail/photoLiboxImg6_850_560.jpg",
+        "../../upload/fa2/product/detail/photoLiboxImg7_720_340.jpg"
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#staff.detail
+    include ../layout/_header.pug
+    
+    main
+        article.searchBar.b-lazy(data-src='../../upload/fa2/staff/bg_1920_1080.jpg')
+            form
+                each val in dropDown
+                    .box
+                        h6=val.h6
+                        .dropDown
+                            span.selectMenu
+                                p=val.selectMenu
+                            ul
+                                each item in val.ul
+                                    li=item
+                .buttons
+                    button(type="button")
+                        span.icon-magnifier
+                        p Search
+        article.reult
+            section._title
+                //編號
+                p.numb 0C63021
+                //分類
+                p.sort Devanno , Glazed wall tile , Claro series 
+            section.type.collection
+                h6 Item collection -
+                a.downloadAll(href="java")
+                    span
+                    p Download all
+                ul
+                    each val in collection
+                        li
+                            a(href=java)
+                                figure
+                                    img.b-lazy(src=blazy data-src=val, alt="")
+                                ._text
+                                    p.numb 0C63021
+                                    p.size 30 x 60 cm
+            section.type.texture
+                h6(data-name=" texture - ") 0C63021 
+                a.downloadAll(href="java")
+                    span
+                    p Download all
+                ul
+                    each val in texture
+                        li
+                            a(href=java)
+                                figure
+                                    img.b-lazy(src=blazy data-src=val, alt="")
+            section.type.tile
+                h6 Tile paving method -
+                a.downloadAll(href="java")
+                    span
+                    p Download all
+                ul 
+                    each val in tile
+                        li
+                            a(href=java)
+                                figure
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                p=val.name
+            section.type.environment
+                h6 Creative environment -
+                a.downloadAll(href="java")
+                    span
+                    p Download all
+                ul
+                    each val in environment
+                        li
+                            a(href=java)
+                                figure
+                                    img.b-lazy(src=blazy data-src=val, alt="")
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

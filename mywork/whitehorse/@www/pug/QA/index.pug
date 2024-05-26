@@ -1,0 +1,57 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+//- 此頁自訂參數
+-var type=["About tiles","How to choose tiles","Tile paving tips","Production process"]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body(id="QA" class="index")
+    include ../layout/_header.pug
+    
+    main
+        article.bg
+        article.QAContent
+            section.category
+                ._title
+                    p FAQ
+                    span ////////////////
+                .box
+                    ul
+                        each item in type
+                            if item==type[0]
+                                li.active
+                                    p=item
+                            else
+                                li
+                                    p=item
+            section.tableContent
+                div.box
+                    each item in type
+                        .type
+                            .typeName
+                                p=item
+                            ul 
+                                - for (var x = 0; x < 5; x++)
+                                    li
+                                        .question
+                                            span.numb
+                                            p How to distinguish the merits of the tile level ?
+                                            button
+                                        .answer
+                                            p Temperature: The lower the firing temperature, the higher the water absorption rate ofthe tile and the worse the hardness.Tonnage of the molding machine: The larger the tonnage ofbrick making machine, the larger the molding pressure, and the higher the density of the tile, the better the quality.The time  of firing: the correct firing time makesthe finished product less prone to warping, less prone to cornerproblems.
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

@@ -1,0 +1,137 @@
+footer
+    article.goTop
+        p TOP
+    
+    article.ft_top
+
+        section.companyInf
+            div.tel
+                p T+ 03-4903111
+            div.fax
+                p F+ 03-4909051
+            div.address
+                p No.5 , Dianyan Rd. , Yangmei Dist.,Taoyuan City 326,Taiwan
+        
+        section.mainLink
+            // 企業版本的連結
+            .normal
+                a(href="../about/index.html") ABOUT
+                a(href="../news/index.html") NEWS
+                a.branchToHome(href="../home/index.html") BRANDS
+                a(href="../storeHold/index.html") SHOWROOM
+            // 分館版本的連結
+            .branch
+                a(href="../branch/about.html") ABOUT
+                a(href="../product/index.html") PRODUCTS
+                a(href="../branch/locationDetail.html") LOCATION
+
+        section.sideLink
+            ul.normal
+                li
+                    a(href="../QA/index.html") FAQ
+                li
+                    a(href="../join/index.html") Join us
+                li
+                    a(href="../contact/index.html") Contact
+                li.openStaff 
+                    a(href="javascript:void(0)") Staff area
+            ul.branch
+                li
+                    a(href="../contact/branchContact.html") Contact
+                li
+                    a(href="../catalogue/index.html") Catalogue
+                li.openStaff 
+                    a(href="javascript:void(0)") Staff area
+            div.socialMedia
+                a.icon-facebook(href="javascript:void(0)")
+                a.icon-youtube(href="javascript:void(0)")
+                a.icon-mail(href="javascript:void(0)")
+
+    article.ft_bottom
+
+        section.copyright
+            p whitehorse©All right reserved.Designed by
+                a(href="https://www.wddgroup.com/")  WDD
+            p Browser Recommendation: Chrome 52 / IE11 and 1920x1080 or above.
+        section.ft_brands
+            .normal
+                a(href="../branch/index.html")
+                    img(src="../../assets/img/whitehorseLogo_70_60.png" alt="")
+                a(href="../branch/index.html")
+                    img(src="../../assets/img/devannoLogo_60_60.png" alt="")
+            .branch
+                a(href="../branch/index.html")
+                    img(src="../../assets/img/devannoLogo_60_60.png" alt="")
+        //後端請注意: 請在下方data-src填入隱私權的ajax資料位置
+        section.openPrivicy(data-src="../layout/privacy.html")
+            p privicy policy
+    article.staffLibox 
+        section
+            figure
+                img(src="../../assets/img/staffImg_650_800.jpg", alt="")
+            .content(style="background-image:url('../../assets/img/staffBg_650_800.jpg')")
+                .login
+                    h6 Staff account login
+                    form
+                        input(type="text" placeholder="Enter your account number")
+                        input(type="text" placeholder="Enter your password")  
+                        ul
+                            li 
+                                p Only White Horse employees can log in.
+                            li 
+                                p If you have forgotten password , please contact management staff.
+                        .buttons
+                            // 後端請注意:下方的onclick事件僅展示用 記得要改
+                            button.leanbutton(type="button" onclick="location.href='../staff/index.html'") 
+                                p Login
+                            button.leanbutton(type="button") 
+                                p Logout
+                span
+                .systemLink
+                    h6 Enter employee system
+                    p Only White Horse employees can log in.
+                    .buttons
+                        a.leanbutton(href=java target="_blank") 
+                            p Enter
+            .liboxClose
+                span
+    
+    article.mobileAlert
+        section 
+            h2 請旋轉您的螢幕
+            p  為確保功能正常，且讓您有最好的使用體驗，請將您的螢幕旋轉為直向，謝謝！
+    //- 廣告
+    article.commercial
+        section
+            // 廣告連結
+            a(href="https://tw.yahoo.com/")
+            // 關閉按鈕
+            .liboxClose
+                span
+                p BACK
+            // 背景圖片
+            .bigImg
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小
+                    source(srcset="../../upload/fa2/commercialBgRWD.jpg" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小
+                    img(src="../../upload/fa2/commercialBg.jpg" alt="")
+            // 後端請注意: 如果下方div沒有內容的話 請移除
+            .content
+                .smallImg
+                    figure
+                        img(src="../../upload/fa2/whitehorsebaby/bannertitleImg1_325_100.png", alt="")
+                .smallImg
+                    figure
+                        img(src="../../upload/fa2/whitehorsebaby/bannertitleImg1_325_100.png", alt="")
+                //後端請注意: 此處的文字顏色要讓客戶選擇
+                ._text(style="color:#000")
+                    h6 The cutest white horse baby,waiting for you to explore !
+                    p The cutest white horse baby,waiting for you to explore !
+                ._text(style="color:#000")
+                    h6 The cutest white horse baby,waiting for you to explore !
+                    p The cutest white horse baby,waiting for you to explore !
+                ._text(style="color:#000")
+                    h6 The cutest white horse baby,waiting for you to explore !
+                    p The cutest white horse baby,waiting for you to explore !

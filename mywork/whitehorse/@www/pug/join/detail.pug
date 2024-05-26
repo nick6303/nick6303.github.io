@@ -1,0 +1,63 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+- 
+    var socialMedia = [
+        { type:"facebook",color:"#3b5998"},
+        { type:"line",color:"#00c300"},
+        { type:"twitter",color:"#00aced"},
+    ]
+
+section
+    .fixImg
+        picture
+            // [if IE 9]><video style="display: none;"><![endif]
+            // 後端請注意:手機圖片大小
+            source(srcset="../../upload/fa2/join/detailImgRWD_1050_1000.jpg" media="(max-width:1024px)")
+            // 後端請注意:電腦圖片大小760_1080
+            img(src="../../upload/fa2/join/detailImg_760_1080.jpg" alt="")
+    .content
+        .liboxClose
+            span
+        .toTop
+            p TOP
+        .breadAndSare
+            .breadcrumb
+                h6 join us
+                p Employee benefits
+            .share
+                button
+                    span.icon-share2
+                    p SHARE
+                ul
+                    each item in socialMedia
+                        li
+                            a(href=java)
+                                span(class=("icon-")+item.type style=("color:"+item.color))
+        ._title
+            p Employee benefits
+        .boxs
+            // 條列式內容
+            .box
+                h6 Enjoy the highest welfare system :
+                ul
+                    li Pay twice a month, 10 and 25 days.
+                    li Employee benefits (marriage gifts, funeral ceremonies, birthday gifts, labor daygifts, Mid-Autumn Festival gifts, tail gifts).
+                    li Year-end, performance bonus.
+                    li Enjoy pensions.
+                    li Employee pensions.
+                    li Enjoy paternity leave.
+                    li Have a maternity allowance.
+            //上文下圖
+            .box
+                h6 Our corporate philosophy
+                p Taking environmental protection as responsibility, adhering to the green concept,we continue to promote the corporate responsibility of energy saving in the wholeplant and create better tile products for consumers.
+                figure
+                    img(src="../../upload/fa2/join/liboxImg1_380_265.jpg", alt="")
+                    b Provide sound and in-service training
+            //純文字
+            .box
+                h6 Embed art into life and close the family with beauty
+                p Not only the full range of products have obtained the " Environmental Seal " , butalso the "MIT Smile Mark" and "Nami Mark", which has successfully created the firstbrand in the Taiwanese tile industry and became the "real material" in the minds of consumers. Good tile.
+        

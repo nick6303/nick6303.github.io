@@ -1,0 +1,107 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var breadcrumb =[
+        {name:"products",link:"../product/index.html"},
+        {name:"Style aspect",link:"../style/index.html"},
+    ]
+
+    var style = [
+        {
+            name:"Japanese",
+            words:"The Japanese texture is established to create awarm feeling in the lines of the job, and  good to use a comfortable material to add...",
+            img:"../../upload/fa2/style/index/img1_930_500.jpg"},
+        {
+            name:"French",
+            words:"The Japanese texture is established to create awarm feeling in the lines of the job, and.",
+            img:"../../upload/fa2/style/index/img2_930_500.jpg"},
+        {
+            name:"Nordic life",
+            words:"The Japanese texture is established to create awarm feeling in the lines of the job.",
+            img:"../../upload/fa2/style/index/img3_930_500.jpg"},
+        {
+            name:"Industry",
+            words:"The Japanese texture is established to create awarm feeling in the lines of the job, and  good to use a comfortable ...",
+            img:"../../upload/fa2/style/index/img4_930_500.jpg"},
+        {
+            name:"Luxurious",
+            words:"The Japanese texture is established to create awarm feeling in the lines of the job.",
+            img:"../../upload/fa2/style/index/img5_930_500.jpg"},
+        {
+            name:"Nature",
+            words:"The Japanese texture is established to create awarm feeling in the lines of the job, and  good to use a comfortable material to add  the job.",
+            img:"../../upload/fa2/style/index/img6_930_500.jpg"},
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#style.index(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article.banner 
+            section.background(style="background-color: #fff")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/style/index/bannerBg_1920_1080.jpg" alt="")
+            // 麵包屑 SEO結構化標籤
+            section.breadcrumb
+                ul(itemscope itemtype="https://schema.org/Product")
+                    each val in breadcrumb
+                        li(itemprop="name")
+                            if val==breadcrumb[1]
+                                h1
+                                    a(href=val.link itemprop="url")=val.name
+                            else
+                                a(href=val.link itemprop="url")=val.name
+                                span.bgColor
+            section._title
+                h6 Style aspect
+                p It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+            section.anchor
+                h6 overview
+                ul
+                    each val in style
+                        li
+                            p=val.name
+                            span.bgColor
+        article.content
+            section.background(style="background-color:#fff")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg4_1920_1080.jpg" alt="")
+            ul
+                each val in style
+                    li
+                        figure
+                            img.b-lazy(src=blazy data-src=val.img, alt="")
+                            //動畫方塊
+                            span
+                        ._text
+                            h6=(val.name+ " style")
+                            // 後端請注意: 字數限制135個字 多的會變成...
+                            p.words=val.words
+                            a(href="../style/detail.html")
+                                p Discover more
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

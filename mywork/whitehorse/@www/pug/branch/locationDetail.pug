@@ -1,0 +1,97 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var type = ["Agent","Agent","Agent","Agent","Agent","Agent","Agent","Agent","Agent"]
+
+    var area = ["Taiwan","Malaysia","Chia"]
+
+    var city = ["city1","city2","city3"]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#branch.locationDetail(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article.banner(style="background-image:url('../../upload/fa2/branch/location/detailBannerImg_1920_570.jpg')")
+            section
+                ._title
+                    h2 Agency & showroom
+                    p It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+                form
+                    div
+                        .dropDown
+                            span.selectMenu.bgColor
+                                p choose a type
+                            ul
+                                each val in type
+                                    li=val
+                        .dropDown
+                            span.selectMenu.bgColor
+                                p choose a area
+                            ul
+                                each val in area
+                                    li=val
+                        .dropDown
+                            span.selectMenu.bgColor
+                                p choose a city
+                            ul
+                                each val in city
+                                    li=val 
+                    // 後端請注意: 搜尋完成資料塞入之後請啟動 reset(); 這個function 
+                        詳細function內容在最下面
+                    button(type="button" onclick="reset()")
+                        span.icon-magnifier
+                        p Search
+        // 搜尋結果
+        article.result
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小 
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小 1920*1080 
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/branch/location/bgImg2_1920_1080.jpg" alt="")
+            section.list
+                ul
+                    -for(var i = 0 ;i<5;i++)
+                        li
+                            .box
+                                // 品牌名子
+                                .brandName
+                                    //- p Devanno
+                                    img(src="../../assets/img/whiteHorse.png", alt="")
+                                    img(src="../../assets/img/devannoLogo.svg", alt="")
+                                //代理商名子
+                                .agent
+                                    div
+                                        p.tpye Agent
+                                        p.locate Taiwan , Taipei
+                                    p.name Beiyang Building Materials Co.,Ltd 
+                                .inf
+                                    // 後端請注意: 下方data-postalCode 請讓客戶填入住址郵遞區號 
+                                    p.address(data-postalCode="112") No. 470, Section 6, Yanping North Road, Taipei
+                                    p.tel 02-2811-3838
+                                    p.fax 02-2811-3737 
+                                .buttons
+                                    a.hoverColor_P(href="https://www.google.com.tw/maps/place/%E5%8C%97%E6%8F%9A%E5%BB%BA%E6%9D%90%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8(%E7%99%BD%E9%A6%AC%E7%A3%81%E7%A3%9A)/@25.0932463,121.4987964,20.54z/data=!4m13!1m7!3m6!1s0x3442aed0bfa7c7f9:0xed658c0a58264d53!2zMTEx5Y-w5YyX5biC5aOr5p6X5Y2A5bu25bmz5YyX6Lev5YWt5q61NDcw6Jmf!3b1!8m2!3d25.0933074!4d121.4987163!3m4!1s0x0:0x1c8e341be3a45e22!8m2!3d25.0932673!4d121.4988844?hl=zh-TW" target="_blank")
+                                        span.icon-location.hoverColor_C
+                                        p Map
+                                    // 後端請注意: 請在下方data-src填入ajax資料的位置
+                                    button.hoverColor_P(data-src="../branch/slickLibox.html")
+                                        span.icon-picture.hoverColor_C
+                                        p Photo
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

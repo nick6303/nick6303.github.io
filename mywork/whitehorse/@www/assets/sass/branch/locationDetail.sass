@@ -1,0 +1,292 @@
+#branch.locationDetail main,#storeHold.detail main
+    .banner
+        // padding: 245px 50px 50px
+        padding: 22vh 50px 50px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        // position: fixed
+        position: absolute
+        z-index: 2
+        top: 0
+        left: 0
+        width: 100%
+        transition: all 0.8s ease
+        @media all and (max-width: 1440px)
+            // padding: 180px 50px 40px
+            padding: 20vh 50px 40px
+        @media all and (max-width: 1024px)
+            padding: 180px 50px 40px
+        @media all and (max-width: 900px)
+            padding: 100px 5vw 40px
+        @media all and (max-width: 700px)
+            padding: 90px 5vw 30px
+            position: relative
+            top: auto
+            left: auto
+        &.whiteWords
+            color: #fff
+            ._title,button
+                text-shadow: 0 0 10px rgba(0,0,0,.5)
+            button 
+                color: #fff
+        &.Up
+            // transform: translateY(-170px)
+            transition: all .3s ease
+            @media all and (max-width: 1440px)
+                // transform: translateY(-110px)
+            @media all and (max-width: 1024px)
+                transition: all .4s ease
+            @media all and (max-width: 900px)
+                // transform: translateY(0)
+        ._title,button
+            text-shadow: 0 0 10px rgba(255,255,255,.5)
+        ._title
+            +flex-center
+            flex-direction: column
+            text-align: center
+            h2
+                font-size: px(50)
+                animation: fadeInDown 1s both .2s
+                @media all and (max-width: 1440px)
+                    font-size: px(42)
+                @media all and (max-width: 700px)
+                    font-size: px(36)
+                    line-height: 1.2
+                @media all and (max-width: 350px)
+                    font-size: px(32)
+            p
+                font-family: MyriadPro-Regular,微軟正黑體
+                font-size: px(14)
+                max-width: 350px
+                margin-top: 10px
+                animation: fadeInDown 1.2s both .4s
+                @media all and (max-width: 700px)
+                    margin-top: 20px
+        form
+            +flex-center
+            flex-direction: column
+            margin-top: 60px
+            @media all and (max-width: 1440px)
+                margin-top: 40px
+            &>div
+                +flex-center
+                color: #fff
+                @media all and (max-width: 700px)
+                    flex-direction: column
+                .dropDown
+                    width: 220px
+                    margin: 2px
+                    .selectMenu
+                        opacity: 0.8
+                        animation: selectMenu 1.2s both .6s
+                    @keyframes selectMenu
+                        0%
+                            opacity: 0
+                            transform: translateY(50%)
+                        100%
+                            opacity: 0.8
+                            transform: translateY(0)
+                    ul
+                        z-index: 1
+                        background-color: #fff
+                        box-shadow: 0 0 20px 1px rgba(0,0,0,.2)
+                        li
+                            padding: 15px 20px
+            button
+                background-color: transparent
+                border: none
+                +flex-center
+                margin-top: 30px
+                animation: fadeInUp 1s both .8s
+                p
+                    font-size: px(15)
+                    font-family: FuturaPT-Medium,微軟正黑體
+                    margin: 0 10px
+    .result
+        // padding: 570px 0 0 
+        padding: calc(325px + 22vh) 0 0 
+        @media all and (max-width: 1440px)
+            // padding: 490px 0 0
+            padding: calc(310px + 20vh) 0 0
+        @media all and (max-width: 1024px)
+            padding: 490px 0 0
+        @media all and (max-width: 900px)
+            padding: 450px 0 0
+        @media all and (max-width: 700px)
+            padding: 0
+        &:before
+            +sideLine_before
+        &:after
+            +sideLine_after
+        .list
+            ul
+                li
+                    padding: 70px 20px
+                    @media all and (max-width: 1440px)
+                        padding: 60px 20px
+                    @media all and (max-width: 1024px)
+                        padding: 60px 20px
+                    @media all and (max-width: 700px)
+                        padding: 50px 6vw
+                    &.show
+                        .brandName
+                            animation: fadeInUp 1.2s both 
+                        .agent
+                            div
+                                animation: fadeInDown 1.2s both .2s
+                            .name
+                                animation: fadeInUp 1.2s both .2s
+                            &:after
+                                animation: h100 1s both .2s
+                                @media all and (max-width: 700px)
+                                    animation: w100 1s both .2s
+                        .inf p,.inf a
+                            animation: fadeInUp 1s both .4s
+                        .buttons a,.buttons button
+                            span
+                                animation: slideInLeft 1.2s both .6s
+                            p
+                                animation: fadeInLeft 1s both .8s
+                    &:nth-child(even)
+                        background-color: #dcdcdc
+                    .box
+                        max-width: 1330px
+                        margin: auto
+                        +flex-center
+                        @media all and (max-width: 700px)
+                            flex-direction: column
+                        .brandName
+                            font-family: FuturaPT-Demi,微軟正黑體
+                            font-size: px(24)
+                            color: #7a7a7a
+                            width: 17%
+                            opacity: 0
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            flex-wrap: wrap
+                            padding: 0 10px
+                            @media all and (max-width: 700px)
+                                padding: 0 
+                                width: 100%
+                                justify-content: flex-start
+                            img
+                                margin: 10px 5px 
+                                max-width: 70px
+                                @media all and (max-width: 700px)
+                                    margin: 10px 10px 10px 0 
+                        .agent
+                            width: 33%
+                            position: relative
+                            padding: 20px 50px 20px 0
+                            @media all and (max-width: 1430px)
+                                padding: 20px 3vw 20px 0
+                            @media all and (max-width: 700px)
+                                width: 100%
+                                padding: 20px 0 15px
+                            div
+                                display: flex
+                                align-items: center
+                                font-size: px(15)
+                                opacity: 0
+                                .tpye
+                                    +flex-center
+                                    font-family: FuturaPT-Medium,微軟正黑體
+                                    &:after
+                                        margin: 0 12px
+                                        +fakeLine(5px,15px,#8a7e79)
+                                .locate
+                                    color: rgba(0,0,0,.6)
+                                    font-family: FuturaPT-Bold,微軟正黑體
+                            .name
+                                font-size: px(25)
+                                opacity: 0
+                            &:after
+                                position: absolute
+                                top: 50%
+                                right: 0
+                                transform: translateY(-50%)
+                                +fakeLine(1px,0,#c4c4c4)
+                                @media all and (max-width: 700px)
+                                    top: 100%
+                                    right: 50%
+                                    transform: translate(50%,0)
+                                    width: 0
+                                    height: 1px
+                        .inf
+                            width: 38%
+                            padding: 0 0 0 50px
+                            font-size: px(15)
+                            color: #5a5a5a
+                            display: flex
+                            flex-wrap: wrap
+                            @media all and (max-width: 1430px)
+                                padding: 0 0 0 3vw
+                            @media all and (max-width: 700px)
+                                width: 100%
+                                padding: 20px 0
+                            p,a
+                                margin: 0 25px 5px 0
+                                opacity: 0
+                                line-height: 1.5
+                                &:before
+                                    font-family: FuturaPT-Heavy,微軟正黑體
+                                    color: #000
+                                    margin-right: 5px
+                            .address
+                                width: 100% 
+                                @media all and (max-width: 700px)
+                                    order: 3
+                                &:before
+                                    content: attr(data-postalCode)
+                            .tel
+
+                                @media all and (max-width: 700px)
+                                    order: 1
+                                &:before
+                                    content: "T"
+                                
+                            .fax
+                                @media all and (max-width: 700px)
+                                    order: 2
+                                &:before
+                                    content: "F"
+                        .buttons
+                            width: 12%
+                            +flex-left
+                            @media all and (max-width: 700px)
+                                width: 100%
+                                flex-direction: row
+                                justify-content: flex-start
+                            a,button
+                                +flex-center
+                                background-color: transparent
+                                border: none
+                                margin: 10px 0
+                                overflow: hidden
+                                @media all and (max-width: 700px)
+                                    margin: 0 40px 0 0
+                                &:hover
+                                    span
+                                        opacity: 0.8
+                                        color: #fff
+                                span
+                                    width: 40px
+                                    height: 40px
+                                    border: 1px solid #adadad
+                                    border-radius: 50%
+                                    +flex-center
+                                    transition: all .4s ease
+                                    margin-right: 15px
+                                    transform: translateX(-101%)
+                                p
+                                    font-family: FuturaPT-Medium,微軟正黑體
+                                    font-size: px(15)
+                                    opacity: 0
+
+
+
+
+// ↑經銷商共同設定↑
+

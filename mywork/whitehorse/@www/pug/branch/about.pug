@@ -1,0 +1,118 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var assurance = [
+        {
+            img: "../../upload/fa2/branch/about/awardsImg1.png",
+            name: "Environmental label"},
+        {
+            img: "../../upload/fa2/branch/about/awardsImg2.png",
+            name: "Environmental label"},
+        {
+            img: "../../upload/fa2/branch/about/awardsImg3.png",
+            name: "Environmental label"},
+        {
+            img: "../../upload/fa2/branch/about/awardsImg4.png",
+            name: "Environmental label"},
+        {
+            img: "../../upload/fa2/branch/about/awardsImg5.png",
+            name: "Environmental label"},
+        {
+            img: "../../upload/fa2/branch/about/awardsImg6.png",
+            name: "Environmental label"},
+        {
+            img: "../../upload/fa2/branch/about/awardsImg7.png",
+            name: "Environmental label"},
+        {
+            img: "../../upload/fa2/branch/about/awardsImg8.png",
+            name: "Environmental label"},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#branch.about(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main    
+        article.banner
+            section._img
+                figure
+                    // 後端請注意:電腦圖片大小960*980
+                    img(src="../../upload/fa2/branch/about/banerImg_960_980.jpg" alt="")
+            section._text(style="background-image: url('../../upload/fa2/branch/about/bannerTextBg_960_1020.jpg')")
+                .box
+                    .logo
+                        img(src="../../assets/img/devannoLogo_60_60.png", alt="")
+                    h2 About Devanno
+                    p.words It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+                    .anchor
+                        p please choose 
+                            span.bgColor
+                        ul
+                            li Brand introduction
+                            li Award events
+                            li Quality asssurance
+        article.introduction
+            section._title
+                h6 Brand introduction
+                p The Japanese texture is established to create a warm feeling inthe lines of the job, and  good is established to create a warm.
+            section.rows
+                .row
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/branch/about/introImg_490_610.jpg", alt="")
+                    ._text
+                        h6 extraordinary taste designEternal quality commitment
+                        p Devanno fashion tiles, inherited the Italian precision craftsmanship, with the belief of "the emperor's noble momentum, extraordinary taste design, and eternal quality commitment", leading the major brands and creating handmade art products with visual aesthetics and noble texture redefining the mansion.
+                        p Combining fashion, art, and noble design ideas, it shows the mature charm of modern craftsmanship through time,  and opens up more looks and possibilities for tiles.
+                .row
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/branch/about/introImg_610_460.jpg", alt="")
+                    ._text
+                        h6 Insist on the sustainable valueCreate a heritage of inheritance.
+                        p The quality requirements and picky are always in front of the customer's Devanno fashion tiles, casting each point, every inch of brick, with a strict attitude,In order to achieve the eternal space texture; we insist on the sustainable value, to create a heritage of inheritance.
+                        p Through the Tiffany fashion tiles,You can be a king, a post, and a spokesperson for the infinite honor of a top-class residence.
+        article.award
+            section._img
+                picture
+                    //[if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小
+                    source(srcset="../../upload/fa2/branch/about/awardsBgRWD_1000_1000.jpg" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小
+                    img.b-lazy(src=blazy data-src-small="../../upload/fa2/branch/about/awardsBgRWD_1000_1000.jpg" data-src="../../upload/fa2/branch/about/awardsBg_1920_810.jpg" alt="")
+            section._title
+                h6 Award events
+                p The Japanese texture is established to create a warm feelingin the lines of the job, and  good is established to create.
+                // 後端請注意: 下方data-src 請放入ajax內容的位置
+                button.openAboutDetail(type="button" data-src="../branch/aboutDetail.html")
+                    span.bgColor
+                    p Discover more
+        article.assurance
+            section._title
+                h6 Quality asssurance
+                p The Japanese texture is established to create a warm feelingin the lines of the job, and  good is established to create.Manufacturer of the CNS Orthographic Mark for the world's only imported ceramic tile product.
+            section.content
+                // 後端請注意: 下方背景圖要讓客戶可以換
+                ul
+                    each val in assurance
+                        li(class=(val==assurance[7])?"zoom":"")
+                            figure
+                                //後端請注意: 圖片大小不限 但要比190*190大
+                                img(data-lazy=val.img, alt="")
+                            // 後端請注意:圖片的文字如果客戶沒放的話請把p拿掉
+                            p=val.name
+    
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

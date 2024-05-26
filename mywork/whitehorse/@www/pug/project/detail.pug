@@ -1,0 +1,54 @@
+//- 常用參數
+include ../layout/_var.pug
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#project.detail
+    include ../layout/_header.pug
+    
+    main
+        article.content
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/project/detailBg_1920_1080.jpg" alt="")
+            section.tag
+                p.type RESIDENTIAL 
+                p.year 2018
+            section._slick
+                ul
+                    -for(var i = 1;i<16;i++)
+                        li
+                            picture
+                                // [if IE 9]><video style="display: none;"><![endif]
+                                // 後端請注意:手機圖片大小 
+                                source(srcset="../../upload/fa2//project/rowImgRWD_900_1200.jpg" media="(max-width:1024px)")
+                                // 後端請注意:電腦圖片大小
+                                img(data-lazy=("../../upload/fa2/project/rowImg"+i+"_1590_915.jpg") alt="")
+                .arrows
+                    button.icon-triangle_left
+                    button.icon-triangle_right
+                .about
+                    h2 Dengyang Yixiyun
+                    .Pbox
+                        p 一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+                    button(type="button")
+                        span.icon-arrowRight
+                        p about
+                        p close
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

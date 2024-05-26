@@ -1,0 +1,60 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var links = [
+        {title:"Collection",link:"../product/collection.html"},
+        {title:"Space aspect",link:"../space/index.html"},
+        {title:"Style aspect",link:"../style/index.html"},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#product.index(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article(style="background-image:url('../../upload/fa2/product/index/bannerImg_1920_1080.jpg')")
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/product/index/bgImg_1920_1080.jpg" alt="")
+            secrion._title
+                h6 Choose direction to show products
+                p It’s the highest quality standard in  the world enjoy goodlife in security.
+            section.links
+                .bgColor
+                ul
+                    each val in links
+                        li
+                            a(href=val.link)
+                                span(style="background:#715f4f")
+                                h6=val.title
+                                p It’s the highest quality standard inthe world enjoy good life in security.
+                            //- a(href=val.link)
+                                //- span 
+                                //- p Discover more
+            section.search
+                p OR search for products directly
+                form
+                    input(type="text" placeholder="please key in the product name" data-RWDplaceholder="Keywords")
+                    span.bgColor
+                    button(type="button") 
+                        p SEARCH
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

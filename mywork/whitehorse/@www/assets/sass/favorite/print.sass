@@ -1,0 +1,72 @@
+#favorite.print
+    &.safari
+        ._title,.list
+            height: 310px
+        .list 
+            margin: 0 auto 15px
+            .list-item 
+                .size p
+                    font-size: px(18)
+                .info 
+                    .numb
+                        font-size: px(26)
+                    .breadcrumb
+                        font-size: px(16)
+    article,.bidBox
+        width: 100%
+        max-width: 800px
+        margin: auto
+    ._title 
+        // height: 350px
+        height: 9.05cm
+        +flex-center
+        .en
+            +title_en
+            text-align: center
+    .list 
+        display: flex
+        width: 100%
+        max-width: 800px
+        margin: 0 auto 10px
+        // height: 340px
+        height: calc(9.05cm - 10px)
+        .list-item
+            display: block
+            width: calc(33.33% - 6px)
+            height: 100%
+            margin: 0 3px
+            overflow: hidden
+            border: 1px solid #d7d7d7
+            ._img
+                display: block
+                position: relative
+                height: 150px
+                overflow: hidden
+                figure
+                    +flex-center
+                    height: calc(100% - 30px)
+                    padding: 10px 10px 5px 
+                    overflow: hidden
+                    img
+                        max-height: 100%
+                .size
+                    display: flex
+                    padding: 0 20px 
+                    p
+                        display: block
+                        font-size: px(20)
+                        position: relative
+            .info
+                padding: 0 20px 
+                .numb
+                    font-family: FuturaPT-Medium,微軟正黑體
+                    font-size: px(32)
+                    color: rgba(0,0,0,.8)
+                .breadcrumb
+                    font-size: px(20)
+                    p
+                        color: rgba(0,0,0,1)
+                        line-height: 1.5
+@page 
+    margin: 1.27cm
+    size: 29.7cm21cm

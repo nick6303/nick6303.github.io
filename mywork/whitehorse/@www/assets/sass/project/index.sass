@@ -1,0 +1,160 @@
+#project.index main article.content
+    &:before 
+        +sideLine_before
+    &:after 
+        +sideLine_after
+    .background
+        opacity: 1
+    ._title
+        // background-color: rgba(137,232,186,.2)
+        padding: 180px 0 140px
+        position: relative
+        z-index: 2
+        @media (max-width: 1024px)
+            padding: 140px 0 140px
+        @media (max-width: 500px)
+            padding: 100px 0 140px
+        &>div
+            max-width: 1360px
+            width: 100%
+            padding: 0 50px
+            margin: auto
+            display: flex
+            align-items: flex-end
+            flex-wrap: wrap
+            @media (max-width: 1024px)
+                padding:  0 5vw 
+        ._text
+            padding: 0 80px 5px 0
+            @media (max-width: 1024px)
+                padding: 0 0 5px 
+            h6
+                font-size: px(60)
+                animation: fadeInUp 1.2s both
+                @media (max-width: 1024px)
+                    font-size: px(54)
+                @media (max-width: 500px)
+                    font-size: px(50)
+                    margin: 0 0 5px
+            p
+                font-size: px(16)
+                max-width: 360px
+                // color: #999999
+                color: #7a7979
+                animation: fadeInUp 1.2s both .2s
+                @media (max-width: 1024px)
+                    max-width: 550px
+        .anchor
+            margin: 30px 0 0 
+            animation: fadeInUp 1s both .4s
+            ul
+                display: flex
+                max-width: 95vw
+                &:hover li.active
+                    color: #8d8d8d
+                    p:after
+                        width: 0
+                li.active,
+                li:hover,
+                &:hover li.active:hover
+                    color: #000
+                    p:after
+                        width: 100%
+                li
+                    font-size: px(20)
+                    color: #8d8d8d
+                    font-weight: bold
+                    padding: 0 20px
+                    position: relative
+                    cursor: pointer
+                    transition: all .4s ease
+                    &:first-child
+                        padding: 0 20px 0 0
+                    &:last-child
+                        padding: 0 0 0 20px
+                    &:not(:first-child):before
+                        position: absolute
+                        top: 50%
+                        left: 0
+                        transform: translateY(-50%)
+                        +fakeLine(1px,15px,#9eaba5)
+                    
+                    p:after
+                        margin: auto
+                        transition: all .4s ease
+                        +fakeLine(0,3px,#009944)
+    .list
+        position: relative
+        z-index: 2
+        display: flex
+        flex-wrap: wrap
+        max-width: 1650px
+        width: 100%
+        padding: 0 50px
+        margin: -70px auto 0
+        @media (max-width: 1024px)
+            padding: 0 5vw
+        .box
+            width: calc(33.33% - 30px)
+            margin: 0 15px 60px
+            position: relative
+            opacity: 0
+            @media (max-width: 1650px)
+                width: calc(33.33% - 1.5vw)
+                margin: 0 0.75vw 60px
+            @media (max-width: 1024px)
+                width: calc(50% - 1.5vw)
+            @media (max-width: 550px)
+                width: 100%
+                margin: 0 0 60px
+            &.show.in
+                animation: fadeInUp 1.4s both .2s
+                @media (max-width: 1024px)
+                    animation: fadeInUp 1.2s both
+                    ._text p
+                        animation: fadeInUp 1s both .8s
+            &:hover ._text
+                opacity: 1
+                p
+                    transform: translateY(0)
+            figure
+                height: 280px
+                @media (max-width: 1650px)
+                    height: calc(18.3vw - 18px)
+                @media (max-width: 1024px)
+                    height: 25vw
+                @media (max-width: 550px)
+                    height: 51.7vw
+            ._text
+                display: flex
+                justify-content: flex-start
+                align-items: flex-end   
+                padding: 20px 35px
+                font-size: px(24)
+                transition: all .4s ease
+                @media (min-width: 1025px)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    opacity: 0
+                    background-color: rgba(0,0,0,.7)
+                    color: #fff
+                @media (max-width: 1650px)
+                    padding: 1vw 2vw
+                @media (max-width: 1024px)
+                    padding: 5px 10px 0
+                p
+                    @media (min-width: 1025px)
+                        transform: translateY(20px)
+                        transition: all .4s ease
+                    @media (max-width: 1024px)
+                        opacity: 0
+            a
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                z-index: 1

@@ -1,0 +1,58 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-   
+    var breadcrumb =[
+        {name:"About Devanno",link:"../about/index.html"},
+        {name:"Promise",link:"javascript:void(0)"},
+    ]
+
+section.liboxBanner
+    figure
+        // 後端請注意:電腦圖片大小
+        img(src="../../upload/fa2/about/promise/bgImg_1590_600.jpg" alt="")
+    .liboxClose
+        span
+    .nav
+        .share
+            button
+                span.icon-share2
+                p SHARE
+            ul
+                li
+                    a(href=java)
+                        span.icon-facebook(style="color:#3b5998")
+                li
+                    a(href=java)
+                        span.icon-line(style="color:#00c300")
+                li
+                    a(href=java)
+                        span.icon-twitter(style="color:#00aced")
+        .breadcrumb
+            ul(itemscope itemtype="https://schema.org/Product")
+                each val in breadcrumb
+                    li(itemprop="name")
+                        if val==breadcrumb[1]
+                            h1
+                                a(href=val.link itemprop="url")=val.name
+                        else
+                            a(href=val.link itemprop="url")=val.name
+                            span
+section.promise
+    ._title
+        h6 Our Promise
+        h5 To provide customers with superb experience and exceptional quality service.
+    .row
+        ._text(style="background-image: url('../../upload/fa2/about/promise/textBg_630_590.jpg')")
+            h6 Competencies of production and innovation
+            p We lever our strengths in competenciesof production and innovation in product design in order to provide customers with best ceramic tiles. 
+            p White Horse hopes to become the best partner for customers in building their dream space.
+        figure
+            img.b-lazy(src=blazy data-src="../../upload/fa2/about/promise/rowImg_520_600.jpg", alt="")
+    .row
+        ._text
+            h6 Create new capabilities and experiences 
+            p Continuously develop new products of utmost functionality and quality so as to lead the market and become the leading brand in the ceramic tiles market.
+            p Our identity drives us in continually progressing to create new capabilities and experiences and at the same time, generating best solutions for our customers in their selection of ceramic tiles. 
+        figure
+            img.b-lazy(src=blazy data-src="../../upload/fa2/about/promise/rowImg2_980_690.jpg", alt="")

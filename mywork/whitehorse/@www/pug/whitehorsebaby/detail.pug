@@ -1,0 +1,63 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+
+    var socialMedia = [
+        { type:"facebook",color:"#3b5998"},
+        { type:"line",color:"#00c300"},
+        { type:"twitter",color:"#00aced"},
+    ]
+
+    var textul = [
+        "Free cutting. DIY various items.",
+        "The scenery of the world is posted everywhere.",
+        "Create your own luggage, no longer afraid of admittingmistakes.",
+        "Waterproof, not afraid of rain.",
+        "Five different pattern combinations, match with your heart."
+    ]
+
+    var slick = [
+        //- "../../upload/fa2/whitehorsebaby/detailImg1.jpg",
+        //- "../../upload/fa2/whitehorsebaby/detailImg2.jpg",
+        "../../upload/fa2/whitehorsebaby/productImg1_500_330.jpg",
+        "../../upload/fa2/whitehorsebaby/productImg1_500_330.jpg",
+        "../../upload/fa2/whitehorsebaby/productImg1_500_330.jpg"
+
+    ]
+
+
+
+section
+    .liboxClose
+        span
+    .intro
+        .box
+            .share
+                button
+                    span.icon-share2
+                    p SHARE
+                ul
+                    each item in socialMedia
+                        li
+                            a(href=java)
+                                span(class=("icon-")+item.type style=("color:"+item.color))
+            ._text
+                h6 Taiwan's unique plant flower teacup group
+                p This is a kind of happiness magic, you can achieve your wishes when you put it on!
+                ul
+                    each val in textul
+                        li=val
+            .price
+                p $1099 
+                span group (6 in a group) 
+    .slick
+        ul
+            each val in slick
+                li
+                    figure
+                        img(src=val  alt="alt")
+                    b Create your own luggage, no longer afraid of admitting mistakes.
+        .arrows
+            span.icon-triangle_left
+            span.icon-triangle_right

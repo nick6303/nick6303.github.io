@@ -1,0 +1,365 @@
+#join.index main
+    .banner 
+        position: relative
+        &:before
+            +sideLine_before
+        &:after
+            +sideLine_after
+        .overview ul li
+            width: 50%
+    .content
+        position: relative
+        &:before
+            +sideLine_before
+        &:after
+            +sideLine_after
+        .boxs
+            max-width: 1420px
+            margin: auto
+            padding: 100px 50px 150px
+            position: relative
+            z-index: 2
+            @media all and (max-width: 1024px)
+                padding: 100px 5vw 150px
+            @media all and (max-width: 850px)
+                padding: 100px 5vw 50px
+            .box
+                display: flex
+                align-items: flex-start
+                @media all and (max-width: 850px)
+                    flex-direction: column !important
+                    ._text
+                        align-items: center
+                        padding: 15px 0 90px !important
+                &:first-child
+                    ._text
+                        padding-top: 170px
+                        @media all and (max-width: 1420px)
+                            padding-top: 10vw
+                        @media all and (max-width: 1279px)
+                            padding-top: 7vw
+                &:not(:first-child)
+                    margin-top: -80px
+                    @media all and (max-width: 1420px)
+                        margin-top: -5vw
+                    @media all and (max-width: 900px)
+                        margin-top: 0
+                    ._text
+                        padding-top: 290px
+                        @media all and (max-width: 1420px)
+                            padding-top: 18vw
+                        @media all and (max-width: 1279px)
+                            padding-top: 15vw
+                &:nth-child(odd)
+                    ._text
+                        padding-left: 120px
+                        @media all and (max-width: 1420px)
+                            padding-left: 8.5vw
+                        @media all and (max-width: 1279px)
+                            padding-left: 5vw
+                &:nth-child(even)
+                    flex-direction: row-reverse
+                    ._text
+                        padding-right: 120px
+                        +flex-right
+                        @media all and (max-width: 1420px)
+                            padding-right: 8.5vw
+                figure
+                    width: calc(50% - 40px)
+                    height: 750px
+                    +flex-center
+                    overflow: hidden
+                    opacity: 0
+                    @media all and (max-width: 1420px)
+                        height: calc(60.5vw - 108px)
+                    @media all and (max-width: 1024px)
+                        height: calc(54vw - 48px)
+                    @media all and (max-width: 850px)
+                        width: 100%
+                        height: 108vw
+                    &.show.in
+                        animation: fadeInUp 2s both cubic-bezier(0.23, 1, 0.32, 1)
+                ._text
+                    width: calc(50% + 40px)
+                    @media all and (max-width: 850px)
+                        width: 100%
+                    &.show
+                        h5
+                            animation: fadeInUp 1s both .6s
+                            @media all and (max-width: 700px)
+                                animation: fadeInUp 1s both
+                        h6
+                            animation: fadeInUp 1s both .8s
+                            @media all and (max-width: 700px)
+                                animation: fadeInUp 1s both .2s
+                        &>p
+                            animation: fadeInUp 1.4s both 1s
+                            @media all and (max-width: 700px)
+                                animation: fadeInUp 1.4s both .4s
+                        a
+                            &:before 
+                                animation: leanbutton_before 0.6s both 1.8s
+                                @media all and (max-width: 700px)
+                                    animation: leanbutton_before 0.6s both 0.9s
+                            &:after 
+                                animation: leanbutton_after 0.6s both 1.8s
+                                @media all and (max-width: 700px)
+                                    animation: leanbutton_after 0.6s both 0.9s
+                            &>p 
+                                opacity: 1
+                                animation: horizontalShow .5s both 1.4s
+                                -ms-animation: fadeIn .4s both 1.4s
+                                @media all and (max-width: 700px)
+                                    animation: horizontalShow .5s both 0.5s
+                                    -ms-animation: fadeIn .4s both 0.5s
+                    h5,h6,&>p,.buttons 
+                        max-width: 430px
+                        width: 100%
+                        padding: 0 5px 0 10px
+                        @media all and (max-width: 850px)
+                            max-width: 100%
+                    h5
+                        font-size: px(42)
+                        opacity: 0
+                        @media all and (max-width: 1024px)
+                            font-size: px(36)
+                    h6
+                        font-size: px(18)
+                        color: rgba(0,0,0,.5)
+                        margin-bottom: 70px
+                        opacity: 0
+                        @media all and (max-width: 1279px)
+                            margin-bottom: 50px
+                        @media all and (max-width: 1024px)
+                            font-size: px(16)
+                    &>p
+                        font-family: MyriadPro-Regular,微軟正黑體
+                        font-size: px(16)
+                        color: rgba(0,0,0,.7)
+                        opacity: 0
+                        @media all and (max-width: 1024px)
+                            font-size: px(14)
+                    .buttons 
+                        display: flex
+                        @media all and (max-width: 350px)
+                            letter-spacing: 0
+                            width: 100vw
+                            transform: translateX(-2.5vw)
+
+.joinDetail 
+    +basicLibox
+    background-color: rgba(0,0,0,.7)
+    z-index: 11
+    opacity: 0
+    overflow-y: auto
+    &.open
+        animation: fadeIn .4s both 
+    &.close
+        animation: fadeOut .4s both .4s
+        section .fixImg
+            animation: fadeOut .6s both 
+        section .content
+            .liboxClose span
+                &:before
+                    animation: w0 .4s both 
+                &:after
+                    animation: h0 .4s both 
+            .toTop,.breadAndSare .breadcrumb,.breadAndSare .share,._title,.box h6,.box ul li,.box p
+                animation: fadeOutUp .4s both 
+            .box:not(:last-child):after
+                animation: w0 .3s both 
+    section
+        background-color: #fff
+        display: flex
+        justify-content: flex-end
+        max-width: 1600px
+        margin: auto
+        min-height: 100%
+        position: relative
+        @media all and (max-width: 1024px)
+            flex-direction: column
+        .fixImg
+            width: 760px
+            height: 100%
+            position: fixed
+            top: 0
+            right: calc(50% + 50px)
+            animation: fadeIn 0.8s both 
+            @media all and (max-width: 1600px)
+                right: auto
+                left: 0
+                width: 47.5%
+            @media all and (max-width: 1024px)
+                position: relative
+                top: auto
+                left: auto
+                width: 100%
+            picture
+                height: 100%
+                width: 100%
+                +flex-center
+        .content
+            width: calc(100% - 760px)
+            padding: 120px 170px 135px 110px
+            @media all and (max-width: 1600px)
+                width: 52.5%
+                padding: 7.5vw 10.625vw 8.4375vw 6.875vw
+            @media all and (max-width: 1024px)
+                width: 100%
+                padding: 100px 10vw 100px 5vw
+                position: relative
+            @media all and (max-width: 700px)
+                padding: 80px 5vw 50px
+            .liboxClose
+                // position: absolute
+                position: fixed
+                top: 60px
+                // right: 85px
+                left: calc(50% + 800px - 85px - 30px)
+                cursor: pointer
+                @media all and (max-width: 1600px)
+                    top: 3.75vw
+                    left: auto
+                    right: 5.3125vw
+                @media all and (max-width: 1024px)
+                    right: 5vw
+                    transform: translateX(50%)
+                @media all and (max-width: 700px)
+                    top: 20px
+                    right: 10px
+                    transform: translateX(0)
+                span
+                    display: block
+                    transform: rotate(45deg)
+                    +cross(30px,30px)
+                    @media all and (max-width: 700px)
+                        width: 26px
+                        height: 26px
+                    &:before
+                        position: absolute
+                        top: calc(50% - 1px)
+                        left: 0
+                        +fakeLine(0%,2px,#000)
+                        animation: w100 .6s both 1s
+                    &:after
+                        position: absolute
+                        top: 0 
+                        left: calc(50% - 1px)
+                        +fakeLine(2px,0%,#000)
+                        animation: h100 .6s both 1.3s
+            .toTop
+                position: fixed
+                bottom: 45px
+                left: calc(50% + 710px)
+                cursor: pointer
+                +flex-center
+                flex-direction: column
+                animation: fadeInUp 1s both 1s 
+                @media all and (max-width: 1600px)
+                    left: auto
+                    right: 3.75vw
+                @media all and (max-width: 1024px)
+                    right: 5vw
+                    transform: translateX(50%)
+                    bottom: 5vw
+                @media all and (max-width: 700px)
+                    right: 10px
+                    bottom: 10px
+                    transform: translateX(0)
+                &:before
+                    font-family: 'icomoon'
+                    content: "\e903"
+                    display: block
+                    transform: rotateX(180deg)
+                    +font-size(28)
+                p
+                    line-height: 1
+                    margin-top: -5px
+                    font-family: FuturaPT-Medium,微軟正黑體
+                    +font-size(14)
+            .breadAndSare
+                +flex-space-between
+                .breadcrumb
+                    +flex-center
+                    animation: fadeInUp 1.2s both .6s
+                    h6
+                        font-family: FuturaPT-Bold,微軟正黑體
+                        font-size: px(16)
+                        +flex-center
+                        text-transform: uppercase
+                        &:after
+                            +fakeLine(6px,15px,#32b16c)
+                            margin: 0 20px
+                    p
+                        color: rgba(0,0,0,.5)
+                        font-size: px(14)
+                        font-family: FuturaPT-Medium,微軟正黑體
+                .share
+                    animation: fadeInLeft 1.2s both .6s
+            ._title
+                font-size: px(42)
+                margin: 120px 0 50px
+                animation: fadeInUp 1s both .4s
+                @media all and (max-width: 1600px)
+                    margin: 7.5vw 0 3.125vw
+                @media all and (max-width: 700px)
+                    font-size: px(36)
+                    margin: 50px 0 0
+            .box
+                padding: 50px 0 30px
+                position: relative
+                @media all and (max-width: 700px)
+                    padding: 30px 0
+                &:not(:last-child):after
+                    +fakeLine(0%,1px,#bfbfbf)
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    animation: w100 1s both .8s
+                h6
+                    font-size: px(22)
+                    animation: fadeInUp 1s both .6s
+                    &:not(:last-child)
+                        margin-bottom: 20px
+                p
+                    font-size: px(15)
+                    color: rgba(0,0,0,.7)
+                    font-family: MyriadPro-Regular,微軟正黑體
+                    animation: fadeInUp 1.2s both .8s
+                    &:not(:last-child)
+                        margin-bottom: 20px
+                ul
+                    counter-reset: num
+                    li
+                        display: flex
+                        counter-increment: num
+                        line-height: 1.4
+                        color: rgba(0,0,0,.7)
+                        font-size: px(15)
+                        font-family: MyriadPro-Regular,微軟正黑體
+                        animation: fadeInUp 1.2s both .8s
+                        &:not(:last-child)
+                            margin-bottom: 20px
+                        &:before
+                            content: counter(num) '.'
+                            font-family: FuturaPT-Heavy,微軟正黑體
+                            font-size: px(18)
+                            color: rgba(0,0,0,.4)
+                            display: block
+                            line-height: 1
+                            margin-right: 5px
+                figure
+                    padding: 10px 0  
+                    overflow: hidden
+                    &:not(:last-child)
+                        margin-bottom: 20px
+                    img
+                        transform: translateX(-101%)
+                        animation: slideInLeft 1s both .6s
+                    b
+                        display: block
+                        margin-top: 15px
+                        color: rgba(0,0,0,.5)
+                        font-size: px(14)
+                        font-family: MyriadPro-Regular,微軟正黑體
+                        animation: fadeInUp 1s btoh .8s

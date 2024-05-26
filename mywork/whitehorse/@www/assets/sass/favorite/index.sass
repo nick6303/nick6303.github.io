@@ -1,0 +1,231 @@
+#favorite.index main
+    .banner
+        color: #ffffff
+        padding: 140px 0 50px 
+        @media all and (max-width: 1440px)
+            padding: 90px 0 50px 
+        @media all and (max-width: 700px)
+            padding: 60px 0 50px 
+        ._title
+            @media all and (max-width: 700px)
+                text-align: center
+            .en
+                +title_en
+                animation: fadeInUp 1s both .2s 
+            span
+                letter-spacing: 0
+                font-style: italic
+                font-size: px(12)
+                color: $base_yellow
+                margin: 20px 0 
+                animation: fadeInUp 1s both .4s 
+            .words
+                font-size: px(22)
+                animation: fadeInUp 1s both .6s 
+                @media all and (max-width: 700px)
+                    font-size: px(18)
+                b
+                    font-family: FuturaPT-Demi,微軟正黑體
+                    margin: 0 5px
+            h5
+                display: none
+                font-size: px(20)
+                animation: fadeInUp 1s both .6s 
+        .buttons
+            padding: 50px 0 0
+            +flex-center
+            flex-wrap: wrap
+            .leanbutton
+                letter-spacing: 1px
+                margin-top: 0 
+                &:before
+                    animation: leanbutton_before 0.6s both 1.4s 
+                &:after
+                    animation: leanbutton_after 0.6s both 1.4s
+                p
+                    opacity: 1
+                    animation: horizontalShow .5s both 1s
+                    -ms-animation: fadeIn .4s both 1s
+            .branch
+                width: 100%
+                justify-content: center
+                align-items: center
+                display: none
+                height: 28px
+    .emailForm 
+        justify-content: center
+        align-items: center
+        display: none
+        +basicLibox
+        z-index: 99
+        background-color: rgba(0,0,0,.8)
+        &.open
+            display: flex
+            animation: fadeIn .4s both 
+            .liboxClose span
+                &:before
+                    animation: w100 .6s both 1.2s
+                &:after
+                    animation: h100 .6s both 1.5s 
+            ._title
+                h6
+                    animation: fadeInUp 1s both .4s
+                p 
+                    animation: fadeInUp 1s both .6s
+        &.close
+            display: flex
+            animation: fadeOut .4s  both .4s
+            .liboxClose span
+                &:before
+                    animation: w0 .4s both
+                &:after
+                    animation: h0 .4s both 
+            ._title h6,._title p,form,.buttons
+                animation: fadeOutUp .4s both 
+        section
+            background-color: #fff
+            position: relative
+            max-width: 1000px
+            width: 100%
+            padding: 110px 50px 90px
+            @media all and (max-width: 1024px)
+                padding: 110px 5vw 90px
+            @media all and (max-width: 550px)
+                padding: 80px 5vw 50px
+                height: 100%
+                overflow-y: auto
+            .liboxClose
+                position: absolute
+                top: 80px
+                right: 80px
+                cursor: pointer
+                @media all and (max-width: 1000px)
+                    top: 5vw
+                    right: 5vw
+                span
+                    +cross(32px,32px)
+                    display: block
+                    transform: rotate(45deg)
+                    &:before,&:after
+                        position: absolute
+                    &:before
+                        +fakeLine(0%,2px,#000)
+                        top: calc(50% - 1px)
+                        left: 0
+                    &:after
+                        +fakeLine(2px,0%,#000)
+                        top: 0
+                        left: calc(50% - 1px)
+            ._title,form
+                margin: auto
+                +flex-center
+                flex-direction: column
+                max-width: 650px
+            ._title
+                text-align: center
+                h6
+                    font-size: px(36)
+                    &:after
+                        +fakeLine(0px,3px,$base_green)
+                        margin: 5px auto 20px
+                        animation: w45 .8s both .6s
+                p
+                    max-width: 360px
+                    font-size: px(15)
+                    font-family: MyriadPro-Light,微軟正黑體
+            form
+                margin-top: 60px
+                ul
+                    width: 100%
+                    position: relative
+                    padding: 4px 0
+                    &:before,&:after
+                        position: absolute
+                        +fakeLine(0%,4px,#b2b2b2)
+                        left: 50%
+                        transform: translateX(-50%)
+                        animation: w100 .8s both .4s
+                    &:before
+                        top: 0
+                    &:after
+                        bottom: 0
+                    li
+                        width: 100%
+                        display: flex
+                        align-items: center
+                        padding: 0 35px 0 40px
+                        position: relative
+                        flex-wrap: wrap
+                        @media all and (max-width: 1000px)
+                            padding: 0 3.4vw 0 3.9vw
+                        @media all and (max-width: 700px)
+                            padding: 0 5px
+                        p
+                            width: 200px
+                            padding: 15px 0
+                            font-family: FuturaPT-Heavy,微軟正黑體
+                            font-size: px(18)
+                            color: rgba(0,0,0,.6)
+                            @media all and (max-width: 700px)
+                                width: 180px
+                            @media all and (max-width: 550px)
+                                width: 100%
+                                padding: 15px 0 5px
+                        input
+                            letter-spacing: 1px
+                            font-size: px(16)
+                            border: none
+                            padding: 15px 0
+                            font-family: MyriadPro-Regular,微軟正黑體
+                            &::placeholder
+                                transition: all .4s ease
+                                font-family: MyriadPro-Light,微軟正黑體
+                            &:focus::placeholder
+                                opacity: 0
+                        &:not(:last-child) 
+                            &:after
+                                z-index: 1
+                                position: absolute
+                                bottom: 0
+                                left: 50%
+                                transform: translateX(-50%)
+                                +fakeLine(0%,1px,#999999)
+                                animation: w100 .8s both .4s
+                            p,input
+                                animation: fadeInUp 1s both .8s
+                            input
+                                width: calc(100% - 200px)
+                                @media all and (max-width: 700px)
+                                    width: calc(100% - 180px)
+                                @media all and (max-width: 550px)
+                                    width: 100%
+                        &:last-child
+                            p,input,div
+                                animation: fadeInDown 1s both .8s
+                            input
+                                width: calc(100% - 280px)
+                                @media all and (max-width: 700px)
+                                    width: calc(100% - 260px)
+                                @media all and (max-width: 550px)
+                                    width: calc(100% - 80px)
+                                @media all and (max-width: 350px)
+                                    width: 100%
+                            div
+                                cursor: pointer
+                                max-width: 80px
+                                padding: 5px 0
+                                @media all and (max-width: 350px)
+                                    max-width: 100%
+                                    +flex-right
+                .buttons
+                    +flex-center
+                    margin-top: 15px
+                    .leanbutton
+                        &:before
+                            animation: leanbutton_before 0.6s both 1.6s 
+                        &:after
+                            animation: leanbutton_after 0.6s both 1.6s
+                        p
+                            opacity: 1
+                            animation: horizontalShow .5s both 1.2s
+                            -ms-animation: fadeIn .4s both 1.2s

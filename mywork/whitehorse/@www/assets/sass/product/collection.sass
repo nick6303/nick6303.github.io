@@ -1,0 +1,45 @@
+#product.collection main
+    padding: 80px 0 0 0
+    @media all and (max-width: 700px)
+        padding: 55px 0 0 0
+    .banner 
+        &:before 
+            +sideLine_before
+        &:after 
+            +sideLine_after
+    .content
+        margin-top: 100px
+        &:before 
+            +sideLine_before
+        &:after 
+            +sideLine_after
+        ._title
+            +flex-center
+            flex-direction: column
+            padding: 0 50px
+            text-align: center
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            h6
+                font-size: px(42)
+                line-height: 1
+                margin-bottom: 20px
+                animation: fadeInDown 1s both .4s
+                @media all and (max-width: 700px)
+                    font-size: px(36)
+            p
+                max-width: 350px
+                font-size: px(14)
+                font-family: MyriadPro-Regular,微軟正黑體
+                animation: fadeInDown 1s both .6s
+        .boxs
+            margin-top: 100px
+            margin-bottom: 180px
+            @media all and (max-width: 700px)
+                margin-top: 60px
+                margin-bottom: 100px
+            .area
+                &:nth-child(odd)
+                    padding: 70px 0 0
+                &:nth-child(even)
+                    padding: 0

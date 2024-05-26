@@ -1,0 +1,59 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var anchor = [
+        "ALL",
+        "Residential",
+        "Commercial",
+        "Building",
+        "Public",
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#project.index
+    include ../layout/_header.pug
+    
+    main
+        article.content
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg4_1920_1080.jpg" alt="")
+            section._title
+                div
+                    ._text
+                        h6 Projects
+                        p Welcome to contact us, or leave your comment, related inquiries, there’ll be someone to serve.
+                    .anchor
+                        ul
+                            each item in anchor
+                                li(class=(item == anchor[0])?"active":"" , onclick="product.anchor(this)")
+                                    p=item
+            section.list
+                - for(var i =5;i<16;i++)
+                    .box
+                        figure
+                            img.b-lazy(src=blazy data-src=("../../upload/fa2/project/rowImg"+i+"_1590_915.jpg"), alt="")
+                        ._text
+                            p Dengyang Yixiyun
+                        a(href="../project/detail.html")
+    include  ../layout/_footer.pug
++script
+
+|
+|
+</html>

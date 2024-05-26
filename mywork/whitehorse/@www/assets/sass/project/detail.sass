@@ -1,0 +1,223 @@
+#project.detail main article.content
+    // height: 100vh
+    padding: 80px 0 0 
+    @media (max-width: 700px)
+        padding: 40px 0 0 
+    &:before 
+        +sideLine_before
+    &:after 
+        +sideLine_after
+    .background
+        opacity: 1
+    .tag
+        max-width: 1700px
+        width: 100%
+        height: 40px
+        margin: auto
+        display: flex
+        letter-spacing: 0.5px
+        line-height: 1
+        padding: 0 9.375vw
+        overflow: hidden
+        @media (min-width: 1921px)
+            padding: 0 180px
+        @media (max-width: 700px)
+            padding: 0 5vw
+            justify-content: center
+        &>*
+            animation: slideInDown 1s both 1.2s
+        .type
+            font-size: px(16)
+            font-weight: bold
+            font-family: 'FuturaPT-Bold',微軟正黑體
+            display: flex
+            align-items: center
+            height: 100%
+            &:after
+                +fakeLine(6px,15px,#32b16c)
+                margin: 0 15px
+        .year
+            font-size: px(14)
+            color: rgba(0,0,0,.8)
+            display: flex
+            align-items: center
+            height: 100%
+            font-family: 'FuturaPT-Medium',微軟正黑體
+    ._slick
+        width: 100%
+        padding: 0 8.8vw 
+        margin: auto
+        position: relative
+        margin: 0 0 55px
+        @media (min-width: 1921px)
+            padding: 0 170px 
+        @media (max-width: 1024px)
+            margin: 0 0 60px
+            padding: 0 60px
+        @media (max-width: 700px)
+            padding: 0 20px
+            margin: 0 0 40px
+        &>ul
+            opacity: 0
+            &.slick-slider
+                animation: fadeIn 1s both
+            li
+                picture
+                    display: block
+                    position: relative
+                    width: 100%
+                    height: calc(100vh - 80px - 40px - 55px)
+                    overflow: hidden
+                    @media (max-width: 1024px) 
+                        height: calc(100vh - 180px)
+                    @media (max-width: 700px)
+                        height: calc(100vh - 126px)
+                    img
+                        width: 100%
+                        position: absolute
+                        top: 50%
+                        left: 50%
+                        transform: translate(-50%,-50%)
+                        @media (max-aspect-ratio: 132/80) and (min-width: 1025px),(max-aspect-ratio: 20/27) and (max-width: 1024px)
+                            height: 100%
+                            width: auto
+                            max-width: none
+            .slick-dots
+                bottom: -35px
+                justify-content: flex-end
+                padding: 0 15px 0 0
+                animation: fadeIn 1s both 2s
+                @media (max-width: 1024px) 
+                    animation: fadeIn 1s both 1.2s
+                @media (max-width: 700px)
+                    padding: 0
+                    bottom: -25px
+        .arrows button
+            +slickArrow
+            top: calc(50% - 20px)
+            background-color: transparent
+            &.icon-triangle_left
+                left: 55px
+                animation: fadeInRight 1s both 1s
+            &.icon-triangle_right
+                right: 55px
+                animation: fadeInLeft 1s both 1s
+        .about
+            padding: 10px 40px 10px 50px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            @media (min-width: 1921px)
+                left: 170px
+            @media (min-width: 1025px)
+                position: absolute
+                bottom: 0
+                left: 8.8vw
+                background-color: rgba(240, 240, 240,.8)
+                max-width: 890px
+                min-width: 500px
+                min-height: 70px
+                transition: all .6s ease
+                animation: fadeInUp 1s both 1.2s
+                @media (max-width: 1080px) 
+                    max-width: 82.4vw
+                &.open
+                    padding: 20px 40px 20px 50px
+                    // transition: all .5s ease .5s
+                    transition: all .5s ease
+                    .Pbox
+                        margin: 15px 0 0 
+                        // width: 800px
+                        // width: 440px
+                        // height: 110px
+                        height: 230px
+                        // transition: width .6s ease,height .5s ease .5s,margin-top .5s ease .5s
+                        transition: height .7s ease,margin-top .7s ease
+                        @media (max-width: 1080px)
+                            width: calc(82.4vw - 90px)
+                    button
+                        height: 60px
+                        span
+                            transform: rotateX(180deg)
+                            // transition: all .8s ease .5s
+                            transition: all .8s ease
+                        p:nth-of-type(1)
+                            display: none
+                        p:nth-of-type(2)
+                            display: block
+            @media (max-width: 1024px)
+                margin: 80px 0 0
+                padding: 10px
+                &.show
+                    h2
+                        animation: fadeInDown 1s both 
+                    .Pbox p
+                        animation: fadeInUp 1.2s both 
+            @media (max-width: 700px)
+                padding: 5px
+            h2
+                font-size: px(32)
+                @media (max-width: 1024px)
+                    opacity: 0
+            .Pbox 
+                @media (min-width: 1025px)
+                    margin: 0
+                    // width: 0
+                    width: 440px
+                    height: 0
+                    overflow-y: auto
+                    overflow-x: hidden
+                    // transition: width .8s ease .5s,height .6s ease,margin-top .6s ease
+                    transition: height .7s ease,margin-top .7s ease
+                    .mCSB_inside>.mCSB_container
+                        margin-right: 10px
+                    .mCSB_scrollTools
+                        width: 10px
+                        .mCSB_draggerRail
+                            background-color: transparent
+                        .mCSB_dragger .mCSB_dragger_bar
+                            width: 2px
+                            background-color: #878787
+                @media (max-width: 1080px)
+                    width: calc(82.4vw - 90px)
+                @media (max-width: 1024px)
+                    margin: 15px 0 0 
+                p
+                    font-size: px(15)
+                    font-family: 'MyriadPro-Regular',微軟正黑體
+                    // color: #999999
+                    color: #737373
+                    letter-spacing: 0.5px
+                    @media (max-width: 1024px)
+                        opacity: 0
+            button
+                position: absolute
+                top: 0
+                right: 0
+                +flex-center
+                height: 70px
+                padding: 0 25px 0 20px
+                border: none
+                // background-color: #dcdcdc
+                background-color: rgba(176, 176, 176,.7)
+                
+                transition: all 1s ease
+                @media (max-width: 1024px)
+                    display: none
+                span
+                    margin: 0 15px 0 0
+                    font-size: px(17)
+                    transition: all .6s ease
+                    &:before
+                        display: block
+                        transform: rotate(-90deg)
+                p
+                    text-transform: uppercase
+                    font-size: px(13)
+                    font-family: 'FuturaPT-Book',微軟正黑體
+                    letter-spacing: 1px
+                    line-height: 1
+                    &:nth-of-type(1)
+                        display: block
+                    &:nth-of-type(2)
+                        display: none

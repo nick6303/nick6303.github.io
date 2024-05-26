@@ -1,0 +1,420 @@
+#news.detail
+    .bg
+        +bg
+        z-index: -2
+    main
+        padding: 180px 0 0
+        @media all and (max-width: 1279px)
+            position: relative
+            padding: 100px 0 0
+        &:before 
+            +sideLine_before
+            z-index: -1
+        &:after 
+            +sideLine_after
+            z-index: -1
+        .bg
+            +bg
+            z-index: -2
+    .newsContent
+        padding: 0 8.8vw 
+        position: relative
+        @media all and (max-width: 1024px)
+            padding: 0 5vw
+        .category
+            padding: 190px 80px 100px
+            @media all and (max-width: 1279px)
+                padding: 0 0 50px
+                +flex-center
+                ul
+                    display: none
+                .box:after
+                    position: absolute
+                    bottom: 0 
+                    left: 50%   
+                    transform: translateX(-50%)
+                    +fakeLine(0%,1px,#000)
+                    animation: w100 0.8s both 1s 
+                    opacity: 1
+                &.fixed .box:after
+                    opacity: 0
+            @media all and (min-width: 1280px)
+                select,.icon-uniE903
+                    display: none
+            select
+                font-family: FuturaPT-Book, 微軟正黑體
+                appearance: none
+                border: none
+                background-color: transparent
+                font-size: px(20)
+                color: rgba(0,0,0,.8)
+                line-height: 1.5
+                padding: 0 40px 0 10px
+                height: 100%
+                text-align: center
+                animation: fadeInDown 0.8s both .4s
+                &:after
+                    font-family: 'icomoon'
+                    content: "\e903"
+            .icon-uniE903
+                font-size: px(20)
+                animation: fadeInDown 0.8s both .4s
+                margin-left: -20px
+        .ajaxBox
+            +flex-right
+            @media all and (max-width: 1279px)
+                margin-top: 50px
+            .box
+                .textOnly
+                    overflow: hidden 
+                    &.show
+                        .date
+                            animation: slideInDown 1s both 
+                        ._text
+                            animation: fadeInDown 1.2s both 
+                        &:hover
+                            ._text span
+                                width: 50px
+                                height: 50px
+                                opacity: 1
+                                &:before
+                                    width: 15px
+                                    transition: all .4s ease .2s
+                                &:after
+                                    height: 15px
+                                    transition: all .4s ease .2s
+                    .date
+                        transform: translateX(102%)
+                        position: relative
+                        z-index: 1
+                    ._text
+                        opacity: 0
+                        background-size: cover
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url("../../upload/fa2/news/detail/text_bg1.jpg")
+                .date
+                    font-family: FuturaPT-Medium,微軟正黑體
+                    font-size: px(13)
+                    letter-spacing: 0.5px
+                    display: flex
+                    align-items: center
+                    .year
+                        &:first-child
+                            display: flex
+                            &:after
+                                content: "●"
+                                font-size: px(12)
+                                +flex-center
+                                transform: scale(0.4)
+                                margin: 0 2px
+                        &:last-child
+                            display: flex
+                            &:before
+                                content: ","
+                                +flex-center
+                                margin: 0 4px 0 0
+                    .day
+                        display: flex
+                        align-items: center
+                        &:first-child
+                            margin-right: 5px
+                        &:last-child
+                            display: flex
+                            &:before
+                                content: "●"
+                                font-size: px(12)
+                                +flex-center
+                                transform: scale(0.4)
+                                margin: 0 2px
+    .box.type1
+        max-width: 970px
+        width: 57.2vw
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        @media all and (max-width: 1279px)
+            width: 100% 
+        @media all and (max-width: 1024px) and (min-width: 701px)
+            padding: 0 3.3vw
+        &.out
+            .textOnly
+                .date,._text
+                    animation: fadeOutUp .8s both !important
+            .hasImg
+                .date,._text h6,._text p,figure
+                    animation: fadeOutUp .8s both !important
+        .hasImg,.textOnly
+            width: calc(50% - 80px)
+            margin-bottom: 120px
+            cursor: pointer
+            position: relative
+            @media all and (max-width: 1700px)
+                width: calc(50% - 4.7vw)
+            @media all and (max-width: 700px)
+                width: 100%
+                margin-bottom: 70px
+            @media all and (min-width: 701px)
+                &:first-child
+                    width: 100%
+                    transform: translateX(-30px)
+                &:nth-child(4n+2),
+                &:nth-child(4n+3)
+                    transform: translateX(30px)
+                &:nth-child(4n+4),
+                &:nth-child(4n+5)
+                    transform: translateX(-30px)
+                &:nth-child(4n+2),
+                &:nth-child(4n+4)
+                    margin-top: 30px
+            ._text
+                h6
+                    font-size: px(22)
+                    margin: 0 0 15px
+                    line-height: 1.2
+                p
+                    font-size: px(15)
+                    color: rgba(0,0,0,.8)
+                    font-family: MyriadPro-Regular,微軟正黑體
+            .date
+                position: absolute
+                top: 0
+                right: 0
+        .hasImg
+            overflow: hidden
+            &.show.in 
+                figure
+                    animation: fadeInLeft 1.4s both 
+                ._text 
+                    h6
+                        animation: fadeInUp 1.2s both .8s
+                    p 
+                        animation: fadeInUp 1.2s both 1s
+                .date
+                    animation: slideInDown 1.2s both 1.2s
+                &:hover
+                    figure .hoverBox 
+                        opacity: 1
+                        span
+                            width: 50px
+                            height: 50px
+                            &:before
+                                width: 15px
+                                transition: all .4s ease .2s 
+                            &:after
+                                height: 15px
+                                transition: all .4s ease .2s 
+                    figure img
+                        transform: scale(1.05)
+            figure
+                position: relative
+                overflow: hidden
+                opacity: 0
+                img
+                    transition: all 1s ease 
+                .hoverBox
+                    +flex-center
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background-color: rgba(0,0,0,0.65)
+                    opacity: 0
+                    transition: all .4s ease
+                    span
+                        +cross(0px,0px)
+                        display: block
+                        border: 1px solid #ffffff
+                        border-radius: 50%
+                        transition: all .4s ease
+                        &:before
+                            +cross_before(0px,#fff)
+                            transition: all .4s ease
+                        &:after
+                            +cross_after(0px,#fff)
+                            transition: all .4s ease
+            ._text
+                padding: 20px 5px 0
+                h6,p
+                    opacity: 0
+            .date
+                padding: 10px 15px
+                background-color: #fff
+                transform: translateY(-101%)
+            &:first-child
+                display: flex
+                @media all and (max-width: 700px)
+                    display: block
+                figure
+                    width: 64%
+                    @media all and (max-width: 700px)
+                        width: 100%
+                ._text
+                    width: 36%
+                    +flex-center
+                    flex-direction: column
+                    padding-left: 45px
+                    @media all and (max-width: 700px)
+                        width: 100%
+                        padding: 20px 5px 0
+                        align-items: flex-start
+                .date
+                    right: 36%
+                    @media all and (max-width: 700px)
+                        right: 0
+        .textOnly
+            &:first-child
+                ._text
+                    padding: 100px 50px 120px 80px
+                    @media all and (max-width: 700px)
+                        padding: 60px 10px 120px 5vw
+            .date
+                color: rgba(0,0,0,.7)
+                background-color: #dcdcdc
+                justify-content: flex-end
+                font-size: px(14)
+                width: 100%
+                padding: 15px 25px
+                @media all and (max-width: 700px)
+                    padding: 15px 5vw
+            ._text
+                padding: 100px 10px 120px 30px
+                position: relative
+                background-color: #fff
+                @media all and (max-width: 700px)
+                    padding: 60px 10px 120px 5vw
+                span
+                    bottom: 60px
+                    left: 50%
+                    transform: translate(-50%,50%)
+                    display: block
+                    +cross(0px,0px)
+                    position: absolute
+                    border: 1px solid #c0c0c0
+                    border-radius: 50%
+                    transition: all .4s ease
+                    opacity: 0
+                    @media all and (max-width: 700px)
+                        opacity: 1
+                        width: 50px
+                        height: 50px
+                    &:before
+                        +cross_before(0px,#000)
+                        transition: all .4s ease
+                        @media all and (max-width: 700px)
+                            width: 15px
+                    &:after
+                        +cross_after(0px,#000)
+                        transition: all .4s ease
+                        @media all and (max-width: 700px)
+                            height: 15px
+    .box.type2
+        max-width: 1020px
+        width: 57.2vw
+        padding: 0 0 60px
+        display: flex
+        flex-wrap: wrap
+        @media all and (max-width: 1279px)
+            width: 100%
+            max-width: none
+        &.out
+            .hasImg
+                figure img,.date,._text
+                    animation: fadeOutUp .8s both !important
+            .textOnly
+                .date,._text
+                    animation: fadeOutUp .8s both !important
+        .hasImg,.textOnly
+            width: calc(33.33% - 40px)
+            margin-bottom: 110px
+            cursor: pointer
+            @media all and (max-width: 1780px)
+                width: calc(33.33% - 2.2vw) 
+            @media all and (max-width: 900px)
+                width: calc(50% - 2.5vw) 
+                margin-bottom: 80px
+            @media all and (max-width: 700px)
+                width: 100%
+            &:nth-child(3n+1)
+                margin-right: 60px
+                @media all and (max-width: 1780px)
+                    margin-right: 3.3vw
+                @media all and (max-width: 900px)
+                    margin-right: 0
+            &:nth-child(3n+2)
+                margin-top: 30px
+                margin-right: 60px
+                @media all and (max-width: 1780px)
+                    margin-right: 3.3vw
+                @media all and (max-width: 900px)
+                    margin-right: 0
+                    margin-top: 0
+            &:nth-child(odd)
+                @media all and (max-width: 900px) and (min-width: 701px)
+                    margin-right: 5vw
+            &:nth-child(even)
+                @media all and (max-width: 900px) and (min-width: 701px)
+                    margin-top: 30px
+            ._text
+                h6
+                    font-size: px(19)
+                    line-height: 1.2
+                p
+                    font-size: px(14)
+                    font-family: MyriadPro-Regular,微軟正黑體
+                    color: rgba(0,0,0,.8)
+        .hasImg
+            &.show.in
+                figure
+                    @media all  and (min-width: 1025px)
+                        img
+                            animation: fadeIn 0s both .72s
+                        span 
+                            animation: out 0s both 1.8s
+                            &:before 
+                                animation: imgSpan 1.8s both 
+                    @media all  and (max-width: 1024px)
+                        img
+                            animation: fadeInLeft 1.4s both
+                .date
+                    animation: fadeInUp 1s both 0.8s
+                ._text
+                    animation: fadeInUp 1s both 1s
+            figure
+                position: relative
+                overflow: hidden
+                img
+                    opacity: 0
+                span 
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    position: absolute
+                    z-index: 1
+                    display: block
+                    overflow: hidden
+                    &:before 
+                        +fakeLine(0, 101%, #dcdcdc) width: 0%
+                        height: 101%
+                        top: -1px
+                        left: -1px
+            .date,._text
+                padding-left: 10px
+                opacity: 0
+            .date
+                margin: 15px 0 5px
+                color: rgba(0,0,0,.6)
+        .textOnly
+            .date
+                padding: 10px 20px
+                color: rgba(0,0,0,.5)
+                background-color: #dcdcdc
+            ._text
+                padding: 80px 10px 70px 20px
+                background-color: #fff
+                @media all and (max-width: 900px)
+                    padding: 60px 10px 50px 20px
+                h6
+                    margin-bottom: 20px

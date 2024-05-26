@@ -1,0 +1,254 @@
+
+-
+    var searchDropDown = [
+        {
+            title:"Application",
+            ul:["Brick wall","Brick "]},
+        {
+            title:"Size",
+            ul:["15 x 15","30 x 15","30 x 20","30 x 60","30 x 120","30 x 15","30 x 20","30 x 60"]},
+        {
+            title:"Texture",
+            ul:["Wood grain","Stone pattern","Geometric","Other"]},
+        {
+            title:"Type",
+            ul:["Porcelain tile","Exterior wall tile","Glazed wall tile","Fittings","Outdoor tile"]
+        },
+    ]
+
+    var classification = [
+        {
+            branch:[
+                {
+                    title:"Collection",
+                    titleLink:"../product/collection.html",
+                    ul:["Porcelain tile","Exterior wall tile","Glazed wall tile","Fittings","Outdoor tile"],
+                    ulLink:"../product/sort.html"},
+                {
+                    title:"Space aspect",
+                    titleLink:"../space/index.html",
+                    ul:["Living room","Bedroom","Bathroom","Kitchen"],
+                    ulLink:"../space/detail.html"},
+                {
+                    title:"Style aspect",
+                    titleLink:"../style/index.html",
+                    ul:["Japanese","French","Nordic life","Industry","Industry "],
+                    ulLink:"../style/detail.html"},
+                {
+                    title:"Size type",
+                    titleLink:"javascript:void(0)",
+                    ul:["30 x 30","60 x 60","90 x 25","120 x 60","120 x 30","200 x 60"],
+                    ulLink:"../search/index.html"}
+            ]
+        },
+        {
+            branch:[
+                {
+                    title:"Collection",
+                    titleLink:"../product/collection.html",
+                    ul:["Porcelain tile","Exterior wall tile"],
+                    ulLink:"../product/sort.html"},
+                {
+                    title:"Space aspect",
+                    titleLink:"../space/index.html",
+                    ul:["Living room","Bedroom","Bathroom"],
+                    ulLink:"../space/detail.html"},
+                {
+                    title:"Style aspect",
+                    titleLink:"../style/index.html",
+                    ul:["Japanese","French","Nordic life"],
+                    ulLink:"../style/detail.html"},
+                {
+                    title:"Size type",
+                    titleLink:"javascript:void(0)",
+                    ul:["30 x 30","60 x 60","90 x 25"],
+                    ulLink:"../search/index.html"}
+            ]
+        }
+    ]
+
+
+header
+    article.content.bgColor(style="background-color:#000")
+        section.logo
+            a.normalLogo(href="../home/index.html")
+                img(src="../../assets/img/hd_logo_140_15.png" alt="")
+                img(src="../../assets/img/hd_logoB_140_15.png" alt="")
+            // 後端請注意: 分館圖片放置區
+            a.branchLogo(href="../branch/index.html")
+                //後端請注意: 請下方填入分館的logo圖片
+                img(src="../../assets/img/devannoLogo.png" alt="")
+                img(src="../../assets/img/devannoLogoB.png" alt="")
+        section.openMenu
+            div 
+                span 
+                span 
+                span 
+            p MENU
+        section.buttons
+            ul
+                li.search
+                    div.openSearch
+                        span.icon-magnifier
+                        p SEARCH
+                li.language
+                    div
+                        span.icon-internet
+                        p LANGUAGE
+                        ul
+                            li
+                                a(href=java) 中文
+                            li
+                                a(href=java) English
+                li.login
+                    a(href="../favorite/index.html")
+                        span.icon-heart
+                        p FAVORITE LIST
+                li.backHome
+                    a.branchToHome(href="../home/index.html")
+                        span.icon-backArrow
+                        p BACK 
+                            span BRANDS
+    article.hd_menu
+        section
+            .left(style="background-image: url('../../assets/img/menuBg_1310_580.jpg')")
+                .logos
+                    a.active(href="javascript:void(0)")
+                        figure
+                            img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo.png", alt="")
+                            img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo2.png", alt="" )
+                    a(href="javascript:void(0)")
+                        figure
+                            img(src="../../upload/fa2/sitemap/devannoLogo.png", alt="" )
+                            img(src="../../upload/fa2/sitemap/devannoLogo2.png", alt="")
+                .productLink  
+                    // 後端請注意: 如果要開啟下方的box 就加上class "active"
+                    each item in classification
+                        .box(class=(item==classification[0])?"active":"")
+                            .productIndex
+                                a(href="../product/index.html")
+                                    p Product
+                            nav( itemscope itemtype="https://schema.org/Product")
+                                each val in item.branch
+                                    .classify
+                                        .index
+                                            p(itemprop="category")=val.title
+                                                a(href=val.titleLink,itemprop="url")
+                                                if (val.title=="Size type")
+                                                    b (cm)
+                                        ul  
+                                            li
+                                                a(href=val.titleLink) OVERVIEWS
+                                            each item in val.ul
+                                                li(itemprop="name")
+                                                    a(href=val.ulLink, itemprop="url")=item
+            .right
+                .logos(itemscope itemtype="http://schema.org/LocalBusiness") 
+                    a.active(href="../home/index.html" itemprop="url")
+                        figure
+                            img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo.png", alt="" itemprop="image")
+                nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                    a(href="../contact/index.html" itemprop="url")
+                        p(itemprop="name") Contact
+                    a(href="../storeHold/index.html" itemprop="url")
+                        p(itemprop="name") Location
+                    a(href="../QA/index.html" itemprop="url")
+                        p(itemprop="name") FAQ
+                    a(href="../sitemap/index.html" itemprop="url")
+                        p(itemprop="name") Site map
+                    a(href="../favorite/index.html" itemprop="url")
+                        p(itemprop="name") Favorite list
+                .buttons
+                    button.openSearch(type="button")
+                        span.icon-magnifier
+                        p Search 
+                    button(type="button")
+                        span.icon-internet
+                        p Language
+                        ul
+                            li
+                                a(href="https://tw.yahoo.com/") 中文
+                            li
+                                a(href=java) English
+            .liboxClose
+                span
+                p BACK
+    //- article.searchLibox  
+    //-     section
+    //-         .liboxClose
+    //-             span
+    //-             p BACK
+    //-         ._title Select filter or enter keyword to search -
+    //-         form
+    //-             .dropDowns
+    //-                 each val in searchDropDown
+    //-                     .dropDown
+    //-                         .selectMenu
+    //-                             p=val.title
+    //-                         ul
+    //-                             if (val == searchDropDown[3] || val == searchDropDown[2])
+    //-                                 each item in val.ul
+    //-                                     .box
+    //-                                         h6=item.branch
+    //-                                         each x in item.li
+    //-                                             li=x
+    //-                             else
+    //-                                 each item in val.ul
+    //-                                     li=item
+    //-             p *If multiple keywords, separate them with commas.
+    //-             .input
+    //-                 input(type="text" placeholder="Please key in the keyword .ex : textA, textB" data-RWDPlaceholder="Keyword .ex : textA, textB")
+    //-                 button(type="reset")
+    //-                     span.icon-reset
+    //-             .keyword
+    //-                 p Keyword :
+    //-                 ul
+    //-                     li 30x30
+    //-                     li Japanese style
+    //-                     li 0C1504
+    //-                     li 0C15022
+    //-                     li 0B7504
+    //-             // 後端請注意: 下方onclick僅示意用 記得要移除
+    //-             button(type="button" onclick="location.href='../search/index.html'")
+    //-                 span.icon-magnifier
+    //-                 p Search
+    article.searchLibox  
+        section
+            .left
+                ._title
+                    p Please select filter condition (can be checked)-
+                form
+                    each item in searchDropDown
+                        .type
+                            h6=item.title
+                            ul  
+                                each val in item.ul
+                                    li
+                                        input(type="checkbox" name=item.title)
+                                        label
+                                            span
+                                            p=val
+                    .buttons
+                        // 後端請注意: 下方onclick僅示意用 記得要移除
+                        button(type="button" onclick="SearchPage();")
+                            span.icon-magnifier
+                            p Search
+            .right
+                ._title
+                    p If multiple keywords, separate them with commas.
+                form
+                    input(type="text" placeholder="Please key in the keyword." data-RWDPlaceholder="")
+                    button(type="reset")
+                        span.icon-X
+                    // 後端請注意: 下方onclick僅示意用 記得要移除
+                    button(type="button" onclick="SearchPage();")
+                        span.icon-magnifier
+                .keyword
+                    p Example Keyword
+                    ul
+                        li 30x30
+                        li Japanese style
+                        li 0C1504
+            .liboxClose
+                span
+                p BACK

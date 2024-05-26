@@ -1,0 +1,125 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var breadcrumb =[
+        {name:"products",link:"../product/index.html"},
+        {name:"Collection",link:"../product/collection.html"},
+        {name:"Glazed wall tile",link:"../product/sort.html"}
+    ]
+
+    var series = [
+        {
+            name:"Freya series",
+            description:"",
+            smallImg:"../../upload/fa2/product/sort/smallImg1_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg1_1310_655.jpg",
+            newOne:"false"
+        },
+        {
+            name:"Diana series",
+            description:"Through the R&D team , it is carved into abeautiful and beautiful picture.Through the R&D team , it is carved into abeautiful and beautiful picture.Through the R&D team , it is carved into abeautiful and beautiful picture.",
+            smallImg:"../../upload/fa2/product/sort/smallImg2_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg2_1310_655.jpg",
+            newOne:"true"
+        },
+        {
+            name:"Cameo series",
+            description:"",
+            smallImg:"../../upload/fa2/product/sort/smallImg3_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg3_1310_655.jpg",
+            newOne:"true"
+        },
+        {
+            name:"Claro series",
+            description:"Inspired by natural stone and native wood,it swims in a natural atmosphere.",
+            smallImg:"../../upload/fa2/product/sort/smallImg4_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg4_1310_655.jpg",
+            newOne:"false"
+        },
+        {
+            name:"Ebenezar series",
+            description:"Inspired by natural stone and native wood,it swims in a natural atmosphere.",
+            smallImg:"../../upload/fa2/product/sort/smallImg5_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg5_1310_655.jpg",
+            newOne:"false"
+        },
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#product.sort(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article.banner 
+            // 麵包屑 SEO結構化標籤
+            section.breadcrumb
+                ul(itemscope itemtype="https://schema.org/Product")
+                    each val in breadcrumb
+                        li(itemprop="name")
+                            if val==breadcrumb[2]
+                                h1
+                                    a(href=val.link itemprop="url")=val.name
+                            else
+                                a(href=val.link itemprop="url")=val.name
+                                span.bgColor
+            section._img
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小
+                    source(srcset="../../upload/fa2/product/sort/bannerImgRWD_1000_1300.jpg" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1800_940
+                    img(src="../../upload/fa2/product/sort/bannerImg_1800_650.jpg" alt="")
+                // 後端請注意: 此處文字位置有兩種  請在下方div加上相對應的class
+                    1.左 left
+                    2.右 right
+                // 後端請注意: 須讓客戶選擇文字顏色
+                ._title.left(style="color:#fff")
+                    h2 Glazed wall tile
+                    span.bgColor
+                    p Natural texture lines and warm tones soften the spaceand create a harmonious and moving posture.
+            section.scrollDown 
+                span
+                p SCROLL
+                //- h6 overview
+                //- p Provide the real material to ensure the best tiles
+        article.content
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/product/series/recommendBg_1920_1080.jpg" alt="")
+            ul
+                each val in series
+                    // 後端請注意: 如果是新品要標示的話 在下方的li加上class "newOne"
+                    li(class=(val.newOne=="true")?"newOne":"")
+                        a(href="../product/series.html")
+                            figure
+                                // 圖片建議大小 640*490
+                                img.small.b-lazy(src=blazy data-src=val.smallImg, alt="")
+                                // 圖片建議大小 1310*655
+                                img.big.b-lazy(src=blazy data-src=val.bigImg, alt="")
+                            .bgColor
+                                span    
+                            // 後端請注意: 下方文字顏色需讓客戶決定
+                            ._text(style="color:#fff")
+                                h3=val.name
+                                p=val.description
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

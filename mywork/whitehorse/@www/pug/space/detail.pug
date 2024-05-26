@@ -1,0 +1,371 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var breadcrumb = [
+        {name:"products",link:"../product/index.html"},
+        {name:"Space aspect",link:"../space/index.html"},
+        {name:"Bathroom",link:"../space/detail.html"}
+    ]
+
+    var slick = [
+        {
+            white:"false",
+            img:"../../upload/fa2/space/detail/bannerImg_1800_945.jpg",
+            RWDImg:"../../upload/fa2/space/detail/bannerImgRWD_900_1200.jpg",
+            dataWidth:"10",
+            dataHeight:"8",
+            textPlace:"right_center",
+            textH2:"Bathroom space",
+            textP:"Natural texture lines and warm tones soften the spaceand create a harmonious and moving posture.",
+            anchor: [
+                {
+                    place:"70",
+                    numb:"0C63016",
+                    name:"Claro series"
+                },
+                {
+                    place:"70",
+                    numb:"0C63016",
+                    name:"Claro series"
+                }
+            ]
+        },
+        {
+            white:"true",
+            img:"../../upload/fa2/space/detail/bannerImg2_1800_945.jpg",
+            RWDImg:"../../upload/fa2/space/detail/bannerImgRWD2_900_1200.jpg",
+            dataWidth:"3",
+            dataHeight:"3",
+            textPlace:"middle_top",
+            textH2:"Bathroom space",
+            textP:"Natural texture lines and warm tones soften the spaceand create a harmonious and moving posture.",
+            anchor: [
+                {
+                    place:"9",
+                    numb:"0C63019",
+                    name:"Claro series"
+                },
+                {
+                    place:"70",
+                    numb:"0C63016",
+                    name:"Claro series"
+                }
+            ]
+        }
+    ]
+
+
+    var product = [
+        {
+            number:"0C63016",
+            img:"../../upload/fa2/product/series/colletionImg1_280_280.jpg",
+            size:"60 x 60  cm",
+            newOne:"true"
+        },
+        {
+            number:"0C63017",
+            img:"../../upload/fa2/product/series/colletionImg2_400_200.jpg",
+            size:"30 x 60  cm",
+            newOne:"false"
+        },
+        {
+            number:"0C63018",
+            img:"../../upload/fa2/product/series/colletionImg3_330_330.jpg",
+            size:"80 x 80  cm",
+            newOne:"false"
+        },
+        {
+            number:"0C63019",
+            img:"../../upload/fa2/product/series/colletionImg4_470_110.jpg",
+            size:"25 x 90cm",
+            newOne:"true"
+        },
+        {
+            number:"0C63020",
+            img:"../../upload/fa2/product/series/colletionImg5_470_260.jpg",
+            size:"80 x 80  cm",
+            newOne:"true"
+        },
+        {
+            number:"0C63021",
+            img:"../../upload/fa2/product/series/colletionImg3_330_330.jpg",
+            size:"25 x 90cm",
+            newOne:"false"
+        },
+        {
+            number:"0C63022",
+            img:"../../upload/fa2/product/series/colletionImg1_280_280.jpg",
+            size:"60 x 60  cm",
+            newOne:"true"
+        },
+        {
+            number:"0C63023",
+            img:"../../upload/fa2/product/series/colletionImg2_400_200.jpg",
+            size:"30 x 60  cm",
+            newOne:"false"
+        },
+        {
+            number:"0C63024",
+            img:"../../upload/fa2/product/series/colletionImg3_330_330.jpg",
+            size:"80 x 80  cm",
+            newOne:"false"
+        },
+        {
+            number:"0C63025",
+            img:"../../upload/fa2/product/series/colletionImg4_470_110.jpg",
+            size:"25 x 90cm",
+            newOne:"true"
+        },
+        {
+            number:"0C63026",
+            img:"../../upload/fa2/product/series/colletionImg5_470_260.jpg",
+            size:"80 x 80  cm",
+            newOne:"true"
+        },
+        {
+            number:"0C63027",
+            img:"../../upload/fa2/product/series/colletionImg3_330_330.jpg",
+            size:"25 x 90cm",
+            newOne:"false"
+        },
+    ]
+
+    var space = [
+        {
+            name:"Bathroom",type:"Indoor series",
+            img:"../../upload/fa2/space/index/img1_600_850.jpg",
+            whiteOne:"true"},
+        {
+            name:"Living room",type:"Indoor series",
+            img:"../../upload/fa2/space/index/img2_600_850.jpg",
+            whiteOne:"false"},
+        {
+            name:"Bathroom",type:"Indoor series",
+            img:"../../upload/fa2/space/index/img3_600_850.jpg",
+            whiteOne:"false"},
+        {
+            name:"Living room",type:"Indoor series",
+            img:"../../upload/fa2/space/index/img4_600_850.jpg",
+            whiteOne:"false"},
+    ]
+
+
+    var series = [
+        {
+            name:"Freya series",
+            description:"",
+            smallImg:"../../upload/fa2/product/sort/smallImg1_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg1_1310_655.jpg",
+            newOne:"false"
+        },
+        {
+            name:"Diana series",
+            description:"Through the R&D team , it is carved into abeautiful and beautiful picture.Through the R&D team , it is carved into abeautiful and beautiful picture.Through the R&D team , it is carved into abeautiful and beautiful picture.",
+            smallImg:"../../upload/fa2/product/sort/smallImg2_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg2_1310_655.jpg",
+            newOne:"true"
+        },
+        {
+            name:"Cameo series",
+            description:"",
+            smallImg:"../../upload/fa2/product/sort/smallImg3_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg3_1310_655.jpg",
+            newOne:"true"
+        },
+        {
+            name:"Claro series",
+            description:"Inspired by natural stone and native wood,it swims in a natural atmosphere.",
+            smallImg:"../../upload/fa2/product/sort/smallImg4_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg4_1310_655.jpg",
+            newOne:"false"
+        },
+        {
+            name:"Ebenezar series",
+            description:"Inspired by natural stone and native wood,it swims in a natural atmosphere.",
+            smallImg:"../../upload/fa2/product/sort/smallImg5_640_490.jpg",
+            bigImg:"../../upload/fa2/product/sort/bigImg5_1310_655.jpg",
+            newOne:"false"
+        },
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#space.detail(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article.banner 
+            // 麵包屑 SEO結構化標籤
+            section.breadcrumb
+                ul(itemscope itemtype="https://schema.org/Product")
+                    each val in breadcrumb
+                        li(itemprop="name")
+                            if val==breadcrumb[2]
+                                h1
+                                    a(href=val.link itemprop="url")=val.name
+                            else
+                                a(href=val.link itemprop="url")=val.name
+                                span.bgColor
+            section._slick
+                ul
+                    each val in slick
+                        // 後端請注意: 須讓客戶選擇字的顏色 黑或白 如果是黑色字 不需做任何事 但如果是白色需在下方li加上class "white"
+                        // 後端請注意: 此處要讓客戶決定要把圖片區域怎麼切割 
+                            data-width為寬要分成幾塊  最多10
+                            data-height為高要分成幾塊 最多8
+                        li(class=(val.white=="true")?"white":"" ,data-width=val.dataWidth, data-height=val.dataHeight)
+                            picture
+                                //- // [if IE 9]><video style="display: none;"><![endif]
+                                //- // 後端請注意:手機圖片大小 900*1200
+                                //- source(srcset=val.RWDImg media="(max-width:1024px)")
+                                //- // 後端請注意:電腦圖片大小 1800*945
+                                //- img(src=val.img alt="")
+                                // [if IE 9]><video style="display: none;"><![endif]
+                                // 後端請注意:手機圖片大小 900*1200
+                                source(srcset="../../upload/fa2/style/detail/bannerImgRWD_900_1200.jpg" media="(max-width:1024px)")
+                                // 後端請注意:電腦圖片大小1800_650
+                                img(src="../../upload/fa2/style/detail/bannerImg_1800_650.jpg" alt="")
+                            //- // 後端請注意: 此處需要讓客戶選位置 總共有九個位置可選 請在下方div填上相對應的class
+                            //-     1.左上 left_top
+                            //-     2.中上 middle_top
+                            //-     3.右上 right_top
+                            //-     4.左中 left_center
+                            //-     5.中間 center
+                            //-     6.右中 right_center
+                            //-     7.左下 left_bottom
+                            //-     8.中下 middle_bottom
+                            //-     9.右下 right_bottom
+                            //- ._text(class=val.textPlace)
+                            //-     h2=val.textH2
+                            //-     p=val.textP
+                            //- each item in val.anchor
+                            //-     .anchorPoint(class=item.place)
+                            //-         div
+                            //-             //後端請注意: 下方span的background-color要讓客戶選顏色 預設的顏色為#707070
+                            //-             span(style="background-color: red")
+                            //-             p.numb=item.numb
+                            //-             p.name=item.name
+                            ._text
+                                h2=val.textH2   
+                                h6=val.textP 
+                                .inf
+                                    each item in val.anchor
+                                        .type
+                                            figure
+                                                img(src="../../upload/fa2/space/detail/img1_100_100.jpg", alt="")
+                                            .name
+                                                p=item.name
+                                            .numb
+                                                if (val == slick[0])
+                                                    -for(var i =0;i<12;i++)
+                                                        p=item.numb
+                                                else                                                
+                                                    -for(var i =0;i<2;i++)
+                                                        p=item.numb
+                .arrows
+                    button.left(type="button")
+                    button.right(type="button")
+            section.scrollDown
+                span
+                p SCROLL
+        article.content
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/product/series/recommendBg_1920_1080.jpg" alt="")
+            section._title
+                //- h5 space
+                h6 空間的推薦產品系列
+                    span.bgColor
+            ul
+                each val in series
+                    // 後端請注意: 如果是新品要標示的話 在下方的li加上class "newOne"
+                    li(class=(val.newOne=="true")?"newOne":"")
+                        a(href="../product/series.html")
+                            figure
+                                // 圖片建議大小 640*490
+                                img.small.b-lazy(src=blazy data-src=val.smallImg, alt="")
+                                // 圖片建議大小 1310*655
+                                img.big.b-lazy(src=blazy data-src=val.bigImg, alt="")
+                            .bgColor
+                                span    
+                            // 後端請注意: 下方文字顏色需讓客戶決定
+                            ._text(style="color:#fff")
+                                h3=val.name
+                                p=val.description
+        article.collection
+            section.background(style="background-color:#f5f5f5")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="" alt="")
+            section.content
+                .grid-sizer
+                //標題
+                .box._title
+                    h5 collection
+                    h6 Space item overview
+                        span.bgColor
+                    p Inspired by natural stone and native wood, it is designed to swim in the natural atmosphere; the fragrant flowers style.
+                // 產品內容開始
+                each val in product
+                    .box
+                        .block
+                            // 後端請注意:如果是新品的話 請在下方a加上class "newOne"
+                            a(class=(val.newOne=="true")?"newOne" :"" , href="../product/detail.html")
+                                //序號
+                                p.number=val.number
+                                figure
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                p.size=val.size
+        article.space
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg4_1920_1080.jpg" alt="")
+            section._title
+                h5 space
+                h6 Applicable place
+                    span.bgColor
+            section._slick
+                ul
+                    each val in space
+                        li
+                            a(href="../space/detail.html")
+                                figure
+                                    // 後端請注意:此處圖片與 space/index.html的圖片共用
+                                    img(data-lazy=val.img, alt="")
+                                // 後端請注意: 須讓客戶選擇文字顏色
+                                ._text(style=(val.whiteOne=="true")?"color:#fff":"")
+                                    p.name=val.name
+                                    p.tpye=val.type
+                                // 裝飾方塊
+                                span
+                .arrows
+                    span.icon-triangle_left
+                    span.icon-triangle_right
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

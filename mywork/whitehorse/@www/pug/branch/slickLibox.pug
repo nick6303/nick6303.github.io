@@ -1,0 +1,16 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- var img=["../../upload/fa2/branch/location/slickImg_1060_710.jpg","../../upload/fa2/branch/location/slickImg2_730_970.jpg"]
+
+
+section.liboxClose
+    span
+section._slick
+    ul
+        each val in img
+            li
+                img(data-lazy=val, alt="")
+    .arrows
+        span.icon-triangle_left
+        span.icon-triangle_right

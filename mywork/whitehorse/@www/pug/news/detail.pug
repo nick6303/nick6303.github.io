@@ -1,0 +1,58 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+//- 此頁自訂參數
+-var type=["Inspiration","New products","The space","Archived"]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#news.detail
+    include ../layout/_header.pug
+    
+    main
+        article.bg
+        article.newsContent
+            section.category
+                ._title
+                    p Latest news
+                    span ////////////////
+                .box
+                    ul
+                        // 後端請注意: data-src 請放入內容的ajsx路徑
+                        each item in type
+                            //- 第一個li要加active
+                            if item==type[0]
+                                li.active(data-src="inspiration.html")
+                                    p=item
+                            //- Archived
+                            else if item=="Archived"
+                                li(data-src="archived.html")
+                                    p=item
+                            else
+                                li(data-src="inspiration.html")
+                                    p=item
+                    select
+                        // 後端請注意: data-src 請放入內容的ajsx路徑
+                        each item in type
+                            if item=="Archived"
+                                option(value="archived.html")=item
+                            else
+                                option(value="inspiration.html")=item
+                    span.icon-uniE903
+            section.ajaxBox
+                include inspiration.pug
+                //- include archived.pug
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

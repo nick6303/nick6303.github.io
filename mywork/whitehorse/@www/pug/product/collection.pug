@@ -1,0 +1,134 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var breadcrumb =[
+        {name:"products",link:"../product/index.html"},
+        {name:"Collection",link:"../product/collection.html"},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#product.collection(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article.banner 
+            // 麵包屑 SEO結構化標籤
+            section.breadcrumb
+                ul(itemscope itemtype="https://schema.org/Product")
+                    each val in breadcrumb
+                        li(itemprop="name")
+                            if val==breadcrumb[1]
+                                h1
+                                    a(href=val.link itemprop="url")=val.name
+                            else
+                                a(href=val.link itemprop="url")=val.name
+                                span.bgColor
+        article.content
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/product/series/recommendBg_1920_1080.jpg" alt="")
+            section._title
+                h6 Products collection
+                p It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+            section.boxs
+                // 後端請注意:此處有三種模式
+                    1. 大 big  (建議圖片大小:780_680)
+                    2. 中 middle (建議圖片大小:790_340)
+                    3. 小 small (他如果要上小的圖 就要一次上兩個) (建議圖片大小:400_340)
+                .box.middle
+                    // 後端請注意: 如果是新品要標示的話 在下方的a連結加上class "newOne"
+                    .block
+                        a.newOne(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/product/collection/img1_790_340.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Porcelain tile
+                                span
+                                    i
+                .box.big
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/product/collection/img2_780_680.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Glazed wall tile
+                                span
+                                    i
+                .box.small
+                    // 後端請注意: 如果是新品要標示的話 在下方的a連結加上class "newOne"
+                    .block
+                        a.newOne(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/product/collection/img3_400_340.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Fittings
+                                span
+                                    i
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/product/collection/img4_400_340.jpg", alt="")
+                            .hoverbox(style="color:#fff")
+                                p Exterior wall tile
+                                span
+                                    i
+                .box.big
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/product/collection/img5_780_680.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Polished porcelain tile
+                                span
+                                    i
+                .box.middle
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/product/collection/img6_790_340.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Ceramic floor & wall tile
+                                span
+                                    i
+                .box.middle
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/product/collection/img7_790_340.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Outdoor tile
+                                span
+                                    i
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

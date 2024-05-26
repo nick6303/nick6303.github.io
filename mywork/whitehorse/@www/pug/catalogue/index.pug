@@ -1,0 +1,106 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+//- 此頁自訂參數
+-var type=["Annual catalogue","Series catalogue-White horse","Series catalogue-Devanno"]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#catalogue.index
+    include ../layout/_header.pug
+    
+    main
+        // 錨點連結
+        article.category
+            section._title
+                p Catalogue
+                span ////////////////
+            section.box
+                ul
+                    each item in type
+                        //- 第一個li要加active
+                        if item==type[0]
+                            li.active
+                                p=item
+                        //- Archived
+                        else if item=="Archived"
+                            li
+                                p=item
+                        else
+                            li
+                                p=item
+        // 主目錄
+        // 後端請注意: 主目錄只會有一個
+        article.annual
+            section.bg(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img(src="../../upload/fa2/QA/bg.jpg" alt="")
+            section.content
+                ul
+                    -for(var i = 1;i<5;i++)
+                        li
+                            a(href=java, target="_blank")
+                                figure
+                                    img.b-lazy(src=blazy data-src=("../../upload/fa2/catalogue/img"+i+"_400_560.jpg"), alt="")
+                                ._text
+                                    h6 2018 Devanno catalogue
+                                    p The Japanese texture is established to create awarm feeling in the lines of the job, and  good.
+        // 子目錄
+        // 後端請注意: 子目錄需可無限新增
+        article.series
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/catalogue/seriesBg_1920_1080.jpg" alt="")
+            section.content
+                ul
+                    -for(var i = 1;i<5;i++)
+                        li
+                            a(href=java , target="_blank")
+                                figure
+                                    img.b-lazy(src=blazy data-src="../../upload/fa2/product/series/bannerImg_1800_945.jpg", alt="")
+                                ._text
+                                    p.series Claro series
+                                    p.name Glazed wall tile
+        // 子目錄
+        // 後端請注意: 子目錄需可無限新增
+        article.series
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/QA/bg.jpg" alt="")
+            section.content
+                ul
+                    -for(var i = 1;i<5;i++)
+                        li
+                            a(href=java , target="_blank")
+                                figure
+                                    img.b-lazy(src=blazy data-src="../../upload/fa2/product/series/bannerImg_1800_945.jpg", alt="")
+                                ._text
+                                    p.series Claro series
+                                    p.name Glazed wall tile
+    
+    
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

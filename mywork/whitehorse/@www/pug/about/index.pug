@@ -1,0 +1,130 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    //- var unit = [
+    //-     {
+    //-         title:"The Brand",
+    //-         className:"brand",
+    //-         img:"../../upload/fa2/about/index/img1_1590_900.jpg",
+    //-         link:"../about/branch.html"},
+    //-     {
+    //-         title:"History",
+    //-         className:"history",
+    //-         img:"../../upload/fa2/about/index/img2_1590_900.jpg",
+    //-         link:"../about/history.html"},
+    //-     {
+    //-         title:"Our promise",
+    //-         className:"promise",
+    //-         img:"../../upload/fa2/about/index/img3_1590_900.jpg",
+    //-         link:"../about/promise.html"},
+    //-     {
+    //-         title:"Milestones",
+    //-         className:"milestones",
+    //-         img:"",
+    //-         link:"../about/milestonesAndAwards.html"},
+    //-     {
+    //-         title:"Awards & Recognition",
+    //-         className:"awards",
+    //-         img:"",
+    //-         link:"../about/milestonesAndAwards.html"},
+    //- ]
+
+    var unit = [
+        {
+            title:"History",
+            className:"history",
+            img:"../../upload/fa2/about/index/img1_790_340.jpg",
+            link:"../about/history.html",
+            whiteWords:"true"},
+        {
+            title:"Our promise",
+            className:"promise",
+            img:"../../upload/fa2/about/index/img2_790_340.jpg",
+            link:"../about/promise.html",
+            whiteWords:"true"},
+        {
+            title:"The Brand",
+            className:"small brand",
+            img:"../../upload/fa2/about/index/img3_394_340.jpg",
+            link:"../about/branch.html",
+            whiteWords:""},
+        {
+            title:"Milestones",
+            className:"milestones small",
+            img:"../../upload/fa2/about/index/img4_394_340.jpg",
+            link:"../about/milestonesAndAwards.html",
+            whiteWords:""},
+        {
+            title:"Awards & Recognition",
+            className:"awards",
+            img:"../../upload/fa2/about/index/img5_790_340.jpg",
+            link:"../about/milestonesAndAwards.html",
+            whiteWords:""},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#about.index
+    include ../layout/_header.pug
+
+    main
+        //- article.banner 
+        //-     section.bg
+        //-     section._img
+        //-         figure
+        //-             // 後端請注意:圖片大小1800_650
+        //-             img(src="../../upload/fa2/about/index/bannerImg_1800_650.jpg" alt="")
+        //-         // 後端請注意: 須讓客戶選擇文字顏色
+        //-         ._title(style="color:#fff")
+        //-             h2 About us
+        //-             span ////////////////
+        //-             p Embed art into life and close the family with beauty
+        //-     section.overview
+        //-         span
+        //-         h6 overview
+        //-         ul
+        //-             each val in unit
+        //-                 li(class=val.className)
+        //-                     p=val.title
+        //- article.content
+        //-     -for(var i = 0; i< 3;i++)
+        //-         section(class=(unit[i].className+ " row"))
+        //-             figure
+        //-                 img.b-lazy(src=blazy data-src=unit[i].img, alt="")
+        //-             ._text
+        //-                 h6=unit[i].title
+        //-                 p.words The White Horse logo is symbolic of love; the love between father and son.When the co-founder was pondering over...
+        //-                 //後端請注意: 下方data-src請填入ajax資料的位置
+        //-                 button.leanbutton.openAboutDetail(data-src=unit[i].link)
+        //-                     p Read more
+        //-     section.milestonesAndAwards.b-lazy(data-src='../../upload/fa2/about/index/img4_1920_760.jpg')
+        //-         -for(var i = 3; i< 5;i++)
+        //-             .box(class=unit[i].className)
+        //-                 h6=unit[i].title
+        //-                 p.words The White Horse logo is symbolic of love; the love between father and son. When the co-founder was ...
+        //-                 //後端請注意: 下方data-src請填入ajax資料的位置
+        //-                 button.leanbutton.openAboutDetail(data-src=unit[i].link)
+        //-                     p Read more
+        article.content
+            .bg
+            section
+                h2 About us
+                -for(var i = 0 ;i<unit.length;i++)
+                    .openAboutDetail(class=unit[i].className ,data-src=unit[i].link, data-area=((i-2)>0)?(i-3):"")
+                        figure
+                            img.b-lazy(src=blazy data-src=unit[i].img, alt="")
+                        p(style=(unit[i].whiteWords=="true")?"color:#fff":"")=unit[i].title
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

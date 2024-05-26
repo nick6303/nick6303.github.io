@@ -1,0 +1,161 @@
+#staff
+    form
+        +flex-center
+        flex-wrap: wrap
+        counter-reset: num
+        .box
+            margin: 20px 25px
+            counter-increment: num
+            +flex-center
+            flex-direction: column
+            h6
+                font-size: px(34)
+                margin: 0 0 10px 
+                display: flex
+                align-items: center
+                animation: fadeInUp 1s both .6s
+                @media all and (max-width: 1279px)
+                    font-size: px(30)
+                    margin: 0 
+                @media all and (max-width: 700px)
+                    font-size: px(28)
+                &:before
+                    content: counter(num) '. '
+                    font-family: FuturaPT-Demi,微軟正黑體
+                    font-size: px(26)
+                    color: #a4a4a4
+                    margin: 7px 5px 0 0
+                    @media all and (max-width: 1279px)
+                        font-size: px(22)
+                    @media all and (max-width: 700px)
+                        font-size: px(20)
+                        margin: 5px 5px 0 0
+            .dropDown
+                width: 215px
+                .selectMenu
+                    padding: 5px 10px 5px 0
+                    color: #fff
+                    background-color: $base_green
+                    animation: fadeInUp 1s both .6s
+                ul 
+                    max-height: 200px
+                    z-index: 99
+                    li
+                        padding: 5px 0
+                        line-height: 1.5
+        .buttons
+            width: 100%
+            +flex-center
+            margin: 30px 0 0
+            animation: fadeIn 2s both 1s
+            button
+                padding: 10px 0
+                +flex-center
+                border: none
+                background-color: transparent
+                font-size: px(15)
+                text-shadow: 0 0 30px #fff
+                span
+                    margin-right: 10px
+                p
+                    font-family: FuturaPT-Medium,微軟正黑體
+#staff.index 
+    footer
+        background-image: url("../../upload/fa2/staff/footerBg_1920_1080.jpg")
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+    main article
+        min-height: 100vh
+        padding: 80px 0 13vw
+        +flex-center
+        flex-direction: column
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        @media all and (min-width: 1921px)
+            padding: 60px 0 250px
+        @media all and (max-width: 1024px)
+            padding: 60px 0
+        ._title
+            +flex-center
+            flex-direction: column
+            text-align: center
+            .en
+                +title_en
+                animation: fadeInUp 1.2s both .2s
+            span
+                display: block
+                color: $base_green
+                margin: 20px 0 25px 0
+                font-size: px(12)
+                font-style: italic
+                letter-spacing: 0
+                animation: fadeInUp 1s both .4s
+            .words
+                max-width: 400px
+                animation: fadeInUp 1.2s both .6s
+        .form
+            margin: 4vw 0 0
+            @media all and (min-width: 1921px)
+                margin: 80px 0 0
+            form
+                +flex-center
+                flex-wrap: wrap
+                counter-reset: num
+                .box
+                    margin: 20px 25px
+                    counter-increment: num
+                    +flex-center
+                    flex-direction: column
+                    h6
+                        font-size: px(34)
+                        margin: 0 0 10px 
+                        display: flex
+                        align-items: center
+                        animation: fadeInUp 1s both .6s
+                        @media all and (max-width: 1279px)
+                            font-size: px(30)
+                            margin: 0 
+                        @media all and (max-width: 700px)
+                            font-size: px(28)
+                        &:before
+                            content: counter(num) '. '
+                            font-family: FuturaPT-Demi,微軟正黑體
+                            font-size: px(26)
+                            color: #a4a4a4
+                            margin: 7px 5px 0 0
+                            @media all and (max-width: 1279px)
+                                font-size: px(22)
+                            @media all and (max-width: 700px)
+                                font-size: px(20)
+                                margin: 5px 5px 0 0
+                    .dropDown
+                        width: 215px
+                        .selectMenu
+                            padding: 5px 10px 5px 0
+                            color: #fff
+                            background-color: $base_green
+                            animation: fadeInUp 1s both .6s
+                        ul 
+                            max-height: 200px
+                            z-index: 99
+                            li
+                                padding: 5px 0
+                                line-height: 1.5
+                .buttons
+                    width: 100%
+                    +flex-center
+                    margin: 30px 0 0
+                    animation: fadeIn 2s both 1s
+                    button
+                        padding: 10px 0
+                        +flex-center
+                        border: none
+                        background-color: transparent
+                        font-size: px(15)
+                        text-shadow: 0 0 10px rgba(255,255,255,.4)
+                        span
+                            margin-right: 10px
+                        p
+                            font-family: FuturaPT-Medium,微軟正黑體

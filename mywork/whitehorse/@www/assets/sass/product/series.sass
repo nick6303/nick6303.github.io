@@ -1,0 +1,783 @@
+#product.series main
+    ._title
+        h5
+            font-size: px(17)
+            color: rgba(0,0,0,.5)
+            font-family: FuturaPT-Bold,微軟正黑體
+            text-transform: uppercase
+            @media all and (max-width: 700px)
+                font-size: px(15)
+        h6
+            font-size: px(40)
+            @media all and (max-width: 1024px)
+                font-size: px(35)
+            @media all and (max-width: 700px)
+                font-size: px(30)
+        .bgColor
+            width: 55px
+            height: 2px
+            display: block
+        p
+            font-family: MyriadPro-Regular,微軟正黑體
+            font-size: px(16)
+    .banner 
+        padding: 75px 0 0 0
+        height: 100vh
+        position: relative
+        @media all and (max-width: 700px)
+            padding: 55px 0 0 0
+        &:before 
+            +sideLine_before
+        &:after 
+            +sideLine_after
+        &:before,&:after
+            top: auto
+            bottom: 0
+            height: 50%
+        ._img
+            position: relative
+            z-index: 2
+            height: calc(100% - 115px)
+            margin: 15px 3.125vw 0
+            overflow: hidden
+            @media all and (min-width: 1921px)
+                margin: 15px 60px 0
+            @media all and (max-width: 1024px)
+                height: calc(100% - 80px)
+            &:after
+                position: absolute
+                top: -100%
+                left: 0
+                transform: translateY(100%)
+                +fakeLine(100%,100%,#fff)
+                animation: allin 1.2s both
+            picture
+                position: relative
+                display: block
+                width: 100%
+                height: 100%
+                overflow: hidden
+                img
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                    @media all and (max-aspect-ratio: 63/40) and (min-width: 1025px)
+                        height: 100%
+                        max-width: unset
+                    @media all and (max-aspect-ratio: 11/16) and (max-width: 1024px)
+                        height: 100%
+                        max-width: unset
+            ._title
+                position: absolute
+                // top: 60%
+                top: 50%
+                // right: calc(50% + 40px)
+                right: 50%
+                // transform: translateY(-50%)
+                transform: translate(50%,-50%)
+                // max-width: 510px
+                // width: calc(50% - 30px)
+                width: 80%
+                +flex-left
+                @media all and (max-width: 1279px)
+                    // right: auto
+                    // left: 3.125vw
+                @media all and (max-height: 700px) and (min-width: 1025px)
+                    top: 50%
+                @media all and (max-width: 1024px)
+                    // width: auto
+                @media all and (max-width: 600px)
+                    // max-width: 90%
+                    width: 90%
+                &[style="color:#fff"]
+                    text-shadow: 0 0 10px rgba(0,0,0,.5)
+                &[style="color:#000"]
+                    text-shadow: 0 0 10px rgba(255,255,255,.5)
+                h2
+                    font-size: px(48)
+                    opacity: 0
+                    animation: fadeInDown 1.2s both .4s
+                    display: flex
+                    @media all and (max-width: 700px)
+                        font-size: px(42)
+                    span
+                        min-width: 15px
+                        display: block
+                        @media all and (max-width: 700px)
+                            min-width: 12px
+                .words
+                    font-family: MyriadPro-Regula,微軟正黑體
+                    font-size: px(18)
+                    animation: fadeInUp 1.5s both .8s
+                    // new-------------
+                    max-width: 510px
+                    @media all and (max-width: 700px)
+                        font-size: px(16)
+                .anchor
+                    margin-top: 100px
+                    max-width: 100%
+                    overflow: hidden
+                    +flex-left
+                    @media all and (max-height: 700px) and (min-width: 1025px)
+                        margin-top: 70px
+                    @media all and (max-width: 700px)
+                        display: none
+                    p
+                        display: flex
+                        align-items: center
+                        font-size: px(18)
+                        font-family: FuturaPT-Heavy,微軟正黑體
+                        text-transform: uppercase
+                        animation: fadeInLeft 1.5s both .8s
+                        @media all and (max-width: 700px)
+                            font-size: px(16)
+                        .bgColor
+                            display: block
+                            width: 0px
+                            height: 2px
+                            margin-left: 10px
+                            margin-top: 5px
+                            animation: w65 1.5s both 1s
+                        @keyframes w65 
+                            0%
+                                width: 0
+                                opacity: 0
+                            100%
+                                width: 65px
+                                opacity: 1
+                    ul
+                        margin-top: 20px
+                        display: flex
+                        align-items: center
+                        max-width: 100% 
+                        animation: slideInUp 1.2s both 1.2s
+                        li
+                            font-size: px(20)
+                            padding-right: 25px
+                            position: relative
+                            opacity: 0.7
+                            cursor: pointer
+                            white-space: nowrap
+                            @media all and (max-width: 700px)
+                                font-size: px(18)
+                                padding-right: 15px
+                            &:not(:first-child)
+                                padding-left: 25px
+                                @media all and (max-width: 700px)
+                                    padding-left: 15px
+                                &:before
+                                    content: "|"
+                                    position: absolute
+                                    top: 50%
+                                    left: 0
+                                    transform: translate(-50%,-50%)
+        .scrollDown
+            top: calc(100% - 22px)
+            // height: 133px
+            // padding: 0 0 35px
+            @media all and (max-width: 700px)
+                // padding: 0 0 15px
+                // height: 77px
+    .introduction
+        padding: 200px 50px 140px 
+        @media all and (max-width: 1440px)
+            padding: 150px 5vw 100px 
+        @media all and (max-width: 700px)
+            padding: 100px 5vw 80px
+        .background
+            &:before 
+                +sideLine_before
+            &:after 
+                +sideLine_after
+        ._title
+            +flex-center
+            flex-direction: column
+            &.show
+                h5 span
+                    animation: fadeInUp 0.6s both 
+                h6 span
+                    animation: fadeInUp 0.8s both
+                .bgColor
+                    animation: horizontalShow  0.8s both 0.8s
+                    -ms-animation: fadeInUp 0.8s both 0.8s
+            h5,h6
+                display: flex
+                span
+                    display: block
+                    opacity: 0
+            h5 span
+                min-width: 4.25px
+            h6 span
+                min-width: 10px
+            .bgColor
+                -ms-opacity: 0
+                margin-top: 10px
+                clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%)
+                @media all and (max-width: 700px)
+                    margin-top: 20px
+        .content
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+            max-width: 1240px
+            margin: 90px auto 0
+            position: relative
+            z-index: 2
+            text-shadow: 0 0 10px #fff
+            .story,.award
+                width: 50%
+                @media all and (max-width: 900px)
+                    width: 100%
+                &.show h6 
+                    span
+                        animation: fadeInUp 1s both 
+                    &:after
+                        width: 55px
+                        transition: all .8s ease 1s
+                h6
+                    font-size: px(30)
+                    display: flex
+                    align-items: center
+                    span
+                        opacity: 0
+                        display: block
+                        min-width: 7.5px
+                    &:after
+                        margin: 5px 0 0 10px
+                        +fakeLine(0px,1px,#aba29d)
+                        @media all and (max-width: 700px)
+                            display: none
+            .story
+                padding: 0 80px 0 40px
+                @media all and (max-width: 1340px)
+                    padding: 0 6vw 0 3vw
+                @media all and (max-width: 1024px)
+                    padding: 0 6vw 0 0
+                @media all and (max-width: 900px)
+                    padding: 0
+                &:last-child:first-child
+                    padding: 0 40px
+                    @media all and (max-width: 1340px)
+                        padding: 0 3vw
+                    @media all and (max-width: 900px)
+                        padding: 0
+                &.show
+                    .words
+                        animation: skewIn 1.6s both 0.6s
+                    .ps
+                        animation: skewIn 1.6s both 1s
+                .words
+                    font-family: MyriadPro-Regular,微軟正黑體
+                    font-size: px(16)
+                    color: rgba(0,0,0,.8)
+                    margin-top: 20px
+                    opacity: 0
+                    transform-origin: left
+                .ps
+                    font-size: px(16)
+                    font-family: MyriadPro-Light,微軟正黑體
+                    color: rgba(0,0,0,.6)
+                    display: flex
+                    margin-top: 40px
+                    line-height: 1.2
+                    opacity: 0
+                    transform-origin: left
+                    @media all and (max-width: 700px)
+                        margin-top: 20px
+                    &:before
+                        content: "*"
+                        color: #f40000
+                        display: block
+                        margin-right: 5px
+            .award
+                padding: 0 0 0 80px
+                @media all and (max-width: 1340px)
+                    padding: 0 0 0 6vw
+                @media all and (max-width: 1024px)
+                    padding: 0 0 0 6vw
+                @media all and (max-width: 900px)
+                    padding: 0
+                    margin-top: 50px
+                &.show 
+                    figure 
+                        animation: fadeInUp 1.2s both .6s
+                    .year
+                        animation: fadeInUp 1.2s both .8s
+                    .name
+                        animation: skewIn 1.2s both 1s
+                    ul li:not(:first-child):before
+                        animation: fadeIn 1s both 1s
+                ul
+                    margin-top: 10px
+                    li
+                        padding: 20px 0
+                        display: flex
+                        align-items: center
+                        position: relative
+                        &:not(:first-child):before
+                            position: absolute
+                            top: 0
+                            left: 0
+                            +fakeLine(100%,1px,#c3c2c1)
+                            opacity: 0
+                        figure
+                            width: 120px
+                            padding: 0 30px
+                            opacity: 0
+                            @media all and (max-width: 900px)
+                                width: 110px
+                                padding: 0 30px 0 10px
+                        div
+                            display: flex
+                            font-size: px(16)
+                            width: calc(100% - 120px)
+                            .year
+                                font-family: MyriadPro-Bold,微軟正黑體
+                                margin-right: 10px
+                                opacity: 0
+                            .name
+                                letter-spacing: 1px
+                                color: rgba(0,0,0,.8)
+                                font-family: MyriadPro-Regular,微軟正黑體
+                                opacity: 0
+                                transform-origin: left
+    .supportTool
+        max-width: 1260px
+        margin: auto
+        padding: 150px 50px 140px
+        @media all and (max-width: 1530px)
+            padding: 150px 0 140px
+            margin: 0 8.8vw
+        @media all and (max-width: 1024px)
+            margin: 0 5vw
+        @media all and (max-width: 700px)
+            margin: 0 5vw
+            padding: 100px 0 80px
+        .background
+            &:before 
+                +sideLine_before
+            &:after 
+                +sideLine_after
+        &.show
+            ._title
+                h5
+                    animation: fadeInUp 1.2s both 
+                h6
+                    animation: fadeInUp 1.2s both .2s
+                    &:before,&:after
+                        width: 50%
+                        transition: all 1s ease .6s
+            .content ul li 
+                span
+                    animation: allin0 1s both .6s
+                p
+                    animation: fadeInUp 1s both 1s
+        ._title
+            text-align: center
+            h5,h6
+                opacity: 0
+            h6
+                +flex-center
+                white-space: nowrap
+                &:before,&:after
+                    +fakeLine(0,1px,#cccccc)
+                &:before
+                    margin-right: 15px
+                    @media all and (max-width: 450px)
+                        margin-right: 10px
+                &:after
+                    margin-left: 15px
+                    @media all and (max-width: 450px)
+                        margin-left: 10px
+        .content
+            margin-top: 65px
+            ul
+                +flex-center
+                flex-wrap: wrap
+                @media all and (max-width: 700px)
+                    justify-content: flex-start
+                li
+                    margin: 0 40px 40px
+                    @media all and (max-width: 1530px)
+                        margin: 0 20px 20px
+                    a
+                        +flex-center
+                        overflow: hidden
+                        // new------
+                        position: relative
+                        padding: 0 0 0 75px
+                        min-height: 60px
+                        &:hover
+                            span
+                                color: #fff !important
+                                background-color: #fff
+                                border: 1px solid transparent
+                                opacity: 0.7
+                            p
+                                color: rgba(0,0,0,1)
+                    span
+                        width: 60px
+                        height: 60px
+                        border: 1px solid #b2b2b2
+                        border-radius: 50%
+                        +flex-center
+                        // margin-right: 15px
+                        transform: translateY(150%)
+                        transition: all .4s ease
+                        // new------
+                        position: absolute
+                        top: calc(50% - 30px)
+                        left: 0
+                    p
+                        font-size: px(17)
+                        font-family: FuturaPT-Medium,微軟正黑體
+                        color: rgba(0,0,0,.6)
+                        transition: all .4s ease
+                        opacity: 0
+                        // width: calc(100% - 75px)
+    .recommend
+        padding: 100px 0 160px
+        max-width: 1350px
+        margin: auto
+        position: relative
+        @media all and (max-width: 700px)
+            padding: 70px 0 160px
+        .background
+            &:before 
+                +sideLine_before
+            &:after 
+                +sideLine_after
+        &.show
+            ._title
+                h5
+                    animation: skewIn 1s both
+                h6
+                    animation: skewIn 1.2s both
+            ._slick
+                animation: fadeIn 1s both .6s
+            .tag
+                animation: slideInDown 1s both 1s
+            .icon-triangle_left
+                animation: fadeInRight 1s both 1.2s
+            .icon-triangle_right
+                animation: fadeInLeft 1s both 1.2s
+        ._title
+            position: relative
+            z-index: 2
+            padding: 0 116px
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            h5,h6
+                opacity: 0
+                transform-origin: left
+            h6
+                display: flex
+                align-items: center
+                .bgColor
+                    opacity: .7
+                    margin: 5px 0 0 15px
+                    @media all and (max-width: 450px)
+                        display: none
+        ._slick
+            margin-top: 70px
+            overflow: hidden
+            position: relative
+            z-index: 2
+            padding: 0 116px
+            opacity: 0
+            @media all and (max-width: 1024px)
+                padding: 0
+            &>ul
+                @media all and (max-width: 700px)
+                    padding: 0 0 30px 
+                .slick-track
+                    padding: 15px 0
+                .slick-dots
+                    li
+                        margin: 0 5px
+                li
+                    margin: 0 2px
+                    transform: translateY(15px)
+                    transition: all 0.8s ease
+                    a
+                        position: relative
+                        display: block
+                        .name
+                            position: absolute
+                            bottom: 50px
+                            left: 50px
+                            // width: 100%
+                            // padding: 50px
+                            +textBg
+                            font-size: px(30)
+                    &:nth-child(odd)
+                        width: 670px
+                        @media all and (max-width: 670px)
+                            width: auto
+                            .big
+                                display: none
+                        .small
+                            display: none
+                            @media all and (max-width: 670px)
+                                display: block
+                    &:nth-child(even)
+                        width: 440px
+                        @media all and (max-width: 670px)
+                            width: auto
+                        .big
+                            display: none
+                    @media all and (min-width: 701px)
+                        &.slick-current
+                            transform: translateY(-15px)
+                    @media all and (max-width: 700px)
+                        &.slick-center
+                            transform: translateY(-15px)
+            .arrows
+                @media all and (max-width: 1024px) 
+                    display: none
+                span
+                    position: absolute
+                    top: 50%
+                    +flex-center
+                    width: 40px
+                    height: 40px
+                    border: 1px solid #c0c0c0
+                    border-radius: 50%
+                    cursor: pointer
+                    opacity: 0
+                    transition: all .4s ease
+                    @media all and (max-width: 1024px) 
+                        display: none
+                    &.icon-triangle_left
+                        left: 16px
+                    &.icon-triangle_right
+                        right: 16px
+                    &:before 
+                        transform: scale(0.8)
+                        +font-size(12)
+                        transition: all .4s ease
+                    &:hover 
+                        background-color: #959595
+                        &:before 
+                            color: #fff
+
+
+#product.series .libox
+    +basicLibox
+    z-index: 10
+    +flex-center
+    &.close
+        section
+            animation: fadeOutDown .4s both 
+        &:before
+            animation: slideOutLeft 0.6s both .3s
+        &:after
+            animation: slideOutRight 0.6s both .3s
+        .liboxClose
+            animation: none !important
+    &:before,&:after
+        position: absolute
+        top: 0
+        left: 0
+        +fakeLine(100%,100%,rgba(0,0,0,.4))
+    &:before
+        animation: slideInLeft 0.8s both 
+    &:after
+        animation: slideInRight 0.8s both 
+    section
+        background-color: #fff
+        padding: 120px 50px 70px
+        position: relative
+        z-index: 1
+        max-width: 1240px
+        max-height: 100vh
+        width: 100%
+        opacity: 0
+        animation: sectionIn 1s both 0.7s
+        overflow-y: auto
+        overflow-x: hidden
+        @keyframes sectionIn
+            0%
+                opacity: 0
+                -webkit-transform: translateY(25%)
+                transform: translateY(25%)
+            99%
+                opacity: 1
+                -webkit-transform: translate(0)
+                transform: translate(0)
+            100%
+                opacity: 1
+                -webkit-transform: none
+                transform: none
+        @media all and (min-width: 1025px)
+            &::-webkit-scrollbar 
+                width: 4px
+            &::-webkit-scrollbar-track 
+                -webkit-box-shadow: inset 0 0 6px #6c6b6b
+            &::-webkit-scrollbar-thumb 
+                background-color: #000
+                border-radius: 10px
+                -webkit-box-shadow: inset 0 0 6px #878787
+        @media all and (max-width: 1024px)
+            padding: 120px 5vw 70px
+        @media all and (max-width: 900px)
+            height: 100vh
+            animation: fadeIn 1s both 0.7s
+        @media all and (max-width: 700px)
+            padding: 90px 5vw 70px
+        .liboxClose
+            position: absolute
+            top: 60px
+            left: 1135px
+            cursor: pointer
+            z-index: 3
+            width: 35px
+            height: 35px
+            +flex-center
+            &.fixed
+                animation: liboxClose 0s both 1.7s
+                @media all and (max-width: 900px)
+                    animation: none
+            @keyframes liboxClose
+                0%
+                100%
+                    position: fixed
+                    left: calc(50vw + 515px)
+            @media all and (max-width: 1240px)
+                left: calc(52.5vw + 432.5px)
+                @keyframes liboxClose
+                    0%
+                    100%
+                        position: fixed
+                        left: calc(52.5vw + 432.5px)
+            @media all and (max-width: 900px)
+                position: fixed
+                left: auto
+                right: 5vw
+            @media all and (max-width: 700px)
+                top: 20px
+                right: 10px
+            span
+                display: block
+                transform: rotate(45deg)
+                +cross(32px,32px)
+                &:before
+                    +cross_before(100%,#060606)
+                &:after
+                    +cross_after(100%,#060606)
+        ._title
+            +flex-center
+            flex-direction: column
+            font-size: px(36)
+            @media all and (max-width: 700px)
+                font-size: px(32)
+            span
+                display: block
+                width: 45px
+                height: 3px
+                margin-top: 10px
+        .table
+            margin: 30px auto 0
+            max-width: 900px
+            font-family: FuturaPT-Medium,微軟正黑體
+            div
+                display: flex
+                align-items: flex-end
+                justify-content: flex-end
+            p
+                &.series
+                    font-size: px(20)
+                    +flex-center
+                    &:after
+                        display: block
+                        margin: 0 5px
+                        content: " - "
+                &.productName
+                    font-size: px(16)
+                    color: rgba(0,0,0,.5)
+                    margin-bottom: 2px
+            table
+                width: 100%
+                text-align: center
+                border-top: 3px solid #000
+                margin-top: 10px
+                td
+                    font-size: px(16)
+                    &:first-child
+                        font-size: px(18)
+                        b
+                            display: block
+                            width: 100%
+                            font-size: px(14)
+                            @media all and (max-width: 900px)
+                                display: none
+                b
+                    color: #6c6c6c
+                    font-style: normal
+                    font-size: px(16)
+                thead
+                    @media all and (max-width: 900px)
+                        display: none
+                    tr
+                        border-bottom: 1px solid #999999
+                    td
+                        padding: 15px 10px
+                        &:first-child
+                            width: 140px
+                tbody
+                    tr
+                        border-bottom: 1px solid #999999
+                        @media all and (max-width: 900px)
+                            border-bottom: none
+                            display: flex
+                            flex-direction: column
+                            &:not(:first-child)
+                                margin-top: 30px
+                    td
+                        padding: 30px 10px
+                        @media all and (max-width: 900px)
+                            padding: 20px 10px
+                            position: relative
+                            display: flex
+                            &:after
+                                position: absolute
+                                bottom: 0
+                                left: 50%
+                                transform: translateX(-50%)
+                                +fakeLine(100%,1px,#ccc)
+                            &:first-child,&:last-child
+                                border-bottom: 2px solid #000
+                                &:after
+                                    display: none
+                                    width: 0
+                            &:before
+                                width: 50%
+                                content: attr(data-name)
+                                +flex-left
+                                text-align: left
+                                line-height: 1.5
+                            p
+                                width: 50%
+                                display: block
+                                +flex-right
+                                text-align: right
+                        @media all and (max-width: 700px)
+                            padding: 15px 10px
+        .ps
+            margin: 50px auto 0
+            max-width: 800px
+            p
+                max-width: 500px
+                font-family: MyriadPro-Light,微軟正黑體
+                font-size: px(15)
+                display: flex
+                line-height: 1.2
+                &:not(:last-child)
+                    margin-bottom: 10px 
+                &:before
+                    display: block
+                    content: "*"
+                    color: #f40000
+                    font-size: px(16)
+                    margin-right: 5px

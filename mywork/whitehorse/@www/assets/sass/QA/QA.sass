@@ -1,0 +1,158 @@
+#QA.index
+    .bg
+        +bg
+    main
+        padding: 210px 0 0
+        @media all and (max-width: 1279px)
+            position: relative
+            padding: 100px 0 0
+        &:before 
+            +sideLine_before
+        &:after 
+            +sideLine_after
+    .QAContent
+        padding: 0 calc(8.8vw + 3vw) 200px
+        @media all and (max-width: 1279px)
+            padding: 0 5vw 150px
+        @media all and (max-width: 700px)
+            padding: 0 5vw 100px
+        .tableContent
+            +flex-right
+            @media all and (max-width: 1279px)
+                margin-top: 50px
+            .box
+                max-width: 1020px
+                width: 80%
+                @media all and (max-width: 1279px)
+                    width: 100%
+                    max-width: none
+                &:before,
+                    +fakeLine(0%,4px,#000)
+                    animation: w100 1s both
+            .type
+                display: flex
+                position: relative
+                overflow: hidden
+                @media all and (max-width: 1024px)
+                    flex-direction: column
+                &.show
+                    &:not(:first-child):before
+                        animation: w100 1s both
+                    .typeName
+                        animation: slideInLeft 1s both .2s
+                    ul li 
+                        animation: slideInLeft 1.2s both .4s
+                    &:last-child:after
+                        animation: w100 1s both 1.2s
+                &:not(:first-child):before
+                    position: absolute
+                    top: 0
+                    left: 0
+                    +fakeLine(0%,2px,#7b7b7b)
+                &:last-child:after
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    +fakeLine(0%,4px,#000)
+                .typeName
+                    display: flex
+                    align-items: center
+                    font-family: FuturaPT-Medium,微軟正黑體
+                    font-size: px(24)
+                    width: 260px
+                    padding: 0 20px 0 60px
+                    transform: translateX(-100%)
+                    @media all and (max-width: 1400px)
+                        width: 200px
+                        padding: 0 20px 
+                        justify-content: center
+                        text-align: center
+                    @media all and (max-width: 1024px)
+                        width: 100%
+                        padding: 30px 0 0
+                ul
+                    width: calc(100% - 260px)
+                    overflow: hidden
+                    @media all and (max-width: 1400px)
+                        width: calc(100% - 200px)
+                    @media all and (max-width: 1024px)
+                        width: 100%
+                    li
+                        padding: 30px 0
+                        position: relative
+                        transform: translateX(-100%)
+                        &.open
+                            &:not(:last-child):after
+                                width: 100%
+                                transition: all 1s ease .4s
+                            .question 
+                                .numb
+                                    color: #009944
+                                button
+                                    background-color: #838484
+                                    &:before
+                                        color: #fff
+                                        transform: rotateX(180deg)
+                        &:not(:last-child)
+                            &:before,&:after
+                                position: absolute
+                                bottom: 0
+                                left: 0
+                            &:before
+                                +fakeLine(100%,1px,#aaaaaa)
+                            &:after
+                                +fakeLine(0%,1px,#009944)
+                                transition: all 1s ease
+                        .question
+                            padding: 0 80px 0 50px
+                            position: relative
+                            @media all and (max-width: 700px)
+                                padding:  0 40px 0 30px
+                            .numb
+                                font-family: FuturaPT-Heavy
+                                font-size: px(20)
+                                color: rgba(0,0,0,.4)
+                                width: 50px
+                                text-align: center
+                                position: absolute
+                                left: 0
+                                top: 2px
+                                line-height: 1.5
+                                transition: all 0.5s ease
+                                @media all and (max-width: 700px)
+                                    width: 30px
+                                    font-size: px(16)
+                                    text-align: left
+                            p
+                                font-size: px(22)
+                                @media all and (max-width: 700px)
+                                    font-size: px(18)
+                            button
+                                width: 30px
+                                height: 30px
+                                +flex-center
+                                border-radius: 50%
+                                background-color: #d4d4d4
+                                border: none
+                                position: absolute
+                                top: 0
+                                right: 35px
+                                font-family: 'icomoon'
+                                font-size: px(20)
+                                transition: all 0.5s ease
+                                @media all and (max-width: 700px)
+                                    right: 0
+                                &:before
+                                    content: "\e903"
+                                    display: block
+                                    color: #2a2a2a
+                                    transition: all 0.5s ease
+                        .answer
+                            font-family: MyriadPro-Regular,微軟正黑體
+                            font-size: px(15)
+                            padding: 10px 100px 0 50px
+                            color: rgba(0,0,0,.55)
+                            display: none
+                            @media all and (max-width: 700px)
+                                padding: 20px 0 10px 30px
+                                text-align: justify

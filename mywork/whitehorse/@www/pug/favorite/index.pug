@@ -1,0 +1,111 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var list = [
+        {
+            img:"../../upload/fa2/product/series/colletionImg1_280_280.jpg",
+            newOne:"true",
+        },
+        {
+            img:"../../upload/fa2/product/series/colletionImg2_400_200.jpg",
+            newOne:"",
+        },
+        {
+            img:"../../upload/fa2/product/series/colletionImg3_330_330.jpg",
+            newOne:"",
+        },
+        {
+            img:"../../upload/fa2/product/series/colletionImg4_470_110.jpg",
+            newOne:"",
+        },
+        {
+            img:"../../upload/fa2/product/series/colletionImg5_470_260.jpg",
+            newOne:"",
+        },
+        {
+            img:"../../upload/fa2/product/series/colletionImg1_280_280.jpg",
+            newOne:"true",
+        },
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#favorite.index
+    include ../layout/_header.pug
+    
+    main
+        article.banner(style="background-image:url('../../upload/fa2/favorite/bannerBg_1920_470.jpg')")
+            section._title
+                p.en Favorite list
+                span /////////////////
+                p.words A total of<b>6</b>favorite products of your choice
+                h5 這邊的字後端記得要改喔!
+            section.buttons
+                a.leanbutton(href=java)
+                    p Download list
+                button.leanbutton(type="button")
+                    p Sent to the mail
+                //分館連結
+                .branch
+                    a.leanbutton(href="../branch/index.html")
+                        p 品牌名子 
+                    a.leanbutton(href="../branch/index.html")
+                        p 品牌名子 
+        article.list
+            ul
+                each val in list
+                    // 後端請注意: 如果這像是新產品的話 請下方li加上class "newOne"
+                    li(class=(val.newOne)?"newOne":"")
+                        ._img
+                            figure
+                                a(href="../product/detail.html")
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                    b
+                            .size
+                                p 25 x 90cm
+                            .delet(onclick="favorite.delet(this);")
+                                span
+                        .info
+                            p.numb 0C63023
+                            .breadcrumb
+                                a(href="../branch/index.html") White horse
+                                a(href="../product/sort.html") Porcelain tile 
+                                a(href="../product/series.html") Diamond series 
+        article.emailForm   
+            section
+                .liboxClose
+                    span
+                ._title
+                    h6 Sent to the mail
+                    p The favorite product list file will be sent to your mailand will not be used for other purposes.
+                form
+                    ul
+                        li
+                            p E-mail
+                            input(type="text" placeholder="Please enter your mail")
+                        li
+                            p Verification code
+                            input(type="text" placeholder="Click on the image to change")
+                            div
+                                img(src="../../upload/fa2/favorite/code.jpg", alt="")
+                    .buttons
+                        button.leanbutton(type="reset")
+                            p Reset again
+                        // 後端請注意: 下方onclick僅展示用 如果要關燈箱就啟動favorite.emailFormClose() 這個function
+                        button.leanbutton(type="button" onclick="favorite.emailFormClose();")
+                            p Confirm sent
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

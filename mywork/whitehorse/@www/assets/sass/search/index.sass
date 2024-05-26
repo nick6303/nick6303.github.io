@@ -1,0 +1,45 @@
+#search.index main
+    .banner
+        padding: 50px 0
+        ._title
+            text-align: center
+            .en 
+                font-size: px(42)
+                +flex-center
+                flex-direction: column
+                animation: fadeInDown 1.2s both .4s
+                @media all and (max-width: 700px)
+                    font-size: px(36)
+                &:after
+                    +fakeLine(0px,2px,#afafaf)
+                    margin: 5px auto 20px
+                    +keyframesWidth(50)
+                    animation: w50 1s both .6s
+                    @media all and (max-width: 700px)
+                        margin: 10px auto 20px
+            .keywords
+                font-size: px(28)
+                animation: fadeInDown 1.2s both .6s
+                @media all and (max-width: 700px)
+                    font-size: px(24)
+                span
+                    font-family: FuturaPT-Demi,微軟正黑體
+                    color: $base_green
+                    &:not(:last-child):after
+                        content: ","
+            .count
+                font-size: px(22)
+                color: #a6a5a5
+                margin: 10px auto 5px
+                animation: fadeInDown 1.2s both .6s
+                @media all and (max-width: 700px)
+                    font-size: px(20)
+                    margin: 10px auto
+            .tooMuch,.noMatch
+                display: none
+                font-size: px(18)
+                color: #d28669
+                line-height: 1.2
+                animation: fadeInUp 1.2s both .6s
+                @media all and (max-width: 700px)
+                    font-size: px(16)

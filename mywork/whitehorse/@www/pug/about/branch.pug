@@ -1,0 +1,53 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-   
+    var breadcrumb =[
+        {name:"About Us",link:"../about/index.html"},
+        {name:"The brand",link:"javascript:void(0)"},
+    ]
+
+section.liboxBanner
+    figure
+        // 後端請注意:電腦圖片大小
+        img(src="../../upload/fa2/about/branch/bgImg_1590_600.jpg" alt="")
+    .liboxClose
+        span
+    .nav
+        .share
+            button
+                span.icon-share2
+                p SHARE
+            ul
+                li
+                    a(href=java)
+                        span.icon-facebook(style="color:#3b5998")
+                li
+                    a(href=java)
+                        span.icon-line(style="color:#00c300")
+                li
+                    a(href=java)
+                        span.icon-twitter(style="color:#00aced")
+        .breadcrumb
+            ul(itemscope itemtype="https://schema.org/Product")
+                each val in breadcrumb
+                    li(itemprop="name")
+                        if val==breadcrumb[1]
+                            h1
+                                a(href=val.link itemprop="url")=val.name
+                        else
+                            a(href=val.link itemprop="url")=val.name
+                            span
+
+section.brand
+    ._title
+        h6 The Brand
+        h5 The White Horse logo is symbolic of love; the love between father and son.
+    .row
+        ._text
+            h6 “Horse” might be an excellent representation of emerging to prominence
+            p When the co-founder was pondering over what to name the brand, he came across an image of a horse. An idea came to his mind that perhaps “dark horse” might be an excellent representation of emerging to prominence.
+            p Hence, he turned to his son and asked for his opinion. The five-year-old child replied, “I like white horse more than dark one because it is cuter!”. This was it! The brand name, White Horse Ceramic, was decided!
+            p The little story showcases the love of a father for his son, which became our identity in which we aim to help our customers build an ideal dream space for their loved ones.
+        figure
+            img.b-lazy(src=blazy data-src="../../upload/fa2/about/branch/rowImg_380_510.jpg", alt="")

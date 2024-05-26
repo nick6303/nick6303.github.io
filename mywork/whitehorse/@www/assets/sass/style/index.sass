@@ -1,0 +1,143 @@
+#style.index main
+    .content
+        max-width: 1520px
+        padding: 0 50px 100px
+        margin: auto
+        @media all and (max-width: 1024px)
+            padding: 0 5vw 100px
+        @media all and (max-width: 900px)
+            padding: 0 0 100px
+        ul
+            li
+                +flex-center
+                @media all and (max-width: 900px)
+                    flex-direction: column !important
+                &:not(:first-child)
+                    margin-top: 120px
+                &:first-child
+                    margin-top: 90px
+                &:nth-child(odd)
+                    figure
+                        span:before
+                            left: -1px
+                        &.show.in
+                            span:before
+                                animation: imgSpan 1.8s both
+                &:nth-child(even) 
+                    flex-direction: row-reverse
+                    figure
+                        span:before
+                            right: -1px
+                        &.show.in 
+                            span:before
+                                animation: imgSpan2 1.8s both
+                @media all and (min-width: 1025px)  
+                    &:hover 
+                        figure img
+                            transform: scale(1.05)
+                        ._text a
+                            p
+                                transform: translateY(0)
+                            &:after
+                                height: 10px
+                                width: 100%
+                                transition: width .6s ease .2s ,height .4s ease
+                figure
+                    width: 65.5%
+                    height: 500px
+                    display: block
+                    overflow: hidden
+                    position: relative
+                    @media all and (max-width: 1520px)
+                        height: calc(35.2vw - 35px)
+                    @media all and (max-width: 1024px)
+                        width: 60%
+                        height: 29vw
+                    @media all and (max-width: 900px)
+                        width: 100%
+                        height: 53.76vw
+                    &.show.in
+                        img
+                            animation: fadeIn 0s both .72s
+                        span
+                            animation: out 0s both 1.8s
+                    img
+                        opacity: 0
+                        transition: all 1s ease
+                    span
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        position: absolute
+                        z-index: 1
+                        overflow: hidden
+                        &:before 
+                            position: absolute
+                            +fakeLine(0, 101%, #d9d9d9) 
+                            top: -1px
+                ._text
+                    width: 34.5%
+                    +flex-left
+                    padding: 30px 75px
+                    @media all and (max-width: 1520px)
+                        padding: 30px 5vw
+                    @media all and (max-width: 1024px)
+                        width: 40%
+                    @media all and (max-width: 900px)
+                        width: 100%
+                        padding: 30px 10px
+                    @media all and (max-width: 700px)
+                        padding: 15px calc(5vw + 5px) 0
+                    &.show
+                        h6
+                            animation: fadeInDown 1s both 1s
+                            @media all and (max-width: 1024px)
+                                animation: fadeInDown 1s both 
+                        .words
+                            animation: fadeInUp 1s both 1s
+                            @media all and (max-width: 1024px)
+                                animation: fadeInUp 1s both 
+                        a
+                            @media all and (max-width: 1024px)
+                                p
+                                    animation: allin .8s both .4s
+                                &:after
+                                    animation: w100 .8s both .6s
+                    h6
+                        font-size: px(34)
+                        opacity: 0
+                    .words
+                        margin-top: 15px
+                        font-size: px(16)
+                        font-family: MyriadPro-Regular,微軟正黑體
+                        color: rgba(0,0,0,.7)
+                        opacity: 0
+                    a
+                        padding: 0 15px
+                        position: relative
+                        margin-top: 60px
+                        overflow: hidden
+                        @media all and (max-width: 700px)
+                            margin-top: 30px
+                        &:hover
+                            &:after
+                                height: 100%
+                        p 
+                            transition: all 0.6s ease
+                            transform: translateY(101%)
+                            position: relative
+                            z-index: 1
+                            font-size: px(16)
+                            font-family: FuturaPT-Medium,微軟正黑體
+                            @media all and (min-width: 1025px)  
+                                transform: translateY(101%)
+                        &:after
+                            transition: all .4s ease
+                            +fakeLine(0,10px,#a6937c)
+                            position: absolute
+                            bottom: 0
+                            left: 50%
+                            transform: translateX(-50%)
+                            @media all and (min-width: 1025px)  
+                                height: 0

@@ -1,0 +1,258 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+- 
+    var space =[
+        {
+            name: "Bathroom",
+            type: "Indoor series",
+            img:"../../upload/fa2/space/index/img1_600_850.jpg"
+        },
+        {
+            name: "Living room",
+            type: "Indoor series",
+            img:"../../upload/fa2/space/index/img2_600_850.jpg"
+        },
+        {
+            name: "Bathroom",
+            type: "Indoor series",
+            img:"../../upload/fa2/space/index/img2_600_850.jpg"
+        },
+        {
+            name: "Living room",
+            type: "Indoor series",
+            img:"../../upload/fa2/branch/index/placeImg2_400_640.jpg"
+        }
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#branch.index(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+
+    main
+        article.banner.bgColor
+            section._img
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小900_1200
+                    source(srcset="../../upload/fa2/home/bannerRWD_900_1200.jpg" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1800_945
+                    img(src="../../upload/fa2/home/banner1_1800_945.jpg" alt="")
+            section._text
+                div.logo
+                    img(src="../../assets/img/brandsLogo2_140_130.png" alt="")
+                div.slogan
+                    h6 Unusual taste design 
+                    span ////////////////
+                    p Provide eternal quality commitment
+            section.scrollDown
+                span
+                p SCROLL
+            section.buttons
+                a.openSearch(href = java)
+                    span.icon-magnifier
+                </a>
+                button(href=java)
+                    span.icon-internet
+                    ul
+                        li
+                            a(href=java) 中文
+                        li
+                            a(href=java) English
+                a(href="../favorite/index.html")
+                    span.icon-valentines-heart
+        article.links
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/linksBg_1920_1080.jpg" alt="")
+            section.content
+                .logo
+                    img.b-lazy(src=blazy data-src="../../assets/img/devannoLogo_60_60.png", alt="")
+                ._title
+                    p A new experience with tiles
+                ul
+                    li
+                        a(href="../branch/about.html")
+                            p About
+                                span.bgColor
+                    li
+                        a(href="../product/index.html")
+                            p Products
+                                span.bgColor
+                    li
+                        a(href="../branch/location.html")
+                            p Location
+                                span.bgColor
+                    li
+                        a(href="../contact/branchContact.html")
+                            p Contact
+                                span.bgColor
+        article.product
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="" alt="")
+            section.content 
+                .box._title
+                    h6 Latest collection
+                    p It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+                    a(href="../product/index.html")
+                        p Products
+                // 後端請注意:此處有三種模式
+                    1. 大 big  (建議圖片大小:780_680)
+                    2. 中 middle (建議圖片大小:790_340)
+                    3. 小 small (他如果要上小的圖 就要一次上兩個) (建議圖片大小:400_340)
+                .box.big
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/productImg1_780_680.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Glazed wall tile
+                                span
+                                    i
+                .box.middle
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/productImg2_790_340.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#fff")
+                                p Ceramic floor & wall tile
+                                span
+                                    i
+                .box.middle
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/productImg4_790_340.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#fff")
+                                p Porcelain tile
+                                span
+                                    i
+                .box.big(style="color:#fff")
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/productImg3_780_680.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#fff")
+                                p Polished porcelain tile
+                                span
+                                    i
+                .box.small
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/productImg5_400_340.jpg", alt="")
+                            // 後端請注意: 要可以讓客戶編輯文字的顏色  
+                            .hoverbox(style="color:#000")
+                                p Fittings
+                                span
+                                    i
+                    .block
+                        a(href="../product/sort.html")
+                            .bgColor
+                            figure
+                                img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/productImg6_400_340.jpg", alt="")
+                            .hoverbox(style="color:#fff")
+                                p Exterior wall tile
+                                span
+                                    i
+        article.place
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/placeBg_1920_1080.jpg" alt="")
+            section.content 
+                ._title
+                    h6 Tiles in every place
+                    p It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+                    a(href="../space/index.html") 
+                        p Case study
+                ._slick
+                    ul
+                        each val in space
+                            li
+                                a(href="../space/detail.html")
+                                    figure
+                                        // 後端請注意:此處圖片與 space/index.html的圖片共用
+                                        img(data-lazy=val.img, alt="")
+                                    ._text
+                                        p.name=val.name
+                                        p.tpye=val.type
+                                    // 裝飾方塊
+                                    span
+                    .arrows
+                        span.icon-triangle_left
+                        span.icon-triangle_right
+        article.about
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/placeBg_1920_1080.jpg" alt="")
+            section.content
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小
+                    source(srcset="" media="(max-width:1024px)")
+                    //- 後端請注意:電腦圖片大小1920_845
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/branch/index/aboutImg_1920_845.jpg", alt="")
+                .textBox
+                    .bgColor
+                    .box
+                        h5 Find a location
+                        h6 It’s the highest quality standard in the worldenjoy the good life in the security fortress.
+                        .dropDown.bgColor
+                            span.selectMenu 
+                                p choose the location
+                            ul
+                                li 
+                                    a(href="../branch/locationDetail.html") Taipei
+                                        
+                                li 
+                                    a(href="../branch/locationDetail.html") Taichung
+                    .box
+                        h5 branch introduction
+                        h6 It’s the highest quality standard in the worldenjoy the good life in the security fortress.
+                        a(href="../branch/about.html")
+                            span.bgColor
+                            p About DEVANNO
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

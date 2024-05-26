@@ -1,0 +1,192 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var otherLink = [
+        {
+            title:"Home",
+            link:"../home/index.html"},
+        {
+            title:"Location",
+            link:"../storeHold/index.html"},
+        {
+            title:"Staff area",
+            link:"javascript:void(0);"},
+        {
+            title:"News",
+            link:"../news/index.html"},
+        {
+            title:"About us",
+            link:"../about/index.html"},
+        {
+            title:"Favorite list",
+            link:"../favorite/index.html"},
+        {
+            title:"Join us",
+            link:"../join/index.html"},
+        {
+            title:"Catalogue",
+            link:"../catalogue/index.html"},
+        {
+            title:"FAQ",
+            link:"../QA/index.html"},
+        {
+            title:"Privacy",
+            link:"javascript:void(0);"}, 
+        {
+            title:"Contact",
+            link:"../contact/index.html"},
+    ]
+
+    var branchLink =[
+        {
+            name:"Home",
+            link:"../branch/index.html"},
+        {
+            name:"Location",
+            link:"../branch/location.html"},
+        {
+            name:"Contact",
+            link:"../contact/branchContact.html"},
+        {
+            name:"About",
+            link:"../branch/about.html"},
+    ]
+
+    var classification = [
+        {
+            branch:[
+                {
+                    title:"Collection",
+                    titleLink:"../product/collection.html",
+                    ul:["Porcelain tile","Exterior wall tile","Glazed wall tile","Fittings","Outdoor tile"],
+                    ulLink:"../product/sort.html"},
+                {
+                    title:"Space aspect",
+                    titleLink:"../space/index.html",
+                    ul:["Living room","Bedroom","Bathroom","Kitchen"],
+                    ulLink:"../space/detail.html"},
+                {
+                    title:"Style aspect",
+                    titleLink:"../style/index.html",
+                    ul:["Japanese","French","Nordic life","Industry","Industry "],
+                    ulLink:"../style/detail.html"},
+                {
+                    title:"Size type(cm)",
+                    titleLink:"javascript:void(0)",
+                    ul:["30 x 30","60 x 60","90 x 25","120 x 60","120 x 30","200 x 60"],
+                    ulLink:"../search/index.html"}
+            ]
+        },
+        {
+            branch:[
+                {
+                    title:"Collection",
+                    titleLink:"../product/collection.html",
+                    ul:["Porcelain tile","Exterior wall tile"],
+                    ulLink:"../product/sort.html"},
+                {
+                    title:"Space aspect",
+                    titleLink:"../space/index.html",
+                    ul:["Living room","Bedroom","Bathroom"],
+                    ulLink:"../space/detail.html"},
+                {
+                    title:"Style aspect",
+                    titleLink:"../style/index.html",
+                    ul:["Japanese","French","Nordic life"],
+                    ulLink:"../style/detail.html"},
+                {
+                    title:"Size type(cm)",
+                    titleLink:"javascript:void(0)",
+                    ul:["30 x 30","60 x 60","90 x 25"],
+                    ulLink:"../search/index.html"}
+            ]
+        }
+    ]
+
+
+
+
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#sitemap.index
+    include ../layout/_header.pug
+    //後端請注意: 如果這一頁要重整的話請啟動search.reset(); 這個function 搜尋結果重整
+    main
+        article
+            section._title
+                h6 Site map
+                span //////////////////
+                //- div
+                //-     //企業(只能有一個)
+                //-     .company.active(data-bgColor="#91c186")
+                //-         img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo.png", alt="")
+                //-         img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo2.png", alt="")
+                //-     //分館 (可無限新增)
+                //-     .branch(data-bgColor="#91c186")
+                //-         img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo.png", alt="")
+                //-         img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo2.png", alt="")
+                //-     .branch(data-bgColor="#9b867a")
+                //-         img(src="../../upload/fa2/sitemap/devannoLogo.png", alt="")
+                //-         img(src="../../upload/fa2/sitemap/devannoLogo2.png", alt="")
+            section.LinkContent
+                .otherLink
+                    .logos
+                        a(href=java)
+                            figure
+                                img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo.png", alt="")
+                    ul
+                        each val in otherLink
+                            if (val.title=="Staff area")
+                                li.openStaff
+                                    a(href=val.link)=val.title
+                            else if (val.title=="Privacy")
+                                li.openPrivicy(data-src="../layout/privacy.html")
+                                    a(href=val.link)=val.title
+                            else
+                                li
+                                    a(href=val.link)=val.title
+                .productLink  
+                    .logos
+                        a.active(href=java)
+                            figure
+                                img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo.png", alt="")
+                                img(src="../../upload/fa2/sitemap/[WhiteHorse]-Logo2.png", alt="")
+                        a(href=java)
+                            figure
+                                img(src="../../upload/fa2/sitemap/devannoLogo.png", alt="")
+                                img(src="../../upload/fa2/sitemap/devannoLogo2.png", alt="")
+                    each item in classification
+                        .box(class=(item==classification[0])?"active":"")
+                            .branchLink
+                                ul
+                                    each val in branchLink
+                                        li
+                                            a(href=val.link)=val.name
+                            .productIndex
+                                a(href="../product/index.html") Product
+                            each val in item.branch
+                                .classify
+                                    .index
+                                        a(href=val.titleLink)=val.title
+                                    ul  
+                                        each item in val.ul
+                                            li
+                                                a(href=val.ulLink)=item
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

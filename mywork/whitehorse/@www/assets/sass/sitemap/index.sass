@@ -1,0 +1,284 @@
+#sitemap.index main
+    article
+        padding: 150px 0 190px
+        @media all and (max-width: 1279px)
+            padding: 150px 0 100px
+        @media all and (max-width: 700px)
+            padding: 80px 0 
+        &:before
+            +sideLine_before
+        &:after
+            +sideLine_after
+        ._title,.LinkContent
+            max-width: 1430px
+            width: 100%
+            margin: auto
+            position: relative
+            z-index: 2
+        ._title
+            padding: 0 70px
+            @media all and (max-width: 1279px)
+                padding: 0 calc(5vw + 20px)
+            @media all and (max-width: 700px)
+                padding: 0 calc(1vw + 20px)
+            h6
+                font-size: px(54)
+                animation: fadeInDown 1.2s both .2s 
+                @media all and (max-width: 1279px)
+                    font-size: px(48)
+                @media all and (max-width: 700px)
+                    font-size: px(42)
+                @media all and (max-width: 400px)
+                    font-size: px(40)
+            span
+                display: block
+                font-size: px(12)
+                font-style: italic
+                color: $base_green
+                letter-spacing: 0
+                margin: 0 0 25px -20px
+                animation: fadeInDown 1.2s both .4s 
+                @media all and (max-width: 700px)
+                    margin: 0 0 25px -4vw
+            &>div
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                flex-wrap: wrap
+                margin: 0 0 0 -20px
+                .company,.branch
+                    position: relative
+                    margin: 0 10px 10px 
+                    cursor: pointer
+                    min-width: 165px
+                    max-width: calc(50% - 20px)
+                    +flex-center
+                    transition: all .4s ease
+                    animation: fadeInUp 1.2s both .6s 
+                    @media all and(max-width: 700px)
+                        min-width: unset
+                    &.active
+                        img
+                            &:first-child
+                                opacity: 0
+                            &:last-child
+                                opacity: 1
+                    img
+                        transition: all .4s ease
+                        max-height: 40px
+                        &:first-child
+                            opacity: 0.4
+                        &:last-child
+                            position: absolute
+                            top: 50%
+                            left: 50%
+                            transform: translate(-50%,-50%)
+                            opacity: 0
+                .branch
+                    &:after
+                        position: absolute
+                        top: 50%
+                        left: -10px
+                        transform: translateY(-50%)
+                        +fakeLine(1px,28px,#333333)
+        .LinkContent
+            display: flex
+            padding: 0 50px
+            margin-top: 50px 
+            @media all and (max-width: 1279px)
+                flex-direction: column
+                padding: 0 5vw
+            @media all and (max-width: 700px)
+                padding: 0 1vw
+            .logos
+                display: flex
+                flex-wrap: wrap
+                a
+                    position: relative
+                    margin: 0 10px 10px 
+                    cursor: pointer
+                    min-width: 165px
+                    +flex-center
+                    transition: all .4s ease
+                    animation: fadeInUp 1.2s both .6s 
+                    @media all and(max-width: 700px)
+                        min-width: unset
+                    &.active img
+                        &:first-child
+                            opacity: 0 !important
+                        &:last-child
+                            opacity: 1 !important
+                    figure
+                        position: relative
+                        width: 100%
+                        height: 100%
+                        img
+                            transition: all .4s ease
+                            max-height: 40px
+                            &:first-child
+                                opacity: 0.4
+                                margin: auto
+                            &:last-child:not(:first-child)
+                                position: absolute
+                                top: 50%
+                                left: 50%
+                                transform: translate(-50%,-50%)
+                                opacity: 0
+                    &:not(:first-child):before
+                        position: absolute
+                        top: 50%
+                        left: -10px
+                        transform: translateY(-50%)
+                        +fakeLine(1px,28px,#333333)
+                    &:first-child figure img:first-child
+                        opacity: 1
+            .otherLink
+                width: 33%
+                position: relative
+                padding: 0 30px 0 0
+                @media all and (max-width: 1279px)
+                    width: 100%
+                    padding: 0
+                &:after
+                    position: absolute
+                    top: 0
+                    right: 0
+                    +fakeLine(1px,calc(100% - 45px),#cccccc)
+                    animation: fadeIn 1s both .4s
+                    @media all and (max-width: 1279px)
+                        display: none
+                ul
+                    display: flex
+                    flex-wrap: wrap
+                    padding: 60px 20px 0
+                    @media all and (max-width: 1279px)
+                        padding: 20px 20px 0 
+                    @media all and (max-width: 700px)
+                        padding: 20px 4vw 0 
+                    li
+                        width: 50%
+                        position: relative
+                        margin: 0 0 45px 
+                        font-size: px(28)
+                        display: flex
+                        align-items: center
+                        animation: fadeInLeft 1s both 
+                        @media all and (max-width: 1440px)
+                            font-size: px(24)
+                        @media all and (max-width: 1279px)
+                            margin: 0 0 35px 
+                        &:nth-child(odd)
+                            padding: 0 25px 0 0 
+                        &:nth-child(even)
+                            padding: 0 0 0 25px
+                            &:before
+                                +fakeLine(1px,0,#b2b2b2)
+                                position: absolute
+                                top: 50%
+                                left: 0
+                                transform: translateY(-50%)
+                                +keyframesHeight(25)
+                                animation: h25 .8s both .6s
+            .productLink  
+                width: 67%
+                padding: 0 0 0 50px
+                @media all and (max-width: 1279px)
+                    width: 100%
+                    padding: 50px 0 0
+                .box
+                    display: none
+                    flex-wrap: wrap
+                    padding: 60px 20px 0 
+                    @media all and (max-width: 1279px)
+                        padding: 20px 20px 0 
+                    &.active
+                        display: flex
+                .branchLink
+                    margin: 0 0 10px 
+                    width: 100%
+                    @media all and (max-width: 700px)
+                        margin: 0
+                    ul
+                        display: flex
+                        flex-wrap: wrap
+                        li
+                            display: flex
+                            align-items: center
+                            font-size: px(28)
+                            margin: 0 0 35px
+                            animation: fadeInLeft 1s both 
+                            @media all and (max-width: 1440px)
+                                font-size: px(24)
+                            @media all and (min-width: 701px)
+                                &:not(:last-child):after
+                                    margin: 0 25px
+                                    +fakeLine(1px,25px,#b2b2b2)
+                            @media all and (max-width: 700px)
+                                width: 50%
+                                padding: 0 25px 0 0 
+                                &:nth-child(even):before
+                                    margin: 0 25px 0 0
+                                    +fakeLine(1px,25px,#b2b2b2)
+                .productIndex
+                    font-size: px(28)
+                    width: 100%
+                    display: flex
+                    align-items: center
+                    margin: 0 0 30px
+                    @media all and (max-width: 1440px)
+                        font-size: px(24)
+                    a
+                        animation: fadeInLeft 1s both 
+                        @media all and (max-width: 700px)
+                            width: calc(50% - 30px)
+                    &:after
+                        +fakeLine(1px,0,#b2b2b2)
+                        margin: 0 0 0 30px
+                        animation: h25 .8s both 0.6s
+                .classify
+                    width: 25%
+                    padding: 0 20px 0 0
+                    letter-spacing: 0px
+                    @media all and (max-width: 1279px)
+                        margin-bottom: 40px
+                    @media all and (max-width: 900px)
+                        margin-bottom: 30px
+                        &:nth-child(even)
+                            width: calc(50% - 20px)
+                            padding: 0
+                        &:nth-child(odd)
+                            padding: 0 20px 0 0
+                            width: calc(50% + 20px)
+                    @media all and (max-width: 700px)
+                        margin-bottom: 20px
+                    .index
+                        font-family: FuturaPT-Medium,微軟正黑體
+                        font-size: px(24)
+                        color: #2c55bd
+                        display: flex
+                        margin-bottom: 10px
+                        animation: fadeInDown 1s both .4s
+                        @media all and (max-width: 1440px)
+                            font-size: px(22)
+                        @media all and (max-width: 600px)
+                            font-size: px(20)
+                        &:after
+                            +fakeLine(0,2px,#2c55bd)
+                            margin: 13px 0 0 10px
+                            +keyframesWidth(7)
+                            animation: w7 .5s both .6s
+                    ul
+                        height: 320px
+                        @media all and (max-width: 1279px)
+                            padding: 0 5px
+                        .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+                            background-color: #000
+                        .mCSB_inside>.mCSB_container
+                            margin-right: 0
+                        li
+                            padding: 15px 0
+                            font-size: px(18)
+                            color: rgba(0,0,0,.6)
+                            animation: fadeInUp 1s both .6s
+                            @media all and (max-width: 1440px)
+                                font-size: px(16)

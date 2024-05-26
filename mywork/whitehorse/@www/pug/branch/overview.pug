@@ -1,0 +1,64 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var rows = [
+        {
+            img:"../../upload/fa2/project/rowImg1_1590_915.jpg",
+            h6:"White Horse",
+            p:"White Horse offers a full range of tiles for interior and exterior applications and floors and walls to meet the...",},
+        {
+            img:"../../upload/fa2/project/rowImg2_1590_915.jpg",
+            h6:"Devanno",
+            p:"White Horse offers a full range of tiles for interior and exterior applications and floors and walls to meet the...",},
+        {
+            img:"../../upload/fa2/project/rowImg3_1590_915.jpg",
+            h6:"White Horse",
+            p:"White Horse offers a full range of tiles for interior and exterior applications and floors and walls to meet the...",},
+        {
+            img:"../../upload/fa2/project/rowImg4_1590_915.jpg",
+            h6:"Devanno",
+            p:"White Horse offers a full range of tiles for interior and exterior applications and floors and walls to meet the...",}
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#branch.overview
+    include ../layout/_header.pug
+    
+    main
+        article.content
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg4_1920_1080.jpg" alt="")
+            section._title
+                h6 Brand overview
+                p Welcome to contact us, or leave your comment, related inquiries,there’ll be someone to serve.
+            section.rows
+                each item in rows
+                    .row
+                        figure
+                            img.b-lazy(src=blazy data-src=item.img, alt="")
+                            .hoverBox
+                                span
+                        ._text
+                            h6=item.h6
+                            // 後端請注意: 下方字數限制115個字 超過會變....
+                            p=item.p
+                        a(href="../branch/index.html")
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

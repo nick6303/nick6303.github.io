@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'FuturaPT-Bold';
+  src: 
+       url('../assets/font/FuturaPT/Bold/FuturaPTBold.woff2') format('woff2'),
+       url('../assets/font/FuturaPT/Bold/FuturaPTBold.woff') format('woff'),
+       url('../assets/font/FuturaPT/Bold/FuturaPTBold.ttf') format('truetype'),
+       url('../assets/font/FuturaPT/Bold/FuturaPTBold.svg') format('svg');
+}

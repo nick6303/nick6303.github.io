@@ -1,0 +1,40 @@
+- 
+    var data=[
+        {type:"Size",data:"30x60"},
+        {type:"Dimension",data:"300x600x9.5"},
+        {type:"Size allowance",data:"±1"},
+        {type:"Water absorption",data:"0.05%"},
+        {type:"Bend breaking load(n)",data:"3838.3"},
+        {type:"Abrasion resistance",data:"level 4"},
+        {type:"Stains resistance",data:"level 5"},
+        {type:"Chemical resistance",data:"level A"}
+    ] 
+
+section
+    .liboxClose
+        span
+    ._title
+        p Tile inspection report
+        span(style="background-color:#22ac38")
+    .table
+        div
+            p.series Claro series
+            p.productName Glazed wall tile 
+        table
+            thead
+                tr
+                    each val in data
+                        td=val.type
+                            if val==data[0]
+                                b (cm)
+            tbody
+                -for(var i=0;i<3;i++)
+                    tr
+                        each val in data
+                            td(data-name=(val==data[0])?val.type+"(no trimming)":val.type)
+                                p=val.data
+                                if val==data[0]
+                                    b (no trimming)
+    .ps
+        p This product is not repaired with magnetic tiles, with .
+        p This product is not repaired with magnetic tiles, with 3mm construction with standard, stronger earthquake resistance.

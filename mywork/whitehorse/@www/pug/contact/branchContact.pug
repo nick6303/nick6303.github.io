@@ -1,0 +1,80 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+//- 此頁自訂參數
+-var type=["All items","White horse","Devanno"]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#contact.branchContact(data-themeColor="#3e2820")
+    include ../layout/_header.pug
+    
+    main
+        //後端請注意: 下方backbround-image要可以讓自己上傳
+        article(style="background-image: url('../../upload/fa2/contact/branchBg_1920_1080.jpg')")
+            section.bg
+            section.content
+                .contactInf
+                    ._title
+                        h6 Contact us
+                        p Welcome to contact us,or leave your comment,related inquiries, etc., there will be someone to serve you.
+                    .information
+                        span.bgColor
+                        h6 White horse Ceramic Co. ,Ltd.
+                        ul
+                            li(data-name="Tel") 03-490-3111 
+                            li(data-name="Fax") 03-420-3813
+                            li(data-name="Mail") whitehorse@whitehorsetile.com
+                            li(data-name="Mail ") No.5 , Dianyan Rd. , Yangmei Dist.,Taoyuan City 326 ,Taiwan
+                .table
+                    h5 Inquiry form
+                    form
+                        .box.subject
+                            h6 Subject
+                            .dropDown
+                                span.selectMenu
+                                    p Choose subject
+                                ul
+                                    li Product related
+                        .box.textarea
+                            h6 Content
+                            textarea(placeholder="Please enter your contact details...")
+                        .box.must
+                            h6 Name
+                            input(type="text" placeholder="Herry Lin") 
+                        .box.must
+                            h6 E-mail
+                            input(type="text" placeholder="Herry@gmail.com")   
+                        .box.must
+                            h6 Telephone
+                            input(type="text" placeholder="+886-2-123-4567")  
+                        .box.must
+                            h6 Fax
+                            input(type="text" placeholder="+886-2-123-4567")  
+                        .box.code.must
+                            h6 Verification code
+                            input(type="text" placeholder="Click on the image to change")
+                            div
+                                img(src="../../upload/fa2/contact/defaultCode.jpg", alt="")
+                        .buttons
+                            button(type="reset" onclick="")
+                                p Reset again
+                                span.bgColor
+                            button(type="button")
+                                p Confirm sent
+                                span.bgColor
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

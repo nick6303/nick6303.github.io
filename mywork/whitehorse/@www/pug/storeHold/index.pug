@@ -1,0 +1,78 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var type = ["Agent","Agent","Agent","Agent","Agent","Agent","Agent","Agent","Agent","Agent"]
+
+    var area = ["Taiwan","Malaysia","Chia"]
+
+    var city = ["city1","city2","city3"]
+
+    var brand =["whitehorse","Devanno"]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#storeHold.index
+    include ../layout/_header.pug
+
+    main
+        article(style='background-image: url("../../upload/fa2/storeHold/bgImg1_1920_1080.jpg")')
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg4_1920_1080.jpg" alt="")
+            section.content
+                ._title
+                    h2 Agency & showroom
+                    p It's the highest quality standard in the world enjoy the good life in the security fortress constructed.
+                form
+                    //- .box
+                    //-     h6 Select display store type
+                    //-     .dropDown
+                    //-         span.selectMenu
+                    //-             p choose a type
+                    //-         ul
+                    //-             each val in type
+                    //-                 li=val
+                    .box
+                        h6 Select a brand
+                        .dropDown
+                            span.selectMenu
+                                p choose a brand
+                            ul
+                                each val in brand
+                                    li=val
+                    .box
+                        h6 Select country / city
+                        .dropDown
+                            span.selectMenu
+                                p choose a area
+                            ul
+                                each val in area
+                                    li=val
+                        .dropDown
+                            span.selectMenu
+                                p choose a city
+                            ul
+                                each val in city
+                                    li=val 
+                    button(type="button")
+                        span.icon-magnifier
+                        p Search
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

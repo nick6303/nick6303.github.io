@@ -1,0 +1,174 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+- 
+    var product = [
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg1_500_330.jpg",
+            newOne:"true",
+            name:"National travel notes waterproof stickers",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$1099",
+            ps:"group (5 in a group)"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg2_500_330.jpg",
+            newOne: "false",
+            name:"Taiwan's unique plant flower teacup group",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$1099",
+            ps:"group (6 in a group)"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg3_500_330.jpg",
+            newOne:"false",
+            name:"Blue and white porcelain water coaster",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$299",
+            ps:"book"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg4_500_330.jpg",
+            newOne:"false",
+            name:"Attached bag heat-resistant glass water bottle",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$399",
+            ps:"piece"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg1_500_330.jpg",
+            newOne:"true",
+            name:"National travel notes waterproof stickers",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$1099",
+            ps:"group (5 in a group)"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg2_500_330.jpg",
+            newOne: "false",
+            name:"Taiwan's unique plant flower teacup group",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$1099",
+            ps:"group (6 in a group)"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg3_500_330.jpg",
+            newOne:"false",
+            name:"Blue and white porcelain water coaster",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$299",
+            ps:"book"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg4_500_330.jpg",
+            newOne:"false",
+            name:"Attached bag heat-resistant glass water bottle",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$399",
+            ps:"piece"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg1_500_330.jpg",
+            newOne: "true",
+            name:"National travel notes waterproof stickers",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$1099",
+            ps:"group (5 in a group)"},
+        {
+            img:"../../upload/fa2/whitehorsebaby/productImg2_500_330.jpg",
+            newOne: "false",
+            name:"Taiwan's unique plant flower teacup group",
+            words:"This is a kind of happiness magic, you can achieve yourwishes when you put it on!",
+            price:"$1099",
+            ps:"group (6 in a group)"},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+//後端請注意: 下方data-themeColor 請填入這個分館的主題色 同分館的所有頁面都要一樣
+body#whitehorsebaby.index(data-themeColor="#067e3c")
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.content
+                ._img
+                    figure.lefthorse
+                        img(src="../../upload/fa2/whitehorsebaby/bannerLeftHorse_500_310.png", alt="")
+                    figure.righthorse
+                        img(src="../../upload/fa2/whitehorsebaby/bannerRightHorse.png", alt="")
+                    figure.butterfly1
+                        img(src="../../upload/fa2/whitehorsebaby/bannerButterFly1_70_90.png", alt="")
+                    figure.butterfly2
+                        img(src="../../upload/fa2/whitehorsebaby/bannerButterFly2_70_90.png", alt="")
+                    figure.flower
+                        img(src="../../upload/fa2/whitehorsebaby/bannerFlower_255_200.png", alt="")
+                ._title(style="background-image:url('../../upload/fa2/whitehorsebaby/bannerImg_1920_540.jpg')")
+                    figure
+                        img(src="../../upload/fa2/whitehorsebaby/bannertitleImg1_325_100.png", alt="")
+                    p The white horse baby is a warm, dreamy urban forest dreamer. In his world, it is a castle that can dream of the wind. It is awonderland.
+            section.overview
+                h6 overview
+                ul
+                    li
+                        p About story
+                            span.bgColor
+                    li
+                        p Series products
+                            span.bgColor
+        article.introduction
+            section._img
+                figure
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/whitehorsebaby/intrImg_260_240.png", alt="")
+            section._title
+                h6 introduction
+                h5 About story
+                    span.bgColor
+                p From the dreamy "Happy Forest" white horse baby, the biggest magic is to bring you happiness, laughter, let you forget the pressure and trouble! <br/><br/>We have cooperated with the forest-based writer "Beiguo Teacher" who has always been concentric, caring and warm-hearted to create a "white horse baby". The white horse baby is a warm, dreamy urban forest dreamer. In his world, it is a castle that can dream of the wind. It is a wonderful wonderland.
+        article.product 
+            section._title
+                h6 OVERVIEW
+                h5 Series products
+                    span.bgColor
+            section.productContent
+                ul
+                    each val in product
+                        //後端請注意: 下方data-src請放置燈箱資料位置
+                        li(data-src="../whitehorsebaby/detail.html" class=(val.newOne=="true")?"new":"")
+                            ._img
+                                figure
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                .hoverBox
+                                    span
+                                .newOne
+                                    p NEW
+                            ._text
+                                p.name=val.name
+                                p.words=val.words
+                                .price
+                                    p=val.price
+                                    span=val.ps
+                                
+            section.buttons
+                figure.right
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/whitehorsebaby/buttonsRightImg2_180_300.png", alt="")
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/whitehorsebaby/buttonsRightImg1_220_300.png", alt="")
+                h6 For pre-order, please contact the businessoffices in each district.
+                div
+                    a.leanbutton(href="javascript:void")
+                        p Showroom
+                    a.leanbutton(href="javascript:void")
+                        p Online shop
+                figure.left
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/whitehorsebaby/buttonsLeftImg1_300_200.png", alt="")
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/whitehorsebaby/buttonsLeftImg2_200_200.png", alt="")
+            section.smallImg
+
+
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

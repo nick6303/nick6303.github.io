@@ -1,0 +1,185 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body(id="home" class="index")
+    include ../layout/_header.pug
+    
+    main
+        article.banner
+            section.background(style="background-color: #fff")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="" alt="")
+            section._slick
+                ul
+                    li
+                        // 圖片 電腦版尺寸1800*945  手機板尺寸1024*1366 
+                        picture
+                            // [if IE 9]><video style="display: none;"><![endif]
+                            // 後端請注意:手機圖片大小900_1200
+                            source(srcset="../../upload/fa2/home/bannerRWD_900_1200.jpg" media="(max-width:1024px)")
+                            //- 後端請注意:電腦圖片大小1800_940
+                            img(src="../../upload/fa2/home/banner1_1800_945.jpg" alt="")
+                    li
+                        // 圖片 電腦版尺寸1800*945  手機板尺寸1024*1366
+                        picture
+                            // [if IE 9]><video style="display: none;"><![endif]
+                            // 後端請注意:手機圖片大小900_1200
+                            source(srcset="../../upload/fa2/home/bannerRWD_900_1200.jpg" media="(max-width:1024px)")
+                            //- 後端請注意:電腦圖片大小1800_940
+                            img(src="../../upload/fa2/home/banner1_1800_945.jpg" alt="")
+            section._text
+                div.slogan
+                    h6 Life is tiles
+                    p tiles communicate with life
+                span ////////////////
+                div.logo
+                    a(href="../branch/index.html")
+                        img(src="../../assets/img/brandsLogo1_160_135.png" alt="")
+                    a(href="../branch/index.html")
+                        img(src="../../assets/img/brandsLogo2_140_130.png" alt="")
+            section.scrollDown
+                span
+                p SCROLL
+            section.buttons
+                a.openSearch(href=java)
+                    span.icon-magnifier
+                button(type="button")
+                    span.icon-internet
+                    ul
+                        li
+                            a(href=java) 中文
+                        li
+                            a(href=java) English
+                a(href="../favorite/index.html")
+                    span.icon-valentines-heart
+        article.product
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/productBg_1920_910.jpg" alt="")
+            section.content
+                div._title
+                    p Taste life begin with tiles
+                span ////////////////
+                div._text
+                    p It’s the highest quality standard in the world enjoy the good life in the security fortress constructed.
+                a.leanbutton(href="../product/index.html")
+                    p Products
+
+        article.about
+            section.background(style="background-color:")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/aboutBg_1140_1150.jpg" alt="")
+            section.imgSlick
+                // 照片
+                ul.picture
+                    // 後端請注意:下方的背景顏色要由客戶決定
+                    li
+                        // 後端請注意:下方建議圖片寬高1070*670
+                        img(data-lazy="../../upload/fa2/home/aboutSlickImg_1070_670.jpg" alt="")
+                    //- // 後端請注意:下方的背景顏色要由客戶決定
+                    //- li
+                    //-     // 後端請注意:下方建議圖片寬高1070*670
+                    //-     img(data-lazy="../../upload/fa2/home/aboutSlickImg2_1070_670.jpg" alt="")
+                // logo
+                ul.logos
+                    li(style="background-color: #093371")
+                        // 後端請注意:下方建議圖片寬高160*160
+                        img(data-lazy="../../assets/img/brandsLogo1_160_135.png" alt="")
+                    //- li(style="background-color: #093371")
+                    //-     // 後端請注意:下方建議圖片寬高160*160
+                    //-     img(data-lazy="../../assets/img/brandsLogo2_140_130.png" alt="")
+                // 裝飾方塊
+                span
+            section._textSlick
+                ul
+                    li
+                        h6 About  Whitehorse
+                        // 後端請注意:下方字數限制120字，超過的部分會變...
+                        p For the kitchen work table the pattern and the color are naturally harmoniou and the cutting use pattern can be consistent...
+                    li
+                        h6 About  Whitehorse
+                        // 後端請注意:下方字數限制120字，超過的部分會變...
+                        p For the kitchen work table the pattern and the color are naturally harmoniou and the cutting use pattern can be consistent...
+                div.buttons
+                    a.leanbutton(href="../about/index.html")
+                        p About us
+                    a.leanbutton(href="../news/index.html")
+                        p News
+            section.arrows
+                span.icon-triangle_left
+                span.icon-triangle_right
+        article.brands
+            section.background(style="background-color: ")
+                picture
+                    // [if IE 9]><video style="display: none;"><![endif]
+                    // 後端請注意:手機圖片大小1024_1366
+                    source(srcset="" media="(max-width:1024px)")
+                    // 後端請注意:電腦圖片大小1920_1080
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg4_1920_1080.jpg" alt="")
+            section.imgs
+                // 預設圖片
+                div._img.active
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg1_1920_1080.jpg" alt="")
+                // 分館一圖
+                div._img
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg3_1920_1080.jpg" alt="")
+                // 分館二圖片
+                div._img
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/home/brandsBg2_1920_1080.jpg" alt="")
+            section.content
+                h6
+                    span Our brands
+                div
+                    ul
+                        // 分館一
+                        li
+                            // 圖片:寬度最多160px
+                            div.logo
+                                img(src="../../assets/img/brandsLogo1_160_135.png" alt="")
+                            // 斜線
+                            span.leanLine
+                            // 文字
+                            div.slogan
+                                p The best tile, the best choice
+                            // 分館連結
+                            a(href="../branch/index.html")
+                        // 分館二
+                        li
+                            // 圖片:寬度最多160px
+                            div.logo
+                                img(src="../../assets/img/brandsLogo2_140_130.png" alt="")
+                            // 斜線
+                            span.leanLine
+                            // 文字
+                            div.slogan
+                                p Unusual taste design eternal quality commitment
+                            // 分館連結
+                            a(href="../branch/index.html")
+
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>
