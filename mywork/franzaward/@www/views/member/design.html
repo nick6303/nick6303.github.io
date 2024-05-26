@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/service/signup.css">
+    <link rel="stylesheet" href="../../assets/css/member/design.css">
+
+</head>
+
+<body id="member" class="design">
+    <header></header>
+    <main>
+        <article class="topTitle">
+            <div class="h2">Contestant Service</div>
+            <p>帳號服務中心</p>
+        </article>
+        <article class="leftNav">
+            <section class="link">
+                <div class="overview">
+                    <a href="../member/index.html">OVERVIEW</a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="../member/information.html">
+                            <p>ACCOUNT & BASIC</p>
+                            <p>帳號與基本資料</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../member/academic.html">
+                            <p>ACADEMIC</p>
+                            <p>學籍資訊</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../member/beneficiary.html">
+                            <p>BENEFICIARY</p>
+                            <p>受款資訊</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <p>JOB</p>
+                            <p>工作機會</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="design">
+                    <a href="../member/design.html">
+                        <p>DESIGN</p>
+                        <p>設計作品管理</p>
+                    </a>
+                </div>
+                <div class="QA">
+                    <a href="../member/message.html">
+                        <p>MESSAGE</p>
+                        <p>客服訊息</p>
+                        <span>10</span>
+                    </a>
+                </div>
+            </section>
+            <section class="logOut">
+                <div class="linkMenu">
+                    <div class="open">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p>CONTESTANT SERVICE</p>
+                    </div>
+                    <div class="back">
+                        <span></span>
+                        <p>BACK</p>
+                    </div>
+                </div>
+                <a href="javascript:void(0)">
+                    <p>LOG OUT</p>
+                </a>
+            </section>
+        </article>
+        <article class="content">
+            <section class="tableContent">
+                <div class="type">
+                    <h3>Artwork Management 設計作品管理</h3>
+                    <h4 class="ps">
+                        <p>
+                            您曾參與過活動的作品皆收錄於此，申請期間您可透過點擊作品中的按鈕進行編輯與刪除，也可以新增一筆新的參賽作品。若作品顯示無法編輯，則代表進入評選階段，無法再作更改。
+                        </p>
+                    </h4>
+                    <div class="selectWork">
+                        <div class="workbox dropdown nopadding">
+                            <div class="dropList">
+                                <span class="selectMenu">
+                                    <p>2018 年度作品</p>
+                                </span>
+                                <ul>
+                                    <li>2018 年度作品</li>
+                                    <li>2017 年度作品</li>
+                                    <li>2016 年度作品</li>
+                                    <li>2015 年度作品</li>
+                                    <li>2014 年度作品</li>
+                                    <li>2013 年度作品</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="workbox addWorks">
+                            <a href="../service/signup.html">
+                                <p>Add new artwork 新增一筆作品</p>
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="artwork">
+                <!-- 作品一 -->
+                <div class="works">
+                    <!-- 後端請注意:onclick可更改 重要的是裡面的function -->
+                    <a href="javascript:void(0)" onclick="ajaxDesignLibox()">
+                        <div class="_img">
+                            <img src="../../upload/fa2/member/design/worksImg_800_500.jpg" alt="">
+                            <!-- 後端請注意:下面的awards要得獎才會有 沒有話移除-->
+                            <div class="awards">
+                                <p class="awardsAame">SILVER</p>
+                                <p>award</p>
+                            </div>
+                        </div>
+                        <div class="_text">
+                            <ul>
+                                <!-- 競賽名稱 -->
+                                <li class="project">
+                                    <h6>FRANZ RISING STAR PROJECT</h6>
+                                    <p>Technology</p>
+                                </li>
+                                <!-- 舉辦年分 -->
+                                <li class="year">
+                                    <h6>YEAR</h6>
+                                    <p>2018</p>
+                                </li>
+                                <!-- 作品名 -->
+                                <li class="design">
+                                    <h6>DESIGN</h6>
+                                    <p>Pile Lamp</p>
+                                </li>
+                                <!-- 作者 -->
+                                <li class="designer">
+                                    <h6>DESIGNER</h6>
+                                    <p>Lin Shian Huan</p>
+                                    <p>Hevroni Eden</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <!-- 作品二 -->
+                <div class="works">
+                    <!-- 後端請注意:onclick可更改 重要的是裡面的function -->
+                    <a href="javascript:void(0)" onclick="ajaxDesignLibox()">
+                        <div class="_img">
+                            <img src="../../upload/fa2/member/design/worksImg2_500_580.jpg" alt="">
+                            <!-- 後端請注意:下面的awards要得獎才會有 沒有話移除-->
+                            <div class="awards">
+                                <p class="awardsAame">GOLD</p>
+                                <p>award</p>
+                            </div>
+                        </div>
+                        <div class="_text">
+                            <ul>
+                                <!-- 競賽名稱 -->
+                                <li class="project">
+                                    <h6>FRANZ RISING STAR PROJECT</h6>
+                                    <p>Daily</p>
+                                </li>
+                                <!-- 舉辦年分 -->
+                                <li class="year">
+                                    <h6>YEAR</h6>
+                                    <p>2018</p>
+                                </li>
+                                <!-- 作品名 -->
+                                <li class="design">
+                                    <h6>DESIGN</h6>
+                                    <p>VENIN VOIR</p>
+                                </li>
+                                <!-- 作者 -->
+                                <li class="designer">
+                                    <h6>DESIGNER</h6>
+                                    <p>Lin Shian Huan</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <!-- 作品三 -->
+                <div class="works">
+                    <!-- 後端請注意:onclick可更改 重要的是裡面的function -->
+                    <a href="javascript:void(0)" onclick="ajaxDesignLibox()">
+                        <div class="_img">
+                            <img src="../../upload/fa2/member/design/worksImg3_850_340.jpg" alt="">
+                        </div>
+                        <div class="_text">
+                            <ul>
+                                <!-- 競賽名稱 -->
+                                <li class="project">
+                                    <h6>FRANZ RISING STAR PROJECT</h6>
+                                    <p>Daily</p>
+                                </li>
+                                <!-- 舉辦年分 -->
+                                <li class="year">
+                                    <h6>YEAR</h6>
+                                    <p>2018</p>
+                                </li>
+                                <!-- 作品名 -->
+                                <li class="design">
+                                    <h6>DESIGN</h6>
+                                    <p>VENIN VOIR</p>
+                                </li>
+                                <!-- 作者 -->
+                                <li class="designer">
+                                    <h6>DESIGNER</h6>
+                                    <p>Lin Shian Huan</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+</html>

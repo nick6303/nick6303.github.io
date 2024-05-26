@@ -1,0 +1,235 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"樓層導覽",
+            link:"../floor/index.html"},
+    ]
+
+    var unit = [
+        "All 樓層總覽",
+        "1F 精品美妍",
+        "2F 世界精品 ",
+        "3F 世界精品",          
+        "4F 國際名品",
+        "5F 都會名媛",
+        "6F 品味質男",
+        "7F 生活逸品",          
+        "8F 活力休閒",          
+        "B1F 名品鞋履",          
+        "B2F 潮流風尚",          
+        "B3F 雅緻食尚"
+    ]
+
+    var block = [
+        {
+            ch:"國際名品",
+            en:"International famous products",
+            sort:[
+                {
+                    img:"../../upload/fa2/floor/index/sortImg.png",
+                    bgc:"#f37022",
+                    color: "#fff"},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg2.png",
+                    bgc:"#851d27",
+                    color:""},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg3.png",
+                    bgc:"",
+                    color:""},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg4.png",
+                    bgc:"#ebebeb",
+                    color:""},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg5.png",
+                    bgc:"#4b73b0",
+                    color:''},
+            ]},
+        {
+            ch:"化妝品",
+            en:"Cosmetic",
+            sort:[
+                {
+                    img:"../../upload/fa2/floor/index/sortImg6.png",
+                    bgc:""},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg7.png",
+                    bgc:""},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg.png",
+                    bgc:"#000"},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg2.png",
+                    bgc:"#ebebeb"},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg3.png",
+                    bgc:""},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg4.png",
+                    bgc:""},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg5.png",
+                    bgc:"#ebebeb"},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg5.png",
+                    bgc:"#ebebeb"},
+                {
+                    img:"../../upload/fa2/floor/index/sortImg5.png",
+                    bgc:"#ebebeb"},
+            ]},
+    ]
+
+    
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#floor.index
+    include ../layout/_header.pug
+    
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title(style="background-image:url('../../upload/fa2/floor/index/bannerImg_1920_475.jpg')") 
+                p.ch 樓層導覽
+                p.en Floor introduction
+                p.words 開闊明朗的空間，順暢動線設計，提供消費者輕鬆歡愉，擁50家以上國際精品名牌進駐，名品雲集世界同步。
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val == unit[2])?"active":"")
+                        a(href=java)
+                            p=val
+        article.floorContent
+            section._search
+                p.en 1F BOUTIQE & COSMETIC
+                p.words 此樓提供國際經典精品，及奢華化妝品，名品雲集世界同步
+                form
+                    .dropDown.active
+                        span.selectMenu
+                            p 全部類別
+                        ul
+                            li 全部類別
+                            li 國際精品
+                            li 潮流服飾
+                            li 美食商店
+                            li 休閒主打
+                    .inputArea
+                        input(type="text" placeholder="輸入品牌搜尋")
+                        // 後端請注意: 下方的onclick 只是展示用 記得要移除 重要的是裡面的function
+                        //後端請注意: 搜尋結果出來後 請啟動 hasResult() 這個function 
+                        button.icon-magnifier(type="button" onclick="hasResult();")
+                p.resultCount 根據您輸入的關鍵字，以下總共有 <b>4</b> 種搜尋結果
+                .buttons
+                    button(type="button")
+                        span.icon-square
+                        p 區塊顯示
+                    button.active(type="button")
+                        span.icon-list2
+                        p 列表顯示
+            section.tableContent
+                .block
+                    each val in block
+                        .sort
+                            ._title
+                                p.ch=val.ch
+                                p.en=val.en
+                            .masonry
+                                .grid-sizer
+                                //  後端請注意: 請幫我在後台標註 下方第一個div一定會是大塊的  之後的div如果需要至大塊的話 請加上class "big"
+                                each item in val.sort
+                                    .grid-box( class=(item == val.sort[2] )?"big":"")
+                                        a(href="../floor/detail.html")
+                                            // 後端請注意: 下方的背景顏色需要由客戶決定
+                                            if (item.bgc !== "")
+                                                figure(style=("background-color:"+item.bgc))
+                                                    img.b-lazy(src=blazy data-src=item.img, alt="")
+                                            else 
+                                                figure(style="border: 1px solid #cccccc")
+                                                    img.b-lazy(src=blazy data-src=item.img, alt="")
+                                            // 後端請注意: 下方的文字顏色需要由客戶決定
+                                            ._text(style=("color:"+item.color))
+                                                //品牌名稱
+                                                h6 HERMES
+                                                //介紹
+                                                // 後端請注意: 此處字數限制50個字 多的會變...
+                                                p 愛馬仕的傳奇源自於十九世紀前半葉巴黎一個生產馬鞍及馬具用品的工作坊。富有創業精神的六代手工匠拓...
+                .List.active
+                    .listHeader
+                        p.floorName 樓層
+                        p.sortName 類別
+                        p.logo 品牌 
+                        p._text 簡介
+                        p.link 查看更多
+                    .listContent
+                        -for(var i =0;i<2;i++)
+                            .floor
+                                .floorName
+                                    h6=(i==0)?"1F":"2F"
+                                    p=(i==0)?"精品美妍":"世界精品"
+                                each val in block
+                                    .sort
+                                        p(data-floor=(i==0)?"1F":"2F")=val.ch
+                                        ul
+                                            each item in val.sort
+                                                li
+                                                    a._img(href="../floor/detail.html")
+                                                        if (item.bgc !== "")
+                                                            figure(style=("background-color:"+item.bgc))
+                                                                img.b-lazy(src=blazy data-src=item.img, alt="")
+                                                        else 
+                                                            figure(style="border: 1px solid #cccccc")
+                                                                img.b-lazy(src=blazy data-src=item.img, alt="")
+                                                    ._text
+                                                        p.name HERMES
+                                                        //後端請注意: 字數限制
+                                                        p.words 愛馬仕的傳奇源自於十九世紀前半葉巴黎一個生產馬鞍及馬具用品的工作坊。富有創業精神的六代手工匠拓展事業...
+                                                        p.tel Tel : 07-2153106
+                                                    .link
+                                                        a(href="../floor/detail.html")
+                                                            span
+                                                            p ENTER
+            section.ps
+                p 找不到您想搜尋的品牌嗎 ? 歡迎撥打<span>顧客專線 0800-018-980</span>將有專人問您服務，謝謝。
+
+
+    include ../layout/_footer.pug
++script
+script.
+    function hasResult(){
+        // 讓提示字出來
+        $(".index .floorContent ._search .resultCount").slideDown(500)
+        // 計算有幾個結果
+        var count = $(".index .tableContent .List .sort ul li").length
+        // 填入數量
+        $(".index .floorContent ._search .resultCount b").text(count)
+        // 重新整理畫面
+        $(".index .floorContent ._search .buttons button").eq(1).addClass("active").siblings().removeClass("active")
+        _waypoint.floorW();
+        _Blazy.floorW();
+        floor.masonry();
+    }
+
+|
+|
+</html>

@@ -1,0 +1,374 @@
+$bg_color: #fff;
+$base_color: #d2b055;
+$base_red: #d80b18;
+$foot_bg: #404040;
+
+
+
+
+
+
+
+
+
+
+
+
+/*font-size*/
+
+@mixin font-size($size: 16) {
+    font-size: ($size/16) + rem
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*font-size*/
+
+
+/*font-weight*/
+
+$font-300: 300;
+$font-600: 600;
+$font-900: 900;
+
+
+
+
+
+
+
+
+
+
+
+/*font-weight*/
+
+
+/*RWD*/
+
+$pc: "(min-width:1025px)";
+$pad_proV: "(max-width:1365px)";
+$pad_pro: "(max-width:1024px)";
+$pad_V: "(max-width:1023px)";
+$pad: "(max-width:900px)";
+$phone: "(max-width:767px)";
+$iphone5:"(max-width:350px)";
+
+
+
+$width700:"(max-width:700px)";
+$width800:"(max-width:800px)";
+
+
+
+
+
+
+
+
+
+
+/*RWD*/
+
+
+/*transiton*/
+
+@mixin trans($move: 0s, $wait: 0s, $type: all, $way: ease) {
+    -webkit-transition: $type $move $way $wait;
+    -moz-transition: $type $move $way $wait;
+    -ms-transition: $type $move $way $wait;
+    -o-transition: $type $move $way $wait;
+    transition: $type $move $way $wait;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*transiton*/
+
+
+/*hide word*/
+
+@mixin hide_word($line:0) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*hide word*/
+
+// display: flex 置中
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+// keyframes 動畫-----------------------------------------------
+// 由左滑入
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-25%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// 由右滑入
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(25%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+// ↓↓↓↓↓↓↓↓↓↓↓close按鈕設定↓↓↓↓↓↓↓↓↓↓↓
+@mixin close {
+    margin: auto;
+    width: 50px;
+    height: 84px;
+    cursor: pointer;
+    @media #{(max-width: 700px)}{
+    	height: 54px;
+    }
+}
+
+
+@mixin close_line {
+    content: "";
+    display: block;
+    width: 1px;
+    background-color: $base_color;
+    margin: auto;
+}
+
+@mixin close_p {
+    margin-top: 12px;
+    font-family: 'Raleway-regular';
+    @include font-size(12);
+    letter-spacing: .5px;
+    text-align: center;
+}
+
+// close上方的黃色線
+@keyframes closeLine {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    @keyframes closeLine {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 30px;
+        }
+    }
+}
+
+
+// close上方的黃色線收回
+@keyframes closeLineOut {
+    0% {
+        height: 60px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    @keyframes closeLineOut {
+        0% {
+            height: 30px;
+        }
+        100% {
+            height: 0px;
+        }
+    }
+}
+
+// ↑↑↑↑↑↑↑↑↑↑close按鈕設定↑↑↑↑↑↑↑↑↑↑
+// ↓↓↓↓↓↓↓↓↓↓↓標題設定↓↓↓↓↓↓↓↓↓↓↓
+// 英文標題
+@mixin _title_h2 {
+    @include font-size(32);
+    @media #{$phone} {
+        @include font-size(28);
+    }
+    font-family: 'Cinzel-Regular';
+    line-height: 1.5;
+}
+
+// 英文標題底下的黃色線
+@mixin _title_h2_line {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0px;
+    background-color: $base_color;
+    margin-left: 50%;
+}
+
+// 中文標題
+@mixin _title_p {
+    margin-top: 15px;
+    @include font-size(18);
+    font-family: "微軟正黑體";
+}
+
+// title底下的黃色線
+@keyframes titleLine {
+    0% {}
+    100% {
+        width: 20px;
+        transform:translateX(-10px);
+    }
+}
+
+
+
+// ↑↑↑↑↑↑↑↑↑↑標題設定↑↑↑↑↑↑↑↑↑↑
+@keyframes titleLine_home {
+    0% {}
+    100% {
+        width: 30px;
+    }
+}
+
+
+
+
+
+
+// 燈箱動畫
+@media #{$pc} {
+
+    @keyframes _libox_content_bg_open {
+        0% {
+            width: 0vw;
+        }
+        100% {
+            width: 50vw;
+        }
+    }
+
+    @keyframes _libox_content_bg_close {
+        0% {
+            width: 50vw;
+            opacity: 1;
+        }
+        90% {
+            opacity: 0;
+        }
+        100% {
+            width: 0vw;
+            opacity: 0;
+        }
+    }
+}
+
+@media #{$pad_pro} {
+    @keyframes _libox_content_bg_open {
+        0% {
+            width: 0vw;
+        }
+        100% {
+            width: 100vw;
+        }
+    }
+
+    @keyframes _libox_content_bg_close {
+        0% {
+            width: 100vw;
+            opacity: 1;
+        }
+        90% {
+            opacity: 0;
+        }
+        100% {
+            width: 0vw;
+            opacity: 0;
+        }
+    }
+}
+
+@keyframes slidein {
+    0% {}
+    100% {
+        transform: translate(0);
+    }
+}
+
+
+/*由左側淡入滑入*/
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-25%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

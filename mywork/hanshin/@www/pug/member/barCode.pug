@@ -1,0 +1,101 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"會員專區",
+            link:"../member/member.html"},
+    ]
+
+    var unit =[
+        {
+            name: "會員總覽",
+            link:"../member/member.html"},
+        {
+            name: "超集卡點數&遊戲次數",
+            link:"../member/point.html"},
+        {
+            name: "我的贈品",
+            link:"../member/gift.html"},
+        {
+            name: "停車管理",
+            link:""},
+        {
+            name: "基本資料",
+            link:"../member/basicInfo.html"},
+        {
+            name: "修改密碼",
+            link:java},
+        {
+            name: "會員條碼",
+            link:"../member/barCode.html"}
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#member.barCode
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section.topTitle
+                .left
+                    p.ch 會員專區
+                    p.en Member area
+                    p.words 歡迎登入漢神超集卡會員專區，提供您專屬的漢神超集卡點數、遊戲、贈品管理、電子報訂閱及停車查詢等眾多便利及貼心服務。
+                .right
+                    figure
+                        img(src="../../upload/fa2/member/member/picture_170_170.jpg", alt="")
+                    ._text
+                        p(data-name="Welcome , ") 王艾倫
+                        a(href=java)
+                            span.icon-logout
+                            p.en LOGOUT 
+                            p.ch 登出
+                .unit
+                    ul  
+                        each val in unit
+                            li(class=(val==unit[6])?"active":"")
+                                if(val==unit[unit.length-2])
+                                    // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                                    a(href=val.link onclick="liboxs.ajax(this)" data-src="../member/changPassword.html")=val.name
+                                else
+                                    a(href=val.link)=val.name
+        article.content
+            section.overview
+                p.en BAR CODE
+                p.words 請點擊查看條碼按鈕，會員條碼每5分鐘更新一次，逾時無效。
+            section.codeImg(style="background-image: url('../../upload/fa2/member/barcode/codeImgBg_1190_460.png')")
+                .card(style="background-image: url('../../upload/fa2/member/barcode/logo.png')")
+                    figure(data-barcode="15373559523435133177")
+                        ._img
+                
+        article.precautions
+            section.words
+                p 如您有任何意見歡迎填寫 <span>聯絡表單</span>，或撥打 <span>顧客專線0800-018-980</span> 將有專人問您服務，謝謝。
+                // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                button(type="button" onclick="liboxs.ajax(this)" data-src="../member/precautions.html") 漢神超集卡約定事項
+    include  ../layout/_footer.pug
++script
+// 後端請注意: 下方的js只有會員單元才會有
+script(src="../../assets/js/member.js")
+|
+|
+</html>

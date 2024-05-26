@@ -1,0 +1,178 @@
+#member.gift
+    main .content
+        .overview
+            .dropDown
+                margin: 30px auto 40px
+                max-width: 280px
+                position: relative
+                &:after
+                    +fakeLine(0%,3px,#000)
+                    position: absolute
+                    bottom: -3px
+                    left: 50%
+                    transform: translateX(-50%)
+                    animation: w100 1s both .6s
+                .selectMenu
+                    animation: fadeInUp 0.8s both 1s
+    
+#member.gift
+    .memberFormLibox .ticket section,
+    .memberFormLibox .star section,
+    .memberFormLibox .lottery section
+        max-width: 910px
+        height: 100%
+        .box
+            padding: 60px 45px 40px
+            min-height: 100%
+            @media (max-width: 910px)
+                padding: 60px 35px 40px
+            @media (max-width: 500px)
+                padding: 50px 5vw
+            ._title .item
+                margin: 0 0 15px
+            .typeBox
+                .topTitle 
+                    display: flex
+                    justify-content: center
+                    align-items: flex-end
+                    letter-spacing: 0.5px
+                    margin: 10px 0 
+                    line-height: 1
+                    flex-wrap: wrap
+                    .px16
+                        font-size: px(15)
+                        margin: 0 2px 2px
+                    .red
+                        font-size: px(25)
+                        color: #f52d2d
+                        margin: 0 0 -5px
+                        &:before,&:after
+                            font-size: px(17)
+                            margin: 0 5px
+                            color: #000
+                            +JaguarJC-Bold
+                        &:before
+                            content: attr(data-before)
+                        &:after
+                            content: attr(data-after)
+                .container
+                    .select 
+                        @media (max-width: 500px)
+                            margin: 20px -5vw 
+                        p
+                            @media (max-width: 500px)
+                                padding: 5px 15px 0
+                            @media (max-width: 350px)
+                                font-size: px(15)
+                    .table
+                        @media (max-width: 600px)
+                            .order1
+                                order: 1
+                                justify-content: flex-start !important
+                                padding: 10px 0 0 5px !important
+                                flex-direction: row !important
+                                &:after
+                                    content: attr(data-name)
+                                    margin: 0 0 0 5px
+                                    font-weight: bold
+                            .order2 
+                                order: 2
+                                justify-content: flex-end !important
+                                flex-direction: row !important
+                                padding: 10px calc(30px + 2vw) 0 0 !important
+                            .openObject
+                                order: 3 
+                                width: 100% !important
+                                padding: 0 !important
+                                &>p
+                                    display: flex
+                                    justify-content: space-between
+                                    padding: 10px 5px !important
+                                    flex-wrap: wrap
+                                    &:before
+                                        content: attr(data-name)
+                                        font-weight: bold
+                                        margin: 0 20px 0 0
+                            .empty
+                                display: none !important
+                        .listTable
+                            .w245
+                                @media (max-width: 800px)
+                                    width: calc(38% - 2px)
+                                @media (max-width: 600px)
+                                    width: 50%
+                            .w150
+                                @media (max-width: 800px)
+                                    width: calc(24% - 2px)
+                                @media (max-width: 600px)
+                                    width: 50%
+                            .listhead
+                                @media (max-width: 600px)
+                                    display: none
+                            .listbody
+                                .list
+                                    @media (max-width: 600px)
+                                        position: relative
+                                        justify-content: space-between
+                                        &:after 
+                                            position: absolute
+                                            top: 16px
+                                            right: 0
+                                            content: "\e938"
+                                            display: block
+                                            color: #d8af79
+                                            font-size: px(30)
+                                            transition: all .4s ease
+                                            font-family: 'icomoon'
+                                        &.active:after 
+                                            transform: rotate(180deg)
+                                        &.on
+                                            border-bottom: 3px solid #6563e9
+                                    .intro
+                                        .name,.subtotal,ul li
+                                            padding: 10px
+                                        ul li
+                                            @media (max-width: 600px)
+                                                flex-direction: column
+                                                &>div
+                                                    margin: 5px 0
+                                                    justify-content: space-between
+                                                    &:first-child
+                                                        margin: 0 0 5px
+                                                    &:last-child
+                                                        margin: 5px 0 0
+                                    &>div button span
+                                        @media (max-width: 700px)
+                                            padding: 0 0 0 2px
+                        .rule
+                            @media (max-width: 800px)
+                                padding: 10px 5px 0
+
+#member.gift .memberFormLibox .lottery section
+    .box .typeBox .container .table .listTable
+        .list .w245
+            @media (max-width: 600px)
+                width: 100%
+                justify-content: flex-start !important
+                flex-direction: row !important
+                &:not(.ticket)
+                    &:after
+                        content: attr(data-name)
+                        margin: 0 0 0 5px
+                        font-weight: bold
+                &.ticket
+                    justify-content: space-between !important
+                    position: relative
+                    margin: -20px 0 0
+                    &:before
+                        content: "~"
+                        position: absolute
+                        top: calc(50% - 3px)
+                        left: 50%
+                        transform: translate(-50%,-50%)
+                        font-weight: bold
+                    p
+                        padding: 0 0 6px !important
+                        color: #ba8d51
+                    p:not(:last-child):after
+                        display: none !important

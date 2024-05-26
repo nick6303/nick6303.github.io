@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('icomoon/icomoon.eot?2zgn07');
+    src: url('icomoon/icomoon.eot?2zgn07#iefix') format('embedded-opentype'), url('icomoon/icomoon.ttf?2zgn07') format('truetype'), url('icomoon/icomoon.woff?2zgn07') format('woff'), url('icomoon/icomoon.svg?2zgn07#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-keyboard_arrow_right:before {
+    content: "\e915";
+}
+
+.icon-keyboard_arrow_left:before {
+    content: "\e916";
+}
+
+.icon-menu:before {
+    content: "\e917";
+}
+
+.icon-zoomout:before {
+    content: "\e912";
+}
+
+.icon-zoomin:before {
+    content: "\e913";
+}
+
+.icon-search1:before {
+    content: "\e914";
+}
+
+.icon-office:before {
+    content: "\e911";
+    color: #fff;
+}
+
+.icon-play:before {
+    content: "\e910";
+    color: #fff;
+}
+
+.icon-year:before {
+    content: "\e90f";
+    color: #1456ab;
+}
+
+.icon-phone:before {
+    content: "\e90d";
+}
+
+.icon-questionmark:before {
+    content: "\e90e";
+}
+
+.icon-discount:before {
+    content: "\e90b";
+}
+
+.icon-select:before {
+    content: "\e90c";
+}
+
+.icon-cart:before {
+    content: "\e906";
+}
+
+.icon-earth:before {
+    content: "\e907";
+}
+
+.icon-goBack:before {
+    content: "\e908";
+}
+
+.icon-link:before {
+    content: "\e909";
+}
+
+.icon-map:before {
+    content: "\e90a";
+}
+
+.icon-search:before {
+    content: "\e905";
+    color: #fff;
+    font-size: 12px;
+}
+
+.icon-email:before {
+    content: "\e900";
+    color: #fff;
+    font-size: 12px;
+}
+
+.icon-facebook:before {
+    content: "\e901";
+}
+
+.icon-facebook:hover {
+    color: #3b5998;
+}
+
+.icon-instagram:before {
+    content: "\e902";
+}
+
+.icon-instagram:hover {
+    color: #833ab4;
+}
+
+.icon-twitter:before {
+    content: "\e903";
+}
+
+.icon-twitter:hover {
+    color: #1da1f2;
+}
+
+.icon-youtube:before {
+    content: "\e904";
+}
+
+.icon-youtube:hover {
+    color: #ff0000;
+}

@@ -1,0 +1,241 @@
+@import "_variable.scss";
+
+
+body{
+    padding-bottom: 570px;
+    @media all and (max-width: 600px) {
+        padding-bottom: 680px;
+    }
+    @media all and (max-height : 680px) and (max-width: 700px) {
+        padding-bottom: 100vh;
+    } 
+}
+
+main {
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #251f1a;
+    height: 600px;
+    width: 100vw;
+    max-height: 100vh;
+    @media all and (max-width: 600px) {
+        height: 700px;
+    }
+}
+
+.ft_logo {
+    @include flex-center;
+    @media all and (max-height: 670px){
+        margin-top: -4vh;
+    }
+    img {
+        max-height: calc(100vh - 376px);
+    }
+}
+
+.ft_nav {
+    margin-top: 60px;
+    position: relative;
+    width: 100%;
+    @include flex-center;
+    letter-spacing: 1px;
+    @media all and (max-width: 600px) {
+        margin-top: 40px;
+    }
+    .ft_nav_bg {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        @include flex-space-between;
+        @media all and (max-width: 700px) {
+            display: none;
+        }
+        ._img {
+            width: 17.2vw;
+            @media all and (max-width: 900px) {
+                width: 16vw;
+            }
+        }
+    }
+    .ft_nav_box {
+        position: relative;
+        width: 54.2vw;
+        @include flex-space-between;
+        border-bottom: 1px solid #514c48;
+        padding: 2vh 1.8vh;
+        @media all and (min-width: 1921px) {
+            padding: 40px 35px
+        }
+        @media all and (max-width:900px) {
+            width: 65vw;
+            padding: 0 1.8vh 2vh 1.8vh;
+        }
+        @media all and (max-width:700px) {
+            width: 80vw;
+        }
+        @media all and (max-width:600px) {
+            @include flex-center;
+            flex-direction: column;
+            padding: 0 0 70px 0;
+        }
+        @media all and (max-width:600px) and (max-height: 670px){
+            padding: 0 0 10vh 0;
+        }
+        .ft_socialMedia {
+            @media all and (max-width: 600px) {
+                order:2;
+                margin-top: 35px;
+            }
+            ul {
+                display: flex;
+                li {
+                    &:not(:first-child){
+                        margin-left: 15px
+                    };
+                    a {
+                        @include flex-center;
+                        width: 25px;
+                        height: 25px;
+                        border: 1px solid $base_gold;
+                        border-radius: 50%;
+                        transition: all .4s ease;
+                        &:before {
+                            font-family: 'icomoon';
+                            color: $base_gold;
+                            transition: all .4s ease;
+                            @include font-size(12);
+                            margin-top: 1px;
+                        }
+                        &:hover {
+                            transition: all .4s ease;
+                            background-color: $base_gold;
+                            &:before {
+                                color: #fff;
+                                transition: all .4s ease;
+                            }
+                        }
+                    }
+                    &.fb a:before {
+                        content: "\ea90";
+                    }
+                    &.ig a:before {
+                        content: "\e906";
+                    }
+                    &.line a:before {
+                        content: "\e911";
+                    }
+                }
+            }
+        }
+        .ft_inf {
+            font-family: 'NotoSerif-Regular';
+            @include font-size(12);
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @media all and (max-width: 600px) {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: translate(0);
+                order: 3;
+                margin-top: 35px;
+            }
+        }
+        .booking {
+            @media all and (max-width: 600px) {
+                order: 1;
+            }
+            a {
+                @include flex-center;
+                &:before {
+                    font-family: 'icomoon';
+                    content: "\e900";
+                    color: $base_gold;
+                    @include font-size(36);
+                    margin-right: 14px;
+                }
+                p {
+                    color: #fff;
+                    line-height: 1.5;
+                    @include font-size(14);
+                    font-weight: bold;
+                }
+            }
+        }
+        .ft_scrollTop {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            @include flex-center;
+            cursor: pointer;
+            &:after {
+                @include flex-center;
+                border-radius: 50%;
+                background-color: $base_gold;
+                width: 20px;
+                height: 20px;
+                font-family: 'icomoon';
+                content: "\e90a";
+                color: #fff;
+                margin-left: 1.5px;
+            }
+        }
+    }
+}
+
+
+.copyright {
+    margin-top: 60px;
+    @include flex-center;
+    flex-direction: column;
+    color: #928f8d;
+    @include font-size(12);
+    letter-spacing: 1px;
+    @media all and (max-height: 670px){
+      margin-top:  8vh
+    }
+    div {
+        @include flex-center;
+        @media all and (max-width: 500px) {
+            flex-direction:column;
+        }
+        p {
+            font-family: 'CenturyGothic';
+            line-height: 2;
+            @media all and (max-width: 500px) {
+                &:last-child {
+                    font-family: 'CenturyGothic-bold';
+                }
+            }
+        }
+    }
+    ul {
+        margin-top: 16px;
+        @include flex-center;
+        li {
+            &:first-child {
+                @include flex-center;
+                margin-right: 12px;
+                cursor: pointer;
+                &:after {
+                    margin-left: 12px;
+                    @include fakeLine(1px, 12px, #928f8d);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"電子型錄",
+            link:"../dm/index.html"},
+        {
+            title:"斜槓進行式  Sale流行品最後折扣",
+            link:"../dm/detail-unit.html"},
+    ]
+
+    var product = [
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg_230_250.jpg",
+            slogan:"HOT !",
+            sloganBg:"#a13838",
+            name:"MAKE UP FOR EVER 超進化無瑕瞬效保濕精華 12ml",
+            price:["1,400","1,320"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg2_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"kiehl’s 超進化全能精華霜50ml",
+            price:["3,200","2,800"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg3_230_250.jpg",
+            slogan:"HOT !",
+            sloganBg:"#a13838",
+            name:"clinique 無油光三步驟限量組 100ml",
+            price:["1,400","1,320"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg4_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"ANCOME 絕對完美玫瑰潤色護唇膏",
+            price:["1,090"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg5_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"LANCOME 超進化肌因賦活露 30ml",
+            price:["3,590"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg6_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"clinique 無油光三步驟限量組 100ml",
+            price:["1,400","1,320"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg7_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"LANCOME 絕對完美黃金玫瑰鑽白乳霜 50ml",
+            price:["11,590"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg8_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"LA MER海洋拉娜 亮眼活膚精華旅行特惠組",
+            price:["12,400","10,320"]},
+    ]
+    
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#dm.detail
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._slick
+                ul
+                    li
+                        figure  
+                            img(data-lazy="../../upload/fa2/dm/detail/bannerImg_550_600.jpg", alt="")
+                    li
+                        figure  
+                            img(data-lazy="../../upload/fa2/dm/detail/bannerImg2_550_600.jpg", alt="")
+                .arrow
+                    span.icon-arrowLeft
+                    span.icon-arrowRight
+            section.information    
+                h2 LA MER海洋拉娜亮眼活膚精華旅行特惠組
+                p.words 搭配高效保濕的活膚水潤精萃，重新啟動肌膚自體造水能力，以舒芙乳霜封存保養精華，喜愛彈潤保濕的您絕不能錯過。
+                .price
+                    p 12,400元 
+                    p 10,320元
+                .inf
+                    .type.location
+                        ._title
+                            p.ch 活動地點 
+                            p.en Location
+                        .link
+                            a(href="../floor/detail.html") 1F精品美妍  
+                    .type.share
+                        ._title
+                            p.ch 分享
+                            p.en Share to
+                        ul.socialMedia
+                            li
+                                a(href=java)
+                                    span.icon-facebook
+                            li
+                                a(href=java)
+                                    span.icon-twitter
+                            li
+                                a(href=java)
+                                    span.icon-line
+        article.introduction
+            section._title
+                p.ch 產品簡介
+                p.en Introduction
+            section.rows
+                .row
+                    ._img 
+                        figure
+                            img.b-lazy(src=blazy data-src="../../upload/fa2/dm/detail/rowImg1.jpg", alt="")
+                            b 
+                    ._text
+                        h6 神級小奢華推薦  極緻潤澤鎖水
+                        p 先以「綠色奇蹟」濃縮精華露鎖住青春水潤，搭配高效保濕的活膚水潤精萃，最後以保濕潤澤系列輕輕按壓收尾，想要一次入手海洋拉娜經典商品必選！為肌膚注入飽滿能量，加速完成自我修護和重建，淡化疤痕。
+                .row
+                    ._text
+                        h6 瞬透奇肌組 高濃度保濕能量
+                        p 被譽為沙漠「綠色奇蹟」海洋拉娜濃縮精華露可做為打底精華水使用，讓肌膚浸潤於傳奇的濃縮精華 Miracle Broth™中。搭配高效保濕的活膚水潤精萃，重新啟動肌膚自體造水能力，最後以舒芙乳霜封存保養精華，喜愛彈潤保濕的您絕不能錯過。
+                        p 最佳的搭配，呈現給您，讓每一位愛用者，都能夠享有更加卓越的美麗。希望都可以再次感受到溫潤的滋養、極致工藝的美好。邀請您歡慶百貨週年慶，讓您未來的每一 天，都能沉浸在海洋拉娜替您用心點選的肌膚修護旅程，由裡到外散發最美光采。
+                .row
+                    ._img 
+                        figure
+                            img.b-lazy(src=blazy data-src="../../upload/fa2/dm/detail/rowImg2.jpg", alt="")
+        article.moreProduct 
+            section._title
+                p.ch 更多推薦產品
+                p.en More products
+            section._slick
+                ul
+                    each val in product
+                        li
+                            a(href="../dm/detail.html")
+                                figure
+                                    img(data-lazy=val.img , alt="")
+                                //- if (val.slogan !=="")
+                                //-     // 後端請注意: 下方的slogan如果沒有內容的話 請移除
+                                //-     .slogan(style=("background-color:"+val.sloganBg))
+                                //-         p=val.slogan
+                                h6=val.name
+                                .price
+                                    each item in val.price
+                                        p=(item+"元")
+                .arrow
+                    span.icon-arrowLeft
+                    span.icon-arrowRight
+
+
+
+
+
+
+    include ../layout/_footer.pug
+
++script
+
+
+|
+|
+</html>

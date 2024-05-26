@@ -1,0 +1,68 @@
+//css cg 轉場
+
+.cgAnimate
+  background-color: #fff
+  position: relative
+  z-index: 0
+
+.cgBack
+  // background-color: #e83434
+  // background-color: rgba(232,52,52,1)
+  width: 100vw
+  height: 100vh
+  position: fixed
+  left: 0
+  top: 0
+  z-index: -1
+  display: flex
+  align-items: center
+  justify-content: center
+  .icon
+    max-width: 90%
+
+
+.cgBack.wddEndBg
+  background-color: rgba(232,52,52,0)
+  z-index: 99
+  opacity: 0
+  &.showUp
+    background-color: rgba(232,52,52,1)
+    opacity: 1
+    transition: background-color .7s ease, opacity .7s ease
+    .icon
+      opacity: 1
+      transition: opacity .7s ease
+  .icon
+    opacity: 0
+
+
+.cgBack.wddLoad
+  background-color: rgba(232,52,52,1)
+  z-index: 99
+  opacity: 1
+  &.fadeOut
+    background-color: rgba(232,52,52,0)
+    opacity: 0
+    transition: background-color .7s ease .1s, opacity .7s ease .1s
+    .icon
+      opacity: 0
+      transition: opacity .7s ease .1s
+  &.cgB
+    display: none
+  .icon
+    max-width: 90%
+
+
+
+.cgBack.cgB
+  &.wddEndBg
+    background-color: rgba(255,255,255,0)
+    &.showUp
+      background-color: rgba(255,255,255,1)
+      transition: background-color .9s ease
+    // background-color: rgba(255,255,255,1)
+    // &.fadeOut
+    //   background-color: rgba(255,255,255,0)
+    //   transition: background-color .8s ease .1s, opacity .8s ease .1s
+    //   .icon
+    //     transition: opacity 0s ease

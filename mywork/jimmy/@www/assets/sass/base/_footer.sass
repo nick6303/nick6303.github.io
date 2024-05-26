@@ -1,0 +1,114 @@
+footer
+    +flex-center
+    height: 80px
+    background-color: #fff
+    @media (max-width: 1024px)
+        height: auto
+        border-top: 1px solid rgba(0,0,0,.1)
+    .ftContent
+        position: relative
+        +flex-left
+        max-width: 1820px
+        width: 100%
+        padding: 0 50px
+        @media (max-width: 1279px)
+            padding: 0 3vw
+        @media (max-width: 1024px)
+            align-items: center
+            padding: 0 5vw 35px
+        .ftGotop
+            position: absolute
+            top: 50%
+            right: 50px
+            transform: translateY(-50%)
+            width: 45px
+            height: 45px
+            background-color: #000000
+            color: #fff
+            font-size: px(13)
+            font-family: 'MyriadPro-Light'
+            +flex-center
+            border-radius: 50%
+            cursor: pointer
+            @media (max-width: 1279px)
+                right: 3vw
+            @media (max-width: 1024px)
+                position: relative
+                top: auto
+                right: auto
+        .ftLink
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%) 
+            +flex-center
+            flex-direction: row-reverse
+            flex-wrap: wrap
+            @media (max-width: 1279px)
+                left: calc(50% + 30px)
+            @media (max-width: 1024px)
+                position: relative
+                top: auto
+                left: auto
+                transform: translate(0)
+                margin: 0 0 15px
+            .socialMedia
+                +flex-center
+                margin: 0 10px
+                @media (max-width: 1024px)
+                    margin: 10px 10px 0 0
+                a
+                    font-size: px(20)
+                    padding: 0 6px
+                    margin: 0 6px
+                    @media (max-width: 1279px)
+                        padding: 0 5px
+                        margin: 0 5px
+                        font-size: px(18)
+                    span
+                        transition: all .4s ease
+                        color: #666666
+                        display: block
+                    &:hover span
+                        color: #000
+                        transform: rotateY(180deg)
+            .link
+                +flex-center
+                @media (max-width: 1024px)
+                    margin: 10px 0
+                a
+                    font-size: px(16)
+                    font-weight: bold
+                    position: relative
+                    padding: 0 5px
+                    @media (max-width: 1279px)
+                        font-size: px(15)
+                    &:not(:last-child)
+                        margin: 0 10px 0 0
+                        @media (max-width: 1279px) and (min-width: 1025px)
+                            margin: 0 5px 0 0
+                        &:after
+                            position: absolute
+                            top: 50%
+                            right: -5px
+                            transform: translateY(-50%)
+                            +fakeLine(3px,3px,#000)
+                            border-radius: 50%
+                            @media (max-width: 1279px) and (min-width: 1025px)
+                                right: -2.5px
+        .copyright
+            @media (max-width: 1024px)
+                text-align: center
+                margin: 20px 0 0 
+            p
+                line-height: 1.8
+                letter-spacing: 0
+                font-size: px(12)
+                font-family: 'MyriadPro-Bold',微軟正黑體
+                @media (max-width: 1024px)
+                    font-size: px(14)
+                    font-family: 'MyriadPro-Regular',微軟正黑體
+                .openPrivacy
+                    margin: 0 0 0 10px
+                    font-size: px(14)
+                    font-weight: bold

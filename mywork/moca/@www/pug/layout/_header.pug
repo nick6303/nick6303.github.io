@@ -1,0 +1,165 @@
+header
+    article.hdContent
+        section.logo
+            a(href="../home/index.html")
+                img.en(src="../../assets/img/hdLogo1.png", alt="")
+                // 只有在首頁會出現↓
+                img.ch(src="../../assets/img/hdLogo2.png", alt="")
+        section.linkList
+            ul
+                li
+                    a(href=java)
+                        p.en Plan your visit
+                        p.ch 參觀資訊
+                li
+                    a(href=java)
+                        p.en Exhibitions and events
+                        p.ch 展覽活動
+                li
+                    a(href=java)
+                        p.en MOCArt shop
+                        p.ch 藝術商店
+                li
+                    a(href=java)
+                        p.en Discover MOCA
+                        p.ch 探索當代
+        section.buttons
+            // 後端請注意: 如果圍閉館時間的話 請在下方openExhibit 加上class "close"
+            .openExhibit
+                p TODAY’S ON
+                p CLOSED TODAY
+                buttton.closeBTn
+                    span
+            .menuBt
+                div
+                    - for(var i =0 ;i<3;i++)
+                        span
+            // 只有在首頁會出現↓
+            ul
+                li
+                    a(href=java)
+                        p 時間票價
+                li
+                    a(href=java)
+                        p 會員登入
+                li
+                    a(href=java)
+                        p EN
+                li
+                    a(href=java)
+                        <span class="icon-magnifier"></span>
+        section.exhibitLibox
+            .open
+                .date
+                    .box
+                        // 今日時間 
+                        //後端請注意: 今日時間已填上不需更改
+                        .dotay 
+                            p.month 
+                            p.day  
+                            p.year 
+                        .openingHours
+                            p(data-name="今日開放時間") 10AM - 6PM
+                .tableContent
+                    .type
+                        .typeName
+                            p.en Exhibition
+                            p.ch 展覽
+                        ul
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 10:00
+                                        span 18:00
+                                    p CUBE
+                                ._text
+                                    p.ch 穿越正義:科技@潛殖
+                                    p.en Trans-Justice: Para-Colonial@Technology
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 10:00
+                                        span 18:00
+                                    p STUDIO
+                                ._text
+                                    p.ch 華麗轉身─老靈魂的魅力重生
+                                    p.en The Charismatic Rebirth of Yore
+                    .type
+                        .typeName
+                            p.en Events
+                            p.ch 活動
+                        ul
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 11:45 
+                                        span 12:45
+                                    p 每日導覽
+                                ._text
+                                    p.ch MOCA當代公共藝術街區散步
+                                    p.en MOCA Public Art Street Walk
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 13:00 
+                                        span 16:30
+                                    p 每日導覽
+                                ._text
+                                    p.ch MOCA X 罐子書館—琉球Piras沖繩文創市集
+                                    p.en MOCA X Bottle Bookstore--- Okinawa Piras Market
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 13:00 
+                                        span 16:30
+                                    p 每日導覽
+                                ._text
+                                    p.ch MOCA X 罐子書館—琉球Piras沖繩文創市集
+                                    p.en MOCA X Bottle Bookstore--- Okinawa Piras Marke
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 13:00 
+                                        span 16:30
+                                    p 每日導覽
+                                ._text
+                                    p.ch MOCA X 罐子書館—琉球Piras沖繩文創市集
+                                    p.en MOCA X Bottle Bookstore--- Okinawa Piras Market
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 13:00 
+                                        span 16:30
+                                    p 每日導覽
+                                ._text
+                                    p.ch MOCA X 罐子書館—琉球Piras沖繩文創市集
+                                    p.en MOCA X Bottle Bookstore--- Okinawa Piras Market
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 13:00 
+                                        span 16:30
+                                    p 每日導覽
+                                ._text
+                                    p.ch MOCA X 罐子書館—琉球Piras沖繩文創市集
+                                    p.en MOCA X Bottle Bookstore--- Okinawa Piras Market
+                            li
+                                .time
+                                    // 開放時間
+                                    h6 
+                                        span 13:00 
+                                        span 16:30
+                                    p 每日導覽
+                                ._text
+                                    p.ch MOCA X 罐子書館—琉球Piras沖繩文創市集
+                                    p.en MOCA X Bottle Bookstore--- Okinawa Piras Market
+            .close
+        

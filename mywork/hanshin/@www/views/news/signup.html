@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+  <meta charset="UTF-8"/>
+  <meta name="language" content="tw"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="title" content="網站標題名稱"/>
+  <meta name="description" content="網站描敘"/>
+  <meta name="keywords" content="網站關鍵字"/>
+  <meta name="copyright" content="作者名子"/>
+  <title itemprop="name">hanshin</title>
+  <link rel="canonical" href="網址" itemprop="url"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
+</head>
+
+<body class="detail" id="news">
+  <header>
+    <!--左邊選單-->
+    <article class="hdContent" style="background-image: url('../../assets/img/hdBg_250_1080.jpg')">
+      <section class="top">
+        <div class="logo"><a href="../home/index.html"><img src="../../assets/img/hdLogo.png" alt=""><img src="../../assets/img/hdLogoRWD.png" alt=""></a></div>
+        <div class="openMenu"><span class="icon-square"></span>
+          <p>FIND MORE</p>
+        </div>
+        <div class="socialMedia">
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="list">
+        <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li itemprop="name"><a href="../news/index.html" itemprop="url">
+              <p>最新消息</p></a></li>
+          <li itemprop="name"><a href="../brand/index.html" itemprop="url">
+              <p>品牌導覽</p></a></li>
+          <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+              <p>樓層導覽</p></a></li>
+          <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+              <p>會員專區</p></a></li>
+          <li itemprop="name"><a href="../service/index.html" itemprop="url">
+              <p>服務中心</p></a></li>
+          <li itemprop="name"><a href="../about/index.html" itemprop="url">
+              <p>交通資訊</p></a></li>
+        </ul>
+      </section>
+      <section class="bottom">
+        <div class="buttons"><a class="openSearch" href="javascript:void(0)"><span class="icon-magnifier"></span>
+            <p>搜尋</p></a><a href="javascript:void(0)"><span class="icon-person"></span>
+            <p>會員</p></a></div>
+        <div class="openSelectStore"><a href="javascript:void(0)">
+            <p>SELECT STORE</p></a></div>
+        <div class="openTime"><span>Business Hours Today</span>
+          <p>10:30 - 22:00</p>
+        </div>
+      </section>
+    </article>
+    <!--右下按鈕-->
+    <article class="sideButton">
+      <section class="socialMedia"> 
+        <div class="link"><a href="javascript:void(0)"><span class="icon-youtube"></span></a><a href="javascript:void(0)"><span class="icon-twitter"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-facebook"></span></a></div>
+        <button><span class="icon-share"></span></button>
+      </section>
+      <section class="openSearch"><span class="icon-magnifier"></span></section>
+      <section class="DM"><a href="../dm/index.html">DM</a></section>
+      <section class="goTop">TOP</section>
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 導覽機新增的按鈕 ------------>
+      <section class="back" onclick="back()">返回</section>
+      <section class="toHome"><a class="icon-house" href="../guide/index.html"></a></section>
+      <section class="arrows">
+        <button class="up" onclick="scrollUp();"></button>
+        <button class="down" onclick="scrollDown();"></button>
+      </section>
+    </article>
+    <!--選擇分店-->
+    <article class="selectStore">
+      <section class="buttons">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <div class="_title">
+          <p class="ch">選擇分站</p>
+          <p class="en">Select substation</p>
+          <ul>
+            <li class="active">全台分站  </li>
+            <li>南部地區</li>
+            <li>中部地區</li>
+            <li>北部地區</li>
+          </ul>
+        </div>
+        <div class="_slick">
+          <ul>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg2_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神巨蛋購物廣場</p>
+                    <p class="en">Hanshin Arena Shopping Plaza</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="https://tw.mall.yahoo.com/store/hanshin">
+                  <figure><img src="../../upload/fa2/storeImg3_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨網路購物</p>
+                    <p class="en">Hanshin Online Shopping</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+          </ul>
+          <div class="arrows"><span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+        </div>
+      </section>
+    </article>
+    <!-- 主選單-->
+    <article class="hdMenu">
+      <section class="topButton">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <!--後端請注意: 未登入狀態請在下方<div class="login"> 加上class "active"-->
+        <div class="login active">
+          <p>LOGIN</p>
+          <div class="buttons"><a href="javascript:void(0)">登入</a><a href="javascript:void(0)">註冊</a></div>
+        </div>
+        <!--後端請注意: 未登入狀態請在下方<div class="logout"> 加上class "active"-->
+        <div class="logout">
+          <p>LOGOUT</p>
+          <div class="buttons">
+            <p class="name">我的名子</p><a href="javascript:void(0)">登出</a>
+          </div>
+        </div>
+        <div class="mainLink">
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../news/index.html" itemprop="url">
+                <p class="ch">最新消息</p>
+                <p class="en">NEWS</p></a></li>
+            <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+                <p class="ch">會員專區</p>
+                <p class="en">MEMBER</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="ch">樓層導覽</p>
+                <p class="en">FLOOR</p></a></li>
+            <li itemprop="name"><a href="../service/index.html" itemprop="url">
+                <p class="ch">顧客服務</p>
+                <p class="en">SERVICE</p></a></li>
+            <li itemprop="name"><a href="../about/index.html" itemprop="url">
+                <p class="ch">關於漢神</p>
+                <p class="en">ABOUT</p></a></li>
+            <li itemprop="name"><a href="../dm/index.html" itemprop="url">
+                <p class="ch">電子型錄</p>
+                <p class="en">DM</p></a></li>
+            <li itemprop="name"><a href="../other/join.html" itemprop="url">
+                <p class="ch">加入我們</p>
+                <p class="en">JOIN US</p></a></li>
+            <li itemprop="name"><a href="../card/index.html" itemprop="url">
+                <p class="ch">超集卡/聯名卡</p>
+                <p class="en">CARD</p></a></li>
+            <li itemprop="name"><a href="../other/cooperation.html" itemprop="url">
+                <p class="ch">合作找我</p>
+                <p class="en">COOPERATE</p></a></li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <div class="about">
+            <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+              <li itemprop="name"><a href="javascript:void(0)" onclick="subscribe.open()">訂閱電子報</a></li>
+              <li itemprop="name"><a href="../supplier/index.html" itemprop="url">廠商專區  </a></li>
+              <li itemprop="name"><a href="../other/related.html" itemprop="url">相關企業</a></li>
+              <li itemprop="name"><a href="../other/privacy.html" itemprop="url">隱私權政策</a></li>
+            </ul>
+          </div>
+          <div class="socialMedia">
+            <p>FOLLOW US</p>
+            <ul>
+              <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="floorIntro">
+          <div class="_title">
+            <p>Floor</p><span>introduction</span>
+          </div>
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">1F</p>
+                <p class="name">精品美妍</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">2F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">3F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">4F</p>
+                <p class="name">國際名品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">5F</p>
+                <p class="name">都會名媛</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">6F</p>
+                <p class="name">品味質男</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">7F</p>
+                <p class="name">生活逸品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">8F</p>
+                <p class="name">活力休閒</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B1F</p>
+                <p class="name">名品鞋履</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B2F</p>
+                <p class="name">潮流風尚</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B3F</p>
+                <p class="name">雅緻食尚</p></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!--搜尋燈箱-->
+    <article class="searchLibox">
+      <section>
+        <div class="liboxClose"><span></span></div>
+        <div class="_title">
+          <p class="ch">搜尋</p>
+          <p class="en">Search</p>
+          <p class="words">歡迎搜尋您想找尋的商品或是新訊，漢神提供最佳優質商品及貼心服務機能。</p>
+          <div class="buttons">
+            <button class="active" type="button">
+              <p>尋找品牌</p>
+            </button>
+            <button type="button">
+              <p>尋找訊息</p>
+            </button>
+          </div>
+        </div>
+        <div class="forms">
+          <!-- 尋找品牌表格-->
+          <form class="active">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box floor">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇樓層</p></span>
+                <ul>
+                  <li>樓層一</li>
+                  <li>樓層二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+          <!-- 尋找訊息表格-->
+          <form style="display:none">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <article class="guideLogo"><img src="../../assets/img/guideLogo.png" alt=""></article>
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <article class="subscribe">
+      <section>
+        <div class="box">
+          <div class="liboxClose"><span></span></div>
+          <div class="_title"><span class="icon-book"></span>
+            <p class="ch">訂閱電子報</p>
+            <p class="en">Subscribe newsletters</p>
+            <p class="words">如果你想訂閱電子報，請選擇想要收到的店別，並填寫e-mail，確認送出後，請至您所填寫的e-mail收取確認信件，回覆連結後即訂閱成功。</p>
+          </div>
+          <form>
+            <div class="item">
+              <div class="name">
+                <p class="ch">信箱</p>
+                <p class="en">E-mail</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="name">
+                <p class="ch">選擇店別</p>
+                <p class="en">store</p>
+              </div>
+              <div class="inputArea">
+                <div class="dropDown"><span class="selectMenu">
+                    <p>請下拉選擇店別</p></span>
+                  <ul>
+                    <li>漢神店</li>
+                    <li>巨蛋店</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="subscribe.close()"><span class="icon-hook"></span>
+                <p>確認送出</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+  </header>
+  <main>
+    <!-- 後端請注意: 要讓客戶可以自訂背景圖片和背景顏色-->
+    <!-- 後端請注意: 要讓客戶可以決定字的顏色 預設是黑色  如果要白色 就在 <section class="banner"> 加上class "white"-->
+    <article class="banner white" style="background-image: url('../../upload/fa2/news/detail/bannerBg2_1670_420.jpg');background-color: #ebeaea">
+      <section class="breadcrumbs">
+        <ul>
+          <li><a href="../home/index.html">首頁</a></li>
+          <li><a href="../news/index.html">最新消息</a></li>
+          <li><a href="../news/detail.html">中獎名單</a></li>
+        </ul>
+      </section>
+      <section class="_text">
+        <h1>足球寶寶爬爬GOGO ! 線上報名表格</h1>
+        <div class="inf">
+          <div class="type">
+            <div class="_title">
+              <p class="ch">活動時間</p>
+              <p class="en">Time</p>
+            </div>
+            <div>
+              <p>108/02/10(四)～108/02/12(六)</p>
+            </div>
+          </div>
+          <div class="location">
+            <div class="_title">
+              <p class="ch">活動地點 </p>
+              <p class="en">Location</p>
+            </div>
+            <div>
+              <p>8F 活動會館 </p>
+            </div>
+          </div>
+          <div class="share">
+            <div class="_title">
+              <p class="ch">分享</p>
+              <p class="en">Share to</p>
+            </div>
+            <ul class="socialMedia">
+              <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-twitter"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+    <article class="_slick">
+      <ul>
+        <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+        <li data-videoId="jIzOIsQWMfg">
+          <div>
+            <figure><img data-lazy="../../upload/fa2/news/detail/slickImg2_1030_650.jpg" alt=""></figure><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+          </div>
+        </li>
+        <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+        <li data-videoId="">
+          <div>
+            <figure><img data-lazy="../../upload/fa2/news/detail/slickImg2_1030_650.jpg" alt=""></figure><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+          </div>
+        </li>
+        <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+        <li data-videoId="">
+          <div>
+            <figure><img data-lazy="../../upload/fa2/news/detail/slickImg2_1030_650.jpg" alt=""></figure><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+          </div>
+        </li>
+      </ul>
+      <div class="arrows"> <span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+    </article>
+    <article class="rows">
+      <section class="row">
+        <div class="_text">
+          <h2>※聖誕樹/櫥窗票選活動注意事項：</h2>
+          <p>1.漢神百貨、非當日、二聯及三聯式、漢來大飯店巨蛋會館、ZARA、H&M、星巴克儲值金額、鼎泰豐、一風堂、丸龜製麵、海港及漢來蔬食之餐券、海底撈、漢神百貨網購消費金額、已開發票禮券及商品券、提貨單、香菸之健康捐、信用卡紅利折抵及超集卡點數折抵金額等，發票兌迄恕不重新合併累計。</p>
+          <p>2.中獎卡號將於抽獎隔日公告於1F服務台旁中獎立牌及漢神巨蛋網站，本次抽獎必須自行對獎，恕不另行通知中獎者。</p>
+          <p>3.中獎資格及權利不得轉讓，獎項不得兌換現金、折換及配送。</p>
+          <p>4.依法規定，中獎人於同一抽獎活動中，中獎之全部獎項總價值超過1,000元者，需以新台幣計價列入本年度個人所得。</p>
+        </div>
+      </section>
+      <section class="row">
+        <!-- 活動場次-->
+        <div class="eventTime">
+          <h6>線上報名活動場次</h6>
+          <div class="listTable">
+            <div class="listhead">
+              <div class="name">
+                <p>活動場次</p>
+              </div>
+              <div class="place">
+                <p>活動地點</p>
+              </div>
+              <div class="time">
+                <p>活動時間</p>
+              </div>
+              <div class="seeIntro">
+                <p>查看介紹</p>
+              </div>
+              <div class="signButton">
+                <p>立即報名</p>
+              </div>
+            </div>
+            <div class="listbody">
+              <!-- 後端請注意: 如果活動已額滿 請在下方<div class="list"> 加上class "full"-->
+              <div class="list full">
+                <div class="name">
+                  <p>寶寶健康大球組</p>
+                </div>
+                <div class="place" data-name="活動地點">
+                  <p>8F 活動會館</p>
+                </div>
+                <div class="time" data-name="活動時間">
+                  <p>2019-02-12(六)</p>
+                  <p>20:00~21:30</p>
+                </div>
+                <div class="seeIntro" data-name="查看介紹">
+                  <button type="button"></button>
+                </div>
+                <div class="signButton" data-name="立即報名">
+                  <!-- 後端請注意: 啟動formLibox.open()這個function 可以直接開啟報名表格--><a class="openLogin" href="javascript:void(0)" onclick="liboxs.open(0)">
+                    <p>ENTER</p></a>
+                </div>
+                <div class="intro">
+                  <div>
+                    <div class="_title"><span class="icon-chat"></span>
+                      <p>場次介紹</p>
+                    </div>
+                    <div class="_text">
+                      <p>以世足賽為造型主題參賽，最快到終點的寶寶就有機會獲得漢神商品禮券及精美好禮。攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。您所提供之個人資料，得向本公司請求補充或更正之當前述蒐集之特定目的消失。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-start"></span>
+                      <p>注意事項</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.最快到終點的寶寶就有機會獲得漢神商品禮券精美好禮，您所提供之個人資料蒐集目的。</p>
+                      <p>2.攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-text"></span>
+                      <p>票種說明</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.早鳥票 : 2/12前報名即可享受早鳥票優惠<span class="price" data-name="售價">免費</span></p>
+                      <p>2.會員票 : 需為漢神會員<span class="price" data-name="售價">2,00/人</span></p>
+                      <p>3.VIP會員票 : 需為漢神VIP白金會員<span class="price" data-name="售價">1,00/人</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 後端請注意: 如果活動已額滿 請在下方<div class="list"> 加上class "full"-->
+              <div class="list">
+                <div class="name">
+                  <p>寶寶強壯幼童組</p>
+                </div>
+                <div class="place" data-name="活動地點">
+                  <p>8F 活動會館</p>
+                </div>
+                <div class="time" data-name="活動時間">
+                  <p>2019-02-12(六)</p>
+                  <p>20:00~21:30</p>
+                </div>
+                <div class="seeIntro" data-name="查看介紹">
+                  <button type="button"></button>
+                </div>
+                <div class="signButton" data-name="立即報名">
+                  <!-- 後端請注意: 啟動formLibox.open()這個function 可以直接開啟報名表格--><a class="openLogin" href="javascript:void(0)" onclick="liboxs.open(0)">
+                    <p>ENTER</p></a>
+                </div>
+                <div class="intro">
+                  <div>
+                    <div class="_title"><span class="icon-chat"></span>
+                      <p>場次介紹</p>
+                    </div>
+                    <div class="_text">
+                      <p>以世足賽為造型主題參賽，最快到終點的寶寶就有機會獲得漢神商品禮券及精美好禮。攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。您所提供之個人資料，得向本公司請求補充或更正之當前述蒐集之特定目的消失。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-start"></span>
+                      <p>注意事項</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.最快到終點的寶寶就有機會獲得漢神商品禮券精美好禮，您所提供之個人資料蒐集目的。</p>
+                      <p>2.攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-text"></span>
+                      <p>票種說明</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.早鳥票 : 2/12前報名即可享受早鳥票優惠<span class="price" data-name="售價">免費</span></p>
+                      <p>2.會員票 : 需為漢神會員<span class="price" data-name="售價">2,00/人</span></p>
+                      <p>3.VIP會員票 : 需為漢神VIP白金會員<span class="price" data-name="售價">1,00/人</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 後端請注意: 如果活動已額滿 請在下方<div class="list"> 加上class "full"-->
+              <div class="list">
+                <div class="name">
+                  <p>寶寶小球組</p>
+                </div>
+                <div class="place" data-name="活動地點">
+                  <p>8F 活動會館</p>
+                </div>
+                <div class="time" data-name="活動時間">
+                  <p>2019-02-12(六)</p>
+                  <p>20:00~21:30</p>
+                </div>
+                <div class="seeIntro" data-name="查看介紹">
+                  <button type="button"></button>
+                </div>
+                <div class="signButton" data-name="立即報名">
+                  <!-- 後端請注意: 啟動formLibox.open()這個function 可以直接開啟報名表格--><a class="openLogin" href="javascript:void(0)" onclick="liboxs.open(0)">
+                    <p>ENTER</p></a>
+                </div>
+                <div class="intro">
+                  <div>
+                    <div class="_title"><span class="icon-chat"></span>
+                      <p>場次介紹</p>
+                    </div>
+                    <div class="_text">
+                      <p>以世足賽為造型主題參賽，最快到終點的寶寶就有機會獲得漢神商品禮券及精美好禮。攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。您所提供之個人資料，得向本公司請求補充或更正之當前述蒐集之特定目的消失。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-start"></span>
+                      <p>注意事項</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.最快到終點的寶寶就有機會獲得漢神商品禮券精美好禮，您所提供之個人資料蒐集目的。</p>
+                      <p>2.攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-text"></span>
+                      <p>票種說明</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.早鳥票 : 2/12前報名即可享受早鳥票優惠<span class="price" data-name="售價">免費</span></p>
+                      <p>2.會員票 : 需為漢神會員<span class="price" data-name="售價">2,00/人</span></p>
+                      <p>3.VIP會員票 : 需為漢神VIP白金會員<span class="price" data-name="售價">1,00/人</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 後端請注意: 如果活動已額滿 請在下方<div class="list"> 加上class "full"-->
+              <div class="list">
+                <div class="name">
+                  <p>健康大童組</p>
+                </div>
+                <div class="place" data-name="活動地點">
+                  <p>8F 活動會館</p>
+                </div>
+                <div class="time" data-name="活動時間">
+                  <p>2019-02-12(六)</p>
+                  <p>20:00~21:30</p>
+                </div>
+                <div class="seeIntro" data-name="查看介紹">
+                  <button type="button"></button>
+                </div>
+                <div class="signButton" data-name="立即報名">
+                  <!-- 後端請注意: 啟動formLibox.open()這個function 可以直接開啟報名表格--><a class="openLogin" href="javascript:void(0)" onclick="liboxs.open(0)">
+                    <p>ENTER</p></a>
+                </div>
+                <div class="intro">
+                  <div>
+                    <div class="_title"><span class="icon-chat"></span>
+                      <p>場次介紹</p>
+                    </div>
+                    <div class="_text">
+                      <p>以世足賽為造型主題參賽，最快到終點的寶寶就有機會獲得漢神商品禮券及精美好禮。攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。您所提供之個人資料，得向本公司請求補充或更正之當前述蒐集之特定目的消失。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-start"></span>
+                      <p>注意事項</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.最快到終點的寶寶就有機會獲得漢神商品禮券精美好禮，您所提供之個人資料蒐集目的。</p>
+                      <p>2.攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="_title"><span class="icon-text"></span>
+                      <p>票種說明</p>
+                    </div>
+                    <div class="_text">
+                      <p>1.早鳥票 : 2/12前報名即可享受早鳥票優惠<span class="price" data-name="售價">免費</span></p>
+                      <p>2.會員票 : 需為漢神會員<span class="price" data-name="售價">2,00/人</span></p>
+                      <p>3.VIP會員票 : 需為漢神VIP白金會員<span class="price" data-name="售價">1,00/人</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+    <article class="more">
+      <section class="_title">
+        <p class="ch">更多最新消息</p>
+        <p class="en">More news</p>
+      </section>
+      <section class="links"><a href="javascript:void(0)">
+          <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/news/newsImg_400_370.jpg" alt="">
+            <div class="hoverBox"><span></span>
+              <p>ENTER</p>
+            </div>
+          </figure>
+          <div class="_text">
+            <!-- 後端請注意: 如果未填入文字的話 把下方div移除-->
+            <!-- 後端請注意: 下方背景顏色要讓客戶可以換-->
+            <div class="slogan" style="background-color: #a13838">HOT !</div>
+            <p class="type">BRANDS</p>
+            <p class="name">MaxMara 時尚冬裝新上市</p>
+          </div></a><a href="javascript:void(0)">
+          <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/news/newsImg9_400_370.jpg" alt="">
+            <div class="hoverBox"><span></span>
+              <p>ENTER</p>
+            </div>
+          </figure>
+          <div class="_text">
+            <p class="type">Member </p>
+            <p class="name">周年慶全館八折起 卡友享專屬加碼優惠</p>
+          </div></a></section>
+    </article>
+    <!--會員登入-->
+    <article class="loginLibox">
+      <section style="background-image:url('../../upload/fa2/card/detail/liboxBg_900_670.jpg')">
+        <div class="box">
+          <div class="liboxClose"><span></span></div>
+          <div class="_title"><span class="icon-person2"></span>
+            <p class="ch">登入會員</p>
+            <p class="en">Login member</p>
+            <p class="words">1. 外籍人士帳號(ID) : 西元生日碼 + 英文姓氐前2位英文<br>2. 預設密碼 : ID後3碼 + 生日6碼</p>
+          </div>
+          <form>
+            <div class="item must">
+              <div class="name">
+                <p class="ch">帳號</p>
+                <p class="en">ID</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="">
+              </div>
+            </div>
+            <div class="item must">
+              <div class="name">
+                <p class="ch">密碼</p>
+                <p class="en">password</p>
+              </div>
+              <div class="inputArea">
+                <input type="password" placeholder="">
+              </div>
+            </div>
+            <div class="item must code">
+              <div class="name">
+                <p class="ch">驗證碼</p>
+                <p class="en">code</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="點擊圖片即可更換">
+                <div><img src="../../upload/fa2/service/contact/codeImg_70_30.jpg" alt=""></div>
+              </div>
+            </div>
+            <div class="forget"><a href="javascript:void(0)">忘記密碼 ? 按此立即查詢</a></div>
+            <div class="buttons"> 
+              <button type="reset"><span class="icon-reset"></span>
+                <p>重新填寫</p>
+              </button>
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="loginLibox.close();infoLibox.open()"><span class="icon-person"></span>
+                <p>確認登入</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+    <!-- 會員報名資料-->
+    <article class="infoLibox">
+      <section style="background-image:url('../../upload/fa2/card/detail/liboxBg_900_670.jpg')">
+        <div class="box">
+          <div class="liboxClose"><span></span></div>
+          <div class="_title"><span class="icon-paper"></span>
+            <p class="ch">會員報名資料</p>
+            <p class="en">Information</p>
+            <p class="words">報名資訊會以下述會員資料進行報名，若需修改可直接更改，<b>此為報名重要資訊，請務必確認 !</b></p>
+          </div>
+          <form>
+            <div class="item must">
+              <div class="name">
+                <p class="ch">姓名</p>
+                <p class="en">name</p>
+              </div>
+              <div class="inputArea">
+                <p data-ps="(此欄無法更動)">王艾倫</p>
+              </div>
+            </div>
+            <div class="item must">
+              <div class="name">
+                <p class="ch">手機</p>
+                <p class="en">phone</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="">
+              </div>
+            </div>
+            <div class="item must">
+              <div class="name">
+                <p class="ch">信箱</p>
+                <p class="en">E-mail</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="">
+              </div>
+            </div>
+            <div class="buttons"> 
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="infoLibox.close();formLibox.open()"><span class="icon-person"></span>
+                <p>確認登入</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+    <!-- 報名表格-->
+    <article class="liboxs">
+      <!-- 是否為會員-->
+      <section class="libox">
+        <div class="box">
+          <div class="content">
+            <div class="liboxClose"><span></span></div>
+            <div class="_title"> <img src="../../upload/fa2/news/signup/logo.png" alt="">
+              <p class="ch">親愛的客戶您好，請問您是否為漢神超集卡會員?</p>
+              <p class="en">Ask for membership</p>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button onclick="liboxs.close(this);formLibox.open();isMember=false"><span class="icon-X"></span>
+                <p>否，非會員</p>
+              </button>
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button onclick="loginLibox.open();liboxs.close(this);isMember=true"><span class="icon-person"></span>
+                <p>是，為會員</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="formLibox">
+        <div>
+          <div class="liboxClose"><span></span></div>
+          <div class="topTitle">
+            <!-- 活動名稱-->
+            <div class="eventName">
+              <p class="en">Booking event</p>
+              <p class="ch">足球寶寶爬爬GOGO</p>
+              <!-- 會員名-->
+              <div class="member">
+                <p class="name">王艾倫</p>
+                <p class="phone">0912345678</p>
+                <p class="email">Hsca@gmail.com</p>
+              </div>
+            </div>
+            <!-- 資訊-->
+            <div class="inf">
+              <div class="type">
+                <div class="_title">
+                  <p class="ch">活動場次</p>
+                  <p class="en">Event</p>
+                </div>
+                <div>
+                  <p>寶寶強壯幼童組</p>
+                </div>
+              </div>
+              <div class="type">
+                <div class="_title">
+                  <p class="ch">活動地點</p>
+                  <p class="en">Location</p>
+                </div>
+                <div>
+                  <p>8F 活動會館</p>
+                </div>
+              </div>
+              <div class="type">
+                <div class="_title">
+                  <p class="ch">活動時間</p>
+                  <p class="en">Time</p>
+                </div>
+                <div>
+                  <p>2019-02-12(六)  20:00~21:30</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form">
+            <p class="ps">請確實填寫以下欄位，有紅色標註為必填欄位。</p>
+            <form>
+              <div class="type">
+                <!-- 票類-->
+                <div class="typeName">
+                  <h3>早鳥票</h3>
+                  <p>2/12前報名即可享受早鳥票優惠</p>
+                </div>
+                <!-- 價格-->
+                <!-- 後端請注意: 請將價格填入下方data-price 有"，"也沒關西-->
+                <div class="price" data-price="免費">
+                  <p data-name="售價">免費</p>
+                  <div class="count">
+                    <p>人數</p>
+                    <div>
+                      <button class="plus" type="button" onclick="plus(this)"></button>
+                      <input type="number" value="0" max="" disabled="disable">
+                      <button class="decrease" type="button" onclick="decrease(this)"></button>
+                    </div>
+                    <p>位</p>
+                  </div>
+                </div>
+                <!-- 報名表單-->
+                <div class="table">
+                  <!-- 後端請注意: 
+                  如果要顯示 必填項目 請在<div class="box"> 加上class "must"
+                  如果要顯示 錯誤項目 請在<div class="box"> 加上class "worng" 就會有紅線出來
+                  -->
+                </div>
+              </div>
+              <div class="type">
+                <!-- 票類-->
+                <div class="typeName">
+                  <h3>早鳥票</h3>
+                  <p>2/12前報名即可享受早鳥票優惠</p>
+                </div>
+                <!-- 價格-->
+                <!-- 後端請注意: 請將價格填入下方data-price 有"，"也沒關西-->
+                <div class="price" data-price="200">
+                  <p data-name="售價">200</p>
+                  <div class="count">
+                    <p>人數</p>
+                    <div>
+                      <button class="plus" type="button" onclick="plus(this)"></button>
+                      <input type="number" value="0" max="" disabled="disable">
+                      <button class="decrease" type="button" onclick="decrease(this)"></button>
+                    </div>
+                    <p>位</p>
+                  </div>
+                </div>
+                <!-- 報名表單-->
+                <div class="table">
+                  <!-- 後端請注意: 
+                  如果要顯示 必填項目 請在<div class="box"> 加上class "must"
+                  如果要顯示 錯誤項目 請在<div class="box"> 加上class "worng" 就會有紅線出來
+                  -->
+                </div>
+              </div>
+              <div class="type">
+                <!-- 票類-->
+                <div class="typeName">
+                  <h3>會員票</h3>
+                  <p>需為漢神會員</p>
+                </div>
+                <!-- 價格-->
+                <!-- 後端請注意: 請將價格填入下方data-price 有"，"也沒關西-->
+                <div class="price" data-price="500">
+                  <p data-name="售價">500</p>
+                  <div class="count">
+                    <p>人數</p>
+                    <div>
+                      <button class="plus" type="button" onclick="plus(this)"></button>
+                      <input type="number" value="0" max="" disabled="disable">
+                      <button class="decrease" type="button" onclick="decrease(this)"></button>
+                    </div>
+                    <p>位</p>
+                  </div>
+                </div>
+                <!-- 報名表單-->
+                <div class="table">
+                  <!-- 後端請注意: 
+                  如果要顯示 必填項目 請在<div class="box"> 加上class "must"
+                  如果要顯示 錯誤項目 請在<div class="box"> 加上class "worng" 就會有紅線出來
+                  -->
+                </div>
+              </div>
+              <div class="type">
+                <!-- 票類-->
+                <div class="typeName">
+                  <h3>VIP會員票</h3>
+                  <p>需為漢神VIP白金會員</p>
+                </div>
+                <!-- 價格-->
+                <!-- 後端請注意: 請將價格填入下方data-price 有"，"也沒關西-->
+                <div class="price" data-price="1,000">
+                  <p data-name="售價">1,000</p>
+                  <div class="count">
+                    <p>人數</p>
+                    <div>
+                      <button class="plus" type="button" onclick="plus(this)"></button>
+                      <input type="number" value="0" max="" disabled="disable">
+                      <button class="decrease" type="button" onclick="decrease(this)"></button>
+                    </div>
+                    <p>位</p>
+                  </div>
+                </div>
+                <!-- 報名表單-->
+                <div class="table">
+                  <!-- 後端請注意: 
+                  如果要顯示 必填項目 請在<div class="box"> 加上class "must"
+                  如果要顯示 錯誤項目 請在<div class="box"> 加上class "worng" 就會有紅線出來
+                  -->
+                </div>
+              </div>
+              <div class="buttons">
+                <p class="total">以上報名人數共<span class="totalNumb">0</span>位，總金額共<span class="totalPrice">0</span>元</p>
+                <button type="reset"><span class="icon-reset"></span>
+                  <p>重新填寫</p>
+                </button>
+                <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+                <button type="button" onclick="check();"><span class="icon-hook"></span>
+                  <p>確認送出</p>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- 取消報名-->
+      <section class="libox">
+        <div class="box">
+          <div class="content">
+            <div class="_title"> <img src="../../upload/fa2/news/signup/X.png" alt="">
+              <p class="ch">確定取消報名?</p>
+              <p class="en"> Cancel registration</p>
+            </div>
+            <div class="word"> 
+              <p>確定取消報名 足球寶寶爬爬GOGO 此活動嗎 ? 離開此報名頁，本頁資訊將不會被網頁所儲存，需要重新填寫相關資料，建議您可以繼續輸入報名流程，謝謝。</p>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button onclick="liboxs.close(this);"><span class="icon-pen"></span>
+                <p>繼續報名</p>
+              </button>
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button onclick="formLibox.close();liboxs.close(this)"><span class="icon-hook"></span>
+                <p>確定取消</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 權益規章-->
+      <section class="libox">
+        <div class="box">
+          <div class="content">
+            <div class="word"> 
+              <p>※報名權益規章及範本：</p>
+              <p>本公司於本活動及報名後之相關作業期間，在漢神巨蛋購物廣場，基於本活動之進行及行銷目的，蒐集、處理、利用您及您的子女提供之下列個人資料：辨別類（姓名、電話等）及個人描述類（出生年月日等）等資料，以供本活動身分辨識、電話通知、稅務等相關作業之用；未提供個人資料者，恕無法參加本活動。您所提供之個人資料，得向本公司請求補充或更正之，或請求查詢、閱覽或製給複製本。當前述蒐集之特定目的消失時，您得請求停止蒐集、處理或利用及請求刪除。本活動之個人資料將於活動結束完畢後銷毀之。</p>
+              <p class="ps">本人確認所填資料正確無誤；並已審閱及同意上述個人資料使用相關事項。此致漢神名店百貨股份有限公司(漢神百貨)</p>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="liboxs.close(this)"><span class="icon-pen"></span>
+                <p>取消返回</p>
+              </button>
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="liboxs.close(this);liboxs.open(3)"><span class="icon-hook"></span>
+                <p>同意並送出</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 報名成功-->
+      <section class="libox">
+        <div class="box">
+          <div class="content">
+            <div class="_title"> <img src="../../upload/fa2/news/signup/V.png" alt="">
+              <p class="ch">報名成功</p>
+              <p class="en">Successful registration</p>
+            </div>
+            <div class="word"> 
+              <p>感謝報名 足球寶寶爬爬GOGO 此活動，漢神百貨歡迎您的參與，請依對應時間及地點參加，底下的報名序號及驗證碼會寄簡訊至您手機，或可至會員服務前往查看，謝謝。</p>
+              <!-- 報名序號 -->
+            </div>
+            <div class="verification">
+              <p data-name="報名序號 :">A05006</p>
+              <p data-name="報名驗證碼 :">5K67JU6</p>
+            </div>
+            <!-- 後端請注意: 下方的日期要可以修改--------- 因為很重要所以要說三次 -->
+            <!-- 後端請注意: 下方的日期要可以修改--------- 因為很重要所以要說三次 -->
+            <!-- 後端請注意: 下方的日期要可以修改--------- 因為很重要所以要說三次 -->
+            <p class="ps">請在 <span>2019-02-12(三)</span> 前至 8F活動會館 完成繳費，逾期繳費將失去報名名額。</p>
+            <div class="buttons"><a href="../card/detail.html" onclick="formLibox.close();liboxs.close(this)"><span class="icon-card"></span>
+                <p>申辦漢神超集卡</p></a>
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="formLibox.close();liboxs.close(this)"><span class="icon-hook"></span>
+                <p>返回活動頁</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <article class="topNav">
+      <section>
+        <div class="_title">
+          <p class="en">Need any helps?</p>
+          <p class="ch">您需要什麼幫助呢?</p>
+        </div>
+        <ul>
+          <li><a href="javascript:void(0)">
+              <p class="en">Tax Refund Service</p>
+              <p class="ch">退稅服務</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Voucher</p>
+              <p class="ch">禮卷專區</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Become our Member</p>
+              <p class="ch">我想申辦超集卡</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Parking</p>
+              <p class="ch">停車優惠</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Lost &amp; Found</p>
+              <p class="ch">失物招領</p></a></li>
+        </ul>
+      </section>
+    </article>
+    <article class="ftContent" style="background-image:url('../../assets/img/ftBg_1670_520.jpg')">
+      <section class="webMap">
+        <div class="type">
+          <div class="typeName">
+            <p>ABOUT</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">關於漢神百貨</a></li>
+              <li><a href="javascript:void(0)">交通資訊</a></li>
+              <li><a href="javascript:void(0)">最新消息</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>SERVICE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">服務中心</a></li>
+              <li><a href="javascript:void(0)">聯繫我們</a></li>
+              <li><a href="javascript:void(0)">電子型錄</a></li>
+              <li><a href="javascript:void(0)">服務之星</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>EXPLORE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">樓層導覽</a></li>
+              <li><a href="javascript:void(0)">品牌導覽</a></li>
+              <li><a href="javascript:void(0)">美食導覽</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>COOPERATE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">廠商專區</a></li>
+              <li><a href="javascript:void(0)">相關企業</a></li>
+              <li><a href="javascript:void(0)">商業合作</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>JOIN US</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">會員專區</a></li>
+              <li><a href="javascript:void(0)">超集卡專區</a></li>
+              <li><a href="javascript:void(0)">人才招募</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>Online shopping</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">漢神百貨網路購物</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="infomation">
+        <div class="address">
+          <h6>ADDRESS</h6>
+          <p>高雄市前金區成功一路266-1號</p>
+          <div class="number">
+            <p data-name="電話">07-215-7266</p>
+            <p data-name="服務專線">0800-018-980</p>
+          </div>
+        </div>
+        <div class="businessHours">
+          <h6>BUSINESS HOURS</h6>
+          <ul>
+            <li>
+              <p>週一至週四 11:00 - 22:00</p>
+            </li>
+            <li>
+              <p>週六/例假日 10:30 - 22:30</p>
+            </li>
+            <li>
+              <p>週五/假日前一天 11:00 - 22:30</p>
+            </li>
+            <li>
+              <p>例假最終日 10:30 - 22:00</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="ftBottom">
+        <div class="copyRight"><img src="../../assets/img/ftLogo_160_40.png" alt="">
+          <p>© Hanshin department store co.ltd all right reserve. Design by <a href="https://www.wddgroup.com">WDD</a></p>
+        </div>
+        <div class="follow">
+          <h6>FOLLOW US</h6>
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-twitter"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!-- 廣告-->
+    <article class="commercial">
+      <section style="background-image: url('../../upload/fa2/commercialBg_1090_535.jpg')">
+        <div class="liboxClose"><span></span></div>
+        <div class="_slick">
+          <ul class="single-item">
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="kCU3ht6rMMg"></div>
+              <div class="open-box" data-videoid="kCU3ht6rMMg"></div>
+            </li>
+            <li class="item" data-value="img"><a href="javascript:void(0)">
+                <!-- 後端請注意:如果是圖片請照這個格式 可以放gif圖片-->
+                <picture>
+                  <!-- [if IE 9]><video style="display: none;"><![endif]-->
+                  <!-- 後端請注意:手機圖片大小-->
+                  <source srcset="../../upload/fa2/commercialImg_1060_400.jpg" media="(max-width:1024px)">
+                  <!-- 後端請注意:電腦圖片大小 1050*590--><img data-lazy="../../upload/fa2/commercialImg_1060_400.jpg" alt="">
+                </picture></a></li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="VhCr88-MFfM"></div>
+              <div class="open-box" data-videoid="VhCr88-MFfM"></div>
+            </li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="dpfsUCOq75s"></div>
+              <div class="open-box" data-videoid="dpfsUCOq75s"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <artilce class="guideFooter">
+      <ul>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+      </ul>
+    </artilce>
+  </footer>
+</body>
+  <!-- 套件js:我把它弄成一包-->
+  <script src="../../assets/js/nick.js"></script>
+  <!-- 自訂的 js-->
+  <script src="../../assets/js/main.js"></script>
+  <script type="application/ld+json">
+    {  
+        "@context": "http://www.schema.org",
+        "@type": "ProfessionalService",
+        //- 網站名子
+        "name": "hanshin",   
+        //- email
+        "email": "mailto:wdd@wddgroup.com",
+        //- 本站網址
+        "url": "https://www.hanshin.com/",
+        //- logo位置
+        "image": "https://www.hanshin.com/assets/img/fb-creatop.jpg",
+        //- 商品價格區間
+        "priceRange":"500,000~3,000,000",
+        //- 電話
+        "telephone": "+886-4-23223899",
+        //- logo位置
+        "logo": "https://www.hanshin.com/fb-creatop.jpg",
+        //- 地址
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "大容東街90號7樓-1",
+            "addressLocality": "西屯區",
+            "addressRegion": "台中市",
+            "postalCode": "40758",
+            "addressCountry": "中華民國 (台灣)"
+        },
+        //- 銷售據點
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "24.1577281",
+            "longitude": "120.6488368"
+        },
+        //- 據點地圖
+        "hasMap": "https://www.google.com.tw/maps/place/%E5%A8%81%E5%BE%B7%E6%95%B8%E4%BD%8D%E8%A8%AD%E8%A8%88/@24.1577281,120.6488368,15z/data=!4m5!3m4!1s0x0:0x9d235559e0bbc032!8m2!3d24.1577281!4d120.6488368",
+        //- 營業時間
+        "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:30",
+        //- 聯絡方式
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+886-4-23223899",
+            "faxNumber": "+886-4-23223898"
+        },
+        //- 外部相關連結
+        "sameAs": ["https://www.facebook.com/wddgroup/"]
+    }
+  </script>
+<!-- 後端請注意: 因為他表單裡的內容要可以編輯 所以我把它寫在這裡-->
+<!-- 後端請注意: 
+如果要顯示 必填項目 請在<div class="box"> 加上class "must"
+如果要顯示 錯誤項目 請在<div class="box"> 加上class "wrong" 就會有紅線出來
+-->
+<script id="table" type="text/x-template">
+  <div class="list" style="display:none">
+      <div class="left">
+          <button class="same" type="button">
+          <p>同會員資料</p>
+          </button>
+          <button class="delete" type="button" onclick="getout(this);">
+          <p>刪除此報名</p>
+          </button>
+      </div>
+      <div class="right">
+          <div class="box must">
+          <div class="name">
+              <p>姓名</p>
+          </div>
+          <div class="inputArea">
+              <input placeholder="">
+          </div>
+          </div>
+          <div class="box must">
+          <div class="name">
+              <p>性別</p>
+          </div>
+          <div class="inputArea">
+              <div class="dropDown"><span class="selectMenu">
+                  <p>請下拉選擇</p></span>
+              <ul>
+                  <li>男</li>
+                  <li>女</li>
+              </ul>
+              </div>
+          </div>
+          </div>
+          <div class="box must">
+          <div class="name">
+              <p>生日</p>
+          </div>
+          <div class="inputArea">
+              <input placeholder="">
+          </div>
+          </div>
+          <div class="box">
+          <div class="name">
+              <p>電話</p>
+          </div>
+          <div class="inputArea">
+              <input placeholder="">
+          </div>
+          </div>
+      </div>
+  </div>
+</script>
+<script>
+  var formLibox ={
+      open: function () {
+          $(".formLibox").addClass("open")
+          if (!mobile() && !$("body").hasClass("guide")) {
+              $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+          } else {
+              $("body").css("overflow-y", "hidden")
+          }
+          alreadyHidden = true
+  
+          formLibox.all();
+      },
+  
+      close_click: function () {
+          $(".formLibox .liboxClose").click(function () {
+              liboxs.open(1)
+          });
+      },
+      
+      close: function () {
+          $(".formLibox").addClass("close").removeClass("open");
+          alreadyHidden = false
+          if (!mobile()) {
+              $("body").css({"overflow-y": "visible","padding-right":"0rem"});
+          } else {
+              $("body").css("overflow-y", "visible");
+          }
+          setTimeout(function () {
+              $(".formLibox").removeClass("close check");
+  
+              $(".formLibox .form form .type").slideDown();
+              // 移除表格結構及已填寫的資料
+              $(".formLibox .form form .table .list").remove();
+              $(".formLibox .form form")[0].reset()
+          }, 1000)
+      },
+      
+  
+      all:function(){
+          formLibox.close_click();
+      }
+  }
+  
+  var isMember 
+  
+  var liboxs = {
+      open: function (index) {
+          $(".liboxs .libox").eq(index).addClass("open")
+          if (!mobile() && !$("body").hasClass("guide")) {
+              $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+          } else {
+              $("body").css("overflow-y", "hidden")
+          }
+  
+          if(isMember){
+              $(".liboxs .libox .box .buttons a").css("display","none")
+          }else{
+              $(".liboxs .libox .box .buttons a").css("display","flex")
+          }
+  
+          liboxs.all();
+      },
+  
+      close_click: function () {
+          $(".liboxs .libox .liboxClose").click(function () {
+              liboxs.close(this);
+          });
+  
+          $(".liboxs .libox").click(function(e){
+              if($(e.target).hasClass("libox")){
+                  liboxs.close(this);
+              }
+          });
+      },
+  
+      close: function (target) {
+          $(target).closest(".libox").addClass("close").removeClass("open");
+          // var action = (alreadyHidden !== undefined) ? (!alreadyHidden) : true
+          if (!mobile() && !alreadyHidden) {
+              $("body").css({
+                  "overflow-y": "visible",
+                  "padding-right": "0rem"
+              })
+          } else if (mobile() && !alreadyHidden) {
+              $("body").css("overflow-y", "visible");
+          }
+          setTimeout(function () {
+              $(target).closest(".libox").removeClass("close");
+          }, 400)
+      },
+  
+      all:function(){
+          liboxs.close_click();
+      }
+  }
+  
+</script>
+<script>
+  // 新增一個報名表格
+  function plus(target){
+      var components = document.querySelector("#table").innerText
+      $(target).closest(".type").find(".table").append(components)
+      // 加入動畫
+      $(".formLibox .form form .table .list").slideDown(500);
+      // 重新啟動 下拉選單的function
+      dropDown();
+  
+      // 增加人數
+      var val = parseInt($(target).parent().find("input[type='number']").val()) + 1
+      var max = $(target).parent().find("input[type='number']").attr("max")
+      if (val > max && max !== "") {
+          val = $(target).parent().find("input[type='number']").attr("max")
+      }
+      $(target).parent().find("input[type='number']").val(val)
+  }
+  
+  // 減少一個報名表格
+  function decrease(target){
+      // 加入動畫
+      $(target).closest(".type").find(".table .list:last-child").slideUp(500)
+      // 動畫結束後
+      setTimeout(function(){
+          // 移除表格結構
+          $(target).closest(".type").find(".table .list:last-child").remove()
+      },500)
+  
+      // 減少人數
+      var val = parseInt($(target).parent().find("input[type='number']").val()) - 1
+      if (val <= 0) {
+          $(target).parent().find("input[type='number']").val(0)
+      } else {
+          $(target).parent().find("input[type='number']").val(val)
+      }
+  }
+  
+  // 刪除報名表格
+  function getout(target){
+      // 加入動畫
+      $(target).closest(".list").slideUp(500)
+      // 動畫結束後
+      setTimeout(function(){
+          // 移除表格結構
+          $(target).closest(".list").remove()
+      },500)
+  
+      // 減少人數
+      var val = parseInt($(target).closest(".type").find("input[type='number']").val()) - 1
+      if (val <= 0) {
+          $(target).closest(".type").find("input[type='number']").val(0)
+      } else {
+          $(target).closest(".type").find("input[type='number']").val(val)
+      }
+  }
+  
+  // 確認送出
+  function check(){
+      
+      // 已完成檢查 確定送出 直接開啟規章燈箱
+      if($(".formLibox").hasClass("check")){
+          liboxs.open(2);
+          // 停止function
+          return
+      }
+  
+      var checkReady = false
+  
+      // 檢查是否至少報名一位
+      var counter = document.querySelectorAll(".formLibox .form form .type .price .count input")
+      var counterTotal = 0
+      for(var i = 0 ; i<counter.length ;i++){
+          counterTotal += parseInt(counter[i].value)
+      }
+      if(counterTotal !==0){
+          checkReady = true
+      }else{
+          alert("至少報名一位")
+      }
+  
+      // 檢查必填欄位是否已填寫
+      $(".formLibox .form form .table .list .right .box.must").each(function(){
+          // 欄位未填
+          if($(this).find("input").val()=="" && !$(this).find("input").length ==0){
+              $(this).addClass("wrong")
+              $(this).find("input").attr("placeholder","此為必填")
+              checkReady = false
+          }
+          // 下拉選單未選
+          else if(!$(this).find(".dropDown").hasClass("active") && !$(this).find(".dropDown").length ==0){
+              $(this).addClass("wrong")
+              checkReady = false
+          }
+          else{
+              $(this).removeClass("wrong")
+          }
+      });
+  
+      // 檢查完成後所做的動作
+      if(checkReady){
+          var totalCount = 0
+          var totalPrice = 0
+          $(".formLibox .form form .type").each(function(){
+              // 取得價格參數
+              var p = $(this).find(".price").attr("data-price")
+              var x = parseInt(p.replace(/,/g,''));
+              var price = (isNaN(x))?0:x
+              var count = parseInt($(this).find(".price .count input").val())
+              totalCount += count
+              totalPrice += (price*count)
+              if(count == 0){
+                  $(this).slideUp(500)
+              }
+          })
+          // 填入金額及人數
+          $(".formLibox .form form .buttons .total .totalNumb").text(totalCount)
+          $(".formLibox .form form .buttons .total .totalPrice").text(totalPrice)
+          // 加上已完成檢查的class
+          document.querySelector('.formLibox').classList.add('check');
+      }
+  }
+  
+  // 重新填寫
+  var reset = function(){
+      $(".formLibox .form form button[type='reset']").click(function(){
+          $(".formLibox").removeClass("check")
+          // 加入動畫
+          $(".formLibox .form form .table .list").slideUp(500);
+          $(".formLibox .form form .type").slideDown(500);
+          // 動畫結束後
+          setTimeout(function(){
+              // 移除表格結構
+              $(".formLibox .form form .table .list").remove()
+          },500);
+      })
+  }();
+</script>
+</html>

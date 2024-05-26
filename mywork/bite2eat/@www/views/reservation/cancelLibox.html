@@ -1,0 +1,42 @@
+<section class="box form">
+    <div class="liboxClose"><span></span></div>
+    <div class="bg"></div>
+    <div class="_img">
+        <img src="../../upload/fa2/reservation/liboxImg.png" alt="">
+    </div>
+        <div class="_text">
+            <h2 class="form">Cancel</h2>
+            <h2 class="finish">Cancel Success!</h2>
+            <div class="px22 form">取消訂位</div>
+            <div class="px22 finish">取消訂位成功</div>
+            <h3 class="form">親愛的顧客，若您預取消訂位，請於下方輸入訂位代碼及預定時使用的聯繫電話。</h3>
+            <h3 class="finish">歡迎您再次預約薄多義！</h3>
+            <form>
+                <div class="tableContent">
+                    <div>
+                        <h5>訂位代碼  Code</h5>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <h5>聯繫電話  Mobile / Tel</h5>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="btn">
+                        <span><i></i></span>
+                        <p>確定</p>
+                    </div>
+                    <!-- 後端請注意:onclick 本身並不重要 ，重要的是裡面的function -->
+                    <button type="button" onclick="cancelLibox.send();">
+                        <span><i></i></span>
+                        <p>返回</p>
+                    </button>
+                </div>
+            </form>
+            <div class="btn finish">
+                <span><i></i></span>
+                <p>確定</p>
+            </div>
+        </div>
+</section>

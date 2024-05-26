@@ -1,0 +1,33 @@
+//- 常用參數
+
+- java = "javascript:void(0)"
+
+
+
+
+//- head
+mixin head
+    head
+        meta(charset="UTF-8")
+        meta(name="language" content="tw")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        meta(name="title" content="網站標題名稱")
+        meta(name="description" content="網站描敘")
+        meta(name="keywords" content="網站關鍵字")
+        meta(name="copyright" content="作者名子")
+        //- icon
+        link(rel="icon" type="image/png" sizes="96x96" href="../../assets/img/ico/favicon-96x96.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="../../assets/img/ico/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="../../assets/img/ico/favicon-16x16.png")
+        //- title
+        title moca
+        //- css
+        link(rel="stylesheet" href="../../assets/css/style.css")
+
+
+//- script
+mixin script
+    // 套件js:我把它弄成一包
+    script(src="../../assets/js/nick.js")
+    // 自訂的 js
+    script(src="../../assets/js/main.js")

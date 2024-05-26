@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+  <meta charset="UTF-8"/>
+  <meta name="language" content="tw"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="title" content="網站標題名稱"/>
+  <meta name="description" content="網站描敘"/>
+  <meta name="keywords" content="網站關鍵字"/>
+  <meta name="copyright" content="作者名子"/>
+  <title itemprop="name">hanshin</title>
+  <link rel="canonical" href="網址" itemprop="url"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
+</head>
+
+<body class="detail" id="floor">
+  <header>
+    <!--左邊選單-->
+    <article class="hdContent" style="background-image: url('../../assets/img/hdBg_250_1080.jpg')">
+      <section class="top">
+        <div class="logo"><a href="../home/index.html"><img src="../../assets/img/hdLogo.png" alt=""><img src="../../assets/img/hdLogoRWD.png" alt=""></a></div>
+        <div class="openMenu"><span class="icon-square"></span>
+          <p>FIND MORE</p>
+        </div>
+        <div class="socialMedia">
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="list">
+        <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li itemprop="name"><a href="../news/index.html" itemprop="url">
+              <p>最新消息</p></a></li>
+          <li itemprop="name"><a href="../brand/index.html" itemprop="url">
+              <p>品牌導覽</p></a></li>
+          <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+              <p>樓層導覽</p></a></li>
+          <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+              <p>會員專區</p></a></li>
+          <li itemprop="name"><a href="../service/index.html" itemprop="url">
+              <p>服務中心</p></a></li>
+          <li itemprop="name"><a href="../about/index.html" itemprop="url">
+              <p>交通資訊</p></a></li>
+        </ul>
+      </section>
+      <section class="bottom">
+        <div class="buttons"><a class="openSearch" href="javascript:void(0)"><span class="icon-magnifier"></span>
+            <p>搜尋</p></a><a href="javascript:void(0)"><span class="icon-person"></span>
+            <p>會員</p></a></div>
+        <div class="openSelectStore"><a href="javascript:void(0)">
+            <p>SELECT STORE</p></a></div>
+        <div class="openTime"><span>Business Hours Today</span>
+          <p>10:30 - 22:00</p>
+        </div>
+      </section>
+    </article>
+    <!--右下按鈕-->
+    <article class="sideButton">
+      <section class="socialMedia"> 
+        <div class="link"><a href="javascript:void(0)"><span class="icon-youtube"></span></a><a href="javascript:void(0)"><span class="icon-twitter"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-facebook"></span></a></div>
+        <button><span class="icon-share"></span></button>
+      </section>
+      <section class="openSearch"><span class="icon-magnifier"></span></section>
+      <section class="DM"><a href="../dm/index.html">DM</a></section>
+      <section class="goTop">TOP</section>
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 導覽機新增的按鈕 ------------>
+      <section class="back" onclick="back()">返回</section>
+      <section class="toHome"><a class="icon-house" href="../guide/index.html"></a></section>
+      <section class="arrows">
+        <button class="up" onclick="scrollUp();"></button>
+        <button class="down" onclick="scrollDown();"></button>
+      </section>
+    </article>
+    <!--選擇分店-->
+    <article class="selectStore">
+      <section class="buttons">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <div class="_title">
+          <p class="ch">選擇分站</p>
+          <p class="en">Select substation</p>
+          <ul>
+            <li class="active">全台分站  </li>
+            <li>南部地區</li>
+            <li>中部地區</li>
+            <li>北部地區</li>
+          </ul>
+        </div>
+        <div class="_slick">
+          <ul>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg2_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神巨蛋購物廣場</p>
+                    <p class="en">Hanshin Arena Shopping Plaza</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="https://tw.mall.yahoo.com/store/hanshin">
+                  <figure><img src="../../upload/fa2/storeImg3_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨網路購物</p>
+                    <p class="en">Hanshin Online Shopping</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+          </ul>
+          <div class="arrows"><span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+        </div>
+      </section>
+    </article>
+    <!-- 主選單-->
+    <article class="hdMenu">
+      <section class="topButton">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <!--後端請注意: 未登入狀態請在下方<div class="login"> 加上class "active"-->
+        <div class="login active">
+          <p>LOGIN</p>
+          <div class="buttons"><a href="javascript:void(0)">登入</a><a href="javascript:void(0)">註冊</a></div>
+        </div>
+        <!--後端請注意: 未登入狀態請在下方<div class="logout"> 加上class "active"-->
+        <div class="logout">
+          <p>LOGOUT</p>
+          <div class="buttons">
+            <p class="name">我的名子</p><a href="javascript:void(0)">登出</a>
+          </div>
+        </div>
+        <div class="mainLink">
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../news/index.html" itemprop="url">
+                <p class="ch">最新消息</p>
+                <p class="en">NEWS</p></a></li>
+            <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+                <p class="ch">會員專區</p>
+                <p class="en">MEMBER</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="ch">樓層導覽</p>
+                <p class="en">FLOOR</p></a></li>
+            <li itemprop="name"><a href="../service/index.html" itemprop="url">
+                <p class="ch">顧客服務</p>
+                <p class="en">SERVICE</p></a></li>
+            <li itemprop="name"><a href="../about/index.html" itemprop="url">
+                <p class="ch">關於漢神</p>
+                <p class="en">ABOUT</p></a></li>
+            <li itemprop="name"><a href="../dm/index.html" itemprop="url">
+                <p class="ch">電子型錄</p>
+                <p class="en">DM</p></a></li>
+            <li itemprop="name"><a href="../other/join.html" itemprop="url">
+                <p class="ch">加入我們</p>
+                <p class="en">JOIN US</p></a></li>
+            <li itemprop="name"><a href="../card/index.html" itemprop="url">
+                <p class="ch">超集卡/聯名卡</p>
+                <p class="en">CARD</p></a></li>
+            <li itemprop="name"><a href="../other/cooperation.html" itemprop="url">
+                <p class="ch">合作找我</p>
+                <p class="en">COOPERATE</p></a></li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <div class="about">
+            <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+              <li itemprop="name"><a href="javascript:void(0)" onclick="subscribe.open()">訂閱電子報</a></li>
+              <li itemprop="name"><a href="../supplier/index.html" itemprop="url">廠商專區  </a></li>
+              <li itemprop="name"><a href="../other/related.html" itemprop="url">相關企業</a></li>
+              <li itemprop="name"><a href="../other/privacy.html" itemprop="url">隱私權政策</a></li>
+            </ul>
+          </div>
+          <div class="socialMedia">
+            <p>FOLLOW US</p>
+            <ul>
+              <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="floorIntro">
+          <div class="_title">
+            <p>Floor</p><span>introduction</span>
+          </div>
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">1F</p>
+                <p class="name">精品美妍</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">2F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">3F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">4F</p>
+                <p class="name">國際名品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">5F</p>
+                <p class="name">都會名媛</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">6F</p>
+                <p class="name">品味質男</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">7F</p>
+                <p class="name">生活逸品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">8F</p>
+                <p class="name">活力休閒</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B1F</p>
+                <p class="name">名品鞋履</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B2F</p>
+                <p class="name">潮流風尚</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B3F</p>
+                <p class="name">雅緻食尚</p></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!--搜尋燈箱-->
+    <article class="searchLibox">
+      <section>
+        <div class="liboxClose"><span></span></div>
+        <div class="_title">
+          <p class="ch">搜尋</p>
+          <p class="en">Search</p>
+          <p class="words">歡迎搜尋您想找尋的商品或是新訊，漢神提供最佳優質商品及貼心服務機能。</p>
+          <div class="buttons">
+            <button class="active" type="button">
+              <p>尋找品牌</p>
+            </button>
+            <button type="button">
+              <p>尋找訊息</p>
+            </button>
+          </div>
+        </div>
+        <div class="forms">
+          <!-- 尋找品牌表格-->
+          <form class="active">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box floor">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇樓層</p></span>
+                <ul>
+                  <li>樓層一</li>
+                  <li>樓層二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+          <!-- 尋找訊息表格-->
+          <form style="display:none">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <article class="guideLogo"><img src="../../assets/img/guideLogo.png" alt=""></article>
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <article class="subscribe">
+      <section>
+        <div class="box">
+          <div class="liboxClose"><span></span></div>
+          <div class="_title"><span class="icon-book"></span>
+            <p class="ch">訂閱電子報</p>
+            <p class="en">Subscribe newsletters</p>
+            <p class="words">如果你想訂閱電子報，請選擇想要收到的店別，並填寫e-mail，確認送出後，請至您所填寫的e-mail收取確認信件，回覆連結後即訂閱成功。</p>
+          </div>
+          <form>
+            <div class="item">
+              <div class="name">
+                <p class="ch">信箱</p>
+                <p class="en">E-mail</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="name">
+                <p class="ch">選擇店別</p>
+                <p class="en">store</p>
+              </div>
+              <div class="inputArea">
+                <div class="dropDown"><span class="selectMenu">
+                    <p>請下拉選擇店別</p></span>
+                  <ul>
+                    <li>漢神店</li>
+                    <li>巨蛋店</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="subscribe.close()"><span class="icon-hook"></span>
+                <p>確認送出</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+  </header>
+  <main>
+    <!-- 後端請注意: 要讓客戶可以自訂背景圖片和背景顏色-->
+    <!-- 後端請注意: 要讓客戶可以決定字的顏色 預設是黑色  如果要白色 就在 <section class="banner"> 加上class "white"-->
+    <article class="banner white" style="background-image: url('../../upload/fa2/floor/detail/bannerBg_1670_600.jpg');background-color: #ebeaea">
+      <section class="breadcrumbs">
+        <ul>
+          <li><a href="../home/index.html">首頁</a></li>
+          <li><a href="../floor/index.html">1F精品美研</a></li>
+          <li><a href="../floor/detail.html">Cartier</a></li>
+        </ul>
+      </section>
+      <section class="logo">
+        <figure><img src="../../upload/fa2/floor/detail/bannerLogoImg.png" alt=""></figure>
+        <p>創立1847年巴黎，承載著近150年的經典與魅力，超越時代，引領風格，譽為「珠寶商的皇帝，皇帝的珠寶商」。</p>
+      </section>
+      <section class="inf">
+        <div class="type">
+          <div class="_title">
+            <p class="ch">專櫃電話</p>
+            <p class="en">Tel</p>
+          </div>
+          <div>
+            <p>07-2153106</p>
+          </div>
+        </div>
+        <div class="location">
+          <div class="_title">
+            <p class="ch">櫃位地點</p>
+            <p class="en">Location</p>
+          </div>
+          <div>
+            <p>1F精品美妍 </p>
+          </div>
+        </div>
+        <div class="share">
+          <div class="_title">
+            <p class="ch">分享</p>
+            <p class="en">Share to</p>
+          </div>
+          <ul class="socialMedia">
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-twitter"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="floorNumb">
+        <p>1F</p>
+      </section>
+    </article>
+    <article class="overview">
+      <h6>INTRODUCTION</h6>
+      <div class="anchor">
+        <ul>
+          <li class="active">
+            <p>品牌故事</p>
+          </li>
+          <li>
+            <p>櫃位環境</p>
+          </li>
+          <li>
+            <p>推薦商品</p>
+          </li>
+          <li>
+            <p>最新活動</p>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="story">
+      <section class="_title">
+        <p class="ch">品牌故事</p>
+        <p class="en">Brand story</p>
+      </section>
+      <section class="_slick">
+        <ul>
+          <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+          <li data-videoId="rCOhniQ2KhU">
+            <div>
+              <figure><img data-lazy="../../upload/fa2/floor/detail/slickImg_1030_580.jpg" alt=""></figure>
+              <!-- 後端請注意: 如果下面沒有內容的話 請移除--><b>為您獻上巧奪天工產品，蘊藏在寶石中的心之所願</b>
+            </div>
+          </li>
+          <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+          <li data-videoId="rCOhniQ2KhU">
+            <div>
+              <figure><img data-lazy="../../upload/fa2/floor/detail/slickImg_1030_580.jpg" alt=""></figure>
+              <!-- 後端請注意: 如果下面沒有內容的話 請移除--><b>為您獻上巧奪天工產品，蘊藏在寶石中的心之所願</b>
+            </div>
+          </li>
+          <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+          <li data-videoId="rCOhniQ2KhU">
+            <div>
+              <figure><img data-lazy="../../upload/fa2/floor/detail/slickImg_1030_580.jpg" alt=""></figure>
+              <!-- 後端請注意: 如果下面沒有內容的話 請移除--><b>為您獻上巧奪天工產品，蘊藏在寶石中的心之所願</b>
+            </div>
+          </li>
+        </ul>
+        <div class="arrows"> <span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+      </section>
+      <section class="_text">
+        <h6>珠寶商的皇帝，皇帝的珠寶商</h6>
+        <p>創立於1847年的巴黎，卡地亞被譽為「珠寶商的皇帝，皇帝的珠寶商」。每一款卡地亞作品都細訴著配戴者不凡的品味，承載著近150年的經典與魅力，超越時代，也引領風格。清新微風輕拂寶石，點燃璀璨光芒，喚醒呼吸起伏，寶石之心開始跳動。規律脈動如同澎湃洶湧的海浪，為珍貴逸品注入豐沛生命力，一件又一件的精彩作品，宛如激起無限漣漪的波浪。</p>
+      </section>
+    </article>
+    <article class="environment">
+      <section class="_title">
+        <p class="ch">櫃位環境</p>
+        <p class="en">Environment</p>
+      </section>
+      <section class="rows">
+        <div class="row" data-videoId="">
+          <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/floor/detail/environmentImg_720_400.jpg" alt=""></figure>
+          <div class="_text">
+            <h6>尊爵大器外觀  優雅舒適空間</h6>
+            <p>以珍貴寶石與色彩的巧妙搭配成就出無與倫比的頂級珠寶，帶來非凡感受與歡騰精神。</p>
+          </div>
+        </div>
+        <div class="row" data-videoId="rCOhniQ2KhU">
+          <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/floor/detail/environmentImg2_720_400.jpg" alt=""></figure>
+          <div class="_text">
+            <h6>VIP系列商品展示區</h6>
+            <p>以珍貴寶石與色彩的巧妙搭配成就出無與倫比的頂級珠寶，非凡感受。</p>
+          </div>
+        </div>
+      </section>
+    </article>
+    <article class="recommended" style="background-image:url('../../upload/fa2/floor/detail/environmentBg_1670_760.jpg')">
+      <section class="_title">
+        <p class="ch">推薦商品</p>
+        <p class="en">Recommended</p>
+      </section>
+      <section class="_slick">
+        <ul>
+          <li> <a href="javascript:void(0)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/recommendedImg.jpg" alt=""></figure>
+              <p>1895頂級珠寶婚戒</p></a></li>
+          <li> <a href="javascript:void(0)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/recommendedImg2.jpg" alt=""></figure>
+              <p>JUSTE UN CLOU戒指</p></a></li>
+          <li> <a href="javascript:void(0)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/recommendedImg3.jpg" alt=""></figure>
+              <p>PANTHÈRE DE CARTIER美洲豹腕錶</p></a></li>
+          <li> <a href="javascript:void(0)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/recommendedImg4.jpg" alt=""></figure>
+              <p>C DE CARTIER婚戒</p></a></li>
+          <li> <a href="javascript:void(0)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/recommendedImg2.jpg" alt=""></figure>
+              <p>JUSTE UN CLOU戒指</p></a></li>
+        </ul>
+      </section>
+      <section class="ps">
+        <p>*欲了解更多詳情，請致電 07-2153106</p>
+      </section>
+    </article>
+    <article class="lastNews">
+      <section class="_title">
+        <p class="ch">最新活動</p>
+        <p class="en">Latest news</p>
+      </section>
+      <section class="_slick">
+        <ul>
+          <li><a class="nocg openNewsLibox" href="javascript:void(0)" data-src="../floor/news.html" onclick="newsLibox.open(this)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/lastNewsImg_270_250.jpg" alt="">
+                <div class="hoverBox"><span></span>
+                  <p>ENTER</p>
+                </div>
+              </figure>
+              <div class="_text">
+                <!--後端請注意: 下方slogan如果沒有內容的話 請移除div-->
+                <div class="slogan" style="background-color:#676bbe;color:#fff">PURE !</div>
+                <h6>1958 系列新品 尊榮奢華</h6>
+              </div></a></li>
+          <li><a class="nocg openNewsLibox" href="javascript:void(0)" data-src="../floor/news.html" onclick="newsLibox.open(this)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/lastNewsImg2_270_250.jpg" alt="">
+                <div class="hoverBox"><span></span>
+                  <p>ENTER</p>
+                </div>
+              </figure>
+              <div class="_text">
+                <h6>獻給摯愛，何需理由！</h6>
+              </div></a></li>
+          <li><a class="nocg openNewsLibox" href="javascript:void(0)" data-src="../floor/news.html" onclick="newsLibox.open(this)">
+              <figure><img data-lazy="../../upload/fa2/floor/detail/lastNewsImg2_270_250.jpg" alt="">
+                <div class="hoverBox"><span></span>
+                  <p>ENTER</p>
+                </div>
+              </figure>
+              <div class="_text">
+                <h6>1958 系列新品 尊榮奢華</h6>
+              </div></a></li>
+        </ul>
+        <div class="arrows"> <span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <article class="topNav">
+      <section>
+        <div class="_title">
+          <p class="en">Need any helps?</p>
+          <p class="ch">您需要什麼幫助呢?</p>
+        </div>
+        <ul>
+          <li><a href="javascript:void(0)">
+              <p class="en">Tax Refund Service</p>
+              <p class="ch">退稅服務</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Voucher</p>
+              <p class="ch">禮卷專區</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Become our Member</p>
+              <p class="ch">我想申辦超集卡</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Parking</p>
+              <p class="ch">停車優惠</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Lost &amp; Found</p>
+              <p class="ch">失物招領</p></a></li>
+        </ul>
+      </section>
+    </article>
+    <article class="ftContent" style="background-image:url('../../assets/img/ftBg_1670_520.jpg')">
+      <section class="webMap">
+        <div class="type">
+          <div class="typeName">
+            <p>ABOUT</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">關於漢神百貨</a></li>
+              <li><a href="javascript:void(0)">交通資訊</a></li>
+              <li><a href="javascript:void(0)">最新消息</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>SERVICE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">服務中心</a></li>
+              <li><a href="javascript:void(0)">聯繫我們</a></li>
+              <li><a href="javascript:void(0)">電子型錄</a></li>
+              <li><a href="javascript:void(0)">服務之星</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>EXPLORE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">樓層導覽</a></li>
+              <li><a href="javascript:void(0)">品牌導覽</a></li>
+              <li><a href="javascript:void(0)">美食導覽</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>COOPERATE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">廠商專區</a></li>
+              <li><a href="javascript:void(0)">相關企業</a></li>
+              <li><a href="javascript:void(0)">商業合作</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>JOIN US</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">會員專區</a></li>
+              <li><a href="javascript:void(0)">超集卡專區</a></li>
+              <li><a href="javascript:void(0)">人才招募</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>Online shopping</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">漢神百貨網路購物</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="infomation">
+        <div class="address">
+          <h6>ADDRESS</h6>
+          <p>高雄市前金區成功一路266-1號</p>
+          <div class="number">
+            <p data-name="電話">07-215-7266</p>
+            <p data-name="服務專線">0800-018-980</p>
+          </div>
+        </div>
+        <div class="businessHours">
+          <h6>BUSINESS HOURS</h6>
+          <ul>
+            <li>
+              <p>週一至週四 11:00 - 22:00</p>
+            </li>
+            <li>
+              <p>週六/例假日 10:30 - 22:30</p>
+            </li>
+            <li>
+              <p>週五/假日前一天 11:00 - 22:30</p>
+            </li>
+            <li>
+              <p>例假最終日 10:30 - 22:00</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="ftBottom">
+        <div class="copyRight"><img src="../../assets/img/ftLogo_160_40.png" alt="">
+          <p>© Hanshin department store co.ltd all right reserve. Design by <a href="https://www.wddgroup.com">WDD</a></p>
+        </div>
+        <div class="follow">
+          <h6>FOLLOW US</h6>
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-twitter"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!-- 廣告-->
+    <article class="commercial">
+      <section style="background-image: url('../../upload/fa2/commercialBg_1090_535.jpg')">
+        <div class="liboxClose"><span></span></div>
+        <div class="_slick">
+          <ul class="single-item">
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="kCU3ht6rMMg"></div>
+              <div class="open-box" data-videoid="kCU3ht6rMMg"></div>
+            </li>
+            <li class="item" data-value="img"><a href="javascript:void(0)">
+                <!-- 後端請注意:如果是圖片請照這個格式 可以放gif圖片-->
+                <picture>
+                  <!-- [if IE 9]><video style="display: none;"><![endif]-->
+                  <!-- 後端請注意:手機圖片大小-->
+                  <source srcset="../../upload/fa2/commercialImg_1060_400.jpg" media="(max-width:1024px)">
+                  <!-- 後端請注意:電腦圖片大小 1050*590--><img data-lazy="../../upload/fa2/commercialImg_1060_400.jpg" alt="">
+                </picture></a></li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="VhCr88-MFfM"></div>
+              <div class="open-box" data-videoid="VhCr88-MFfM"></div>
+            </li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="dpfsUCOq75s"></div>
+              <div class="open-box" data-videoid="dpfsUCOq75s"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <artilce class="guideFooter">
+      <ul>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+      </ul>
+    </artilce>
+  </footer>
+</body>
+  <!-- 套件js:我把它弄成一包-->
+  <script src="../../assets/js/nick.js"></script>
+  <!-- 自訂的 js-->
+  <script src="../../assets/js/main.js"></script>
+  <script type="application/ld+json">
+    {  
+        "@context": "http://www.schema.org",
+        "@type": "ProfessionalService",
+        //- 網站名子
+        "name": "hanshin",   
+        //- email
+        "email": "mailto:wdd@wddgroup.com",
+        //- 本站網址
+        "url": "https://www.hanshin.com/",
+        //- logo位置
+        "image": "https://www.hanshin.com/assets/img/fb-creatop.jpg",
+        //- 商品價格區間
+        "priceRange":"500,000~3,000,000",
+        //- 電話
+        "telephone": "+886-4-23223899",
+        //- logo位置
+        "logo": "https://www.hanshin.com/fb-creatop.jpg",
+        //- 地址
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "大容東街90號7樓-1",
+            "addressLocality": "西屯區",
+            "addressRegion": "台中市",
+            "postalCode": "40758",
+            "addressCountry": "中華民國 (台灣)"
+        },
+        //- 銷售據點
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "24.1577281",
+            "longitude": "120.6488368"
+        },
+        //- 據點地圖
+        "hasMap": "https://www.google.com.tw/maps/place/%E5%A8%81%E5%BE%B7%E6%95%B8%E4%BD%8D%E8%A8%AD%E8%A8%88/@24.1577281,120.6488368,15z/data=!4m5!3m4!1s0x0:0x9d235559e0bbc032!8m2!3d24.1577281!4d120.6488368",
+        //- 營業時間
+        "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:30",
+        //- 聯絡方式
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+886-4-23223899",
+            "faxNumber": "+886-4-23223898"
+        },
+        //- 外部相關連結
+        "sameAs": ["https://www.facebook.com/wddgroup/"]
+    }
+  </script>
+<script>
+  var newsLibox = {
+  
+      open: function (target) {
+          var src = $(target).attr("data-src")
+          $("body").append("<article class='newsLibox'></article>")
+          if (!mobile() && !$("body").hasClass("guide")) {
+              $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+          }else{
+              $("body").css("overflow-y", "hidden")
+          }
+  
+          alreadyHidden = true
+              
+          $.ajax({
+                  // 載入資料
+                  url: src,
+              })
+              .done(function (data) {
+                  // 將資料塞入結構
+                  $(".newsLibox").html(data);
+                  newsLibox.all();
+              });
+      },
+  
+      close_click: function () {
+          $(".newsLibox .liboxClose").click(function () {
+              newsLibox.close();
+          });
+          $(".newsLibox").click(function (e) {
+              if ($(e.target).hasClass("newsLibox")){newsLibox.close(); }
+          })
+      },
+  
+      close: function () {
+          $(".newsLibox").addClass("close");
+          if (!mobile()) {$("body").css({"overflow-y":"visible","padding-right":"0rem"})}
+          else{ $("body").css("overflow-y", "visible")}
+          alreadyHidden = false
+          setTimeout(function () {
+              $(".newsLibox").remove()
+          }, 500)
+      },
+  
+      slick:function(){
+          $(".newsLibox ._slick ul").slick({
+              prevArrow: ".newsLibox ._slick .arrows span.icon-arrowLeft",
+              nextArrow: ".newsLibox ._slick .arrows span.icon-arrowRight",
+              dots:true,
+              speed:700,
+              autoplay: true,
+              autoplaySpeed: 5000,
+              responsive: [{
+                  breakpoint: 1025,
+                  settings: {
+                      arrows: false,
+                  }
+              }
+          ]
+          })
+  
+          $('.newsLibox ._slick ul').on('lazyLoaded', function(){
+              newsLibox.waypoint();
+              newsLibox.Blazy();
+          });
+      },
+  
+      row:function(){
+          $(".newsLibox .rows .row>div:not(.table):nth-child(odd)").each(function () {
+              var thisClassNmae = $(this).attr("class")
+              var nextClassName = $(this).next().attr("class")
+              var targetClassName=(nextClassName == "table") ? thisClassNmae : 
+                                  (nextClassName == undefined) ? thisClassNmae : nextClassName
+              if (thisClassNmae !== targetClassName) {
+                  $(this).addClass("half");
+                  $(this).next().addClass("half");
+              }
+          })
+      },
+  
+      waypoint:function(){
+          eachWaypoint(".newsLibox section .rows .row ._img","80%")
+          eachWaypoint(".newsLibox section .rows .row ._text","80%")
+  
+          function eachWaypoint(target, offsetValue){
+              $(target).each(function (index, element) {
+                  $(element).waypoint({
+                      context: ".newsLibox section",
+                      handler: function () {
+                          $(element).addClass('show');
+                      },
+                      offset: offsetValue
+                  });
+              });
+          }
+      },
+  
+      Blazy:function(){
+          var liboxBLazy = new Blazy({
+              container:".newsLibox section",
+              offset: 100,
+              success: function (ele) {
+                  $(ele).closest("figure").addClass("in");
+                  Waypoint.refreshAll();
+              }
+          });
+      },
+  
+      all:function(){
+          newsLibox.close_click();
+          newsLibox.slick();
+          newsLibox.row();
+          openVideoLibox(".newsLibox section ._slick ul li")
+      }
+  }
+  
+</script>
+</html>

@@ -1,0 +1,125 @@
+/*
+
+* Override Pages default styles or create your own styles here
+
+*/
+body {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+p {
+    margin: 0;
+}
+img {
+    max-width: 100%;
+}
+//
+
+.public_paragraph_objblock,
+.public_paragraph_txtblock,
+.public_paragraph_wrapblock {
+    box-sizing: border-box;
+}
+
+.public_paragraph {
+    box-sizing: border-box;
+    border: solid 1px #000;
+    width: 100%;
+}
+.public_paragraph_sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.row_start {
+        align-items: flex-start;
+    }
+    &.row_end{
+        align-items: flex-end;
+    }
+    &.flex_col {
+        flex-direction: column;
+        .public_paragraph_objblock_frame {
+            display: flex;
+        }
+    }
+}
+
+.public_paragraph_objblock_frame {
+    .public_paragraph_objblock_list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+.public_paragraph_wrapblock {
+    .img_block {
+
+    }
+    .frame {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+//
+.left_shrink_10 {
+    padding-left: 10%;
+}
+.left_shrink_20 {
+    padding-left: 20%;
+}
+.left_shrink_30 {
+    padding-left: 30%;
+}
+.left_shrink_40 {
+    padding-left: 40%;
+}
+.left_shrink_50 {
+    padding-left: 50%;
+}
+//
+.right_shrink_10 {
+    padding-right: 10%;
+}
+.right_shrink_20 {
+    padding-right: 20%;
+}
+.right_shrink_30 {
+    padding-right: 30%;
+}
+.right_shrink_40 {
+    padding-right: 40%;
+}
+.right_shrink_50 {
+    padding-right: 50%;
+}
+//
+.w_100 {
+    width: 100%;
+}
+.w_50 {
+    width: 50%;
+}
+//
+.mrg_bottom_50 {
+    margin-bottom: 50px;
+}
+//
+.float_left {
+    float: left;
+}
+.float_right {
+    float: right;
+}

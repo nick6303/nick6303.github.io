@@ -1,0 +1,171 @@
+.commodities
+    &__content
+    &__txt
+        padding: 70px 0 50px
+        +flex
+        h5
+            max-width: 450px
+            font-size: px(14)
+            line-height: 1.5
+            text-align: center
+    &__search
+        position: relative
+        margin-bottom: 70px
+        display: flex
+        justify-content: center
+        align-items: center
+        .search-btn
+            display: inline-block
+            padding: 15px 40px
+            color: #fff
+            background: #b2b2b2
+            font-size: px(14)
+            svg
+                fill: #fff
+
+    &__inner
+        width: 100%
+        max-width: 1200px
+        margin: 0px auto 140px
+        >ul
+            >li
+                transition: .5s
+                opacity: 0
+                transform: translate(0%,50px)
+                &.movein
+                    opacity: 1
+                    transform: translate(0%,0%)
+                &:hover
+                    transform: translate(50px,0%)
+                    .openvtn
+                        +rwd(600)
+                            margin-right: 50px
+                &.open
+                    transform: translate(0%,0%)
+
+.commodities_box
+    border: 2px solid #fff
+    padding: 100px
+    position: relative
+    color: #fff
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    transition: .5s
+    +rwd(1024)
+        width: 100%
+    +rwd(767)
+        flex-direction: column
+        align-items: flex-start
+        .open &
+            padding: 60px 60px 100px
+    +rwd(600)
+        padding: 40px 20px
+        .open &
+            padding: 40px 20px
+    .title
+        transition: .5s
+        +rwd(1200)
+            max-width: 100%
+            .open &
+                margin-bottom: 50px
+        h3
+            font-size: px(30)
+            letter-spacing: 2px
+            margin-bottom: 10px
+        h4
+            font-size: px(20)
+            letter-spacing: 1px
+    .list
+        width: 100%
+        max-width: 700px
+        overflow: hidden
+        display: none
+        +rwd(1200)
+            max-width: 100%
+        >ul
+            border-top: 2px solid rgba(255,255,255,1)
+            >li
+                padding: 30px
+                color: #fff
+                position: relative
+                display: flex
+                justify-content: space-between
+                align-items: center
+                flex-wrap: wrap
+                border-bottom: 1px solid rgba(255,255,255,.5)
+        .title
+            margin-bottom: 20px
+            .en
+                opacity: 0.5
+                margin-bottom: 15px
+            h4
+                font-size: px(18)
+        .info
+            margin-bottom: 20px
+            +rwd(767)
+                width: 100%
+            ul
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                +rwd(767)
+                    align-items: flex-start
+                li
+                    margin-bottom: 10px
+
+            .info_l
+                    display: inline-block
+                    height: 10px
+                    width: 1px
+                    background: #fff
+                    margin: 0 10px
+            p
+                font-size: px(14)
+        .txt
+            width: 100%
+            p
+                font-size: px(14)
+                letter-spacing: 1px
+                line-height: 1.5
+
+
+    .openvtn
+        position: absolute
+        left: calc(100% - 100px)
+        top: 100px
+        transform: translateX(-100%)
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: left .5s, top .5s .5s ,transform .5s, margin .5s
+        +rwd(600)
+            position: static
+            transform: none
+            align-self: flex-end
+            margin-top: 30px
+        h6
+            font-size: px(14)
+            margin-right: 10px
+            letter-spacing: 1px
+        .on
+            max-width: 100px
+            overflow: hidden
+        .off
+            max-width: 0px
+            overflow: hidden
+
+        .open &
+            left: 100px
+            top: 200px
+            transform: translateX(0%)
+            +rwd(1200)
+                left: calc(100% - 100px)
+                top: calc(100% - 30px)
+                transform: translate(-100% , -100%)
+            +rwd(600)
+                transform: none
+            .on
+                max-width: 0px
+            .off
+                max-width: 100px

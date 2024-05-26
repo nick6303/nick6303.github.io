@@ -1,0 +1,508 @@
+@charset "utf-8";
+.technology .detail {
+    position: fixed;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 3;
+}
+
+
+.technology .detail_slogan {
+    width: 100%;
+    text-align: center;
+    left: auto;
+}
+
+
+
+
+/*detail_content開始--------------------------------------------------*/
+
+.technology .detail_content {
+    padding: 0 130px 0 130px;
+    max-width: 1440px;
+    margin: auto;
+}
+
+
+
+
+/*.combination開始------------------------------*/
+
+.combination {
+    position: relative;
+    padding-top: 80px;
+}
+
+.combination_slide {
+    width: 50px;
+    position: absolute;
+    top: -45px;
+    left: calc(50% - 25px);
+}
+
+
+.combination_slide span {
+    margin: auto;
+    display: block;
+    height: 0px;
+    width: 1px;
+    background-color: #000;
+}
+
+.combination_title {
+    text-align: center;
+    overflow: hidden;
+}
+
+.combination_title div {
+    transform: translateY(-100%);
+}
+
+.combination_title h2 {
+    font-size: 2.25rem;
+    font-family: 'JosefinSans-Bold';
+    letter-spacing: 1px;
+    line-height: 1.5
+}
+
+.combination_title p {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+.combination_img {
+    padding: 0 9% 0 12%;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.combination_img img{
+    transform: translateY(100%);
+}
+
+.combination_text {
+    margin: auto;
+    margin-top: 60px;
+    max-width: 860px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.combination_text div{
+    transform: translateY(100%);
+}
+
+.combination_text h2 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.combination_text p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 2;
+    margin-top: 35px;
+}
+
+
+
+
+/*.combination結束------------------------------*/
+
+
+/*.technology_rows開始---------------------------*/
+
+.technology_rows {
+    margin-top: 130px;
+}
+
+.technology_row {
+    display: flex;
+    align-items: center;
+}
+
+.technology_row:not(:first-child) {
+    margin-top: 130px;
+}
+
+.technology_row:last-child {
+    margin-top: 150px;
+}
+
+.technology_row:not(:last-child) .technology_row_img,
+.technology_row:not(:last-child) .technology_row_text {
+    width: 50%;
+}
+
+.technology_row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+
+
+.technology_row_text {
+    display: table;
+    overflow: hidden;
+}
+
+.technology_row_text h2 {
+    font-size: 2.25rem;
+    font-family: 'JosefinSans-Bold';
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.technology_row_text h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.technology_row_text p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 2;
+    margin-top: 40px;
+}
+
+
+.technology_row_img img{
+    transform: scale(0);
+    opacity: 0
+}
+
+
+
+/*row1*/
+
+
+/*圖片設定*/
+
+.technology_row:nth-child(odd) .technology_row_img {
+    padding-left: 80px;
+    padding-right: 40px;
+}
+
+
+
+
+/*文字設定*/
+
+.technology_row:nth-child(odd) .technology_row_text div{
+    transform: translateX(-100%);
+    padding-left: 75px;
+}
+
+
+
+/*row2*/
+
+
+/*圖片設定*/
+
+.technology_row:nth-child(even) .technology_row_img {
+    padding-left: 60px;
+    padding-right: 100px;
+}
+
+
+
+
+/*文字設定*/
+
+.technology_row:nth-child(even) .technology_row_text div{
+    transform: translateX(100%);
+    padding-left: 80px;
+    padding-right: 90px;
+    text-align: right;
+}
+
+
+/*row3*/
+
+.technology_row:last-child .technology_row_img {
+    width: 57%;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.technology_row:last-child .technology_row_img img {
+    width: calc(50% - 5px);
+    display: inline-block;
+}
+
+.technology_row:last-child .technology_row_img img:nth-child(2) {
+    margin-top: 65px;
+}
+
+.technology_row:last-child .technology_row_text {
+    width: 43%;
+}
+
+
+
+
+/*.technology_rows結束---------------------------*/
+
+
+/*detail_ft開始----------------------------------*/
+
+.detail_ft {
+    max-width: 1440px;
+    padding: 0 130px;
+    margin: auto;
+    margin-top: 120px;
+    position: relative;
+}
+
+.detail_ft img{
+    transform: scale(0);
+    opacity: 0;
+}
+
+.detail_ft_slogan {
+    position: absolute;
+    width: 50%;
+    max-width: 510px;
+    padding-left: 80px;
+    top: 25%;
+    left: 130px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.detail_ft_slogan div{
+    transform: translateY(100%);
+}
+
+.detail_ft_slogan h2 {
+    font-size: 2.25rem;
+    font-family: 'JosefinSans-Bold';
+    line-height: 1.5;
+}
+
+.detail_ft_slogan h3 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.detail_ft_slogan p {
+    font-size: .875rem;
+    line-height: 2;
+    margin-top: 45px;
+}
+
+
+
+/*detail_ft結束----------------------------------*/
+
+
+/*進場動畫*/
+
+.technology.load .detail {
+    height: 100%;
+    transition: all 1s ease;
+}
+
+.technology.on .detail {
+    height: 100%;
+}
+
+.on .combination_slide span {
+    height: 90px;
+    transition: all .8s ease 1s;
+}
+
+.on .combination_title div {
+    animation: allin0 .8s both 1.5s
+}
+
+
+
+
+
+
+
+/*waypoint動畫專區*/
+
+.combination_img.show img{
+    animation: allin0 .8s both;
+}
+
+
+.combination_text.show div{
+    animation: allin0 .8s both;
+}
+
+.technology_row_img.show img{
+    transform: scale(1);
+    opacity: 1;
+    transition: all .8s ease ; 
+}
+
+.technology_row:last-child .technology_row_img.show img:nth-child(2){
+    transition: all .8s ease .4s;
+}
+
+
+.technology_row_text.show div{
+    animation: allin0 .8s both .4s;
+}
+
+
+.technology_row:last-child .technology_row_text.show div{
+    animation: allin0 .8s both .8s;
+}
+
+.detail_ft .show img{
+    transform: scale(1);
+    opacity: 1;
+    transition: all 1.2s ease ;
+}
+
+.detail_ft_slogan.show div{
+    animation: allin0 .8s both 1.2s;
+}
+
+
+
+
+
+/*離場動畫*/
+
+.technology.off .detail {
+    height: 0%;
+    transition: all .8s ease;
+}
+
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    .technology .detail_content {
+        margin-top: 80px;
+        padding: 0 5vw;
+    }
+
+    /*combination開始-----------------*/
+    .combination {
+        padding: 0;
+        margin-top: 5vh;
+    }
+
+    .combination_slide {
+        position: relative;
+        top: auto;
+    }
+
+    .combination_title {
+        margin-top: 5vh
+    }
+
+    .combination_img {
+        margin-top: 7vh;
+        padding: 0;
+    }
+
+    .combination_text {
+        padding: 0 20px;
+    }
+
+
+
+    /*combination結束-----------------*/
+    /*.technology_row開始-------------*/
+    .technology_row:nth-child(odd),
+    .technology_row:nth-child(even){
+        flex-direction: column;
+    }
+
+    .technology_row:not(:last-child) .technology_row_img,
+    .technology_row:not(:last-child) .technology_row_text,
+    .technology_row:last-child .technology_row_img,
+    .technology_row:last-child .technology_row_text {
+        width: 100%;
+        padding: 0;
+    }
+
+    .technology_rows{
+        margin-top: 14vh;
+    }
+
+    .technology_row:not(:first-child){
+        margin-top: 14vh;
+    }
+
+    .technology_row:last-child .technology_row_img img{
+        width: 60%;
+    }
+
+    .technology_row:last-child .technology_row_img img:nth-child(2){
+        margin-top: 50%;
+        margin-left: -40%;
+
+    }
+
+    .technology_row:nth-child(even) .technology_row_text div,
+    .technology_row:nth-child(odd) .technology_row_text div{
+        text-align:left;
+        margin-top: 6vh;
+        padding: 0 10px;
+        transform: translateX(-100%);
+    }
+
+    .detail_ft{
+        padding: 0 5vw;
+    }
+
+    .detail_ft_slogan{
+        position: relative;
+        padding: 0 10px;
+        width: 100%;
+        top: auto;
+        left: auto;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 6vh
+    }
+
+
+
+    .detail_ft_slogan h3{
+        line-height: 2;
+    }
+
+    .detail_ft_slogan p{
+        margin-top: 5vh;
+    }
+    
+    /*waypoint動畫專區*/
+
+    .technology_row_text.show div{
+        animation: allin0 .8s forwards;
+    }
+
+    .detail_ft_slogan.show div,
+    .technology_row:last-child .technology_row_text.show div{
+        animation: allin0 .8s forwards;
+    }
+
+    /*.technology_row結束-------------*/
+}

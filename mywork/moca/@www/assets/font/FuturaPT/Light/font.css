@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'FuturaPT-Light';
+  src: 
+       url('../assets/font/FuturaPT/Light/FuturaPTLight.woff2') format('woff2'),
+       url('../assets/font/FuturaPT/Light/FuturaPTLight.woff') format('woff'),
+       url('../assets/font/FuturaPT/Light/FuturaPTLight.ttf') format('truetype'),
+       url('../assets/font/FuturaPT/Light/FuturaPTLight.svg') format('svg');
+}

@@ -1,0 +1,129 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"廠商專區",
+            link:"../supplier/index.html"},
+        {
+            title:"日對帳",
+            link:"../supplier/day.html"},
+    ]
+
+    var unit = [
+        {
+            title:"日對帳",
+            link:"../supplier/day.html"},
+        {
+            title:"月對帳",
+            link:"../supplier/month.html"},
+        {
+            title:"進項發票檔",
+            link:"../supplier/invoice.html"},
+        {
+            title:"修改密碼",
+            link:"../supplier/changepassword.html"},
+        {
+            title:"登出",
+            link:"javascript:void(0)"},
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#supplier.day
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title(style="background-image:url('../../upload/fa2/supplier/bannerTitleBg_1670_410.jpg')")
+                p.ch 廠商專區
+                p.en Supplier area
+                p.words 請先選擇登入的身份，再輸入帳號及密碼，以利提供日、月對帳及進項發票輸入等服務，謝謝。
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val == unit[0])?"active":"")
+                        a(href=val.link)
+                            p=val.title
+        article.topTitle
+            p.en DAY RECONCILE
+            form
+                // 選擇專櫃
+                // 後端請注意: 如果想讓表格出現紅字 顯示輸入錯誤的項目時 請在 <div class="dropDown"> 加上class "wrong"
+                // 後端請注意: 因為此區域的帳號分兩種
+                    1.廠商:可控制多個櫃位 所以可以選擇專櫃編號
+                    2.專櫃: 只有一個櫃位 所以下方的選擇專櫃不須出現
+                .dropDown
+                    span.selectMenu
+                        p 下拉選擇專櫃編號
+                    ul
+                        // 後端請注意: 下方的data-counterName 填入專櫃名稱 他會在點擊之後自動帶入到下方的<div class="counterName">中
+                        li(data-counterName="卡友來店禮") 709000
+                        li(data-counterName="華安") 9527
+                        li(data-counterName="黎明到來的那一天") 1987
+                        li(data-counterName="就是你") 5438
+                        li(data-counterName="是芥末日") 2012
+                // 專櫃名稱
+                .counterName
+                    p 卡友來店禮
+                // 後端請注意: 如果想讓表格出現紅字 顯示輸入錯誤的項目時 請在 <div class="inputArea"> 加上class "wrong"
+                // 選擇日期
+                .inputArea
+                    .sel_date.getDay
+                        input(type="text"  placeholder="下拉選擇日期" readonly="readonly")
+                        label
+                .button
+                    //後端請注意: 下方的onlick僅展示用 記得要改啊!!!!! 因為很重要所以要說三次
+                    //後端請注意: 下方的onlick僅展示用 記得要改啊!!!!! 因為很重要所以要說三次
+                    //後端請注意: 下方的onlick僅展示用 記得要改啊!!!!! 因為很重要所以要說三次
+                    button(type="button" onclick="document.querySelector('.notice').style.display='none';document.querySelector('.preTable').style.display='block'")
+                        span.icon-magnifier
+                        p 搜尋
+        //後端請注意: 如果未搜尋到結果的話請在下方 <article class="notice"> 加上class "noData"
+        article.notice
+            section(style="background-image: url('../../upload/fa2/supplier/changepassword/formBg_1070_460.jpg')")
+                ._title
+                    img(src="../../upload/fa2/supplier/noticeIcon.png", alt="")
+                    p.ch 注意事項
+                    p.en Precautions
+                // 未尋找到資料
+                .notFound
+                    p 未尋找到資料
+                .words
+                    p 請款發票請於次月4日前寄達本公司，逾時視為當期貨款保留。若遇連續假期，發票請先行傳真至本公司。
+                    p 適逢2月過年長假，1月份帳款請於2月1號晚上於官網對帳並開立發票，如來不及作業請於上班日發票開立完畢，逾時視為當期貨款保留。
+        article.preTable(style="display:none")
+            // 標題
+            section._title
+                p 專櫃每日對帳單(含明細)
+            section.pre
+                pre 漢神名店百貨有限公司－專櫃每日對帳單(含明細)</div>專櫃代號：709000 卡友來店禮(應稅) 對帳日期：2018/07/28 交易序號 收銀機 發票號碼 發票狀態 預 原零售價 　　　實際售價 　實折扣 　歸屬折 ---------------------------------------------------------------------------------------------------- 　000047 　08001 　FE19062538　 　　N 　200 　200 　100 　100 ---------------------------------------------------------------------------------------------------- 　　 100％ 200　　　％ 0　　　％ 0 　　　％ 0　　　％ 0　　　％ 0 　　　％ 0　　　％ 0　　特價％ 0 ---------------------------------------------------------------------------------------------------- 　　　現金 200　　一卡通 0　應收不開 0電子商品券 0 　　信用卡 0　　提貨單 0　　商品券 0超集卡折抵 0 　中信紅利 0　禮券已開 0　條碼支付 0　　中信卡 0 　中信分期 0　　　餐券 0　　　電匯 0　 NCC紅利 0 　　　禮券 0　應收帳款 0　　販促券 0　 NCC分期 0 ---------------------------------------------------------------------------------------------------- 　集點金額 0　集點點數 0　折抵點數 0　　　溢收 0 ---------------------------------------------------------------------------------------------------- (當日業績： 200 +當日預收： 0 +預收歸屬： 0 ＝營收： 200 
+            section.download
+                button(type="button")
+                    span.icon-text
+                    p 列印文件
+
+
+    include ../layout/_footer.pug
++script
+|
+|
+</html>

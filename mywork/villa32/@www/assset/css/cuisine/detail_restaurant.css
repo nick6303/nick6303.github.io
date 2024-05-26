@@ -1,0 +1,1127 @@
+@charset "utf-8";
+
+.restaurant .detail {
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    overflow: scroll;
+    background-color: #fff;
+}
+
+
+
+/*detail_nav開始--------------------------------*/
+
+.detail_nav {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.detail_nav>div {
+    position: relative;
+}
+
+.back {
+    position: absolute;
+    top: 50px;
+    left: 3vw;
+}
+
+.back ul {
+    display: flex;
+}
+
+.back ul li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.back ul li:nth-child(1) {
+    padding-right: 18px;
+}
+
+.back ul li:nth-child(1):after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    margin-left: 18px;
+}
+
+.back ul li p {
+    display: inline-block;
+    color: #fff;
+    font-family: 'TrajanPro-Regular';
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+
+
+/*detail選單按鈕開始--------------------------*/
+
+.detail_menu_icom {
+    position: absolute;
+    top: 50px;
+    left: 95vw;
+    overflow: hidden;
+}
+
+.detail_menu_icom .cuisine {
+    display: none;
+}
+
+.icom_box {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+
+
+.icom_box span {
+    position: absolute;
+    left: 0px;
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #fff;
+    transition: all .4s ease-out;
+}
+
+.icom_box span:nth-child(1) {
+    top: 0px;
+    transition: all 1s ease;
+}
+
+.icom_box span:nth-child(2) {
+    top: 50%;
+}
+
+.icom_box span:nth-child(3) {
+    bottom: -1px;
+    transition: all 1s ease;
+}
+
+.icom_box:hover span:nth-child(2) {
+    width: 20px;
+    transition: all .4s ease-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*取自main.css的menu_icon設定*/
+
+
+/*三條線變X 開始*/
+
+.open .icom_box {
+    width: 30px;
+    height: 14px;
+    /*position: fixed;*/
+    animation: top_slidein 0s ease;
+    /*初始進場動畫歸零*/
+}
+
+.open .icom_box span {
+    width: 30px;
+    top: 50%;
+    background-color: #000;
+    /*transition: all 1s ease;*/
+}
+
+.open .icom_box:hover span {
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*浮動nav設定----------*/
+
+.detail_nav.hide {
+    position: fixed;
+    z-index: 1;
+    top: -90px;
+    left: 0;
+    display: block;
+    width: 100vw;
+    opacity: 1;
+    transition: all 1s ease;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+}
+
+.detail_nav.hide p {
+    font-size: .75rem;
+}
+
+.close .detail_nav.hide {
+    transition: all 1s ease 1.4s;
+}
+
+.fixed .detail_nav.hide {
+    opacity: 1;
+    top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*顏色更變設定*/
+
+.detail_nav.hide p {
+    color: #000;
+}
+
+.hide .back ul li:nth-child(1):after {
+    background-color: #000;
+}
+
+.hide.back ul li:nth-child(1):after {
+    background-color: #000;
+}
+
+.hide .icom_box span {
+    background-color: #000;
+}
+
+.hide .back,
+.hide .detail_menu_icom {
+    top: 25px;
+}
+
+
+/*detail_nav結束--------------------------------*/
+
+
+
+/*detail_content開始--------------------------------*/
+
+.detail_content {
+    margin-top: 170px;
+}
+
+.detail_title_bg {
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.detail_title {
+    text-align: center;
+}
+
+
+.on .detail_title,
+.load .detail_title {
+    transform: translateY(100%);
+}
+
+.detail_title h4 {
+    font-size: 1.875rem;
+    line-height: 1.5;
+}
+
+.detail_title p {
+    font-size: 1.125rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.detail_row {
+    margin: auto;
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*margin-bottom: 100px;*/
+    padding: 0 30px;
+}
+
+.detail_row:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.detail_row_img,
+.detail_row_text_bg {
+    width: 50%;
+}
+
+.detail_row_img div {
+    overflow: hidden;
+}
+
+.detail_row_img {
+    font-size: 0;
+}
+
+.detail_row:nth-child(even) .detail_row_img {
+    /*padding-right: 25px*/
+}
+
+.detail_row:nth-child(odd) .detail_row_img {
+    /*padding-left: 25px*/
+}
+
+.on .detail_row_img img,
+.load .detail_row_img img {
+    transform: translateY(100%);
+}
+
+
+
+
+
+
+
+
+
+/*內容文字設定*/
+
+.detail_row_text_bg {
+    overflow: hidden;
+}
+
+.detail_row_text {
+    max-width: 480px;
+    height: 100%;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.on .detail_row_text,
+.load .detail_row_text {
+    transform: translateY(100%);
+}
+
+.detail_row:nth-child(even) .detail_row_text {
+    padding-left: 75px;
+}
+
+.detail_row:nth-child(odd) .detail_row_text {
+    margin-left: 100px;
+    padding-right: 25px;
+}
+
+
+
+.detail_row_text {
+    margin-bottom: 1px;
+}
+
+.detail_text_title {
+    margin-top: 0%;
+}
+
+.detail_text_title p {
+    font-size: 1.3125rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.detail_row_text>p {
+    font-size: .875rem;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    margin-top: 45px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.photo {
+    margin-top: 35px;
+    display: flex;
+}
+
+.photo p {
+    font-size: .875rem;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.photo p:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: #000;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+/*detail_content結束--------------------------------*/
+
+
+/*detail_ft開始--------------------------------*/
+
+.detail_ft {
+    width: 100%;
+    margin-top: 115px;
+    position: relative;
+}
+
+.on .detail_ft,
+.load .detail_ft {
+    transition: all 1s;
+}
+
+.ft_lastorder {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 55px;
+    text-align: center;
+}
+
+
+.on .ft_lastorder,
+.load .ft_lastorder {
+    border: 1px solid #dedede;
+}
+
+.lastorder_top {
+    width: 150px;
+    position: absolute;
+    background-color: #fff;
+    top: -8px;
+    left: calc(50% - 75px);
+    overflow: hidden;
+}
+
+.lastorder_top p {
+    display: block;
+    width: 100%;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+
+.on .lastorder_top p,
+.load .lastorder_top p {
+    transform: translateY(100%);
+}
+
+.lastorder_text {
+    padding: 50px 20px;
+    overflow: hidden;
+}
+
+.on .lastorder_text div,
+.load .lastorder_text div {
+    transform: translateY(150%);
+}
+
+.lastorder_text div p {
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    font-size: .875rem;
+    line-height: 2;
+    letter-spacing: 1px;
+    max-width: 830px;
+    margin: auto;
+}
+
+
+
+.make_a_reservation {
+    width: 150px;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.make_a_reservation p {
+    font-size: .875rem;
+}
+
+.on .make_a_reservation p {
+    transform: translateY(100%);
+}
+
+
+.make_a_reservation p:before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 50%;
+    background-color: #000;
+    margin-bottom: 25px;
+    margin-left: 25%;
+}
+
+.ft_menu {
+    margin-top: 100px;
+    display: flex;
+    overflow: hidden;
+}
+
+.ft_menu_prev,
+.ft_menu_next {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.on .ft_menu_prev,
+.on .ft_menu_next {
+    transform: translateY(100%);
+}
+
+.ft_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+
+.ft_hover:hover {
+    opacity: 1;
+    transition: all .8s ease
+}
+
+.ft_hover div {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.ft_hover div:after {
+    content: "";
+    display: block;
+    width: 8vw;
+    height: 1px;
+    background-color: rgba(255, 255, 255, .4);
+    position: absolute;
+    top: 50%;
+    right: 4vw;
+}
+
+.ft_hover div:before {
+    content: "";
+    display: block;
+    width: 8vw;
+    height: 1px;
+    background-color: rgba(255, 255, 255, .4);
+    position: absolute;
+    top: 50%;
+    left: 4vw;
+}
+
+.ft_hover div {
+    margin-top: 20%;
+}
+
+.ft_hover div h5 {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.ft_hover div p {
+    color: #fff;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+
+.ft_hover div ul {
+    margin: 20px 0;
+}
+
+
+.ft_hover div ul li {
+    display: inline-flex;
+    padding-right: 15px;
+    align-items: center;
+}
+
+.ft_hover div ul li p {
+    display: inline-block;
+}
+
+.ft_hover div ul li:after {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 1px;
+    background-color: #fff;
+    margin-left: 15px;
+}
+
+.ft_hover div ul li:last-child:after {
+    display: none;
+}
+
+.ft_hover div>p {
+    margin-top: 10px;
+}
+
+
+
+
+
+/*detail_ft結束--------------------------------*/
+
+
+/*detail初進場動畫*/
+
+.restaurant.load .detail {
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+    transition: all .8s;
+}
+
+.restaurant.on .detail {
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+}
+
+
+
+.on .back {
+    animation: top_slidein 1s both;
+}
+
+.on .detail_menu_icom {
+    animation: top_slidein 1s both;
+}
+
+
+
+
+
+/*waypoint專區-------------*/
+
+
+/*content部分*/
+
+.on .show .detail_title {
+    animation: allin0 1s forwards;
+}
+
+.on .show .detail_row_img img {
+    animation: allin0 1.2s both .5s;
+}
+
+.on .show .detail_row_text {
+    animation: allin0 1.2s both .5s;
+}
+
+
+
+
+
+/*ft部分*/
+
+.on .show .lastorder_top p {
+    animation: allin0 1s both .2s;
+}
+
+.on .show .lastorder_text div {
+    animation: allin0 1.2s both .4s;
+}
+
+.on .make_a_reservation.show p {
+    animation: allin0 1s both .4s;
+}
+
+.on .show .ft_menu_prev {
+    animation: allin0 1s forwards;
+}
+
+.on .show .ft_menu_next {
+    animation: allin0 1s both .4s;
+}
+
+
+
+
+
+
+
+/*detail離場動畫*/
+
+.restaurant.off .detail {
+    height: 0%;
+    opacity: 0;
+    transition: all 1.2s ease .8s;
+}
+
+
+
+
+
+/*banner部分*/
+
+.off .back {
+    animation: zoomOut .4s forwards;
+}
+
+.off .detail_menu_icom {
+    animation: zoomOut .4s forwards;
+}
+
+/*content部分*/
+
+.off .detail_title {
+    animation: zoomOut 1s both .2s;
+}
+
+.off .detail_row_text {
+    animation: zoomOut 1s both .4s;
+}
+
+.off .detail_row_img img {
+    animation: zoomOut 1s both .6s;
+}
+
+
+
+
+
+/*detail_ft部分-----*/
+
+.off .make_a_reservation {
+    animation: zoomOut .8s both .2s;
+}
+
+.off .ft_lastorder {
+    animation: zoomOut .8s both .4s;
+}
+
+.off .ft_menu_prev,
+.off .ft_menu_next {
+    animation: zoomOut 1s both .6s;
+}
+
+
+
+
+
+
+
+/*---------libox開始-----------------------------------------*/
+
+.restaurant .photo_libox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    display: none;
+    z-index: 6;
+    transition: all 1s ease 1.2s;
+}
+
+.libox_close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    right: 70px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.libox_close span:nth-child(1) {
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1px);
+    transition: all .6s ease;
+}
+
+
+
+.libox_close span:nth-child(2) {
+    display: block;
+    height: 0%;
+    width: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1px);
+    transition: all .6s ease .6s;
+}
+
+.photo_libox h5 {
+    margin-top: 5vh;
+    font-size: 1.3125rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    overflow: hidden;
+    display: flex;
+}
+
+.photo_libox h5 p {
+    transform: translateY(121%);
+    margin: 5px auto;
+    text-align: center;
+}
+
+.libox_slick_bg {
+    margin-top: 5vh;
+}
+
+.libox_slick {
+    width: 80%;
+    max-width: 1170px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    transform: translateY(100%);
+}
+
+.libox_slick ul li {
+    padding: 0 5px;
+    overflow: hidden;
+}
+
+.libox_slick ul li div {
+    overflow: hidden;
+}
+
+.libox_slick ul li img {
+    margin: auto;
+    height: 73vh;
+    width: auto;
+}
+
+
+
+.libox_text {
+    margin-top: 3vh;
+}
+
+.libox_text p:nth-child(1) {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+}
+
+.libox_text p:nth-child(2) {
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    font-size: .875rem;
+    margin-top: 2vh;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.slick_prev,
+.slick_next {
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+}
+
+.slick_prev {
+    left: -50px;
+}
+
+.slick_next {
+    right: -50px;
+}
+
+
+/*進場動畫*/
+
+.restaurant .photo_libox.load {
+    display: block;
+    animation: fadeIn .6s both;
+}
+
+.restaurant .photo_libox.open {
+    display: block;
+    opacity: 1;
+}
+
+.open .libox_close span:nth-child(1) {
+    width: 100%;
+    transition: all .6s ease
+}
+
+.open .libox_close span:nth-child(2) {
+    height: 100%;
+    transition: all .6s ease .6s
+}
+
+.photo_libox.open h5 p {
+    animation: allin0 1s forwards;
+}
+
+.open .libox_slick {
+    animation: allin0 1.2s both;
+}
+
+
+
+
+
+/*退場動畫*/
+
+.photo_libox.close {
+    animation: fadeOut .6s both 1.2s;
+    display: block;
+}
+
+.close .libox_close span:nth-child(1) {
+    transition: all .6s ease;
+}
+
+.close .libox_close span:nth-child(2) {
+    transition: all .6s ease .6s;
+}
+
+.close .libox_slick {
+    animation: allout0 1s forwards;
+}
+
+.photo_libox.close h5 p {
+    animation: allout0 1s both .2s;
+}
+
+
+/*---------libox結束-----------------------------------------*/
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    /*back按鈕設定*/
+    .back {
+        top: 35px;
+        left: 20px;
+    }
+    .back ul li:nth-child(1) {
+        display: none;
+    }
+
+    /*banner三條線選單設定*/
+    .detail_menu_icom {
+        display: flex;
+        align-items: center;
+        left: auto;
+        right: 20px;
+        top: 35px;
+    }
+
+    .icom_box {
+        width: 20px;
+        height: 10px;
+    }
+
+    .icom_box span {
+        width: 20px;
+    }
+    .open .icom_box {
+        width: 20px;
+        height: 10px;
+    }
+    .open .icom_box span {
+        width: 20px;
+        top: 50%;
+    }
+
+    .open .icom_box:hover span {
+        width: 20px;
+    }
+
+    .open .icom_box:hover span:nth-child(1) {
+        width: 20px;
+    }
+
+    .open .icom_box:hover span:nth-child(2) {
+        width: 20px;
+    }
+
+    .detail_menu_icom .cuisine {
+        display: inline-block;
+        color: #fff;
+        font-family: 'TrajanPro-Regular';
+        font-size: .75rem;
+        margin-right: 5px;
+    }
+    .cuisine p {
+        font-size: .75rem;
+        transform: scale(1);
+    }
+    /*浮動選單設定-----------*/
+    .detail_nav.hide {
+        height: 50px;
+    }
+
+    .hide .back,
+    .hide .detail_menu_icom {
+        top: 17px;
+    }
+
+
+    .detail_content {
+        padding: 0 20px;
+        margin-top: 100px;
+    }
+
+    .detail_title_bg {
+        margin-bottom: 40px;
+    }
+
+    .detail_row,
+    .detail_row:nth-child(odd) {
+        flex-direction: column;
+        margin-bottom: 70px;
+        padding: 0;
+    }
+
+    .detail_row_img,
+    .detail_row_text_bg {
+        width: 100%;
+    }
+
+    /*圖片設定*/
+    /*原邊距設定歸零*/
+    .detail_row:nth-child(even) .detail_row_img {
+        padding-right: 0;
+    }
+    .detail_row:nth-child(odd) .detail_row_img {
+        padding-left: 0;
+    }
+    /*文字設定*/
+    /*原邊距設定歸零*/
+    .detail_row_text {
+        padding-left: 0;
+        padding-top: 45px;
+        max-width: 100%;
+    }
+
+    .detail_row:nth-child(odd) .detail_row_text {
+        margin-left: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .detail_row:nth-child(even) .detail_row_text{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .detail_ft {
+        margin-top: 80px;
+    }
+
+    .ft_lastorder {
+        margin: 0 20px;
+    }
+    .lastorder_text {
+        padding: 30px 10px 20px 10px;
+    }
+    .ft_menu {
+        margin-top: 70px;
+    }
+
+    .ft_menu img {
+        height: 100%;
+        width: auto;
+        margin-left: -50%;
+    }
+
+    .ft_menu_prev,
+    .ft_menu_next {
+        height: 50vw;
+    }
+
+    .ft_hover {
+        display: none;
+    }
+
+
+
+    /*libox-----------*/
+    .libox_close {
+        width: 20px;
+        height: 20px;
+        right: 20px;
+        top: 36px;
+    }
+
+    .photo_libox h5 {
+        margin-top: 20vh;
+        padding: 0 20px;
+    }
+
+    .libox_slick_bg {
+        width: 100%;
+        margin-top: 5vh;
+        padding: 0 20px;
+    }
+
+    .libox_slick {
+        width: 100%;
+    }
+
+    .libox_slick ul li img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slick_prev,
+    .slick_next {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .detail_banner img {
+        width: auto;
+    }
+}

@@ -1,0 +1,610 @@
+//shop
+
+#shop
+    footer
+        margin: 0
+    .mocaSNav
+        margin: 0
+        .secBox
+            padding: 15px 20px
+    .shopTitleBox
+        .title
+            +fs(36)
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+        .subTitle
+            +fs(28)
+    .shopHam
+        .shopTitleBox
+            .subTitle
+                +fs(24)
+
+.shopBannerSlick
+    opacity: 0
+    &.show
+        opacity: 1
+        transition: opacity 1s ease
+    .chris
+        visibility: hidden
+        height: 0
+    .list
+        height: 890px
+        background-position: center
+        background-repeat: no-repeat
+        display: flex
+        align-items: center
+        justify-content: center
+    .listText
+        width: 90%
+        max-width: 540px
+        height: 360px
+        text-align: center
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        padding: 2.5%
+        .titleBox
+            margin: 0 0 40px 0
+        .text
+            +fs(16)
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 4
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+    .slick-dots
+        width: auto
+        bottom: 35px
+        left: 50%
+        transform: translateX(-50%)
+        li
+            padding: 10px 20px
+            width: auto
+            height: auto
+            margin: 0
+            &.slick-active
+                .dot
+                    opacity: 1
+        .dot
+            background-color: #fff
+            border-radius: 50%
+            width: 6px
+            height: 6px
+            display: block
+            opacity: 0.5
+        .next
+            right: -35px
+        .prev
+            left: -35px
+    .slick-dots .prev, .slick-dots .next
+        +fs(35)
+        color: #fff
+        padding: 0
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+    @media (max-width: 767px)
+        .listText
+            padding: 5%
+    @media (max-width: 414px)
+        .list
+            height: calc(100vw * 1.7777)
+        .slick-dots
+            width: 70%
+
+
+.shopBeer
+    padding: 140px 0 0 0
+    @media (max-width: 600px)
+        padding: 70px 0 0 0
+    .shopTitleBox
+        text-align: center
+        margin: 0 0 40px 0
+        @media (max-width: 500px)
+            margin: 0 0 20px
+        .title
+            opacity: 0
+            transform: translateY(100px)
+            &.show
+                opacity: 1
+                transform: translateY(0px)
+                transition: opacity 1s ease, transform 1s ease
+        .subTitle
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1.5s ease .5s
+.slickFrameBox
+    width: 100%
+    max-width: 1480px
+    margin: 0 auto 140px auto
+    position: relative
+    display: flex
+    justify-content: center
+    opacity: 0
+    @media (max-width: 500px)
+        margin: 0 auto 70px
+    &.show
+        opacity: 1
+        transition: opacity 1s ease .2s
+    .slick-track
+        display: block
+        margin: 0 auto
+    .leftRightBox
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        display: flex
+        justify-content: space-between
+        width: 100%
+        opacity: 0
+        visibility: hidden
+        transition: opacity 1s ease
+        z-index: 0
+        &.showUp
+            opacity: 1
+            visibility: visible
+        .arrow
+            +fs(40)
+            cursor: pointer
+            color: #9c9c9c
+            transition: color .5s ease
+            &:hover
+                color: #000      
+    .shopBeerSlick
+        width: 100%
+        max-width: 1400px
+        margin: 0 auto
+        z-index: 1
+    .list
+        max-width: 280px
+        margin: 0 auto
+    .imgFrame
+        padding: 0 15px
+    .imgBox
+        width: 250px
+        height: 250px
+        display: flex
+        align-items: center
+        justify-content: center
+    .caption
+        +fs(20)
+        font-family: 'FuturaPT-Medium','微軟正黑體'
+        width: 90%
+        max-width: 200px
+        margin: 0 auto
+        .itemName
+            margin: 0 0 16px 0
+            height: 60px
+            // padding-bottom: 3px
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+        .price
+            +fs(17)
+            font-family: 'FuturaPT-Book', '微軟正黑體'
+    @media (max-width: 1559px)
+        max-width: 1200px
+        .shopBeerSlick
+            max-width: 1120px
+    @media (max-width: 1365px)
+        max-width: 920px
+        .shopBeerSlick
+            max-width: 840px
+    @media (max-width: 1023px)
+        max-width: 660px
+        .shopBeerSlick
+            max-width: 560px
+    @media (max-width: 767px)
+        max-width: 360px
+        .leftRightBox
+            // max-width: 90% !important
+            max-width: auto
+            width: calc(100% + 10px)
+            z-index: 100
+        .shopBeerSlick
+            // max-width: 280px
+            max-width: 100%
+            .list
+                max-width: 100%
+                .imgBox
+                    margin: 0 auto
+    @media (max-width: 500px)
+        .leftRightBox .arrow
+            +fs(25)
+    @media (max-width: 413px)
+        max-width: 300px
+        .shopBeerSlick
+            max-width: 220px
+        .imgFrame
+            padding: 0
+        .imgBox
+            max-width: 220px
+            max-height: 220px
+    @media (max-width: 320px)
+        .leftRightBox
+            width: 100%
+
+
+.shopSerial
+    width: 100%
+    max-width: 1488px
+    margin: 0 auto 140px auto
+    @media (max-width: 500px)
+        margin: 0 auto 70px
+    .list
+        display: flex
+        flex-wrap: wrap
+    .legBox
+        margin: 2px
+        position: relative
+        overflow: hidden
+        &.imgL
+            .imgBox
+                justify-content: flex-start
+        &.imgR
+            .imgBox
+                justify-content: flex-end
+        &.centerL
+            .textArea
+                text-align: left
+                left: 10%
+                top: 50%
+                transform: translate(0%,-50%)
+        &.centerR
+            .textArea
+                text-align: right
+                left: auto
+                right: 10%
+                top: 50%
+                transform: translate(0%,-50%)
+        &.centerU
+            .textArea
+                text-align: center
+                left: 50%
+                top: 10%
+                transform: translate(-50%,0%)
+        &.centerD
+            .textArea
+                text-align: center
+                left: 50%
+                bottom: 10%
+                top: auto
+                transform: translate(-50%,0%)
+        &.show
+            .imgFrame
+                opacity: 1
+                transition: opacity 1s ease .5s
+            .textArea
+                opacity: 1
+                transition: opacity 1s ease .8s
+        &.a
+            &.show
+                &:before
+                    animation: yoyoball 1000ms
+            &:before
+                transform: translateX(-100%)
+        &.b
+            &.show
+                &:before
+                    animation: momoball 1000ms
+            &:before
+                transform: translateX(100%)
+        &.c
+            &.show
+                &:before
+                    animation: gogoball 1000ms
+            &:before
+                transform: translateY(-100%)
+        &.d
+            &.show
+                &:before
+                    animation: nonoball 1000ms
+            &:before
+                transform: translateY(100%)
+        .imgFrame
+            background-repeat: no-repeat
+            background-size: cover
+            width: 100%
+            height: 100%
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+            opacity: 0
+        .imgBox
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+        .img
+            max-height: 100%
+        .textArea
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            position: absolute
+            text-align: center
+            left: 50%
+            top: 50%
+            transform: translate(-50%,-50%)
+            opacity: 0
+            .title
+                +fs(28)
+                font-weight: 900
+            .subTitle
+                +fs(22)
+    .boxL
+        // width: 63.51%
+        // max-width: 940px
+        // max-height: 520px
+        .imgFrame
+            width: 49.2920vw
+            height: calc(49.2920vw * 0.553191)
+            max-width: 940px
+            max-height: 520px
+            padding: 40px
+    .boxM
+        // width: 50%
+        // max-width: 740px
+        // max-height: 520px
+        .imgFrame
+            width: 38.8859vw
+            height: calc(38.8859vw * 0.729729)
+            max-width: 740px
+            max-height: 520px
+            padding: 40px
+    .boxS
+        // width: 36.49%
+        // max-width: 540px
+        // max-height: 520px
+        .imgFrame
+            width: 28.3167vw
+            height: calc(28.3167vw * 0.962962)
+            max-width: 540px
+            max-height: 520px
+            padding: 40px
+    @media (max-width: 767px)
+        .list
+            flex-direction: column
+            justify-content: center
+            align-items: center
+        .boxL
+            .imgFrame
+                width: 90vw
+                height: calc(90vw * 0.553191)
+                margin-bottom: 20px
+        .boxM
+            .imgFrame
+                width: 90vw
+                height: calc(90vw * 0.729729)
+                margin-bottom: 20px
+        .boxS
+            .imgFrame
+                width: 90vw
+                height: calc(90vw * 0.962962)
+                margin-bottom: 20px
+    @media (max-width: 500px)
+        .legBox
+            margin: 0 0 40px 0
+            &.centerL
+                .textArea
+                    text-align: center
+                    left: 0
+                    top: 0
+                    transform: translate(0,0)
+            &.centerR
+                .textArea
+                    text-align: center
+                    left: 0
+                    right: auto
+                    top: 0%
+                    transform: translate(0,0)
+            &.centerU
+                .textArea
+                    text-align: center
+                    left: 0
+                    top: 0
+                    transform: translate(0,0)
+            &.centerD
+                .textArea
+                    text-align: center
+                    left: 0
+                    bottom: auto
+                    top: 0
+                    transform: translate(0,0)
+            .textArea
+                color: #444 !important
+                position: relative
+                right: auto
+                bottom: auto
+                left: 0
+                top: 0
+                transform: translate(0,0)
+
+       
+.shopHam
+    width: 100%
+    height: 620px
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    @media (max-width: 500px)
+        height: 450px
+    .bg
+        background-position: center
+        background-repeat: no-repeat
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+    .hamBox
+        background-color: #fff
+        width: 90%
+        max-width: 465px
+        max-height: 620px
+        padding: 80px 60px 60px 60px
+        opacity: 0
+        transform: translateY(100px)
+        &.show
+            opacity: 1
+            transform: translateY(0px)
+            transition: opacity 1.2s ease .5s, transform 1s ease .5s
+    .shopTitleBox
+        text-align: center
+        margin: 0 0 45px 0
+        .text
+            +fs(16)
+            padding-bottom: 3px
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 4
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+        .line
+            width: 100%
+            padding: 32px 0
+            position: relative
+            display: block
+            &:before
+                content: ''
+                display: block
+                background-color: #999
+                width: 60px
+                height: 1px
+                margin: 0 auto
+    .btnStyle
+        flex-direction: column
+        .btn
+            width: 100%
+            max-width: 256px
+            height: 40px
+            margin: 0 0 5px 0
+            &:last-child
+                margin: 0
+    @media (max-width: 767px)
+        .hamBox
+            padding: 40px 30px 30px 30px
+
+.shopListFrame
+    width: 100%
+    max-width: 1400px
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
+    .noticeBox
+        +fs(12)
+        color: #fff
+        background-color: #e83434
+        border-radius: 50%
+        width: 40px
+        height: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        left: 0
+        top: -20px
+        opacity: 0
+        visibility: hidden
+        .text
+            transform: rotate(-30deg)
+    .list
+        +fs(16)
+        width: 20%
+        padding: 0 40px
+        margin: 0 0 80px 0
+        letter-spacing: 0.5px
+        opacity: 0
+        visibility: hidden
+        &.show
+            opacity: 1
+            visibility: visible
+            transition: opacity 1s ease
+        &:hover
+            .price
+                color: #df2a2a
+        &.new
+            .noticeBox
+                opacity: 1
+                visibility: visible
+                .newTxt
+                    opacity: 1
+        .link
+            height: 100%
+        .title
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+            max-height: 50px
+        .subTitle
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+            max-height: 40px
+        .price
+            +fs(14)
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            padding: 10px 0 0 0
+            transition: color .5s ease
+    .textFrame
+        height: calc(100% - 185px)
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    .imgFrame
+        display: flex
+        justify-content: center
+        position: relative
+        height: 165px
+        margin: 0 0 20px 0
+    .img
+        max-height: 165px
+@media (max-width: 1460px)
+    .shopList
+        .shopListFrame 
+            max-width: 1120px
+            .list
+                width: 25%
+@media (max-width: 1180px)
+    .shopList
+        .shopListFrame 
+            max-width: 840px
+            .list
+                width: 33.33%
+@media (max-width: 880px)
+    .shopList
+        .shopListFrame 
+            max-width: 560px
+            .list
+                width: 50%
+@media (max-width: 620px)
+    .shopList
+        .shopListFrame 
+            max-width: 280px
+            .list
+                width: 100%
+

@@ -1,0 +1,28 @@
+$browser-default-font-size: 16px !default
+
+@function rem($px)
+    @return $px / $browser-default-font-size * 1rem
+
+@mixin fixed($l:auto,$r:auto,$z:1)
+    position: fixed
+    top: 0
+    left: $l
+    right: $r
+    z-index: $z
+
+@mixin flex($dis:flex,$jc:center,$ai:center)
+    display: $dis
+    justify-content: $jc
+    align-items: $ai
+
+@mixin rwdw($max)
+    @media only screen and (max-width: $max + px)  
+        @content
+
+@mixin rwdmw($min)
+    @media only screen and (min-width: $min + px)  
+        @content
+
+@mixin rwdh($max)
+    @media only screen and (max-height: $max + px)  
+        @content

@@ -1,0 +1,346 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"1F精品美研",
+            link:"../floor/index.html"},
+        {
+            title:"Cartier",
+            link:"../floor/detail.html"},
+    ]
+
+    var overview= [
+        "品牌故事",
+        "櫃位環境",
+        "推薦商品",
+        "最新活動",
+        //- "樓層位置"
+    ]
+
+    var story =[
+        {
+            img:"../../upload/fa2/floor/detail/slickImg_1030_580.jpg",
+            videoId:"rCOhniQ2KhU",
+            b:"為您獻上巧奪天工產品，蘊藏在寶石中的心之所願"},
+        {
+            img:"../../upload/fa2/floor/detail/slickImg_1030_580.jpg",
+            videoId:"rCOhniQ2KhU",
+            b:"為您獻上巧奪天工產品，蘊藏在寶石中的心之所願"},
+        {
+            img:"../../upload/fa2/floor/detail/slickImg_1030_580.jpg",
+            videoId:"rCOhniQ2KhU",
+            b:"為您獻上巧奪天工產品，蘊藏在寶石中的心之所願"},
+    ]
+
+    var environment =[
+        {
+            img:"../../upload/fa2/floor/detail/environmentImg_720_400.jpg",
+            title:"尊爵大器外觀  優雅舒適空間",
+            words:"以珍貴寶石與色彩的巧妙搭配成就出無與倫比的頂級珠寶，帶來非凡感受與歡騰精神。",
+            videoId:""},
+        {
+            img:"../../upload/fa2/floor/detail/environmentImg2_720_400.jpg",
+            title:"VIP系列商品展示區",
+            words:"以珍貴寶石與色彩的巧妙搭配成就出無與倫比的頂級珠寶，非凡感受。",
+            videoId:"rCOhniQ2KhU" }
+    ]
+
+    var recommended =[
+        {
+            img:"../../upload/fa2/floor/detail/recommendedImg.jpg",
+            p:"1895頂級珠寶婚戒"},
+        {
+            img:"../../upload/fa2/floor/detail/recommendedImg2.jpg",
+            p:"JUSTE UN CLOU戒指"},
+        {
+            img:"../../upload/fa2/floor/detail/recommendedImg3.jpg",
+            p:"PANTHÈRE DE CARTIER美洲豹腕錶"},
+        {
+            img:"../../upload/fa2/floor/detail/recommendedImg4.jpg",
+            p:"C DE CARTIER婚戒"},
+        {
+            img:"../../upload/fa2/floor/detail/recommendedImg2.jpg",
+            p:"JUSTE UN CLOU戒指"},
+    ]
+
+    var lastNews =[
+        {
+            img:"../../upload/fa2/floor/detail/lastNewsImg_270_250.jpg",
+            slogan:"PURE !",
+            sloganBgc:"#676bbe",
+            sloganColor:"#fff",
+            title:"1958 系列新品 尊榮奢華",
+        },
+        {
+            img:"../../upload/fa2/floor/detail/lastNewsImg2_270_250.jpg",
+            slogan:"",
+            sloganBgc:"",
+            sloganColor:"",
+            title:"獻給摯愛，何需理由！",
+        },
+        {
+            img:"../../upload/fa2/floor/detail/lastNewsImg2_270_250.jpg",
+            slogan:"",
+            sloganBgc:"",
+            sloganColor:"",
+            title:"1958 系列新品 尊榮奢華",
+        }
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#floor.detail
+    include ../layout/_header.pug
+    
+    main
+        // 後端請注意: 要讓客戶可以自訂背景圖片和背景顏色
+        // 後端請注意: 要讓客戶可以決定字的顏色 預設是黑色  如果要白色 就在 <section class="banner"> 加上class "white"
+        article.banner.white(style="background-image: url('../../upload/fa2/floor/detail/bannerBg_1670_600.jpg');background-color: #ebeaea")
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section.logo
+                figure
+                    img(src="../../upload/fa2/floor/detail/bannerLogoImg.png", alt="")
+                p 創立1847年巴黎，承載著近150年的經典與魅力，超越時代，引領風格，譽為「珠寶商的皇帝，皇帝的珠寶商」。
+            section.inf
+                .type
+                    ._title
+                        p.ch 專櫃電話
+                        p.en Tel
+                    div
+                        p 07-2153106
+                .location
+                    ._title
+                        p.ch 櫃位地點
+                        p.en Location
+                    div
+                        p 1F精品美妍 
+                .share
+                    ._title
+                        p.ch 分享
+                        p.en Share to
+                    ul.socialMedia
+                        li
+                            a(href=java)
+                                span.icon-facebook
+                        li
+                            a(href=java)
+                                span.icon-twitter
+                        li
+                            a(href=java)
+                                span.icon-line
+            section.floorNumb
+                p 1F
+        article.overview
+            h6 INTRODUCTION
+            .anchor
+                ul
+                    each val in overview
+                        li(class=(val == overview[0])?"active":"")
+                            p=val
+        article.story
+            section._title
+                p.ch 品牌故事
+                p.en Brand story
+            section._slick
+                ul
+                    each val in story
+                        // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                        li(data-videoId=val.videoId)
+                            div
+                                figure
+                                    img(data-lazy=val.img, alt="")
+                                // 後端請注意: 如果下面沒有內容的話 請移除
+                                b=val.b
+                .arrows 
+                    span.icon-arrowLeft
+                    span.icon-arrowRight
+            section._text
+                h6 珠寶商的皇帝，皇帝的珠寶商
+                p 創立於1847年的巴黎，卡地亞被譽為「珠寶商的皇帝，皇帝的珠寶商」。每一款卡地亞作品都細訴著配戴者不凡的品味，承載著近150年的經典與魅力，超越時代，也引領風格。清新微風輕拂寶石，點燃璀璨光芒，喚醒呼吸起伏，寶石之心開始跳動。規律脈動如同澎湃洶湧的海浪，為珍貴逸品注入豐沛生命力，一件又一件的精彩作品，宛如激起無限漣漪的波浪。
+        article.environment
+            section._title
+                p.ch 櫃位環境
+                p.en Environment
+            section.rows
+                each val in environment
+                    .row(data-videoId=val.videoId)
+                        figure
+                            img.b-lazy(src=blazy data-src=val.img, alt="")
+                        ._text
+                            h6=val.title
+                            p=val.words
+        article.recommended(style="background-image:url('../../upload/fa2/floor/detail/environmentBg_1670_760.jpg')")
+            section._title
+                p.ch 推薦商品
+                p.en Recommended
+            section._slick
+                ul
+                    each val in recommended
+                        li  
+                            a(href=java)
+                                figure
+                                    img(data-lazy=val.img, alt="")
+                                p=val.p
+            section.ps
+                p *欲了解更多詳情，請致電 07-2153106
+        article.lastNews
+            section._title
+                p.ch 最新活動
+                p.en Latest news
+            section._slick
+                ul
+                    each val in lastNews
+                        li
+                            a.nocg.openNewsLibox(href=java data-src="../floor/news.html" onclick="newsLibox.open(this)")
+                                figure
+                                    img(data-lazy=val.img, alt="")
+                                    .hoverBox
+                                        span
+                                        p ENTER
+                                ._text
+                                    if (val.slogan!=="")
+                                        //後端請注意: 下方slogan如果沒有內容的話 請移除div
+                                        .slogan(style=("background-color:"+val.sloganBgc+";color:"+val.sloganColor))=val.slogan
+                                    h6=val.title
+                .arrows 
+                    span.icon-arrowLeft
+                    span.icon-arrowRight
+
+    include ../layout/_footer.pug
++script
+script.
+    var newsLibox = {
+
+        open: function (target) {
+            var src = $(target).attr("data-src")
+            $("body").append("<article class='newsLibox'></article>")
+            if (!mobile() && !$("body").hasClass("guide")) {
+                $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+            }else{
+                $("body").css("overflow-y", "hidden")
+            }
+
+            alreadyHidden = true
+                
+            $.ajax({
+                    // 載入資料
+                    url: src,
+                })
+                .done(function (data) {
+                    // 將資料塞入結構
+                    $(".newsLibox").html(data);
+                    newsLibox.all();
+                });
+        },
+
+        close_click: function () {
+            $(".newsLibox .liboxClose").click(function () {
+                newsLibox.close();
+            });
+            $(".newsLibox").click(function (e) {
+                if ($(e.target).hasClass("newsLibox")){newsLibox.close(); }
+            })
+        },
+
+        close: function () {
+            $(".newsLibox").addClass("close");
+            if (!mobile()) {$("body").css({"overflow-y":"visible","padding-right":"0rem"})}
+            else{ $("body").css("overflow-y", "visible")}
+            alreadyHidden = false
+            setTimeout(function () {
+                $(".newsLibox").remove()
+            }, 500)
+        },
+
+        slick:function(){
+            $(".newsLibox ._slick ul").slick({
+                prevArrow: ".newsLibox ._slick .arrows span.icon-arrowLeft",
+                nextArrow: ".newsLibox ._slick .arrows span.icon-arrowRight",
+                dots:true,
+                speed:700,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                responsive: [{
+                    breakpoint: 1025,
+                    settings: {
+                        arrows: false,
+                    }
+                }
+            ]
+            })
+
+            $('.newsLibox ._slick ul').on('lazyLoaded', function(){
+                newsLibox.waypoint();
+                newsLibox.Blazy();
+            });
+        },
+
+        row:function(){
+            $(".newsLibox .rows .row>div:not(.table):nth-child(odd)").each(function () {
+                var thisClassNmae = $(this).attr("class")
+                var nextClassName = $(this).next().attr("class")
+                var targetClassName=(nextClassName == "table") ? thisClassNmae : 
+                                    (nextClassName == undefined) ? thisClassNmae : nextClassName
+                if (thisClassNmae !== targetClassName) {
+                    $(this).addClass("half");
+                    $(this).next().addClass("half");
+                }
+            })
+        },
+
+        waypoint:function(){
+            eachWaypoint(".newsLibox section .rows .row ._img","80%")
+            eachWaypoint(".newsLibox section .rows .row ._text","80%")
+
+            function eachWaypoint(target, offsetValue){
+                $(target).each(function (index, element) {
+                    $(element).waypoint({
+                        context: ".newsLibox section",
+                        handler: function () {
+                            $(element).addClass('show');
+                        },
+                        offset: offsetValue
+                    });
+                });
+            }
+        },
+
+        Blazy:function(){
+            var liboxBLazy = new Blazy({
+                container:".newsLibox section",
+                offset: 100,
+                success: function (ele) {
+                    $(ele).closest("figure").addClass("in");
+                    Waypoint.refreshAll();
+                }
+            });
+        },
+
+        all:function(){
+            newsLibox.close_click();
+            newsLibox.slick();
+            newsLibox.row();
+            openVideoLibox(".newsLibox section ._slick ul li")
+        }
+    }
+    
+|
+|
+</html>

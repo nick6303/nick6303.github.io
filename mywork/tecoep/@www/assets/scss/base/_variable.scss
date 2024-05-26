@@ -1,0 +1,537 @@
+@charset "utf-8";
+
+$base_color: #d2b055;
+$base_blue: #0d65b4;
+$base_gray: #d9d9d9;
+$ft_bg: #004179;
+$base_orange:#ea5703;
+
+
+
+
+
+
+
+
+
+
+
+/*font-size*/
+
+@mixin font-size($size: 16) {
+    font-size: ($size/16) + rem
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*font-size*/
+
+
+/*font-weight*/
+
+$font-300: 300;
+$font-600: 600;
+$font-900: 900;
+
+
+
+
+
+
+
+
+
+
+
+/*font-weight*/
+
+
+/*RWD*/
+
+$pc: "(min-width:1025px)";
+$pad_proV: "(max-width:1365px)";
+$pad_pro: "(max-width:1024px)";
+$pad_V: "(max-width:1023px)";
+$pad: "(max-width:900px)";
+$phone: "(max-width:767px)";
+$iphone5:"(max-width:350px)";
+
+
+
+$width700:"(max-width:700px)";
+$width800:"(max-width:800px)";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*RWD*/
+
+
+/*transiton*/
+
+@mixin trans($move: 0s, $wait: 0s, $type: all, $way: ease) {
+    -webkit-transition: $type $move $way $wait;
+    -moz-transition: $type $move $way $wait;
+    -ms-transition: $type $move $way $wait;
+    -o-transition: $type $move $way $wait;
+    transition: $type $move $way $wait;
+}
+
+
+
+
+
+
+
+
+
+
+/*transiton*/
+
+
+/*hide word*/
+
+@mixin hide_word($line:0) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+
+
+
+
+
+
+
+
+
+
+/*hide word*/
+
+// display: flex 置中
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// display: flex 左右至頂
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// display: flex 左右均分
+@mixin flex-space-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+// display: flex 向左靠
+@mixin flex-left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+// display: flex 向右靠
+@mixin flex-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+
+
+/* 偽元素線條*/
+
+@mixin fakeLine($width:1px, $height:1px, $backgroundColor:#000) {
+    content: "";
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: $backgroundColor;
+}
+
+
+
+/* 標題設定----------------------*/
+
+@mixin title_h2 {
+    @include font-size(42);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0;
+    font-family: 'MyriadPro-Semibold';
+    @media all and (max-width: 900px) {
+        @include font-size(32);
+    }
+    @media all and (max-width: 700px) {
+        line-height: 1.1;
+    }
+}
+
+@mixin title_h2_span {
+    color: #b0b0b0;
+    margin-left: 25px;
+}
+
+@mixin title_h3 {
+    @include font-size(30);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+    opacity: 0;
+    @media all and (max-width: 900px) {
+        @include font-size(20);
+    }
+    @media all and (max-width: 900px) {
+        margin-top: 10px;
+    }
+}
+
+@mixin title_p {
+    font-family: "微軟正黑體";
+    @include font-size(15);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin: auto;
+    margin-top: 35px;
+    text-align: justify;
+    color: rgba(0, 0, 0, .8);
+    opacity: 0;
+    @media all and (max-width: 900px) {
+        padding: 0 10px;
+    }
+    @media all and (max-width: 700px) {
+        margin-top: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 偽燈箱detail內頁標題設定---------------*/
+
+@mixin detail_title {
+    padding: 160px 5vw 0 5vw;
+    letter-spacing: 1px;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    @media all and (max-width: 900px) {
+        padding: 12vh 5vw 0 5vw;
+    }
+    @media all and (max-height: 800px) {
+        padding: 16vh 5vw 0 5vw;
+    }
+}
+
+@mixin detail_title_h4 {
+    @include font-size(32);
+    font-family: 'MyriadPro-Bold';
+    line-height: 1.5;
+    @media all and (max-width: 1024px) {
+        @include font-size(30);
+    }
+    @media all and (max-width: 700px) {
+        @include font-size(28);
+    }
+}
+
+@mixin detail_title_h2 {
+    @include font-size(32);
+    font-family: "微軟正黑體";
+    line-height: 1.5;
+    margin-top: 35px;
+    @media all and (max-width: 1024px) {
+        @include font-size(28);
+    }
+    @media all and (max-width: 700px) {
+        @include font-size(24);
+        line-height: 1.2;
+    }
+}
+
+@mixin detail_title_p {
+    @include font-size(20);
+    font-family: "微軟正黑體";
+    line-height: 1.5;
+    margin-top: 5px;
+    color: #888888;
+    @media all and (max-width: 1024px) {
+        @include font-size(18);
+    }
+    @media all and (max-width: 1024px) {
+        @include font-size(16);
+        margin-top: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*圓形十字----------------*/
+
+@mixin span {
+    font-size: 0;
+    @include flex-center;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+@mixin span_i {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+@mixin span_i_after {
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: #fff;
+    transition: all .4s ease;
+    width: 2px;
+    left: calc(50% - 1px);
+    height: 12px;
+    top: calc(50% - 6px);
+}
+
+@mixin span_i_before {
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: #fff;
+    transition: all .4s ease;
+    height: 2px;
+    top: calc(50% - 1px);
+    width: 12px;
+    left: calc(50% - 6px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 藍色方塊X*/
+
+@mixin close {
+    width: 45px;
+    height: 45px;
+    background-color: $base_blue;
+    @include flex-center;
+    cursor: pointer;
+}
+
+@mixin close_span {
+    display: block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+}
+
+@mixin close_span_before {
+    width: 2px;
+    height: 16px;
+    top: calc(50% - 8px);
+    left: calc(50% - 1px);
+    content: "";
+    display: block;
+    background-color: #fff;
+    position: absolute;
+}
+
+@mixin close_span_after {
+    width: 16px;
+    height: 2px;
+    left: calc(50% - 8px);
+    top: calc(50% - 1px);
+    content: "";
+    display: block;
+    background-color: #fff;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------- 基礎燈箱設定-----------------*/
+
+@mixin libox {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------黑色連結按鈕------------*/
+
+@mixin link_a {
+    background-color: #000;
+    width: 180px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-indent: 20px;
+    @include font-size(12);
+    font-weight: bold;
+    color: #fff;
+    transform: translateY(100%);
+    transition: all .8s ease;
+}
+
+
+
+
+
+
+/* --------------首頁應用區的橘色線條------------*/
+
+@mixin row_span {
+    display: block;
+    height: 6px;
+    width: 0px;
+    background-color: $base_orange;
+    position: relative;
+    opacity: 0;
+    @media all and (max-width: 1024px) {
+        margin-top:3vh;
+    }
+    @media all and (max-width: 900px) {
+        margin-top: 4vh;
+        width: 50%;
+    }
+}
+
+
+
+
+
+
+
+/* 內頁版的slogang設定*/
+
+@mixin banner_slogan_h2 {
+    font-family: "微軟正黑體";
+    @include font-size(36);
+    font-weight: bold;
+    /*手機橫版*/
+    @media all and (max-width: 1024px) and (min-device-aspect-ratio: 1/1) {
+        @include font-size(36);
+    }
+    @media all and (max-width: 700px) {
+        @include font-size(42);
+    }
+    @media all and (max-width: 350px) {
+        @include font-size(36);
+    }
+}
+
+
+@mixin banner_slogan_h3 {
+    font-family: "微軟正黑體";
+    @include font-size(24);
+    font-weight: normal;
+    /*手機橫版*/
+    @media all and (max-width: 1024px) and (min-device-aspect-ratio: 1/1) {
+        @include font-size(18);
+    }
+    @media all and (max-width: 700px) {
+        @include font-size(20);
+    }
+    @media all and (max-width: 500px) {
+        @include font-size(18);
+    }
+}
+
+
+
+
+/* 首頁產品slick的箭頭*/
+

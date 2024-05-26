@@ -1,0 +1,88 @@
+.qanda
+    &__content
+    &__inner
+        width: 100%
+        max-width: 1200px
+        margin: 0px auto 140px
+        +rwd(1200)
+            padding: 0 20px
+        >ul
+            >li
+                background: #f5f7ff  
+                padding: 70px
+                border-bottom: 4px solid #fff 
+                transition: .5s
+                // +rwd(1200)
+                //     padding: 70px 70px 70px 0
+                +rwd(600)
+                    padding: 70px 20px
+                opacity: 0
+                transform: translate(0,50px)
+                transition: 1s
+                &.movein
+                    opacity: 1
+                    transform: translate(0%,0%)
+
+.qanda_box
+    display: flex
+    flex-wrap: wrap
+    .img
+        width: 300px
+        +flex
+        flex-direction: column
+        +rwd(1024)
+            width: 100%
+            margin-bottom: 50px
+    .txt
+        width: calc(100% - 300px) 
+        +rwd(1024)
+            width: 100%
+        ul
+            border-top: 2px solid #000
+            li
+                border-bottom: 1px solid rgba(0,0,0,.5)
+                cursor: pointer
+                position: relative
+                .qanda_q
+                    padding: 20px 30px 20px 10px
+                .qanda_a
+                    display: none
+                    padding: 50px 30px 50px 10px
+                    >h5
+                        margin-bottom: 30px
+                        line-height: 1.5
+                        &:first-child
+                            color: #1a41a2
+                            font-weight: 700
+                span
+                    display: inline-flex
+                    justify-content: center
+                    align-items: center
+                    width: 20px
+                    height: 20px
+                    position: absolute
+                    bottom: 25px
+                    right: 15px
+                    &:after
+                        content: ''
+                        width: 0
+                        height: 0
+                        border-style: solid
+                        border-width: 4px 3.5px 0 3.5px
+                        border-color: #000000 transparent transparent transparent
+                &.open
+                    span
+                        &:after
+                            transform: rotate(180deg)
+
+        .qanda_btn
+            max-width: 250px
+            background: #1a41a2
+            text-align: center
+            a
+                display: inline-block
+                width: 100%
+                height: 100%
+                padding: 10px
+                color: #fff
+                

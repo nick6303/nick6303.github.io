@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="format-detection" content="telephone=no">
+    <title>TECOEP</title>
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link href="../../assets/js/vendor/datedropper/datedropper.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/js/vendor/datedropper/my-style.css" rel="stylesheet" type="text/css" />
+    <!-- 非共用CSS end-->
+    <link rel="stylesheet" href="../../assets/css/employee/reservation.css">
+</head>
+
+<body id="employee" class="reservation">
+    <main>
+        <!-- 員工登出:回到上一頁 -->
+        <article class="logOut">
+            員工登出
+        </article>
+        <article class="_title">
+            <h2>Room<span>Reservation</span>
+            </h2>
+            <h3>會議室預約</h3>
+        </article>
+        <article class="nav">
+            <div class="box menuList">
+                <div class="selectMenu">
+                    <p><b>南港</b><span>Room A</span></p>
+                </div>
+                <ul>
+                    <li>
+                        <p><b>南港</b><span>Room A</span></p>
+                    </li>
+                    <li>
+                        <p><b>南港</b><span>Room B</span></p>
+                    </li>
+                    <li>
+                        <p><b>南港</b><span>Room C</span></p>
+                    </li>
+                    <li>
+                        <p><b>南港</b><span>Room D</span></p>
+                    </li>
+                    <li>
+                        <p><b>南港</b><span>Room E</span></p>
+                    </li>
+                    <li>
+                        <p><b>南港</b><span>Room F</span></p>
+                    </li>
+                    <li>
+                        <p><b>南港</b><span>Room G</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="box booking">
+                <h2>我要預約</h2>
+                <p>Reservation</p>
+            </div>
+            <div class="box record">
+                <h2>預約紀錄</h2>
+                <p>Record</p>
+            </div>
+        </article>
+        <article class="table">
+            <section class="pc">
+                <div class="table_nav">
+                    <div class="prev">
+                        <p>prev</p>
+                    </div>
+                    <div class="next">
+                        <p>next</p>
+                    </div>
+                </div>
+                <div class="tableContent">
+                    <ul>
+                        <li>
+                            <div class="date">
+                                <span>01/22</span>
+                                <p>星期一</p>
+                            </div>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box other">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i> 12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/23</span>
+                                <p>星期二</p>
+                            </div>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box mine">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/24</span>
+                                <p>星期三</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/25</span>
+                                <p>星期四</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/26</span>
+                                <p>星期五</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/27</span>
+                                <p>星期六</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/28</span>
+                                <p>星期日</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <!--  .............測試分隔線.................. -->
+                        <li>
+                            <div class="date">
+                                <span>01/22</span>
+                                <p>星期一</p>
+                            </div>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box other">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i> 12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/23</span>
+                                <p>星期二</p>
+                            </div>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box mine">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/24</span>
+                                <p>星期三</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/25</span>
+                                <p>星期四</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/26</span>
+                                <p>星期五</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/27</span>
+                                <p>星期六</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01/28</span>
+                                <p>星期日</p>
+                            </div>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="moblie">
+                <div class="table_nav">
+                    <div class="prev">
+                    </div>
+                    <ul>
+                        <li>
+                            <span>01/22</span>
+                            <p>星期一</p>
+                        </li>
+                        <li>
+                            <span>01/23</span>
+                            <p>星期二</p>
+                        </li>
+                        <li>
+                            <span>01/24</span>
+                            <p>星期三</p>
+                        </li>
+                        <li>
+                            <span>01/25</span>
+                            <p>星期四</p>
+                        </li>
+                        <li>
+                            <span>01/26</span>
+                            <p>星期五</p>
+                        </li>
+                        <li>
+                            <span>01/27</span>
+                            <p>星期六</p>
+                        </li>
+                        <li>
+                            <span>01/28</span>
+                            <p>星期日</p>
+                        </li>
+                        <li>
+                            <span>01/29</span>
+                            <p>星期一</p>
+                        </li>
+                        <li>
+                            <span>01/30</span>
+                            <p>星期二</p>
+                        </li>
+                        <li>
+                            <span>01/31</span>
+                            <p>星期三</p>
+                        </li>
+                        <li>
+                            <span>02/01</span>
+                            <p>星期四</p>
+                        </li>
+                        <li>
+                            <span>02/02</span>
+                            <p>星期五</p>
+                        </li>
+                        <li>
+                            <span>02/03</span>
+                            <p>星期六</p>
+                        </li>
+                        <li>
+                            <span>02/04</span>
+                            <p>星期日</p>
+                        </li>
+                    </ul>
+                    <div class="next">
+                    </div>
+                </div>
+                <div class="tableContent">
+                    <ul>
+                        <li>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box other">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i> 12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box mine">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box other">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box other">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>Tracy Teng <i># 1161</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i> 12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- 後端請注意:預約時段的呈現方式有兩種 1.其他人訂的 2.自己訂的 如果是1.其他人訂的 請在box 上加上class other 如果是2.自己訂的 請在box 上加上class mine-->
+                            <div class="box mine">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box mine">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span>張顥齡 <i># 1889</i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <p>8 : 00<i>9 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>9 : 00<i>10 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>10 : 00<i>11 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>11 : 00<i>12 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>13 : 00<i>14 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>14 : 00<i>15 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>16 : 00<i>17 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                            <div class="box">
+                                <p>17 : 00<i>18 : 00</i></p>
+                                <span><i></i></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+
+</html>

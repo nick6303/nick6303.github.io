@@ -1,0 +1,189 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"顧客服務",
+            link:"../service/index.html"},
+    ]
+
+    var linkContent = [
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"#fbce93",
+            bg2:"#fde2d4",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon1_50_50.png",
+            ch:"1F 服務台",
+            en:"information desk"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"#fbce93",
+            bg2:"#fde2d4",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon2_50_50.png",
+            ch:"4F 卡友服務中心",
+            en:"card member service center"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"#acc1ed",
+            bg2:"#dce1ec",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon3_50_50.png",
+            ch:"4F 貴賓廳",
+            en:"VIP lounge"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"#acc1ed",
+            bg2:"#dce1ec",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon4_50_50.png",
+            ch:"B3F 諮詢台",
+            en:"information desk"},
+        {
+            className:"",
+            link:"../service/lost.html",
+            bg1:"#acc1ed",
+            bg2:"#dce1ec",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon5_50_50.png",
+            ch:"失物招領",
+            en:" lost and found"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"",
+            bg2:"",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon6_50_50.png",
+            ch:"禮卷專區",
+            en:"gift certificate"},
+        {
+            className:"big",
+            link:"../service/tax.html",
+            bg1:"",
+            bg2:"",
+            bgImg:"../../upload/fa2/service/index/blockBg_600_600.jpg",
+            icon:"../../upload/fa2/service/index/icon7_50_50.png",
+            ch:"退稅服務",
+            en:"tax refund service"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"#acc1ed",
+            bg2:"#dce1ec",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon8_50_50.png",
+            ch:"停車優惠辦法",
+            en:"parking offer"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"",
+            bg2:"",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon9_50_50.png",
+            ch:"商品券相關注意事項",
+            en:"product ticket"},
+        {
+            className:"big",
+            link:"../service/facility.html",
+            bg1:"",
+            bg2:"",
+            bgImg:"../../upload/fa2/service/index/blockBg2_600_600.jpg",
+            icon:"../../upload/fa2/service/index/icon10_50_50.png",
+            ch:"貼心服務 設施指南",
+            en:"service facility guide"},
+        {
+            className:"",
+            link:"../service/FQ.html",
+            bg1:"#fbce93",
+            bg2:"#fde2d4",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon11_50_50.png",
+            ch:"常見問題",
+            en:"Q&A"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"#acc1ed",
+            bg2:"#dce1ec",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon12_50_50.png",
+            ch:"購物配送服務",
+            en:"shopping delivery"},
+        {
+            className:"",
+            link:"../service/other.html",
+            bg1:"#fbce93",
+            bg2:"#fde2d4",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon13_50_50.png",
+            ch:"電子發票",
+            en:"electronic invoice"},
+        
+        {
+            className:"",
+            link:"../service/contact.html",
+            bg1:"#acc1ed",
+            bg2:"#dce1ec",
+            bgImg:"",
+            icon:"../../upload/fa2/service/index/icon14_50_50.png",
+            ch:"聯絡我們",
+            en:"contact us"},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#service.index
+    include ../layout/_header.pug
+    
+    main
+        article.bg(style="background-image:url('../../upload/fa2/service/index/mainBg_1920_1080.jpg')")
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title
+                p.ch 顧客服務
+                p.en Customer services
+                p.words 全方位、客製化的深度服務，為您營造寬敞舒適的購物環境；漢神百貨為您量身打造與眾不同的精緻生活美學。
+        article.linkContent
+            section.masonry
+                .grid-sizer
+                each val in linkContent
+                    .grid-box(class=val.className)
+                        a(href=val.link style=("background-image: url('"+ val.bgImg+"'); background:linear-gradient(135deg,"+val.bg1+","+val.bg2+")") )
+                            ._img
+                                figure
+                                    img(src=val.icon, alt="")
+                            ._text
+                                p.ch=val.ch
+                                p.en=val.en
+            section.ps
+                p 找不到您想搜尋的品牌嗎 ? 歡迎撥打<span>顧客專線 0800-018-980</span>將有專人問您服務，謝謝。
+    include ../layout/_footer.pug
++script
+
+|
+|
+</html>

@@ -1,0 +1,133 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+main {
+    padding: 100px 0;
+}
+
+
+.product_spec {
+    padding: 150px 50px 0 50px !important;
+    @media all and (max-width: 700px) {
+        padding: 50px 5vw 0 5vw !important;
+    }
+    .product_title {
+        text-align: center;
+        h4 {
+            @include font-size(35);
+            font-weight: bold;
+            animation:fadeInDown 1.4s both;
+            @media all and (max-width: 500px) {
+                @include font-size(32);
+            }
+        }
+        p {
+            @include font-size(25);
+            margin: 10px 0 30px;
+            animation:fadeInDown 1.2s both .2s;
+            @media all and (max-width: 500px) {
+                @include font-size(22);
+            }
+        }
+        &+.product_spec_box:before {
+            height: 4px;
+        }
+    }
+    .product_spec_box {
+        max-width: 1024px;
+        width: 100%;
+        margin: 10px auto;
+        display: flex;
+        padding: 40px 0 30px;
+        justify-content: space-between;
+        position: relative;
+        animation:fadeIn 1s both; 
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include fakeLine(100%, 2px, #bbbbbb);
+        }
+        @media all and (max-width: 700px) {
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 5px 20px 5px;
+        }
+        &:last-child {
+        	&:after{
+        		position: absolute;
+        		bottom: 0;
+        		left: 0;
+        		@include fakeLine(100%,2px,#bbbbbb);
+        	}
+        }
+        .search_spec_left {
+            @media all and (max-width: 700px) {
+                width: 100%;
+            }
+            h4 {
+                padding: 10px 0 0 30px;
+                font-weight: bold;
+                @include font-size(18);
+                letter-spacing: .5px;
+                @media all and (max-width: 700px) {
+                    padding: 10px 5px 15px 5px;
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        @include fakeLine(100%, 1px, #ddd);
+                    }
+                }
+                @media all and (max-width: 500px) {
+                    padding: 10px 0 20px 0;
+                    @include font-size(20);
+                }
+            }
+        }
+        .search_spec_right {
+            max-width: 720px;
+            width: calc(100% - 150px);
+            @media all and (max-width: 700px) {
+                width: calc(100% - 30px); // margin-top: 10px;
+            }
+            @media all and (max-width: 500px) {
+                width: calc(100% - 20px);
+            }
+            ul {
+                width: 100%;
+                li {
+                    display: flex;
+                    padding: 10px 0;
+                    border-bottom: 0.5px solid #ddd;
+                    @media all and (max-width: 500px) {
+                        flex-direction:column;
+                    }
+                    &:last-child {
+                        border-bottom: 0px;
+                    }
+                    div {
+                        width: 50%;
+                        @include font-size(14);
+                        font-size: 0.875rem;
+                        padding: 0 20px 0 0;
+                        line-height: 1.5;
+                        @media all and (max-width: 500px) {
+                            width: 100%;
+                            margin-top: 5px;
+                            &:first-child {
+                                @include font-size(16);
+                            }
+                        }
+                        &:first-child {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

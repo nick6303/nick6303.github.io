@@ -1,0 +1,1056 @@
+.the4
+    &__content
+        +flex
+        margin: 0px auto
+        flex-wrap: wrap
+        position: relative
+        width: 100%
+        max-width: 1340px
+        padding: 0 70px
+        +rwd(1023)
+            max-width: 700px
+            padding: 0 40px
+        +rwd(767)
+            padding: 0 20px
+    &__inner
+        width: 100%
+        .thegotop
+            position: relative
+        .title
+            padding: 50px 0
+            +flex
+            flex-direction: column
+            h4
+                font-size: px(32)
+                line-height: 1.25
+                margin-bottom: 15px
+            h5
+                font-size: px(18)
+                line-height: 1.5
+            hr
+                display: inline-block
+                width: 60px
+                height: 1px
+                background: #879aca
+                margin: 15px 0 
+                border: 0
+            h6
+                font-size: px(14)
+                line-height: 1.75
+                span
+                    color: #1a42a3
+
+.search_q
+    +flex
+    background: #f5f7ff
+    padding: 80px 0px
+    .search_q_inner
+        width: 100%
+        max-width: 640px
+    .the4-search
+        padding: 0px 20px
+        height: 40px
+        width: 100%
+        display: inline-flex
+        border-bottom: 3px solid #DDE0E7
+        background: transparent
+        transition: .5s
+        overflow: hidden
+        margin-bottom: 20px
+        input
+            font-size: 1rem
+            width: calc(100% - 100px)
+            border: 0px
+            background: transparent
+            &::placeholder 
+                letter-spacing: 2px
+        &__btn
+            width: 100px
+            ul
+                height: 100%
+                +flex
+            li
+                display: flex   
+                align-items: center
+                &:hover 
+                    svg
+                        fill: #1C42A2
+                    span
+                        &:befoer,&after
+                            background: #1C42A2
+            li:not(:last-child):after
+                content: ''
+                width: 1px
+                height: 10px
+                background: #000
+                margin: 0 20px  
+                opacity: .3  
+    .search_key
+        h6
+            font-size: px(14)
+            letter-spacing: 1px
+        ul
+            display: flex
+            flex-wrap: wrap
+            padding: 0 20px
+        li
+            +flex
+            margin-bottom: 10px
+            &:after 
+                content: ''
+                display: inline-block
+                width: 1px
+                height: 10px
+                background: #000
+                margin: 0 15px
+            &:first-child
+                h6
+                    font-weight: 700
+    .thex
+        position: relative
+        display: inline-block
+        width: 14px
+        height: 14px
+        span
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #000
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 16px
+                height: 1px
+                top: 50%
+                left: 50%
+                transform: translate(-50%,0%) rotate(45deg)
+            &:after
+                width: 1px
+                height: 16px
+                left: 50%
+                top: 50%
+                transform: translate(-50%,-50%) rotate(45deg)
+            
+.search_a
+    +flex
+    margin-bottom: 150px
+    >ul
+        display: flex
+        justify-content: flex-start
+        flex-wrap: wrap
+        width: 100%
+        max-width: 1024px
+        >li
+            width: calc(100% / 3 - 14px)
+            margin: 0 7px 14px
+            +rwd(767)
+                width: calc(100% / 2 - 14px )
+            +rwd(500)
+                width: 100%
+
+.shopping
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    width: 100%
+    padding-top: 50px
+    margin-bottom: 200px
+    p
+        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+    &__list
+        width: calc(60% - 20px)
+        h4.shopping__abc
+            font-size: px(14)
+            margin-bottom: 10px
+            letter-spacing: 1px
+        +rwd(1200)
+            width: calc(70% - 20px)
+        +rwd(1023)
+            width: 100%
+
+    &__total
+        width: calc(40% - 20px)
+        height: 600px
+        +rwd(1200)   
+            width: calc(30% - 20px)
+        +rwd(1023)
+            width: 0
+
+.yourProduct_list
+    display: flex
+    >ul
+        border-top: 2px solid #000
+        width: 100%
+        margin-bottom: 70px
+        >li
+
+.yourProduct_list_lbox
+    display: flex
+    width: 100%
+    padding: 0 60px
+    position: relative
+    max-height: 50vh
+    margin-right: 30px
+    overflow: auto
+    +rwd(1024)
+        padding: 0 40px
+        margin-right: 20px
+    +rwd(767)
+        padding: 0 10px 0 20px
+        margin-right: 10px
+        margin-bottom: 30px
+    >ul
+        width: 100%
+        margin-bottom: 70px
+        >li
+    .yourProduct 
+        +rwdu(1024)
+            padding-left: 20px
+            .delyourProduct.delyourProduct
+                left: -25px
+                top: 50%
+                transform: translateY(-50%)
+            .img
+                display: flex
+                align-items: center
+            .txt_wrap 
+                align-items: center
+                .txt
+                    width: calc(100% - 300px)
+                    padding-left: 20px
+                .other
+                    width: 300px
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: flex-end
+                    align-items: center
+                    flex-direction: row
+                    .number
+                        width: 100%
+                        width: 160px
+                    .amount
+                        width: calc(100% - 160px)
+                        margin-top: 0px
+                        text-align: right
+            
+
+
+.yourMoreProduct
+    padding: 35px 15px
+    border-bottom: 1px solid #999
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    flex-wrap: wrap
+    +rwd(700)
+        padding: 35px 0 
+        justify-content: flex-start
+        >div
+            width: 100%
+            display: flex
+            flex-direction: column
+    h6
+        font-size: px(16)
+        letter-spacing: 1px
+        margin-top: 12px
+        line-height: 1.25
+    a
+        margin: 0 0 0 auto
+        display: inline-flex
+        align-items: center
+        +rwd(700)
+            margin: 10px 0 0 auto
+        p
+            font-size: px(14)
+            letter-spacing: 1px
+            margin-right: 20px
+            font-weight: 700
+.yourBonus
+    padding: 35px 15px
+    border-bottom: 1px solid #999
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    flex-wrap: wrap
+    +rwd(700)
+        justify-content: flex-start
+        padding: 35px 0
+        >div
+            width: 100%
+            display: flex
+            flex-direction: column
+    h6
+        font-size: px(16)
+        margin-top: 12px
+        letter-spacing: 1px
+        line-height: 1.25
+        & + p
+            margin-top: 15px
+    p
+        font-size: px(14)
+        letter-spacing: 1px
+    .fw700
+        font-weight: 700
+    .colorBlue
+        color: #1c42a3
+        margin: 0 10px
+    .cannotBuyOther
+        opacity: .5
+        a
+            cursor: default
+        
+    a
+        margin: 0 0 0 auto
+        display: inline-flex
+        align-items: center
+        +rwd(700)
+            margin: 10px 0 0 auto
+        p
+            font-size: px(14)
+            letter-spacing: 1px
+            margin-right: 20px
+            font-weight: 700
+.yourDiscount
+    padding: 35px 15px
+    border-bottom: 1px solid #999
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    position: relative
+    +rwd(767)
+        justify-content: flex-start
+        flex-wrap: wrap
+        padding: 35px 0
+    >.txt
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        +rwd(767)
+            width: 100%
+            justify-content: center
+            
+    >.txtNt
+        +rwd(767)
+            margin: 20px 0 0 auto
+            
+    .discountDay
+        position: absolute
+        left: -20px
+        top: 50%    
+        background: #f5f7ff
+        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+        transform: translate(-100%,-50%)
+        border-radius: 50%
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: 60px
+        height: 60px
+        +rwd(1400)
+            left: 0px
+        +rwd(767)
+            position: relative
+            transform: none
+            top: auto
+            left: auto
+            width: 50px
+            height: 50px
+            font-size: px(14)
+        & + .txt
+            width: calc(100% - 60px)
+            padding-left: 20px
+    h6
+        font-size: px(16)
+        letter-spacing: 1px
+        & + p
+            margin-top: 15px
+        span
+            font-size: px(20)
+    p
+        font-size: px(14)
+        letter-spacing: 1px
+        & + p
+            margin-top: 15px
+    .fw700
+        font-weight: 700
+    .colorBlue
+        color: #1c42a3
+        margin: 0 10px
+    .w50
+        width: 50%
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        justify-content: space-between
+        +rwd(767)
+            margin-top: 20px
+            width: 100%
+        h6
+            margin-top: 20px
+    .inputWrapper
+        width: 100%
+        display: flex
+        position: relative
+        span
+            position: absolute
+            right: 10px
+            top: 50%
+            transform: translate(0,-50%)
+        &.inputRed
+            input
+                color: #1c42a3
+    input
+        width: 100%
+        border: 0
+        padding:  10px 25px
+        height: 20px
+        letter-spacing: 1px
+        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+        font-size: 0.875rem
+        background: #f5f7ff
+
+.notProduct
+    padding: 80px 0
+    +flex
+    flex-direction: column
+    border-bottom: 1px solid rgba(0,0,0,.2)
+    h5
+        font-size: px(32)
+        margin-bottom: 20px
+        color: #242b3e
+        opacity: 0.5
+        letter-spacing: 2px
+    h6
+        font-size: px(14)
+    p
+        font-size: px(18)
+        margin-bottom: 25px
+        color: #242b3e
+        opacity: 0.5
+        letter-spacing: 1px
+    a
+        +flex
+        flex-direction: column
+        h6
+            margin-top: 15px
+            
+.yourProduct
+    width: 100%
+    display: flex
+    +rwd(700)
+    position: relative
+    .img
+        padding: 35px 20px 35px 0
+        width: 130px
+        position: relative
+        +rwd(700)
+            position: absolute
+            left: 0
+            top: 0
+        .color
+            width: 70%
+            margin: 20px auto 0
+            font-size: 0
+            border-radius: 50%
+            +rwd(700)
+                margin: 0 auto
+            &:after
+                content: ''
+                display: inline-block
+                width: 100%
+                padding-bottom: 100%
+        img
+            width: 100%
+    .delyourProduct
+        cursor: pointer
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: 25px
+        height: 25px 
+        border: 1px solid #000  
+        border-radius: 50% 
+        position: absolute
+        left: -50px
+        top: 86px
+        transition: .5s
+        opacity: 0.5
+        +rwd(1200)
+            left: -30px
+        +rwd(700)
+            right: 20px
+            top: 20px
+            left: auto
+            bottom: auto
+        &:after
+            content: ''
+            display: inline-block
+            width: 50%
+            height: 1px
+            background: #000
+        &:hover
+            opacity: 1
+            background: #242b3e
+            border: 0px 
+            &:after
+                background: #fff
+    .txt_wrap
+        width: calc(100% - 130px)
+        display: flex
+        align-items: stretch
+        flex-wrap: wrap
+        border-bottom: 1px solid #999
+        padding: 35px 0
+        +rwd(700)
+            width: 100%
+        .txt
+            width: calc(100% - 230px)
+            padding-left: 20px
+            +rwd(700)
+                width: 100%
+                >div:first-child
+                    padding-left: 130px
+                    +rwd(600)
+                        padding-left: 100px
+            h5
+                font-size: px(16)
+                margin-bottom: 15px
+            h6
+                font-size: px(14)
+                margin-bottom: 15px
+                letter-spacing: .5px
+                line-height: 1.5
+                &.fw700
+                    font-weight: 700
+            ul
+                padding-top: 20px
+                display: flex
+                flex-wrap: wrap
+                li
+                    display: flex
+                    &:not(:last-child)
+                        &:after
+                            content: ''
+                            display: inline-block
+                            height: 11px
+                            width: 1px
+                            margin: 1px 10px 0
+                            background: #ccc
+                h6
+                    letter-spacing: 1px
+        .other
+            width: 230px
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            align-items: flex-end
+            flex-direction: column
+            +rwd(700)
+                width: 100%
+            .number
+                width: 100%
+                .number_inner
+                    background: #f5f7ff
+                    +flex
+                    margin-bottom: 3px
+                    >div
+                        min-width: 72px
+                        padding: 15px
+                    h5
+                        font-size: px(14)
+            .amount
+                margin-top: 10px
+                h6
+                    font-size: px(14)
+                    span
+                        font-size: px(20)
+
+.yourTotal
+
+    &.ffixed
+        position: fixed
+        top: 0
+        z-index: 99
+    +rwd(1023)
+        position: fixed
+        top: auto !important
+        left: 0 !important
+        width: 100% !important
+        bottom: 0
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+    .open &
+        max-height: 100vh
+
+
+
+    .total_content
+        padding: 60px 60px 50px
+        background: #f5f7ff
+        overflow: hidden
+        +rwd(1200)
+            padding: 50px 30px 40px
+        +rwd(767)
+            padding: 30px 20px 0px
+            background: #d7e7f0
+        .total_title
+            width: 100%
+            display: flex
+            align-items: center
+            flex-direction: column
+            margin: 0 auto
+            +rwd(1024)
+                flex-direction: row
+                justify-content: space-between
+                flex-wrap: wrap
+                max-width: 700px
+                padding: 0 40px
+                #shoppingCar &
+                    justify-content: center
+                    text-align: center
+            +rwd(767)
+                padding: 0
+
+            .txt
+                display: flex
+                align-items: center
+                flex-direction: column
+                +rwd(1024)
+                    align-items: flex-start
+            .txtBtn
+                display: none
+                +rwd(1024)
+                    display: flex
+            h5
+                font-size: px(14)
+                margin-bottom: 25px
+                +rwd(600)
+                    margin-bottom: 10px
+
+            h4
+                font-size: px(30)
+                color: #1b41a2
+                margin-bottom: 40px
+                +rwd(1200)
+                    margin-bottom: 20px
+                +rwd(600)
+                    margin-bottom: 10px
+            hr
+                display: inline-block
+                width: 100%
+                height: 4px
+                background: #dcdee5
+                border: 0
+                +rwd(1024)
+                    height: 0
+                    margin: 0
+        .total_txt
+        .total_both
+            +rwd(1023)
+                display: none
+            padding-top: 50px
+            +flex
+            flex-direction: column
+            h6
+                font-size: px(12)
+                margin-bottom: 40px
+            h5
+                font-size: px(14)
+                margin-top: 15px
+            ul
+                +flex
+                li
+                    +flex
+                    flex-direction: column
+                    padding: 0 40px
+                    position: relative
+                    &:not(:last-child)
+                        &:after
+                            content: ''
+                            display: inline-block
+                            position: absolute
+                            top: calc(50% - 25px)
+                            right: 0
+                            height: 50px
+                            width: 1px
+                            background: #000
+                    .circle
+                        background: #fff
+                        border: 1px solid #999
+                    &:hover
+                        .circle
+                            background: #1a42a3
+                        .house
+                            fill: #fff
+
+
+    .total_btns
+        width: 100%
+        ul
+            +flex
+            +rwd(1200)
+                flex-wrap: wrap
+            +rwd(1023)
+                flex-wrap: nowrap
+        li
+            width: 100%
+            &:first-child
+                background: #252b3f
+            &:last-child
+                background: #1b41a2
+            a
+                +flex
+                width: 100%
+                height: 100%
+                color:  #Fff
+                padding: 20px 0
+                h5
+                    font-size: px(14)
+
+    .total_list
+        overflow: auto
+        max-height: calc(100vh - 155px)
+        position: relative
+        +rwd(1023)
+            display: none
+        ul
+            transition: .5s
+            +rwd(1023)
+                overflow: hidden
+
+        li
+            padding: 25px 0
+            display: flex
+            justify-content: space-between
+            &:not(:last-child)
+                border-bottom: 3px solid #fff
+            +rwd(1200)
+                padding: 20px 0
+                flex-direction: column
+                h6 + h6
+                    margin-top: 5px
+            h6
+                font-size: px(14)
+                letter-spacing: .5px
+                letter-spacing: 1px
+                &.fw700
+                    font-weight: 700
+
+.yourInfo_list
+    display: flex
+    >ul
+        width: 100%
+        margin-bottom: 70px
+        >li
+            margin-bottom: 4px
+
+.yourInfo
+    padding: 60px 50px
+    background: #F4F7FE
+    transition: 1s
+    +rwd(600)
+        padding: 50px 40px
+    .open &
+        background: #242B3E
+        .colorBlue
+            color: #fff
+        .face
+            color: #fff
+        .confirm
+            svg
+                fill: #fff
+        .book
+            margin-top: 50px
+            border-top: 4px solid #9294A0
+            color: #fff
+            max-height: 1000px
+    .colorBlue
+        color: #1c42a3
+        margin: 0 5px
+    .face
+        display: flex
+        flex-wrap: wrap
+        transition: 1s
+        color: #000
+
+        .txt
+            width: 160px
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            +rwd(600)
+                order: 1
+                width: calc(100% - 90px)
+            h4
+                font-size: px(16)
+                letter-spacing: 1px
+        .content
+            width: calc(100% - 250px)
+            +rwd(600)
+                order: 3
+                width: 100%
+                margin-top: 20px
+            p
+                font-size: px(14)
+                line-height: 1.5
+                letter-spacing: 1px
+            h5
+                margin-top: 30px
+                font-size: px(14)
+                letter-spacing: 2px
+                span
+                    font-size: px(22)
+        .confirm
+            width: 90px
+            display: flex
+            justify-content: flex-end
+            align-items: center
+            +rwd(600)
+                order: 2
+            svg
+                width: 25px
+                fill: #CDD0D7
+    .aBtn
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        color: #fff
+        margin: 10px 10px 10px 0
+
+        h5
+            font-size: px(14)
+            margin-right: 10px
+        &:hover
+            .smallBtnCircle
+                background: #fff
+                span
+                    &:after,&:before
+                        background: #000
+
+    .smallBtnCircle
+        display: inline-block
+        position: relative
+        width: 24px
+        height: 24px
+        border-radius: 50%
+        border: 1px solid #fff
+        transition: .5s
+        span
+            width: 100%
+            height: 100%
+            display: in
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #fff
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+        
+        &.smallBtnCircleV
+            span
+                &:before
+                    width: 1px
+                    height: 30%
+                    left: 50%
+                    top: 50%
+                    transform-origin: 0 100%
+                    transform: translate(-50%,-50%) rotate(35deg)
+                &:after
+                    width: 1px
+                    height: 30%
+                    left: 50%
+                    top: 50%
+                    transform-origin: 0 100%
+                    transform: translate(-50%,-50%) rotate(-35deg)
+        &.smallBtnCircleAdd
+            span
+                &:before
+                    width: 1px
+                    height: 50%
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%,-50%)
+                &:after
+                    width: 50%
+                    height: 1px
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%,-50%)
+
+    .book
+        max-height: 0px
+        overflow: hidden
+        transition: 1s
+        color: #000
+        >ul
+            padding: 20px 0
+            >li
+                display: flex
+                flex-wrap: wrap
+                padding: 15px 0
+        .txt
+            width: 160px
+            display: flex
+            justify-content: flex-start
+            align-items: flex-start
+            +rwd(600)
+                width: 100%
+                margin-bottom: 20px
+            h4
+                margin-top: 8px
+                font-size: px(16)
+                letter-spacing: 1px
+        hr
+            display: inline-block
+            width: 100%
+            height: 1px
+            border: 0
+            background: #fff
+            opacity: 0.3
+
+        .content
+            width: calc(100% - 160px)
+            display: flex
+            flex-wrap: wrap
+            +rwd(600)
+                width: 100%
+                padding-left: 20px
+            >div
+                margin-bottom: 4px
+            input
+                width: 100%
+                border: 0
+                padding: 10px 20px
+                height: 20px
+                letter-spacing: 1px
+                font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+                font-size: 0.875rem
+                background: #151925
+                color: #fff
+                &::placeholder 
+                    letter-spacing: 2px
+                    color: #Fff
+            h4
+                font-size: px(16)
+                margin-top: 8px
+                letter-spacing: .5px
+                +rwd(600)
+                margin-bottom: 10px
+            p
+                font-size: px(14)
+                margin: 15px 0 25px
+                opacity: 0.6
+                letter-spacing: .5px
+
+
+
+        .w100
+            width: 100%
+            display: flex
+            align-items: center
+            &.otherList
+                justify-content: flex-end
+                flex-wrap: wrap
+            &.otherBoth
+                justify-content: space-between
+                +rwd(600)
+                flex-wrap: wrap
+            &.otherBoth2
+                flex-direction: column
+                align-items: flex-start
+                p
+                    margin: 10px 0 0
+
+        .w60
+            width: 60%
+            display: flex
+            +rwdu(600)
+                & + .w40
+                    padding-left: 4px
+            +rwd(600)
+                width: 100%
+                
+        .w50    
+            width: 50%
+            display: flex
+            +rwdu(600)
+                & + .w50
+                    padding-left: 4px
+            +rwd(600)
+                width: 100%
+        .w40    
+            width: 40%  
+            display: flex
+            +rwdu(600)
+                & + .w60
+                    padding-left: 4px 
+            +rwd(600)
+                width: 100%
+        .w30
+            width: 30%
+            display: flex
+            +rwdu(600)
+                & + .w70
+                    padding-left: 4px  
+            +rwd(600)
+                width: 100%
+        .w70
+            width: 70%
+            display: flex
+            +rwd(600)
+                width: 100%
+
+
+
+
+#shoppingCar
+    background: #fff
+    >div
+        width: 100%
+#search
+    background: #fff
+    >div
+        width: 100%
+#wishlist
+    background: #fff
+    >div
+        width: 100%
+.wishlist_title
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    text-align: center
+    padding: 80px 0
+    background: #f5f7ff
+    h4
+        font-size: px(20)
+        letter-spacing: 1px
+        margin: 20px 0 15px
+    h5
+        font-size: px(14) 
+        letter-spacing: 1px
+    a
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        
+.wishlist_list
+    background: #fff
+    width: 100%
+    padding-top: 50px
+    >ul
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        max-width: 1024px
+        margin: 0 auto
+        >li
+            width: calc(100% / 3) 
+            border: 4px solid #fff
+            +rwd(768)
+                width: 50%

@@ -1,0 +1,279 @@
+.about
+    &__content
+    &__inner
+        margin: 0px auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+.about_box
+    font-size: 0
+    width: 100%
+    position: relative
+    &.txtW
+        color: #fff
+    h3
+        font-size: px(30)
+        margin-bottom: 25px
+        letter-spacing: 2px
+        text-align: center
+    h4
+        font-size: px(20)
+        letter-spacing: 2px
+    hr
+        display: inline-block
+        width: 60px
+        height: 1px
+        border: 0px
+        margin: 30px auto
+        background: #889cd0
+    p
+        font-size: px(14)
+        line-height: 1.5
+        margin-bottom: 50px
+        text-align: center
+        letter-spacing: 1px
+    h5
+        font-size: px(16)
+        line-height: 1.5
+        text-align: center
+        font-weight: 700
+        letter-spacing: 1px
+        margin-bottom: 30px
+    h6
+        font-size: px(14)
+        letter-spacing: 1px
+        
+    .txt
+        opacity: 0
+        transition: 1s
+        transition-delay: .5s
+        +rwd(767)
+            transition-delay: 0s
+        &.movein
+            opacity: 1
+    .img
+        opacity: 0
+        transition: 1s
+        &.movein
+            opacity: 1
+    .thebg
+        opacity: 0
+        transition: 1s
+        &.movein
+            opacity: 1
+    &__01
+        padding: 70px 0
+        display: flex
+        flex-wrap: wrap
+        +rwd(767)
+            padding: 0
+        p
+            max-width: 320px
+        .txt_wrap
+            width: 50%
+            background: #f5f7ff
+            display: flex
+            justify-content: flex-end
+            box-shadow: 0 100px 0  #fff inset, 50px 0px 0 #f5f7ff, 50px 300px 0 #f5f7ff,  0px 300px 0 #f5f7ff
+            +rwd(767)
+                width: 100%
+                box-shadow: none
+                padding: 100px 0
+        .txt
+            width: 100%
+            max-width: 800px
+            +flex
+            flex-direction: column 
+            position: relative
+            z-index: 2
+            padding: 0 20px
+            transition-delay: 1s
+            +rwd(767)
+                transition-delay: 0s
+            >div
+                .circle
+                    margin-bottom: 20px
+                a
+                    +flex
+                    flex-direction: column
+        .img_wrap
+            width: 50%
+            font-size: 0
+            +rwd(767)
+                width: 100%
+        .img   
+            width: 100%
+            max-width: 800px
+            img
+                width: 100%
+        .thebg
+            position: absolute
+            top: -50px    
+            left: 0
+            width: 50%
+            max-width: 400px
+            transition-delay: 1.5s
+            +rwd(767)
+                display: none
+            img
+                width: 100%
+        
+
+    &__02
+        padding: 70px 0
+        max-width: 1600px
+        +flex
+        flex-wrap: wrap
+        +rwd(767)
+            padding: 0
+        h5
+            max-width: 320px
+        p
+            max-width: 420px
+        .txt
+            width: 45%
+            +flex
+            flex-direction: column 
+            padding: 0 20px
+            +rwd(767)
+                order: 1
+                width: 100%
+                padding: 70px 0
+            img
+                margin-bottom: 20px
+            >div
+                .circle
+                    margin-bottom: 20px
+                a
+                    +flex
+                    flex-direction: column
+        .img   
+            width: 55%
+            +rwd(767)
+                order: 2
+                width: 100%
+            img
+                width: 100%
+    &__03
+        padding: 70px 0 100px
+        +flex
+        +rwd(767)
+            padding: 0
+            margin: 50px 0
+        p
+            max-width: 400px
+        .txt
+            position: absolute
+            top: 50%    
+            left: 50%
+            transform: translate(-50%,-50%)
+            +flex
+            flex-direction: column 
+            img
+                margin-bottom: 20px
+            >div
+                .circle
+                    margin-bottom: 20px
+            a
+                color: inherit
+                +flex
+                flex-direction: column
+        .img
+            max-width: 1600px
+            +rwd(1024)
+                height: 600px
+            img
+                width: 100%
+                +rwd(1024)
+                    height: 100%
+                    width: auto
+        .thebg
+            position: absolute
+            right: 0    
+            bottom: 0
+            width: 50%
+            max-width: 500px
+            transition-delay: 1s
+            img
+                width: 100%
+    &__04
+        +rwd(767)
+            margin: 0 0 50px
+        p
+            max-width: 550px
+        .txt
+            position: absolute
+            top: 50%    
+            left: 50%
+            transform: translate(-50%,-50%)
+            +flex
+            flex-direction: column 
+            width: 80%
+            img
+                margin-bottom: 20px
+            >div
+                .circle
+                    margin-bottom: 20px
+            a
+                color: inherit
+                +flex
+                flex-direction: column
+        .img
+            +rwd(1400)
+                height: 600px
+            img
+                width: 100%
+                +rwd(1400)
+                    height: 100%
+                    width: auto
+    &__05
+        display: flex
+        flex-wrap: wrap
+        z-index: 2
+        p
+            max-width: 480px
+        .img_wrap
+            width: 50%
+            font-size: 0
+            +flex
+            flex-direction: column
+            +rwd(767)
+                width: 100%
+                order: 2
+            .txt
+                margin-top: 100px
+                padding: 0 20px
+                .name 
+                    width: 100%
+                    max-width: 200px
+                    margin-bottom: 100px    
+                    align-self: flex-end
+                    
+
+        .img   
+            width: 100%
+            img
+                width: 100%
+            
+
+        .txt_wrap
+            width: 50%
+            display: flex
+            padding: 50px 20px 0
+            +rwd(767)
+                order: 1
+                width: 100%
+                padding: 70px 20px 
+        .txt
+            width: 100%
+            max-width: 800px
+            +flex
+            flex-direction: column 
+            >div
+                .circle
+                    margin-bottom: 20px
+                +flex
+                flex-direction: column
+

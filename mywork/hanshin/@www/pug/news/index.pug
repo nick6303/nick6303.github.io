@@ -1,0 +1,158 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"最新消息",
+            link:"../news/index.html"},
+    ]
+
+    var unit = ["全部消息","全館活動","線上報名","品牌活動","抽獎/滿額贈","卡友來店禮","中獎名單","8F活動會館"]
+
+    var news = [
+        {
+            img:"../../upload/fa2/news/newsImg_400_370.jpg",
+            slogan:{
+                p:"HOT !",
+                bg:"#a13838"
+            },
+            type:"BRANDS",
+            title:"MaxMara 時尚冬裝新上市",
+            words:"購買新品滿3000折300元，再送高級質感圍巾"},
+        {
+            img:"../../upload/fa2/news/newsImg2_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"EVENTS",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送 ! 活動自01-10到02-15，全館八折起，歡迎蒞臨漢神百貨"},
+        {
+            img:"../../upload/fa2/news/newsImg3_400_370.jpg",
+            slogan:{
+                p:"SALE !",
+                bg:"#3c3b52"
+            },
+            type:"Member",
+            title:"周年慶全館八折起 卡友享專屬加碼優惠",
+            words:"活動自11/10到11/23，全館八折起，再享瘋狂回饋"},
+        {
+            img:"../../upload/fa2/news/newsImg4_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"BRANDS",
+            title:"MaxMara 時尚冬裝新上市",
+            words:"購買新品滿3000折300元，再送高級質感圍巾，全館八折起，歡迎蒞臨漢神百貨"},
+        {
+            img:"../../upload/fa2/news/newsImg5_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"EVENTS",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送 !"},
+        {
+            img:"../../upload/fa2/news/newsImg6_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"Member",
+            title:"周年慶全館八折起全館折扣，再享瘋狂回饋 ! 還有限定商品",
+            words:""},
+        {
+            img:"../../upload/fa2/news/newsImg7_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"BRANDS",
+            title:"Kiehl's 保濕冬季新上市",
+            words:""},
+        {
+            img:"../../upload/fa2/news/newsImg8_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"EVENTS",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送 ! 活動自01/10到02/15，全館八折起"},
+        {
+            img:"../../upload/fa2/news/newsImg9_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"Member",
+            title:"周年慶全館八折起 卡友享專屬加碼優惠",
+            words:"活動自11/10到11/23，全館八折起，再享瘋狂回饋"},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#news.index
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title(style="background-image:url('../../upload/fa2/news/bannerBg_1920_1080.jpg')")
+                p.ch 最新消息
+                p.en News & Events
+                p.words 創造新新生活，讓夢想在這裡發光，以下為本館各分類最新消息，新訊一手掌握 !
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val==unit[0])?"active":"")=val
+        article.content
+            section.newsContent
+                p.en ALL NEWS 
+                p.words 評鑑為百貨公司服務品質第一名，在百家爭鳴的競爭下，獲此殊榮
+                ul
+                    each val in news
+                        li
+                            a(href="../news/detail.html")
+                                if (val.slogan.p !== "")
+                                    // 後端請注意: 如果未填入文字的話 把下方div移除
+                                    // 後端請注意: 下方背景顏色要讓客戶可以換
+                                    .slogan(style=('background-color:'+val.slogan.bg))=val.slogan.p
+                                figure
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                    .hoverBox
+                                        span
+                                        p ENTER
+                                ._text
+                                    p.type=val.type 
+                                    p.title=val.title
+                                    // 字數限制 40字
+                                    p.words=val.words
+
+
+
+    include ../layout/_footer.pug
++script
+
+
+|
+|
+</html>

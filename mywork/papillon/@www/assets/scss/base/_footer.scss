@@ -1,0 +1,321 @@
+@import "_variable.scss";
+
+footer {
+    background-color: $foot_bg;
+    padding-top: 90px;
+
+    position: relative;
+    @media #{$phone} {
+        padding: 0;
+    }
+}
+
+.footer {
+    text-transform: uppercase;
+    width: 75%;
+    margin: 0 auto;
+    color: #fff;
+
+    @include trans(.5s);
+
+    @media #{$pad} {
+        width: 80%;
+    }
+    @media #{$phone} {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .footer_information {
+        width: 100%;
+        max-width: 950px;
+        margin: 0 auto;
+        @media #{$phone} {
+            display: none;
+        }
+    }
+
+    .line {
+        width: 100%;
+        height: 5px;
+        background-color: #5c5c5c;
+        margin-bottom: 40px;
+
+        display: block;
+    }
+
+    .design_block {
+        padding: 15px 0;
+        border-top: solid 1px #d9d9d9;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include font-size($size: 12);
+        @media #{$phone} {
+            border: none;
+
+            display: flex;
+            flex-direction: column;
+        }
+        a:hover {
+            color: $base_color;
+        }
+        .privacy {
+            @media #{$phone} {
+                margin-bottom: 12px;
+            }
+        }
+        .design {
+            text-align: center;
+            line-height: 1.6;
+        }
+    }
+
+    .important_link {
+        margin-bottom: 45px;
+        padding: 0 5%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li {
+            width: calc(100% / 3);
+            max-width: 240px;
+            margin-right: 10px;
+
+            display: block;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .board {
+            text-align: center;
+            margin-bottom:16px; 
+            .title {
+                line-height: 1.6;
+                @include font-size($size: 20); 
+            }
+            .vice_title {
+                line-height: 1.6;
+                @include font-size($size: 13); 
+            }
+        }
+        a {
+            padding: 11px 0;
+            background-color: #000;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include font-size($size: 12);
+            @include trans(.8s);
+            &:hover {
+                background-color: $base_red;
+            }
+        }
+    }
+
+    .product_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 26px;
+
+        @include font-size($size: 13);
+        li {
+            margin: 0 15px;
+            position: relative;
+        }
+        li:hover {
+            a {
+                color: $base_color;
+            }
+        }
+    }
+
+    .unit_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 26px;
+
+        @include font-size($size: 13);
+        li {
+            margin: 0 15px;
+        }
+        li:hover {
+            a {
+                color: $base_red;
+            }
+        }
+    }
+
+    .community_link {
+        margin-bottom: 26px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+            margin: 0 12px;
+        }
+        li a:hover {
+            color: $base_red;
+        }
+    }
+}
+
+
+
+.home .reservation {
+    left: unset;
+    right: 0;
+}
+.reservation {
+    width: 270px;
+    height: 50px;
+    position: fixed;
+    z-index: 5;
+    bottom: -50px;
+    left: calc(100vw - 271px - 1rem);
+    background-color: #d80b18;
+    @include flex-center;
+    transition: all .8s ease;
+    @media #{(max-width: 1024px)}{
+       left: calc(100vw - 270px); 
+    }
+    @media #{(max-width: 700px)}{
+        left:0; 
+    }
+    &._hideUp {
+        bottom: 0px;
+        transition: all .8s ease;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li {
+            color: #fff;
+            @include flex-center;
+            cursor: pointer;
+            height: 100%;
+            &:not(:last-child) {
+                &:after {
+                    content: "●";
+                    @include font-size(12);
+                    transform: scale(.2);
+                    margin: 0 10px;
+                }
+            }
+            &:nth-child(1) {
+                padding: 10px 0;
+                p {
+                    @include font-size(12);
+                    font-family: 'Raleway-regular';
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    &:before {
+                        font-family: 'icomoon';
+                        content: "\e906";
+                        margin-right: 5px;
+                    }
+                }
+                &:hover {
+                    p {
+                        &:before {
+                            animation: gotop 1s both infinite;
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                p {
+                    @include font-size(14);
+                    font-family: "微軟正黑體";
+                }
+            }
+            &:nth-child(3) {
+            	a{
+            		&:before{
+            			font-family: 'icomoon';
+            			content: "\e914";
+            			@include font-size(24);
+            			font-weight: 400;
+            		}
+            	}
+            }
+        }
+    }
+}
+.reservation.show {
+    bottom: 0;
+    @include trans(.5s);
+}
+
+//小紅旗到底部固定
+footer .reservation._hideStock {
+    position: absolute;
+    right: 0;
+    bottom: inherit;
+    top: -50px;
+    @include trans(.0s);
+    @media #{$phone} {
+        top: -45px;
+    }
+}
+
+//小紅旗有影片
+footer .reservation._video {
+    bottom: -50px;
+}
+
+//小紅旗沒影片
+
+// gotop hover動畫
+@keyframes gotop {
+    0% {}
+    50% {
+        transform: translateY(-100%);
+    }
+    51% {
+        transform: translateY(100%);
+    }
+    100% {}
+}
+
+// 平板螢幕尺寸1024以下
+@media only screen and (max-width: 1024px) {
+    .reservation {
+        right: 0;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .reservation {
+        width: 100%;
+        height: 45px;
+        ul {
+            width: 100%;
+            height: 100%;
+            li {
+                @include flex-center;
+                width: 33.33%;
+                &:not(:last-child) {
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        top: calc(50% - 2.4px);
+                        right: -2.4px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+//- 常用參數
+include ../layout/_var.pug
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#test.index
+    input.input(style="width:80%;margin:100px 0 50px")
+    .keyboardBox(style="max-width: 1080px")
+        .simple-keyboard(style="font-family: 'HelveticaNeue-Light', '微軟正黑體', Arial, sans-serif")
+
++script
+script(src="../../assets/js/vendor/simple-keyboard-master/simple-keyboard.js")
+script.
+
+    const layout = {
+        default: [
+            "\u20AC \u3105 \u3109 \u02C7 \u02CB \u3113 \u02CA \u02D9 \u311A \u311E \u3122 \u3126 = {bksp}",
+            "{tab} \u3106 \u310A \u310D \u3110 \u3114 \u3117 \u3127 \u311B \u311F \u3123 [ ] \\",
+            "{lock} \u3107 \u310B \u310E \u3111 \u3115 \u3118 \u3128 \u311C \u3120 \u3124 ' {enter}",
+            "{shift} \u3108 \u310C \u310F \u3112 \u3116 \u3119 \u3129 \u311D \u3121 \u3125",
+            "{controlleft} {space}"
+        ],
+        shift: [
+            "~ ! @ # $ % ^ & * ) ( _ + {bksp}",
+            "{tab} q w e r t y u i o p { } |",
+            '{lock} a s d f g h j k l : " {enter}',
+            "{shift} z x c v b n m , < > ? /",
+            "{controlleft} {space}"
+        ],
+        lock: [
+            "~ ! @ # $ % ^ & * ) ( _ + {bksp}",
+            "{tab} Q W E R T Y U I O P { } |",
+            '{lock} A S D F G H J K L : " {enter}',
+            "{shift} Z X C V B N M , < > ? /",
+            "{controlleft} {space}"
+        ],
+        Num:[
+            "` 1 2 3 4 5 6 7 8 9 0 _ + {bksp}",
+            "{tab} ! @ # $ % ^ & * ) ( { } |",
+            '{lock} ~ S D F G H J K L : " {enter}',
+            "{shift} Z X C V B N M , < > ? /",
+            "{controlleft} {space}"
+        ]
+    };
+
+
+    let Keyboard = window.SimpleKeyboard.default;
+
+    let myKeyboard = new Keyboard({
+        onChange: input => onChange(input),
+        onKeyPress: button => onKeyPress(button),
+        layout: layout,
+        mergeDisplay: true,
+        display: {
+            "{controlleft}":".?123",
+            "{shift}":"中 / En",
+            "{enter}":"enter"
+        }
+    });
+
+
+    document.querySelector(".input").addEventListener("input", event => {
+        myKeyboard.setInput(event.target.value);
+    });
+
+
+    function onChange(input) {
+        document.querySelector(".input").value = input;
+    }
+
+    function onKeyPress(button) {
+        if (button === "{shift}") {
+            handleShift();
+        }else if (button === "{lock}"){
+            handleLock();
+        }else if (button === "{controlleft}"){
+            handleNum();
+        }
+    }
+
+    function handleShift() {
+        let currentLayout = myKeyboard.options.layoutName;
+        let shiftToggle = currentLayout === "default" ? "shift" : "default";
+
+        myKeyboard.setOptions({
+            layoutName: shiftToggle
+        });
+    }
+
+    function handleLock() {
+        let currentLayout = myKeyboard.options.layoutName;
+        let lockToggle = currentLayout === "default" ? "lock" : "default";
+
+        myKeyboard.setOptions({
+            layoutName: lockToggle
+        });
+    }
+
+    function handleNum() {
+        let currentLayout = myKeyboard.options.layoutName;
+        let numToggle = currentLayout === "default" ? "Num" : "default";
+
+        myKeyboard.setOptions({
+            layoutName: numToggle
+        });
+    }
+
+|
+|
+</html>

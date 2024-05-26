@@ -1,0 +1,237 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+header {
+    .hdLink {
+        display: none;
+    }
+    .burgerMenu {
+        @media all and (min-width: 1025px) {
+            left: 101px;
+            div {
+                animation: fadeInUp 1s both .8s;
+            }
+        }
+    }
+}
+
+
+
+main {
+    padding: 150px 0 150px 0;
+    position: relative;
+    @media all and (max-width: 1600px) {
+        padding: 150px 0 150px 230px;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 150px 0;
+    }
+}
+
+#juge.accouncement article.content {
+    padding: 0;
+    max-width: 900px;
+    ._title {
+        padding: 0 60px;
+        @media all and (max-width: 700px) {
+            padding:0 5vw;
+        }
+    }
+}
+
+
+.postBoxs {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+}
+
+.postBox {
+    padding: 70px 50px;
+    position: relative;
+    letter-spacing: 1px;
+    width:850px;
+    max-width:calc(100% - 50px);
+    @include flex-center;
+    flex-direction: column;
+    transition: all .5s ease;
+    @media all and (max-width: 700px) {
+        max-width:100%;
+        padding: 70px 5vw;
+    }
+    &:not(:first-child) {
+        margin-top: 15px;
+    }
+    &:nth-child(odd) {
+        margin-right: 50px;
+        @media all and (max-width: 700px) {
+            margin-right: 0;
+        }
+    }
+    &:nth-child(even) {
+        margin-left: 50px;
+        @media all and (max-width: 700px) {
+            margin-left: 0;
+        }
+    }
+    &.active {
+        background: $juge-blue;
+        color: #fff;
+        .bg {
+            opacity: 0;
+        }
+        .title {
+            h6:after {
+                width: 100%;
+                margin: 35px auto;
+                background-color: rgba(255, 255, 255, .2)
+            }
+        }
+        .date {
+            color: #fff;
+            height: 120px;
+            background-color: rgba(255, 255, 255, .1);
+        }
+        .close {
+            display: block;
+        }
+    }
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        transition: all .5s ease;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("../../img/juge/postBoxBg_850_440.jpg");
+    }
+    .close {
+        position: absolute;
+        top: 40px;
+        right: 55px;
+        cursor: pointer;
+        display: none;
+        @media all and (max-width: 700px) {
+            top: 5vw;
+            right: 5vw;
+        }
+        span {
+            @include cross(30px,
+            30px);
+            display: block;
+            transform: rotate(45deg);
+            &:before {
+                position: absolute;
+                top: 0;
+                left: calc(50% - 1px);
+                @include fakeLine(2px,
+                0%,
+                #879fbe);
+                animation: h100 .6s both .5s;
+            }
+            &:after {
+                position: absolute;
+                top: calc(50% - 1px);
+                left: 0;
+                @include fakeLine(0%,
+                2px,
+                #879fbe);
+                animation: w100 .6s both .2s;
+            }
+        }
+    }
+    .date,
+    .title,
+    ._text,
+    .more {
+        position: relative;
+    }
+    .date {
+        width: 120px;
+        height: 45px;
+        @include flex-center;
+        flex-direction: column;
+        line-height: 1.5;
+        border-radius: 50%;
+        transition: all .5s ease;
+        color: rgba(0, 0, 0, .8);
+        .day {
+            @include font-size(26);
+        }
+        .month {
+            @include font-size(14);
+        }
+    }
+    .title {
+        margin-top: 25px;
+        max-width: 620px;
+        width: 100%;
+        h6 {
+            @include font-size(18);
+            text-align: center;
+            line-height: 1.5;
+            font-weight: bold;
+            &:after {
+                transition: all .5s ease;
+                margin: 20px auto;
+                @include fakeLine(80px,
+                3px,
+                $juge_blue);
+            }
+        }
+        p {
+            line-height: 1.5;
+            @include font-size(14);
+            width: 480px;
+            max-width: 100%;
+            margin: auto;
+        }
+    }
+    ._text {
+        @include font-size(14);
+        line-height: 1.5;
+        width: 620px;
+        max-width: 100%;
+        display: none;
+        p {
+            padding: 0 10px;
+            @media all and (max-width: 700px) {
+                padding: 0 5px;
+            }
+        }
+    }
+    .more {
+        @include flex-center;
+        flex-direction: column;
+        margin-top: 50px;
+        cursor: pointer;
+        span {
+            @include cross(28px,
+            28px);
+            margin-bottom: 15px;
+            &:before {
+                @include cross_before(100%,
+                $juge_blue)
+            }
+            &:after {
+                @include cross_after(100%,
+                $juge_blue)
+            }
+        }
+        p {
+            @include font-size(14);
+            transition: all .4s ease;
+        }
+        &:hover p{
+            color: $juge_blue;
+        }
+    }
+}

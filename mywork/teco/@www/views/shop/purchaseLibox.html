@@ -1,0 +1,67 @@
+<section>
+    <div class="topNav">
+        <div class="back">
+            <span></span>
+            <p>CLOSE</p>
+        </div>
+    </div>
+    <div class="_title">
+        <p class="en">Add purchase</p>
+        <p class="ch">加購商品</p>
+    </div>
+    <form>
+        <div class="amountBox">
+            <div class="_img">
+                <img src="../../upload/shop/giftImg3_90_100.png" alt="">
+            </div>
+            <div class="name">
+                <p class="modelNumb">DPAF12-A9008R4T5</p>
+                <p class="productName">TECO東元 20L烤箱 YB2002CB</p>
+            </div>
+            <div class="amount">
+                <button type="button" class="decrease" onclick="decreaseNumb(this)"></button>
+                <input type="number" value="0" placeholder="0" onchange="inputChange(this)">
+                <button type="button" class="add" onclick="addNumb(this)"></button>
+            </div>
+            <!-- 後端請注意:data-price 為此項商品的價格 -->
+            <div class="price" data-price="599"></div>
+        </div>
+        <div class="amountBox">
+            <div class="_img">
+                <img src="../../upload/shop/giftImg1.png" alt="">
+            </div>
+            <div class="name">
+                <p class="modelNumb">XA1672BRD</p>
+                <p class="productName">東元16吋微電腦DC直流遙控立扇 </p>
+            </div>
+            <div class="amount">
+                <button type="button" class="decrease" onclick="decreaseNumb(this)"></button>
+                <input type="number" value="0" placeholder="0" onchange="inputChange(this)">
+                <button type="button" class="add" onclick="addNumb(this)"></button>
+            </div>
+            <!-- 後端請注意:data-price 為此項商品的價格 -->
+            <div class="price" data-price="290"></div>
+        </div>
+        <div class="amountBox">
+            <div class="_img">
+                <img src="../../upload/shop/giftImg2_40_100.png" alt="">
+            </div>
+            <div class="name">
+                <p class="modelNumb">XA1672BRD</p>
+                <p class="productName">TECO東元 輕巧隨行咖啡機</p>
+            </div>
+            <div class="amount">
+                <button type="button" class="decrease" onclick="decreaseNumb(this)"></button>
+                <input type="number" value="0" placeholder="0" onchange="inputChange(this)">
+                <button type="button" class="add" onclick="addNumb(this)"></button>
+            </div>
+            <!-- 後端請注意:data-price 為此項商品的價格 -->
+            <div class="price" data-price="399"></div>
+        </div>
+        <!-- 後端請注意:onclick 只是暫時的 重要的是裡面的function可以關閉燈箱 -->
+        <button type="button" class="purchaseConfirm">
+            <span class="icon-cart"></span>
+            <p>挑選完成</p>
+        </button>
+    </form>
+</section>

@@ -1,0 +1,126 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var mainLink = [
+        {
+            name:"幾米品牌",
+            link:java,
+            ul:[
+                {
+                    name:"關於幾米",
+                    link:java},
+                {
+                    name:"品牌故事",
+                    link:java},
+            ]},
+        {
+            name:"探索幾米 ",
+            link:java,
+            ul:[
+                {
+                    name:"影視娛樂",
+                    link:java},
+                {
+                    name:"展覽演出",
+                    link:java},
+                {
+                    name:"公共藝術",
+                    link:java},
+                {
+                    name:"主題空間",
+                    link:java},
+                {
+                    name:"公益項目",
+                    link:java},
+            ]},
+        {
+            name:"最新消息",
+            link:java},
+        {
+            name:"幾米創作",
+            link:java},
+        {
+            name:"授權合作",
+            link:java},
+        {
+            name:"聯絡我們",
+            link:java},
+        {
+            name:"下載專區",
+            link:java},
+        {
+            name:"幾米報報",
+            link:java},
+    ]
+
+header
+    //主內容
+    article.hdContent
+        section.left
+            ul
+                li
+                    a(href=java) 品牌介紹
+                li
+                    a(href=java) 最新消息
+                li
+                    a(href=java) 幾米創作
+        section.center
+            a(href="../home/index.html")
+                figure
+                    img(src="../../assets/img/logo.png", alt="")
+            .openMenu
+                div
+                    span
+                    span
+                    span
+        section.right
+            ul
+                li
+                    a(href=java) 探索幾米
+                li
+                    a(href=java) 授權合作
+                li
+                    a(href=java) 聯絡我們
+    //選單
+    article.menuLibox
+        section
+            .container
+                .circle
+                .language
+                    span.icon-sphere
+                    a(href=java) 繁體中文
+                    a(href=java) 日文
+                    a(href=java) 英文
+                nav
+                    .left
+                        -for(var i=0;i<2;i++)
+                            div
+                                h4=mainLink[i].name
+                                ul(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                                    each val in mainLink[i].ul
+                                        li(itemprop="name" class="_subitem")
+                                            a(href=val.link itemprop="url")=val.name
+                    .right
+                        ul(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                            -for(var i = 2; i<mainLink.length;i++)
+                                li(itemprop="name" class="_subitem")
+                                    a(href=mainLink[i].link itemprop="url")=mainLink[i].name    
+                .socialMedia 
+                    ul
+                        li
+                            a(href=java)
+                                span.icon-facebook
+                        li
+                            a(href=java)
+                                span.icon-wechat
+                        li
+                            a(href=java)
+                                span.icon-sina-weibo
+                        li
+                            a(href=java)
+                                span.icon-instagram
+                    .quotations
+                        p 查看<br>今日語錄
+    //今日語錄
+    

@@ -1,0 +1,41 @@
+//- 常用參數
+include ../layout/_var.pug
+
+.libox.precautionsLibox
+    section
+        .box
+            .liboxClose
+                span
+            ._title
+                span.icon-key
+                p.ch 漢神超集卡約定事項
+                p.en Precautions
+                .item
+                    .name
+                        p 選擇活動
+                        p activity
+                    .inputArea
+                        .dropDown
+                            span.selectMenu
+                                p 漢神超集卡-點數折抵無上限
+                            ul
+                                li 漢神超集卡-點數折抵無上限
+                                li 漢神超集卡-點數折抵無上限
+                                li 漢神超集卡-點數折抵無上限
+                                li 漢神超集卡-點數折抵無上限
+            .rules
+                .rule
+                    h6 1.漢神超集卡 
+                    p 漢神超集卡是一張讓您在消費同時也能獲得點數的會員集點卡！讓您享有聰明消費、跨店集點的優勢，並且享受獨特的超級回饋的消費生活！
+                .rule
+                    h6 2.雙重集點雙優惠 
+                    p 您亦可使用中國信託銀行或永豐銀行推出的漢神聯名卡及漢神巨蛋聯名卡消費，每筆刷卡金額皆可同時累積銀行回饋金/紅利點數與漢神超集卡點數之雙重優惠！
+                .rule
+                    h6 3.跨店集點最優惠 
+                    p 於漢神百貨或漢神巨蛋購物廣場單筆消費每滿NT$100即可累積漢神超集卡點數1點兩館點數可合併累計。商品券、販促券、抵用券、提貨單、商品禮券、超集卡點數折抵及銀行紅利折抵購物之金額，恕無法參加集點活動。
+                    a(href=java) 詳情及期限參閱卡友服務網站說明
+            .buttons 
+                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                button(type="button" onclick="liboxs.close(this)")
+                    span.icon-hook
+                    p 確認關閉

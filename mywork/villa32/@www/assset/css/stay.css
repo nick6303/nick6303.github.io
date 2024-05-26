@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+/*---------------main開始-------------------------------------------------------*/
+
+
+main article:nth-child(2) {
+    text-align: center;
+    margin-top: 170px;
+    padding: 0 20px
+}
+
+.title {
+    overflow: hidden;
+}
+
+.title div {
+    transform: translateY(100%);
+}
+
+
+
+.title h4 {
+    font-size: 1.875rem;
+}
+
+.title p {
+    max-width: 560px;
+    margin: auto;
+    margin-top: 35px;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    font-size:.875rem;
+}
+
+.menu_list {
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.menu_list ul {
+    max-width: 450px;
+    margin: auto;
+    transform: translateY(100%);
+}
+
+
+
+.menu_list ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.menu_list ul li p {
+    font-size: 1.125rem;
+    color: #ADADAD;
+    position: relative;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.menu_list ul li:hover p {
+    color: #000;
+}
+
+.menu_list ul li p:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: black;
+    transition: .5s ease;
+}
+
+.menu_list ul li:hover p:after {
+    left: 0%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/*rooms設定開始------------------*/
+
+.rooms {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.room_img_bg {
+    max-height: 430px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    font-size: 0;
+}
+
+.room_img {
+    position: relative;
+    transform: translateY(100%);
+}
+
+.hover_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .8);
+    transition: all .8s ease;
+    overflow: hidden;
+}
+
+.hover_box:hover {
+    opacity: 1;
+    transition: all .8s ease;
+}
+
+.hover_text {
+    position: relative;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hover_text p {
+    margin: 5px 0;
+}
+
+.hover_text p:nth-child(1) {
+    font-size: 1.5rem;
+}
+
+.hover_text p:nth-child(2) {
+    font-size: .875rem;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+}
+
+.hover_text:before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, .3);
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 60px);
+    transition: all .8s ease;
+}
+
+.hover_box:hover .hover_text:before {
+    width: 130px;
+    transition: all .8s ease;
+}
+
+.hover_text:after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, .3);
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 60px);
+    transition: all .8s ease;
+}
+
+.hover_box:hover .hover_text:after {
+    width: 130px;
+    transition: all .8s ease;
+}
+
+.learn_more {
+    width: 180px;
+    height: 50px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: all .6s ease;
+}
+
+.hover_box:hover .learn_more {
+    transform: translateY(0);
+    transition: all .8s ease .4s;
+}
+
+.learn_more p {
+    padding-top: 18px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+/*keyframes動畫特區----------------------*/
+
+.title.show div {
+    animation: allin0 1s forwards;
+}
+
+.menu_list.show ul {
+    animation: allin0 1s both .5s;
+}
+
+.in.allin .room_img {
+    animation: allin0 .8s forwards;
+}
+
+.in.allin .room_img:nth-child(1) {
+    animation: allin0 1.2s both;
+}
+
+
+
+
+
+
+
+/*rooms設定結束------------------*/
+
+
+/*---------------main結束-------------------------------------------------------*/
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    main article:nth-child(2) {
+        margin-top: 120px;
+    }
+    .title p {
+        padding: 0 10px;
+    }
+
+    .room_img_bg {
+        margin-bottom: 4vh;
+    }
+
+    /*在手機版hover動作取消*/
+    .learn_more {
+        display: none;
+    }
+
+
+    .hover_box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        opacity: 1;
+        background-color: transparent;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .hover_text {
+        position: relative;
+        margin: auto;
+        color: #000;
+    }
+
+    .hover_text p {
+        margin: 5px 0;
+    }
+
+    .hover_text p:nth-child(1) {
+        font-size: 1.5rem;
+    }
+
+    .hover_text p:nth-child(2) {
+        font-size: .875rem;
+        font-family: MyriadPro-Regular, 微軟正黑體;
+    }
+
+    .hover_text:before {
+        content: "";
+        display: block;
+        width: 130px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, .3);
+        position: absolute;
+        top: 50%;
+        left: -130%;
+    }
+
+    .hover_text:after {
+        content: "";
+        display: block;
+        width: 130px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, .3);
+        position: absolute;
+        top: 50%;
+        right: -130%;
+    }
+}

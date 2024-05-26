@@ -1,0 +1,131 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+.messageContent .addMessage .subject textarea {
+    height: 60px;
+}
+
+.messageContent .addMessage .content textarea {
+    height: 80px;
+}
+
+.messageContent .messageList {
+    margin-top: 70px;
+
+    a {
+        margin-bottom: 60px;
+        display: block;
+
+
+        &.worker {
+            .box ._img {
+                background-image: url("../../img/message1.png");
+            }
+        }
+
+        &.user {
+            .box ._img {
+                background-image: url("../../img/message2.png");
+            }
+        }
+
+        &.show {
+            .subject {
+                p {
+                    animation: fadeInUp 1.2s both .6s;
+                }
+
+                &:after {
+                    animation: w100 1s both;
+                }
+            }
+
+            .box {
+                animation: fadeInDown 1.2s both .6s;
+            }
+        }
+
+        .subject {
+            p {
+                &:before {
+                    color: #afafaf;
+                }
+            }
+        }
+
+        .innerText {
+            overflow: hidden;
+        }
+
+        .box {
+            background-color: #f1f1f1;
+            padding: 30px 40px 30px 30px;
+            display: flex;
+            opacity: 0;
+
+            @media all and (max-width: 700px) {
+                padding: 30px 5vw;
+            }
+
+            ._img {
+                margin-right: 50px;
+                width: 50px;
+                height: 50px;
+                background-size: auto;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                overflow: hidden;
+
+                @media all and (max-width: 700px) {
+                    display: none;
+                }
+            }
+
+            ._text {
+                width: calc(100% - 100px);
+
+                @media all and (max-width: 700px) {
+                    width: 100%;
+                    text-align: justify;
+                }
+
+                .name {
+                    display: flex;
+                    align-items: center;
+
+                    .numb {
+                        display: none;
+                        background-color: #005098;
+                        border-radius: 50%;
+                        height: 20px;
+                        width: 20px;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 15px;
+                        color: #fff;
+                        @include font-size(12);
+                        font-family: 'CenturyGothic';
+                    }
+                }
+
+                .words {
+                    margin-top: 10px;
+
+                }
+            }
+        }
+
+        &.hasMessage {
+            .box {
+                background-color: #e6f1ff;
+            }
+
+            ._text .name .numb {
+                display: flex;
+            }
+        }
+
+    }
+}

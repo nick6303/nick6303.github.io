@@ -1,0 +1,55 @@
+//css chris fix (用來補正其他人幫忙切的CSS)
+
+
+//home
+#home .exhibition .masonry ul li .hoverBox ._text .time .fBox
+  position: relative
+#home .exhibition .masonry ul li .hoverBox ._text .time .fBox .box
+  display: flex
+  align-items: flex-end
+#home .exhibition .masonry ul li .hoverBox ._text .time h6
+  top: -25px
+@media (max-width: 500px)
+  #home .news .masonry ul li.big ._text,
+  #home .news .masonry ul li.small ._text
+    text-shadow: none !important
+
+//home 2019-01-25 chris動畫修改 統一跟news動畫一樣
+#home .exhibition .masonry ul li.show.in:before
+  display: none
+#home .exhibition .masonry ul li.show picture,
+#home .news .masonry ul li.show figure,
+#home .advertisement.show.in ._img img
+  animation: fadeInDown 1.2s both
+#home .news .masonry ul li
+  overflow: hidden
+#home .about ._title .in.show img,
+#home .about .lines .in.show img,
+#home .about ._title .bigImg.hasVideo:before,
+#home .about .line .bigImg.hasVideo:before
+  animation: fadeInDown 1.2s both !important
+#home .about ._title .bigImg.hasVideo:before,
+#home .about .line .bigImg.hasVideo:before
+  background-color: rgba(0,0,0,0)
+#home .about ._title .bigImg.hasVideo.show:before,
+#home .about .line .bigImg.hasVideo.show:before
+  z-index: 1
+  background-color: rgba(0,0,0,0.5)
+  transition: background-color .5s ease .5s
+#home .about ._title .bigImg.hasVideo:after,
+#home .about .line .bigImg.hasVideo:after
+  color: #fff
+  border-color: #fff
+  opacity: 1
+  z-index: 2
+  transform: translate(-50%, -50%) scale(1)
+
+
+
+//news
+#news
+  .dateAndType
+    align-items: center
+#news.detail .recommend ._title .words .ch
+  +fs(22)
+  font-size: 22px

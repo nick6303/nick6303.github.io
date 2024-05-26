@@ -1,0 +1,127 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"最新消息",
+            link:"../news/index.html"},
+        {
+            title:"卡友來店禮",
+            link:"../news/detail.html"},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#news.detail
+    include ../layout/_header.pug
+    main
+        // 後端請注意: 要讓客戶可以自訂背景圖片和背景顏色
+        // 後端請注意: 要讓客戶可以決定字的顏色 預設是黑色  如果要白色 就在 <section class="banner"> 加上class "white"
+        article.banner(style="background-image: url('');background-color: #e2ebf7")
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link)=val.title
+            section._text
+                h6 回饋金終身有效，自動折抵次期消費
+                .inf
+                    .type
+                        ._title
+                            p.ch 活動時間
+                            p.en Time
+                        div
+                            p 108/02/17(三)
+                    .location
+                        ._title
+                            p.ch 活動地點 
+                            p.en Location
+                        div
+                            p 各樓層櫃位 
+                    .share
+                        ._title
+                            p.ch 分享
+                            p.en Share to
+                        ul.socialMedia
+                            li
+                                a(href=java)
+                                    span.icon-facebook
+                            li
+                                a(href=java)
+                                    span.icon-twitter
+                            li
+                                a(href=java)
+                                    span.icon-line
+        article._slick
+            ul
+                -for(var i = 0;i<3;i++)
+                    // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                    li(data-videoId=(i==0)?"jIzOIsQWMfg":"")
+                        div
+                            figure
+                                img(data-lazy="../../upload/fa2/card/news/slickImg_1030_650.jpg", alt="")
+                            b 刷卡購物消費享9折優惠(折扣期間95折，部分專櫃、商品除外)
+            .arrows 
+                span.icon-arrowLeft
+                span.icon-arrowRight
+        article.rows
+            section.row
+                ._text
+                    h6 附加一卡通電子票證功能 小額支付一卡就通
+                    p 1.使用一卡通電子票證功能支付，享搭高雄捷運票價85折、台鐵購票優惠(區間車票價9折)、各地公車客運優惠、超商(全家/OK/萊爾富)及小額商店不定期消費優惠（優惠如有變動依一卡通票證公司公告為準）。
+                    p 2.享記名式一卡通掛失餘額保障，掉卡不掉錢若不慎遺失具一卡通功能之信用卡時，將自動退還掛失後三小時系統記錄之一卡通餘額至您的信用卡帳號內，保障您的權益。
+                    p 3.紅利折抵，幫你節省生活開支。運用紅利點數折抵「一卡通」加值金，每100點可以折抵，幫您節省費用，實在划算。
+            section.row
+                ._img 
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/card/news/rowImg1.jpg", alt="")
+                ._text
+                    h6 不定期舉辦卡友來店禮
+                    p 漢神百貨貴賓廳環境優雅、空間舒適，廳內備有限量咖啡、茶、點心及書報雜誌，提供尊榮貴賓購物之餘的最佳休憩空間。持漢神百貨聯名卡於館內刷卡消費達指定金額，即可成為尊榮貴賓。
+        article.more
+            section._title
+                p.ch 更多最新消息
+                p.en More news
+            section.links
+                a(href=java)
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/card/news/newsImg_400_370.jpg", alt="")
+                        .hoverBox
+                            span
+                            p ENTER
+                    ._text
+                        // 後端請注意: 如果未填入文字的話 把下方div移除
+                        // 後端請注意: 下方背景顏色要讓客戶可以換
+                        .slogan(style=('background-color: #a13838')) HOT !
+                        p.type BRANDS
+                        p.name 兩人同行平假日全票價6折起
+                a(href=java)
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/card/news/newsImg2_400_370.jpg", alt="")
+                        .hoverBox
+                            span
+                            p ENTER
+                    ._text
+                        p.type Member 
+                        p.name 消費最高紅利點數5倍回饋卡友享專屬加碼優惠
+
+
+    include ../layout/_footer.pug
++script
+
+
+|
+|
+</html>

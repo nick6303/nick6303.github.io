@@ -1,0 +1,160 @@
+#winform.detail
+    padding: 0
+    main
+        display: block
+        // padding: 0 28px 
+        // height: calc(100vh - 480px)
+        height: 100%
+        // background-image: url('../../upload/fa2/winform/bg_1080_1920.jpg')
+        // background-repeat: no-repeat
+        // background-size: cover
+    .banner
+        max-width: 1024px
+        height: 630px
+        width: 100%
+        margin: auto
+    .container
+        background-color: #fff
+        max-width: 850px
+        width: 100%
+        margin: 0 auto 0 0
+        // height: calc(100vh - 630px - 502px - 20px)
+        height: 768px
+        padding: 20px 0 0 
+        .branchLink
+            display: flex
+            width: 100%
+            a
+                width: 50%  
+                height: 70px
+                +flex-center
+                font-size: px(22)
+                border-radius: 5px
+                color: rgba(0,0,0,.7)
+                border: 2px solid transparent
+                transition: all .4s ease
+                &.active
+                    color: rgba(0,0,0,.9)
+                    background-color: #faf1e3
+                    border: 2px solid #dec9a9 
+                &.unclick
+                    pointer-events: none
+        .type
+            padding: 15px 15px 35px
+            ul 
+                display: flex
+                li,a
+                    border-radius: 10px
+                    height: 60px
+                    background: linear-gradient(left,#e6e6e6,#f2f2f2)
+                    width: 33.33%
+                    margin: 0 5px
+                    font-size: px(22)
+                    color: rgba(0,0,0,.6)
+                    +flex-center
+                    position: relative
+                    transition: all .5s ease
+                    cursor: pointer
+                    &:after
+                        position: absolute
+                        top: 99%
+                        left: 50%
+                        transform: translate(-50%,-100%)
+                        +fakeLine(0,0,transparent)
+                        border-style: solid
+                        border-width: 20px 17.5px 0 17.5px
+                        border-color: #e5d0b1 transparent transparent transparent
+                        opacity: 0
+                        transition: all .5s ease
+                    &.active
+                        color: rgba(0,0,0,.9)
+                        background: linear-gradient(left,#d3b68b,#f8ecd9)
+                        &:after
+                            opacity: 1
+                            transform: translate(-50%,0)
+        .content
+            border: 1px solid #e1b277
+            margin: 0 50px
+            position: relative
+            height: calc(100% - 230px)
+            overflow: hidden
+            &>div
+                width: 100%
+                height: 100%
+            .loading
+                width: 100%
+                height: 100%
+                +flex-center
+                img
+                    animation: rolling 1s infinite
+                    animation-timing-function: linear
+        .countDown
+            margin: 15px 0 0
+            animation: fadeIn 1s both 
+            p
+                text-align: center
+                &:before
+                    content: "*"
+                    color: #f52d2d
+            .second
+                color: #3c4ed8
+                font-weight: bold
+
+#winform.detail .container .content .typeBox
+    ._title
+        display: flex
+        justify-content: center
+        align-items: flex-end
+        letter-spacing: 0.5px
+        margin: 10px 0 
+        line-height: 1
+        .px16
+            font-size: px(16)
+            margin: 0 2px 2px
+        .red
+            font-size: px(28)
+            color: #f52d2d
+            margin: 0 0 -5px
+            &:before,&:after
+                font-size: px(20)
+                margin: 0 5px
+                color: #000
+                +JaguarJC-Bold
+            &:before
+                content: attr(data-before)
+            &:after
+                content: attr(data-after)
+
+#winform.detail .rightBar
+    position: absolute
+    top: 720px
+    right: 28px
+    width: 170px
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 0 25px
+    .buttons
+        a,button
+            border: none
+            +flex-center
+            width: 75px
+            height: 75px
+            color: #ffffff
+            background-color: #233153
+            border-radius: 50%
+            font-size: px(18)
+            &:before
+                font-size: px(33)
+            &:not(:last-child)
+                margin: 0 0 20px
+    p
+        font-size: px(22)
+        margin: 120px 0 150px
+        text-align: center
+        letter-spacing: 0
+    figure
+
+
+
+

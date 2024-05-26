@@ -1,0 +1,352 @@
+@charset "utf-8";
+
+
+
+/*detail_banner開始--------------------------------*/
+.room .detail_slogan {
+    width: 420px;
+    position: absolute;
+    top: 55%;
+    left: calc(50% - 210px);
+    overflow: hidden;
+    height: auto;
+}
+
+/*detail_banner結束--------------------------------*/
+
+.room .detail_content{
+	text-align: center;
+    margin-top: 170px;
+    padding: 0 20px
+}
+
+.detail_title {
+    overflow: hidden;
+}
+
+.on .detail_title div,
+.load .detail_title div {
+    transform: translateY(100%);
+}
+
+
+
+.detail_title h4 {
+    font-size: 1.875rem;
+}
+
+.detail_title p {
+    max-width: 560px;
+    margin: auto;
+    margin-top: 35px;
+    font-family: MyriadPro-Regular,微軟正黑體;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    font-size: .875rem;
+}
+
+.detail_menu_list {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.detail_menu_list ul {
+    width: 450px;
+}
+
+.on .detail_menu_list ul,
+.load .detail_menu_list ul { 
+	transform: translateY(100%);
+}
+
+.detail_menu_list ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.detail_menu_list ul li p {
+    font-size: 1.125rem;
+    color: #ADADAD;
+    position: relative;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.detail_menu_list ul li:hover p {
+    color: #000;
+}
+
+.detail_menu_list ul li p:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: black;
+    transition: .5s ease;
+}
+
+.detail_menu_list ul li:hover p:after {
+    left: 0%;
+    width: 100%;
+}
+
+
+.rooms {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.room_img_bg {
+    overflow: hidden;
+    margin-bottom: 50px;
+    font-size: 0;
+}
+
+.room_img {
+    position: relative;
+    display: block;
+}
+
+.on .room_img,
+.load .room_img {
+	transform: translateY(101%);
+}
+
+    
+
+.hover_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .8);
+    transition: all .8s ease;
+    overflow: hidden;
+}
+
+.hover_box:hover {
+    opacity: 1;
+    transition: all .8s ease;
+}
+
+.hover_text {
+    position: relative;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hover_text p {
+    margin: 5px 0;
+    letter-spacing: 1px;
+}
+
+.hover_text p:nth-child(1) {
+    font-size: 1.5rem;
+}
+
+.hover_text p:nth-child(2) {
+    font-size: .875rem;
+    font-family: MyriadPro-Regular,微軟正黑體;
+}
+
+.hover_text:before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, .3);
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 60px);
+    transition: all .8s ease;
+}
+
+.hover_box:hover .hover_text:before {
+width: 130px;
+transition: all .8s ease;
+}
+
+.hover_text:after {
+   content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, .3);
+    position: absolute;
+    top: 50%;
+    left:  calc(100% + 60px);
+    transition: all .8s ease;
+}
+
+.hover_box:hover .hover_text:after {
+   width: 130px;
+transition: all .8s ease; 
+}
+
+
+.learn_more {
+    width: 180px;
+    height: 50px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: all .6s ease;
+}
+
+.hover_box:hover .learn_more {
+    transform: translateY(0);
+    transition: all .8s ease .4s;
+}
+
+.learn_more p {
+    padding-top: 18px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+
+.detail_ft input{
+	border: none;
+}
+
+
+
+/*keyframes動畫特區----------------------*/
+
+.detail_title.show div {
+    animation: allin0 1s forwards;
+}
+
+.detail_menu_list.show ul {
+    animation: allin0 1s both;
+}
+
+.show .room_img{
+    animation: allin0 .8s forwards;
+}
+
+.show .room_img:nth-child(1) {
+    animation: allin0 1.2s both .2s;
+}
+
+
+/*退場動畫*/
+
+.off .detail_title div{
+	animation: zoomOut .8s both .8s;
+}
+
+.off .detail_menu_list ul {
+	animation: zoomOut .8s both .6s;
+}
+
+.off .room_img{
+	animation: zoomOut 1s both .4s;
+}
+
+.off .detail_ft{
+	animation: zoomOut .8s both .6s;
+}
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+	.room .detail_slogan {
+		width: 300px;
+		left: calc(50% - 150px);
+		top: 40%;
+		font-size: 2rem;
+	}
+
+	.room .detail_content{
+		margin-top: 120px;
+	}
+
+	.detail_title p {
+        padding: 0 10px;
+    }
+
+	.room_img_bg {
+        margin-bottom: 4vh;
+    }
+
+    .room_img{
+        height: 100%;
+    }
+
+    /*在手機版hover動作取消*/
+    .learn_more {
+        display: none;
+    }
+
+.hover_box {
+        position:relative;
+        width: 100%;
+        height:auto;
+        display: flex;
+        opacity: 1;
+        background-color:transparent;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .hover_text {
+        position: relative;
+        margin: auto;
+        color: #000;
+    }
+
+    .hover_text p {
+        margin: 5px 0;
+    }
+
+    .hover_text:before {
+        content: "";
+        display: block;
+        width: 130px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, .3);
+        position: absolute;
+        top: 50%;
+        left: -130%;
+    }
+
+    .hover_text:after {
+        content: "";
+        display: block;
+        width: 130px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, .3);
+        position: absolute;
+        top: 50%;
+        right: -130%;
+    }
+
+
+    .room .subscription.open{
+    	overflow: scroll;
+    }
+
+}
+
+
+@media only screen and (max-width: 700px) {
+    .hover_text p:nth-child(1){
+        font-size: 1.25rem;
+    }
+}

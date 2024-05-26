@@ -1,0 +1,77 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>start-song-start-playlist.md</title>
+      </head>
+      <body>
+        <hr>
+<p>title: Setting Starting Song and Playlist - AmplitudeJS Documentation
+meta:</p>
+<ul>
+<li>name: description
+content: Amplitude.js is the HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design a web audio player the way you want it to look.</li>
+<li>name: og:locale
+content: en_US</li>
+<li>name: og:type
+content: website</li>
+<li>name: og:title
+content: Amplitude.js The Open Source HTML5 Audio Player for the Modern Era</li>
+<li>name: og:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look.</li>
+<li>name: og:url
+content: <a href="https://521dimensions.com/open-source/amplitudejs/docs/configuration/start-song-start-playlist.html">https://521dimensions.com/open-source/amplitudejs/docs/configuration/start-song-start-playlist.html</a></li>
+<li>name: og:site_name
+content: Amplitude.js</li>
+<li>name: og:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: og:image:width
+content: 1200</li>
+<li>name: og:image:height
+content: 630</li>
+<li>name: twitter:card
+content: summary_large_image</li>
+<li>name: twitter:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look. Available for free on Github.</li>
+<li>name: twitter:title
+content: Amplitude.js The HTML Audio Player for the Modern Era</li>
+<li>name: twitter:site
+content: &quot;@521dimensions&quot;</li>
+<li>name: twitter:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: creator
+content: &quot;@521dimensions&quot;</li>
+</ul>
+<hr>
+<h1 id="setting-the-starting-audio-and-starting-playlist">Setting the Starting Audio and Starting Playlist</h1>
+<p>When you initialize AmplitudeJS you can instruct AmplitudeJS to start at a certain song, certain playlist, and a certain song in a playlist.</p>
+<h2 id="set-starting-song">Set Starting Song</h2>
+<p>To set a starting song, you simply need to add the <code>start_song</code> key and pass it the index of the song you want to start. By default this is 0, the first song in the array. To set it to the fourth song in the array, index 3, do this:</p>
+<pre><code class="lang-javascript">  Amplitude.init({
+    songs: [&#39;...&#39;],
+    start_song: 3
+  });
+</code></pre>
+<h2 id="set-starting-playlist">Set Starting Playlist</h2>
+<p>You can also define which playlist to start with if you have multiple playlists. Similar to the <code>start_song</code> you need to pass the <code>starting_playlist</code> key to the <code>init</code> method:</p>
+<pre><code class="lang-javascript">  Amplitude.init({
+    songs: [&#39;...&#39;],
+    playlists: {
+      &#39;key_of_starting_playlist&#39;: [&#39;...&#39;]
+    }
+    starting_playlist: &#39;key_of_starting_playlist&#39;
+  });
+</code></pre>
+<h2 id="set-starting-song-in-playlist">Set Starting Song In Playlist</h2>
+<p>Finally, you can set which song you want to start the player with inside which playlist. To do this, you need to define the <code>starting_playlist</code> key and the <code>starting_playlist_song</code> index like this:</p>
+<pre><code class="lang-javascript">  Amplitude.init({
+    songs: [&#39;...&#39;],
+    playlists: {
+      &#39;key_of_starting_playlist&#39;: [&#39;...&#39;]
+    }
+    starting_playlist: &#39;key_of_starting_playlist&#39;,
+    starting_playlist_song: 3
+  });
+</code></pre>
+
+      </body>
+    </html>

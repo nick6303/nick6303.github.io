@@ -1,0 +1,167 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"人才招募",
+            link:"../other/join.html"},
+    ]
+
+    var table= [
+        {
+            where:"1F 服務台",
+            jobName:"工讀生",
+            jobContent:[
+                {
+                    type:"condition",
+                    ul:[
+                        "態度親切具服務熱忱、親和力、開朗大方對服務工作具高度熱忱者。",
+                        "諳英語或日語會話者尤佳。",
+                        "時薪制，須可長期配合排班(早晚班)，大專在校生可(日校尤佳)。",
+                        "上班時間依公司規定，須配合輪班。",
+                        "長期配合者佳。"]},
+                {
+                    type:"work contact ",
+                    ul:[
+                        "服務台諮詢、樓層諮詢服務、停車券兌換 ",
+                        "嬰兒車租借、負責電梯執勤、電梯操作引導"]}
+            ],
+            contacter:[
+                "E-mail:es5212@email.hanshin.com.tw",
+                "郵寄：高雄市前金區成功一路266-1號行政課人事林小姐收"]},
+        {
+            where:"4F 卡友服務中心",
+            jobName:"櫃台人員",
+            jobContent:[
+                {
+                    type:"condition",
+                    ul:[
+                        "態度親切具服務熱忱、親和力、開朗大方對服務工作具高度熱忱者。",
+                        "諳英語或日語會話者尤佳。",
+                        "時薪制，須可長期配合排班(早晚班)，大專在校生可(日校尤佳)。"]},
+                {
+                    type:"work contact -",
+                    ul:[
+                        "服務台諮詢、樓層諮詢服務、停車券兌換"]}],
+            contacter:[
+                "E-mail:es5212@email.hanshin.com.tw",
+                "郵寄：高雄市前金區成功一路266-1號   行政課人事 林小姐收"]},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#other.join
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            setion._title(style="background-image:url('../../upload/fa2/other/join/bannerBg_1670_410.jpg')")
+                p.ch 人才招募
+                p.en Join us
+                p.words 以最高品質商品，滿足高雄消費者需求。 以最親切的服務，提昇台灣的消費品質，締造永續經營契機。 
+        article.content
+            section.topTitle
+                p.en SERVICE
+                .buttons
+                    button(type="button")
+                        // 動畫方塊
+                        b
+                        span.icon-calendar
+                        h6 應徵辦法及注意事項
+                        p Application
+                    button(type="button")
+                        // 動畫方塊
+                        b
+                        span.icon-hand
+                        h6 公司福利
+                        p Welfare
+        article.tableContent
+            section.list
+                .listHeader
+                    p.where 工作地點
+                    p.jobName 職務名稱
+                    p.jobContent 應徵條件/工作內容 
+                    p.contacter 職務聯絡人 
+                    p.seeMore 查看更多
+                .listBody
+                    each val in table
+                        .job
+                            // 工作地點
+                            .where(data-name="工作地點")
+                                p=val.where
+                            // 職務名稱
+                            .jobName(data-name="職務名稱")
+                                p=val.jobName
+                            // 應徵條件/工作內容 
+                            .jobContent(data-name="應徵條件/工作內容 ")
+                                each item in val.jobContent
+                                    div
+                                        h6=item.type
+                                        ul
+                                            each li in item.ul
+                                                li=li
+                            // 職務聯絡人 
+                            .contacter(data-name="職務聯絡人 ")
+                                ul
+                                    each item in val.contacter
+                                        li=item
+                            // 查看更多
+                            .seeMore(data-name="查看更多")
+                                a(href=java)
+                                    span
+                                    p ENTER
+        article.liboxs
+            section.libox
+                .box
+                    .content
+                        .liboxClose
+                            span
+                        ._title 
+                            span.icon-calendar
+                            p.ch 應徵辦法及注意事項
+                            p.en Application
+                        .word 
+                            ul
+                                li 請提供個人基本資料、照片、學歷、經歷、專長及自傳等資料，依指定之電子信箱或郵寄(信封左下角請務必註明應徵職務)投遞求職信件。
+                                li 經過審核後，我們將由專人通知、安排面試，請耐心等候。
+            section.libox
+                .box
+                    .content
+                        .liboxClose
+                            span
+                        ._title 
+                            span.icon-hand
+                            p.ch 公司福利
+                            p.en Welfare
+                        .word 
+                            ul
+                                li 生日禮金、三節禮金、績效獎金、結婚補助、週年慶慰勞金
+                                li 公司年度營運達成獎金
+                                li 年度員工健檢 ( 不含新進人員體檢 ) 
+                                li 享勞保、健保及團保
+                                li 福委會.職工及職工子女助學金.員工折扣
+                                li 員工教育訓練
+
+    include ../layout/_footer.pug
++script
+
+|
+|
+</html>

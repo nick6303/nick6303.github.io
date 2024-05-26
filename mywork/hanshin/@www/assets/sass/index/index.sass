@@ -1,0 +1,623 @@
+#index.index
+    padding: 0
+    ._title
+        +flex-center
+        flex-direction: column
+        +title
+    article.header
+        position: absolute
+        z-index: 10
+        width: 100%
+        &.fixed
+            &:before
+                opacity: 1
+                transition: all .4s ease
+            &:after
+                width: 100%
+            .logo
+                color: #fe0070
+                font-size: px(33)
+                top: 20px
+                left: 13vw
+                @media all and (max-width: 1024px)
+                    left: 8vw
+                @media all and (max-width: 900px)
+                    top: 15px
+                @media all and (max-width: 700px)
+                    top: 10px
+                    left: 15vw
+                figure img
+                    height: 50px
+                    @media all and (max-width: 900px)
+                        height: 33px
+            .links
+                position: fixed
+                top: 30px
+                @media all and (max-width: 900px)
+                    position: absolute
+                    top: 190px
+                ul li a
+                    font-size: px(16)
+                    @media all and (max-width: 900px)
+                        font-size: px(15)
+        &.noTransition
+            &:before,&:after,.logo,.logo img,.links ul li a,.links
+                transition: all 0s 
+        &:before
+            +fakeLine(100%,80px,#fff)
+            position: fixed
+            top: 0
+            left: 0
+            opacity: 0
+            transition: all 1s ease
+            @media all and (max-width: 900px)
+                height: 60px
+                z-index: 2
+            @media all and (max-width: 700px)
+                height: 50px
+        &:after
+            +fakeLine(250px,6px,#ba863c)
+            position: fixed
+            top: 0
+            right: 0
+            transition: all .8s ease
+            animation: slideInRight 1s both
+            @media all and (max-width: 900px)
+                height: 4px
+                z-index: 2
+            @media all and (max-width: 700px)
+                width: 200px
+            @media all and (max-width: 400px)
+                width: 150px
+        .logo
+            position: fixed
+            color: #c8a063
+            font-size: px(100)
+            position: fixed
+            top: 4vh
+            left: 50%  
+            z-index: 2 
+            transform: translateX(-50%)
+            transition: all .8s ease
+            @media all and (max-width: 900px)
+                top: 60px
+            a
+                position: relative
+                display: block
+                width: 100%
+                height: 100%
+                span
+                    display: block
+            figure img
+                height: 100px
+                transition: all .8s ease
+                animation: navMenuOpen  1s both 
+        .links 
+            position: absolute
+            z-index: 1
+            top: calc(120px + 4vh)
+            left: 50%
+            transform: translateX(-50%)
+            transition: all .8s ease
+            +flex-center
+            @media all and (max-width: 900px)
+                width: 100%
+                top: 190px
+            ul
+                max-width: 100%
+                display: flex
+                overflow: hidden
+                li
+                    font-weight: bold
+                    +flex-center
+                    white-space: nowrap
+                    animation: slideInUp 1s both 
+                    &:not(:first-child):before
+                        +fakeLine(1px,25px,#acacac)
+                        @media all and (max-width: 600px)
+                            height: 20px
+                    a
+                        padding: 0 25px 
+                        font-size: px(18)
+                        transition: all .4s ease
+                        @media all and (max-width: 900px)
+                            font-size: px(16)
+                            padding: 0 20px 
+                        @media all and (max-width: 600px)
+                            font-size: px(15)
+                            padding: 0 15px 
+                        @media all and (max-width: 400px)
+                            padding: 0 10px 
+        .buttons
+            padding: 30px 20px 0 
+            position: fixed
+            top: 0
+            right: 0
+            z-index: 2
+            +flex-center
+            @media all and (max-width: 900px)
+                padding: 20px 0 0 
+            @media all and (max-width: 700px)
+                padding: 0
+            a
+                padding: 0 25px
+                +flex-center
+                position: relative
+                color: rgba(0,0,0,.8)
+                @media all and (max-width: 700px)
+                    padding: 15px 20px
+                &:not(:first-child):before
+                    position: absolute
+                    top: 50%
+                    left: 0
+                    transform: translateY(-50%)
+                    +fakeLine(1px,25px,#939393)
+                    +keyframesHeight(25) 
+                    animation: h25 .8s both .6s
+                span
+                    line-height: 1
+                    animation: fadeInDown 1.2s both .2s
+                    @media all and (max-width: 400px)
+                        margin: 0 !important
+                    &.icon-magnifier
+                        font-size: px(15)
+                        margin: 0 10px 2px 0
+                    &.icon-person
+                        font-size: px(22)
+                        margin: 0 7px 2px 0
+                p
+                    font-size: px(14)
+                    animation: fadeInDown 1.2s both .3s
+                    @media all and (max-width: 400px)
+                        display: none
+    
+    article.content
+        section.banner,section.news
+            background-image: url("../../upload/fa2/index/mainBg_1920_1080.jpg")
+            +bgSeting
+            background-attachment: fixed
+        section.banner
+            padding-top: calc(4vh + 200px)
+            // height: 100vh
+            @media all and (max-width: 900px)
+                padding-top: 250px 
+            &.white
+                ._slick 
+                    .slick-dots li
+                        &.slick-active
+                            border: 2px solid #fff
+                        &:before
+                            background-color: #fff
+                    .slogan
+                        color: #fff
+                        h6:after
+                            background-color: #fff
+            ._slick
+                ul
+                    .slick-dots
+                        bottom: 50px
+                        right: 50px
+                        @media all and (max-width: 1024px)
+                            right: 5vw
+                        @media all and (max-width: 700px)
+                            right: 0
+                    li
+                        position: relative
+                        &.up .slogan
+                            h6 
+                                animation: fadeOutUp .6s both 
+                                &:after
+                                    transition: all 1s ease .1s 
+                            h5
+                                animation: fadeOutUp .8s both 
+                            p
+                                animation: fadeOutUp .6s both 
+                        &.down .slogan
+                            h6
+                                animation: fadeInUp .8s both
+                            h5
+                                animation: fadeInUp 1s both 
+                            p
+                                animation: fadeInUp .8s both .2s
+                        picture
+                            width: 100%
+                            // max-height: calc(96vh - 200px)
+                            +flex-center
+                        .slogan
+                            position: absolute
+                            max-width: 600px
+                            width: 90vw
+                            bottom: 8vw
+                            left: 19.7vw
+                            +flex-left
+                            overflow: hidden
+                            transition: all 1s ease .1s
+                            @media all and (min-width: 1921px)
+                                left: auto
+                                right: 50%
+                            @media all and (max-width: 1440px)
+                                left: 15vw
+                            @media all and (max-width: 1280px)
+                                left: 10vw
+                            @media all and (max-width: 1250px)
+                                bottom: 100px
+                            @media all and (max-width: 1024px)
+                                bottom: 50%
+                                transform: translateY(50%)
+                            @media all and (max-width: 700px)
+                                left: 8vw
+                            &.right
+                                align-items: flex-end
+                                text-align: right
+                                left: auto
+                                right: 19.7vw
+                                @media all and (min-width: 1921px)
+                                    left: 50%
+                                    right: auto
+                                @media all and (max-width: 1440px)
+                                    right: 15vw
+                                @media all and (max-width: 1280px)
+                                    right: 10vw
+                                h6:after
+                                    margin: 10px 0 0 auto
+                            h6
+                                font-size: px(18)
+                                animation: fadeInUp 1s both .8s
+                                padding: 0 5px
+                                &:after
+                                    +fakeLine(20px,1px,#000)
+                                    margin: 10px auto 0 0
+                            h5
+                                font-size: px(70)
+                                line-height: 1.2
+                                animation: fadeInLeft 1.2s both 1s
+                                @media all and (max-width: 1440px)
+                                    font-size: px(60)
+                                @media all and (max-width: 1300px)
+                                    font-size: px(50)
+                                @media all and (max-width: 400px)
+                                    font-size: px(40)
+                            p
+                                font-size: px(22)
+                                margin-top: 10px
+                                animation: fadeInUp 1s both 1.4s
+                                @media all and (max-width: 1440px)
+                                    font-size: px(20)
+                                @media all and (max-width: 1300px)
+                                    font-size: px(18)
+                                @media all and (max-width: 400px)
+                                    font-size: px(16)
+        section.news
+            padding: 100px 0
+            ._slick
+                margin: 40px auto 0
+                max-width: 1580px 
+        section.substation
+            padding: 100px 0 160px
+            @media all and (max-width: 900px)
+                padding: 100px 0 
+            .rows
+                margin: 60px 0 0 0
+                .row
+                    display: flex
+                    justify-content: flex-end
+                    @media all and (max-width: 900px)
+                        flex-direction: column-reverse !important
+                    &:hover
+                        ._text .socialMedia .enter div
+                            transform: translateY(0)
+                    &:not(:last-child)
+                        margin-bottom: 135px
+                        @media all and (max-width: 700px)
+                            margin-bottom: 80px
+                    &.show
+                        ._text
+                            animation: fadeIn 1.5s both 
+                        figure.in
+                            img
+                                animation: fadeIn 0s both .6s
+                            span
+                                animation: out 0s both 1.5s
+                    figure
+                        max-width: 1050px
+                        width: 61%
+                        height: 590px
+                        overflow: hidden
+                        position: relative
+                        z-index: 1
+                        margin: 35px 0 0 
+                        font-size: 0
+                        @media all and (max-width: 1770px)
+                            height: calc(30.84vw - 5px)
+                        @media all and (max-width: 1440px)
+                            height: calc(31.87vw - 5px)
+                        @media all and (max-width: 1024px)
+                            height: 32.56vw
+                        @media all and (max-width: 900px)
+                            width: 95vw
+                            height: 53.38vw
+                        @media all and (max-width: 900px)
+                            margin-right: 0
+                        img
+                            opacity: 0
+                        span
+                            position: absolute
+                            top: 0
+                            left: 0
+                            width: 100%
+                            height: 100%
+                            z-index: 1
+                            overflow: hidden
+                            &:before
+                                +fakeLine(0,101%,#d9d9d9)
+                                position: absolute
+                                top: -1px
+                    ._text
+                        width: calc(39% + 7.8125vw)
+                        opacity: 0
+                        transition: all 1s ease
+                        @media all and (min-width: 1921px)
+                            width: calc(39% + 150px)
+                        @media all and (max-width: 900px)
+                            width: 95vw
+                            transition: all 0.1s ease
+                        +flex-left
+                        &.blackWords
+                            .ch
+                                color: #000
+                            .en
+                                color: rgba(0,0,0,.5)
+                                &:after
+                                    background-color: rgba(0,0,0,.5)
+                            .words
+                                color: rgba(0,0,0,.8)
+                        .ch
+                            font-size: px(26)
+                            color: #fff
+                            @media all and (max-width: 1440px)
+                                font-size: px(24)
+                            @media all and (max-width: 700px)
+                                font-size: px(22)
+                        .en
+                            font-size: px(24)
+                            color: rgba(255,255,255,.5)
+                            line-height: 1.2
+                            margin: 5px 0 0 
+                            @media all and (max-width: 1440px)
+                                font-size: px(22)
+                            @media all and (max-width: 700px)
+                                font-size: px(18)
+                            &:after
+                                +fakeLine(120px,1px,rgba(255,255,255,.5))
+                                margin: 30px auto 20px -30px
+                                @media all and (max-width: 1024px)
+                                    margin: 20px auto 20px -10px
+                        .words
+                            font-size: px(15)
+                            color: rgba(255,255,255,.8)
+                            letter-spacing: 0.5px
+                        .socialMedia
+                            margin: 20px 0 0 0
+                            position: relative
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            flex-wrap: wrap
+                            width: 100%
+                            ul
+                                display: flex
+                                margin: 20px 0 0 -15px
+                                li a
+                                    color: rgba(0,0,0,.35)
+                                    transition: all .4s ease
+                                    padding: 0 10px
+                                    font-size: px(22)
+                                    +flex-center
+                                    &:not(:last-child)
+                                        margin: 0 10px 0 0
+                                    &:hover
+                                        color: $base_gold
+                            .enter
+                                color: #fff
+                                margin: 20px 0 0
+                                font-size: px(15)
+                                overflow: hidden
+                                transition: all .4s ease
+                                &:hover
+                                    border-radius: 15px
+                                    p
+                                        transition: all .5s ease .1s
+                                    .up 
+                                        transform: translateY(-120%)
+                                        opacity: 1
+                                    .down
+                                        transform: translateY(0%)
+                                div
+                                    transition: all .4s ease .1s
+                                    background-color: #000
+                                    position: relative
+                                    @media all and (min-width: 1025px)
+                                        transform: translateY(101%)
+                                p
+                                    display: block
+                                    transition: all .5s ease .2s
+                                    padding: 5px 60px 5px 20px
+                                    &.down
+                                        position: absolute
+                                        top: 0
+                                        left: 0
+                                        width: 100%
+                                        height: 100%
+                                        transform: translateY(120%)
+
+                    &:nth-child(odd)
+                        margin-right: 10vw
+                        flex-direction: row-reverse
+                        @media all and (min-width: 1921px)
+                            margin-right: 220px
+                        @media all and (max-width: 1440px)
+                            margin-right: 7vw
+                        @media all and (max-width: 1024px)
+                            margin-right: 5vw
+                        @media all and (max-width: 900px)
+                            margin-right: 0
+                            figure
+                                margin: 35px 0 0 5vw 
+                        ._text
+                            margin: 0 0 35px -7.8125vw
+                            padding: 50px 7vw 50px 15vw
+                            @media all and (min-width: 1921px)
+                                margin: 0 0 35px -150px
+                                padding: 50px 140px 50px 290px
+                            @media all and (max-width: 1024px)
+                                padding: 50px 4vw 50px 13vw
+                            @media all and (max-width: 900px)
+                                margin: -40px 0 0 
+                                padding: 100px 8vw 60px 13vw
+                            @media all and (max-width: 700px)
+                                padding: 75px 5vw 60px 10vw
+                        figure span:before
+                            left: -1px
+                            @media all and (max-width: 900px)
+                                left: auto
+                                right: -1px
+                        &.show figure.in span:before
+                            animation: imgSpan 1.5s both
+                            @media all and (max-width: 900px)
+                                animation: imgSpan2 1.5s both
+                    &:nth-child(even)
+                        margin-left: 10vw
+                        @media all and (min-width: 1921px)
+                            margin-left: 220px
+                        @media all and (max-width: 1440px)
+                            margin-left: 7vw
+                        @media all and (max-width: 1024px)
+                            margin-left: 5vw
+                        @media all and (max-width: 900px)
+                            margin-left: 0
+                            figure
+                                margin: 35px 5vw 0 0 
+                        ._text
+                            padding: 50px 13vw 50px 9vw
+                            margin: 0 -7.8125vw 35px 0 
+                            @media all and (min-width: 1921px)
+                                margin: 0 -150px 35px 0 
+                                padding: 50px 250px 50px 175px 
+                            @media all and (max-width: 1024px)
+                                padding: 50px 13vw 50px 5vw
+                            @media all and (max-width: 900px)
+                                padding: 100px 8vw 60px 13vw
+                                margin: -40px 0 0 auto
+                            @media all and (max-width: 700px)
+                                padding: 75px 5vw 60px 10vw
+                        figure span:before
+                            right: -1px
+                            @media all and (max-width: 900px)
+                                right: auto
+                                left: -1px
+                        &.show figure.in span:before
+                            animation: imgSpan2 1.5s both
+                            @media all and (max-width: 900px)
+                                animation: imgSpan 1.5s both
+                &.safari
+                    .row 
+                        &.show figure.in img,
+                        &.show figure.in span,
+                        &.show figure.in span:before
+                            animation: none
+                            opacity: 1
+                        figure span:before
+                            transition: transform 1s ease
+                            width: 200%
+                        &:nth-child(odd)
+                            figure span:before
+                                transform: skewX(30deg) translateX(-20%)
+                                @media all and (max-width: 900px)
+                                    transform: skewX(-30deg) translateX(20%)
+                            &.show figure.in span:before
+                                transform: skewX(30deg) translateX(80%)
+                                @media all and (max-width: 900px)
+                                    transform: skewX(-30deg) translateX(-80%)
+                        &:nth-child(even)   
+                            figure span:before
+                                transform: skewX(-30deg) translateX(20%)
+                                @media all and (max-width: 900px)
+                                    transform: skewX(30deg) translateX(-20%)
+                            &.show figure.in  span:before
+                                transform: skewX(-30deg) translateX(-80%)
+                                @media all and (max-width: 900px)
+                                    transform: skewX(30deg) translateX(80%)
+    article.footer
+        +bgSeting
+        +flex-center
+        padding: 65px 0
+        border-top: 3px solid #cd2576
+        position: relative
+        @media all and (max-width: 1024px)
+            flex-direction: column-reverse
+            padding: 90px 0 30px
+        .copyRight,.right
+            max-width: 700px
+            width: 50%
+        .copyRight
+            color: rgba(255,255,255,.3)
+            font-size: px(13)
+            display: flex
+            align-items: center
+            padding: 0 10px 0 30px
+            @media all and (max-width: 1279px)
+                width: 45%
+            @media all and (max-width: 1024px)
+                width: auto
+                text-align: center
+                margin: 30px 0 0
+                padding: 0 10px
+                br
+                    display: none
+            img
+                max-height: 40px
+                margin: 0 20px 0 0
+                @media all and (max-width: 1024px)
+                    margin: 0
+                    position: absolute
+                    top: 25px
+                    left: 50%
+                    transform: translateX(-50%)
+        .right
+            padding: 0 30px 0 10px
+            @media all and (max-width: 1279px)
+                width: 55%
+            @media all and (max-width: 1024px)
+                width: auto
+                max-width: 100%
+                padding: 0 5vw 
+            div
+                display: flex
+                margin: 10px 0 
+                @media all and (max-width: 700px)
+                    flex-direction: column
+            h6  
+                color: rgba(255,255,255,.3)
+                font-size: px(17)
+                text-transform: uppercase
+                white-space: nowrap
+                display: flex
+                align-items: center
+                &:after
+                    margin: 0 15px
+                    +fakeLine(1px ,18px,$base_gold)
+                    @media all and (max-width: 700px)
+                        width: 18px
+                        height: 1px
+                        margin: 0 15px 0 5px
+            ul
+                display: flex
+                align-items: center
+                @media all and (max-width: 700px)
+                    margin: 10px 0 20px
+                li
+                    font-size: px(14)
+                    color: rgba(255,255,255,.8)
+                    white-space: nowrap
+                    &:not(:last-child)
+                        margin: 0 25px 0 0

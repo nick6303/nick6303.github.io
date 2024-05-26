@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TECO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link href="../../assets/img/favicon-20170414044912706.ico" rel="icon" type="image/x-icon">
+    <!--slick-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick.css" />
+    <!--fons-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/fontAwesome/font-awesome.css" />
+    <!--semanticwp-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.css" />
+    <!--mCustomScrollbar-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.css" />
+    <!--style.css-->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <!-- 自訂的css -->
+    <!-- 後端請注意:這個要加↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <!-- 後端請注意:這個要加↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <!-- 後端請注意:這個要加↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 後端請注意:這個要加↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+    <!-- 後端請注意:這個要加↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+    <!-- 後端請注意:這個要加↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/customize/customized.css" />
+</head>
+
+<body class="fontM" id="top">
+    <main id="customize" class="customized">
+        <article class="topNav">
+            <section class="back" onclick="history.back()">
+                <span></span>
+                <p>CLOSE</p>
+            </section>
+        </article>
+        <!-- 冷氣預覽圖 -->
+        <article class="makeframe">
+            <!-- 東元已裁好的冷氣圖 -->
+            <!-- 後端請注意:下方要放初始未修改的冷氣圖片 建議圖片尺寸:680*440 以內 -->
+            <section class="standardImg active">
+                <img src="../../upload/customize/customized/standardImg1_680_240.png" alt="">
+            </section>
+            <!-- 客製化面板 -->
+            <section class="customizedCanvas">
+                <div class="srcbox">
+                    <!-- 已挖空的冷氣框架 -->
+                    <!-- 建議圖片尺寸:680*440 以內 -->
+                    <img class="productImg" src="../../upload/test1.png" alt="">
+                    <!-- 面板的形狀圖片 -->
+                    <!-- 後端請注意:幫我在後台備註 只能用白色的圖案  -->
+                    <!-- 後端請注意:建議圖片尺寸:680*440 以內 -->
+                    <img class="frame" src="../../upload/testsvg.png" alt="">
+                </div>
+                <div id="canvas"></div>
+                <div class="buttons">
+                    <button type="button" class="zoomIn">
+                        <span></span>
+                    </button>
+                    <button type="button" class="zoomOut">
+                        <span></span>
+                    </button>
+                    <button type="button" class="reset">
+                        <span class="iconN-return"></span>
+                    </button>
+                </div>
+            </section>
+            <section class="inf">
+                <!-- 產品序號 -->
+                <p class="serialNumb">MS63IH-ZR MA63IH-ZR</p>
+                <!-- 產品名稱 -->
+                <h2>雅適變頻ZR冷暖/冷專系列 11-13坪</h2>
+                <!-- 價格 -->
+                <p class="price">優惠價<span>32,320</span></p>
+            </section>
+            <section class="openButton">
+                <div class="openSituation">
+                    <div class="up">
+                        <span class="iconN-situation"></span>
+                        <p>情境圖模擬</p>
+                    </div>
+                    <div class="down">
+                        <span class="iconN-situation"></span>
+                        <p>情境圖模擬</p>
+                    </div>
+                </div>
+                <a class="openScaleInf" href="../customize/specification.html" target="_blank">
+                    <div class="up">
+                        <span>i</span>
+                        <p>規格介紹</p>
+                    </div>
+                    <div class="down">
+                        <span>i</span>
+                        <p>規格介紹</p>
+                    </div>
+                </a>
+            </section>
+        </article>
+        <!-- 訂單明細 -->
+        <article class="orderDetails">
+            <section class="topTitle">
+                <p class="en">Products Details</p>
+                <p class="ch">客製化訂單明細表</p>
+            </section>
+            <section class="purchaseContent">
+                <div class="titleHead">
+                    <p class="purchaseList">Purchase List <span>商品明細</span></p>
+                    <p class="price">Price <span>價格</span></p>
+                    <p class="edit">Edit <span>修改/編輯</span></p>
+                </div>
+                <!-- 原商品 -->
+                <div class="product">
+                    <div class="_img">
+                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/index/productImg_300_110.png"
+                            alt="">
+                    </div>
+                    <div class="name">
+                        <div>
+                            <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                            <p class="productName">雅適變頻ZR冷暖/冷專系列 11-13坪</p>
+                        </div>
+                        <span class="numb">
+                            x1
+                        </span>
+                    </div>
+                    <div class="price">
+                        <p>50,900</p>
+                    </div>
+                    <div class="edit">
+                        <button type="button">
+                            <span class="iconN-edit"></span>
+                        </button>
+                    </div>
+                </div>
+                <!-- 冷氣面板:有選才會出現 -->
+                <div class="productFrame" style="display: none">
+                    <div class="_img">
+                        <img src="../../upload/customize/customized/materialImg2_830_470.png" alt="">
+                    </div>
+                    <div class="name">
+                        <div>
+                            <p class="modelNumb">MS63-03</p>
+                            <p class="productName">義大利植鞣革牛皮_咖</p>
+                        </div>
+                        <span class="numb">
+                            x1
+                        </span>
+                    </div>
+                    <div class="price">
+                        <p>5,900</p>
+                    </div>
+                    <div class="edit">
+                        <button type="button">
+                            <span class="iconN-edit"></span>
+                        </button>
+                    </div>
+                </div>
+                <!-- 加購品項 -->
+                <ul class="purchase">
+                    <li>
+                        <div class="_img">
+                            <img src="../../upload/customize/customized/objects1_110_180.png" alt="">
+                        </div>
+                        <div class="name">
+                            <div>
+                                <p class="modelNumb">AB1235846</p>
+                                <p class="productName">標準型壓縮機</p>
+                            </div>
+                            <span class="numb">
+                                x1
+                            </span>
+                        </div>
+                        <div class="price">
+                            <p>0</p>
+                        </div>
+                        <div class="edit">
+                            <button type="button">
+                                <span class="iconN-edit"></span>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img src="../../upload/customize/customized/objects3_1578_1406.png" alt="">
+                        </div>
+                        <div class="name">
+                            <div>
+                                <p class="modelNumb">AB1235846</p>
+                                <p class="productName">全機頂級防鏽型</p>
+                            </div>
+                            <span class="numb">
+                                x1
+                            </span>
+                        </div>
+                        <div class="price">
+                            <p>2,900</p>
+                        </div>
+                        <div class="edit">
+                            <button type="button">
+                                <span class="iconN-edit"></span>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img src="../../upload/customize/customized/objects4_137_142.png" alt="">
+                        </div>
+                        <div class="name">
+                            <div>
+                                <p class="modelNumb">AB1235846</p>
+                                <p class="productName">WIFI雲端模組</p>
+                            </div>
+                            <span class="numb">
+                                x1
+                            </span>
+                        </div>
+                        <div class="price">
+                            <p>3,900</p>
+                        </div>
+                        <div class="edit">
+                            <button type="button">
+                                <span class="iconN-edit"></span>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img src="../../upload/customize/customized/objects5_57_44.png" alt="">
+                        </div>
+                        <div class="name">
+                            <div>
+                                <p class="modelNumb">AB1235846</p>
+                                <p class="productName">四季除濕機能 </p>
+                            </div>
+                            <span class="numb">
+                                x1
+                            </span>
+                        </div>
+                        <div class="price">
+                            <p>1,200</p>
+                        </div>
+                        <div class="edit">
+                            <button type="button">
+                                <span class="iconN-edit"></span>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img src="../../upload/customize/customized/objects6_123_83.png" alt="">
+                        </div>
+                        <div class="name">
+                            <div>
+                                <p class="modelNumb">AB1235846</p>
+                                <p class="productName">HEPA濾網</p>
+                            </div>
+                            <span class="numb">
+                                x1
+                            </span>
+                        </div>
+                        <div class="price">
+                            <p>1,900</p>
+                        </div>
+                        <div class="edit">
+                            <button type="button">
+                                <span class="iconN-edit"></span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 總金額 -->
+                <div class="totalPrice">
+                    <p>總金額</p>
+                    <span>66,700</span>
+                </div>
+            </section>
+            <section class="buttons">
+                <div class="agree">
+                    <div>
+                        <input type="checkbox">
+                        <label>
+                            <span class="iconN-hook"></span>
+                        </label>
+                    </div>
+                    <p>已同意<a href="javascript:void(0)">東元之客製化免責聲明</a>
+                    </p>
+                </div>
+                <div class="goToCart">
+                    <!-- 點擊button送出伺服器 並換頁到購物車 -->
+                    <!-- 後端請注意:沒同意免責聲明無法點擊button -->
+                    <button type="button" onclick="window.location.href='../customize/contact.html'">
+                        <b></b>
+                        <span class="iconN-cart"></span>
+                        <p>購物車</p>
+                    </button>
+                </div>
+            </section>
+        </article>
+        <!-- 左側選單欄 -->
+        <article class="sideNav">
+            <section class="stepButon">
+                <ul>
+                    <li class="openSkinstyle">
+                        <span class="numb">1</span>
+                        <p class="en">SKIN STYLE</p>
+                        <p class="ch">面版挑選</p>
+                    </li>
+                    <li class="openAccessories">
+                        <span class="numb">2</span>
+                        <p class="en">ACCESSORIES</p>
+                        <p class="ch">配件加購</p>
+                    </li>
+                    <li class="orderForm">
+                        <span class="numb">3</span>
+                        <p class="en">ORDER FORM</p>
+                        <p class="ch">訂單明細</p>
+                    </li>
+                </ul>
+                <span class="invisibleBlock"></span>
+            </section>
+            <!-- 選擇面板材料 -->
+            <section class="skinstyle">
+                <div class="box">
+                    <div class="title">
+                        <p class="en">Choose Your Style</p>
+                        <p class="ch">請透過以下選項找尋適合您的商品，我們提供了面版挑選，冷氣機種選擇功能，希望找到最適合您的室內風格。</p>
+                    </div>
+                    <div class="navBg">
+                        <ul class="nav">
+                            <li class="active">
+                                <p>東元客製款</p>
+                            </li>
+                            <li>
+                                <p>自訂面版顏色</p>
+                            </li>
+                            <li>
+                                <p>自行上傳圖片</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="choose">
+                        <div class="material active">
+                            <div class="introduction">
+                                <h6>Introduction</h6>
+                                <p>東元職人客製款，由Walpier義大利皮革廠所生產，表面獨特且自然的光澤是Buttero的最受歡迎的特色之一，為你打造專屬於您的冷氣面版。</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div>
+                                        <!-- 材質圖片 -->
+                                        <!-- 後端請注意:下方的data-src要給東元放已經合好的冷氣圖片 -->
+                                        <!-- 後端請注意:圖片才是真正的選擇點擊區 -->
+                                        <div class="_img" data-src="../../upload/customize/customized/standardImg2_680_240.png">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/materialImg_830_470.png"
+                                                alt="">
+                                            <div class="hoverBox">
+                                                <span class="iconN-hook"></span>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <button class="openPreview">
+                                                <span class="iconN-zoom-in"></span>
+                                            </button>
+                                            <button class="openinf">i</button>
+                                        </div>
+                                        <!-- 材料名稱 -->
+                                        <p class="name">義大利植鞣革牛皮_咖</p>
+                                        <!-- 材料價格 -->
+                                        <!-- 後端請注意:下方的價格要可以讓客戶修改 -->
+                                        <p class="price">3,900</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <!-- 材質圖片 -->
+                                        <!-- 後端請注意:下方的data-src要給東元放已經合好的冷氣圖片 -->
+                                        <!-- 後端請注意:圖片才是真正的選擇點擊區 -->
+                                        <div class="_img" data-src="../../upload/customize/customized/standardImg2_680_240.png">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/materialImg_830_470.png"
+                                                alt="">
+                                            <div class="hoverBox">
+                                                <span class="iconN-hook"></span>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <button class="openPreview">
+                                                <span class="iconN-zoom-in"></span>
+                                            </button>
+                                            <button class="openinf">i</button>
+                                        </div>
+                                        <!-- 材料名稱 -->
+                                        <p class="name">義大利植鞣革牛皮_咖</p>
+                                        <!-- 材料價格 -->
+                                        <!-- 後端請注意:下方的價格要可以讓客戶修改 -->
+                                        <p class="price">3,900</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <!-- 材質圖片 -->
+                                        <!-- 後端請注意:下方的data-src要給東元放已經合好的冷氣圖片 -->
+                                        <!-- 後端請注意:圖片才是真正的選擇點擊區 -->
+                                        <div class="_img" data-src="../../upload/customize/customized/standardImg2_680_240.png">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/materialImg_830_470.png"
+                                                alt="">
+                                            <div class="hoverBox">
+                                                <span class="iconN-hook"></span>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <button class="openPreview">
+                                                <span class="iconN-zoom-in"></span>
+                                            </button>
+                                            <button class="openinf">i</button>
+                                        </div>
+                                        <!-- 材料名稱 -->
+                                        <p class="name">義大利植鞣革牛皮_咖</p>
+                                        <!-- 材料價格 -->
+                                        <!-- 後端請注意:下方的價格要可以讓客戶修改 -->
+                                        <p class="price">3,900</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="color">
+                            <div class="introduction">
+                                <h6>Select Your Color</h6>
+                                <p>東元職人客製款，由Walpier義大利皮革廠所生產，表面獨特且自然的光澤是Buttero的最受歡迎的特色之一，為你打造專屬於您的冷氣面版。</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div>
+                                        <!-- 顏色圖片 -->
+                                        <!-- 後端請注意:下方的data-src要給東元放已經合好的冷氣圖片 -->
+                                        <!-- 後端請注意:色塊才是真正的選擇點擊區 -->
+                                        <div class="_img" data-src="../../upload/customize/customized/standardImg3_680_240.png"
+                                            style="background-color: #000;">
+                                            <div class="hoverBox">
+                                                <span class="iconN-hook"></span>
+                                            </div>
+                                        </div>
+                                        <!-- 材料名稱 -->
+                                        <p class="name">義大利植鞣革牛皮_咖</p>
+                                        <!-- 材料價格 -->
+                                        <!-- 後端請注意:下方的價格要可以讓客戶修改 -->
+                                        <p class="price">3,900</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="upload">
+                            <div class="introduction">
+                                <h6>Introduction</h6>
+                                <p>東元家電提供您更多客製換的選擇，挑選你最珍貴的圖片，永存在您的日常家電中，我們採用人工噴墨方式，製作出最獨一獨二屬於您的冷氣空調，請依照下列規定尺寸上傳您的圖片。</p>
+                                <span class="iconN-caution">Note : 1100型：210*1080 ，300dpi以上</span>
+                            </div>
+                            <ul>
+                                <div class="uploadButton">
+                                    <div>
+                                        <div class="_img">
+                                            <input type="file" accept="image/*" multiple="multiple">
+                                            <label>
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                        <p class="name">自行上傳圖片</p>
+                                        <!-- 價格 -->
+                                        <!-- 後端請注意:下方的價格要可以讓客戶修改 -->
+                                        <p class="price">5,900</p>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxClose">
+                        <p>CLOSE 關閉選擇</p>
+                        <span><b></b></span>
+                    </div>
+                </div>
+            </section>
+            <!-- 加購物件 -->
+            <section class="accessories">
+                <div class="box">
+                    <div class="title">
+                        <p class="en">Choose Your Style</p>
+                        <p class="ch">請透過以下選項找尋適合您的商品，我們提供了面版挑選，冷氣機種選擇功能，希望找到最適合您的室內風格。</p>
+                    </div>
+                    <div class="navBg">
+                        <ul class="nav">
+                            <li class="active">
+                                <p>壓縮機</p>
+                            </li>
+                            <li>
+                                <p>全機防鏽</p>
+                            </li>
+                            <li>
+                                <p>連網功能</p>
+                            </li>
+                            <li>
+                                <p>溫度偵測</p>
+                            </li>
+                            <li>
+                                <p>濾網配備</p>
+                            </li>
+                            <select>
+                                <option value="0">壓縮機</option>
+                                <option value="1">全機防鏽</option>
+                                <option value="2">連網功能</option>
+                                <option value="3">溫度偵測</option>
+                                <option value="4">濾網配備</option>
+                            </select>
+                        </ul>
+                    </div>
+                    <div class="selectObjects">
+                        <div class="type">
+                            <h5>Compressor <span>壓縮機</span></h5>
+                            <ul>
+                                <span class="blueBorder"></span>
+                                <!-- 後端請注意:第一個li一定要有class "checked" ,因為她是預設的選項-->
+                                <li class="checked">
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects1_110_180.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">標準型壓縮機</p>
+                                        <p class="price">0</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects2_245_430.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">日本製壓縮機</p>
+                                        <p class="price">2,000</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="type">
+                            <h5>Rust Prevention <span>全機防鏽</span></h5>
+                            <ul>
+                                <span class="blueBorder"></span>
+                                <!-- 後端請注意:第一個li一定要有class "checked" ,因為她是預設的選項-->
+                                <li class="checked">
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects1_110_180.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">標準型壓縮機</p>
+                                        <p class="price">0</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects2_245_430.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">日本製壓縮機</p>
+                                        <p class="price">2,000</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="type">
+                            <h5>Networking Function <span>連網功能</span></h5>
+                            <ul>
+                                <span class="blueBorder"></span>
+                                <!-- 後端請注意:第一個li一定要有class "checked" ,因為她是預設的選項-->
+                                <li class="checked">
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects1_110_180.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">標準型壓縮機</p>
+                                        <p class="price">0</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects2_245_430.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">日本製壓縮機</p>
+                                        <p class="price">2,000</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="type">
+                            <h5>Temperature Detection <span>溫度偵測</span></h5>
+                            <ul>
+                                <span class="blueBorder"></span>
+                                <!-- 後端請注意:第一個li一定要有class "checked" ,因為她是預設的選項-->
+                                <li class="checked">
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects1_110_180.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">標準型壓縮機</p>
+                                        <p class="price">0</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects2_245_430.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">日本製壓縮機</p>
+                                        <p class="price">2,000</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="type">
+                            <h5>Filter Equipped <span>濾網配備</span></h5>
+                            <ul>
+                                <span class="blueBorder"></span>
+                                <!-- 後端請注意:第一個li一定要有class "checked" ,因為她是預設的選項-->
+                                <li class="checked">
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects1_110_180.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">標準型壓縮機</p>
+                                        <p class="price">0</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="_img">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/customized/objects2_245_430.png"
+                                            alt="">
+                                    </div>
+                                    <div class="inf">
+                                        <p class="name">日本製壓縮機</p>
+                                        <p class="price">2,000</p>
+                                        <p class="introdution">直流變頻雙轉子壓縮機，能視使用狀況提供適當空氣量，因此任何負載條件下都能有效節省電力，搭配最低頻15Hz調控技術，更省電更安靜。</p>
+                                    </div>
+                                    <div class="txt_and_hook">
+                                        <div class="opentxt">
+                                            <a href="../customize/accessoriesInf.html" target="_blank">
+
+                                                <span>i</span>
+                                                <p>規格介紹</p>
+                                            </a>
+                                        </div>
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="toTop">
+                            <span class="iconN-top"></span>
+                            <p>GO TOP</p>
+                        </div>
+                    </div>
+                    <div class="nextStep">
+                        <p><b>NEXT STEP 下一步</b></p>
+                        <span class="iconN-right"></span>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <!-- 情境模擬燈箱 -->
+        <article class="situation">
+            <section id="canvas"></section>
+            <section class="liboxClose active">
+                <span></span>
+            </section>
+            <section class="bgSelect">
+                <a class="download noAction active">
+                    <p><span>DOWNLOAD <b>情境圖下載</b></span></p>
+                    <span class="iconN-download"></span>
+                </a>
+                <div class="nav">
+                    <div class="share active">
+                        <p>東元情境模擬</p>
+                    </div>
+                    <div class="selfUpload">
+                        <p>自行上傳圖片</p>
+                    </div>
+                    <div class="folding">
+                        <p>開合選項</p>
+                    </div>
+                </div>
+                <div class="options" style="display: none">
+                    <div class="share active">
+                        <ul class="_slick">
+                            <!-- 後端請注意:第一個li要有class "active" -->
+                            <li class="active">
+                                <div class="_img">
+                                    <div class="checkbox">
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                    <img src="../../upload/customize/customized/situationBg_1920_1020.jpg" alt="">
+                                </div>
+                                <p>室內大廳風格</p>
+                            </li>
+                            <li>
+                                <div class="_img">
+                                    <img src="../../upload/customize/customized/situationBg2_1920_1020.jpg" alt="">
+                                    <div class="checkbox">
+                                        <span class="iconN-hook"></span>
+                                    </div>
+                                </div>
+                                <p>室內大廳風格</p>
+                            </li>
+                        </ul>
+                        <div class="arrows">
+                            <span class="iconN-left"></span>
+                            <span class="iconN-right"></span>
+                        </div>
+                    </div>
+                    <div class="selfUpload">
+                        <div class="ps">
+                            <p>
+                                注意事項：
+                                <br> 請上傳正面室內圖
+                                <br>建議圖片尺寸:1920*1020
+                            </p>
+                        </div>
+                        <div class="upLoad">
+                            <input type="file" accept="image/*">
+                            <label>
+                                <span></span>
+                                <p>新增</p>
+                            </label>
+                        </div>
+                        <div class="_slick">
+                            <ul></ul>
+                            <div class="arrows">
+                                <span class="iconN-left"></span>
+                                <span class="iconN-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <aeticle class="changeProduct">
+            <section>
+                <h6>Air-Conditioning Editing</h6>
+                <p class="th">變更冷氣機種</p>
+                <p class="words">親愛的用戶你好，如要修改室內空調機種，我們將重新回到篩選結果頁面，已選擇的條件將會重新整理，不再保留。</p>
+                <div>
+                    <button type="button" class="yes">
+                        <span class="iconN-hook2"></span>
+                        <p>確認修改</p>
+                    </button>
+                    <button type="button" class="no">
+                        <span></span>
+                        <p>取消修改</p>
+                    </button>
+                </div>
+            </section>
+        </aeticle>
+    </main>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vedor/jquery-1.11.3.min.js"></script>
+    <!--共用-->
+    <script src="../../assets/js/vedor/slick/slick.js"></script>
+    <script src="../../assets/js/vedor/bLazy/bLazy.js"></script>
+    <script src="../../assets/js/vedor/waypoints.min.js"></script>
+    <script src="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../assets/js/vedor/jquery.easings.min.js"></script>
+    <script src="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.js"></script>
+    <script src="../../assets/js/vedor/prefixfree.min.js"></script>
+    <script src="../../assets/js/vedor/picturefill.min.js"></script>
+    <!--main js-->
+    <script src="../../assets/js/main.js"></script>
+    <!-- 非共用的套件js -->
+    <script src="../../assets/js/vedor/pixi.min.js"></script>
+    <script src="../../assets/js/vedor/FileSaver.js"></script>
+    <script src="../../assets/js/vedor/canvas-toBlob.js"></script>
+    <!--自訂的js-->
+    <script src="../../assets/js/nick.js"></script>
+    <script src="../../assets/js/customized.js"></script>
+    <!-- 開啟材質燈箱 -->
+    <script>
+        (function () {
+            $(".openinf").click(function () {
+                $("body").append("<article class='materialInf'></article>");
+                if (user) {
+                    $.ajax({
+                            url: '../../views/customize/materialInf.html',
+                        })
+                        .done(function (data) {
+                            $(".materialInf").html(data);
+                            close();
+                        });
+                } else {
+                    close();
+                }
+            });
+
+            function close() {
+                $(".materialInf .back").click(function () {
+                    $(".materialInf").addClass("close");
+                    setTimeout(function () {
+                        $(".materialInf").remove();
+                    }, 400);
+                })
+
+                $(".materialInf").click(function (e) {
+                    if ($(e.target).hasClass("materialInf")) {
+                        $(this).addClass("close");
+                        setTimeout(function () {
+                            $(".materialInf").remove();
+                        }, 400);
+                    }
+                });
+            }
+        })();
+    </script>
+    <!-- 開啟免責聲明燈箱 -->
+    <script>
+        (function () {
+            $(".agree p a").click(function () {
+                $("body").append("<article class='statement'></article>");
+                if (user) {
+                    $.ajax({
+                            url: '../../views/customize/statement.html',
+                        })
+                        .done(function (data) {
+                            $(".statement").html(data);
+                            close();
+                        });
+                } else {
+                    close();
+                }
+            });
+
+            function close() {
+                $(".statement .back").click(function () {
+                    $(".statement").addClass("close");
+                    setTimeout(function () {
+                        $(".statement").remove();
+                    }, 400);
+                })
+
+                $(".statement").click(function (e) {
+                    if ($(e.target).hasClass("statement")) {
+                        $(this).addClass("close");
+                        setTimeout(function () {
+                            $(".statement").remove();
+                        }, 400);
+                    }
+                })
+            }
+        })();
+    </script>
+    <!-- 變更冷氣機種 -->
+    <script>
+        (function () {
+            $(".orderDetails .product .edit button").click(function () {
+                $(".changeProduct").addClass("open");
+                changeProduct.all();
+            });
+
+            var changeProduct = {
+                close_click: function () {
+                    // 點選取消修改
+                    $(".changeProduct .no").click(function () {
+                        changeProduct.close();
+                    });
+
+                    // 點選灰色半透明部分
+                    $(".changeProduct").click(function (e) {
+                        if ($(e.target).hasClass("changeProduct")) {
+                            changeProduct.close();
+                        }
+                    });
+
+                    // 點選確認修改-回到上一頁(改選結果)
+                    $(".changeProduct .yes").click(function () {
+                        history.back()
+                    });
+                },
+
+                close: function () {
+                    $(".changeProduct").removeClass("open");
+                    $(".changeProduct").addClass("close");
+                    setTimeout(function () {
+                        $(".changeProduct").removeClass("close");
+                    }, 400);
+                },
+
+                all: function () {
+                    changeProduct.close_click();
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

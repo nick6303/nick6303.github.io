@@ -1,0 +1,617 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+
+
+.content {
+    padding: 100px;
+    background-color: #eeeeee;
+    @media all and (max-width: 1024px) {
+        padding: 100px 5vw 100px 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding-top: calc(17px + 4vh);
+        padding-bottom: 10vh;
+    }
+    .productName {
+        letter-spacing: 1px;
+        margin-top: 80px;
+        text-align: center;
+        @media all and (max-width: 1024px) {
+            margin-top: 6vh;
+        }
+        h2 {
+            @include font-size(60);
+            line-height: 1.5;
+            @media all and (max-width: 1024px) {
+                @include font-size(48);
+            }
+            @media all and (max-width: 700px) {
+                @include font-size(42);
+                line-height: 1;
+            }
+        }
+        p {
+            @include font-size(18);
+            line-height: 1.5;
+            @media all and (max-width: 700px) {
+                @include font-size(18);
+            }
+        }
+    }
+    ._slick {
+        position: relative;
+        margin: auto;
+        margin-top: 110px;
+        max-width: 1440px;
+        padding: 0 200px;
+        @media all and (max-width: 1024px) {
+            padding: 0 19.5vw;
+        }
+        @media all and (max-width: 700px) {
+            padding: 0 5vw;
+            margin-top: 8vh;
+        }
+        &>ul {
+            li {
+                .slick_img {
+                    @include flex-center;
+                    height: 345px;
+                    overflow: hidden;
+                    @media all and (max-width: 500px) {
+                        height: 90vw;
+                    }
+                    img {
+                        max-width: unset;
+                        max-height: 100%;
+                        @media all and (max-width: 500px) {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+            .slick-dots {
+                bottom: -120px;
+                @media all and (max-width: 700px) {
+                    bottom: -9vh;
+                }
+            }
+        }
+        .arrow {
+            @media all and (max-width: 700px) {
+                display: none;
+            }
+            span {
+                cursor: pointer;
+                @include font-size(36);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #999999;
+                transition: all .2s ease;
+                &.icon-slick-arrow-left {
+                    left: 40px;
+                    @media all and (max-width: 1024px) {
+                        left: 4vw;
+                    }
+                }
+                &.icon-slick-arrow-right {
+                    right: 40px;
+                    @media all and (max-width: 1024px) {
+                        right: 4vw;
+                    }
+                }
+                &:hover {
+                    color: #3f3f3f;
+                    transition: all .2s ease;
+                }
+            }
+        }
+    }
+    .productText {
+        max-width: 540px;
+        margin: auto;
+        margin-top: 180px;
+        padding: 0 20px;
+        letter-spacing: 1px;
+        @media all and (max-width: 700px) {
+            padding: 0 10px;
+            margin-top: 18vh;
+        }
+        h2 {
+            @include font-size(17);
+            font-family: "微軟正黑體";
+            font-weight: bold;
+            line-height: 1.5;
+            text-align: center;
+        }
+        p {
+            @include font-size(14);
+            line-height: 1.5;
+            margin-top: 30px;
+            color: rgba(0, 0, 0, .8);
+            text-align: justify;
+            font-family: "微軟正黑體";
+        }
+    }
+}
+
+.product_nav {
+    ul {
+        li {
+            width: calc(33.33% - 1px);
+            @media all and (max-width: 900px) {
+                width: 100%;
+                height: 70px;
+                border-bottom: 2px solid #fff;
+            }
+        }
+    }
+}
+
+
+
+@mixin openSearch {
+    @include font-size(15);
+    font-weight: bold;
+    @include flex-center;
+    cursor: pointer;
+}
+
+@mixin openSearch_before {
+    content: "\e903";
+    font-family: 'icomoon';
+    color: $base_orange;
+    margin-right: 15px;
+}
+
+
+
+.product_detail {
+    padding: 0 100px;
+    @media all and (max-width: 1024px) {
+        padding: 0 5vw;
+    }
+    section {
+        display: none;
+        &.active {
+            display: block;
+        }
+        ._title {
+            margin-top: 135px;
+            letter-spacing: 1px;
+            @include flex-center;
+            flex-direction: column;
+            text-align: center;
+            @media all and (max-width: 1024px) {
+                margin-top:10vh;
+            }
+            h2 {
+                @include font-size(32);
+                line-height: 1.5;
+                font-family: 'MyriadPro-Semibold';
+            }
+            h3 {
+                @include font-size(18);
+                line-height: 1.5;
+                font-family: "微軟正黑體";
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*產品規格*/
+
+.scale {
+    ._title {
+        h5 {
+            @include openSearch;
+            display: none;
+            margin-top: 2vh;
+            padding: 2vh 0 1vh 0;
+            @media all and (max-width: 700px) {
+                display: flex;
+            }
+            &:before {
+                @include openSearch_before;
+            }
+        }
+    }
+}
+
+
+
+
+
+.scaleContent {
+    max-width: 1620px;
+    margin: auto;
+    margin-top: 35px;
+    padding: 0 100px;
+    @media all and (max-width: 1620px) {
+        padding:0;
+    }
+    @media all and (max-width: 700px) {
+        margin-top: 25px;
+    }
+    ul {
+        li {
+            letter-spacing: 1px;
+            display: flex;
+            span,
+            h2,
+            ._text,
+            .typeNumber {
+                border-bottom: 1px solid #cccccc;
+            }
+            span {
+                width: 15%;
+                text-align: center;
+                @include font-size(15);
+                padding: 25px 0 20px 0;
+            }
+            h2 {
+                @include font-size(15);
+                width: 30%;
+                padding: 25px 10px 20px 55px;
+                margin: 0 3px;
+                font-family: "微軟正黑體";
+                line-height: 1.5;
+                @media all and (max-width: 700px) {
+                    padding: 25px 10px 20px 5vw;
+                    width: 35%;
+                }
+                @media all and (max-width: 350px) {
+                    @include font-size(14);
+                    padding: 25px 10px 20px 10px;
+                }
+            }
+            ._text,
+            .typeNumber {
+                width: 55%;
+                padding: 25px 10px 20px 60px;
+                @media all and (max-width: 700px) {
+                    padding: 25px 10px 20px 5vw;
+                    width: 50%;
+                }
+                @media all and (max-width: 350px) {
+                    padding: 25px 10px 20px 10px;
+                }
+                p {
+                    @include font-size(14);
+                    font-family: "微軟正黑體";
+                    line-height: 1.5;
+                    &:not(:last-child) {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            &:first-child {
+                span,
+                h2,
+                .typeNumber {
+                    border-top: 8px solid #c3c3c3;
+                }
+                .typeNumber {
+                    width: 55%;
+                    display: flex;
+                    div {
+                        width: 55%;
+                        position: relative;
+                        @media all and (max-width: 700px) {
+                            width: 100%;
+                        }
+                        &:after {
+                            content: "";
+                            display: block;
+                            height: 100%;
+                            width: 2px;
+                            background-color: #cccccc;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            @media all and (max-width: 700px) {
+                                display: none;
+                            }
+                        }
+                    }
+                    .openSearch {
+                        width: 45%;
+                        @include openSearch;
+                        @media all and (max-width: 700px) {
+                            display: none;
+                        }
+                        &:before {
+                            @include openSearch_before;
+                            display: block;
+                            transition: all .4s ease;
+                        }
+                        &:hover {
+                            &:before {
+                                transform: rotateY(180deg);
+                                transition: all .5s ease;
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                span,
+                h2,
+                ._text {
+                    border-bottom: 8px solid #c3c3c3;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*應用範疇*/
+
+.application {}
+
+.applicationContent {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*檔案下載*/
+
+
+/*ps:表格內容在common.scss裡*/
+
+.download ._title {
+
+    @media all and (max-width: 700px) {
+        position: relative;
+        z-index: 1;
+    }
+    .menulist {
+        margin-top: 50px;
+        @media all and (max-width: 700px) {
+            margin-top: 4vh;
+            width: 200px;
+            position: relative;
+        }
+        .selectMenu {
+            display: none;
+            border: 1px solid #000;
+            width: 100%;
+            height: 35px;
+            border: 1px solid #000;
+            position: relative;
+            font-family: CenturyGothic, 微軟正黑體;
+            @media all and (max-width: 700px) {
+                @include flex-center;
+            }
+            &:after {
+                font-family: 'icomoon';
+                content: "\e905";
+                transition: all .4s ease;
+                @include font-size(12);
+                margin-left: 15px;
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+            }
+            &.open:after {
+                transform: translateY(-50%) rotateX(180deg);
+            }
+        }
+        ul {
+            display: flex;
+            @media all and (max-width: 700px) {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #131313;
+                padding: 5px 0;
+            }
+            li {
+                font-family: CenturyGothic, 微軟正黑體;
+                cursor: pointer;
+                color: #9a9a9a;
+                padding-left: 30px;
+                @include flex-center;
+                transition: all .4s ease;
+                @media all and (max-width: 1024px) {
+                    padding-left: 25px;
+                }
+                @media all and (max-width:700px) {
+                    padding-left: 0;
+                    padding: 5px 0;
+                    margin: 5px 0;
+                }
+                &:not(:last-child):after {
+                    content: "";
+                    display: block;
+                    width: 5px;
+                    height: 30px;
+                    background-color: #e5e5e5;
+                    margin-left: 30px;
+                    @media all and (max-width: 1024px) {
+                        margin-left: 25px;
+                    }
+                    @media all and (max-width: 700px) {
+                        display: none;
+                    }
+                }
+                &:last-child {
+                    padding-right: 30px;
+                    @media all and (max-width: 1024px) {
+                        padding-right: 25px;
+                    }
+                    @media all and (max-width: 700px) {
+                        padding-right: 0;
+                    }
+                }
+                &.checked {
+                    font-family: CenturyGothic-bold, 微軟正黑體;
+                    font-weight: bold;
+                    transition: all .4s ease;
+                    color: $base_blue;
+                    @media all and (max-width: 700px) {
+                        color: $base_orange;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/* 進場動畫*/
+
+.content {
+    .productName {
+        h2 {
+            animation: fadeInDown 2s both;
+        }
+        p {
+            animation: fadeInDown 2s both .2s;
+        }
+    }
+    ._slick {
+        animation: fadeInUp 1.2s both .4s;
+        .arrow {
+            .icon-slick-arrow-left {
+                animation: fadeInRight 1s both 1.2s;
+            }
+            .icon-slick-arrow-right {
+                animation: fadeInLeft 1s both 1.2s;
+            }
+        }
+        .slick-dots {
+            animation: fadeInUp 1s both 1.2s;
+        }
+    }
+    .productText {
+        h2 {
+            animation: fadeInDown 1.6s both .4s;
+        }
+        p {
+            animation: fadeInUp 1.6s both .6s;
+        }
+    }
+}
+
+
+
+
+.product_detail {
+    section {
+        ._title {
+            h2 {
+                animation: fadeInDown 1s both;
+            }
+            h3 {
+                animation: fadeInDown 1s both .2s;
+            }
+            h5 {
+                animation: fadeInDown 1s both .4s;
+            }
+            .menulist {
+                animation: fadeInDown 1s both .6s;
+            }
+        }
+        .scaleContent {
+            ul {
+                li {
+                    animation: fadeInDown 1s both .6s;
+                }
+            }
+        }
+        .applicationBoxs {
+            ul {
+                li {
+                    ._img {
+                        animation: fadeIn 2s both .5s ;
+                    }
+                    ._text {
+                        animation: fadeInUp 2s both .5s;
+                    }
+                }
+            }
+        }
+    }
+}

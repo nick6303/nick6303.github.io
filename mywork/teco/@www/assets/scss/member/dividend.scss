@@ -1,0 +1,388 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+.inf {
+    max-width: 1220px;
+    background-color: #eeeeee;
+    margin: 60px auto 0;
+    padding: 90px 60px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media all and (max-width: 1024px) {
+        padding: 60px 5vw;
+    }
+
+    section {
+        width: 50%;
+
+        @media all and (max-width: 900px) {
+            width: 100%;
+        }
+    }
+
+    .lavePoint {
+        @include flex-center;
+        flex-direction: column;
+        text-align: center;
+
+        .point {
+            @include font-size(25);
+            overflow: hidden;
+
+            @media all and (max-width: 700px) {
+                @include font-size(20);
+            }
+
+            p {
+                @include flex-center;
+            }
+
+            .numb {
+                font-family: 'CenturyGothic-Bold';
+                @include font-size(40);
+                margin: 0 15px;
+                padding-bottom: 15px;
+                display: block;
+                animation: slideInUp 1s both 0.8s;
+
+                @media all and (max-width: 700px) {
+                    @include font-size(32);
+                }
+            }
+        }
+
+        .ps {
+            @include font-size(15);
+            color: #005098;
+            margin-top: 5px;
+            animation: fadeIn 2s both 1s;
+
+            @media all and (max-width: 900px) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .term {
+        padding: 0 0 0 70px;
+        overflow: hidden;
+        @include font-size(14);
+
+        @media all and (max-width: 1220px) {
+            padding: 0 0 0 5vw;
+        }
+
+        @media all and (max-width: 900px) {
+            text-align: center;
+
+            @include flex-center;
+
+            flex-direction: column;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .date {
+            color: rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s both .4s;
+
+            &:before {
+                content: attr(data-name);
+            }
+        }
+
+        .words {
+            line-height: 1.8;
+            margin-top: 20px;
+            max-width: 360px;
+            animation: fadeInUp 1.5s both .6s;
+        }
+
+        button {
+            margin: 30px 0 0 0;
+            color: rgba(0, 0, 0, 0.7);
+            padding: 0 8px 8px 8px;
+        }
+    }
+}
+
+.list {
+    padding: 0 50px;
+    margin: 90px auto 170px;
+    max-width: 1320px;
+
+    @media all and (max-width: 1024px) {
+        padding: 0 5vw;
+    }
+
+    ._title {
+        text-align: center;
+
+        &.show {
+            .en {
+                animation: fadeInDown 1s both;
+            }
+
+            .ch {
+                animation: fadeInDown 1s both .2s;
+            }
+        }
+
+        .en {
+            opacity: 0;
+            @include font-size(22);
+        }
+
+        .ch {
+            @include font-size(16);
+            opacity: 0;
+            font-weight: bold;
+        }
+    }
+
+    .table {
+        margin-top: 30px;
+        width: 100%;
+
+        &.show ul {
+            @media all and (max-width: 900px) {
+                &:before {
+                    animation: w100 1s both .4s;
+                }
+            }
+
+            li {
+                animation: fadeInDown 1.2s both;
+
+                @media all and (max-width: 900px) {
+                    animation: fadeInDown 1.5s both;
+                }
+            }
+        }
+
+        .listhead>div,
+        ul li p {
+            padding: 25px 60px;
+
+            @media all and (max-width: 1320px) {
+                padding: 25px 4.5vw;
+            }
+
+            @media all and (max-width:1160px) {
+                padding: 25px 30px;
+            }
+
+            @media all and (max-width:900px) {
+                padding: 15px 30px 15px 55%;
+                position: relative;
+            }
+
+            @media all and (max-width:500px) {
+                padding: 4vw 10px 4vw 55%;
+            }
+        }
+
+        .number,
+        .remarks {
+            text-align: right;
+            justify-content: flex-end !important;
+
+            @media all and (max-width: 900px) {
+                text-align: left
+            }
+        }
+
+        .item {
+            width: 21%;
+            justify-content: flex-start !important;
+        }
+
+        .number {
+            width: 24%;
+        }
+
+        .date {
+            width: 25%;
+            text-align: center;
+            justify-content: center;
+
+            @media all and (max-width: 900px) {
+                text-align: left
+            }
+        }
+
+        .remarks {
+            width: 30%;
+        }
+
+        .listhead {
+            @include font-size(18);
+            font-weight: bold;
+            padding: 0 !important;
+
+            @media all and (max-width: 900px) {
+                display: none !important;
+            }
+
+            .en {
+                @include font-size(16);
+                color: #868686;
+                font-weight: normal;
+
+                @media all and (max-width: 1024px) {
+                    display: none;
+                }
+            }
+        }
+
+        ul {
+            line-height: 1.5;
+            position: relative;
+            overflow: hidden;
+
+            @media all and (max-width: 900px) {
+                &:before {
+                    margin: auto;
+                    @include fakeLine(0%, 4px, #000);
+                }
+            }
+
+            li {
+                border-bottom: 2px solid #f2f2f2;
+                display: flex;
+                opacity: 0;
+
+                @media all and (max-width: 900px) {
+                    display: flex;
+                    flex-direction: column;
+                    border-bottom: 2px solid #d6d6d6;
+                    padding: 15px 0;
+
+                    p {
+                        width: 100% !important;
+                    }
+                }
+
+                @media all and (max-width:500px) {
+                    padding: 4vw 0;
+                }
+
+                p:before {
+                    @media all and (max-width: 900px) {
+                        content: attr(data-name);
+                        position: absolute;
+                        left: 6vw;
+                        top: 15px;
+                        @include font-size(18);
+                        font-weight: bold;
+                        max-width: 45%;
+                    }
+
+                    @media all and (max-width:500px) {
+                        @include font-size(16);
+                        left: 10px;
+                        top: 4vw;
+                        max-width: 40%;
+                    }
+                }
+            }
+
+            .number,
+            .item {
+                @include font-size(18);
+                font-family: CenturyGothic-Bold, 微軟正黑體;
+
+                @media all and (max-width: 500px) {
+                    @include font-size(16);
+                }
+            }
+
+            .date,
+            .remarks {
+                @include font-size(16);
+            }
+        }
+    }
+}
+
+.whatLibox {
+    @include basicLibox;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    display: none;
+    padding: 0;
+
+    &.open {
+        display: flex;
+        animation: fadeIn 0.4s both;
+    }
+
+    &.close {
+        display: flex;
+        animation: fadeOut 0.4s both;
+    }
+
+    section {
+        background-color: #fff;
+        max-width: 840px;
+        width: 100%;
+        padding: 80px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        @media all and (max-width:1024px){
+            padding: 80px 5vw;
+        }
+        @media all and (max-width:840px){
+            height: 100vh;
+        }
+        .topNav {
+            position: absolute;
+            width: auto;
+            top: 0;
+            left: auto;
+            right: 0;
+            padding: 20px 40px 0 40px;
+
+            @media all and (max-width: 500px) {
+                padding: 20px 5vw 0 5vw;
+            }
+            &:before,&:after{
+                display: none;
+            }
+        }
+
+        ._title {
+
+            .en {
+                @include libox_title_en;
+            }
+
+            .ch {
+                @include libox_title_ch;
+                margin-top: 5px;
+            }
+        }
+
+        .words {
+            max-width: 480px;
+            @include font-size(14);
+            margin-top: 25px;
+            color: rgba(0, 0, 0, 0.8);
+            line-height: 1.8;
+            animation:fadeInUp 1s both 0.8s;
+        }
+
+        a {
+            margin-top: 60px;
+        }
+    }
+}

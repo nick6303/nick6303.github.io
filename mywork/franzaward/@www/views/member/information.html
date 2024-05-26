@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/member/information.css">
+</head>
+
+<body id="member" class="information">
+    <header></header>
+    <main>
+        <article class="topTitle">
+            <div class="h2">Contestant Service</div>
+            <p>帳號服務中心</p>
+        </article>
+        <article class="leftNav">
+            <section class="link">
+                <div class="overview">
+                    <a href="../member/index.html">OVERVIEW</a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="../member/information.html">
+                            <p>ACCOUNT & BASIC</p>
+                            <p>帳號與基本資料</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../member/academic.html">
+                            <p>ACADEMIC</p>
+                            <p>學籍資訊</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../member/beneficiary.html">
+                            <p>BENEFICIARY</p>
+                            <p>受款資訊</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <p>JOB</p>
+                            <p>工作機會</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="design">
+                    <a href="../member/design.html">
+                        <p>DESIGN</p>
+                        <p>設計作品管理</p>
+                    </a>
+                </div>
+                <div class="QA">
+                    <a href="../member/message.html">
+                        <p>MESSAGE</p>
+                        <p>客服訊息</p>
+                        <span>10</span>
+                    </a>
+                </div>
+            </section>
+            <section class="logOut">
+                <div class="linkMenu">
+                    <div class="open">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p>CONTESTANT SERVICE</p>
+                    </div>
+                    <div class="back">
+                        <span></span>
+                        <p>BACK</p>
+                    </div>
+                </div>
+                <a href="javascript:void(0)">
+                    <p>LOG OUT</p>
+                </a>
+            </section>
+        </article>
+        <article class="content">
+            <section class="_title">
+                <h6>Account & Basic information <span>帳號與基本資料管理</span></h6>
+            </section>
+            <section class="tableContent">
+                <form>
+                    <!-- 後端請注意:下方div會有另外兩種狀態1.停用帳號block 2.刪除帳號 delet  ,請在下方div加入相對應的class  -->
+                    <div class="type account">
+                        <h3>Account & Password Setting  帳號密碼與權限設定</h3>
+                        <h4 class="ps">若您需要重新設定聯繫信箱、手機號碼以及密碼，我們將進行手機驗證，以確認此操作為您本人親自進行。此外，為確保您的帳號使用安全，建議您每三個月更換一次密碼。</h4>
+                        <div class="contactInf">
+                            <ul>
+                                <li>
+                                    <span class="icon-paperplane"></span>
+                                    <p>E-mail 常用聯繫信箱</p>
+                                    <input type="text" value="example@franzaward.com" placeholder="E-mail 常用聯繫信箱">
+                                </li>
+                                <li>
+                                    <span class="icon-phone"></span>
+                                    <p>Mobile 聯繫手機號碼</p>
+                                    <input type="text" value="+886 - 9 - 1234 - 5678" placeholder="Mobile 聯繫手機號碼">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="change">
+                            <div class="account workbox nopadding">
+                                <a href="../member/changeAccount.html">
+                                    <p>Change account
+                                        <br>更換帳號</p>
+                                </a>
+                            </div>
+                            <div class="password workbox nopadding">
+                                <a href="../member/changePassword.html">
+                                    <p>Change password
+                                        <br>更換密碼</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="blockAccount workbox nopadding">
+                            <a href="javascript:void(0)" onclick="ajaxAccountLibox()">
+                                <p class="showMessage">Please block up my account <span>我希望停用帳號</span></p>
+                                <p class="hiddenMessage">Please rebooting my account <span>我希望重新啟用帳號</span></p>
+                            </a>
+                        </div>
+                        <div class="deletAccount workbox nopadding ">
+                            <a href="javascript:void(0)" onclick="ajaxAccountLibox()">
+                                <p class="showMessage">Please delete my account and related information <span>我希望刪除帳號及相關資料</span></p>
+                                <p class="hiddenMessage">Please cancel my application of Account deletion <span>取消刪除我的帳號及相關資料</span></p>
+                            </a>
+                        </div>
+                        <!-- 後端請注意:此處有另外兩種狀態 1. 備份中 backing 2.可以下載了 canDownload ,請在下方div填入相對應的class 就會出現相對應的文字及icon -->
+                        <div class="backup workbox nopadding">
+                            <a href="javascript:void(0)" onclick="ajaxAccountLibox()">
+                                <p class="showMessage">Download Backup <span>下載備份資料</span></p>
+                                <p class="backingMessage">Backup preparing... <span>資料備份中</span></p>
+                                <p class="hiddenMessage">Download Backup <span>下載備份資料</span></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="type newsletter">
+                        <h3>Newsletter  電子報設定</h3>
+                        <h4 class="ps">透過訂閱電子報，您便可隨時掌握活動最新動態消息。</h4>
+                        <div class="box">
+                            <div class="workbox nopadding">
+                                <a href="javascript:void(0)">
+                                    <p>Yes, I want subscribe
+                                        <br>我希望獲得電子報</p>
+                                    <span class="hook checked"></span>
+                                </a>
+                            </div>
+                            <div class="workbox nopadding">
+                                <a href="javascript:void(0)">
+                                    <p>No, please unsubscribe it
+                                        <br>取消訂閱電子報</p>
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basicInf type">
+                        <h3>Basic Information Setting  基本資料設定</h3>
+                        <h4 class="ps">請確實填寫您的個人資訊，以確保您後續於帳號使用及參賽等相關權益。</h4>
+                        <div class="workbox picture">
+                            <a href="javascript:void(0)" onmouseover="this.parentNode.classList.add('active')" onmouseout="this.parentNode.classList.remove('active')">
+                                <div>
+                                    <img src="../../upload/fa2/member/information/picture_550_550.jpg" alt="">
+                                </div>
+                            </a>
+                            <div class="_text">
+                                <h5>My Picture  個人大頭貼</h5>
+                                <h5><b>FORMAT 檔案規格 : JPG 檔案格式，500 X 500 px，容量限制 1MB 以內，解析度為 dpi 72</b></h5>
+                            </div>
+                        </div>
+                        <div class="workbox name">
+                            <!-- 後端請注意: -->
+                            <input type="text" placeholder="Family Name   姓" value="林">
+                            <span></span>
+                            <input type="text" placeholder="First Name   名" value="曉花">
+                        </div>
+                        <div class="workbox name">
+                            <input type="text" placeholder="Family Name Same as Passport   拼音姓（同護照）" value="Lin">
+                            <span></span>
+                            <input type="text" placeholder="First Name Same as Passport   拼音名（同護照）" value="Shian Hua">
+                        </div>
+                        <div class="workbox gender">
+                            <h5>Gender   生理性別</h5>
+                            <div class="dropList">
+                                <span class="selectMenu">
+                                    <p>Female 女性</p>
+                                </span>
+                                <ul>
+                                    <li>Male 男性</li>
+                                    <li>Female 女性</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="workbox birthday">
+                            <h5>Birthday   出生日期</h5>
+                            <div class="dropList year">
+                                <span class="selectMenu">
+                                        <p>1979</p>
+                                    </span>
+                                <ul>
+                                    <li>1992</li>
+                                    <li>1993</li>
+                                    <li>1994</li>
+                                    <li>1995</li>
+                                    <li>1996</li>
+                                    <li>1997</li>
+                                </ul>
+                            </div>
+                            <div class="dropList month">
+                                <span class="selectMenu">
+                                        <p>7</p>
+                                    </span>
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                </ul>
+                            </div>
+                            <div class="dropList date">
+                                <span class="selectMenu">
+                                        <p>1</p>
+                                    </span>
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="birthPlace  workbox nopadding ">
+                            <h5>Place of Birth 出生地址</h5>
+                            <div class="dropList2">
+                                <span class="selectMenu"><p>台灣</p></span>
+                                <div class="box">
+                                    <!-- 亞洲 -->
+                                    <div class="asia">
+                                        <p>亞洲</p>
+                                        <ul>
+                                            <li>台灣</li>
+                                            <li>中國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 美洲 -->
+                                    <div class="america">
+                                        <p>美洲</p>
+                                        <ul>
+                                            <li>美國</li>
+                                            <li>加拿大</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 歐洲 -->
+                                    <div class="europe">
+                                        <p>歐洲</p>
+                                        <ul>
+                                            <li>英國</li>
+                                            <li>法國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 非洲 -->
+                                    <div class="africa">
+                                        <p>非洲</p>
+                                        <ul>
+                                            <li>瓦甘達</li>
+                                            <li>剛果</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 大洋洲 -->
+                                    <div class="oceania">
+                                        <p>大洋洲</p>
+                                        <ul>
+                                            <li>澳洲</li>
+                                            <li>馬來西亞</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="birthDetail  workbox">
+                            <input type="text" placeholder="Detail 寫詳細地址" value="台中市西區大容西街 32號 6F-1">
+                        </div>
+                        <div class="residentialPlace  workbox nopadding ">
+                            <h5>Residential Address   通訊地址</h5>
+                            <div class="dropList2">
+                                <span class="selectMenu"><p>台灣</p></span>
+                                <div class="box">
+                                    <!-- 亞洲 -->
+                                    <div class="asia">
+                                        <p>亞洲</p>
+                                        <ul>
+                                            <li>台灣</li>
+                                            <li>中國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 美洲 -->
+                                    <div class="america">
+                                        <p>美洲</p>
+                                        <ul>
+                                            <li>美國</li>
+                                            <li>加拿大</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 歐洲 -->
+                                    <div class="europe">
+                                        <p>歐洲</p>
+                                        <ul>
+                                            <li>英國</li>
+                                            <li>法國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 非洲 -->
+                                    <div class="africa">
+                                        <p>非洲</p>
+                                        <ul>
+                                            <li>瓦甘達</li>
+                                            <li>剛果</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 大洋洲 -->
+                                    <div class="oceania">
+                                        <p>大洋洲</p>
+                                        <ul>
+                                            <li>澳洲</li>
+                                            <li>馬來西亞</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="residentialDetail workbox">
+                            <input type="text" placeholder="Detail 寫詳細地址" value="台中市西區大容西街 32號 6F-1">
+                        </div>
+                        <div class="home  workbox">
+                            <h5>Home 住家</h5>
+                            <input type="text" placeholder="Please including area codes   聯繫號碼需包含區碼" value="886-4-123-456">
+                        </div>
+                        <div class="office workbox">
+                            <h5>Office 辦公室</h5>
+                            <input type="text" placeholder="Please including area codes   聯繫號碼需包含區碼">
+                        </div>
+                        <div class="fax workbox">
+                            <h5>Fax 傳真機</h5>
+                            <input type="text" placeholder="Please including area codes   聯繫號碼需包含區碼">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <ul>
+                            <li>
+                                <button type="button">
+                                    <span></span>
+                                    <p>Save
+                                        <br>儲存修改</p>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+</html>

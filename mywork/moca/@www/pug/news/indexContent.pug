@@ -1,0 +1,28 @@
+
+section._title
+    p.en News Overview 
+        span 消息總覽
+    p.ch 讓你掌握最即時的當代動態
+    .year
+        - for(var i= 2018;i> 2015;i--)
+            if i==2018
+                // 後端請注意:下方data-src請放入ajax內容的位置
+                .ajax.active(data-src="2018.html" data-ajaxTarget="masonry" onclick="ajax(this);")
+                    p=i
+            else
+                //後端請注意:下方data-src請放入ajax內容的位置
+                .ajax(data-src="2018.html" data-ajaxTarget="masonry" onclick="ajax(this);")
+                    p=i
+        .dropDown
+            span.selectMenu
+                p YEAR  其他年分
+            ul
+                - for(var i= 2018;i> 2010;i--)
+                    //後端請注意:下方data-src請放入ajax內容的位置
+                    li(data-src="2018.html" data-ajaxTarget="masonry" onclick="ajax(this);")
+                        p=i
+
+section.masonry
+    // ---------------------由此開始ajax或include-------------------
+    include 2018.pug
+    

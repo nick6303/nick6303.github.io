@@ -1,0 +1,968 @@
+@charset "utf-8";
+
+
+@font-face {
+    font-family: 'CenturyGothic';
+    src: url('CenturyGothic');
+    src: url('../../../assets/font/CenturyGothic/regular/CenturyGothic.woff2') format('woff2'),
+    url('../../../assets/font/CenturyGothic/regular/CenturyGothic.woff') format('woff'),
+    url('../../../assets/font/CenturyGothic/regular/CenturyGothic.ttf') format('truetype'),
+    url('../../../assets/font/CenturyGothic/regular/CenturyGothic.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CenturyGothic-bold';
+    src: url('../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.woff2') format('woff2'),
+    url('../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.woff') format('woff'),
+    url('../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.ttf') format('truetype'),
+    url('../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: 
+    url('../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.woff2') format('woff2'),
+    url('../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.woff') format('woff'),
+    url('../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.ttf') format('truetype'),
+    url('../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'MyriadPro-Light';
+    src: url('../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.eot') format('embedded-opentype'),
+    url('../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.woff2') format('woff2'),
+    url('../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.woff') format('woff'),
+    url('../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.ttf') format('truetype'),
+    url('../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyriadPro-Semibold';
+    src: url('../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.eot') format('embedded-opentype'),
+    url('../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.woff2') format('woff2'),
+    url('../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.woff') format('woff'),
+    url('../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.ttf') format('truetype'),
+    url('../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'MyriadPro-Bold';
+    src: url('MYRIADPRO-BOLD.eot');
+    src: url('../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.eot') format('embedded-opentype'),
+    url('../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.woff2') format('woff2'),
+    url('../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.woff') format('woff'),
+    url('../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.ttf') format('truetype'),
+    url('../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../../../assets/font/allicon/icomoon.eot?sex4r3');
+  src:  url('../../../assets/font/allicon/icomoon.eot?sex4r3#iefix') format('embedded-opentype'),
+    url('../../../assets/font/allicon/icomoon.ttf?sex4r3') format('truetype'),
+    url('../../../assets/font/allicon/icomoon.woff?sex4r3') format('woff'),
+    url('../../../assets/font/allicon/icomoon.svg?sex4r3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e971";
+}
+.icon-eye:before {
+  content: "\e9ce";
+}
+.icon-eye-blocked:before {
+  content: "\e9d1";
+}
+.icon-cross2:before {
+  content: "\ea0f";
+}
+.icon-batter:before {
+  content: "\e917";
+}
+.icon-van:before {
+  content: "\e919";
+}
+.icon-robot:before {
+  content: "\e918";
+}
+.icon-calendar:before {
+  content: "\e916";
+}
+.icon-mapdot:before {
+  content: "\e915";
+}
+.icon-download:before {
+  content: "\e914";
+}
+.icon-cad:before {
+  content: "\e90d";
+}
+.icon-doc:before {
+  content: "\e912";
+}
+.icon-pdf:before {
+  content: "\e913";
+}
+.icon-home-slick-arrow-top:before {
+  content: "\e911";
+}
+.icon-home-slick-arrow-left:before {
+  content: "\e90e";
+}
+.icon-home-slick-arrow-right:before {
+  content: "\e90f";
+}
+.icon-play:before {
+  content: "\e910";
+}
+.icon-scroll:before {
+  content: "\e909";
+}
+.icon-menu:before {
+  content: "\e904";
+}
+.icon-earth:before {
+  content: "\e90b";
+}
+.icon-square:before {
+  content: "\e90c";
+}
+.icon-magnifier:before {
+  content: "\e903";
+}
+.icon-triangle_down:before {
+  content: "\e905";
+}
+.icon-triangle_left:before {
+  content: "\e906";
+}
+.icon-triangle_right:before {
+  content: "\e907";
+}
+.icon-triangle_up:before {
+  content: "\e908";
+}
+.icon-house:before {
+  content: "\e90a";
+}
+.icon-cross:before {
+  content: "\e900";
+}
+.icon-slick-arrow-left:before {
+  content: "\e901";
+}
+.icon-slick-arrow-right:before {
+  content: "\e902";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+
+
+
+
+
+/* ===============  iphone X 修正全螢幕時內容與系統保留區重疊的問題  =============== */
+
+.container {
+    padding-top: constant(safe-area-inset-top);
+    padding-right: constant(safe-area-inset-right);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-left: constant(safe-area-inset-left);
+}
+
+
+
+
+
+
+/* ===============  HTML5 display definitions  =============== */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+
+
+
+
+
+/* ===============  Base  =============== */
+
+html {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    position: relative;
+    font-size: 100%;
+    line-height: 1;
+    font-weight: normal;
+    font-family: 'CenturyGothic-bold', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif;
+    /*text-rendering: optimizeLegibility; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: 'liga', 'kern';
+    -webkit-overflow-scrolling: touch;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+iframe {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none; // -webkit-transition: all .5s ease;
+    // -moz-transition: all .5s ease;
+    // -o-transition: all .5s ease;
+    // -ms-transition: all .5s ease;
+    // transition: all .5s ease;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+img {
+    border: 0;
+    display: block;
+    /*流動圖片設定*/
+    max-width: 100%;
+    height: auto;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+dl,
+menu,
+ol,
+ul {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    list-style-image: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+/* ===============  Forms  =============== */
+
+form {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    white-space: normal;
+    *margin-left: -7px;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+
+button,
+input {
+    line-height: normal;
+    border:none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+}
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    *height: 13px;
+    *width: 13px;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: none;
+}
+
+
+
+
+
+/*去除input藍色框框*/
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+
+
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+
+
+
+
+/*placeholder 點一下後緩慢消失*/
+
+input:placeholder {
+    transition:all .4s ease;
+}
+input::-webkit-input-placeholder {
+    transition:all .4s ease;
+}
+input:-moz-placeholder {
+    transition:all .4s ease;
+}
+input::-moz-placeholder {
+    transition:all .4s ease;
+}
+input:-ms-input-placeholder {
+    transition:all .4s ease;
+}
+
+
+
+
+
+
+
+input:focus:placeholder {
+    color: transparent;
+}
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+/*去除異常空格*/
+
+picture {
+    overflow: hidden;
+    font-size: 0;
+}
+
+
+
+
+
+
+/* ===============  Typography  =============== */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q {
+    quotes: none;
+}
+
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+small {
+    font-size: 75%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+hr {
+    height: 1px;
+    border: none;
+}
+
+
+
+
+
+
+/* ===============  Global  =============== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+}
+
+
+
+
+
+
+/*----------------------動畫區-------------------*/
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated-slow {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.hide,
+.wp1,
+.wp2,
+.wp3,
+.wp4,
+.wp5,
+.wp6 {
+    visibility: hidden;
+}
+
+.fadeInDown,
+.fadeInDown2,
+.fadeInUp,
+.pulse,
+.fadeIn,
+.bounceIn {
+    visibility: visible !important;
+}
+
+.delay-02s {
+    animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+}
+
+.delay-03s {
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+}
+
+.delay-05s {
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+}
+
+.delay-06s {
+    animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+}
+
+.delay-07s {
+    animation-delay: 0.7s;
+    -webkit-animation-delay: 0.7s;
+}
+
+.delay-08s {
+    animation-delay: 0.8s;
+    -webkit-animation-delay: 0.8s;
+}
+
+.delay-09s {
+    animation-delay: 0.9s;
+    -webkit-animation-delay: 0.9s;
+}
+
+.delay-10s {
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+}
+
+.delay-15s {
+    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+}
+
+.delay-20s {
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+
+.delay-25s {
+    animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
+}
+
+.delay-30s {
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+}
+
+.delay-35s {
+    animation-delay: 3.5s;
+    -webkit-animation-delay: 3.5s;
+}
+
+
+
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(25%);
+        transform: translateY(5%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(25%);
+        transform: translateY(25%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform:translate(0);
+        transform: translate(0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    animation-duration: .8s;
+    -webkit-animation-duration: .8s;
+    animation-delay: .2s;
+    -webkit-animation-delay: .2s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: .8s;
+    -webkit-animation-duration: .8s;
+    animation-delay: .2s;
+    -webkit-animation-delay: .2s;
+}
+
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+
+
+@-webkit-keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.fadeOutUp {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+}
+
+
+
+
+
+@-webkit-keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+}
+
+.fadeOutLeft {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+}
+
+
+
+/* 由左滑入*/
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInLeft{
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+// 由右滑入
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInRight{
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+@keyframes slideOutUp {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.slideOutUp{
+  -webkit-animation-name:slideOutUp;
+    animation-name: slideOutUp;  
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.slideInDown{
+    -webkit-animation-name:slideInDown;
+    animation-name:slideInDown;  
+}
+
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.slideInUp{
+    -webkit-animation-name:slideInUp;
+    animation-name:slideInUp;  
+}
+
+@keyframes allin {
+    0% {}
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+

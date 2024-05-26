@@ -1,0 +1,366 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+.btnNav {
+    position: absolute;
+    top: 0;
+    right: 3vw;
+    @media all and (max-width: 1024px) {
+        right: 0;
+    }
+    @include flex-center;
+    .socialMedia {
+        margin-right: 40px;
+        ul {
+            @include flex-center;
+            li {
+                opacity: 0;
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+                span {
+                    color: #515151;
+                }
+            }
+        }
+    }
+    .close {
+        @include close;
+        span {
+            @include close_span;
+            &:before {
+                @include close_span_before
+            }
+            &:after {
+                @include close_span_after
+            }
+        }
+    }
+}
+
+
+
+
+._title {
+    @include detail_title;
+    h4 {
+        @include detail_title_h4;
+    }
+    h2 {
+        @include detail_title_h2;
+    }
+    p {
+        @include detail_title_p;
+    }
+}
+
+
+._slick {
+    max-width: 1370px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 0 150px;
+    position: relative;
+    opacity: 0;
+    @media all and (max-width: 1370px) {
+        padding: 0 10vw;
+    }
+
+    @media all and (max-width: 900px) {
+        padding: 0 5vw;
+    }
+    ul {
+        li {
+            .slick_img {
+                @include flex-center;
+                height: 625px;
+                overflow: hidden;
+                font-size: 0;
+                @media all and (max-width: 1370px) {
+                    height: 46.8vw;
+                }
+                &.openVideoLibox {
+                    cursor: pointer;
+                    position: relative;
+                    &:before {
+                        font-family: 'icomoon';
+                        content: "\ea9d";
+                        @include font-size(72);
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: #ccc;
+                        transition: all .4s ease;
+                        background-image: url(../..//img/blank_bg.jpg);
+                        background-size: 30px 30px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        @media all and (max-width: 1024px) {
+                            color: #e52d27;
+                        }
+                        @media all and (max-width: 700px) {
+                            @include font-size(60);
+                        }
+                    }
+                    &:hover {
+                        &:before {
+                            color: #e52d27;
+                            transition: all .4s ease;
+                        }
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            bottom: -30px;
+        }
+    }
+
+    .arrow {
+        @media all and (max-width: 900px) {
+            display: none;
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            @include font-size(36);
+            color: #888888;
+            cursor: pointer;
+            transition: all .4s ease;
+            &.icon-slick-arrow-left {
+                left: 80px;
+                @media all and (max-width: 1370px) {
+                    left: calc(10vw - 60px);
+                }
+                @media all and (max-width: 1024px) {
+                    left: calc(5vw - 9px);
+                }
+            }
+            &.icon-slick-arrow-right {
+                right: 80px;
+                @media all and (max-width: 1370px) {
+                    right: calc(10vw - 60px);
+                }
+                @media all and (max-width: 1024px) {
+                    right: calc(5vw - 9px);
+                }
+            }
+            &:hover {
+                color: #464646;
+                transition: all .4s ease;
+            }
+        }
+    }
+}
+
+
+.contnet {
+    max-width: 1070px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 0 100px;
+    letter-spacing: 1px;
+    @media all and (max-width: 900px) {
+        padding: 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        margin-top: 12vh;
+    }
+    h2 {
+        @include font-size(17);
+        font-weight: bold;
+        color: #494949;
+        margin-bottom: 15px;
+    }
+    p {
+        @include font-size(14);
+        line-height: 1.5;
+        color: #383838;
+        font-family: "微軟正黑體";
+        text-align: justify;
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+    .onlyWords {
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+    .withImage_inLeft,
+    .withImage_inRight {
+        @include flex-center;
+        margin-bottom: 40px;
+        ._img,
+        ._text {
+            width: 50%;
+            @media all and (max-width: 700px) {
+                width: 100%;
+            }
+        }
+        ._img {
+            @include flex-center;
+        }
+        ._text {
+            @media all and (max-width: 700px) {
+                margin-top: 4vh;
+            }
+        }
+    }
+    .withImage_inLeft {
+        @media all and (max-width: 700px) {
+            flex-direction:column;
+        }
+        ._text {
+            padding: 0 10px 0 35px;
+            @media all and (max-width: 700px) {
+                padding: 0 10px;
+            }
+        }
+    }
+    .withImage_inRight {
+        flex-direction: row-reverse;
+        @media all and (max-width: 700px) {
+            flex-direction:column;
+        }
+        ._text {
+            padding: 0 35px 0 10px;
+            @media all and (max-width: 700px) {
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
+
+
+.goTop {
+    width: 100px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    @include flex-center;
+    cursor: pointer;
+    span {
+        @include flex-center;
+        flex-direction: column;
+        &:before {
+            font-family: 'icomoon';
+            content: "\e908";
+            color: #093155;
+            @include font-size(13);
+        }
+        &:after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 95px;
+            background-color: #093155;
+            margin-top: -5px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/* 進場動畫*/
+
+._title {
+    h4 {
+        animation: fadeInDown 1s both;
+    }
+    h2 {
+        animation: fadeInDown 1s both .2s;
+    }
+    p {
+        animation: fadeInDown 1s both .4s;
+    }
+}
+
+
+
+
+.btnNav {
+    .socialMedia {
+        ul {
+            li {
+                &:nth-child(1) {
+                    animation: fadeIn .8s both .2s;
+                }
+                &:nth-child(2) {
+                    animation: fadeIn .8s both .4s;
+                }
+                &:nth-child(3) {
+                    animation: fadeIn .8s both .6s;
+                }
+            }
+        }
+    }
+    .close {
+        animation: slideInDown .8s both .8s;
+    }
+}
+
+._slick {
+    animation: fadeInUp 1.2s both .6s;
+}
+
+
+.contnet {
+    .onlyWords,
+    .withImage_inRight,
+    .withImage_inLeft {
+        animation: fadeInUp 1.2s both .6s;
+    }
+}
+
+
+
+
+
+
+/* 退場動畫*/
+
+.liboxClose {
+    .btnNav {
+        .socialMedia {
+            ul {
+                li {
+                    animation: fadeOutUp .5s both;
+                }
+            }
+        }
+        .close {
+            animation: slideOutUp .5s both;
+        }
+    }
+    ._title {
+        h4 {
+            animation: fadeOutUp .2s both;
+        }
+        h2 {
+            animation: fadeOutUp .2s both;
+        }
+        p {
+            animation: fadeOutUp .2s both;
+        }
+    }
+    ._slick {
+        animation: fadeOutUp .5s both;
+    }
+    .contnet {
+        .onlyWords,
+        .withImage_inRight,
+        .withImage_inLeft {
+            animation: fadeOutUp .5s both;
+        }
+    }
+}

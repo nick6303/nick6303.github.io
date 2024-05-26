@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Quicksand-Light';
+    src: url('../../../assets/font/Quicksand/Light/Quicksand-Light.otf') format('otf'),
+    url('../../../assets/font/Quicksand/Light/Quicksand-Light.ttf') format('truetype'),
+    url('../../../assets/font/Quicksand/Light/Quicksand-Light.woff') format('woff'),
+    url('../../../assets/font/Quicksand/Light/Quicksand-Light.woff2') format('woff2'),
+    url('../../../assets/font/Quicksand/Light/Quicksand-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

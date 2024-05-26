@@ -1,0 +1,144 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var unit = ["全部美食","西式美食","日式料理","中式美食","漢來獨家","義式美味"]
+
+    var food = [
+        {
+            img:"../../upload/fa2/food/index/foodImg_400_520.jpg",
+            slogan:{
+                p:"NEW !",
+                bg:"#3138bd"
+            },
+            title:"屯京拉麵",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+        {
+            img:"../../upload/fa2/food/index/foodImg2_400_520.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            title:"丸龜製麵",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+        {
+            img:"../../upload/fa2/food/index/foodImg3_400_520.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            title:"舞舞舞火鍋",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+        {
+            img:"../../upload/fa2/food/index/foodImg4_400_520.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            title:"大戶屋",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+        {
+            img:"../../upload/fa2/food/index/foodImg5_400_520.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            title:"新悅鐵板燒",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+        {
+            img:"../../upload/fa2/food/index/foodImg6_400_520.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            title:"等一個人咖啡",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+        {
+            img:"../../upload/fa2/food/index/foodImg7_400_520.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            title:"AUNT STELLA",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+        {
+            img:"../../upload/fa2/food/index/foodImg8_400_520.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            title:"STARBUCKS",
+            where:["B3F","食品佳餚館"],
+            phone:"07-2159898"},
+    ]
+
+
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#food.index
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section._title(style="background-image:url('../../upload/fa2/food/index/bannerBg_1670_420.jpg')")
+                p.ch 吃美味
+                p.en Gourmet Guide
+                p.words 創造新新生活，讓夢想在這裡發光，以下為本館各分類最新消息，新訊一手掌握 !
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val==unit[0])?"active":"")=val
+        article.content(style="background-image:url('../../upload/fa2/food/index/bg_1920_1080.jpg')")
+            section.food
+                p.en ALL GOURMETS
+                p.words 成為忙碌生活中輕鬆休憩的場所，享受購物樂趣同時，立即滿足口腹之慾。
+                ul
+                    each val in food
+                        li
+                            a(href="../food/detail.html")
+                                if (val.slogan.p !== "")
+                                    // 後端請注意: 如果未填入文字的話 把下方div移除
+                                    // 後端請注意: 下方背景顏色要讓客戶可以換
+                                    .slogan(style=('background-color:'+val.slogan.bg))=val.slogan.p
+                                figure
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                    .hoverBox
+                                        span
+                                        p ENTER
+                                ._text
+                                    p.title=val.title
+                                    .where
+                                        // 樓層
+                                        p=val.where[0]
+                                        //位置
+                                        p=val.where[1]
+                                    // 專線
+                                    .phone
+                                        p 專線
+                                        p=val.phone
+
+
+    include ../layout/_footer.pug
++script
+
+
+|
+|
+</html>

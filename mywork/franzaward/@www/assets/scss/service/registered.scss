@@ -1,0 +1,558 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+@mixin padding40 {
+    padding: 0 40px !important;
+    @media all and (max-width: 700px) {
+        padding: 0 5vw !important;
+    }
+}
+
+#service .content {
+    &.activeStep1 {
+        .stepNav ul {
+            .blueLine {
+                top: 0;
+            }
+            li:nth-child(2) {
+                color: #000;
+                h5 {
+                    @include font-size(18);
+                }
+            }
+        }
+        .step1 {
+            display: block;
+            animation: fadeIn 2s both;
+        }
+    }
+    &.activeStep2 {
+        .stepNav ul {
+            .blueLine {
+                top: 100px;
+            }
+            li:nth-child(3) {
+                color: #000;
+                h5 {
+                    @include font-size(18);
+                }
+            }
+        }
+        .step2 {
+            display: block;
+            animation: fadeInUp 1.5s both;
+        }
+    }
+    &.activeStep3 {
+        .stepNav ul {
+            .blueLine {
+                top: 200px;
+            }
+            li:nth-child(4) {
+                color: #000;
+                h5 {
+                    @include font-size(18);
+                }
+            }
+        }
+        .step3 {
+            display: block;
+            animation: fadeInUp 1.4s both;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+#service .content .tableContent h5 {
+    white-space: nowrap;
+}
+
+
+
+
+/*步驟1*/
+
+#service .step1 {
+    padding-bottom: 35px;
+    .account {
+        .email {
+            @media all and (max-width: 600px) {
+                display: flex;
+                flex-wrap: wrap;
+                @include padding40;
+                h5 {
+                    padding: 15px 0;
+                }
+                input {
+                    width: 100%;
+                    margin-left: 0 !important;
+                    padding: 15px 0;
+                }
+            }
+        }
+        .password,
+        .confirm {
+            align-items: flex-start !important;
+            justify-content: flex-end;
+            position: relative;
+            @include padding40;
+            @media all and (max-width: 900px) {
+                flex-direction: column;
+            }
+            h5 {
+                padding: 15px 0;
+            }
+            input {
+                padding: 15px 0;
+                @media all and (max-width: 901px) {
+                    margin-left: 0 !important;
+                }
+            }
+            .hook {
+                position: absolute;
+                right: 30px;
+                bottom: 15px;
+                @media all and (max-width: 450px) {
+                    bottom: auto;
+                    top: 15px;
+                    right: 5px;
+                }
+            }
+        }
+        .confirm {
+            margin-top: 4px !important;
+        }
+        .mobile {
+            display: flex;
+            @include padding40;
+            margin: 4px 0 !important;
+            @media all and (max-width: 700px) {
+                width: 100%;
+                flex-wrap: wrap;
+                padding: 0 !important;
+            }
+            h5 {
+                width: 180px;
+                padding: 15px 0 !important;
+                @media all and (max-width: 700px) {
+                    padding: 15px 5vw !important;
+                    width: 100%;
+                    position: relative;
+                }
+            }
+            span:not(.selectMenu) {
+                display: block;
+                height: 55px;
+                width: 4px;
+                background-color: #fff;
+                @media all and (max-width: 700px) {
+                    display: none;
+                }
+            }
+            .countryCode {
+                width: calc(50% - 90px) !important;
+                padding: 15px 40px;
+                margin-left: 40px !important;
+                @media all and (max-width: 700px) {
+                    margin-left: 0 !important;
+                    padding: 15px 5vw;
+                    width: calc(100px + 10vw) !important
+                }
+                @media all and (max-width: 420px) {
+                    width: 100% !important;
+                    padding: 15px 5vw;
+                }
+            }
+            input {
+                padding: 15px 0;
+                width: calc(50% - 90px) !important;
+                @media all and (max-width: 700px) {
+                    width: calc(100% - 140px - 10vw) !important;
+                }
+                @media all and (max-width: 420px) {
+                    width: 100% !important;
+                    padding: 15px 5vw;
+                }
+                &.phoneNumb {
+                    @media all and (max-width: 420px) {
+                        margin-left: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+    .address {
+        .birthPlace,
+        .residentialPlace {
+            padding: 0 !important;
+            @media all and (max-width: 700px) {
+                flex-direction:column;
+                align-items: flex-start;
+            }
+        }
+        h5 {
+            width: 300px;
+            padding: 15px 0 15px 40px;
+            @media all and (max-width: 700px) {
+                padding: 15px 0 15px 5vw;
+                width: 100%;
+            }
+        }
+        .dropList2 {
+            width: calc(100% - 300px);
+            @media all and (max-width: 700px) {
+                width: 100%;
+                padding: 0 0 0 5vw;
+            }
+            .selectMenu {
+                padding: 15px 40px 15px 40px;
+                @media all and (max-width: 700px) {
+                    padding: 15px 5vw 15px 0;
+                }
+            }
+        }
+        .residentialPlace {
+            margin-top: 12px !important;
+        }
+        .asBirth {
+            position: relative;
+            p {
+                width: calc(100% - 40px);
+                line-height: 1.5;
+                @include font-size(14);
+            }
+            input[type="checkbox"]:hover+label {
+                @media all and (min-width: 1025px) {
+                    background-color:#fff;
+                }
+            }
+            input[type="checkbox"]:checked+label {
+                background-color: #fff;
+            }
+            &.checked {
+                input[type="checkbox"]:hover+label {
+                    @media all and (min-width: 1025px) {
+                        background-color: $base_blue;
+                    }
+                }
+                input[type="checkbox"]:checked+label {
+                    background-color: $base_blue;
+                }
+            }
+        }
+    }
+    .number {
+        h5 {
+            width: 150px;
+            white-space: nowrap;
+        }
+        .workbox {
+            @media all and (max-width: 600px) {
+                @include padding40;
+                align-items: flex-start !important;
+                flex-direction: column;
+                h5,
+                input {
+                    padding: 15px 0;
+                }
+                input {
+                    width: 100%;
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+    .method {
+        .list {
+            padding: 0 !important;
+            @media all and (max-width: 700px) {
+                flex-direction:column;
+            }
+            h5 {
+                width: 210px;
+                padding: 15px 40px;
+                @media all and (max-width: 700px) {
+                    width: 100%;
+                    padding: 15px 5vw;
+                }
+            }
+            .dropList {
+                width: calc(100% - 210px);
+                @media all and (max-width: 700px) {
+                    width: 100%;
+                }
+                .selectMenu {
+                    padding: 15px 40px;
+                    @media all and (max-width: 700px) {
+                        padding: 15px 5vw;
+                    }
+                }
+            }
+        }
+    }
+    .next {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 30px 35px 0 0;
+        a {
+            @include flex-center;
+            p {
+                @include font-size(14);
+                font-family: Philosopher-Bold, 微軟正黑體;
+                font-weight: bold;
+                span {
+                    @media all and (max-width: 900px) {
+                        display: none;
+                    }
+                }
+            }
+            &:after {
+                font-family: 'icomoon';
+                content: "\e906";
+                @include font-size(24);
+                margin-left: 25px;
+                @media all and (max-width: 900px) {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    
+    .birthday {
+        .dropList {
+            ul {
+                top: 0;
+                width: 100% !important;
+                li {
+                    padding: 15px 40px;
+                    &:first-child {
+                        padding: 16px 40px 15px 40px;
+                    }
+                    &:last-child {
+                        padding: 15px 40px 16px 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*步驟2*/
+
+.step2 {
+    padding-bottom: 40px;
+    h3 {
+        margin-top: 50px !important;
+    }
+    .code {
+        margin-top: 20px;
+        padding: 0 40px 45px 40px;
+        position: relative;
+        @media all and (max-width: 800px) {
+            padding: 0 0 45px 0;
+            margin-top: 10px;
+        }
+        .note {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        #vcode {
+            @include flex-space-between;
+            flex-wrap: wrap;
+            li {
+                max-width: 100px;
+                width: 14vw;
+                max-height: 100px;
+                height: 14vw;
+                @include flex-center;
+                border-radius: 50%;
+                background-color: #f2f2f2;
+                transition: all .2s ease;
+                @media all and (max-width: 700px) {
+                    width: 13vw;
+                    height: 13vw;
+                }
+                input {
+                    text-align: center;
+                    @include font-size(52);
+                    color: #fff;
+                    ime-mode: disabled !important;
+                    @media all and (max-width: 900px) {
+                        @include font-size(42);
+                    }
+                    @media all and (max-width: 600px) {
+                        @include font-size(34);
+                    }
+                    @media all and (max-width: 350px) {
+                        @include font-size(32);
+                    }
+                    &::placeholder {
+                        @include font-size(52);
+                        color: #fff;
+                        transition: all .2s ease;
+                        @media all and (max-width: 900px) {
+                            @include font-size(42);
+                        }
+                        @media all and (max-width: 600px) {
+                            @include font-size(34);
+                        }
+                        @media all and (max-width: 350px) {
+                            @include font-size(32);
+                        }
+                    }
+                }
+                &.active,
+                &.checked {
+                    background-color: $base_blue;
+                }
+            }
+        }
+    }
+    .button {
+        margin-top: 60px;
+        padding: 0 40px;
+        @include flex-space-between;
+        @media all and (max-width: 900px) {
+            padding: 0;
+            margin-top: 20px;
+        }
+        a {
+            @include flex-center;
+            @include font-size(14);
+            font-weight: bold;
+            opacity: .5;
+            transition: all .4s ease;
+            @media all and (max-width: 1024px) {
+                &.toStep3 {
+                    opacity:1;
+                }
+            }
+            @media all and (max-width: 900px) {
+                margin: 2vh 0;
+                p span {
+                    display: none;
+                }
+            }
+            &.toStep1:before,
+            &.resend:before,
+            &.toStep3:after {
+                display: block;
+                font-family: 'icomoon';
+                @include font-size(24);
+                font-weight: normal;
+            }
+            &.toStep1:before {
+                content: "\e905";
+                margin-right: 15px;
+            }
+            &.resend:before {
+                margin-right: 15px;
+                content: "\e908";
+            }
+            &.toStep3:after {
+                content: "\e906";
+                margin-left: 15px;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*步驟3*/
+
+.step3 {
+    padding: 35px 0 35px 0;
+    .button {
+        margin-top: 170px;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 10px;
+        @media all and (max-width: 1024px) {
+            margin-top: 16vh;
+        }
+        @media all and (max-width: 450px) {
+            margin-top: 12vh;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        a {
+            margin: 0 25px;
+            @include flex-center;
+            @media all and (max-width: 450px) {
+                margin:25px;
+            }
+            p {
+                @include font-size(14);
+                font-weight: bold;
+            }
+            &:after {
+                font-family: 'icomoon';
+                content: "\e906";
+                margin-left: 15px;
+                @include font-size(24);
+                color: #d2d2d2;
+                transition: all .4s ease;
+                @media all and (max-width: 1024px) {
+                    color: #8f8f8f;
+                }
+            }
+            &:hover:after {
+                color: #8f8f8f;
+            }
+        }
+    }
+}

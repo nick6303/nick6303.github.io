@@ -1,0 +1,379 @@
+@charset "utf-8";
+
+
+
+/*---------libox開始-----------------------------------------*/
+
+.vip_room .photo_libox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background-color: #fff;
+    display: none;
+    z-index: 6;
+    transition: all 1s ease 1.2s;
+}
+
+.libox_close {
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    right: 70px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.libox_close span:nth-child(1) {
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1px);
+    transition: all .6s ease;
+}
+
+
+
+.libox_close span:nth-child(2) {
+    display: block;
+    height: 0%;
+    width: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1px);
+    transition: all .6s ease .6s;
+}
+
+.room_slick_bg {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.room_slick {
+    position: relative;
+    transform: translateY(100%);
+}
+
+.room_slick ul li ._img {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.room_slick ul li img {
+    width: 100%;
+    height: auto;
+}
+
+
+.slick_prev,
+.slick_next {
+    position: absolute;
+    top: calc(50% - 23px);
+    cursor: pointer;
+    padding: 30px;
+}
+
+.slick_prev {
+    left: 0;
+}
+
+.slick_next {
+    right: 0;
+}
+
+.vip_room ._text {
+    width: 50%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.vip_room .textBox {
+    max-width: 660px;
+    padding: 0 30px;
+    letter-spacing: 1px;
+    transform: translateY(100%);
+    overflow-y: auto;
+}
+
+.vip_room ._text h5 {
+    font-size: 1.3125rem;
+    font-family: JaguarJC, 微軟正黑體;
+    margin-bottom: 50px;
+    line-height: 1.5;
+}
+
+.vip_room ._text p {
+    line-height: 1.8;
+    font-size: 0.875rem;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+}
+
+.vip_room ._text span {
+    width: 95px;
+    height: 1px;
+    display: block;
+    background-color: #000;
+    margin: 55px 0 45px 0;
+}
+
+.vip_room ._text .price {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vip_room ._text .price div {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.vip_room ._text .price div:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.vip_room ._text .price div:first-child {
+    padding: 0 18px 0 0;
+}
+
+.vip_room ._text .price div:not(:first-child) {
+    padding: 0 18px;
+}
+
+.vip_room ._text .price div:not(:first-child):before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 17px;
+    position: absolute;
+    top: calc(50% - 8.5px);
+    left: 0;
+    background-color: #cdcdcd;
+}
+
+.vip_room ._text .price .time {
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    font-size: 0.875rem;
+    padding-bottom: 2px;
+}
+
+.vip_room ._text .price .numb {
+    font-family: 'JaguarJC';
+    font-size: 1.125rem;
+}
+
+.vip_room ._text .price div:nth-child(even) .numb {
+    margin-right: 8px;
+}
+
+.vip_room ._text .price div:nth-child(odd) .numb {
+    margin-left: 8px;
+}
+
+.vip_room ._text .ps {
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: 0.6875rem;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+}
+
+
+
+
+
+
+
+
+/*進場動畫*/
+
+.vip_room.load .photo_libox {
+    display: flex;
+    animation: fadeIn .6s both;
+}
+
+.vip_room.on .photo_libox {
+    display: flex;
+    opacity: 1;
+}
+
+.vip_room.on .libox_close span:nth-child(1) {
+    width: 100%;
+    transition: all .6s ease
+}
+
+.vip_room.on .libox_close span:nth-child(2) {
+    height: 100%;
+    transition: all .6s ease .6s
+}
+
+.vip_room.on .room_slick {
+    animation: allin0 1.2s both;
+}
+
+.vip_room.on .textBox {
+    animation: allin0 1.2s both;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*退場動畫*/
+
+.vip_room.off .photo_libox {
+    animation: fadeOut .6s both 1.2s;
+    display: flex;
+}
+
+.off .libox_close span:nth-child(1) {
+    transition: all .6s ease;
+}
+
+.off .libox_close span:nth-child(2) {
+    transition: all .6s ease .6s;
+}
+
+.off .room_slick {
+    animation: allout0 1s forwards;
+}
+
+.off .textBox {
+    animation: allout0 1s forwards;
+}
+
+
+
+
+
+
+
+
+
+/*---------libox結束-----------------------------------------*/
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+    /*libox-----------*/
+    .vip_room .photo_libox {
+        flex-direction: column;
+        overflow-y: auto;
+        padding: 55px 0;
+    }
+
+    .libox_close {
+        width: 20px;
+        height: 20px;
+        right: 20px;
+        top: 20px;
+    }
+
+    .room_slick_bg {
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+        max-height: calc(125vw - 25px);
+    }
+
+    .room_slick {
+        width: 100%;
+    }
+
+    .room_slick ul li ._img {
+        height: auto;
+    }
+
+    .room_slick ul li img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slick_prev,
+    .slick_next {
+        display: none;
+    }
+
+    .vip_room .photo_libox h5 {
+        margin-top: 8vh;
+        padding: 0;
+    }
+
+    .vip_room ._text {
+        width: 90vw;
+        margin: auto;
+        padding-bottom: 50px;
+        padding: 0 5px;
+    }
+
+    /*進場動畫*/
+    .vip_room.load .photo_libox {
+        display: block;
+        animation: fadeIn .6s both;
+    }
+
+    .vip_room.on .photo_libox {
+        display: block;
+        opacity: 1;
+    }
+    /*退場動畫*/
+    .vip_room.off .photo_libox {
+        animation: fadeOut .6s both 1.2s;
+        display: block;
+    }
+}
+
+
+
+/*---------max-width:600px--------------------------------------------------------*/
+
+@media only screen and (max-width:600px) {
+    .vip_room .textBox {
+        width: 100%;
+    }
+    .vip_room ._text .price {
+        flex-direction: column;
+    }
+    .vip_room ._text .price div:nth-child(even) {
+        flex-direction: row;
+    }
+    .vip_room ._text .price div:not(:first-child) {
+        padding: 0;
+    }
+    .vip_room ._text .price div:not(:first-child):before {
+        display: none;
+    }
+    .vip_room ._text .price div:nth-child(even) .numb {
+        margin: 0 0 0 8px;
+    }
+
+    .vip_room .photo_libox h5 {
+        margin-top: 4vh;
+        margin-bottom: 30px;
+    }
+
+    .vip_room ._text span {
+        margin: 10px 0 30px 0;
+    }
+}

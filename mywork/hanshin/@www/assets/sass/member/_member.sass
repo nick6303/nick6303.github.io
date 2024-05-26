@@ -1,0 +1,305 @@
+#member.member
+    .content
+        .overview
+            ._title
+                .type
+                    font-size: px(15)
+                    @media (max-width: 1279px)
+                        font-size: px(14)
+                    &:after
+                        +fakeLine(15px,1px,#656565)
+                        margin: 10px 0 5px
+                .en
+                    font-size: px(28)
+                    @media (max-width: 1279px)
+                        font-size: px(26)
+                .ch
+                    font-size: px(18)
+                    font-weight: bold
+                    @media (max-width: 1279px)
+                        font-size: px(16)
+            .rows   
+                max-width: 1280px
+                width: 100%
+                margin: auto
+                padding: 0 50px
+                @media (max-width: 1279px)
+                    padding: 0
+                @media (max-width: 1024px)
+                    padding: 0 5vw
+                @media (max-width: 900px)
+                    padding: 0
+                .row
+                    display: flex
+                    flex-wrap: wrap
+                    &:nth-child(odd)
+                        ._text
+                            @media (min-width: 751px)
+                                padding: 0 0 0 80px
+                                @media (max-width: 1530px)
+                                    padding: 0 
+                        ._img
+                            &:after
+                                right: 0
+                                border-width: 12.5px 15px 12.5px 0
+                                border-color: transparent #f8f8f8 transparent transparent
+                                @media (max-width: 750px)
+                                    right: auto
+                                    left: 50%
+                                    border-width: 0 12.5px 15px 12.5px
+                                    border-color: transparent transparent #f8f8f8 transparent
+                            @media all and (min-width: 751px)
+                                figure
+                                    transform: scale(1.2) translate(20%,0)
+                                &:before
+                                    left: 0
+                    &:nth-child(even)
+                        flex-direction: row-reverse
+                        ._text
+                            @media (min-width: 751px)
+                                padding: 0 0 0 100px
+                                @media (max-width: 1530px)
+                                    padding: 0 
+                        ._img
+                            &:after
+                                left: 0
+                                border-width: 12.5px 0 12.5px 15px
+                                border-color: transparent transparent transparent #f8f8f8
+                                @media (max-width: 750px)
+                                    left: 50%
+                                    border-width: 0 12.5px 15px 12.5px
+                                    border-color: transparent transparent #f8f8f8 transparent
+                            @media all and (min-width: 751px)
+                                figure
+                                    transform: scale(1.2) translate(-20%,0)
+                                &:before
+                                    right: 0
+                    ._img
+                        width: calc(50% + 30px)
+                        height: 370px
+                        position: relative
+                        overflow: hidden
+                        @media (max-width: 1530px)
+                            height: calc(30vw - 92px)
+                        @media (max-width: 1279px)
+                            width: calc(50% + 15px)
+                            height: calc(30vw - 72px)
+                        @media (max-width: 1024px)
+                            height: calc(27vw + 9px)
+                        @media (max-width: 900px)
+                            height: calc(30vw + 9px)
+                        @media (max-width: 750px)
+                            width: 100%
+                            height: 60vw 
+                        &.show.in
+                            figure
+                                opacity: 1
+                                transform: scale(1) translate(0,0)
+                                transition: width 1s cubic-bezier(.45, .05, .3, .93), transform 1s cubic-bezier(.45, .05, .3, .93) 
+                            &:before
+                                @media all and (min-width: 751px)
+                                    width: 0
+                                @media all and (max-width: 750px)
+                                    height: 0
+                        figure
+                            opacity: 0
+                            will-change: transform, width
+                            @media all and (max-width: 840px)
+                                transform: scale(1.2) translate(0,20%)
+                        &:before
+                            +fakeLine(101%,101%,#fff)
+                            position: absolute
+                            z-index: 1
+                            top: 0
+                            transition: all 1s cubic-bezier(.45, .05, .3, .93) 
+                            @media all and (max-width: 750px)
+                                left: 0
+                        &:after
+                            +fakeLine(0,0,transparent)
+                            position: absolute
+                            top: 50%
+                            transform: translateY(-50%)
+                            border-style: solid
+                            @media (max-width: 750px)
+                                transform: translateX(-50%)
+                                top: auto
+                                bottom: 0
+                        a
+                            position: absolute
+                            top: 0 
+                            left: 0
+                            width: 100%
+                            height: 100%
+                            background-color: rgba(0,0,0,.7)
+                            +flex-center
+                            flex-direction: column
+                            opacity: 0
+                            transition: all .4s ease
+                            &:hover
+                                opacity: 1
+                                transition: all .4s ease
+                                span
+                                    &:before,&:after 
+                                        transition: all .4s ease .1s
+                                    &:before
+                                        width: 100%
+                                    &:after 
+                                        height: 100%
+                                p
+                                    opacity: 1
+                                    transform: translateY(0)
+                            span
+                                +cross(40px,40px)
+                                margin: 0 0 20px
+                                &:before,&:after
+                                    transition: all .4s ease
+                                &:before
+                                    +cross_before(0%,#fff)
+                                &:after
+                                    +cross_after(0%,#fff)
+                            p
+                                font-size: px(15)
+                                color: #fff
+                                opacity: 0
+                                transform: translateY(25px)
+                                transition: all .4s ease
+                    ._text
+                        width: calc(50% - 30px)
+                        +flex-left
+                        animation: fadeIn 1s both 
+                        @media (max-width: 1530px)
+                            align-items: center
+                        @media (max-width: 1279px)
+                            width: calc(50% - 15px)
+                        @media (max-width: 750px)
+                            width: 100%
+                            padding: 20px 5vw 50px calc(6vw + 10px)
+                        ._title
+                            @media (max-width: 750px)
+                                max-width: 100%
+                        ul
+                            display: flex
+                            margin: 30px -35px 0
+                            @media (max-width: 1279px)
+                                margin: 20px -25px 0
+                            @media (max-width: 1100px) and (min-width: 1025px)
+                                margin: 15px -20px 0
+                            @media (max-width: 750px)
+                                max-width: calc(100% + 35px + 6vw)
+                            li
+                                position: relative
+                                &:not(:first-child):before
+                                    position: absolute
+                                    top: 50%
+                                    left: 0
+                                    transform: translateY(-50%)
+                                    +fakeLine(1px,48px,#c7c7c7)
+                                a
+                                    +flex-center
+                                    flex-direction: column
+                                    width: 150px
+                                    @media (max-width: 1440px)
+                                        width: 135px
+                                    @media (max-width: 1279px)
+                                        width: 120px
+                                    @media (max-width: 1100px) and (min-width: 1025px)
+                                        width: 110px
+                                    &:hover .ch,&:hover .en
+                                        color: #000
+                                    .ch,.en
+                                        font-size: px(16)
+                                        transition: all .4s ease
+                                        @media (max-width: 1279px)
+                                            font-size: px(15)
+                                    .ch
+                                        color: #565656
+                                        @media (max-width: 1024px)
+                                            color: #000
+                                    .en
+                                        color: #9d9d9d
+                                        letter-spacing: 0
+                                        @media (max-width: 1024px)
+                                            color: #000
+            .infAndPassword
+                max-width: 1320px
+                width: 100%
+                margin: -30px auto 0
+                display: flex
+                padding: 110px 70px 80px
+                background-color: rgba(0,0,0,.07)
+                @media (max-width: 1570px)
+                    padding: 110px 4.5vw 80px
+                @media (max-width: 1024px)
+                    padding: 110px 0 80px
+                @media (max-width: 750px)
+                    margin: 0 auto 
+                    flex-direction: column
+                    align-items: center
+                    padding:  0 
+                .inf,.password
+                    width: 50%
+                    +flex-center
+                    flex-direction: column
+                    padding: 0 0 0 70px
+                    @media (max-width: 1570px)
+                        padding: 0 0 0 4.5vw
+                    @media (max-width: 1440px)
+                        padding: 0 
+                    @media (max-width: 1024px)
+                        padding: 0 5vw
+                    @media (max-width: 750px)
+                        width: auto
+                        padding: 50px 5vw
+                    &.show
+                        .type
+                            animation: fadeInUp 1s both .6s
+                        .en,.ch
+                            animation: fadeInUp 1s both .4s
+                        a,button
+                            animation: fadeInUp 1.5s both .2s
+                        &:not(:first-child):before
+                            @media (min-width: 751px)
+                                height: calc(100% + 24px)
+                            @media (max-width: 750px)
+                                width: 100% 
+                    &:not(:first-child)
+                        position: relative
+                        &:before
+                            position: absolute
+                            top: 50%
+                            left: 0
+                            transform: translateY(-50%)
+                            +fakeLine(4px,0,#bababa)
+                            transition: all 1s ease .5s
+                            @media (max-width: 750px)
+                                top: 0
+                                left: 50%
+                                transform: translateX(-50%)
+                                width: 0
+                                height: 4px
+                    ._title
+                        @media (max-width: 750px)
+                            +flex-center
+                            flex-direction: column
+                            .type:after
+                                margin: 10px auto 5px
+                        &>*
+                            opacity: 0
+                        a,button
+                            border: none
+                            background-color: #535353
+                            color: #ffffff
+                            +flex-center
+                            width: 180px
+                            height: 40px
+                            margin: 50px 0 0 
+                            transition: all .4s ease
+                            @media (max-width: 750px)
+                                margin: 20px 0 0
+                            &:hover
+                                background-color: #000
+                            span
+                                font-size: px(18)
+                                margin: 0 15px 0 0
+                            p
+                                font-size: px(14)

@@ -1,0 +1,322 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+.content {
+    padding: 14vh 5vw 0 5vw;
+    @media all and (max-width: 1024px) {
+        padding: 8vh 5vw 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding: 10vh 5vw 0 5vw;
+    }
+    ._title {
+        margin: auto;
+        max-width: 850px;
+        h2 {
+            @include title_h2;
+            span{
+                @include title_h2_span;
+            }
+        }
+        h3 {
+            @include title_h3;
+        }
+    }
+    .row,
+    .quality {
+        max-width: 1240px;
+        margin: auto;
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        @media all and (max-width: 900px) {
+            flex-direction:column;
+        }
+        ._img,
+        ._text {
+            width: 50%;
+            @media all and (max-width: 900px) {
+                width: 100%;
+            }
+        }
+        &:nth-child(2) {
+            margin-top: 100px;
+            @media all and (max-width: 900px) {
+                margin-top: 6vh;
+            }
+            @media all and (max-width: 700px) {
+                margin-top: 12vw;
+            }
+        }
+        &:not(:nth-child(2)) {
+            margin-top: 130px;
+            @media all and (max-width: 900px) {
+                margin-top: 10vh;
+            }
+            @media all and (max-width: 700px) {
+                margin-top: 18vw;
+            }
+        }
+        ._text {
+            letter-spacing: 1px;
+            padding: 0 0 0 70px;
+            @media all and (max-width: 1024px) {
+                padding: 0 0 0 6vw;
+            }
+            @media all and (max-width: 900px) {
+                padding: 0 5px;
+                margin-top: 5vh;
+            }
+            h2 {
+                font-family: "微軟正黑體";
+                font-weight: bold;
+                @include font-size(24);
+                line-height: 1.5;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+                padding-left: 55px;
+                @media all and (max-width: 700px) {
+                    @include font-size(22);
+                }
+                @media all and (max-width: 350px) {
+                    @include font-size(20);
+                }
+                &:before {
+                    content: "";
+                    display: block;
+                    height: 6px;
+                    width: 40px;
+                    background-color: $base_orange;
+                    position: absolute;
+                    top: calc(50% - 3px);
+                    left: 0;
+                    @media all and (max-width: 350px) {
+                        height: 5px;
+                    }
+                }
+            }
+            h3 {
+                font-family: 'MyriadPro-Regular';
+                @include font-size(18);
+                line-height: 1.5;
+                text-transform: uppercase;
+                color: #858585;
+                margin-top: 10px;
+            }
+            p {
+                font-family: "微軟正黑體";
+                @include font-size(16);
+                line-height: 1.8;
+                margin-top: 20px;
+                text-align: justify;
+            }
+            ul {
+                margin-top: 20px;
+                li {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    @include font-size(16);
+                    margin: 5px 0;
+                    p {
+                        margin-top: 0;
+                    }
+                    &:before {
+                        margin: 8px 10px 0 0;
+                        width: 12px;
+                        height: 12px;
+                        @include flex-center;
+                        font-family: 'icomoon';
+                        content: "\e900";
+                        @include font-size(12);
+                        color: $base_blue;
+                    }
+                }
+            }
+        }
+        ._img {
+            @include flex-center;
+            img {
+                width: 100%;
+            }
+        }
+        &.even {
+            flex-direction: row-reverse;
+            @media all and (max-width: 900px) {
+                flex-direction: column;
+            }
+            ._text {
+                padding: 0 70px 0 0;
+                @media all and (max-width: 1024px) {
+                    padding: 0 6vw 0 0;
+                }
+                @media all and (max-width: 900px) {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+    .quality {
+        letter-spacing: 1px;
+        margin-top: 50px;
+        h2 {
+            font-family: "微軟正黑體";
+            font-weight: bold;
+            @include font-size(24);
+            color: #b0b0b0;
+            padding-left: 30px;
+            @media all and (max-width: 500px) {
+                padding:0 30px;
+                text-align: center;
+            }
+            span {
+                @include font-size(28);
+                font-family: "MyriadPro-Semibold"
+            }
+        }
+        ul {
+            margin-top: 20px;
+            li {
+                @include flex-center;
+                margin: 4px 0;
+                cursor: pointer;
+                @media all and (max-width: 500px) {
+                    flex-direction:column;
+                }
+                &:nth-child(odd) {
+                    background-color: #eeeeee;
+                }
+                &:nth-child(even) {
+                    background-color: #f7f7f7;
+                }
+                ._img {
+                    width: 18%;
+                    @include flex-center;
+                    padding: 2vw 0;
+                    @media all and (max-width: 1390px) {
+                        width:20%;
+                    }
+                    @media all and (max-width:1250px) {
+                        width: 25%;
+                    }
+                    @media all and (max-width:500px) {
+                        width: 100%;
+                        padding: 6vh 0 5vh 0;
+                    }
+                    img {
+                        width: 80px;
+                        height: auto;
+                    }
+                }
+                ._text {
+                    width: 82%;
+                    padding: 50px 65px 50px 0;
+                    @media all and (max-width: 1280px) {
+                        padding: 50px 20px 50px 0;
+                    }
+                    @media all and (max-width:600px) {
+                        padding: 50px 5vw;
+                    }
+                    @media all and (max-width:500px) {
+                        width: 100%;
+                        padding: 0vh 5vw 6vh 5vw;
+                    }
+                    h3 {
+                        font-family: MyriadPro-Semibold, 微軟正黑體;
+                        @include font-size(14);
+                        position: relative;
+                        padding: 0 30px 0 0;
+                        line-height: 1.5;
+                        @media all and (max-width: 500px) {
+                            text-align: center;
+                            padding: 0 10vw;
+                        }
+                        &:after {
+                            width: 16px;
+                            height: 16px;
+                            @include flex-center;
+                            font-family: 'icomoon';
+                            content: "\e905";
+                            @include font-size(12);
+                            color: $base_blue;
+                            position: absolute;
+                            top: calc(50% - 8px);
+                            right: 0;
+                            transition: all .8s ease;
+                        }
+                        &.open:after {
+                            color: $base_orange;
+                            transform: rotateX(180deg);
+                            transition: all .8s ease;
+                        }
+                    }
+                    p {
+                        display: none;
+                        font-family: MyriadPro-Regular, 微軟正黑體;
+                        line-height: 1.5;
+                        text-align: justify;
+                        @include font-size(14);
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* 進場動畫*/
+
+.content {
+    ._title.show {
+        h2 {
+            animation: fadeInDown 1.8s both;
+        }
+        h3 {
+            animation: fadeInDown 1.8s both .2s;
+        }
+    }
+    .row {
+        ._img.show {
+            animation: fadeIn 1.6s both;
+        }
+        ._text.show {
+            h2 {
+                animation: fadeInUp 1.8s both;
+                &:before {
+                    animation: box_h2 1s both .3s;
+                }
+            }
+            h3 {
+                animation: fadeInUp 1.4s both .2s;
+            }
+            &>p {
+                animation: fadeInUp 1.6s both .3s;
+            }
+            ul {
+                li {
+                    animation: fadeInUp 1.8s both;
+                }
+            }
+        }
+    }
+    .quality.show {
+        h2 {
+            animation: fadeInDown 1s both;
+        }
+        ul {
+            li {
+                animation: fadeInUp 1.8s both;
+            }
+        }
+    }
+}

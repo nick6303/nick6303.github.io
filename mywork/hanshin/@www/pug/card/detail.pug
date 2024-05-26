@@ -1,0 +1,339 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"超級卡/聯名卡專區",
+            link:"../card/index.html"},
+        {
+            title:"漢神聯名世界卡",
+            link:"../card/detail.html"},
+    ]
+
+    var treatment = [
+        {
+            img:"../../upload/fa2/card/detail/treatmentImg1_370_220.jpg",
+            title:"消費最高紅利點數5倍回饋",
+            words:"國內消費紅利點數3倍回饋，海外消費紅利點數5倍回饋。"},
+        {
+            img:"../../upload/fa2/card/detail/treatmentImg2_370_220.jpg",
+            title:"回饋享免費停車4小時",
+            words:""},
+        {
+            img:"../../upload/fa2/card/detail/treatmentImg3_370_220.jpg",
+            title:"免費使用漢神百貨貴賓廳",
+            words:"首年可免費獲一年期「尊榮金卡」乙張，免費使用漢神百貨貴賓廳，尊榮金卡每卡戶限贈。"},
+        {
+            img:"../../upload/fa2/card/detail/treatmentImg4_370_220.jpg",
+            title:"回饋金終身有效，自動折抵次期消費",
+            words:"國內消費金額依下表級距，決定當期及次期帳單海外消費回饋率，系統自動取較高回饋率..."},
+        {
+            img:"../../upload/fa2/card/detail/treatmentImg5_370_220.jpg",
+            title:"年度2次、每次最高7天國際機場貴賓室服務",
+            words:""},
+        {
+            img:"../../upload/fa2/card/detail/treatmentImg6_370_220.jpg",
+            title:"高額旅行平安險及旅行不便險保障",
+            words:"只要您使用鈦金卡刷卡支付80%以上之團費，或全部公共交通工具費用，您可享有2,000..."},
+    ]
+    
+    var application =[
+        {
+            img:"../../upload/fa2/card/detail/applicationImg1.png",
+            ch:"申請條件",
+            en:"Condition"},
+        {
+            img:"../../upload/fa2/card/detail/applicationImg2.png",
+            ch:"所需文件",
+            en:"File"},
+        {
+            img:"../../upload/fa2/card/detail/applicationImg3.png",
+            ch:"其他證明",
+            en:"Other proof"},
+        {
+            img:"../../upload/fa2/card/detail/applicationImg4.png",
+            ch:"年費及減免辦法",
+            en:"Annual fee"},
+        {
+            img:"../../upload/fa2/card/detail/applicationImg5.png",
+            ch:"個人資料使用條款",
+            en:"Terms of use"},
+        {
+            img:"../../upload/fa2/card/detail/applicationImg6.png",
+            ch:"超集卡相關事項",
+            en:"Related matters"},
+    ]
+
+    var QAtype = [
+        {
+            typeName:"點數累積",
+            question:[
+                "如何累積點數？點數多久入帳？",
+                "若客戶要查詢漢神超集卡的點數，怎麼查？",
+                "購物後才申辦超集卡，還可以補登之前消費金額的點數嗎？",
+                "特殊活動時所贈送之商品券使用方式為何？"
+            ]},
+        {
+            typeName:"其他相關問題",
+            question:[
+                "我的個人資料有變動，請問該如何更改？",
+                "請問個人密碼為何？",
+                "如果漢神超集卡不見了要如何掛失，會有什麼風險嗎？",
+            ]},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#card.detail
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section.cover
+                // 後端請注意: 如果要讓字變白色的話 請在下方的left 加上class"whiteWord"
+                .left(style="background-image:url('../../upload/fa2/card/index/textBg2_1020_650.png')")
+                    ._title
+                        h2 漢神聯名世界卡
+                        p 貴賓廳尊榮貼心服務，停車有優惠讓您逛街不煩惱，尊竉禮及卡友獨享折扣商品，一卡同享超集卡點數優惠。
+                    .inf
+                        .share
+                            .type
+                                p.ch 分享
+                                p.en Share to
+                            ul.socialMedia
+                                li
+                                    a(href="javascript:void(0)")
+                                        span.icon-facebook
+                                li
+                                    a(href="javascript:void(0)")
+                                        span.icon-twitter
+                                li
+                                    a(href="javascript:void(0)")
+                                        span.icon-line
+                        .apply
+                            .type
+                                p.ch 立即申辦此卡 
+                                p.en Apply
+                            a.book(href=java target="_blank") ENTER
+                        .other
+                            .type
+                                p.ch 請下拉選擇
+                                p.en Other
+                            .dropDown
+                                .selectMenu
+                                    p 全部類別
+                                ul
+                                    -for(var i = 1;i< 5;i++)
+                                        li 
+                                            a(href=java) 斜槓進行式  Sale流行品最後折扣"
+                .right
+                    figure
+                        img(src="../../upload/fa2/card/index/rowImg2.png", alt="")
+        article.topTitle
+            p.en INTRODUCTION
+            .anchor
+                ul
+                    li.active 
+                        p 專屬優惠
+                    li
+                        p 尊榮禮遇
+                    li
+                        p 申請辦法
+                    li
+                        p 常見問題
+        article.offer
+            section._title
+                p.ch 專屬優惠
+                p.en Exclusive offer
+                .date
+                    .type 
+                        p 活動期間
+                        p Date
+                    .time
+                        p 2019/03/16(四)～2019/04/17(二)
+            section.rows
+                //後端請注意: 這邊有點小複雜 請一定要注意 
+                    此處p的有分層級 需要讓客戶選擇自行編排
+                    第一層 <p class="s1">   一定會有那個點
+                    第二層 <p class="s2">   
+                    第三層 <p class="s3">   
+                .row
+                    ._text
+                        h6 (1)一卡雙回饋，同享超集卡點數優惠: 
+                        p.s1 享超集卡集點/折抵優惠，持漢神聯名卡於漢神刷卡消費，單筆消費即可累積「漢神超集卡」點數，兩館點數可合併累積計算。折抵現金：單筆消費500元(含)以上，超集卡點數每100點可折抵30元，折抵無上限。
+                    .ps
+                        h6 *注意事項 :
+                        p 1.漢神聯名卡卡友免申辦「漢神超集卡」，僅須持卡至「超集卡查詢機」完成開卡登錄，即擁有漢神超集卡集點/折抵等功能。
+                        p 2.相關優惠內容、使用辦法及注意事項以漢神百貨公告為準。 
+                .row
+                    ._text
+                        h6 (2)交易免簽名，快速又便利:
+                        p.s1 刷卡購物消費享9折優惠(折扣期間95折，部分專櫃、商品除外)。
+                .row
+                    ._text
+                        h6 (3)來店禮遇:
+                        p.s1 漢神不定期舉辦卡友來店禮及卡友獨享折扣商品，回饋您的愛護，並不定期寄發各項流行資訊與活動訊息，讓您掌握流行資訊的每一腳步。
+                .row
+                    ._text
+                        h6 (4)停車有優惠，讓您逛街不煩惱:
+                        p.s1 外籍旅客持當日消費發票，含稅累積消費新臺幣 2,000 元(含)以上(需扣除不可退稅貨物)，及出示外籍旅客入境證件（護照／         中國、香港、澳門旅客需出示入台證）正本，即可至卡友服務中心辦理退稅服務，旅客需於申辦當日起算 90 天內離境。
+                .row
+                    ._text
+                        h6 (5)貴賓廳尊榮貼心服務:
+                        p.s2 1.漢神百貨貴賓廳，提供每位貴賓優雅舒適的休憩空間，免費提供飲料、點心書報雜誌，讓您置身其中，輕鬆舒適、倍感尊榮。
+                        p.s2 2.每年1/1至同年12/31止，持漢神百貨聯名卡於漢神百貨館內消費累計達指定金額，即可獲贈免費使用貴賓廳數次。(以同一身分證字號計算，正、附卡分別累計，依消費級距核定使用貴賓廳資格及次數，使用期限一年，限持卡者本人使用。)
+                        p
+                            a(href=java) 詳情及期限參閱信用卡網站說明
+        article.treatment(style="background-image:url('../../upload/fa2/card/detail/treatmentBg_1670_1080.jpg')")
+            section._title
+                p.ch 尊榮禮遇
+                p.en Honorable courtesy
+            section.content
+                ul
+                    each val in treatment
+                        li
+                            figure
+                                img.b-lazy(src=blazy data-src=val.img, alt="")
+                            ._text
+                                h6=val.title
+                                // 後端請注意: 字數限制40字 超過會變.....
+                                p=val.words
+        article.application
+            section._title
+                p.ch 申請辦法
+                p.en Application method
+            section.content
+                ul
+                    each val in application
+                        li
+                            a(href=java data-src="../card/applicationLibox.html" onclick="applicationLibox.open(this)")
+                                figure
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                ._text
+                                    p.ch=val.ch
+                                    p.en=val.en
+        article.qa
+            section._title
+                p.ch 常見問題
+                p.en Q & A
+            section.QAtable
+                each val in QAtype
+                    .type
+                        .typeName
+                            p=val.typeName
+                        .lists
+                            each item in val.question
+                                .list
+                                    .question
+                                        p=item
+                                        span.icon-play3
+                                    .answer(style="display:none")
+                                        ._text
+                                            p 在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。
+                                        ._text
+                                            p 您可利用下列方式查詢：
+                                            ul
+                                                li 
+                                                    p 下載APP並綁定超集卡，即可線上於"會員中心"查詢。
+                                                li
+                                                    p 於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。
+                                                li
+                                                    p 致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。
+                                        ._text
+                                            a(href=java) 4F卡友服務中心連結
+                                        ._img
+                                            figure
+                                                img(src="../../upload/fa2/card/detail/QAImg.jpg", alt="")
+                                            b 不定期舉辦加碼活動、扣點換贈品等活動
+
+
+    include ../layout/_footer.pug
+
++script
+script.
+    var applicationLibox ={
+
+        open:function(target){
+            var src = $(target).attr("data-src")
+            $("body").append("<article class='applicationLibox'></article>")
+
+            if (!mobile()  && !$("body").hasClass("guide")) {
+                $("body").css({
+                    "overflow-y": "hidden",
+                    "padding-right": "1rem"
+                })
+            } else {
+                $("body").css("overflow-y", "hidden");
+            }
+
+            $.ajax({
+                    // 載入資料
+                    url: src,
+                })
+                .done(function (data) {
+                    // 將資料塞入結構
+                    $(".applicationLibox").html(data);
+                    applicationLibox.all();
+                });
+        },
+
+        close_click:function(){
+            $(".applicationLibox .liboxClose").click(function () {
+                applicationLibox.close();
+            });
+            $(".applicationLibox").click(function (e) {
+                if ($(e.target).hasClass("applicationLibox")){applicationLibox.close(); }
+            })
+        },
+
+        close:function(){
+            $(".applicationLibox").addClass("close");
+            if (!mobile()) {$("body").css({"overflow-y":"visible","padding-right":"0rem"})}
+            else{ $("body").css("overflow-y", "visible")}
+            setTimeout(function () {
+                $(".applicationLibox").remove()
+            }, 400)
+        },
+
+        scrollBar:function(){
+            $(".applicationLibox section").niceScroll({
+                horizrailenabled: false,
+                nativeparentscrolling: false,
+                cursorborder: "none",
+                cursorwidth: "3px",
+                cursorcolor: "#000",
+                railpadding: {
+                    top: 0,
+                    right: 1,
+                    left: 0,
+                    bottom: 0
+                },
+            })
+        },
+
+        all:function(){
+            applicationLibox.close_click();
+            applicationLibox.scrollBar();
+        }
+    }
+
+|
+|
+</html>

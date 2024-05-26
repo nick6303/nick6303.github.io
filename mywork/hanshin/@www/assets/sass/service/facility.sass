@@ -1,0 +1,112 @@
+#service.facility
+    .banner ._title
+        padding: 150px 50px 130px 
+        @media all and (max-width: 1024px)
+            padding: 150px 5vw 130px 
+    .content
+        .table
+            max-width: 1140px
+            margin: auto
+            padding: 0 50px
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            @media all and (max-width: 700px)
+                padding: 0 10px
+            .type
+                display: flex
+                font-weight: bold
+                position: relative
+                @media all and (max-width: 700px)
+                    flex-direction: column
+                    padding: 20px 0
+                &:before
+                    +borderTop(0%,1px,#b2b2b2)
+                    @media all and (max-width: 700px)
+                        height: 4px
+                &:first-child:before
+                    height: 4px
+                &:last-child:after
+                    +borderBottom(0%,4px,#b2b2b2)
+                &.show 
+                    &:before
+                        animation: w100 1s both 
+                    &:last-child:after
+                        animation: w100 1s both .5s
+                    .typeName p
+                        animation: fadeInDown 1.2s both .2s
+                .typeName
+                    +flex-center
+                    text-align: center
+                    width: 20%
+                    font-size: px(16)
+                    padding: 0 15px
+                    @media all and (max-width: 700px)
+                        width: 100%
+                        padding: 20px 0 10px
+                        font-size: px(22)
+                    
+                    p
+                        opacity: 0
+                ul
+                    width: 80%
+                    @media all and (max-width: 700px)
+                        width: 100%
+                        padding: 0 10px
+                    li
+                        display: flex
+                        justify-content: space-between
+                        @media all and (max-width: 700px)
+                            flex-direction: column
+                            position: relative
+                            &:not(:last-child):after
+                                +borderBottom(0%,1px,#b2b2b2)
+                        &.show
+                            .place,.where 
+                                p
+                                    animation: fadeInUp 1.2s both .4s
+                                &:after
+                                    animation: w100 .8s both .2s
+                            @media all and (max-width: 700px)
+                                .place
+                                    p
+                                        animation: fadeInUp 1.2s both
+                                &:not(:last-child):after
+                                    animation: w100 .8s both .4s
+                        .place,.where
+                            display: flex
+                            align-items: center
+                            font-size: px(16)
+                            position: relative
+                            p
+                                opacity: 0
+                        .place
+                            width: calc(28% - 4px)
+                            text-align: center
+                            justify-content: center
+                            padding: 15px
+                            transition: all .3s ease
+                            @media all and (max-width: 700px)
+                                padding: 20px 5px 5px
+                                width: 100%
+                                font-size: px(18)
+                            // &.openLibox 
+                            &.openLibox:hover 
+                                cursor: pointer
+                                color: #c99454
+                        .where
+                            width: calc(72% - 4px)
+                            padding: 15px 10px 15px 40px
+                            font-weight: normal
+                            @media all and (max-width: 700px)
+                                padding: 5px 5px 20px 
+                                width: 100%
+                                +flex-center
+                                text-align: justify
+                            p
+                                max-width: 500px
+                        &:not(:last-child)
+                            .place,.where
+                                &:after
+                                    +borderBottom(0%,1px,#b2b2b2)
+                                    @media all and (max-width: 700px)
+                                        display: none

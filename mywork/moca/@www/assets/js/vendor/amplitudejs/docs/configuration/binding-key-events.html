@@ -1,0 +1,73 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>binding-key-events.md</title>
+      </head>
+      <body>
+        <hr>
+<p>title: Binding Key Events - AmplitudeJS Documentation
+meta:</p>
+<ul>
+<li>name: description
+content: Amplitude.js is the HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design a web audio player the way you want it to look.</li>
+<li>name: og:locale
+content: en_US</li>
+<li>name: og:type
+content: website</li>
+<li>name: og:title
+content: Amplitude.js The Open Source HTML5 Audio Player for the Modern Era</li>
+<li>name: og:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look.</li>
+<li>name: og:url
+content: <a href="https://521dimensions.com/open-source/amplitudejs/docs/configuration/binding-key-events.html">https://521dimensions.com/open-source/amplitudejs/docs/configuration/binding-key-events.html</a></li>
+<li>name: og:site_name
+content: Amplitude.js</li>
+<li>name: og:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: og:image:width
+content: 1200</li>
+<li>name: og:image:height
+content: 630</li>
+<li>name: twitter:card
+content: summary_large_image</li>
+<li>name: twitter:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look. Available for free on Github.</li>
+<li>name: twitter:title
+content: Amplitude.js The HTML Audio Player for the Modern Era</li>
+<li>name: twitter:site
+content: &quot;@521dimensions&quot;</li>
+<li>name: twitter:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: creator
+content: &quot;@521dimensions&quot;</li>
+</ul>
+<hr>
+<h1 id="binding-key-events">Binding Key Events</h1>
+<p>This allows you to configure certain
+events to trigger on key presses. The main piece of information needed is the
+key code (<a href="http://keycode.info/)[http://keycode.info/]">http://keycode.info/)[http://keycode.info/]</a>. Once you have that, you
+can make an object that references a certain event key. There are 6 events that
+you can bind a key code to:</p>
+<ul>
+<li>prev (on key down, goes to previous song)</li>
+<li>next (on key down, goes to next song)</li>
+<li>play_pause (on key down, toggles play/pause)</li>
+<li>stop (on key down, stops the song)</li>
+<li>shuffle (on key down, toggles shuffle state global)</li>
+<li>repeat (on key down, toggles repeat state global)</li>
+</ul>
+<p>To add a binding, for example, the right arrow key on a mac keyboard has code
+39 you&#39;d add the following to your config:</p>
+<pre><code class="lang-javascript">    Amplitude.init({
+        &quot;bindings&quot;: {
+            39: &#39;next&#39;
+        },
+        &quot;songs&quot;: [{}]
+    })
+</code></pre>
+<p>Now every time the right arrow down is pressed, AmplitudeJS will go to the next
+song. You can add multiple bindings to the array with multiple key codes. It
+could be any key you want!</p>
+
+      </body>
+    </html>

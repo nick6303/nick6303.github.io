@@ -1,0 +1,113 @@
+// 電子商品券
+.typeBox
+    .dropDown.topHeader
+        .selectMenu
+            p 108年 漢神百貨春季禮賓會
+        ul
+            li 108年 漢神百貨春季禮賓會
+            li 108年 精品Grand Opening
+            li 109年 App會員獨享禮
+    ._title 
+        p.red(data-before="電子商品券餘額 :" data-after="元") 2,500
+        p.px16 (108/03/13 ~ 108/04/16 逾期作廢)
+    .box
+        .select
+            p.active 兌換紀錄 
+            p 使用紀錄
+            p 使用簡則
+        .table
+            //兌換紀錄 
+            .listTable.active
+                .listhead
+                    .w245
+                        p 兌換日期
+                    .w245
+                        p 商品券金額
+                    .w150
+                        p 兌換明細
+                .listbody
+                    -for (var i = 0 ;i<5;i++)
+                        .list
+                            .w245
+                                p 108/03/13
+                            .w245
+                                p 1,000元
+                            .w150
+                                button.openIntro(type="button")
+                                    span
+                            .intro
+                                // 活動名稱
+                                .name
+                                    h6 活動名稱
+                                    p 3/15~3/18 精品加碼送 刷同一卡滿5萬送2,500元電子商品券
+                                // 發票內容
+                                ul.invoice
+                                    li
+                                        .numb
+                                            h6 發票號碼
+                                            p NH51109059
+                                        .price
+                                            h6 活動兌換金額
+                                            p 40,001元
+                                // 小計
+                                .subtotal
+                                    h6 活動兌換金額小計
+                                    p 40,001元
+                // 總計
+                .total
+                    .w245
+                        p 合計
+                    .w245
+                        p 1,500元
+                    .w150
+                        //空值 佔位置用的
+            // 使用紀錄
+            .listTable
+                .listhead
+                    .w245
+                        p 使用日期
+                    .w245
+                        p 發票號碼
+                    .w150
+                        p 電子商品卷
+                .listbody
+                    .list
+                        .w245
+                            p 108/04/07
+                        .w245
+                            p NH51206536
+                        .w150
+                            p 1,000元
+                    .list
+                        .w245
+                            p 108/04/15
+                        .w245
+                            p NS54706627
+                        .w150
+                            p 230元
+                // 總計
+                .total
+                    .w245
+                        p 合計
+                    .w245
+                        //空值 佔位置用的
+                    .w150
+                        p 1,230元
+            // 使用簡則
+            .rule
+                div
+                    p 本券為無償取得商品券，可換同等金額商品，但不找零、兌換現金及抵付欠款。本券兌換商品不需開立發票，不計入消費停車券，亦不參加集點。
+                div
+                    p 本券遺失、被竊、滅失恕不掛失或補發。本券逾期、塗改均無效，偽造本券依法追究。 
+                div
+                    p 本券於漢神百貨不得兌換下列專櫃商品：精品店、點睛品、超市、丸龜製麵、星巴克儲值。
+                div
+                    p 以上不得兌換之專櫃如有變動，以現場標示或官網公告為準。
+                div
+                    p 若有疑問請洽本公司服務台及卡友服務中心。
+            .noActivity
+                span.icon-alert
+                p 抱歉，目前無紀錄可供查詢
+.noActivity
+    span.icon-alert
+    p 抱歉，目前無檔期活動可供查詢

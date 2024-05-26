@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+    <title></title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="網站描敘">
+
+    <meta name="keywords" content="網站關鍵字">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick.css">
+
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick-theme.css">
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+
+
+
+</head>
+
+
+
+<body id="product_list">
+
+    <header id="header"></header>
+
+    <main class="product_list">
+
+        <article class="banner_wrap">
+
+            <!-- 1920X600 -->
+
+            <div class="banner">
+
+                <div class="banner__img">
+
+                    <picture>
+
+                        <!-- <source media="(max-width: 600px)" data-srcset="../../upload/f2e/course01_rwd.jpg" /> -->
+
+                        <img class="b-lazy" src="../../assets/img/load_16x5.svg" data-src="../../upload/f2e/product_lsit/product_list_01.jpg" />
+
+                    </picture>
+
+                </div>
+
+                <div class="banner__title">
+
+                    <h4>Wooden Surface</h4>
+
+                    <h5>木頭表面商品</h5>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="nav_wrap">
+
+            <div class="dropdowns">
+
+                <ul>
+
+                    <li>
+
+                        <select class="dropdown dropdown_all" data-placeholder="產品性質">
+
+                            <option value=""></option>
+
+                            <option value="1">水性</option>
+
+                            <option value="2">油性</option>
+
+                        </select>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <select class="dropdown dropdown_all" data-placeholder="應用材質">
+
+                            <option></option>
+
+                            <option value="1">木製牆面</option>
+
+                            <option value="2">木製地板</option>
+
+                        </select>
+
+                    </li>
+
+                    <li>
+
+                        <select class="dropdown dropdown_all" data-placeholder="應用空間">
+
+                            <option></option>
+
+                            <option value="1">客廳</option>
+
+                            <option value="2">臥房</option>
+
+                            <option value="3">浴室</option>
+
+                            <option value="4">廚房</option>
+
+                        </select>
+
+                    </li>
+
+                    <li>
+
+                        <div class="bothdoor">
+
+                            <ul>
+
+                                <li class="indoor on">室內</li>
+
+                                <li class="outdoor">室外</li>
+
+                            </ul>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- <div class="bothdoor">
+
+                <ul>
+
+                    <li class="indoor on">室內</li>
+
+                    <li class="outdoor">室外</li>
+
+                </ul>
+
+            </div> -->
+
+        </article>
+
+        <article class="content_wrap">
+
+            <!-- 
+
+                    照片 大張 1100 X 700 寬固定高隨意 別差太多就好
+
+                    照片 小張 470  X 500 寬固定高隨意 別差太多就好 
+
+                -->
+
+            <div class="product_list__content">
+
+                <div class="product_list__inner">
+
+                    <ul>
+
+                        <li data-bg="#ff0000">
+
+                            <div class="product_list_box">
+
+                                <a href="../product/product_normal.html">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內外</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #ff0000;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <li data-bg="#ff8000">
+
+                            <div class="product_list_box">
+
+                                <a href="javascript:void(0);">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #ff8000;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <li data-bg="#ffff00" class="fontB">
+
+                            <div class="product_list_box">
+
+                                <a href="javascript:void(0);">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #ffff00;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <li data-bg="#40ff00">
+
+                            <div class="product_list_box">
+
+                                <a href="javascript:void(0);">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #40ff00;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <li data-bg="#00ffff" class="fontB">
+
+                            <div class="product_list_box">
+
+                                <a href="javascript:void(0);">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內外</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #00ffff;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <li data-bg="#0040ff">
+
+                            <div class="product_list_box">
+
+                                <a href="javascript:void(0);">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #0040ff;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <li data-bg="#8000ff">
+
+                            <div class="product_list_box">
+
+                                <a href="javascript:void(0);">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #8000ff;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <li data-bg="#ff00ff">
+
+                            <div class="product_list_box">
+
+                                <a href="javascript:void(0);">
+
+                                    <div class="product_list_box__img">
+
+                                        <img class="b-lazy" src="../../upload/f2e/news/news_01.jpg" data-src="../../upload/f2e/product_lsit/product_list_02.png"
+
+                                        />
+
+                                    </div>
+
+                                    <div class="product_list_box__txt">
+
+                                        <h4>天然特別底漆</h4>
+
+                                        <p>Special primer No.117</p>
+
+                                        <div>
+
+                                            <h5>室內</h5>
+
+                                            <span class="spanhover"></span>
+
+                                            <span class="spannohover" style="background: #ff00ff;"></span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                        <span class="thebg"></span>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!--主要jQuery-->
+
+    <script src="../../assets/js/vendor/jquery-2.2.4.min.js"></script>
+
+    <script src="../../assets/js/vendor/slick/slick.js"></script>
+
+    <script src="../../assets/js/vendor/waypoints/jquery.waypoints.min.js"></script>
+
+    <script src="../../assets/js/vendor/blazy.js"></script>
+
+    <script src="../../assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+
+    <script src="../../assets/js/vendor/masonry/masonry.pkgd.min.js"></script>
+
+    <script src="../../assets/js/vendor/masonry/imagesloaded.pkgd.min.js"></script>
+
+    <script src="../../assets/js/vendor/cgpagechange.js"></script>
+
+    <script src="../../assets/js/vendor/lbox.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <!-- 主要 -->
+
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- 個別 -->
+
+    <script src="../../assets/js/product.js"></script>
+
+</body>
+
+
+
+</html>

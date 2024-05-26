@@ -1,0 +1,87 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>waveforms.md</title>
+      </head>
+      <body>
+        <hr>
+<p>title: Web Audio API Waveforms - AmplitudeJS Documentation
+meta:</p>
+<ul>
+<li>name: description
+content: Amplitude.js is the HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design a web audio player the way you want it to look.</li>
+<li>name: og:locale
+content: en_US</li>
+<li>name: og:type
+content: website</li>
+<li>name: og:title
+content: Amplitude.js The Open Source HTML5 Audio Player for the Modern Era</li>
+<li>name: og:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look.</li>
+<li>name: og:url
+content: <a href="https://521dimensions.com/open-source/amplitudejs/docs/fx/waveforms.html">https://521dimensions.com/open-source/amplitudejs/docs/fx/waveforms.html</a></li>
+<li>name: og:site_name
+content: Amplitude.js</li>
+<li>name: og:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: og:image:width
+content: 1200</li>
+<li>name: og:image:height
+content: 630</li>
+<li>name: twitter:card
+content: summary_large_image</li>
+<li>name: twitter:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look. Available for free on Github.</li>
+<li>name: twitter:title
+content: Amplitude.js The HTML Audio Player for the Modern Era</li>
+<li>name: twitter:site
+content: &quot;@521dimensions&quot;</li>
+<li>name: twitter:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: creator
+content: &quot;@521dimensions&quot;</li>
+</ul>
+<hr>
+<h1 id="overview-of-waveforms">Overview of Waveforms</h1>
+<p>Waveforms are another FX element added to AmplitudeJS. A waveform is a visual representation of the sound compressions for a piece of audio. Using the Web Audio API, you can display these in your player.</p>
+<p>There is one parameter that you can set to determine how your waveforms are displayed and that is the <code>sample_rate</code> set on initialization. The <code>sample_rate</code> setting determines how &quot;fine&quot; the visual for the waveform should be. The lower the sample rate, the more &quot;rough&quot; a depiction is generated. The higher the sample rate the more &quot;accurate&quot; a depiction is generated. Now keep in mind, the higher the sample rate, the more memory and longer it will take to generate!</p>
+<p>The waveform can be styled through CSS since it&#39;s an SVG. You can change colors, widths, heights, etc.</p>
+<p>When a waveform is created, it&#39;s created for a specific piece of audio. We cache the waveform so we can re-use it if the user comes back to it. Essentially this ensures the waveform is only generated once, speeding up the process dramatically!</p>
+<h2 id="setting-the-sample-rate">Setting the Sample Rate</h2>
+<p>By default, the sample rate is set to <code>100</code> which generates a pretty rough waveform, but does so efficiently. To set the sample rate, set it through the waveforms object on initialization.</p>
+<pre><code class="lang-javascript">  Amplitude.init({
+    songs: [&#39;...&#39;],
+    waveforms: {
+      sample_rate: 3000
+    }
+  });
+</code></pre>
+<p>In this example, we set the sample rate to <code>3000</code> which will result in a fairly accurate depiction of the waveform!</p>
+<h2 id="displaying-waveform-elements">Displaying WaveForm Elements</h2>
+<p>Like other meta data and interactive elements, waveforms follow the same structure. There are 4 levels of the waveform element:</p>
+<ol>
+<li>Global - This displays the active song&#39;s global waveform.</li>
+<li>Playlist - This displays the active playlist&#39;s song&#39;s waveform.</li>
+<li>Individual Song - Displays a waveform for an individual song.</li>
+<li>Individual Song In Playlist - Displays a waveform for an individual song in a playlist.</li>
+</ol>
+<h3 id="global-waveform-element">Global Waveform Element</h3>
+<p>To add a global waveform, display the following:</p>
+<pre><code class="lang-html">&lt;div class=&quot;amplitude-waveform&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>This will display the active song&#39;s waveform.</p>
+<h3 id="playlist-waveform-element">Playlist Waveform Element</h3>
+<p>To add a playlist waveform element, display the following:</p>
+<pre><code class="lang-html">&lt;div class=&quot;amplitude-waveform&quot; data-amplitude-playlist=&quot;{playlist_key}&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3 id="individual-song-waveform-element">Individual Song Waveform Element</h3>
+<p>To add a waveform for an individual song, display the following:</p>
+<pre><code class="lang-html">&lt;div class=&quot;amplitude-waveform&quot; data-amplitude-song-index=&quot;{song_index}&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3 id="individual-song-in-playlist-waveform-element">Individual Song In Playlist Waveform Element</h3>
+<p>To add a waveform for an individual song in a playlist, display the following:</p>
+<pre><code class="lang-html">&lt;div class=&quot;amplitude-waveform&quot; data-amplitude-song-index=&quot;{song_index}&quot; data-amplitude-playlist=&quot;{playlist}&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+      </body>
+    </html>

@@ -1,0 +1,208 @@
+#service.index
+    &.guide
+        .linkContent
+            .masonry
+                .grid-sizer,.grid-box
+                    width: 25%
+                .grid-box
+                    padding-bottom: 25%
+                    &.big
+                        width: 50%
+                        padding-bottom: 50%
+    main
+        position: relative
+    .bg
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        +bgSeting
+        background-attachment: fixed
+    .banner
+        padding: 120px 50px 60px 
+        @media all and (max-width: 1024px)
+            padding: 120px 5vw 60px 
+        ._title
+            +flex-center
+            text-align: center
+            flex-direction: column
+            .ch
+                font-size: px(25)
+                font-weight: bold
+                animation: fadeInDown 1.2s both 
+                @media all and (max-width: 1440px)
+                    font-size: px(22)
+            .en 
+                font-size: px(50)
+                +flex-center
+                flex-direction: column
+                line-height: 1.2
+                animation: fadeInUp 1.2s both
+                @media all and (max-width: 1440px)
+                    font-size: px(45)
+                @media all and (max-width: 700px)
+                    font-size: px(40)
+                @media all and (max-width: 700px)
+                    font-size: px(36)
+                &:after
+                    +fakeLine(0px,3px,#000)
+                    margin: 20px 0 0
+                    animation: w40 .8s both .2s
+            .words
+                +title_words
+                animation: fadeInUp 1.2s both .4s
+                margin-top: 25px
+                max-width: 430px
+    .linkContent
+        padding: 0 50px 70px 
+        @media all and (max-width: 1024px)
+            padding: 0 5vw 50px
+        .masonry
+            max-width: 1230px
+            width: 100%
+            margin: auto
+            .grid-sizer,.grid-box
+                width: 25%
+                @media all and (max-width: 1279px) and (min-width: 1025px)
+                    width: 50%
+                @media all and (max-width: 800px)
+                    width: 50%
+                @media all and (max-width: 500px)
+                    width: 100%
+            .grid-box
+                padding-bottom: 25%
+                position: relative
+                overflow: hidden
+                @media all and (max-width: 1279px) and (min-width: 1025px)
+                    padding-bottom: 50%
+                @media all and (max-width: 800px)
+                    padding-bottom: 50%
+                @media all and (max-width: 500px)
+                    padding-bottom: 150px
+                    opacity: 0
+                    &:not(:last-child)
+                        margin: 0 0 10px
+                &.show 
+                    @media all and (max-width: 500px)
+                        &:nth-child(odd)
+                            animation: fadeInLeft 1s both 
+                        &:nth-child(even)
+                            animation: fadeInRight 1s both 
+                    a
+                        animation: flipInXY 0.8s both .1s
+                        @media all and (min-width: 1025px)
+                            &:hover figure
+                                animation: topUp 1s both 
+                        @media all and (max-width: 500px)
+                            animation: none
+                &.big
+                    width: 50%
+                    padding-bottom: 50%
+                    @media all and (max-width: 1279px) and (min-width: 1025px)
+                        width: 100%
+                        padding-bottom: 100%
+                    @media all and (max-width: 800px)
+                        width: 100%
+                        padding-bottom: 100%
+                    ._text
+                        text-shadow: 0 0 30px #fff
+                &:not(.big)
+                    @media all and (max-width: 500px)
+                        a
+                            flex-direction: row
+                            text-align: left
+                            padding: 5vw 5vw 5vw 8vw
+                            ._text
+                                width: calc(100% - 80px)
+                                padding: 0 0 0 20px
+                                margin: 0 
+                &.noBg a
+                    border: 1px solid #bfbfbf
+                    figure
+                        background-color: #e4dbdb
+                a
+                    +bgSeting
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                    width: calc(100% - 16px)
+                    height: calc(100% - 16px)
+                    +flex-center
+                    flex-direction: column
+                    text-align: center
+                    padding: 15px 
+                    overflow: hidden
+                    @media all and (min-width: 501px)
+                        opacity: 0
+                    @media all and (max-width: 1024px)
+                        width: calc(100% - 8px)
+                        height: calc(100% - 8px)
+                    @media all and (max-width: 500px)
+                        width: 100%
+                        height: 100%
+                ._img
+                    width: 95px
+                    height: 95px
+                    position: relative
+                    @media all and (max-width: 1350px)
+                        width: 80px
+                        height: 80px
+                figure
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    border-radius: 50%
+                    +flex-center
+                    background-color: rgba(255,255,255,.7)
+                    padding: 15px
+                    box-shadow: 0 0 24px 4px rgba(0,0,0,.1)
+                ._text
+                    margin: 30px 0 0 
+                    line-height: 1.2
+                    position: relative
+                    @media all and (max-width: 1350px)
+                        margin: 15px 0 0 
+                    .ch
+                        font-size: px(21)
+                        color: rgba(0,0,0,.9)
+                        font-weight: bold
+                        @media all and (max-width: 1350px)
+                            font-size: px(18)
+                    .en
+                        font-size: px(17)
+                        color: #818181
+                        @media all and (max-width: 1350px)
+                            font-size: px(15)
+        .ps
+            margin: 40px auto 0
+            font-size: px(14)
+            text-align: center
+            +flex-center
+            opacity: 0
+            &.show
+                animation: fadeInUp 1.2s both 
+            p
+                position: relative
+                padding: 5px 12px
+                color: #4b4b4b
+                line-height: 1.8
+                span
+                    color: #000
+                    font-weight: bold
+                    line-height: 1.8
+                    border-bottom: 1px solid #000
+                    border-left: 5px solid #ffffff
+                    border-right: 5px solid #ffffff
+                &:before
+                    position: absolute
+                    top: 0
+                    left: 0
+                    display: block
+                    content: "＊"
+                    font-size: px(13)
+                    color: red

@@ -1,0 +1,957 @@
+//application
+
+
+.clickScrollArea
+    max-width: 90%
+    margin: 0 auto 170px auto
+    transform: translateY(100px)
+    opacity: 0
+    overflow: hidden
+    .ps__rail-x
+        opacity: 0
+        display: none !important
+    &.show
+        transform: translateY(0px)
+        opacity: 1
+        transition: opacity 1s ease .5s, transform 1s ease .5s
+    .box
+        display: flex
+        justify-content: center
+        &.scrollHide
+            .ps__rail-x, .ps__thumb-x
+                // opacity: 0 !important
+    .link
+        color: #aaa
+        +fs(15)
+        padding: 16px 15px
+        margin: 0
+        // border-bottom: solid 2px #aaa
+        position: relative
+        transition: color .5s ease
+        &.now
+            color: #000
+            font-weight: bold
+            .text
+                &:after
+                    width: calc(100% - 30px)
+        @media (min-width: 767px)
+            &:hover
+                color: #000
+                font-weight: bold
+                .text
+                    &:after
+                        width: calc(100% - 30px)
+        .text
+            &:before
+                content: ''
+                display: block
+                background-color: #aaa
+                width: calc(100% - 30px)
+                height: 2px
+                position: absolute
+                left: 50%
+                bottom: 0
+                transform: translateX(-50%)
+            &:after
+                content: ''
+                display: block
+                background-color: #000
+                width: 0
+                height: 2px
+                position: absolute
+                left: 50%
+                bottom: 0
+                transform: translateX(-50%)
+                transition: width .4s ease
+    .now
+        // color: #000
+        // &:after
+        //     content: ''
+        //     display: block
+        //     background-color: #000
+        //     width: 100%
+        //     height: 2px
+        //     position: absolute
+        //     left: 0
+        //     bottom: -2px
+    .ps__rail-x, .ps__thumb-x
+        max-height: 3px
+    @media (max-width: 767px)
+        margin: 0 auto 60px auto
+        .box
+            justify-content: flex-start
+            padding: 0 0 10px 0
+        .link
+            padding: 16px 10px
+            white-space: nowrap
+
+
+.appIcon
+    background-color: #e83434
+    border-radius: 50%
+    width: 60px
+    height: 60px
+    margin: 0 auto 15px auto
+    display: flex
+    align-items: center
+    justify-content: center
+    transform: scale(0)
+
+.appTitle
+    +fs(24)
+    font-weight: 900
+    text-align: center
+    padding: 0 20px
+    margin: 0 0 40px 0
+    opacity: 0
+
+.appImgFrame
+    opacity: 0
+    .title
+        +fs(16)
+        margin: 0 0 21px 0
+        padding: 0 15px
+    .full
+        position: relative
+        margin: 0 0 45px 0
+        padding: 0 15px
+        .bg
+            background-color: rgba(0,0,0,0)
+            width: 100vw
+            height: 100vh
+            position: fixed
+            left: -200vw
+            top: -200vh
+            z-index: 1
+            opacity: 0
+            transition: background-color 1s ease, opacity 1s ease, left 0s ease 1s, top 0s ease 1s
+        .imgFrame
+            .img
+                transition: transform 1s ease
+            &:hover + .bg
+                // width: 100vw
+                // height: 100vh
+                z-index: 10
+                left: 0
+                top: 0
+                background-color: rgba(0,0,0,0.5)
+                opacity: 1
+                transition: background-color .5s ease, opacity 1s ease, left 0s ease, top 0s ease
+            &:hover
+                .img
+                    position: relative
+                    z-index: 11
+                    transform: scale(1.2)
+    .wall
+        margin: 0 0 45px 0
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        .list
+            width: 33.3333%
+            padding: 0 15px
+            margin: 0 0 30px 0px
+        .hoverBox
+            background-color: rgba(0,0,0,0)
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: background-color .5s ease .2s
+            .text
+                color: #fff
+                +fs(16)
+                opacity: 0
+                transform: translateY(100px)
+                transition: opacity .5s ease, transform .5s ease
+                &:after
+                    content: ''
+                    display: block
+                    background-color: #fff
+                    width: 20px
+                    height: 1px
+                    margin: 10px auto 0 auto
+        .imgFrame
+            cursor: pointer
+            margin: 0 0 15px 0
+            position: relative
+            &:hover
+                .hoverBox
+                    background-color: rgba(0,0,0,0.5)
+                    transition: background-color .7s ease
+                    .text
+                        opacity: 1
+                        transform: translateY(0px)
+                        transition: opacity .7s ease .2s, transform .7s ease .2s
+            .img
+                width: 100%
+        .albumName
+            +fs(16)
+            text-align: center
+    @media (max-width: 767px)
+        .full
+            .imgFrame
+                &:hover + .bg
+                    background-color: rgba(0,0,0,0)
+                    position: fixed
+                    left: -200vw
+                    top: -200vh
+                    z-index: 1
+                    opacity: 0
+                &:hover
+                    .img
+                        position: relative
+                        z-index: 1
+                        transform: none
+        .wall
+            .list
+                width: 50%
+            .imgFrame
+                margin: 0 auto 15px auto
+                max-width: 255px
+    @media (max-width: 600px)
+        .wall
+            .list
+                width: 100%
+
+.appDownload
+    border-top: solid 1px #b2b2b2
+    opacity: 0
+    transform: translateY(100px)
+    .list
+        +fs(19)
+        font-family: 'FuturaPT-Medium','微軟正黑體'
+        position: relative
+        &:hover
+            &:before
+                width: 100%
+        &:before
+            content: ''
+            display: block
+            background-color: #e83434
+            width: 0
+            height: 1px
+            position: absolute
+            left: 0
+            bottom: 0
+            transition: width 1s ease
+        &:after
+            content: ''
+            display: block
+            background-color: #b2b2b2
+            width: 100%
+            height: 1px
+        .icon
+            width: 30px
+            height: 30px
+            display: block
+            padding: 0 20px
+            margin-left: auto
+            background-repeat: no-repeat
+            background-position: center
+            box-sizing: unset
+    .link
+        padding: 35px 0
+        display: flex
+        align-items: center
+
+.appTextInfo
+    opacity: 0
+    transform: translateY(100px)
+    &.multiple
+        position: relative
+        .list
+            overflow: hidden
+            position: relative
+            padding: 35px 0
+            margin-top: -1px
+            &.open
+                .line
+                    &:before, &:after
+                        background-color: #000
+                        width: 100%
+                        transition: width 1s ease
+                .titleBox
+                    margin: 0 0 60px 0
+                    .iconBox
+                        top: auto
+                        bottom: 0
+                    .icon
+                        &.open
+                            opacity: 0
+                        &.close
+                            opacity: 1
+            &:before, &:after
+                content: ''
+                display: block
+                background-color: #b2b2b2
+                width: 100%
+                height: 1px
+                position: absolute
+                z-index: 0
+                left: 0
+            &:before
+                top: 0
+            &:after
+                bottom: 0
+            .line
+                &:before, &:after
+                    content: ''
+                    display: block
+                    background-color: #b2b2b2
+                    width: 0%
+                    height: 2px
+                    position: absolute
+                    z-index: 1
+                    left: 0
+                &:before
+                    top: 0
+                &:after
+                    bottom: 0
+        .extendBox
+            display: none
+        .infoTitle
+        .titleBox
+            display: flex
+            align-items: center
+            margin: 0
+            .iconBox
+                display: block
+                cursor: pointer
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
+            .icon
+                +fs(30)
+                &.close
+                    opacity: 0
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%,-50%)
+                    +fs(16)
+    .extendBox
+        .content
+            padding: 35px 0 0 0
+            .title
+                font-weight: 900
+                position: relative
+                display: flex
+                align-items: center
+                margin: 0 0 10px 0
+                &:before, &:after
+                    content: ''
+                    display: block
+                    background-color: #000
+                    width: 2px
+                    height: 18px
+                &:before
+                    margin-right: 10px
+                &:after
+                    margin-left: 10px
+            .text
+                +fs(16)
+    .titleBox
+        margin: 0 0 60px 0
+        .iconBox
+            display: none
+    .infoTitle
+        +fs(19)
+        font-family: 'FuturaPT-Medium','微軟正黑體'
+        width: calc(100% - 60px)
+        display: flex
+        flex-wrap: wrap
+        // margin: 0 0 60px 0
+        span
+            margin-right: 10px
+            &:last-child
+                margin: 0
+    .infoText
+        +fs(16)
+        line-height: 1.8
+    .memo
+        padding: 30px 0 0 0
+        .line
+            background-color: #999
+            width: 30px
+            height: 1px
+            margin: 0 0 30px 0
+            display: block
+        .text
+            +fs(15)
+            margin: 0 0 10px 0
+            &:last-child
+                margin: 0
+        .mac
+            font-size: 1.0625rem
+            font-family: 'FuturaPT-Medium','微軟正黑體'
+    @media (max-width: 767px)
+        &.multiple
+            .titleBox
+                .iconBox
+                    transform: translateY(-30%)
+
+.secCommon
+    width: 100%
+    max-width: 815px
+    margin: 0 auto 150px auto
+    &.show
+        .appIcon
+            transform: scale(1)
+            transition: transform 1s ease
+        .appTitle
+            opacity: 1
+            transition: opacity 1s ease .3s
+        .appImgFrame, 
+            opacity: 1
+            transition: opacity 1.5s ease .5s
+        .appDownload, .appTextInfo
+            opacity: 1
+            transform: translateY(0px)
+            transition: opacity 1.5s ease .5s, transform 1.5s ease .5s
+        .appFormInfo
+            opacity: 1
+            transform: translateY(0px)
+            transition: opacity 1.5s ease .5s, transform 1.5s ease .5s
+        .appFormSec
+            opacity: 1
+            transform: translateY(0px)
+            transition: opacity 1.5s ease .8s, transform 1.5s ease .8s
+    @media (max-width: 1023px)
+        width: 90%
+    @media (max-width: 767px)
+        margin: 0 auto 100px auto
+
+/**/    
+.appSec2
+    max-width: 845px
+    margin: 0 auto
+.appSec2Lbox
+    width: 100vw
+    height: 100vh
+    position: fixed
+    left: 0
+    top: 0
+    z-index: -1
+    display: flex
+    align-items: center
+    justify-content: center
+    &.open
+        z-index: 10
+        .bg
+            background-color: rgba(232, 52, 52, 0.9)
+            transition: background-color 1s ease
+        .for_scroll
+            opacity: 1
+            transition: opacity 1.5s ease .5s
+            .closeBtn
+                opacity: 1
+                transform: translateX(0px)
+                transition: opacity 1.5s ease .5s, transform 1.5s ease .5s
+    &.close
+        .bg
+            background-color: rgba(232, 52, 52, 0)
+            transition: background-color .7s ease .5s
+        .for_scroll
+            opacity: 0
+            transition: opacity .5s ease
+            .closeBtn
+                opacity: 0
+                transform: translateX(0px)
+                transition: opacity .5s ease, transform .5s ease
+    .bg
+        background-color: rgba(232, 52, 52, 0)
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+    .for_scroll
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        opacity: 0
+        .closeBtn
+            opacity: 0
+            transform: translateX(-100px)
+            cursor: pointer
+            color: #fff
+            position: absolute
+            right: -125px
+            top: 0
+            display: flex
+            align-items: center
+            .a-btnClose__x
+                width: 40px
+                height: 40px
+                &:before, &:after
+                    background-color: #f29090
+                    top: 50%
+    .content
+        position: relative
+        background-color: #fff
+        padding: 30px
+    .frameBox
+        // display: inline-flex
+        max-width: 860px
+        opacity: 0
+        &.show
+            opacity: 1
+        .slick-track
+            display: block
+        .slick-list, .slick-track
+            height: auto
+        .imgFrame
+            position: relative
+            max-width: 860px
+            max-height: 500px
+            // display: flex
+            // align-items: center
+            // justify-content: center
+        .note
+            +fs(14)
+            line-height: 1.5
+            color: #fff
+            background-color: rgba(255,255,255,0.5)
+            width: 90%
+            height: 46px
+            padding: 0 20px
+            position: absolute
+            left: 50%
+            bottom: 0
+            transform: translateX(-50%)
+            display: flex
+            align-items: center
+            justify-content: center
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            word-break: break-all
+    .paginator
+        +fs(14)
+        padding: 30px 0 0 0
+        display: flex
+        justify-content: center
+        position: relative
+        .text
+            font-family: 'FuturaPT-Light','微軟正黑體'
+        .prev
+            justify-content: flex-end
+        .next
+            justify-content: flex-start
+        .btn
+            cursor: pointer
+            color: #000
+            width: 50%
+            margin: 0 10px
+            position: relative
+            bottom: 0
+            left: 0
+            display: flex
+            .text
+                padding: 0 20px
+            span
+                background-color: #9f9f9f
+                position: relative
+                &:before, &:after
+                    background-color: #9f9f9f
+    @media (max-width: 1300px)
+        .for_scroll
+            .closeBtn
+                background-color: #000
+                width: 170px
+                height: 60px
+                right: 0
+                top: -60px
+                justify-content: center
+                .a-btnClose__x
+                    &:before, &:after
+                        background-color: #656565
+    @media (max-width: 1024px)
+        .for_scroll
+            width: 100%
+            max-width: 920px
+        .content
+            width: 100%
+            max-width: 920px
+        .frameBox
+            width: 100%
+    @media (max-width: 767px)
+        .content
+            padding: 15px
+        .frameBox
+            .imgFrame
+                flex-direction: column
+                .img
+                    margin: 0 0 20px 0
+            .note
+                height: 100%
+                max-height: 115px
+                -webkit-line-clamp: 5
+                position: relative
+                width: 100%
+                margin: 0 0 20px 0
+        .paginator
+            padding: 0
+
+
+/*appSec4*/
+
+
+
+/*appFrom*/
+.appFormInfo
+    margin: 0 0 30px 0
+    opacity: 0
+    transform: translateY(100px)
+.appFormSec
+    opacity: 0
+    transform: translateY(100px)
+    .formTitle
+        +fs(18)
+        border-top: solid 3px #000
+        border-bottom: solid 3px #000
+        font-weight: 900
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        text-align: center
+        padding: 20px 0
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        &:first-child
+            border-top: none
+        span
+            &:first-child
+                margin-right: 10px
+.appFrom
+    +fs(15)
+    font-weight: 900
+    border-top: solid 3px #000
+    border-bottom: solid 3px #000
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    textarea
+        +fs(15)
+        line-height: 1.6
+    .w50
+        width: calc(50% - 15px)
+    .w100
+        width: 100%
+    .keyInBox
+        border-bottom: solid 1px #b4b4b4
+        position: relative
+        display: flex
+        align-items: flex-start
+        .lableTitle
+            white-space: nowrap
+            margin-right: 30px
+            padding: 25px 0
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            span
+                margin-right: 6px
+                &:last-child
+                    margin: 0
+        input
+            font: inherit
+            box-sizing: border-box
+            border: none
+            +fs(14)
+            width: 100%
+            padding: 23px 0
+            background: none
+        .code
+            position: relative
+    .schoolBox
+        width: 100%
+        display: flex
+        .schoolOption
+            width: 33.33%
+            text-align: center
+            position: relative
+            display: flex
+            align-items: center
+            &:after
+                content: ''
+                display: block
+                background-color: #000
+                width: 1px
+                height: 18px
+            input
+                padding: 23px 10px
+                text-align: center
+            .showBox
+                width: 100%
+    .customRadioBox
+        display: flex
+        .customRadio
+            +fs(15)
+            padding: 23px 27px 23px 0
+            display: flex
+            flex-direction: row-reverse
+            align-items: center
+            input:checked ~ .checkmark
+                background-color: #000
+            input:checked ~ .checkmark:after
+                display: none
+        .checkmark
+            background-color: #fff
+            border-radius: unset
+            border: solid 1px #000
+            width: 13px
+            height: 13px
+            margin: 0 5px 0 0
+            position: relative
+            display: block
+    .textareaBox
+        padding: 0 0 23px 0
+        flex-direction: column
+        align-items: flex-start
+        textarea
+            font: inherit
+            border: none
+            letter-spacing: 0.5px
+            +fs(14)
+            width: 100%
+            height: 285px
+            line-height: 1.6
+            letter-spacing: 0.5px
+    .advise
+        textarea
+            height: 125px
+    .groupFrame
+        width: 100%
+    .groupBox
+        width: 100%
+        display: flex
+        flex-direction: column
+        .group
+            border-bottom: solid 1px #b4b4b4
+            &:last-child
+                border-bottom: none
+            .option
+                &:last-child
+                    &:after
+                        display: block
+    .group
+        width: 100%
+        display: flex
+        &.originType
+            display: none
+        input
+            text-align: center
+        .option
+            // width: 33.33%
+            flex: 1 1 33%
+            display: flex
+            align-items: center
+            &:last-child
+                &:after
+                    display: none
+            &:after
+                content: ''
+                display: block
+                background-color: #b4b4b4
+                width: 1px
+                height: 18px
+            .chrisSelect
+                width: 100%
+            .dropShow
+                padding: 16px 10px
+            .showBox
+                width: 100%
+                text-align: center
+            .name
+                width: 100%
+                padding: 0 10px 0 0
+    .hobbie
+        flex-wrap: wrap
+        padding: 0 0 16px 0
+        textarea
+            border: none
+            width: 100%
+            height: 60px
+    .experience
+        flex-wrap: wrap
+        padding: 0 0 16px 0
+        textarea
+            border: none
+            width: 100%
+            height: 150px
+    .serveTime
+        border-bottom: solid 1px #b4b4b4
+        padding: 50px 0 20px 0
+        .text
+            +fs(15)
+            margin: 0 0 20px 0
+        .option
+            min-width: 215px
+            width: auto
+            max-width: 33.33%
+            &:last-child
+                &:after
+                    display: block
+        .nameOp
+            min-width: 65px
+    .language
+        .group
+            .option
+                width: 40%
+            .delete
+                width: 20%
+            .deleteBtn
+                cursor: pointer
+                width: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+        .increaseBtn
+            cursor: pointer
+            +fs(14)
+            padding: 16px 0
+            display: flex
+            align-items: center
+            justify-content: center
+        .cicon
+            font-family: '微軟正黑體'
+            border-radius: 50%
+            border: solid 1px #000
+            width: 17px
+            height: 17px
+            margin: 0 6px 0 0
+            display: flex
+            align-items: center
+            justify-content: center
+            position: relative
+    .remark
+        flex-wrap: wrap
+        textarea
+            +fs(15)
+            font-family: 'FuturaPT-Book', '微軟正黑體'
+            letter-spacing: 0.5px
+            border: none
+            width: 100%
+            height: 150px
+            margin: 0 0 20px 0
+    .artTopic
+        width: 100%
+        height: 100% 
+        .dropShow
+            cursor: pointer
+            height: 100%
+            padding: 0 20px 0 0
+            justify-content: space-between
+    @media (max-width: 1023px)
+        .w50
+            width: 100%
+    @media (max-width: 767px)
+        .keyInBox
+            flex-wrap: wrap
+            &.verifi
+                input
+                    padding-right: 100px
+            .lableTitle
+                width: 100%
+                margin: 0
+                padding: 23px 0 0 0
+            input
+                width: 100%
+                padding: 16px 0
+            .code
+                position: absolute
+                right: 0
+                bottom: 0
+        .schoolBox
+            .schoolOption
+                text-align: left
+                input
+                    text-align: left
+                    padding: 0
+            .schoolGrade
+                .dropShow
+                    width: 100%
+                    .icon
+                        margin-left: auto
+        .group
+            input
+                text-align: left
+                padding: 15px 0
+        .kin
+            .group
+                flex-direction: column
+                .option
+                    width: 100%
+                    &:after
+                        display: none
+        .career
+            .group
+                flex-direction: column
+                .option
+                    width: 100%
+                    &:after
+                        display: none
+                    .dropShow
+                        padding: 16px 0
+                    .showBox
+                        text-align: left
+        .hobbie
+            .lableTitle
+                white-space: normal
+                display: flex
+                flex-wrap: wrap
+                line-height: 1.6
+        .experience
+            .lableTitle
+                white-space: normal
+                display: flex
+                flex-wrap: wrap
+                line-height: 1.6
+        .serveTime
+            .group
+                flex-wrap: wrap
+                .option
+                    .dropShow
+                        +fs(12)
+            .option
+                min-width: auto
+                width: 50%
+                max-width: none
+            .nameOp
+                min-width: 65px
+                width: 100%
+                max-width: none
+                &:after
+                    display: none
+        .language
+            padding: 0 0 50px 0
+            .group
+                +fs(12)
+                .option
+                    width: 50%
+                .delete
+                    width: 14%
+                .deleteBtn
+                    .cicon
+                        margin: 0
+                    .text
+                        display: none  
+        .remark
+            textarea
+                margin: 16px 0
+        .artTopic
+            height: auto
+            padding: 16px 0
+    @media (max-width: 600px)
+        .schoolBox
+            flex-direction: column
+            .schoolOption
+                width: 100%
+                padding: 23px 0

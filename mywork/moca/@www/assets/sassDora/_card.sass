@@ -1,0 +1,309 @@
+.card .main
+    width: 90%
+    margin: 0 auto
+    font-family: $fmeF
+    letter-spacing: 1px
+    padding: 110px 0 
+    position: relative
+    +rwdm(600)
+        width: 100%
+        padding: 110px 0 0
+    .closeicon
+        +flex($dis:flex,$jc:center,$ai:center)
+        width: auto
+        position: absolute
+        top: 50px
+        right: 0
+        &:hover
+            span
+                &:first-child
+                    transform: translate(-50%,-50%) rotate(-45deg)
+                &:last-child
+                    transform: translate(-50%,-50%) rotate(45deg)
+        p
+            +shm($fs:px(14),$lh:px(22),$mb:0 10px 0 0)
+        & > div
+            position: relative
+            width: 35px
+            height: 35px
+            transition: .5s
+            span
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                background: #9a9a9a
+                width: 40px
+                height: 1px
+                transition: .5s
+                &:first-child
+                    transform: translate(-50%,-50%) rotate(45deg)
+                &:last-child
+                    transform: translate(-50%,-50%) rotate(-45deg)
+    .banner
+        padding: 190px 0 0
+        text-align: center
+        position: relative
+        .txt
+            width: 500px
+            margin: 0 auto 140px
+            color: #fff
+            +rwdm(600)
+                width: 90%
+            .en
+                +shm($fs:px(36),$lh:px(44),$mb:0 0 10px)
+                font-family: $fmeFb
+            .ch
+                +shm($fs:px(24),$lh:px(32),$mb:0 0 40px)
+            p
+                +shm($fs:px(16),$lh:px(24),$mb:0)
+
+.card .switchbox
+    +flex($dis:flex,$jc:center,$ai:center)
+    width: 1000px
+    margin: 0 auto
+    +rwdm(1400)
+        width: 90%
+    +rwdm(800)
+        flex-wrap: wrap
+        width: 100%
+    li
+        margin: 0 1px
+        width: 20%
+        text-align: center
+        transition: .5s
+        +rwdm(800)
+            width: 50%
+            margin: 0
+            &:first-child
+                width: 100%
+        &.active a,&:hover a
+            color: #000
+        &.active a::after,&:hover a::after
+            height: 100%
+        a
+            background: #000
+            color: #fff
+            padding: 20px 5%
+            transition: .5s
+            position: relative
+            &::after
+                +pseudo($w:100%,$h:0)
+                background: #e6e6e6
+                position: absolute
+                bottom: 0
+                left: 0
+                z-index: 1
+                transition: .5s
+            p
+                position: relative
+                z-index: 2
+            .en
+                +shm($fs:px(18),$lh:px(30),$mb:0)
+            .ch
+                +shm($fs:px(16),$lh:px(24),$mb:0)
+            
+.card .content
+    background: #e6e6e6
+    text-align: center
+    transition: 1s
+    .goTop
+        width: 35px
+        height: 35px
+        border-radius: 50%
+        border: 2px #000 solid
+        margin: 0 auto 90px
+        display: inline-block
+        div
+            position: relative
+            width: 100%
+            height: 100%
+        span
+            width: 10px
+            height: 10px
+            border-right: 1px #000 solid
+            border-top: 1px #000 solid
+            position: absolute
+            top: 60%
+            left: 50%
+            transform: translate(-50%,-50%) rotate(-45deg)
+    & > div
+        display: flex
+        flex-wrap: wrap
+        width: 1200px
+        padding: 170px 0 0
+        min-height: 100vh
+        margin: 0 auto 70px
+        transition: .5s
+        position: relative
+        +rwdm(1400)
+            width: 90%
+        +rwdm(600)
+            padding: 100px 0 0
+            margin: 0 auto
+        &.switching
+            flex-direction: row-reverse
+        .items
+            width: 50%
+            margin-bottom: 90px
+            transition: .5s
+            +rwdm(1200)
+                width: 100%
+            &.tocenter
+                position: absolute
+                top: 170px
+                right: 0
+                z-index: 0
+                +rwdm(600)
+                    top: 100px
+                .txt
+                    opacity: 0
+            &.only
+                width: 100%
+                transition: .5s
+                position: relative
+                z-index: 1
+                cursor: auto
+                .table
+                    display: inline-block
+                    animation: 1s .5s fadeInUp forwards
+                .img
+                    width: 600px
+                    margin: 0 auto
+                    transition: .5s
+                    +rwdm(1024)
+                        width: 80%
+                    img
+                        width: 100%
+                .txt
+                    +flex($dis:flex,$jc:center,$ai:center)
+                    padding: 0 3%
+                    margin-bottom: 60px
+                    +rwdm(1024)
+                        display: block
+                    h4
+                        margin: 0 60px 0 0
+                        +rwdm(1024)
+                            margin: 0 0 10px
+                    & > p,.more
+                        display: none
+                    .price
+                        margin: 0 
+            .img
+                img
+                    margin: 0 auto 10px
+                    width: 80%
+                    // box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.3)
+            .txt
+                width: 80%
+                margin: 0 auto
+                h4
+                    +shm($fs:px(20),$lh:px(35),$mb:0)
+                    font-weight: bold
+                p
+                    +shm($fs:px(16),$lh:px(24),$mb:0)
+                & > p
+                    margin-bottom: 30px
+                .price
+                    +flex($dis:flex,$jc:center,$ai:center)
+                    margin-bottom: 30px
+                    +rwdm(650)
+                        display: inline-block
+                    p
+                        padding: 0 10px
+                        b
+                            font-size: px(24)
+                        &:first-child
+                            color: rgba(0,0,0,.4)
+                            position: relative
+                            +rwdm(650)
+                                margin-bottom: 20px
+                            &::after
+                                +pseudo($w:1px,$h:15px)
+                                background: rgba(0,0,0,.3)
+                                position: absolute
+                                right: 0
+                                top: 5px
+                                +rwdm(650)
+                                    height: 2px
+                                    width: 20px
+                                    top: auto
+                                    bottom: -13px
+                                    left: 50%
+                                    right: auto
+                                    transform: translateX(-50%)
+                .more
+                    border: 1px #000 solid
+                    padding: 5px 0
+                    width: 180px
+                    margin: 0 auto
+                    transition: .5s
+                    cursor: pointer
+                    &:hover
+                        background: #000
+                        color: #fff
+                    p
+                        +shm($fs:px(14),$lh:px(22),$mb:0)
+            .table
+                padding-top: 60px
+                border-top: 5px #000 solid
+                display: none
+                opacity: 0
+                & > div
+                    width: 80%
+                    margin: 0 auto
+                    +rwdm(1024)
+                        width: 90%
+                ._title
+                    margin-bottom: 80px
+                    p
+                        font-weight: bold
+                        &:first-child
+                            font-family: $fmeFb
+                            +shm($fs:px(22),$lh:px(40),$mb:0)
+                        &:last-child
+                            +shm($fs:px(18),$lh:px(26),$mb:0)
+                ul
+                    text-align: left
+                    li
+                        padding: 20px 0 20px 230px
+                        position: relative
+                        +rwdm(1024)
+                            padding: 20px 0 20px 180px
+                        +rwdm(600)
+                            padding: 50px 10px 20px
+                        &:not(:last-child)
+                            border-bottom: 1px #a3a3a3 solid
+                        &::after
+                            content: attr(data-name)
+                            color: #000
+                            position: absolute
+                            left: 80px
+                            top: 20px
+                            font-weight: bold
+                            +shm($fs:px(18),$lh:px(26),$mb:0)
+                            display: inline-block
+                            +rwdm(1024)
+                                left: 40px
+                            +rwdm(600)
+                                left: 10px
+                        p
+                            +shm($fs:px(16),$lh:px(25),$mb:0)
+                .note
+                    text-align: left
+                    border-top: 1px #000 solid
+                    padding-top: 40px
+                    & > div
+                        width: calc(100% - 160px)
+                        margin: 0 auto
+                        +rwdm(1024)
+                            width: calc(100% - 80px)
+                        +rwdm(600)
+                            width: calc(100% - 20px)
+                    span
+                        +shm($fs:px(18),$lh:px(26),$mb:0 0 20px)
+                        display: inline-block
+                        font-weight: bold
+                    p
+                        +shm($fs:px(15),$lh:px(23),$mb:0)
+

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/member/beneficiary.css">
+</head>
+
+<body id="member" class="beneficiary">
+    <header></header>
+    <main>
+        <article class="topTitle">
+            <div class="h2">Contestant Service</div>
+            <p>帳號服務中心</p>
+        </article>
+        <article class="leftNav">
+            <section class="link">
+                <div class="overview">
+                    <a href="../member/index.html">OVERVIEW</a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="../member/information.html">
+                            <p>ACCOUNT & BASIC</p>
+                            <p>帳號與基本資料</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../member/academic.html">
+                            <p>ACADEMIC</p>
+                            <p>學籍資訊</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../member/beneficiary.html">
+                            <p>BENEFICIARY</p>
+                            <p>受款資訊</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <p>JOB</p>
+                            <p>工作機會</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="design">
+                    <a href="../member/design.html">
+                        <p>DESIGN</p>
+                        <p>設計作品管理</p>
+                    </a>
+                </div>
+                <div class="QA">
+                    <a href="../member/message.html">
+                        <p>MESSAGE</p>
+                        <p>客服訊息</p>
+                        <span>10</span>
+                    </a>
+                </div>
+            </section>
+            <section class="logOut">
+                <div class="linkMenu">
+                    <div class="open">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p>CONTESTANT SERVICE</p>
+                    </div>
+                    <div class="back">
+                        <span></span>
+                        <p>BACK</p>
+                    </div>
+                </div>
+                <a href="javascript:void(0)">
+                    <p>LOG OUT</p>
+                </a>
+            </section>
+        </article>
+        <article class="content">
+            <section class="_title">
+                <h6>Beneficiary Information<span>受款資訊管理</span></h6>
+            </section>
+            <section class="tableContent">
+                <form>
+                    <div class="type bankInf">
+                        <h3>Bank Information  受款銀行</h3>
+                        <div class="region workbox dropdown nopadding">
+                            <h5>Region  銀行所在地區</h5>
+                            <div class="dropList">
+                                <span class="selectMenu">
+                                        <p>Taiwan</p>
+                                    </span>
+                                <ul>
+                                    <!-- 後端請注意:台灣一定要放列表第一個 並且一定要有 class "taiwanNo1" 關系到 下方國外銀地址是否要出現 -->
+                                    <li class="taiwanNo1">Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 國外銀行地址 -->
+                        <div class="workbox foreign nopadding">
+                            <input type="text" placeholder="請由此填入" value="650 Murphy Court Riverside, CA 92504">
+                        </div>
+                        <div class="workbox bankName">
+                            <h5>Bank Name   銀行名稱</h5>
+                            <input type="text" placeholder="請由此填入" value="Agricultural Bank of U.S.A">
+                        </div>
+                        <div class="workbox swiftCode">
+                            <h5>Swift Code   銀行代碼</h5>
+                            <input type="text" placeholder="請由此填入" value="5667">
+                        </div>
+                        <div class="workbox branchName">
+                            <h5>Branch Name   分行名稱</h5>
+                            <input type="text" placeholder="請由此填入" value="0001">
+                        </div>
+                        <!-- 國內銀行分行代碼 -->
+                        <div class="workbox domestic nopadding">
+                            <h5>Branch Code   分行代碼</h5>
+                            <input type="text" placeholder="請由此填入" value="006">
+                        </div>
+                    </div>
+                    <div class="type accountInf">
+                        <h3>Beneficiary Account & Information  受款帳戶與領款者</h3>
+                        <!-- 備註 -->
+                        <h4 class="ps">
+                            <p>領款帳號名稱需與活動申請者姓名相同，若非同姓名將視為資格不符</p>
+                        </h4>
+                        <div class="workbox accountNumb">
+                            <h5>Account No.   受款帳號</h5>
+                            <input type="text" placeholder="請由此填入" value="014568715-5541236544">
+                        </div>
+                        <div class="workbox beneficiary">
+                            <h5>Beneficiary  受款戶名</h5>
+                            <input type="text" placeholder="請由此填入" value="George J. Warren">
+                        </div>
+                        <div class="workbox tel">
+                            <h5>Tel / Mobile   受款人電話</h5>
+                            <input type="text" placeholder="請由此填入" value="951-780-7865">
+                        </div>
+                        <div class="address workbox dropdown nopadding">
+                            <h5>Address   受款人地址</h5>
+                            <div class="dropList">
+                                <span class="selectMenu">
+                                        <p>Taiwan</p>
+                                    </span>
+                                <ul>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                    <li>Taiwan</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="workbox">
+                            <input type="text" placeholder="請由此填入" value="650 Murphy Court Riverside, CA 92504">
+                        </div>
+                    </div>
+                    <div class="type evidence">
+                        <h3>Picture of Your Beneficiary Account  上傳帳戶資訊圖檔</h3>
+                        <!-- 備註 -->
+                        <h4 class="ps">
+                            <p>圖檔至多 5 張（包含帳戶數字之存摺／提款卡／領款文件），並請特別注意：
+                                <br>* 銀行帳戶資訊指獎學金收款帳戶，帳戶名稱需與申請者姓名相同
+                                <br>* 美國地區銀行帳戶請包含附上 SWIFT BIC＋ Fed wire No. / ABA No. 
+                                <br>* 歐洲地區銀行帳戶請包含附上 SWIFT BIC＋IBAN  No.
+                            </p>
+                        </h4>
+                        <div class="upload workbox">
+                            <a href="javascript:void(0)">
+                                <!-- 後端請注意:下面的圖片放檔案的原圖不須另外， 燈箱會抓他的路徑-->
+                                <img src="../../upload/fa2/member/beneficiary/evidenceImg1_170_110.jpg" alt="">
+                            </a>
+                            <div>
+                                <h5>提款卡.jpg</h5>
+                                <ul>
+                                    <li class="zoom" onclick="member.zoom(this)">
+                                        <button type="button">
+                                            <p>放大檢視</p>
+                                        </button>
+                                    </li>
+                                    <li class="reload">
+                                        <button type="button">
+                                            <p>重新上傳</p>
+                                        </button>
+                                    </li>
+                                    <li class="delet">
+                                        <button type="button">
+                                            <p>刪除檔案</p>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="addbox upload workbox">
+                            <a href="javascript:void(0)" onmouseover="this.parentNode.classList.add('active')" onmouseout="this.parentNode.classList.remove('active')">
+                                <div>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <h5>請點擊按鈕進行檔案上傳</h5>
+                            <h5><b>FORMAT 檔案規格 : JPG 檔案格式，容量限制 1MB 以內，解析度為 dpi 72</b></h5>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <ul>
+                            <li>
+                                <button type="button">
+                                    <span></span>
+                                    <p>Save
+                                        <br>儲存修改</p>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+</html>

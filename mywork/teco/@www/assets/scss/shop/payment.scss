@@ -1,0 +1,720 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+.tables {
+    width: 74%;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 130px;
+
+    @include flex-center;
+
+    flex-direction: column;
+    counter-reset: num;
+
+    @media all and (min-width: 1921px) {
+        max-width: calc(100% - 460px);
+    }
+
+    @media all and (max-width: 1024px) {
+        width: 100%;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        padding-bottom: 0;
+    }
+
+    ._title {
+        margin-top: 80px;
+        text-align: center;
+
+        .en {
+            // @include title_en("CenturyGothic",normal,#868686);
+            @include title_en
+            animation: fadeInDown 1.2s both 0.2s;
+        }
+
+        .ch {
+            @include title_ch;
+            animation: fadeInDown 1s both 0.4s;
+        }
+    }
+
+    ._title,
+    .shipping,
+    .invoic,
+    .payway {
+        max-width: 1080px;
+        width: 100%;
+    }
+
+    .shipping,
+    .invoic,
+    .payway {
+        counter-increment: num;
+        margin-top: 80px;
+        padding-bottom: 90px;
+
+        @media all and (max-width: 1024px) {
+            margin-top: 50px;
+        }
+
+        @media all and (max-width: 600px) {
+            padding-bottom: 70px;
+        }
+
+        &.show {
+            .listhead div:first-child:before {
+                animation: fadeInUp 1s both 0.6s;
+            }
+
+            .item {
+                animation: fadeInUp 1s both;
+            }
+        }
+
+        .listhead {
+            div:first-child:before {
+                content: "0"counter(num);
+                display: block;
+                font-family: "CenturyGothic-Bold";
+
+                @include font-size(16);
+
+                line-height: 1.5;
+                margin-right: 10px;
+                opacity: 0;
+            }
+        }
+
+        form {
+            animation: hidden 2s both;
+        }
+
+        form .item {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 25px 0;
+            position: relative;
+            opacity: 0;
+
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                @include fakeLine(100%, 1px, #f2f2f2);
+            }
+
+            .itemName {
+                width: 18%;
+
+                @include font-size(18);
+
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 0 0 0 2vw;
+
+                @media all and (min-width: 1921px) {
+                    padding: 0 0 0 45px;
+                }
+
+                @media all and (max-width: 1440px) {
+                    @include font-size(16);
+                }
+
+                @media all and (max-width: 1024px) {
+                    width: 100%;
+                    padding: 0 40px 20px 10px;
+                }
+
+                p strong {
+                    @include font-size(20);
+
+                    @media all and (max-width: 1440px) {
+                        @include font-size(18);
+                    }
+                }
+            }
+
+            .itemContent {
+                width: 82%;
+                padding: 0 7vw 0 0;
+
+                @media all and (min-width: 1921px) {
+                    padding: 0 140px 0 0;
+                }
+
+                @media all and (max-width: 1024px) {
+                    width: 100%;
+                    padding: 0 10px 20px 10px;
+                }
+
+                &>div:not(:first-child) {
+                    margin-top: 20px;
+                }
+
+                p {
+                    @include font-size(14);
+                }
+
+                input[type="checkbox"],
+                input[type="radio"] {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    opacity: 0;
+                    cursor: pointer;
+
+                    &+label {
+                        @include flex-center;
+
+                        .iconN-hook {
+                            width: 25px;
+                            height: 25px;
+                            border: 1px solid #b9b9b9;
+                            border-radius: 50%;
+
+                            @include flex-center;
+
+                            color: #b9b9b9;
+
+                            @include font-size(12);
+
+                            margin-right: 10px;
+                            transition: all 0.4s ease;
+
+                            &:before {
+                                display: block;
+                                transform: scale(0.6);
+                            }
+                        }
+                    }
+
+                    &:hover+label .iconN-hook {
+                        color: #fff;
+                        background-color: rgba(0, 0, 0, 0.8);
+                        border: none;
+                    }
+
+                    &:checked+label .iconN-hook {
+                        color: #fff;
+                        background-color: #000;
+                        border: none;
+                    }
+                }
+
+                .checkBoxs {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    &>div {
+                        position: relative;
+                        margin-bottom: 10px;
+                        margin-right: 30px;
+                    }
+                }
+
+                .words {
+                    text-align: justify;
+
+                    p {
+                        line-height: 1.8;
+                    }
+
+                    strong {
+                        color: #000;
+                    }
+                }
+            }
+
+            .textInputs input,
+            .type input {
+                width: 100%;
+                @include font-size(14);
+                font-family: CenturyGothic, 微軟正黑體;
+                letter-spacing: 1px;
+                line-height: 1.5;
+                transition: all 0.4s ease;
+
+                &::placeholder {
+                    transition: all 0.4s ease;
+                }
+            }
+
+            .textInputs {
+                margin-top: 25px;
+                display: flex;
+                flex-wrap: wrap;
+                @include font-size(14);
+                width: 100%;
+
+                input {
+                    background-color: transparent;
+                    border: none;
+                    padding: 15px 0;
+
+                    @media all and (max-width: 450px) {
+                        width: 100%;
+                        padding: 15px 20px;
+                    }
+
+                    &::placeholder {
+                        color: #8d8d8d;
+                    }
+
+                    &:focus::placeholder {
+                        opacity: 0;
+                    }
+                }
+
+                p {
+                    white-space: nowrap;
+
+                    @media all and (max-width: 450px) {
+                        &:not(:last-child) {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+
+                .dropDowns {
+                    @include flex-space-between;
+                    width: 100%;
+                    padding: 0 20px 0 0;
+
+                    @media all and (max-width: 1400px) and (min-width:1151px) {
+                        flex-direction: column;
+                        align-items: flex-end;
+                        padding-right: 20px;
+                    }
+
+                    @media all and (max-width: 1024px) and (min-width: 801px) {
+                        flex-direction: column;
+                        align-items: flex-end;
+                        padding-right: 20px;
+                    }
+
+                    @media all and (max-width:450px) {
+                        margin-left: 0;
+                    }
+
+                    .dropDown {
+                        height: 100%;
+                        padding: 15px 0;
+
+                        @media all and (max-width: 1400px) and (min-width:1151px) {
+                            padding: 10px 20px;
+                        }
+
+                        @media all and (max-width: 1024px) {
+                            padding: 15px 20px;
+                        }
+
+                        .selectMenu {
+                            height: 100%;
+                            color: rgba(0, 0, 0, 0.6);
+
+                            @media all and (max-width: 450px) {
+                                justify-content: flex-start;
+                            }
+
+                            &.checked {
+                                color: #000;
+                            }
+                        }
+
+                        &.county {
+                            width: 75px;
+
+                            @media all and (max-width: 1400px) {
+                                width: 100%;
+                            }
+                        }
+
+                        &.towns {
+                            width: 100px;
+
+                            @media all and (max-width: 1400px) {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                &>div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 1px;
+                    background-color: #f2f2f2;
+                    padding: 0 0 0 2vw;
+
+                    @media all and (min-width: 1921px) {
+                        padding: 0 0 0 40px;
+                    }
+
+                    @media all and (max-width:800px) {
+                        padding: 0 0 0 20px;
+                    }
+
+                    @media all and (max-width:450px) {
+                        flex-wrap: wrap;
+                        padding: 0;
+                    }
+
+                    &>p {
+                        padding: 15px 0;
+
+                        @media all and (max-width: 450px) {
+                            width: 100%;
+                            padding: 15px 20px;
+                        }
+                    }
+
+                    &.w33 {
+                        width: calc(33.33% - 2px);
+
+                        @media all and (max-width: 1150px) and (min-width:1025px) {
+                            width: calc(100% - 2px);
+                        }
+
+                        @media all and (max-width:800px) {
+                            width: calc(100% - 2px);
+                        }
+                    }
+
+                    &.w66 {
+                        width: calc(66.66% - 2px);
+
+                        @media all and (max-width: 1150px) and (min-width:1025px) {
+                            width: calc(100% - 2px);
+                        }
+
+                        @media all and (max-width:800px) {
+                            width: calc(100% - 2px);
+                        }
+                    }
+
+                    &>*:not(:first-child) {
+                        margin-left: 1.5vw;
+
+                        @media all and (min-width: 1921px) {
+                            margin-left: 30px;
+                        }
+
+                        @media all and (max-width:800px) {
+                            margin-left: 20px;
+                        }
+
+                        @media all and (max-width:450px) {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.shipping {
+    form .price {
+        position: absolute;
+        top: 50%;
+        right: 2vw;
+        transform: translate(0, -50%);
+        font-family: "CenturyGothic-Bold";
+
+        @include font-size(22);
+
+        @media all and (min-width: 1921px) {
+            right: 40px;
+        }
+
+        @media all and (max-width: 1024px) {
+            right: 10px;
+            top: 25px;
+            transform: translate(0);
+        }
+        &:before{
+            content: "$";
+        }
+    }
+}
+
+.tables .invoic form .item .itemContent>div:not(:first-child).type {
+    margin-top: 10px;
+}
+
+.invoic {
+    .type {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        input {
+            background-color: #f2f2f2;
+            text-align: center;
+            height: 40px;
+            margin: 1px;
+            border: 1px solid transparent;
+            max-width: calc(33.33% - 2px);
+            min-width: 200px;
+
+            @media all and (max-width: 450px) {
+                width: 100%;
+                max-width: none;
+                min-width: none;
+            }
+
+            &::placeholder {
+                color: #8d8d8d;
+            }
+
+            &:focus {
+                border: 1px solid #d2d2d2;
+                background-color: transparent;
+
+                &::placeholder {
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .agree {
+        display: flex;
+        align-items: flex-start;
+
+        &>div {
+            position: relative;
+        }
+    }
+}
+
+.payway {
+    form {
+        margin-top: -4px;
+    }
+
+    .item {
+        transition: all .4s ease;
+        cursor: pointer;
+    }
+
+    form:hover .item.active {
+        background-color: transparent;
+        z-index: 1;
+
+        color: #000 !important;
+
+        input[type="radio"]:checked+label .iconN-hook {
+            color: #fff !important;
+            background-color: #000 !important;
+            border: none;
+        }
+        .howManyBank{
+            color: #000 !important;
+        }
+    }
+
+    .item:hover,
+    .item.active,
+    form:hover .item.active:hover {
+        color: #fff !important;
+        background-color: #252525;
+        z-index: 2;
+
+        @media all and (max-width: 500px) {
+            margin: 0 -5vw !important;
+            padding: 25px 5vw !important;
+        }
+
+        input[type="radio"]:checked+label .iconN-hook {
+            background-color: #fff !important;
+            color: #252525 !important;
+        }
+        .howManyBank{
+            color: #4ad2ff !important;
+        }
+    }
+
+
+    .checkBoxs {
+        @media all and (max-width: 500px) {
+            margin-top: 30px !important;
+        }
+
+        &>div {
+            min-width: calc(50% - 30px);
+            display: flex;
+
+            @media all and (max-width: 500px) {
+                width: 100%;
+                margin-right: 0 !important;
+            }
+
+            input[type="radio"] {
+                width: 25px !important;
+                height: 25px !important;
+
+                &:hover+label .iconN-hook {
+                    background-color: #fff !important;
+                    color: #252525 !important;
+                }
+            }
+
+            label {
+                justify-content: flex-start !important;
+                flex-wrap: wrap;
+                position: relative;
+
+                @media all and (max-width: 500px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .bankList {
+            margin-left: 5px;
+
+            @media all and (max-width: 500px) {
+                text-align: right;
+                padding: 10px 0;
+                margin-left: auto;
+                margin-right: 0;
+            }
+
+            .howManyBank {
+                // color: #000;
+                @include font-size(14);
+                position: relative;
+            }
+
+            .hoverBox {
+                z-index: 1;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                // max-width: 370px;
+                display: none;
+                color: #000;
+                animation: fadeIn .4s both;
+                padding: 8px 0 0 0;
+
+                &:before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 8.5px 8px 8.5px;
+                    border-color: transparent transparent #fff transparent;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 30px;
+                    animation: slideInUp 0.5s both 0.1s;
+                }
+
+                div {
+                    background-color: #fff;
+                    padding: 30px 40px;
+                    box-shadow: 0 0 7px 3px rgba(0, 0, 0, .35);
+                    text-align: left;
+
+                    @media all and (max-width: 900px) {
+                        padding: 25px 5vw;
+                    }
+
+                    h6 {
+                        @include font-size(14);
+                        font-weight: bold;
+                    }
+
+                    p {
+                        @include font-size(13);
+                        line-height: 1.8;
+
+                        &:not(:first-child) {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .hoverBox {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.orderDetail {
+    .totalPrice {
+        @media all and (max-width: 600px) {
+            justify-content: space-between;
+
+            .numb {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .others {
+        &>div {
+            opacity: 0.3;
+
+            p {
+                width: calc(100% - 30px);
+                white-space: nowrap;
+            }
+
+            span {
+                width: 30px;
+                margin-left: auto;
+                margin-right: 0;
+
+                @include flex-center;
+
+                padding: 10px 0;
+
+                @media all and (min-width: 1025px) {
+                    animation: slideInUp 1s both 1s;
+                }
+
+                &:before {
+                    content: "-";
+                }
+            }
+
+            &.checked {
+                opacity: 1;
+
+                span:before {
+                    content: "ok";
+                    font-family: "CenturyGothic-Bold";
+
+                    @include font-size(20);
+                }
+            }
+
+            &.fail {
+                opacity: 1;
+
+                span:before {
+                    content: "\e90c";
+                    font-family: "icomoon-nick";
+                    color: #f92929;
+                }
+            }
+        }
+    }
+}

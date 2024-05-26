@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/service/signup.css">
+    <link rel="stylesheet" href="../../assets/css/juge/score.css">
+</head>
+
+<body id="juge" class="score">
+    <main>
+        <article class="pictures">
+            <div class="_img video" data-youtubeId="EZ9n2SY36A4" data-vimeoId="">
+                <iframe frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="_img" onmouseover="juge.mouseOver(this)" onmouseout="juge.mouseOut(this)">
+                <img src="../../upload/fa2/juge/score/img1.jpg" alt="">
+            </div>
+            <div class="_img" onmouseover="juge.mouseOver(this)" onmouseout="juge.mouseOut(this)">
+                <img src="../../upload/fa2/juge/score/img2.jpg" alt="">
+            </div>
+            <div class="_img" onmouseover="juge.mouseOver(this)" onmouseout="juge.mouseOut(this)">
+                <img src="../../upload/fa2/juge/score/img3.jpg" alt="">
+            </div>
+            <div class="_img" onmouseover="juge.mouseOver(this)" onmouseout="juge.mouseOut(this)">
+                <img src="../../upload/fa2/juge/score/img4.jpg" alt="">
+            </div>
+            <div class="_img" onmouseover="juge.mouseOver(this)" onmouseout="juge.mouseOut(this)">
+                <img src="../../upload/fa2/juge/score/img5.jpg" alt="">
+            </div>
+        </article>
+        <article class="designInf">
+            <section class="close">
+                <span></span>
+            </section>
+            <section class="topWords">
+                <h2>2018 franz rising star project <br>technology</h2>
+                <!-- 作品名稱 -->
+                <div class="designName">
+                    <p class="en">Good Things</p>
+                    <p class="ch">好事多磨</p>
+                </div>
+                <div class="advanced">
+                    <p>ADVANCED</p>
+                    <span class="icon-hook"></span>
+                </div>
+            </section>
+            <section class="content">
+                <div class="tableContent">
+                    <div class="type concept">
+                        <h3>Name & Concept of Artwork 作品名稱與設計理念</h3>
+                        <div class="workbox category">
+                            <h5>Category 作品屬性:</h5>
+                            <p>驚天動地</p>
+                        </div>
+                        <div class="workbox textarea">
+                            <h5>Concept of artwork 設計理念:</h5>
+                            <p>設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念</p>
+                        </div>
+                    </div>
+                    <div class="type worksDetail">
+                        <h3>Detail of artwork 設計細節</h3>
+                        <div class="workbox ceramicProportion">
+                            <h5>Ceramic proportions occupy 作品材質，陶瓷比例佔:</h5>
+                            <p>90%</p>
+                        </div>
+                        <div class="workbox otherMaterial">
+                            <h5>Including Other Material 作品包含其他材質:</h5>
+                            <p>鋼鐵,黃金</p>
+                        </div>
+                        <div class="workbox">
+                            <h5>
+                                Length 作品長度 (cm):
+                            </h5>
+                            <p>100cm</p>
+                        </div>
+                        <div class="workbox">
+                            <h5>Width 作品寬度 (cm):</h5>
+                            <p>100cm</p>
+                        </div>
+                        <div class="workbox">
+                            <h5>Height 作品高度 (cm):</h5>
+                            <p>100cm</p>
+                        </div>
+                        <div class="workbox">
+                            <h5>Weight 作品淨重 (g):</h5>
+                            <p>100g</p>
+                        </div>
+                        <div class="workbox textarea">
+                            <h5>Other Introduction 其他作品說明:</h5>
+                            <p>其他作品說明其他作品說明其他作品說明其他作品說明v其他作品說明其他作品說明其他作品說明其他作品說明其他作品說明其他作品說明其他作品說明其他作品說明其他作品說明其他作品說明</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="downArrow"></span>
+            </section>
+            <section class="button">
+                <ul>
+                    <li class="detail" onclick="document.querySelector('.designInf').classList.toggle('active')">
+                        <p>Detail</p>
+                    </li>
+                    <!-- 回到上一頁 -->
+                    <li class="back" onclick="history.back()">
+                        <p>Back <span>作品列表</span></p>
+                    </li>
+                    <li class="goScore" onclick="document.querySelector('.jugement').classList.add('active')">
+                        <p>Score <span>開始評分</span></p>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article class="jugement">
+            <form>
+                <div class="title">
+                    <p class="en">Check the promoted artwork</p>
+                    <p class="ch">請勾選是否可晉級</p>
+                </div>
+                <div class="checkBox">
+                    <div>
+                        <input type="checkbox">
+                        <label>
+                            <span class="icon-hook"></span>
+                            <p>Check</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="reviews">
+                    <h5>Reviews 作品評語</h5>
+                    <textarea placeholder="Please fill in here 請於此處填寫您對作品的評語、感想與建議..."></textarea>
+                </div>
+                <div class="button">
+                    <ul>
+                        <li class="backToInf" onclick="document.querySelector('.jugement').classList.remove('active')">
+                            <p>Back <span>作品說明</span></p>
+                        </li>
+                        <li class="save">
+                            <button type="button" onclick="document.querySelector('.jugement').classList.remove('active');juge.getCheck();">
+                                <p>Save <span>儲存評分</span></p>
+                                <span class="icon-cross"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </article>
+    </main>
+    <script src="../../assets/js/style.js"></script>
+</body>
+</html>

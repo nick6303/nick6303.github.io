@@ -1,0 +1,89 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"相關企業",
+            link:"../other/related.html"},
+    ]
+
+    var row=[
+        {
+            img:'../../upload/fa2/other/related/rowImg_640_390.jpg',
+            ch:"國揚建設",
+            en:"Kuo Yang Construction",
+            words:"國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境..."},
+        {
+            img:'../../upload/fa2/other/related/rowImg2_640_390.jpg',
+            ch:"漢來美食",
+            en:"Hilai-foods",
+            words:"國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域。"},
+        {
+            img:'../../upload/fa2/other/related/rowImg3_640_390.jpg',
+            ch:"漢來大飯店",
+            en:"The Grand HiLai Hotel",
+            words:"國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境..."},
+        {
+            img:'../../upload/fa2/other/related/rowImg4_640_390.jpg',
+            ch:"海外分店-西安漢神購物廣場",
+            en:"Xi'an Hanshen Shopping Plaza",
+            words:"國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境..."},
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#other.related
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            setion._title(style="background-image:url('../../upload/fa2/other/related/bannerBg_1670_410.jpg')")
+                p.ch 相關企業
+                p.en Related business 
+                p.words 開闊明朗的空間，順暢動線設計，提供消費者輕鬆歡愉，擁50家以上國際精品名牌進駐，名品雲集世界同步。
+        article.content
+            section.topTitle
+                p.en COMPANIES
+                p.words 評鑑為百貨公司服務品質第一名，在百家爭鳴的競爭下，獲此殊榮
+            section.rows
+                each val in row
+                    .row
+                        ._text
+                            .name
+                                p.ch=val.ch
+                                p.en=val.en
+                            //後端請注意: 此處字數限制 45個字
+                            .words
+                                p=val.words
+                            .link
+                                a(href=java)
+                                    p ENTER
+                        ._img
+                            figure
+                                img.b-lazy(src=blazy data-src=val.img, alt="")
+
+
+    include ../layout/_footer.pug
++script
+
+|
+|
+</html>

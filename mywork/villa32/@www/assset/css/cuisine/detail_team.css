@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+
+
+
+
+/*主廚頁面開始----------------*/
+
+.chef .detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    display: none;
+    z-index: 6;
+    transition: all 1s ease 1.2s;
+    padding-bottom: 100px;
+}
+
+.team_close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    right: 70px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.team_close span:nth-child(1) {
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1px);
+    transition: all .6s ease;
+}
+
+.team_close span:nth-child(2) {
+    display: block;
+    height: 0%;
+    width: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1px);
+    transition: all .6s ease .6s;
+}
+
+.team_slick_bg {
+    overflow: hidden;
+    padding: 15vh 60px 0 60px;
+}
+
+.team_slick {
+    max-width: 1210px;
+    margin: auto;
+    position: relative;
+}
+
+.team_slick {
+    transform: translateY(100%);
+}
+
+.team_slick ul li div {
+    display: flex;
+    align-items: center;
+}
+
+.team_slick ul .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+
+/*.slick_img,*/
+
+.slick_text {
+    width: 50%;
+}
+
+
+
+
+
+
+
+/*圖片設定*/
+
+.slick_img img {
+    width: auto;
+}
+
+
+
+
+/*文字設定*/
+
+.team .slick_text {
+    text-align: center;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 70px;
+}
+
+.team .slick_text p:nth-child(1) {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.team .slick_text p:nth-child(2) {
+    font-size: .875rem;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+
+.team .slick_prev,
+.team .slick_next {
+    top: 50%;
+}
+
+
+
+
+
+
+/*進場動畫*/
+
+.chef.load .detail {
+    display: block;
+    animation: fadeIn .6s both;
+}
+
+.chef.on .detail {
+    display: block;
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.chef.on .team_close span:nth-child(1) {
+    width: 100%;
+    transition: all .6s ease
+}
+
+.chef.on .team_close span:nth-child(2) {
+    height: 100%;
+    transition: all .6s ease .6s
+}
+
+.chef.on .team_slick {
+    animation: allin0 1.2s both;
+}
+
+
+
+
+/*退場動畫*/
+
+.chef.off .detail {
+    animation: fadeOut .6s both 1.2s;
+    display: block;
+}
+
+
+.chef.off .team_slick {
+    animation: allout0 1s forwards;
+}
+
+.chef.off .team_close span:nth-child(1) {
+    width: 0%;
+    transition: all .6s ease;
+}
+
+.chef.off .team_close span:nth-child(2) {
+    width: 0%;
+    transition: all .6s ease .6s;
+}
+
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    .chef .detail{
+        padding-bottom: 10vh;
+    }
+
+    .team_close {
+        width: 20px;
+        height: 20px;
+        right: 20px;
+        top: 20px;
+    }
+
+    .team_slick_bg {
+        padding: 10vh 5vw 0 5vw; 
+    }
+
+    .team_slick ul li div {
+        flex-direction: column;
+    }
+
+    .slick_img,
+    .slick_text {
+        width: 100%;
+    }
+    /*圖片設定*/
+    .slick_img img {
+        max-width: 100%;
+    }
+    /*文字設定*/
+    .team .slick_text {
+        padding-top: 40px;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 40px;
+    }
+}
+
+
+
+
+/*主廚頁面結束----------------*/
+
+
+/*品酒師頁面開始----------------*/
+
+.sommelier .detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    display: none;
+    z-index: 6;
+    transition: all 1s ease 1.2s;
+}
+
+
+
+
+/*進場動畫*/
+
+.sommelier.load .detail {
+    display: block;
+    animation: fadeIn .6s both;
+}
+
+.sommelier.on .detail {
+    display: block;
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.sommelier.on .team_close span:nth-child(1) {
+    width: 100%;
+    transition: all .6s ease
+}
+
+.sommelier.on .team_close span:nth-child(2) {
+    height: 100%;
+    transition: all .6s ease .6s
+}
+
+.sommelier.on .team_slick {
+    animation: allin0 1.2s both;
+}
+
+
+
+
+/*退場動畫*/
+
+.sommelier.off .detail {
+    animation: fadeOut .6s both 1.2s;
+    display: block;
+}
+
+
+.sommelier.off .team_slick {
+    animation: allout0 1s forwards;
+}
+
+
+
+
+/*品酒師頁面結束----------------*/

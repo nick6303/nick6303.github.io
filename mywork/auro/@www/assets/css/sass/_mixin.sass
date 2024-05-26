@@ -1,0 +1,44 @@
+@mixin rwd($max)
+    @media only screen and (max-width: $max + px)  
+        @content
+
+@mixin rwdu($min)
+    @media only screen and (min-width: $min + px)  
+        @content
+
+@mixin rwdm($min,$max)
+    @media only screen and (min-width: $min + px) and (max-width: $max + px)
+        @content
+
+@mixin rwdr($w,$h)
+    @media only screen and ( max-aspect-ratio: $w + '/' + $h) 
+        @content
+
+@mixin rwdrUp($w,$h,$min)
+    @media only screen and ( max-aspect-ratio: $w + '/' + $h) and (min-width: $min + px)  
+        @content
+
+@mixin rwdrDown($w,$h,$max)
+    @media only screen and ( max-aspect-ratio: $w + '/' + $h) and (max-width: $max + px)  
+        @content
+
+@mixin flex($jc:center,$ai:center)
+    display: flex
+    justify-content: $jc
+    align-items: $ai
+
+@mixin poac
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+
+@mixin fakeLine($width:1px,$height:1px,$bgc:#000)
+    content: ""
+    display: block
+    width: $width
+    height: $height
+    background-color: $bgc
+
+@function px($px)
+    @return $px / 16 * 1rem

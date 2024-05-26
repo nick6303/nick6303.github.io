@@ -1,0 +1,959 @@
+//css common
+//font-family: 'FuturaPT-Medium','微軟正黑體'
+//font-family: 'FuturaPT-Heavy','微軟正黑體'
+
+*
+  box-sizing: border-box
+
+a
+  display: block
+
+body
+  width: 100%
+  overflow-x: hidden
+  position: relative
+  animation: none
+
+@keyframes large
+  0%
+    -webkit-transform: scale(1)
+    transform: scale(1)
+  50%
+    -webkit-transform: scale(1.1)
+    transform: scale(1.1)
+  100%
+    -webkit-transform: scale(1)
+    transform: scale(1)
+@keyframes gasball
+  0%
+      transform: translateX(0%)
+  100%
+      transform: translateX(100%) 
+@keyframes yoyoball
+  0%
+      transform: translateX(-110%)
+  40%
+      transform: translateX(0%)
+  60%
+      transform: translateX(0%)
+  100%
+      transform: translateX(110%)
+@keyframes momoball
+  0%
+      transform: translateX(100%)
+  40%
+      transform: translateX(0%)
+  60%
+      transform: translateX(0%)
+  100%
+      transform: translateX(-100%)
+@keyframes gogoball
+  0%
+      transform: translateY(-100%)
+  40%
+      transform: translateY(0%)
+  60%
+      transform: translateY(0%)
+  100%
+      transform: translateY(100%)
+@keyframes nonoball
+  0%
+      transform: translateY(100%)
+  40%
+      transform: translateY(0%)
+  60%
+      transform: translateY(0%)
+  100%
+      transform: translateY(-100%)
+@keyframes equalizer
+  0%
+    height: 10px
+  10%
+    height: 12px
+  20%
+    height: 15px
+  30%
+    height: 18px
+  40%
+    height: 22px
+  50%
+    height: 25px
+  60%
+    height: 22px
+  70%
+    height: 18px
+  80%
+    height: 15px
+  90%
+    height: 12px
+  100%
+    height: 10px
+
+/*mocaSNav*/
+@keyframes myMove
+  0%
+    top: -70px
+  100%
+    top: 70px
+@media (max-width: 1400px)
+  @keyframes myMove
+    0%
+      top: -50px
+    100%
+      top: 50px
+
+.fakeArrow_m
+  padding-top: 20px
+  &.black
+    span
+      border-right: 1px #000 solid
+      border-bottom: 1px #000 solid
+  div
+    position: relative
+    transform: rotate(45deg)
+  span
+    width: 15px
+    height: 15px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    border-right: 1px #fff solid
+    border-bottom: 1px #fff solid
+
+.mocaSNav
+  color: #aaa
+  background-color: #f4f4f4
+  height: 90px
+  margin: 0 0 100px 0
+  padding: 0 70px
+  position: relative
+  .secBox
+    height: 90px
+    width: 100%
+    background-color: #f4f4f4
+    display: flex
+    align-items: center
+    &.fixed
+      position: fixed
+      top: -70px
+      left: 0
+      z-index: 3
+      animation: myMove 1000ms both
+  .titleArea
+    font-family: 'FuturaPT-Heavy','微軟正黑體'
+    font-weight: 900
+    color: #000
+    position: absolute
+    left: 70px
+    top: 50%
+    transform: translateY(-50%)
+  .scrollFrame
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 60%
+    height: auto
+    margin: 0 auto
+    position: relative
+    &.ps--active-x
+      justify-content: flex-start
+    &.scrollHide
+      // .ps__rail-x, .ps__thumb-x
+      //   opacity: 0 !important
+  @media (max-width: 1023px)
+    &.fix
+      padding-top: 106px
+
+  .navBar
+    +fs(15)
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    margin: 0 auto
+    .link
+      position: relative
+      display: flex
+      align-items: center
+      word-break: keep-all
+      padding: 15px 0
+      @media (min-width: 768px)
+        &:hover
+          .text
+            color: #000
+            font-weight: 900
+      &:after
+        content: ''
+        display: block
+        background-color: #aaaaaa
+        width: 1px
+        height: 18px
+      &:last-child:after
+        display: none
+      &.now
+        color: #000
+        font-weight: bold
+      .text
+        padding: 0 25px
+        transition: color .7s ease
+        white-space: nowrap
+  .searchArea
+    cursor: pointer
+    +fs(16)
+    font-family: 'FuturaPT-Medium','微軟正黑體'
+    position: absolute
+    top: 50%
+    right: 225px
+    z-index: 1
+    transform: translateY(-50%)
+    display: inline-flex
+    align-items: center
+    .icon
+      margin-right: 10px
+  .ps__rail-x, .ps__thumb-x
+    max-height: 3px
+    opacity: 1
+    &:hover
+      height: 3px
+
+  .searchBtn
+    color: #9a9a9a
+    display: flex
+    justify-content: center
+    height: 100%
+    padding: 10px 0
+    .box
+      cursor: pointer
+      display: inline-flex
+      align-items: center
+      transition: color .5s ease
+      &:hover
+        color: #000
+    .icon
+      margin-left: 10px
+  @media (max-width: 1400px)
+    .secBox
+      &.fixed
+        top: -50px
+  @media (max-width: 1200px)
+    .scrollFrame
+      width: 45%
+      // justify-content: flex-start
+  @media (max-width: 1023px)
+    height: auto
+    .secBox
+      height: auto
+      padding: 15px 0
+      display: flex
+      flex-direction: column
+    .titleArea
+      position: relative
+      width: 100%
+      left: 0
+      top: 0
+      transform: inherit
+      text-align: center
+    .scrollFrame
+      width: 100%
+      max-height: 52px
+    .searchArea
+      position: relative
+      left: 0
+      top: 0
+      transform: none
+      .icon
+        margin: 0
+        padding: 10px
+      .text
+        display: none
+  @media (max-width: 767px)
+    margin: 0 0 60px 0
+    padding: 0
+    .secBox
+      padding: 15px 20px 0 20px
+    .scrollFrame
+      // justify-content: flex-start
+    .navBar
+      .link
+        &:first-child
+          .text
+            padding: 0 15px 0 0
+        .text
+          padding: 0 15px
+/*mocaSNav*/
+
+
+/*mocaCtitle*/
+.mocaCtitle
+  +fs(36)
+  font-family: 'FuturaPT-Heavy','微軟正黑體'
+.mocaCsubTitle
+  +fs(20)
+  font-family: 'FuturaPT-Heavy','微軟正黑體'
+/*mocaCtitle*/
+
+
+/*mocaSBanner*/
+.mocaSBanner
+  margin: 0
+  height: 500px
+  position: relative
+  .bg
+    background-color: #d8d8d8
+    background-repeat: no-repeat
+    background-position: center
+    height: 100%
+  .titleSec
+    color: #fff
+    text-align: center
+    width: 100%
+    padding: 0 20px
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    display: none
+    animation: 1s fadeIn forwards
+    .title
+        +fs(48)
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        line-height: 1
+        margin: 0 0 20px 0
+    .subTitle
+          +fs(36)
+          line-height: 1.1
+          font-family: 'FuturaPT-Heavy','微軟正黑體'
+          font-weight: 900
+  @media (max-width: 1200px)
+    margin: 30px 0 0 0
+  @media (max-width: 767px)
+    margin: 0
+    .titleSec
+      display: block
+
+/*mocaTitleSec*/
+#visit
+  .mocaPageBody
+    .category
+      opacity: 0
+    &.show
+      .category
+        opacity: 1
+        transition: opacity 1.5s ease .3s
+
+.mocaPageBody
+  &.show
+    // .title
+    //   opacity: 1
+    //   // transform: translateY(0px)
+    //   transition: opacity 1s ease, transform 1s ease
+    // .subTitle
+    //   opacity: 1
+    //   transition: opacity 1.5s ease .5s
+
+.mocaTitleSec
+  text-align: center
+  font-family: 'FuturaPT-Heavy','微軟正黑體'
+  margin: 0 0 85px 0
+  padding: 0 5%
+  .title
+    +fs(36)
+    line-height: 1.5
+    // opacity: 0
+    // transform: translateY(100px)
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    strong
+      +fs(34)
+      padding: 0 2.5px
+    span
+      padding: 0 2.5px
+  .subTitle
+      +fs(18)
+      line-height: 1.5
+      // opacity: 0
+      padding: 5px 0 0 0
+  @media (max-width: 767px)
+    margin: 0 0 60px 0
+    .title
+      +fs(26)
+      strong
+        +fs(24)
+    .subTitle
+      +fs(16)
+
+
+/*btnStyle*/
+button
+  font: inherit
+  background-color: unset
+  border: none
+.btnStyle
+  cursor: pointer
+  +fs(14)
+  font-family: 'FuturaPT-Heavy','微軟正黑體'
+  font-weight: 900
+  display: flex
+  align-items: center
+  justify-content: center
+  &:hover
+    .btn
+      color: #fff
+      background-color: #b8b8b8
+      border-color: #b8b8b8
+  .btn
+    border: solid 2px #000
+    font-weight: inherit
+    width: 135px
+    height: 35px
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: color .5s ease, background-color .5s ease, border-color .5s ease
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+  .w50
+    width: 50%
+  .styleA
+    color: #fff
+    background-color: #000
+  .styleB
+    color: #000
+    background-color: #fff
+  .styleG
+    color: #c63434
+    background-color: #e5e5e5
+    border-color: #e5e5e5
+  .styleR
+    color: #fff
+    background-color: #c63434
+    border-color: #c63434
+
+
+/*agreeBtnArea*/
+.agreeBtnArea
+  text-align: center
+  width: 70%
+  margin: 0 auto
+  padding: 22px 0 0 0
+  .agree
+    margin: 0 0 35px 0
+    .text
+        +fs(14)
+        margin: 0 0 12px 0
+    .icon
+      cursor: pointer
+    .agreeBtn
+      color: #ff0000
+      background-color: #fff
+      border-radius: 50%
+      border: solid 2px #ff0000
+      width: 33px
+      height: 33px
+      margin: 0 auto
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: color .7s ease, background-color .7s ease
+      &:hover
+        color: #fff
+        border-color: #ff0000
+        background-color: #ff0000
+      &.confirm
+        color: #fff
+        border-color: #ff0000
+        background-color: #ff0000
+  .btn
+    height: 40px
+  @media (max-width: 767px)
+    width: 100%
+
+
+/*backTopBtn*/
+.backTopBtn
+  cursor: pointer
+  +fs(16)
+  border-radius: 50%
+  border: solid 2px #000
+  width: 38px
+  height: 38px
+  margin: 50px auto
+  display: flex
+  align-items: center
+  justify-content: center
+  @media (max-width:600px)
+    margin: 50px auto 100px
+  .icon
+    transform: rotate(270deg)
+
+
+/*wddCross*/
+.wddCross
+  position: relative
+  width: 45px
+  height: 45px
+  display: flex
+  align-items: center
+  justify-content: center
+  &:before, &:after
+    content: ''
+    display: block    
+    background-color: #656565
+    width: 100%
+    height: 1px
+    position: absolute
+    left: 0
+    top: 50%
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)
+
+/*hide_lightbox*/
+.discover, .visit
+  .hide_lightbox
+    overflow-y: scroll
+.hide_lightbox
+  overflow: hidden
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 10
+  width: 100vw
+  height: 100vh
+  .bg
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+/*hide_lightbox*/
+
+/*hideBagType*/
+.hideBagType
+  overflow: hidden
+  position: fixed
+  left: 0
+  top: 0
+  z-index: -1
+  visibility: hidden
+  width: 100vw
+  height: 100vh
+  &.open
+    z-index: 10
+    visibility: visible
+    .bg
+      width: 100%
+      transition: width 0.8s ease
+    .titleInfoBox
+      &:after
+        width: 80%
+        transition: width .8s ease .4s
+      .title
+        opacity: 1
+        transform: translateY(0px)
+        transition: opacity 1s ease .6s
+      .subTitle
+        opacity: 1
+        transform: translateY(0px)
+        transition: opacity 1s ease .8s
+    .textInfoBox
+      opacity: 1
+      transition: opacity 1s ease .8s
+    .btnStyle
+      opacity: 1
+      transition: opacity 1s ease 1s
+  &.close
+    .bg
+      width: 0
+      transition: width 0.5s ease .4s
+  .bg
+    position: absolute
+    left: 50%
+    top: 0
+    z-index: 0
+    width: 0
+    height: 100%
+    min-height: 100vh
+    transform: translateX(-50%)
+  .for_scroll
+    position: relative
+    z-index: 1
+  .container
+    margin: 0 auto
+    position: relative
+  .titleInfoBox
+    font-weight: 900
+    font-family: 'FuturaPT-Heavy','微軟正黑體'
+    text-align: center
+    padding: 95px 0 35px 0
+    position: relative
+    &:after
+      content: ''
+      display: block
+      background-color: #e5e5e5
+      width: 0%
+      height: 6px
+      position: absolute
+      left: 50%
+      bottom: 0
+      transform: translateX(-50%)
+    .title
+      +fs(36)
+      opacity: 0
+    .subTitle
+      +fs(24)
+      opacity: 0
+  .textInfoBox
+    padding: 50px 0 60px 0
+    text-align: center
+    opacity: 0
+    .text
+      +fs(16)
+      padding: 0 0 15px 0
+    .name
+      +fs(18)
+      font-weight: 900
+  .typeInfoBox
+    width: 100%
+    max-width: 430px
+    margin: 0 auto 85px auto
+  .btnStyle
+    opacity: 0
+    &:hover
+      .btn
+        color: #fff
+        background-color: #b8b8b8
+        border-color: #b8b8b8
+    .btn
+      width: 100%
+      height: 50px
+      &:hover
+        color: #fff
+        background-color: #000
+        border-color: #000
+    .styleG
+      color: #fff
+      background-color: #333
+      border-color: #333
+/*hideBagType*/
+
+
+//ufoBall
+.ufoBallBox
+  display: flex
+.ufoBall
+  +fs(14)
+  cursor: pointer
+  letter-spacing: initial
+  color: #fff
+  background-color: #000
+  border-radius: 50%
+  width: 100px
+  height: 100px
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  transition: background-color .5s ease
+  &:hover, &.gray:hover
+    background-color: #e83434
+  &:after
+    content: ''
+    display: block
+    border: dashed 2px #fff
+    border-radius: 50%
+    width: 85px
+    height: 85px
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+  &.gray
+    background-color: #7d7d7d
+
+//chrisAgreeBox
+.chrisAgreeBox
+  display: flex
+  align-items: center
+  justify-content: center
+  &.agree
+    .icon
+      color: #fff
+      background-color: #ff0000
+  .icon
+    +fs(12)
+    cursor: pointer
+    color: #ff0000
+    border-radius: 50%
+    border: solid 2px #ff0000
+    width: 26px
+    height: 26px
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: color .5s ease, background-color .5s ease
+    &:hover
+      color: #fff
+      background-color: #ff0000
+  .text
+    +fs(15)
+    font-weight: 900
+    padding: 0 0 0 10px
+
+/*chrisSelect*/
+.chrisSelect
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  &.open
+    .dropShow
+      .icon
+        transform: rotateX(150deg)
+  .dropShow
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+  .dropList
+    display: none
+    position: absolute
+    left: 0
+    top: 100%
+    z-index: 1
+    border: solid 2px #000
+    width: 100%
+    max-height: 300px
+    overflow: hidden
+    .list
+      cursor: pointer
+      color: #000
+      background-color: #fff
+      border-top: solid 2px #000
+      &:hover
+        color: #fff
+        background-color: #e83434
+      &:first-child
+        border-top: none
+      &.notAllow
+        color: #ccc
+        &:hover
+          color: #ccc
+          background-color: #fff
+      .character
+        width: 100%
+        padding: 15px 20px
+        display: flex
+        align-items: center
+  .mCSB_container
+    margin: 0
+  .mCSB_scrollTools
+    width: 4px
+    .mCSB_dragger
+      .mCSB_dragger_bar
+        background-color: #000
+    .mCSB_draggerRail
+      opacity: 0
+/*chrisSelect*/
+
+/*chrisCloseBtn*/
+.chrisCloseBtn
+  display: flex
+  align-items: center
+  &:hover
+    .iconBox
+      &:before
+        transform: rotate(-45deg)
+      &:after
+        transform: rotate(45deg)
+  .text
+    +fs(14)
+    font-family: 'FuturaPT-Light','微軟正黑體'
+  .iconBox
+    position: relative
+    &:before, &:after
+      content: ''
+      display: block
+      background-color: #9a9a9a
+      width: 35px
+      height: 1px
+      margin-left: 12px
+      transition: transform .5s ease
+    &:before
+      transform: rotate(45deg)
+    &:after
+      margin-top: -1px
+      transform: rotate(-45deg)
+/*chrisCloseBtn*/
+
+
+/*chVideobox*/
+.chVideobox
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  z-index: -1
+  background-color: rgba(0, 0, 0, 0.8)
+  opacity: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  &.open
+    z-index: 10
+    opacity: 1
+    transition: opacity .4s ease
+    iframe
+      opacity: 1
+      transition: opacity 1s ease .5s
+    .chrisCloseBtn
+      transform: translateY(0px)
+      transition: transform 1s ease .4s
+  &.close
+    opacity: 0
+    transition: opacity .5s ease
+    iframe
+      opacity: 0
+      transition: opacity .5s ease
+    .chrisCloseBtn
+      transform: translateY(-100px)
+      transition: transform .5s ease
+  .bg
+    position: absolute
+    left: 0
+    top: 0
+    z-index: -1
+    width: 100%
+    height: 100%
+  .chrisCloseBtn
+    cursor: pointer
+    width: 50px
+    height: 50px
+    background-color: #e83434
+    position: absolute
+    right: calc(5% - 25px)
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    transform: translateY(-100px)
+    .iconBox
+      &:before, &:after
+        background-color: #fff
+        width: 25px
+        height: 2px
+        margin: 0
+      &:after
+        margin-top: -2px
+  iframe
+    width: 80%
+    height: 100%
+    opacity: 0
+  @media (max-width: 1023px)
+    iframe
+      width: 80vw
+      height: calc(80vw * 0.5625)
+  @media (max-width: 1023px)
+    iframe
+      width: 100vw
+      height: calc(100vw * 0.5625)
+/*chVideobox*/
+
+//waveUp
+.waveBox
+  min-width: 66px
+  height: 30px
+  display: flex
+  align-items: flex-end
+.waveUp
+  transition: all 0s
+  animation: equalizer 2200ms infinite
+  background-color: #000
+  width: 2px
+  height: 10px
+  margin-right: 6px
+  display: block
+  &:last-child
+    margin-right: 0
+  &.d100
+    animation-delay: 1s
+  &.d66
+    animation-delay: 0.66s
+  &.d33
+    animation-delay: 0.33s
+
+
+//mCustomScrollbar
+.mCSB_inside>.mCSB_container
+  margin: 0
+#mCSB_1_scrollbar_vertical,
+#mCSB_2_scrollbar_vertical
+  opacity: 0
+
+
+
+/*custom radio button*/
+/* Customize the label (the container) */
+.customRadio
+  display: block
+  position: relative
+  padding-left: 35px
+  cursor: pointer
+  font-size: 16px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+/* Hide the browser's default radio button */
+.customRadio input
+  position: absolute
+  opacity: 0
+  cursor: pointer
+  height: 0
+  width: 0
+
+/* Create a custom radio button */
+.checkmark
+  position: absolute
+  top: 0
+  left: 0
+  height: 25px
+  width: 25px
+  background-color: #eee
+  border-radius: 50%
+
+/* On mouse-over, add a grey background color */
+.customRadio:hover input ~ .checkmark
+  background-color: #ccc
+
+/* When the radio button is checked, add a blue background */
+.customRadio input:checked ~ .checkmark
+  background-color: #2196F3
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after
+  content: ""
+  position: absolute
+  display: none
+
+/* Show the indicator (dot/circle) when checked */
+.customRadio input:checked ~ .checkmark:after
+  display: block
+
+/* Style the indicator (dot/circle) */
+.customRadio .checkmark:after
+  top: 9px
+  left: 9px
+  width: 8px
+  height: 8px
+  border-radius: 50%
+  background: white

@@ -1,0 +1,53 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-   
+    var slick =[
+        {
+            img:"../../upload/fa2/service/facility/liboxSlickImg.jpg",
+            videoId:"lwW9G5GaSv0",
+            b:"以純白的印象營造出一種兼具休閒又不失精緻的質感"},
+        {
+            img:"../../upload/fa2/service/facility/liboxSlickImg.jpg",
+            videoId:"",
+            b:"以純白的印象營造出一種兼具休閒又不失精緻的質感"},
+    ]
+
+
+section
+    .liboxClose
+        span
+    .topNav(style="background-color: #ebeaea")
+        h6 咖啡廳
+        .inf
+            .location
+                ._title
+                    p.ch 地點樓層
+                    p.en Location
+                div
+                    p 1F (漢來咖啡)、2F (STARBUCKS)、8F (Café del SOL、simtree)
+    ._slick
+        ul
+            each val in slick
+                // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                li(data-videoId=val.videoId)
+                    div
+                        figure
+                            img(data-lazy=val.img, alt="")
+                        // 後端請注意: 如果下面沒有內容的話 請移除
+                        b=val.b
+        .arrows 
+            span.icon-arrowLeft
+            span.icon-arrowRight
+    .rows
+        .row
+            ._text
+                h6 誠邀您品嘗1F漢來咖啡 香醇可口
+                p 在精品林立的百貨大廳，時尚、簡約的Hi-Lai Cafe以純白的印象營造出一種兼具休閒又不失精緻的質感。強調原味、自然、健康的輕食，提供喜歡輕食的人一種吃的 SPA 的全新體驗；精純、香濃的咖啡則讓喜歡思考的人沉浸在醇與純的時空裡靜靜品味；舒適、寬敞的座椅和空間，更是逛街累了的最佳場所。
+        .row
+            ._text
+                h6 興趣 X simtree 是傳達給消費者的信仰
+                ul
+                    li 致力于提供一個快樂工作的環境，就同公司的名字“白畫文”，讓工作夥伴自由盡情的揮灑。
+                    li 帶領咖啡產業走向第三波的咖啡革命，對於每一件產品非常要求，所以致力于高CP值。
+                    li 咖啡飲品、一般飲品、西點、麵包、輕食 & 咖啡豆、手沖器具。

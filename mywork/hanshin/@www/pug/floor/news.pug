@@ -1,0 +1,78 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-   
+    var slick =[
+        {
+            img:"../../upload/fa2/floor/detail/newsLiboxSlick_890_560.jpg",
+            videoId:"",
+            b:"演示文字"},
+        {
+            img:"../../upload/fa2/floor/detail/newsLiboxSlick_890_560.jpg",
+            videoId:"",
+            b:""},
+    ]
+
+
+section
+    .liboxClose
+        span
+    .topNav(style="background-color: #ebeaea")
+        h6 獻給摯愛，何需理由！
+        .inf
+            .type
+                ._title
+                    p.ch 活動時間
+                    p.en Time
+                div
+                    p 108/01/05(四)
+            .location
+                ._title
+                    p.ch 活動地點
+                    p.en Location
+                div
+                    p 1F精品美妍 
+            .share
+                ._title
+                    p.ch 分享
+                    p.en Share to
+                ul.socialMedia
+                    li
+                        a(href=java)
+                            span.icon-facebook
+                    li
+                        a(href=java)
+                            span.icon-twitter
+                    li
+                        a(href=java)
+                            span.icon-line
+    ._slick
+        ul
+            each val in slick
+                // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                li(data-videoId=val.videoId)
+                    div
+                        figure
+                            img(data-lazy=val.img, alt="")
+                        if (val.b!=="")
+                            // 後端請注意: 如果下面的b沒有內容的話 請移除
+                            // 後端請注意: 如果下面的b沒有內容的話 請移除
+                            // 後端請注意: 如果下面的b沒有內容的話 請移除
+                            b=val.b
+        .arrows 
+            span.icon-arrowLeft
+            span.icon-arrowRight
+    .rows
+        .row
+            ._text
+                h6 誠邀您探索卡地亞 最新作品系列
+                p 美好的夏日時光即將到來，卡地亞設計了一系列精緻的珠寶作品，讓您即使身穿簡約夏裝，亦散發高雅氣息。誠邀您探索卡地亞最新作品系列，包括典雅高貴的項鍊、胸針、耳環、手鐲和戒指作品。您將會找到夢寐以求的珠寶傑作。LOVE珠寶系列誕生於1970年代的紐約，見證諸多纏綿悱惻的傳奇愛情，並成為愛情宣言的化身，完美橢圓形鐲身、手鐲上的螺絲設計以及鮮明的優雅風格成為永恆愛情的象徵。備有黃K金或玫瑰金款式，並鑲嵌精美鑽石，愛無止境。單鑽戒指自1895年就已成為卡地亞之經典，卡地亞珠寶的精工細作，展現寶石和鑲座之間微妙的平衡之美。本系列優雅獨特，鑲工精緻靈動，令光線得以在鑽石內自由流動。
+        .row
+            ._img
+                figure
+                    img.b-lazy(src=blazy data-src="../../upload/fa2/floor/detail/newImg1.jpg", alt="")
+                    b Trinity Ruban訂婚戒指
+            ._text
+                h6 愛意繾綣  締結相伴一生的承諾
+                p 卡地亞Trinity Ruban訂婚鑽戒系列，以匠心獨具的方式演繹標誌性的Trinity設計，鋪鑲鑽石的鉑金鍛帶環繞中央主鑽，靈動閃耀，愛意繾綣，締結相伴一生的承諾，見證忠貞不渝的愛情。
+            

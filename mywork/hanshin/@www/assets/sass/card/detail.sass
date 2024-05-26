@@ -1,0 +1,587 @@
+#card.detail
+    section._title
+        text-align: center
+        &.show
+            .ch
+                animation: fadeInUp 1s both
+            .en
+                animation: fadeInUp 1.2s both .2s
+                &:after
+                    animation: w40 .6s both .4s
+            .date
+                .time:before
+                    animation: h17 .4s both .2s
+                    @media (max-width: 600px)
+                        animation: w100 .4s both .2s
+                .type p
+                    animation: fadeInRight 1s both .5s
+                .time p
+                    animation: fadeInLeft 1s both .5s
+                &:before,&:after
+                    animation: w100 1s both
+        .ch
+            font-size: px(22)
+            font-weight: bold
+            opacity: 0
+            @media (max-width: 700px)
+                font-size: px(20)
+        .en
+            font-size: px(38)
+            +flex-center
+            flex-direction: column
+            opacity: 0
+            @media (max-width: 1024px)
+                font-size: px(34)
+            @media (max-width: 700px)
+                font-size: px(30)
+            &:after
+                margin: 20px 0 30px
+                +fakeLine(40px,3px,#000)
+        .date
+            +flex-center
+            color: rgba(0,0,0,.8)
+            padding: 15px 10px
+            position: relative
+            max-width: 760px
+            width: 100%
+            margin: auto
+            @media (max-width: 600px)
+                flex-direction: column
+            &:before,&:after
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                +fakeLine(0%,1px,#bfbfbf)
+            &:before
+                top: 0
+            &:after
+                bottom: 0
+            .type,.time
+                +flex-center
+                overflow: hidden
+            .type
+                font-size: px(17)
+                font-weight: bold
+                margin-right: 10px
+                p
+                    opacity: 0
+                    &:nth-of-type(2)
+                        font-weight: normal
+                        color: rgba(113,113,113,.8)
+                        margin-left: 5px
+            .time
+                position: relative
+                padding: 0 0 0 14px
+                @media (max-width: 600px)
+                    padding: 20px 0 0 0 
+                &:before
+                    position: absolute
+                    top: 50% 
+                    left: 0
+                    transform: translateY(-50%)
+                    +fakeLine(4px,0px,#ea68a2)
+                    +keyframesHeight(17)
+                    z-index: 1
+                    @media (max-width: 600px)
+                        top: 6px
+                        left: 50%
+                        transform: translateX(-50%)
+                        width: 0
+                        height: 3px
+                p
+                    font-size: px(16)
+                    opacity: 0
+
+    .banner .cover 
+        display: flex
+        @media (max-width: 1200px) and (min-width: 1025px), (max-width: 700px)
+            flex-direction: column-reverse
+        .left 
+            width: 60%
+            +bgSeting
+            background-repeat: no-repeat
+            +flex-center
+            flex-direction: column
+            padding: 190px 190px 90px 
+            @media (max-width: 1600px)
+                padding: 190px 12vw 90px 5vw
+                align-items: flex-end
+            @media (max-width: 1024px)
+                padding: 190px 12vw 90px  5vw
+            @media (max-width: 1200px) and (min-width: 1025px), (max-width: 700px)
+                width: 100%
+                padding: 130px 5vw 90px 
+            // 字體變白
+            &.whiteWord
+                color: #fff
+                ._title h2:after
+                    background-color: #fff
+                .inf
+                    .type
+                        .ch
+                            color: rgba(255,255,255,.8)
+                        .en
+                            color: rgba(142,142,142,.8)
+                    .book
+                        background-color: #fff
+                        color: #000
+                    .dropDown 
+                        border-bottom: 3px solid #fff
+                        .selectMenu p
+                        color: #fff
+            &>*
+                width: 100%
+                @media (min-width: 1201px),(max-width: 1024px) and (min-width: 701px)
+                    max-width: 400px
+            ._title
+                h2
+                    font-size: px(33)
+                    @media (max-width: 700px)
+                        font-size: px(28)
+                    @media (max-width: 350px)
+                        font-size: px(24)
+                    &:after
+                        margin: 20px 0 30px
+                        +fakeLine(40px,3px,#000)
+                p
+                    font-size: px(15)
+            .inf
+                margin: 100px 0 0 
+                @media (max-width: 1200px) and (min-width: 1025px), (max-width: 700px)
+                    margin: 30px 0 0 
+                &>div
+                    display: flex
+                    align-items: center
+                    flex-wrap: wrap
+                    margin: 5px auto
+                    &>*:last-child
+                        margin: 10px 0 
+                    .type
+                        +flex-center
+                        margin-right: 10px
+                        .ch
+                            font-weight: bold
+                            font-size: px(17)
+                            color: rgba(0,0,0,.8)
+                        .en
+                            font-size: px(17)
+                            color: rgba(113,113,113,.8)
+                            margin-left: 5px
+                    .socialMedia
+                        +flex-center
+                        li 
+                            &:not(:last-child)
+                                margin-right: 10px
+                            a
+                                padding: 5px
+                                display: block
+                                span
+                                    display: block
+                                    color: #9b9b9b
+                                    transition: transform .8s ease,color .4s ease
+                                &:hover span
+                                    transform: rotateY(360deg)
+                                    color: #ca934f
+                    .book
+                        background-color: #181818
+                        color: #fff
+                        padding: 8px 40px 8px 20px
+                        font-size: px(15)
+                    &.other
+                        margin-top: 15px
+                    .dropDown
+                        width: 100%
+                        border-bottom: 3px solid #000
+                        .selectMenu
+                            opacity: 1
+                            padding: 5px 0 5px 5px 
+                            p
+                                color: #000
+                                padding: 0 10px
+        .right
+            margin-left: -190px
+            width: calc(40% + 190px)
+            padding: 190px 20px 0 0
+            display: flex
+            align-items: flex-start
+            @media (max-width: 1600px)
+                margin-left: -8vw
+                width: calc(40% + 8vw)
+            @media (max-width: 1200px) and (min-width: 1025px) , (max-width: 700px)
+                margin: 0 auto -80px 
+                width: 100%
+                padding: 90px 5vw 0
+            @media  (max-width: 500px)
+                padding: 60px 5vw 0
+            figure
+                animation: fadeInUp 1.2s both .2s
+    .topTitle
+        padding: 80px 0 0
+        background-color: #f0f0f0
+        position: relative
+        &:after
+            +fakeLine(0,0,transparent)
+            position: absolute
+            top: 100%
+            left: 50%
+            transform: translateX(-50%)
+            border-style: solid
+            border-width: 20px 17.5px 0 17.5px
+            border-color: #f0f0f0 transparent transparent transparent
+        .en
+            +overview_en
+        .words
+            +overview_words
+        .anchor
+            +overview_anchor
+    .offer
+        padding: 100px 0
+        .rows
+            margin: 60px auto 0
+            max-width: 1060px
+            padding: 0 50px
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            .row
+                display: flex
+                align-items: center
+                flex-wrap: wrap
+                margin: 0 0 20px
+                ._text,._img
+                    &.half
+                        width: 50%
+                        @media all and (max-width: 550px)
+                            width: 100%
+                .ps
+                    border: 1px solid #cccccc
+                    padding: 10px 30px
+                    width: 100%
+                    opacity: 0
+                    &.show
+                        animation: fadeInUp 1.2s both
+                    &>*
+                        font-size: px(14)
+                        letter-spacing: 0
+                    h6
+                        color: #4b7ded
+                        margin: 5px 0
+                    p
+                        margin: 5px 0 5px 7px
+                ._img
+                    margin: 25px 0 15px
+                    +flex-center
+                    figure>*
+                        opacity: 0
+                    &.show.in
+                        img
+                            animation: fadeInUp 1.2s both
+                        b
+                            animation: fadeInUp 1.2s both .8s
+                    b
+                        font-weight: normal
+                        font-size: px(14)
+                        padding: 20px 5px 0
+                        display: block
+                        @media all and (max-width: 700px)
+                            padding: 10px 5px 0
+                    &.half
+                        &:nth-child(odd)
+                            padding-right: 30px 
+                            @media all and (max-width: 550px)
+                                padding-right: 0px 
+                        &:nth-child(even)
+                            padding-left: 30px 
+                            @media all and (max-width: 550px)
+                                padding-left: 0px 
+                    &.w_50
+                        width: 50%
+                        @media all and (max-width: 550px)
+                            width: 100%
+                        &:nth-child(odd)
+                            padding-right: 8px 
+                            justify-content: flex-end
+                            @media all and (max-width: 1024px)
+                                padding-right: 4px
+                            @media all and (max-width: 550px)
+                                padding-right: 0
+                        &:nth-child(even)
+                            padding-left: 8px
+                            justify-content: flex-start
+                            @media all and (max-width: 1024px)
+                                padding-left: 4px
+                            @media all and (max-width: 550px)
+                                padding-left: 0
+                ._text
+                    margin: 0 0 15px
+                    &>*
+                        opacity: 0
+                    &.show
+                        h6
+                            animation: fadeInDown 1.2s both
+                        p
+                            animation: fadeInUp 1.5s both .2s
+                    h6
+                        +JaguarJC-Bold
+                        font-size: px(18)
+                        &:not(:last-child)
+                            margin: 0 0 5px
+                    p,a
+                        font-size: px(16)
+                        line-height: 1.8
+                        text-align: justify
+                    p
+                        margin: 0 0 0 27px
+                        position: relative
+                        display: flex
+                        flex-direction: column
+                        align-items: flex-start
+                        &.s1
+                            &:before
+                                +fakeLine(4px,4px,#434343)
+                                border-radius: 50%
+                                position: absolute
+                                top: 12px
+                                left: -17px
+                        &.s2
+                            
+                        &.s3
+                            padding: 0 0 0 17px
+                    a
+                        display: block
+                        color: $base_gold
+                        transition: all .4s ease
+                        &:hover
+                            letter-spacing: 4px
+                        &:before
+                            font-family: 'icomoon'
+                            content: "\e907"
+                            margin: 0 5px 0 0 
+                            font-size: px(14)
+    .treatment
+        padding: 100px 0 10px 
+        .content
+            max-width: 1440px
+            padding: 0 50px
+            width: 100%
+            margin: auto
+            @media (max-width: 1024px)
+                padding:  0 5vw
+            ul
+                display: flex
+                flex-wrap: wrap
+                li
+                    padding: 0 35px 
+                    width: 33.33%
+                    margin: 0 0 90px
+                    opacity: 0
+                    @media (max-width: 1670px)
+                        padding: 0 2vw
+                    @media (max-width: 1200px) and (min-width: 1025px),(max-width: 880px)
+                        width: 50%
+                    @media (max-width: 420px)
+                        width: 100%
+                        padding: 0 
+                    &.show.in
+                        animation: fadeInUp 1s both 
+                        @media (min-width: 1201px)
+                            &:nth-of-type(3n+1),&:nth-of-type(3n+3)
+                                animation-delay: .3s
+                        @media (max-width: 1200px) and (min-width: 1025px),(max-width: 880px) and (min-width: 421px)
+                            &:nth-of-type(even)
+                                animation-delay: .3s
+                    figure
+                        height: 220px
+                        @media (max-width: 1670px)
+                            height: calc(17.4vw - 72px)
+                        @media (max-width: 1200px) and (min-width: 1025px)
+                            height: calc(27.3vw - 109px)
+                        @media (max-width: 1024px)
+                            height: 15.4vw
+                        @media (max-width: 880px)
+                            height: 24.3vw
+                        @media (max-width: 420px)
+                            height: 53.5vw
+                            max-height: 220px
+                    ._text
+                        padding: 15px 15px 0
+                        @media (max-width: 1690px)
+                            padding: 15px 5px 0
+                        h6
+                            font-size: px(20)
+                            font-weight: bold
+                            &:after
+                                margin: 5px 0 10px
+                                +fakeLine(20px,1px,#000)
+                        p
+                            font-size: px(16)
+                            color: rgba(0,0,0,.9)
+    .application
+        padding: 100px 0
+        .content
+            max-width: 1140px
+            padding:  0 50px
+            width: 100%
+            margin: auto
+            @media (max-width: 1024px)
+                padding: 0 5vw
+            ul
+                display: flex
+                flex-wrap: wrap
+                li
+                    width: 33.33%
+                    padding: 3px
+                    opacity: 0
+                    @media (max-width: 800px)
+                        width: 50%
+                    @media (max-width: 500px)
+                        width: 100%
+                        padding: 3px 0
+                    &.show.in
+                        animation: fadeInUp 1s both 
+                        @media (min-width: 801px)
+                            &:nth-of-type(3n+1),&:nth-of-type(3n+3)
+                                animation-delay: .3s
+                        @media (max-width: 80px) and (min-width: 501px)
+                            &:nth-of-type(even)
+                                animation-delay: .3s
+                    a
+                        padding: 40px 20px 30px
+                        height: 100%
+                        +flex-center
+                        flex-direction: column
+                        background-color: #f8edde
+                        font-weight: bold
+                        transition: all .4s ease
+                        border: 1px solid #f8edde
+                        @media (max-width: 800px)
+                            padding: 30px 5vw 
+                        @media (max-width: 500px)
+                            flex-direction: row
+                            padding: 30px 5vw
+                        @media (max-width: 350px)
+                            padding: 25px 5vw
+                        figure,._text .ch,._text .en
+                            transition: all .4s ease
+                        figure
+                            margin: 0 0 10px
+                            opacity: .5
+                            @media (max-width: 500px)
+                                margin: 0 
+                                width: 40%
+                            img
+                                margin: auto
+                                height: 30px
+                        ._text
+                            text-align: center
+                            @media (max-width: 500px)
+                                width: 60%
+                                text-align: left
+                            .ch
+                                font-size: px(16)
+                                color: #565656
+                            .en
+                                font-size: px(15)
+                                color: #999999
+                        &:hover
+                            border: 1px solid #e3a374
+                            background-color: #ffcfab
+                            figure
+                                opacity: 1
+                            .ch,.en
+                                color: #000
+    .qa
+        padding: 100px 0
+        position: relative
+        @media (max-width: 1279px)
+            padding: 100px 0 50px
+        &:before
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            +fakeLine(100%,100%,#f5f5f5)
+            max-width: 1570px
+        .QAtable
+            margin: 0 auto 90px
+
+
+
+    .applicationLibox
+        +basicLibox
+        background-color: rgba(0,0,0,.8)
+        animation: fadeIn .4s both 
+        z-index: 11
+        +flex-center
+        &.close
+            animation: fadeOut .4s both 
+        section
+            +bgSeting
+            background-repeat: no-repeat
+            max-height: 100%
+            animation: fadeIn .4s both 
+            max-width: 910px
+            width: 100%
+            padding: 40px
+            @media (max-width: 950px)
+                max-width: none
+                padding: 4vw
+                animation: fadeInRight 1s both 
+            .box
+                width: 100%
+                position: relative
+                padding: 90px 90px 80px
+                border: 1px solid #bf9768
+                @media (max-width: 1024px)
+                    padding: 90px calc(40px + 5vw) 80px
+                @media (max-width: 600px)
+                    padding: 60px 5vw 
+            .liboxClose
+                background-color: #bf9768
+                width: 40px
+                height: 40px
+                +flex-center
+                position: absolute
+                top: 0px
+                left: 0px
+                z-index: 1
+                cursor: pointer
+                span
+                    +cross(20px,20px)
+                    display: block
+                    transform: rotate(45deg)
+                    &:before
+                        +cross_before(100%,#fff)
+                    &:after
+                        +cross_after(100%,#fff)
+            ._title
+                +flex-center
+                flex-direction: column
+                position: relative
+                z-index: 1
+                &:not(:last-child)
+                    margin-bottom: 60px
+                    @media (max-width: 600px)
+                        margin-bottom: 30px
+                figure
+                    margin: 0 0 10px
+                .ch
+                    font-size: px(20)
+                    color: #232323
+                    font-weight: bold
+                .en
+                    font-size: px(18)
+                    color: #7c7c7c
+            ._text
+                max-width: 600px
+                width: 100%
+                margin: auto
+                position: relative
+                z-index: 1
+                text-align: justify
+                &:not(:last-child)
+                    margin-bottom: 30px
+                p
+                    font-size: px(16)
+                a
+                    font-size: px(15)
+                    +blankLink

@@ -1,0 +1,552 @@
+@charset "utf-8";
+
+
+
+
+/*---------------main開始-------------------------------------------------------*/
+
+main {
+    z-index: 2;
+}
+
+
+
+
+/*banner 標題slogan開始-----------------*/
+
+.banner_slogan {
+    position: absolute;
+    height: auto;
+    width: auto;
+    bottom: 23vh;
+    left: 6vw;
+    animation: bottom_slidein 2s both ease-out;
+    transform:translate(0);
+}
+
+.banner_slogan p {
+    font-size: 3rem;
+    color: #fff;
+    text-align: left;
+    /*text-shadow: 1px 1px 1px black;*/
+}
+
+.banner_slogan p:nth-child(2) {
+    font-family: MyriadPro-Regular,微軟正黑體;
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 25px;
+}
+
+.relais {
+    width: 150px;
+    position: absolute;
+    bottom: 35px;
+    left: calc(50% - 75px);
+    text-align: center;
+    animation: fadeIn 1s both 1s;
+}
+
+.relais span {
+    font-size: 2.25rem;
+    color: #fff;
+}
+
+.relais p {
+    margin-top: 10px;
+    font-size: .75rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+/*banner 標題slogan結束-----------------*/
+
+main article:nth-child(2) {
+    text-align: center;
+    margin-top: 90px;
+}
+
+.title {
+    overflow: hidden;
+}
+
+h4 {
+    font-size: 1.875rem;
+    letter-spacing: 1px;
+    padding: 80px 0 0 0;
+    transform: translateY(100%);
+}
+
+h4.show {
+    animation: allin0 1.2s forwards;
+}
+
+.menu_list {
+    margin: 40px 0;
+}
+
+.menu_list ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+}
+
+.menu_list.show ul {
+    animation: allin0 1.2s .6s forwards;
+}
+
+.menu_list ul li {
+    display: inline-block;
+}
+
+.menu_list ul li a {
+    display: block;
+    padding: 0 15px;
+}
+
+.menu_list ul li p {
+    font-size: .875rem;
+    color: #ADADAD;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.menu_list ul li:hover p {
+    color: #000;
+}
+
+.menu_list ul li p:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: black;
+    transition: .5s ease;
+}
+
+.menu_list ul li:hover p:after {
+    left: 0%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓slick↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+main article:nth-child(2) {
+    transition: all 0.3s ease-out 10s;
+}
+
+.slick_bg {
+    overflow: hidden;
+}
+
+.slick {
+    position: relative;
+    transform: translateY(100%);
+}
+
+.slick.show {
+    animation: allin0 1.2s 1.2s forwards;
+}
+
+.slick_box {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.slick_box ul li {
+    padding: 0 5px;
+    /*  transition: width .5s ease*/
+}
+
+
+
+
+
+
+
+
+/*slick圖片設定開始---*/
+
+.slick_img {
+    position: relative;
+}
+
+.hover_box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    opacity: 0;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+.hover_box:hover {
+    opacity: 1;
+    animation-name: fadeIn;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+.hover_box p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    line-height: 2;
+    color: #fff;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+.hover_box:hover p {
+    opacity: 1;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+.slick_img .hover_box:before {
+    opacity: 0;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 35%;
+    background-color: rgba(255, 255, 255, .3);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+.slick_img:hover .hover_box:before {
+    opacity: 1;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+
+.slick_img .hover_box:after {
+    opacity: 0;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 35%;
+    background-color: rgba(255, 255, 255, .3);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+.slick_img:hover .hover_box:after {
+    opacity: 1;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    /* Firefox 4 */
+    -webkit-transition: all 1s;
+    /* Safari 和 Chrome */
+    -o-transition: all 1s;
+    /* Opera */
+}
+
+
+
+
+
+
+
+
+
+
+
+/*slick圖片設定結束---*/
+
+
+/*slick文字內容---*/
+
+.slick_box ul li h5 {
+    font-size: 1.125rem;
+    padding: 30px 0 15px 0;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.slick_box ul li>p {
+    font-size: .875rem;
+    width: 80%;
+    margin: auto;
+    font-family: 'MyriadPro-Regular';
+    word-wrap: break-word;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+
+
+
+
+
+
+
+
+
+/*slick箭頭////////*/
+
+.icon-arrow-left01,
+.icon-arrow-right01 {
+    position: absolute;
+    top: 8.5vw;
+    display: block;
+    color: #9C9C9C;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.icon-arrow-left01 {
+    left: 5vw;
+    color: #000;
+    transition: 0.5s;
+}
+
+.icon-arrow-right01 {
+    right: 5vw;
+    color: #000;
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑slick ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+.find {
+    width: 100px;
+    margin: auto;
+    margin-top: 70px;
+    position: relative;
+}
+
+.find p {
+    cursor: pointer;
+    padding-top: 25px;
+}
+
+.find:before {
+    position: absolute;
+    left: calc(50% - 37px);
+    content: "";
+    display: block;
+    width: 74px;
+    height: 1px;
+    background-color: #000;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+/*---------------main結束----------------------------------*/
+
+
+/*---------min-width: 1500px--------------------------------------------------------*/
+
+@media only screen and (min-width: 1500px) {
+    .icon-arrow-left01,
+    .icon-arrow-right01 {
+        top: 125px;
+    }
+
+    .icon-arrow-left01 {
+        left: calc(50% - 700px);
+    }
+
+    .icon-arrow-right01 {
+        right: calc(50% - 700px);
+    }
+}
+
+
+
+
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    /*---------------main開始---------------------------------*/
+    /*banner---------*/
+    .banner_slogan {
+        position: absolute;
+        bottom: 25vh;
+        left: 50px;
+        top: auto;
+    }
+    .banner_slogan p {
+        font-size: 2.5rem;
+    }
+
+    .banner_slogan span {
+        font-size: 2rem;
+    }
+
+    .relais span {
+        font-size: 2rem;
+    }
+
+    main article:nth-child(2) {
+        padding: 0 20px;
+    }
+    .slick_box {
+        width: 100%;
+    }
+    .slick_box ul li {
+        padding: 0 1px;
+    }
+    .slick_img .hover_box:before {
+        height: 35%;
+    }
+    .slick_img .hover_box:after {
+        height: 35%;
+    }
+
+    h4 {
+        font-size: 1.875rem;
+        letter-spacing: 1px;
+        padding: 50px 0 0;
+    }
+
+    .slick_box ul li h5 {
+        width: 90%;
+        margin: auto;
+    }
+    .icon-arrow-left01,
+    .icon-arrow-right01 {
+        display: none;
+    }
+
+
+
+    /*在手機板時slick的hover取消 字改顯示在下面 */
+    .hover_box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        opacity: 1;
+        margin-top: 10px;
+    }
+
+    .hover_box p {
+        font-size: .875rem;
+        /*letter-spacing: .5px;*/
+        opacity: 1;
+        line-height: 1.5;
+        color: #000;
+        text-align: center;
+    }
+    /*---------------main結束-------------------------------------------------------*/
+}
+
+@media only screen and (max-width:700px) {
+    .banner_slogan p:nth-child(2) {
+        display: none;
+    }
+
+    .banner_slogan p br {
+        display: none;
+    }
+
+    .banner_slogan {
+        left: 0;
+        padding: 0 20px;
+    }
+}
+
+
+
+
+
+/*---------max-width: 300px--------------------------------------------------------*/
+
+@media only screen and (max-width: 300px) {
+    .banner_slogan p {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,154 @@
+.footer
+    &__top
+        background: $CblueD
+        padding: 50px 0
+    &__inner
+        width: 100%
+        max-width: 1280px
+        margin: 0 auto
+        +flex
+        justify-content: space-between
+        position: relative
+        flex-direction: column
+    &__gotop
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 2
+        +rwd(1280)
+            position: static
+            transform: translate(0,0)
+            margin-bottom: 50px
+        a
+            color: #fff
+            display: inline-block
+            width: 100%
+            height: 100%
+        .circle
+            border: 1px solid #075fd8
+            font-size: px(12)
+            &:hover
+                background: rgba(0,0,0,.2)
+    &__menu
+        width: 100%
+        color: #fff
+        a
+            color: #fff
+        h3
+            text-align: center
+            font-size: px(24)
+            margin-bottom: 20px
+        .navbit
+            display: flex
+            justify-content: center
+    &__icon
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        +rwd(1280)
+            position: static
+            transform: translate(0,0)
+            margin-top: 20px
+        ul
+            display: flex
+        li
+            margin: 0 0 0 15px
+
+    &__bottom
+        background: $Cgray
+        // padding: 50px 0
+    &__nav
+        width: 100%
+        border-bottom:  4px solid #fff
+        padding: 35px 0
+        +rwd(768)
+            display: none
+        >ul 
+            display: flex
+            +rwd(768)
+                flex-wrap: wrap
+            >li
+                padding: 30px 0 20px
+                width: 100%
+                &:nth-child(2)
+                    border-left: 1px solid rgba(0,0,0,.2)
+                    border-right: 1px solid rgba(0,0,0,.2)
+        ul
+            h4
+                text-align: center
+                font-size: px(16)
+                margin-bottom: 25px
+                span
+                    font-size: px(18)
+            ul
+                display: flex
+                flex-direction: column
+                align-content: center
+                justify-content: center
+                li
+                    text-align: center
+                    margin-bottom: 15px
+                h5
+                    font-size: px(14)
+    &__address
+        width: 100%
+        padding: 50px 0
+        +rwd(767)
+            padding: 0
+        address
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+        ul
+            +flex
+            flex-wrap: wrap
+            li
+                +flex
+            li:not(:last-child):after
+                content: ''
+                display: inline-block
+                margin: 0 10px
+                height: 10px
+                width: 1px
+                background: rgba(0,0,0,.2)
+        h4
+            font-size: px(14)
+        h5
+            font-size: px(12)
+    &__mail
+
+        width: 100%
+        margin-bottom: 20px
+        +rwd(767)
+            padding-top: 50px
+            margin-bottom: 0
+            li
+                width: 100%
+                margin-bottom: 20px
+                .footer__address &
+                    &:first-child:after
+                        display: none
+    &__tel
+        width: 100%
+        margin-bottom: 20px
+        +rwd(767)
+            margin-bottom: 0px
+            padding-bottom: 50px
+            border-bottom: 4px solid #fff
+            
+    &__author
+        +flex
+        flex-wrap: wrap
+        opacity: 0.5
+        +rwd(767)
+            padding-top: 50px
+            margin-bottom: 20px
+        h5
+            margin-right: 10px
+
+    &__other
+        +rwd(767)
+            padding-bottom: 50px
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>bite2eat</title>
+    <!-- icon -->
+    <!--    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/ico/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/ico/favicon.png"> -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <!-- <link rel="stylesheet" href="../../assets/js/vendor/datedropper/datedropper.min.css"> -->
+    <!--  <link rel="stylesheet" href="../../assets/js/vendor/datedropper/my-style.css"> -->
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../assets/css/reservation/reservationLibox.css">
+    <!-- 非共用CSS end-->
+    <link rel="stylesheet" href="../../assets/css/reservation/reservation.css">
+</head>
+
+<body id="reservation" class="index">
+    <header class="whiteBg"></header>
+    <main>
+        <!-- 假的空白header -->
+        <article class="header"></article>
+        <article class="content">
+            <section class="BG"></section>
+            <section class="topNav">
+                <div class="_img">
+                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/reservation/top_img_280_270.png" alt="">
+                </div>
+                    <div class="_text">
+                        <h3>立即預約</h3>
+                        <h2>Reserve</h2>
+                        <p>請詳細填寫下方表格，並確認核對聯繫資訊的正確性，以免損及相關權益。薄多義將在收到表單後主動與您聯繫，確認您的訂位，謝謝您！</p>
+                    </div>
+                    <div class="link">
+                        <a href="../contact/index.html">Contact  聯繫薄多義</a>
+                        <a class="active" href="../reservation/index.html">Reservation  預約薄多義</a>
+                    </div>
+            </section>
+            <section class="table">
+                <form action="">
+                    <div class="infBg">
+                        <div class="inf">
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/reservation/infImg_200_170.png" alt="">
+                            </div>
+                                <div class="_title">
+                                    <h2>WELCOME</h2>
+                                    <p>用餐享樂在博多意</p>
+                                </div>
+                                <!-- 後端請注意:此處有兩種長度形式1.type1 有周末營業時間 2.type2沒有周末營業時間 請依據不同的店舖加入對應的class-->
+                                <div class="storeinf">
+                                    <!-- <div class="tel">
+                                    <h5>contact 聯繫電話</h5>
+                                    <p>02-7737-8837</p>
+                                </div>
+                                <div class="address">
+                                    <h5>address 分店地址</h5>
+                                    <p>台北市中山區復興南路一段 22.24 號</p>
+                                </div>
+                                <div class="openTime">
+                                    <h5>business hour 營業時間</h5>
+                                    <div class="weekdays">
+                                        <h5>周一至周五</h5>
+                                        <p>中午 11:00-16:45 ( Last order 15:45</p>
+                                        <p>晚上 17:30-21:45 ( Last order 20:45</p>
+                                    </div>
+                                    <div class="weekend">
+                                        <h5>周六與周日</h5>
+                                        <p>中午 11:00-16:30 ( Last order 15:45</p>
+                                        <p>晚上 17:00-21:30 ( Last order 20:45</p>
+                                    </div>
+                                </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tableContent">
+                            <div class="_title nobg">
+                                <h3>Reservation detail </h3>
+                                <h4>填寫您的預約內容</h4>
+                                <div class="cancel">
+                                    <button type="button" data-src="cancelLibox.html">
+                                        <p>Cancel 取消訂位</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 姓名 -->
+                            <div class="name">
+                                <h5>預訂大名  Name</h5>
+                                <input type="text">
+                            </div>
+                            <!-- 稱謂 -->
+                            <div class="salutation dropdown">
+                                <span class="selectList"><p>稱謂  Salutation</p></span>
+                                <ul>
+                                    <li>先生</li>
+                                    <li>小姐</li>
+                                </ul>
+                                <select name="" id="">
+                                    <!-- 後端請注意:第一個option為預設值無意義 物動-->
+                                    <option selected="selected">稱謂 Salutation</option>
+                                    <option value="">先生</option>
+                                    <option value="">小姐</option>
+                                </select>
+                                <span class="icon-▼"></span>
+                            </div>
+                            <!-- 電話 -->
+                            <div class="tel">
+                                <h5>聯繫電話  Mobile / Tel</h5>
+                                <input type="text">
+                            </div>
+                            <!-- 地區 -->
+                            <div class="region dropdown">
+                                <span class="selectList"><p>選擇地區  region</p></span>
+                                <ul>
+                                    <li>台中</li>
+                                    <li>台北</li>
+                                </ul>
+                                <select name="" id="">
+                                    <!-- 後端請注意:第一個option為預設值無意義 物動-->
+                                    <option selected="selected">選擇地區 region</option>
+                                    <option value="">台中</option>
+                                    <option value="">台北</option>
+                                </select>
+                                <span class="icon-▼"></span>
+                            </div>
+                            <!-- 分店 -->
+                            <div class="store dropdown">
+                                <span class="selectList"><p>選擇分店  restaurant</p></span>
+                                <ul>
+                                    <li>崇德店</li>
+                                    <li>文心店</li>
+                                </ul>
+                                <select name="" id="">
+                                    <!-- 後端請注意:第一個option為預設值無意義 物動-->
+                                    <option selected="selected">選擇分店 restaurant</option>
+                                    <option value="">崇德店</option>
+                                    <option value="">文心店</option>
+                                </select>
+                                <span class="icon-▼"></span>
+                            </div>
+                            <!-- 日期 -->
+                            <div class="date">
+                                <!-- <input type="text" data-format="Y/ m/ d" data-large-default="true" data-min-year="" data-auto-lang="true" data-init-set="false" data-theme="my-style" data-large-mode="true" data-max-year="" data-lock="from" placeholder="選擇日期 Date"> -->
+                                <input type="text" id="sel_date" placeholder="選擇日期 Date" readonly="readonly">
+                                <span class="icon-▼"></span>
+                            </div>
+                            <!-- 時間 -->
+                            <div class="time dropdown">
+                                <span class="selectList"><p>時間  Time</p></span>
+                                <ul>
+                                    <li>中餐</li>
+                                    <li>晚餐</li>
+                                </ul>
+                                <select name="" id="">
+                                    <!-- 後端請注意:第一個option為預設值無意義 物動-->
+                                    <option selected="selected">時間 Time</option>
+                                    <option value="">中餐</option>
+                                    <option value="">晚餐</option>
+                                </select>
+                                <span class="icon-▼"></span>
+                            </div>
+                            <!-- 大人 -->
+                            <div class="adult">
+                                <h5>大人</h5>
+                                <input type="number" title="只能填數字">
+                                <p>位</p>
+                            </div>
+                            <!-- 小孩 -->
+                            <div class="children">
+                                <h5>小孩</h5>
+                                <input type="number" title="只能填數字" max="">
+                                <p>位</p>
+                            </div>
+                            <!-- 兒童座椅 -->
+                            <div class="childrenSeat">
+                                <h5>我需要預備兒童座椅，總共需要</h5>
+                                <input type="number" title="只能填數字" max="">
+                                <p>張</p>
+                            </div>
+                            <div class="birthday nobg">
+                                <p>是否有當月壽星（慶祝活動需提前2日預定）</p>
+                                <input type="checkbox" id="birthday">
+                                <label for="birthday"></label>
+                            </div>
+                            <!-- 備註 -->
+                            <div class="message">
+                                <h5>備註  Your message for us</h5>
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                            </div>
+                            <!-- 驗證碼 -->
+                            <div class="code">
+                                <h5>驗證碼  Verification code</h5>
+                                <input type="text" placeholder="點擊圖片即可獲得新的驗證碼">
+                            </div>
+                            <!-- 驗證碼圖片 -->
+                            <div class="_img nobg">
+                                <img src="../../upload/fa2/reservation/codeImg_70_35.png" alt="">
+                        </div>
+                                <div class="agree nobg">
+                                    <p>我已同意將個人資料提供薄多義餐飲使用</p>
+                                    <input type="checkbox" id="agree">
+                                    <label for="agree"></label>
+                                </div>
+                            </div>
+                            <div class="_btn">
+                                <button type="reset">
+                                    <span>
+                                <i></i>    
+                            </span>
+                                    重新填寫
+                                </button>
+                                <button type="button" class="openReservationLibox">
+                                    <span>
+                                <i></i>    
+                            </span>
+                                    確認送出
+                                </button>
+                            </div>
+                </form>
+            </section>
+        </article>
+        <article class="cover">
+            <section class="cover2"> </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+</html>

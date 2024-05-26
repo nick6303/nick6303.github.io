@@ -1,0 +1,96 @@
+#supplier.index
+    main
+        padding: 0 0 190px
+        +bgSeting
+        background-attachment: fixed
+        @media (max-width: 1024px)
+            padding: 0 0 150px
+    .banner ._title 
+        padding: 140px 50px 50px
+        @media (max-width: 1024px)
+            padding: 100px 5vw 50px
+        @media (max-width: 510px)
+            padding: 80px 5vw 50px
+        .words
+            max-width: 380px
+    .form
+        max-width: 970px
+        width: 100%
+        margin: auto
+        padding: 0 50px
+        @media (max-width: 1024px)
+            padding: 0 5vw
+        section
+            width: 100%
+            background-color: #fff
+            box-shadow: 0 0 51px 3px rgba(0,0,0,.1)
+            padding: 70px 50px 130px
+            position: relative
+            animation: fadeInUp 1s both 1s
+            @media (max-width: 1024px)
+                padding: 70px 5vw 130px
+            @media (max-width: 510px)
+                padding: 25px 5vw 100px
+            form
+                max-width: 410px
+                width: 100%
+                margin: auto
+                .type
+                    display: flex
+                    justify-content: space-between
+                    margin: 0 0 20px
+                    @media (max-width: 510px)
+                        flex-direction: column
+                    .typeName
+                        display: flex
+                        align-items: center
+                        font-size: px(15)
+                        width: calc(40% - 2px)
+                        border-bottom: 1px solid #d4a060
+                        padding: 25px 5px 8px 30px
+                        @media (max-width: 510px)
+                            border-bottom: none
+                            width: 100%
+                            padding: 25px 5px 0
+                        .ch
+                            font-weight: bolder
+                        .en
+                            color: #8e8c8c
+                            margin-left: 5px
+                    .inputArea
+                        width: calc(60% - 2px)
+                        border-bottom: 1px solid #d4a060
+                        padding: 25px 5px 8px 20px
+                        @media (max-width: 510px)
+                            width: 100%
+                            padding: 15px 5px 10px
+                        input
+                            background-color: transparent
+                            border: none
+                            font-size: px(15)
+                            width: 100%
+                            &::placeholder
+                                color: #b4b4b4
+                        &.code
+                            display: flex
+                            align-items: center
+                            padding: 25px 0 5px 20px
+                            @media (max-width: 510px)
+                                padding: 15px 0 10px 5px 
+                            input
+                                width: calc(100% - 70px)
+                            &>div
+                                cursor: pointer
+                .forget 
+                    +forgetButton
+                .buttons
+                    position: absolute
+                    max-width: 390px
+                    width: calc(100% - 30px)
+                    bottom: -20px
+                    left: 50%
+                    transform: translateX(-50%)
+                    display: flex
+                    justify-content: space-between
+                    button
+                        +formButton

@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Ramaraja" rel="stylesheet">
+    <style>
+    @font-face {
+        font-family: 'Ramaraja-Regular';
+        src: url('https://bite2eatpizza.com/assets/font/Ramaraja/regular/Ramaraja-Regular.ttf') format('ttf');
+        font-weight: normal;
+        font-style: normal;
+        unicode-range: U+0020-02DA;
+    }
+
+    @font-face {
+        font-family: 'JaguarJC';
+        src: url('https://www.franzcollection.com.tw/assets/font/JaguarJC/JaguarJC Book.eot');
+        src: url('https://www.franzcollection.com.tw/assets/font/JaguarJC Book.eot?#iefix') format('embedded-opentype'),
+            url('https://www.franzcollection.com.tw/assets/font/JaguarJC/JaguarJC Book.woff2') format('woff2'),
+            url('https://www.franzcollection.com.tw/assets/font/JaguarJC/JaguarJC Book.woff') format('woff'),
+            url('https://www.franzcollection.com.tw/assets/font/JaguarJC Book.svg#JaguarJC Book') format('svg');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        unicode-range: U+0020-02DA;
+    }
+
+    @font-face {
+        font-family: 'Century Gothic';
+        /*       src: 
+        url('https://bite2eatpizza.com/assets/font/CenturyGothic/regular/CenturyGothic.woff2')  format('woff2');*/
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+    }
+
+
+    * {
+        line-height: inherit;
+    }
+
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+        position: relative;
+        font-size: 100%;
+        line-height: 1;
+        font-weight: normal;
+        font-family: 'Century Gothic', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif;
+        /*text-rendering: optimizeLegibility; */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-font-feature-settings: 'liga', 'kern';
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+
+    table,
+    tr,
+    td {
+        font-size: 0;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    p {
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+
+    .mainbox {
+        padding: 100px 50px;
+    }
+
+    .h5 {
+        width: 34%;
+    }
+
+    .input {
+        width: 66%;
+    }
+
+    span {
+        display: inline;
+        vertical-align: middle;
+    }
+
+    .bgWhite {
+        background-color: #3b7d9f;
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    .textarea {
+        padding: 20px 40px;
+    }
+
+    @media (max-width: 700px) {
+        .mainbox {
+            padding: 50px 5vw;
+        }
+
+        .h5 {
+            width: 100%;
+            padding: 0 0 20px 0;
+        }
+
+        .input {
+            width: 100%;
+        }
+
+        .flex {
+            padding: 20px 5vw;
+            flex-direction: column;
+        }
+
+        .textarea {
+            padding: 20px 5vw;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <style>
+    @font-face {
+        font-family: 'Ramaraja-Regular';
+        src: url('https://bite2eatpizza.com/assets/font/Ramaraja/regular/Ramaraja-Regular.ttf') format('ttf');
+        font-weight: normal;
+        font-style: normal;
+        unicode-range: U+0020-02DA;
+    }
+
+    @font-face {
+        font-family: 'JaguarJC';
+        src: url('https://www.franzcollection.com.tw/assets/font/JaguarJC/JaguarJC Book.eot');
+        src: url('https://www.franzcollection.com.tw/assets/font/JaguarJC Book.eot?#iefix') format('embedded-opentype'),
+            url('https://www.franzcollection.com.tw/assets/font/JaguarJC/JaguarJC Book.woff2') format('woff2'),
+            url('https://www.franzcollection.com.tw/assets/font/JaguarJC/JaguarJC Book.woff') format('woff'),
+            url('https://www.franzcollection.com.tw/assets/font/JaguarJC Book.svg#JaguarJC Book') format('svg');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        unicode-range: U+0020-02DA;
+    }
+
+    @font-face {
+        font-family: 'Century Gothic';
+        /*       src: 
+        url('https://bite2eatpizza.com/assets/font/CenturyGothic/regular/CenturyGothic.woff2')  format('woff2');*/
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+    }
+
+
+    * {
+        line-height: inherit;
+    }
+
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+        position: relative;
+        font-size: 100%;
+        line-height: 1;
+        font-weight: normal;
+        font-family: 'Century Gothic', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif;
+        /*text-rendering: optimizeLegibility; */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-font-feature-settings: 'liga', 'kern';
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+
+    table,
+    tr,
+    td {
+        font-size: 0;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    p {
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+
+    .mainbox {
+        padding: 100px 50px;
+    }
+
+    .h5 {
+        width: 34%;
+    }
+
+    .input {
+        width: 66%;
+    }
+
+    span {
+        display: inline;
+        vertical-align: middle;
+    }
+
+    .bgWhite {
+        background-color: #3b7d9f;
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    .textarea {
+        padding: 20px 40px;
+    }
+
+    @media (max-width: 700px) {
+        .mainbox {
+            padding: 50px 5vw;
+        }
+
+        .h5 {
+            width: 100%;
+            padding: 0 0 20px 0;
+        }
+
+        .input {
+            width: 100%;
+        }
+
+        .flex {
+            padding: 20px 5vw;
+            flex-direction: column;
+        }
+
+        .textarea {
+            padding: 20px 5vw;
+        }
+    }
+    </style>
+    <table align="center" class="mainbox" border="0" cellpadding="0" cellspacing="0" style="width:100%;margin:0 auto;max-width:760px ;background: #236486;">
+        <tr>
+            <td>
+                <table style="text-align: center;max-width: 500px;margin: auto">
+                    <tr>
+                        <td>
+                            <p style="font-size: 22px">您於薄多義的訂位已成功</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="font-size: 54px;margin-top: 20px;font-family: 'Ramaraja', serif;">Success!</p>
+                        </td>
+                    </tr>
+                    <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+                    <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+                    <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+                    <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+                    <tr>
+                        <td>
+                            <p style="font-weight: bold;color: #d7a100;font-size: 16px;">訂位代碼：B515A7</p>
+                        </td>
+                    </tr>
+                    <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+                    <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+                    <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+                    <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+                    <tr>
+                        <td>
+                            <p style="line-height: 1.5;font-size: 16px;margin-top: 20px">本信件為系統直接發送，請勿直接回信，若對訂位資訊有相關疑問，請撥打分店專線，將有專人為您服務。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="color: #d7a100;margin-top: 20px">貼心提醒：座位僅保留 10 分鐘，用餐時間為 2 小時</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin-top: 30px">
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">預訂大名 Name</p>
+                            <p class="input">王小明</p>
+                        </td>
+                    </tr>
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">稱謂 Salutation</p>
+                            <p class="input">先生</p>
+                        </td>
+                    </tr>
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">聯繫電話 Mobile / Tel</p>
+                            <p class="input">0912 345 678</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin-top: 30px">
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">預定地區 Region</p>
+                            <p class="input">中部地區</p>
+                        </td>
+                    </tr>
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">預定分店 Restaurant</p>
+                            <p class="input">公益店</p>
+                        </td>
+                    </tr>
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">預定日期 Date</p>
+                            <p class="input">2018/07/12</p>
+                        </td>
+                    </tr>
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">預定時間 Time</p>
+                            <p class="input">14:00 - 15:00</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin-top: 30px">
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">大人 Adult</p>
+                            <p class="input">5位</p>
+                        </td>
+                    </tr>
+                    <tr class="bgWhite">
+                        <td class="flex">
+                            <p class="h5">小孩 Kid</p>
+                            <p class="input">1位</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="text-align: right;">
+                    <tr>
+                        <td>
+                            <p>是否有當月壽星 Birthday person</p>
+                        </td>
+                        <td style="background-color:#3b7d9f;width: 35px;height: 35px;">
+                            <p style="text-align: center;">v</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="bgWhite textarea" style="margin-top: 30px;">
+                    <tr class="flex" style="padding: 0 ">
+                        <td>
+                            <p style="padding:0 0 15px 0">備註 Your message for us</p>
+                        </td>
+                    </tr>
+                    <tr class="flex" style="padding: 0 ">
+                        <td>
+                            <p>本次聚餐有長輩，希望可以幫我們將座位安排在一樓，不需要上下樓梯的位置，謝謝！</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+        <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+        <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+        <!-- ↓↓↓↓↓↓↓↓↓ 後端請注意:新增的物件在這裡↓↓↓↓↓↓↓↓↓ -->
+        <tr>
+            <td>
+                <p style="border-radius: 25px;padding:15px 0;text-align: center;;margin: 50px auto 0;background-color:#d7a100 ;;font-size: 14px;display: block;width: 230px;"><a style="text-decoration:none;color: #fff" href="javascript:void(0)">Cancel  取消訂位</a></p>
+            </td>
+        </tr>
+        <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+        <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+        <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+        <!-- ↑↑↑↑↑↑↑↑↑ 後端請注意:新增的物件在這裡 ↑↑↑↑↑↑↑↑ -->
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick-theme.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+</head>
+
+<body id="space" class="index">
+    <main style="background-image: url('../../upload/f2e/space/index_bg_1920_1080.jpg')">
+        <article>
+            <section class="close">
+                <span></span>
+            </section>
+            <section class="_title">
+                <p class="en">Space Inspiration</p>
+                <p class="ch">在空間想像</p>
+            </section>
+            <section class="words">
+                <p>請透過下方選項找出最接近您欲粉刷的空間，按下確定鍵後，即可開始
+                    進行空間中的顏色模擬，協助您找到最適合的色彩與風格。</p>
+            </section>
+            <form>
+                <h6>SELECT SPACE 您想粉刷何處呢？</h6>
+                <div class="where">
+                    <!-- <div class="outDoor" onclick="space.selectPlace(this)">
+                        <p>室外</p>
+                    </div> -->
+                    <div class="inDoor active" onclick="space.selectPlace(this)">
+                        <p>室內</p>
+                    </div>
+                </div>
+                <div class="dropdownList">
+                    <select class="dropdown dropdown_all" data-placeholder="欲粉刷的空間">
+                        <option></option>
+                        <option value="1">客廳</option>
+                        <option value="2">臥房</option>
+                        <option value="3">浴室</option>
+                        <option value="4">廚房</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="back">
+                        <span></span>
+                        <p>返回</p>
+                    </button>
+                    <button type="button" class="send focus" onclick="location.href='detail.html'">
+                        <span></span>
+                        <p>開始模擬</p>
+                    </button>
+                </div>
+            </form>
+        </article>
+    </main>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="../../assets/js/vendor/slick/slick.js"></script>
+    <script src="../../assets/js/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../../assets/js/vendor/blazy.js"></script>
+    <script src="../../assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/imagesloaded.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/cgpagechange.js"></script>
+    <script src="../../assets/js/vendor/lbox.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <!-- 主要 -->
+    <script src="../../assets/js/main.js"></script>
+    <!-- 個別 -->
+    <script src="../../assets/js/nick.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>

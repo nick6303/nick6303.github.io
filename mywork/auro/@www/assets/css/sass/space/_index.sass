@@ -1,0 +1,194 @@
+
+#space   
+    .select2-container--dropdownA 
+        font-size: px(14)
+        .select2-selection .select2-selection__arrow
+            width: 60px
+            b
+                border-color: #231815 transparent transparent transparent
+        &.select2-container--open .select2-selection .select2-selection__arrow b
+            border-color: #fff transparent transparent transparent
+    form
+        margin: auto
+        margin-top: 45px
+        max-width: 320px
+        h6
+            font-size: px(16)
+            text-align: center
+            font-family: jaguarjc_book , 微軟正黑體
+        .where
+            display: flex
+            width: 100%
+            margin-top: 20px
+            .outDoor,
+            .inDoor
+                width: 100%
+                height: 45px
+                background-color: #f2f2f2
+                +flex(center,center)
+                cursor: pointer
+                font-size: px(14)
+                transition: all .4s ease
+                &.active,&:hover
+                    background-color: #1b41a2
+                    color: #fff
+                &:hover
+                    opacity: 0.8
+                    &.active
+                        opacity: 1
+        .dropdownList
+            margin-top: 6px
+#space.index
+    main
+        width: 100%
+        min-height: 100vh
+        +flex(flex-start,center)
+        background-position: center center
+        background-size: cover
+        @media all and (max-width: 700px)
+            background: #fff !important
+        article 
+            background-color: #fff
+            max-width: 570px
+            width: 100%
+            padding: 0 50px 90px 50px
+            margin-bottom: 100px
+            @media all and (max-width: 700px)
+                margin-bottom: 0
+                padding: 0 5vw 90px 5vw
+            .close
+                background-color: #e8e8e8
+                font-size: px(16)
+                width: 65px
+                height: 65px
+                +flex(center,center)
+                margin: auto
+                cursor: pointer
+                animation: slideInDown 1s both .2s
+                transition: all .4s ease
+                span
+                    position: relative
+                    display: block
+                    transform: rotate(45deg)
+                    width: 30px
+                    height: 30px
+                    &:before,&:after
+                        +poac
+                        transition: all .4s ease
+                    &:before
+                        +fakeLine(0%,1px,#888bab)
+                        animation: w100 0.6s both .6s
+                    &:after
+                        +fakeLine(1px,0%,#888bab)
+                        animation: h100 0.6s both .6s
+                &:hover
+                    background-color: #1b41a2
+                    span:before,span:after
+                        background-color: #fff
+            ._title  
+                margin-top: 14vh 
+                text-align: center
+                @media all and (min-height: 1080px)
+                    margin-top: 150px   
+                @media all and (max-width: 700px)
+                    margin-top: 10vh 
+                .en
+                    font-family: 'jaguarjc_book'
+                    font-size: px(44)
+                    @media all and (max-width: 700px)
+                        font-size: px(36)
+                .ch   
+                    font-size: px(22)
+                    margin-top: 20px
+                    @media all and (max-width: 700px)
+                        font-size: px(20)
+            .words
+                margin-top: 30px
+                text-align: center
+                font-size: px(14)
+                line-height: 1.5
+                &:before
+                    +fakeLine(0,1px,#8da0d0)
+                    margin: auto
+                    margin-bottom: 30px
+                    animation: w60 1s both .6s
+            form
+                h6
+                    animation: fadeInUp 1s both .4s
+                .where
+                    animation: fadeInUp 1s both .7s
+                .dropdownList
+                    animation: fadeInUp 1s both .7s
+            .buttons
+                margin-top: 45px
+                +flex(center,center)
+                button
+                    margin: 0 20px
+                    background-color: transparent
+                    border: none
+                    font-family: 微軟正黑體
+                    font-size: px(14)
+                    +flex(center,center)
+                    flex-direction: column
+                    cursor: pointer
+                    overflow: hidden
+                    span
+                        display: block
+                        width: 40px
+                        height: 40px
+                        border-radius: 50%
+                        background: #1c42a3
+                        box-shadow: inset 0px 0px 0px 1px #d4dbed, inset 0px 0px 0px 18px #fff
+                        transition: .5s
+                        position: relative
+                        border: 0
+                        font-size: 0
+                    &.back
+                        span
+                            animation: fadeInUp 1.2s both 1s
+                        p
+                            animation: slideInUp 0.8s both 1.3s
+                        span:before,
+                        span:after
+                            +poac
+                            transition: all .4s ease
+                        span:before
+                            +fakeLine(0px,1px,#fff)
+                        span:after
+                            +fakeLine(1px,0px,#fff)   
+                    &.send
+                        span
+                            animation: fadeInUp 1.2s both 1.2s
+                        p
+                            animation: slideInUp 0.8s both 1.5s
+                        span:before,
+                        span:after 
+                            +fakeLine(13px,1px,#fff) 
+                            position: absolute
+                            top: 50%
+                            opacity: 0
+                            transition: all .5s ease 
+                        span:before
+                            right: 50%
+                            transform: translate(24%,-50%) rotate(57deg)
+                        span:after
+                            left: 50%
+                            transform: translate(-24%,-50%) rotate(-57deg)
+                    p
+                        margin-top: 20px
+                        
+                    &.focus
+                        &.back
+                            span:before
+                                width: 17px
+                                transition: all .5s ease .1s
+                            span:after   
+                                height: 17px
+                                transition: all .5s ease .1s
+                        &.send
+                            span:before,
+                            span:after
+                                opacity: 1 
+                                transition: all .5s ease .2s
+                        span
+                            box-shadow: inset 0px 0px 0px 0px #fff

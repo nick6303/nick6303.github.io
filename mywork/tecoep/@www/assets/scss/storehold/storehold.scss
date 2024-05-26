@@ -1,0 +1,737 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+.worldMap {
+    margin: auto;
+    max-width: 1590px;
+    padding: 14vh 100px 0 100px;
+    position: relative;
+    @media all and (max-width: 1024px) {
+        padding: 8vh 5vw 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding: 10vh 5vw 0 5vw;
+        display: none;
+    }
+    // .worldBg {
+    //     animation: fadeIn 1.2s both ;
+    // }
+    .box {
+        position: absolute;
+        top: 14vh;
+        left: 100px;
+        @media all and (max-width: 1590px) {
+            width: calc(100% - 200px);
+        }
+        @media all and (max-width: 1024px) {
+            width: calc(100% - 10vw);
+            top: 8vh;
+            left: 5vw;
+        }
+        ._img {
+            position: relative;
+            img {
+                opacity: 0;
+                transition: all 1s ease;
+            }
+            .link {
+                width: 8.3vw;
+                max-width: 100px;
+                min-width: 50px;
+                height: 8.3vw;
+                max-height: 100px;
+                min-height: 50px;
+                position: absolute;
+                z-index: 1;
+                cursor: pointer;
+                @include flex-center;
+                flex-direction: column;
+                span {
+                    display: block;
+                    position: relative;
+                    border-radius: 50%;
+                    background-color: $base_orange;
+                    animation: line_span .5s both;
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    &:before {
+                        @include fakeLine(12px, 2px, #fff);
+                        animation: line_span_before .6s both;
+                    }
+                    &:after {
+                        @include fakeLine(2px, 12px, #fff);
+                        animation: line_span_after .6s both;
+                    }
+                }
+                p {
+                    animation: fadeInDown 1.4s both;
+                    font-weight: bold;
+                    margin-top: 15px;
+                    letter-spacing: 1px;
+                    @include font-size(16);
+                    @media all and (max-width: 1024px) {
+                        @include font-size(14);
+                    }
+                }
+            }
+            .link:hover {
+                &+img {
+                    opacity: 1;
+                    transition: all 1s ease;
+                }
+            }
+        }
+
+        /*亞洲*/
+        &.asia {
+            ._img {
+                img {
+                    clip-path: circle(0% at 75% 32.6%);
+                }
+                .link {
+                    top: 28%;
+                    left: 71%;
+                    span {
+                        &:before,
+                        &:after {
+                            animation-delay: 0.9s;
+                        }
+                    }
+                    &:hover {
+                        &+img {
+                            clip-path: circle(35% at 73.6% 31%);
+                        }
+                    }
+                }
+            }
+            &.checked {
+                ._img {
+                    img {
+                        opacity: 1;
+                        transition: all 1s ease;
+                        clip-path: circle(35% at 73.6% 31%);
+                    }
+                }
+            }
+        }
+        /*非洲*/
+        &.africa {
+            ._img {
+                img {
+                    clip-path: circle(0% at 54% 58.5%);
+                }
+                .link {
+                    top: 54%;
+                    left: 50%;
+                    span {
+                        &:before,
+                        &:after {
+                            animation-delay: 1.05s;
+                        }
+                    }
+                    &:hover {
+                        &+img {
+                            clip-path: circle(20% at 52.6% 57%);
+                        }
+                    }
+                }
+            }
+            &.checked {
+                ._img {
+                    img {
+                        opacity: 1;
+                        transition: all 1s ease;
+                        clip-path: circle(20% at 52.6% 57%);
+                    }
+                }
+            }
+        }
+        /*美洲*/
+        &.america {
+            ._img {
+                img {
+                    clip-path: circle(0% at 23% 49.6%);
+                }
+                .link {
+                    top: 45%;
+                    left: 19%;
+                    span {
+                        &:before,
+                        &:after {
+                            animation-delay: 1.2s;
+                        }
+                    }
+                    &:hover {
+                        &+img {
+                            clip-path: circle(40% at 21.6% 48%);
+                        }
+                    }
+                }
+            }
+            &.checked {
+                ._img {
+                    img {
+                        opacity: 1;
+                        transition: all 1s ease;
+                        clip-path: circle(40% at 21.6% 48%);
+                    }
+                }
+            }
+        }
+        /*歐洲*/
+        &.europe {
+            ._img {
+                img {
+                    clip-path: circle(0% at 52% 28.6%);
+                }
+                .link {
+                    top: 24%;
+                    left: 48%;
+                    span {
+                        &:before,
+                        &:after {
+                            animation-delay: 1.35s;
+                        }
+                    }
+                    &:hover {
+                        &+img {
+                            clip-path: circle(15% at 50.6% 27%);
+                        }
+                    }
+                }
+            }
+            &.checked {
+                ._img {
+                    img {
+                        opacity: 1;
+                        transition: all 1s ease;
+                        clip-path: circle(15% at 50.6% 27%);
+                    }
+                }
+            }
+        }
+        /*澳洲*/
+        &.australia {
+            ._img {
+                img {
+                    clip-path: circle(0% at 84.5% 78.1%);
+                }
+                .link {
+                    top: 73.5%;
+                    left: 80.5%;
+                    span {
+                        &:before,
+                        &:after {
+                            animation-delay: 1.5s;
+                        }
+                    }
+                    &:hover {
+                        &+img {
+                            clip-path: circle(20% at 83.1% 76.5%);
+                        }
+                    }
+                }
+            }
+            &.checked {
+                ._img {
+                    img {
+                        opacity: 1;
+                        transition: all 1s ease;
+                        clip-path: circle(20% at 83.6% 76.5%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes line_span {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    @keyframes line_span {
+        0% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        100% {
+            width: 25px;
+            height: 25px;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+
+@keyframes line_span_before {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 12px;
+    }
+}
+
+
+
+@keyframes line_span_after {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.content {
+    padding: 0 100px;
+    margin-top: 80px;
+    @media all and (max-width: 1024px) {
+        padding: 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding: 10vh 5vw 0 5vw;
+        margin-top: 0;
+    }
+    ._title {
+        @media all and (max-width: 700px){
+            margin-top: 45px;
+        }
+        h2 {
+            @include title_h2;
+            span{
+                @include title_h2_span;
+            }
+        }
+        h3 {
+            @include title_h3;
+        }
+    }
+}
+
+
+.storeList {
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 0 60px;
+    @media all and (max-width: 1024px) {
+        padding: 0;
+    }
+
+    /*國家*/
+    .headingCountry,
+    .countryName {
+        width: 14%;
+        text-align: center;
+        @media all and (max-width: 600px) {
+            width: 100%;
+            text-align: left;
+        }
+    }
+    /*城市細節內容*/
+    .heading div,
+    .citys {
+        width: 86%;
+        @media all and (max-width: 600px) {
+            width: 100%;
+        }
+    }
+    /*服務城市*/
+    .headingCity,
+    .cityName {
+        width: calc(15% - 3px);
+        margin: 0 1.5px;
+        text-align: center;
+        @media all and (max-width: 600px) {
+            width: 80%;
+        }
+    }
+    /*服務項目*/
+    .headingServies,
+    .serviesItem {
+        width: calc(15% - 3px);
+        margin: 0 1.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    /*聯絡資訊*/
+    .headingInf,
+    .city .inf {
+        width: calc(70% - 1.5px);
+        margin: 0 0 0 1.5px;
+        @media all and (max-width: 600px) {
+            width: 100%;
+        }
+    }
+    /*項目標題*/
+    .heading {
+        @include flex-center;
+        background-color: #434343;
+        color: #fff;
+        padding: 20px 0 10px 0;
+        letter-spacing: 1px;
+        position: relative;
+        @media all and (max-width: 600px) {
+            display: none;
+        }
+        div {
+            display: flex;
+        }
+        p {
+            font-weight: bold;
+            @include font-size(14);
+        }
+        .headingInf {
+            padding-left: 30px;
+        }
+        .headingMap {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            width: 13%;
+            text-align: center;
+        }
+    }
+}
+
+
+.country {
+    display: flex;
+    flex-wrap: wrap;
+    letter-spacing: 1px;
+    @media all and (max-width: 600px) {
+        margin-top: -1px;
+    }
+    /*國名*/
+    .countryName {
+        padding-top: 90px;
+        border-bottom: 2px solid #000;
+        color: $base_blue;
+        @media all and (max-width: 600px) {
+            border-bottom: none;
+            border-top: 2px solid #000;
+            padding-top: 35px;
+            margin-bottom: 10px;
+        }
+        p {
+            @include font-size(15);
+            @media all and (max-width: 600px) {
+                @include font-size(26);
+                padding-left: 10px;
+            }
+        }
+    }
+    .citys {
+        /*城市*/
+        .city {
+            display: flex;
+            @media all and (max-width: 600px) {
+                flex-wrap:wrap;
+                border-bottom: 1px solid #000;
+                padding-bottom: 4vh;
+            }
+            &:last-child {
+                /*城市名&服務項目*/
+                .cityName,
+                .serviesItem {
+                    border-bottom: 2px solid #000;
+                    @media all and (max-width: 600px) {
+                        border-bottom:none;
+                    }
+                }
+                /*聯絡資訊*/
+                .inf ul,
+                .inf .mapIcon {
+                    border-bottom: 2px solid #000;
+                    @media all and (max-width: 600px) {
+                        border-bottom:none;
+                    }
+                }
+            }
+            /*城市名*/
+            .cityName {
+                padding-top: 90px;
+                border-bottom: 1px solid #000;
+                @include font-size(15);
+                @media all and (max-width: 600px) {
+                    border-bottom: none;
+                    text-align: left;
+                    @include font-size(18);
+                    font-weight: bold;
+                    padding: 4vh 10px 0 10px;
+                }
+            }
+            /*服務項目*/
+            .serviesItem {
+                border-bottom: 1px solid #000;
+                @include font-size(15);
+                @media all and (max-width: 600px) {
+                    @include font-size(16);
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    border-bottom: none;
+                    padding: 0 10px;
+                }
+                p {
+                    line-height: 1.5;
+                    margin-top: 5px;
+                    @media all and (max-width: 600px) {
+                        &:not(:first-child) {
+                            &:before {
+                                content: "、";
+                            }
+                        }
+                    }
+                }
+            }
+            /*聯絡資訊*/
+            .inf {
+                position: relative;
+                @media all and (max-width: 600px) {
+                    margin-top: 2vh;
+                }
+                h2,
+                h3,
+                ul {
+                    padding-left: 30px;
+                    width: 78.5%;
+                    @media all and (max-width: 600px) {
+                        padding: 0 10px;
+                    }
+                }
+                /*公司名*/
+                h2 {
+                    @include font-size(15);
+                    line-height: 1.5;
+                    font-weight: bold;
+                    margin-top: 35px;
+                    @media all and (max-width: 1024px) {
+                        margin-top: 2vh;
+                    }
+                    @media all and (max-width: 600px) {
+                        width: 100%;
+                        margin-top:0;
+                    }
+                }
+                /*地址*/
+                h3 {
+                    @include font-size(15);
+                    color: #353535;
+                    line-height: 1.5;
+                    margin-top: 5px;
+                    font-family: "微軟正黑體";
+                    @media all and (max-width: 600px) {
+                        width: 100%;
+                    }
+                }
+                /*詳細資料*/
+                ul {
+                    border-bottom: 1px solid #000;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 10px;
+                    padding-bottom: 30px;
+                    @media all and (max-width: 1024px) {
+                        padding-bottom:2vh;
+                    }
+                    @media all and (max-width: 600px) {
+                        border-bottom: none;
+                        padding-bottom: 0;
+                        margin-top: 2vh;
+                    }
+                    li {
+                        @include font-size(15);
+                        display: flex;
+                        align-content: center;
+                        flex-wrap: wrap;
+                        line-height: 1.6;
+                        padding-right: 10px;
+                        span {
+                            font-family: 'MyriadPro-Semibold';
+                            &:after {
+                                content: ":";
+                                margin: 0 5px;
+                            }
+                        }
+                        p {
+                            font-family: MyriadPro-Regular, 微軟正黑體;
+                            display: flex;
+                        }
+                        &:first-child {
+                            width: 100%;
+                        }
+                        &:not(:first-child) {
+                            min-width: 50%;
+                        }
+                    }
+                }
+                /*地圖圖標*/
+                .mapIcon {
+                    width: calc(21.5% - 3px);
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    @include flex-center;
+                    border-bottom: 1px solid #000;
+                    @media all and (max-width: 600px) {
+                        border-bottom:none;
+                        top: auto;
+                        bottom: 0;
+                        height: auto;
+                    }
+                    a {
+                        padding: 20px;
+                        @include flex-center;
+                        flex-direction: column;
+                        @include font-size(14);
+                        @media all and (max-width: 600px) {
+                            padding: 5px 20px;
+                        }
+                        &:before {
+                            font-family: 'icomoon';
+                            content: "\e915";
+                            @include font-size(18);
+                            margin-bottom: 10px;
+                            transition: all .3s ease;
+                            @media all and (max-width: 600px) {
+                                color: $base_blue;
+                            }
+                        }
+                        &:hover {
+                            &:before {
+                                color: $base_orange;
+                                transition: all .3s ease;
+                                animation: bounce .8s both;
+                                /*ie不跑動畫*/
+                                -ms-animation: bounce 0s both;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -50%, 0);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -30%, 0);
+    }
+
+    90% {
+        transform: translate3d(0, -10%, 0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 進場動畫*/
+
+.content {
+    ._title {
+        h2 {
+            animation: fadeInDown .8s both;
+        }
+
+        h3 {
+            animation: fadeInDown .8s both .2s;
+        }
+        .menulist {
+            animation: fadeInDown .8s both .5s;
+        }
+    }
+}
+
+.storeList {
+    .heading {
+        animation: fadeIn 1.2s both .6s;
+    }
+    .city {
+        animation: fadeIn 2s both .6s;
+    }
+    .countryName {
+        animation: fadeIn 2s both .6s;
+    }
+}

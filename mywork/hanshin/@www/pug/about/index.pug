@@ -1,0 +1,371 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"關於漢神",
+            link:"../about/index.html"},
+    ]
+
+    var unit = ["探索漢神","特色空間","交通資訊"]
+
+    
+    var QAtype = [
+        {
+            typeName:"行駛交通路線",
+            typeIcon:"../../upload/fa2/about/typeIcon.png",
+            question:[
+                "往外縣市高速公路引導資訊",
+                "外縣市前往漢神路線及停車場動線須知",
+            ]},
+        {
+            typeName:"各停車場資訊",
+            typeIcon:"../../upload/fa2/about/typeIcon2.png",
+            question:[
+                "停車場動線與費用須知",
+                "假日特約汽車停車場動線",
+                "新莊汽車停車場動線及費用須知",
+            ]},
+        {
+            typeName:"搭乘大眾工具",
+            typeIcon:"../../upload/fa2/about/typeIcon3.png",
+            question:[
+                "搭乘高雄捷運至漢神之指南",
+                "搭乘高雄市公車至漢神之指南",
+            ]},
+    ]
+
+    var rows = [
+        {
+            img:"../../upload/fa2/about/rowImg1_860_540.jpg",
+            name: "廣場噴水池",
+            words:"國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境..."},
+        {
+            img:"../../upload/fa2/about/rowImg2_860_540.jpg",
+            name: "森林區",
+            words:"國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境..."},
+        {
+            img:"../../upload/fa2/about/rowImg3_860_540.jpg",
+            name: "挑空區櫥窗秀",
+            words:"國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境..."},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#about.index
+    include ../layout/_header.pug
+    main(style="background-image:url('../../upload/fa2/about/bg.jpg')")
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            setion._title(style="background-image:url('../../upload/fa2/about/bannerImg_1670_410.jpg')")
+                p.ch 關於漢神
+                p.en About Hanshin
+                p.words 以「創造新新生活 讓夢想在這裡發光」為中心的理念，定位國際級都會型百貨，提供齊全商品及貼心服務機能
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val == unit[0])?"active":"")
+                        a(href=java)
+                            p=val
+        article.explore.active
+            section.topTitle
+                p.en EXPLORE HANSHIN
+                p.words 介紹漢神百貨歷史及故事，創造一個精緻、豐富獲得滿足高品質百貨公司。
+            section.topSlick
+                ul
+                    -for(var i = 0;i<3;i++)
+                        // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                        li(data-videoId=(i==0)?"jIzOIsQWMfg":"")
+                            div
+                                figure
+                                    img(data-lazy="../../upload/fa2/about/topTitleImg_1180_650.jpg", alt="")
+                                b 眾多品牌推出限量禮盒，加碼商品大放送
+                .arrows
+                    span.icon-arrowLeft
+                    span.icon-arrowRight
+            section.rows
+                .row
+                    ._text
+                        h6 五星級大飯店及百貨公司的複合型大樓
+                        p 座落於成功路與新田路口的新古典宮廷式建築——『漢來新世界中心』，樓高 186 米，含地上 45 層及地下 7 層，是一幢結合超五星級大飯店及百貨公司的複合型大樓。評鑑為全台灣百貨公司服務品質第一名，在百貨業百家爭鳴的高度競爭下，獲此殊榮，更加堅定「好還要更好」的服務信念。
+                .row
+                    ._text
+                        h6 開啟南部百貨業新紀元
+                        p 漢神百貨位於漢來新世界中心的地下三樓至地上八樓，與日本阪神百貨技術合作，引進日系百貨的經營方式，經過五年半的籌備時期，於 1995 年 5 月 10 日正式試行營運，同年 12 月 12 日與漢來國際觀光大飯店聯合盛大開幕，正式開啟南部百貨業新紀元。
+                        h6 創造新生活，讓夢想在這裡發光
+                        p 1995年 ，漢神百貨以「創造新新生活 讓夢想在這裡發光」為中心理念， 定位國際級都會型百貨，強調「ONE STOP SHOPPING一次購足」， 提供齊全的商品及完整貼心的服務機能，開啟百貨業的新紀元； 20年過去，漢神百貨深耕茁壯，同時擴展版圖，從單點延伸成了集團， 因此，2017年，漢神集團以「精采生活、夢想起飛」這個進階理念， 持續為廣大消費者，創造一個精緻、豐富、且食、衣、住、行皆可獲得滿足的高品質百貨公司。
+                    ._img
+                        ul
+                            -for (var i = 1; i<4;i++)
+                                li
+                                    div
+                                        figure
+                                            img(data-lazy=("../../upload/fa2/about/exploreImg"+i+".jpg"), alt="")
+                                        // 後端請注意: 如果沒有文字的話請把<b>移除
+                                        b 漢來新世界中心及周邊夜景概覽
+                .row
+                    ._text
+                        h6 動線流暢購物新體驗
+                        p 本館擁有約55,000㎡的樓地板面積，開闊明朗的空間，順暢的動線設計，提供消費者輕鬆歡愉且能「一次購足」的精品百貨規劃。
+                        h6 率先引進國際大品牌
+                        p 漢神百貨為台灣第一家引進精品設立店中店的百貨公司，擁有50家以上國際精品名牌進駐，名品雲集與世界同步。
+                    ._img
+                        ul
+                            -for (var i = 1; i<4;i++)
+                                li
+                                    div
+                                        figure
+                                            img(data-lazy=("../../upload/fa2/about/exploreImg"+i+".jpg"), alt="")
+                                        // 後端請注意: 如果沒有文字的話請把<b>移除
+                                        b 眾多品牌推出限量禮盒，加碼商品大放送
+                .row
+                    ._text
+                        h6 無微不至的貼心服務
+                        p 雙向手服梯、貴賓廳、仕女補妝間、自動化廁所、VIP泊車服務，均是漢神百貨對於顧客的貼心設計。
+                        h6 全台百貨服務品質NO.1
+                        p 2010年、2012年及2015漢神百貨集團榮獲知名的《遠見雜誌》評鑑為全台灣百貨公司服務品質第一名，在百貨業百家爭鳴的高度競爭下，獲此殊榮，令漢神百貨更加堅定「好還要更好」服務信念。
+                    ._img
+                        ul
+                            li
+                                div
+                                    figure
+                                        img(data-lazy="../../upload/fa2/about/exploreImg4.jpg", alt="")
+                                    // 後端請注意: 如果沒有文字的話請把<b>移除
+                                    b 漢神百貨3F女仕時尚樓層專櫃及動線概覽
+                .row
+                    ._text
+                        h6 知性美食新感受 純淨綠活新態度
+                        p 引進17間全省人氣主題餐廳，極致美味的多國料理名菜，滿足您喜愛嚐鮮的味蕾，並引進新一代的頂級超市，完整豐富的精緻生活特色規劃，滿足全階層生活型態需求，具體打造出與時俱進的環保概念店，不論在建材與空間設計以節能為指標。
+                    ._img
+                        ul
+                            -for (var i = 1;i<4;i++)
+                                li
+                                    div
+                                        figure
+                                            img(data-lazy=("../../upload/fa2/about/exploreImg"+i+".jpg"), alt="")
+                                        // 後端請注意: 如果沒有文字的話請把<b>移除
+                                        b 眾多品牌推出限量禮盒，加碼商品大放送
+        article.space
+            section.topTitle
+                p.en SPECIAL SPACE
+                p.words 介紹漢神各區域特別精心規畫的空間，讓您除了享受購物之外的樂趣。
+            section.rows
+                each val in rows
+                    .row
+                        ._img
+                            figure
+                                img.b-lazy(src=blazy data-src=val.img , alt="")
+                            a(href=java data-src="../about/detail.html" onclick="specialLibox.open(this)")
+                                span
+                                p ENTER
+                        ._text
+                            a(href=java data-src="../about/detail.html" onclick="specialLibox.open(this)")
+                                h3=val.name
+                                //後端請注意: 下方字數限制 個字
+                                p=val.words
+        article.traffic
+            section.topTitle
+                p.en TRAFFIC INFORMATION
+                form
+                    .dropDown.active
+                        span.selectMenu
+                            p 全部資訊
+                        ul
+                            each val in QAtype
+                                li=val.typeName
+                    .inputArea
+                        input(type="text" placeholder="輸入關鍵字搜尋")
+                        // 後端請注意: 下方的onclick 只是展示用 記得要移除 重要的是裡面的function
+                        //後端請注意: 搜尋結果出來後 請啟動 hasResult() 這個function 
+                        button.icon-magnifier(type="button" onclick="hasResult();")
+            section.links
+                a(href="https://www.google.com/maps/place/%E6%BC%A2%E7%A5%9E%E7%99%BE%E8%B2%A8/@22.6193594,120.2958923,20z/data=!4m8!1m2!2m1!1z5ryi56We55m-6LKo!3m4!1s0x346e038006ef1e1f:0x4bfa2738d29407d5!8m2!3d22.6193744!4d120.2962693?hl=zh-TW" target="_blank")
+                    span.icon-location2
+                    p 查看漢神百貨地圖
+                a(href="javascript:void(0)")
+                    span.icon-phone
+                    p 漢神百貨服務電話：(07) 215-7266
+            section.QAtable
+                each val in QAtype
+                    .type
+                        .typeName
+                            img(src=val.typeIcon, alt="")
+                            p=val.typeName
+                        .lists
+                            each item in val.question
+                                .list
+                                    .question
+                                        p=item
+                                        span.icon-play3
+                                    .answer(style="display:none")
+                                        ._text
+                                            p 漢神百貨禮券分置介紹 :
+                                            ul
+                                                li 
+                                                    p 高鐵左營站 :
+                                                    p 高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。
+                                                li 
+                                                    p 台鐵新左營站 :
+                                                    p 高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。
+                                                li
+                                                    p 由國道中山高速公路南下:
+                                                    p 經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。
+                                                li
+                                                    p 由國道3號高速公路往高雄方向 :
+                                                    p  經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。
+                                                li
+                                                    p 由旗山、美濃往高雄 :
+                                                    p 經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。
+                                        ._text
+                                            p 漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。
+                                        ._img
+                                            figure
+                                                img(src="../../upload/fa2/about/answerImg.jpg", alt="")
+                                            b 由屏東市往高屏大橋北上 此為地圖圖示
+    include ../layout/_footer.pug
+
++script
+
+script.
+    function hasResult(){
+        // 重新整理畫面
+        _waypoint.aboutW();
+        _Blazy.aboutW();
+    }
+
+//開啟特色空間燈箱
+script.
+    var specialLibox = {
+        open: function (target) {
+            var src = $(target).attr("data-src")
+            $("body").append("<article class='specialLibox'></article>")
+
+            if (!mobile() && !$("body").hasClass("guide")) {
+                $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+            }else{
+                $("body").css("overflow-y", "hidden")
+            }
+
+            alreadyHidden = true
+                
+            $.ajax({
+                    // 載入資料
+                    url: src,
+                })
+                .done(function (data) {
+                    // 將資料塞入結構
+                    $(".specialLibox").html(data);
+                    specialLibox.all();
+                });
+        },
+
+        close_click: function () {
+            $(".specialLibox .liboxClose").click(function () {
+                specialLibox.close();
+            });
+            $(".specialLibox").click(function (e) {
+                if ($(e.target).hasClass("specialLibox")){specialLibox.close(); }
+            })
+        },
+
+        close: function () {
+            $(".specialLibox").addClass("close");
+            if (!mobile()) {$("body").css({"overflow-y":"visible","padding-right":"0rem"})}
+            else{ $("body").css("overflow-y", "visible")}
+            alreadyHidden = false
+            setTimeout(function () {
+                $(".specialLibox").remove()
+            }, 500)
+        },
+
+        slick:function(){
+            $(".specialLibox ._slick ul").slick({
+                prevArrow: ".specialLibox ._slick .arrows span.icon-arrowLeft",
+                nextArrow: ".specialLibox ._slick .arrows span.icon-arrowRight",
+                dots:true,
+                speed:700,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                responsive: [{
+                    breakpoint: 1025,
+                    settings: {
+                        arrows: false,
+                    }
+                }
+            ]
+            })
+
+            $('.specialLibox ._slick ul').on('lazyLoaded', function(){
+                specialLibox.waypoint();
+                specialLibox.Blazy();
+            });
+        },
+
+        row:function(){
+            $(".specialLibox .rows .row>div:not(.table):nth-child(odd)").each(function () {
+                var thisClassNmae = $(this).attr("class")
+                var nextClassName = $(this).next().attr("class")
+                var targetClassName=(nextClassName == "table") ? thisClassNmae : 
+                                    (nextClassName == undefined) ? thisClassNmae : nextClassName
+                if (thisClassNmae !== targetClassName) {
+                    $(this).addClass("half");
+                    $(this).next().addClass("half");
+                }
+            })
+        },
+
+        waypoint:function(){
+            eachWaypoint(".specialLibox section .rows .row ._img","80%")
+            eachWaypoint(".specialLibox section .rows .row ._text","80%")
+
+            function eachWaypoint(target, offsetValue){
+                $(target).each(function (index, element) {
+                    $(element).waypoint({
+                        context: ".specialLibox section",
+                        handler: function () {
+                            $(element).addClass('show');
+                        },
+                        offset: offsetValue
+                    });
+                });
+            }
+        },
+
+        Blazy:function(){
+            var liboxBLazy = new Blazy({
+                container:".specialLibox section",
+                offset: 100,
+                success: function (ele) {
+                    $(ele).closest("figure").addClass("in");
+                    Waypoint.refreshAll();
+                }
+            });
+        },
+
+        all:function(){
+            specialLibox.close_click();
+            specialLibox.slick();
+            specialLibox.row();
+            openVideoLibox(".specialLibox section ._slick ul li")
+        }
+    }
+|
+|
+</html>

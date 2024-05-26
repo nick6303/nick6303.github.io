@@ -1,0 +1,32 @@
+
+@function px($px)
+    @return $px / 16 * 1rem
+
+=rwdm($max)
+    @media only screen and (max-width: $max + px)  
+        @content
+    
+$fmeF: 'FuturaPT-Book','Microsoft JhengHei',sans-serif;
+$fmeFb: 'FuturaPT-Heavy','Microsoft JhengHei',sans-serif;
+    
+=fshm($fm:$fmeF,$fs:px(14),$lh:px(20),$mb:0)
+    font-family: $fm
+    font-size: $fs
+    line-height: $lh
+    margin: $mb
+
+=shm($fs:px(14),$lh:px(20),$mb:0)
+    font-size: $fs
+    line-height: $lh
+    margin: $mb
+
+=flex($dis:flex,$jc:center,$ai:center)
+    display: $dis
+    justify-content: $jc
+    align-items: $ai
+
+=pseudo($w:100px,$h:100px)
+    content: ''
+    width: $w
+    height: $h
+    display: inline-block

@@ -1,0 +1,386 @@
+//css chris header
+
+header
+  height: 160px
+  @media (max-width: 1400px)
+    height: 140px
+  @media (max-width: 1160px)
+    height: 90px
+  .hdContent
+    .buttons
+      // position: fixed
+      // top: 0
+      // right: 0
+      // transition: transform .4s ease
+    .logo
+      z-index: 1
+      .title
+        width: 0
+        height: 0
+        opacity: 0
+        position: relative
+        left: 150vw
+        top: 150vh
+
+header .hdContent .buttons .openExhibit.close p:nth-child(2)
+  display: flex
+
+header .hdContent .exhibitLibox .open .date .box:after
+  left: calc(50% - 10px)
+
+header .hdContent .buttons .openExhibit.close
+  cursor: auto
+
+header .hdContent .exhibitLibox .date .when
+  +fs(15)
+  span
+    margin-right: 6px
+    &:last-child
+      margin: 0
+
+// header .hdContent.fixed.up
+//   height: 70px
+
+#home header .hdContent .buttons.open
+  // right: 0 !important
+  // transition: transform .4s ease, right .4s ease
+@media (max-width: 1024px)
+  header .hdContent .exhibitLibox .open .date .box:after
+    left: 50%
+@media (max-width: 767px)
+  header
+    height: 100px
+  header .hdContent .exhibitLibox .date .when
+    text-align: center
+
+
+
+//mocaMenu
+.mocaMenu
+  overflow: hidden
+  position: fixed
+  left: 0
+  top: 0
+  z-index: -1
+  visibility: hidden
+  width: 100vw
+  height: calc(var(--vh, 1vh) * 100)
+  -webkit-overflow-scrolling: touch
+  &.open
+    z-index: 10
+    visibility: visible
+    .bg
+      background-color: rgba(0,0,0,0.5)
+      transition: background-color 1s ease
+    .allBox
+      transform: translateX(0%)
+      transition: transform .4s ease .3s
+      @media (max-width: 1024px)
+        transition: transform .4s ease
+      .chrisCloseBtn 
+        transform: translateY(0%)
+        transition: transform 1s ease .6s
+        @media (max-width: 1024px)
+          transition: transform 1s ease .2s
+    .esArea
+      opacity: 1
+      transition: opacity .4s ease .7s
+  &.close
+    .allBox
+      transform: translateX(100%)
+      transition: transform .4s ease .4s
+      .chrisCloseBtn
+        transform: translateY(-100%)
+        transition: transform .4s ease
+    .logoImg
+      opacity: 0
+      transition: opacity .4s ease
+    .menuList
+      opacity: 0
+      transition: opacity .4s ease
+    .complexSec
+      opacity: 0
+      transition: opacity .4s ease
+    .knife
+      transform: translateY(100%)
+      transition: transform .4s ease
+    .logSec
+      opacity: 0
+      transition: opacity .4s ease
+    .esArea
+      opacity: 0
+      transition: opacity .4s ease
+
+  .mCSB_inside>.mCSB_container
+    margin: 0
+  .mCSB_scrollTools
+    opacity: 0 !important
+  .bg
+    background-color: rgba(0,0,0,0)
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 0
+    width: 100%
+    height: 100%
+  .allBox
+    color: #fff
+    background-color: #272727
+    width: 50%
+    min-width: 960px
+    min-height: 100vh
+    margin-left: auto
+    position: relative
+    transform: translateX(100%)
+    .chrisCloseBtn
+      cursor: pointer
+      width: 70px
+      height: 70px
+      background-color: #fff
+      display: flex
+      align-items: center
+      justify-content: center
+      position: fixed
+      right: 0
+      top: 0
+      z-index: 1
+      transform: translateY(-100%)
+      .iconBox
+        width: 100%
+        height: 100%
+        &:before, &:after
+          margin: 0
+          position: absolute
+          left: 17.5px
+          top: 50%
+  .sword
+    min-height: calc(100vh - 185px)
+    padding: 12vh 0 70px 0
+  .knife
+    &.show
+      .logSec
+        opacity: 1
+        transition: opacity 1.5s ease
+    .logSec
+      opacity: 0
+
+
+  .esArea
+    display: flex
+    justify-content: center
+    margin: 0 auto 9vh auto
+    opacity: 0
+    .box
+      cursor: pointer
+      color: #aeaeae
+      display: inline-flex
+      align-items: center
+      padding: 10px 20px
+      transition: color .5s ease
+      position: relative
+      &:last-child
+        &:after
+          display: none
+      &:after
+        content: ''
+        display: block
+        background-color: #aeaeae
+        width: 1px
+        height: 16px
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+      &:hover
+        color: #fff
+      .icon
+        margin-right: 10px
+  .logoImg
+    width: 90%
+    max-width: 365px
+    margin: 0 auto 25px auto
+    opacity: 0
+    &.show
+      opacity: 1
+      transition: opacity 1.2s ease .5s
+  .menuList
+    +fs(20)
+    font-family: 'FuturaPT-Heavy','微軟正黑體'
+    display: flex
+    flex-wrap: wrap
+    width: 780px
+    margin: 0 auto 8vh auto
+    .link
+      display: flex
+      flex-direction: column
+      align-items: center
+      width: 25%
+      line-height: 1.6
+      margin: 0 0 55px 0
+      transition: color .5s ease
+      opacity: 0
+      &.show
+        opacity: 1
+        transition: opacity 1.2s ease .5s, color .5s ease
+      &:hover
+        color: #e83434
+      .en
+        margin: 0 0 3px 0
+  .complexSec
+    width: 780px
+    margin: 0 auto
+    display: flex
+    .lexBox
+      width: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      opacity: 0
+      &.show
+        opacity: 1
+        transition: opacity 1.2s ease .5s
+      .sony
+        padding: 0 17px
+        .htc
+          &:hover
+            color: #fff
+      .htc
+        color: #7d7d7d
+        transition: color .5s ease
+        span
+          &:first-child
+            margin-right: 5px
+          &:last-child
+            margin: 0
+    .community
+      display: flex
+      padding-left: 10px
+      .link
+        color: #7d7d7d
+        padding: 0 12px
+        transition: color .5s ease
+        &:hover
+          color: #fff
+      .text
+        display: none
+  .logSec
+    background-color: #e83434
+    height: 185px
+    padding: 65px 0 0 0
+    position: relative
+    .avatar
+      background-color: #272727
+      border-radius: 50%
+      border: solid 5px #fff
+      width: 92px
+      height: 92px
+      margin: 0 auto
+      display: flex
+      align-items: center
+      justify-content: center
+      position: absolute
+      left: 50%
+      top: -46px
+      transform: translateX(-50%)
+      &.showImg
+        &:before
+          opacity: 0
+      &:before
+        content: attr(data-ask)
+        display: block
+        +fs(34)
+        font-family: '微軟正黑體','Microsoft JhengHei', Arial, sans-serif
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+      .img
+        border-radius: 50%
+        width: 100%
+        height: 100%
+    .logBox 
+      opacity: 0
+      visibility: hidden
+      text-align: center
+      position: absolute
+      left: 0
+      top: 0
+      z-index: -1
+      display: flex
+      flex-direction: column
+      &.open
+        opacity: 1
+        visibility: visible
+        position: relative
+        z-index: 0
+    .link
+      +fs(18)
+      font-family: 'FuturaPT-Medium','微軟正黑體'
+      text-align: center
+      display: inline-flex
+      align-items: center
+      flex-direction: column
+  .logicIcon
+    display: inline-flex
+    margin: 0 auto
+    padding: 10px
+    .icon
+      width: 30px
+      height: 30px
+      margin: 0 auto
+  @media (max-width: 1400px)
+    .allBox
+      .chrisCloseBtn
+        width: 50px
+        height: 50px
+        .iconBox
+          &:before, &:after
+            left: 7.5px
+  @media (max-width: 1024px)
+    .allBox
+      width: 100%
+      min-width: auto
+    .menuList
+      width: 90%
+      .link
+        width: 33.33%
+    .complexSec
+        width: 90%
+  @media (max-width: 767px)
+    .logoImg
+      width: 80%
+    .menuList
+      width: 80%
+      margin: 0 auto
+      .link
+        width: 50%
+    .complexSec
+      flex-direction: column
+      align-items: center
+      .lexBox
+        width: 100%
+        margin: 0 0 25px 0
+    .logSec
+      height: 230px
+  @media (max-width: 560px)
+    .sword
+      padding: 90px 0 70px 0
+    .logoImg
+      margin: 0 auto 55px auto
+    .menuList
+      width: 100%
+      flex-wrap: nowrap
+      flex-direction: column
+      align-items: center
+      .link
+        width: auto
+        margin: 0 0 35px 0
+    .complexSec
+      .mixB
+        flex-direction: column
+        .sony
+          margin: 0 0 25px 0
+          &:last-child
+            margin: 0
+
+

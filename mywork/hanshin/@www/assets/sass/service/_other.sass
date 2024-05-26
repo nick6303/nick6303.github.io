@@ -1,0 +1,198 @@
+#service.other
+    &.guide
+        main
+            background-image: url('../../upload/fa2/guide/bg_1080_1600.jpg')
+        .banner ._title
+            background-image: none !important
+        main .content
+            padding: 0 0 100px
+            ._slick
+                padding: 0 calc(7.3vw + 60px)
+                .arrows  span
+                    &.icon-arrowLeft
+                        left: 70px
+                    &.icon-arrowRight
+                        right: 70px
+            .rows
+                padding: 0 110px
+            .callme
+                display: none
+    main .content
+        ._slick
+            position: relative
+            z-index: 1
+            margin: 0 auto 
+            max-width: 1200px
+            min-height: 25vw
+            padding: 0 120px
+            @media all and (max-width: 1500px)
+                padding: 0 7.3vw
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            ul
+                opacity: 0
+                animation: fadeInUp 1.5s both .8s
+                .slick-track
+                    padding: 0 0 20px
+                    @media all and (max-width: 700px)
+                        padding: 0 0 30px
+                .slick-dots
+                    right: 0
+                    bottom: 0
+                    animation: fadeIn 1s both 2.1s 
+                    @media all and (max-width: 700px)
+                        width: 100%
+                        right: 50%
+                        transform: translateX(50%)
+                        justify-content: center
+                li
+                    +flex-center
+                    +hasVideo
+                    opacity: 0
+                    &.in
+                        animation: fadeIn 1s both
+                    b
+                        display: block
+                        font-size: px(14)
+                        padding: 15px 0 0
+                        line-height: 1.5
+                        color: rgba(0,0,0,.8)
+                        @media all and (max-width: 700px)
+                            padding: 10px 0 0
+                            text-align: center
+            .arrows  span
+                top: 45%
+                transform: translateY(-50%)
+                +slickArrow
+                @media all and (max-width: 1024px)
+                    display: none
+                &.icon-arrowLeft
+                    left: 10px
+                    animation: fadeInRight 1s both 1.5s
+                &.icon-arrowRight
+                    right: 10px
+                    animation: fadeInLeft 1s both 1.5s
+        .rows
+            margin: 60px auto 0
+            max-width: 1060px
+            padding: 0 50px
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            .row
+                display: flex
+                align-items: center
+                flex-wrap: wrap
+                margin: 0 0 20px
+                ._text,._img
+                    &.half
+                        width: 50%
+                        @media all and (max-width: 550px)
+                            width: 100%
+                ._img
+                    margin: 25px 0 15px
+                    +flex-center
+                    figure>*
+                        opacity: 0
+                    &.show.in
+                        img
+                            animation: fadeInUp 1.2s both
+                        b
+                            animation: fadeInUp 1.2s both .8s
+                    b
+                        font-weight: normal
+                        font-size: px(14)
+                        padding: 20px 5px 0
+                        display: block
+                        @media all and (max-width: 700px)
+                            padding: 10px 5px 0
+                    &.half
+                        &:nth-child(odd)
+                            padding-right: 30px 
+                            @media all and (max-width: 550px)
+                                padding-right: 0px 
+                        &:nth-child(even)
+                            padding-left: 30px 
+                            @media all and (max-width: 550px)
+                                padding-left: 0px 
+                    &.w_50
+                        width: 50%
+                        @media all and (max-width: 550px)
+                            width: 100%
+                        &:nth-child(odd)
+                            padding-right: 8px 
+                            justify-content: flex-end
+                            @media all and (max-width: 1024px)
+                                padding-right: 4px
+                            @media all and (max-width: 550px)
+                                padding-right: 0
+                        &:nth-child(even)
+                            padding-left: 8px
+                            justify-content: flex-start
+                            @media all and (max-width: 1024px)
+                                padding-left: 4px
+                            @media all and (max-width: 550px)
+                                padding-left: 0
+                ._text
+                    margin: 0 0 15px
+                    &>*
+                        opacity: 0
+                    &.show
+                        h6
+                            animation: fadeInDown 1.2s both
+                        p
+                            animation: fadeInUp 1.5s both .2s
+                    h6
+                        +JaguarJC-Bold
+                        font-size: px(18)
+                        &:not(:last-child)
+                            margin: 0 0 5px
+                    p,a
+                        font-size: px(16)
+                        line-height: 1.8
+                        text-align: justify
+                    p
+                        margin: 0 0 0 27px
+                        position: relative
+                        display: flex
+                        flex-direction: column
+                        align-items: flex-start
+                        &.s1
+                            &:before
+                                +fakeLine(4px,4px,#434343)
+                                border-radius: 50%
+                                position: absolute
+                                top: 12px
+                                left: -17px
+                        &.s2
+                            
+                        &.s3
+                            padding: 0 0 0 17px
+                    a
+                        +blankLink
+        .callme
+            margin: 50px auto 0
+            max-width: 1060px
+            padding: 0 50px
+            display: flex
+            align-items: center
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            &.show
+                span
+                    animation: fadeInLeft 1.2s both 
+                p
+                    animation: fadeInUp 1s both 
+            span
+                width: 40px
+                height: 40px
+                +flex-center
+                font-size: px(18)
+                color: #fff
+                background-color: #aeb6da
+                border-radius: 50%
+                margin: 0 10px 0 0
+                opacity: 0
+            p
+                font-weight: bold
+                width: calc(100% - 50px)
+                opacity: 0

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/juge/overview.css">
+</head>
+
+<body id="juge" class="overview">
+    <header data-nobanner="true"></header>
+    <main>
+        <article class="topTitle">
+            <h2>Contestant Service</h2>
+            <p>帳號服務中心</p>
+            <section>
+                <div class="logOut">
+                    <a href="javascript:void(0)">
+                        <p>log out 登出</p>
+                    </a>
+                </div>
+                <div class="post">
+                    <!-- 後端請注意:下方span如果用不到可刪除 -->
+                    <div class="hello">
+                        Hello,
+                        <span class="username">Wilhelm Siemen</span>
+                    </div>
+                    <div class="h2">部分評選組別已開放</div>
+                    <p>親愛的評審您好，現以開放陶瓷設計組、法藍瓷光點計畫、概念設計組初選，請負責評審檢視各階段的評選時間，進入各組管理畫面...</p>
+                    <div class="date">
+                        <!-- 日期 -->
+                        <span class="day">31th</span>
+                        <!-- 年、月 -->
+                        <span>2018 MAY.</span>
+                    </div>
+                    <a href="../juge/announcement.html">
+                        more
+                        <span></span>
+                    </a>
+                </div>
+            </section>
+        </article>
+        <article class="boxContent">
+            <section class="information">
+                <a href="../juge/information.html">
+                    <div class="_title">
+                        <h6>Information</h6>
+                        <p>基本資料與帳號管理</p>
+                    </div>
+                </a>
+            </section>
+            <section class="selection">
+                <div class="_title">
+                    <h6>Selection</h6>
+                    <p>目前有<span></span>組等待您的評選</p>
+                </div>
+                <div class="hideBox">
+                    <div class="selection_slick">
+                        <div class="arrow">
+                            <span class="icon-slickLeft"></span>
+                            <span class="icon-slickRight"></span>
+                        </div>
+                        <ul class="_slick">
+                            <li>
+                                <!-- 比賽名稱 -->
+                                <div class="competition">
+                                    <p>Porcelain Ceramic PRODUCT</p>
+                                    <p>陶瓷設計組</p>
+                                </div>
+                                <!-- 階段 -->
+                                <div class="instruction">
+                                    <a href="javascript:void(0)">
+                                        <p>初選階段</p>
+                                        <p>Primary Election</p>
+                                    </a>
+                                </div>
+                                <!-- 前往評分 -->
+                                <!-- 後端請注意:如果此評審不參加此項評比的話請在下方div 加入class "nojoin" a連結就會失效無法點擊也會出現相對應的title-->
+                                <div class="toJuge nojoin" data-title="您無法參與此評分">
+                                    <a href="../juge/selection_check.html"></a>
+                                    <span></span>
+                                    <p>前往評分</p>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- 比賽名稱 -->
+                                <div class="competition">
+                                    <p>Project of Rising Star</p>
+                                    <p>法藍瓷光點計畫</p>
+                                </div>
+                                <!-- 階段 -->
+                                <div class="instruction">
+                                    <a href="javascript:void(0)">
+                                        <p>初選階段</p>
+                                        <p>Primary Election</p>
+                                    </a>
+                                </div>
+                                <!-- 前往評分 -->
+                                <!-- 後端請注意:如果此評審不參加此項評比的話請在下方div 加入class "nojoin" a連結就會失效無法點擊也會出現相對應的title-->
+                                <div class="toJuge" data-title="您無法參與此評分">
+                                    <a href="../juge/selection_point.html"></a>
+                                    <span></span>
+                                    <p>前往評分</p>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- 比賽名稱 -->
+                                <div class="competition">
+                                    <p>Porcelain Ceramic CONCEPT</p>
+                                    <p>概念設計組</p>
+                                </div>
+                                <!-- 階段 -->
+                                <div class="instruction">
+                                    <a href="javascript:void(0)">
+                                        <p>複選階段</p>
+                                        <p>Eighth Finals</p>
+                                    </a>
+                                </div>
+                                <!-- 前往評分 -->
+                                <!-- 後端請注意:如果此評審不參加此項評比的話請在下方div 加入class "nojoin" a連結就會失效無法點擊也會出現相對應的title-->
+                                <div class="toJuge" data-title="您無法參與此評分">
+                                    <a href="../juge/selection_check.html"></a>
+                                    <span></span>
+                                    <p>前往評分</p>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- 比賽名稱 -->
+                                <div class="competition">
+                                    <p>Porcelain Ceramic CONCEPT</p>
+                                    <p>概念設計組</p>
+                                </div>
+                                <!-- 階段 -->
+                                <div class="instruction">
+                                    <a href="javascript:void(0)">
+                                        <p>複選階段</p>
+                                        <p>Eighth Finals</p>
+                                    </a>
+                                </div>
+                                <!-- 前往評分 -->
+                                <!-- 後端請注意:如果此評審不參加此項評比的話請在下方div 加入class "nojoin" a連結就會失效無法點擊也會出現相對應的title-->
+                                <div class="toJuge" data-title="您無法參與此評分">
+                                    <a href="../juge/selection_point.html"></a>
+                                    <span></span>
+                                    <p>前往評分</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="QA">
+                <div class="_title">
+                    <h6>Message</h6>
+                    <p>客服訊息問答</p>
+                </div>
+                <div class="hideBox">
+                    <div class="message">
+                        <a href="javascript:void(0)">
+                            <div class="cicle">1</div>
+                            <p>You got a new message</p>
+                            <p>您有<span class="numb">1</span>則新訊息</p>
+                        </a>
+                    </div>
+                    <div class="button">
+                        <ul>
+                            <li class="blue">
+                                <a href="../juge/message.html">
+                                    <p>Overview</p>
+                                    <p>訊息總覽</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="addMessage" href="javascript:void(0)">
+                                    <p>Add a new message</p>
+                                    <p>新增一則訊息</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+<script>
+
+$(document).ready(function() {
+    $(".instruction").click(function() {
+        $("body").append("<article class='timelineLobox'></article>");
+        $.ajax({
+            url: '../../views/juge/timelineLobox.html',
+        })
+        .done(function(data) {
+            $(".timelineLobox").html(data);
+            timelineLobox.all();
+        });
+    });
+});
+
+</script>
+<!-- 點選區塊 -->
+<script>
+$(document).ready(function() {
+    nodesign();
+    selectArea();
+});
+
+function selectArea() {
+    $(".canClick,.QA").click(function() {
+        $this = $(this)
+        if (!$this.hasClass("active")) {
+            // 設計作品管理專屬function
+            if ($this.hasClass("canClick")) {
+                nodesign();
+            }
+            // 客服訊息問答專屬function
+            else if ($this.hasClass("QA")) {
+                nomessage();
+            }
+
+            // 將未選定隱藏
+            $this.removeClass("out");
+            $this.siblings().addClass("out");
+
+            // 將點選的顯示
+            $this.addClass("active");
+            $other = $this.siblings(".active");
+            $other.find(".hideBox").slideUp(400);
+            $other.removeClass("active");
+
+            // 將點選的顯示
+            if ($(window).width() > 1024) {
+                $this.find(".hideBox").delay(1000).slideDown(400);
+
+                // 設計作品管理專屬function
+                if ($this.hasClass("canClick")) {
+                    setTimeout(function() {
+                        resetSlick();
+                    }, 1400);
+                }
+
+            } else {
+                $this.find(".hideBox").slideDown(400);
+                setTimeout(function() {
+                    // 設計作品管理專屬function
+                    if ($this.hasClass("canClick")) {
+                        resetSlick();
+                    }
+
+                    $("html,body").animate({
+                        scrollTop: $this.offset().top - $("header").height()
+                    }, 800, 'easeOutCubic');
+                }, 400);
+            }
+        }
+    });
+}
+
+// 後端請注意:重製slick
+function resetSlick() {
+    $('.boxContent .selection ._slick').slick('unslick');
+    slick('jugeSlick');
+}
+
+// 後端請注意:如果沒有訊息請啟動此function ps:他是偵測圓圈裡的數字
+function nomessage() {
+    if ($(".boxContent .QA .message a .cicle").text() == 0) {
+        $(".boxContent .QA .message a .cicle").addClass("nomessage");
+        $(".boxContent .QA .button ul li.blue").css("display", "none");
+    } else {
+        $(".boxContent .QA .message a .cicle").removeClass("nomessage");
+        $(".boxContent .QA .button ul li.blue").css("display", "block")
+    }
+}
+
+// 後端請注意:如果沒有作品請啟動此function ps:他是偵測ul._slick的li數量
+function nodesign() {
+    if (!$(".selection .selection_slick ._slick li").length == 0) {
+        $(".selection").addClass("canClick");
+    }
+    var i = $(".selection .selection_slick ._slick li").length
+    $(".boxContent .selection ._title p span").text(i)
+}
+</script>
+
+</html>

@@ -1,0 +1,232 @@
+//一排的選單
+.navbit
+    display: inline-block
+    position: relative
+    text-align: center
+    ul
+        display: inline-flex
+        width: auto
+        padding: 0 50px 20px
+        margin-top: 20px
+        #vip &
+            padding: 0 50px 9px
+        .footer__menu &
+            flex-wrap: wrap
+    li
+        display: flex
+        align-items: center
+        white-space: nowrap
+        justify-content: flex-start
+        +rwd(767)
+            .footer__menu &
+                margin-bottom: 20px
+                justify-content: center
+                &:nth-child(2) ~ li
+                    display: none
+                &:first-child:first-child:after 
+                    display: inline-block
+                    margin: 0 10px
+        &:not(:last-child):after
+            content: ''
+            display: inline-block
+            height: 3px
+            width: 3px
+            border-radius: 50%
+            margin: 0 20px
+            background: $Cblue
+            #vip &
+                margin: 0 15px
+            +rwd(767)
+                .footer__menu &
+                    display: none
+        h4
+            font-size: px(14)
+        &.focus 
+            a:before
+                width: 100%
+                left: 0
+    a
+        position: relative
+        &:before
+            content: ''
+            position: absolute
+            height: 5px
+            width: 0%
+            bottom: -10px
+            right: 0 
+            background: $Cblue
+            transition: .5s
+        &:hover
+            &:before
+                width: 100%
+                left: 0
+
+.navline
+    display: inline-block
+    ul
+        display: flex
+        .footer__menu &
+            flex-wrap: wrap
+    li
+        display: flex
+        align-items: center
+        +rwd(767)
+        &:not(:last-child):after
+            content: ''
+            display: inline-block
+            height: 10px
+            width: 1px
+            border-radius: 50%
+            margin: 0 20px
+            background: #fff
+            opacity: 0.5
+        h4
+            font-size: px(14)
+    a
+        color: #fff
+        position: relative
+        opacity: 0.5
+        &:before
+            content: ''
+            position: absolute
+            height: 5px
+            width: 0%
+            bottom: -10px
+            right: 0 
+            background: $Cblue
+            transition: .5s
+        &:hover
+            opacity: 1
+
+
+// 選單搜尋
+.nav-search-btn
+    flex-shrink: 0
+    +rwd(600)
+        margin-left: 20px
+.nav-search
+    padding: 0px
+    height: 46px
+    width: 100%
+    max-width: 0px
+    display: inline-flex
+    +poac
+    border-bottom: 2px solid $Cgray
+    background: #fff
+    transition: .5s
+    overflow: hidden
+    &--on
+        max-width: 550px
+        padding: 5px 20px
+    input
+        width: calc(100% - 100px)
+        border: 0px
+        &::placeholder 
+            letter-spacing: 2px
+    &__btn
+        width: 100px
+        ul
+            height: 100%
+            +flex
+        li
+            display: flex   
+            align-items: center
+            &:hover a
+                color: $Cblue
+        li:not(:last-child):after
+            content: ''
+            width: 1px
+            height: 10px
+            background: $Cgray
+            margin: 0 10px          
+
+// product選單
+.productnav
+    display: inline-block
+    +rwd(768)
+        display: none
+    ul
+        display: flex
+    li
+        display: flex
+        align-items: center
+        overflow: hidden
+        h4
+            font-size: px(16)
+        &:hover
+            a:before
+                width: 100%
+                left: 0%
+                height: 5px
+    a
+        position: relative
+        padding: 25px 70px 0
+        +rwd(1024)
+            padding: 15px 25px 0
+        &:before
+            content: ''
+            position: absolute
+            height: 1px
+            width: 0%
+            top: 0
+            left: 50%
+            background: $Cblue
+            transition: width .5s , left .5s , height .25s .40s
+            // transition-delay: height .5s
+        
+
+// header__style2
+.navline__member
+    display: inline-block
+    ul
+        display: flex
+        padding: 0 40px 0 20px
+    li
+        display: flex
+        align-items: center
+        letter-spacing: .5px
+        +rwd(767)
+        &:not(:last-child):after
+            content: ''
+            display: inline-block
+            height: 10px
+            width: 1px
+            border-radius: 50%
+            margin: 0 20px
+            background: #1b41a2
+        h4
+            font-size: px(12)
+    a
+        color: #000
+        position: relative
+        &:before
+            content: ''
+            position: absolute
+            height: 5px
+            width: 0%
+            bottom: -10px
+            right: 0 
+            background: $Cblue
+            transition: .5s
+.flow
+    flex: 2
+    height: 100%
+    ul
+        display: flex
+        justify-content: center
+    li
+        box-shadow: 0 7px 0 #d7d7d7 inset 
+        text-align: center
+        flex: 1
+        height: 60px
+        +flex
+        &.on
+            box-shadow: 0 7px 0 #1b41a2 inset
+        +rwd(767)
+            span
+                display: none
+        h5
+            font-size: px(14)
+            font-weight: 700
+            letter-spacing: 1px
+        

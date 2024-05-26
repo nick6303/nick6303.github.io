@@ -1,0 +1,83 @@
+
+
+// font-size
+
+@function px($px)
+    @return $px / 16 * 1rem
+
+// display: flex 置中
+@mixin flex-center 
+    display: flex
+    justify-content: center
+    align-items: center
+//  display: flex 置中
+
+
+//  display: flex 左右至頂
+@mixin flex-space-between 
+    display: flex
+    justify-content: space-between
+    align-items: center
+//  display: flex 左右至頂
+
+
+//  display: flex 向左靠
+@mixin flex-left 
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    flex-direction: column
+//  display: flex 向左靠
+
+
+//  display: flex 向右靠
+@mixin flex-right 
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    flex-direction: column
+//  display: flex 向右靠
+
+
+//  偽元素線條
+@mixin fakeLine($width:1px, $height:1px, $backgroundColor:#000) 
+    content: ""
+    display: block
+    width: $width
+    height: $height
+    background-color: $backgroundColor
+//  偽元素線條
+
+
+// 基礎燈箱設定
+@mixin basicLibox($width:100vw, $height:100%) 
+    position: fixed
+    top: 0
+    left: 0
+    width: $width
+    height: $height
+// 基礎燈箱設定
+
+
+// 十字
+@mixin cross($width:26px, $height:26px) 
+    position: relative
+    width: $width
+    height: $height
+
+@mixin cross_before($width:26px, $color:#959595) 
+    @include fakeLine($width, 2px, $color)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+@mixin cross_after($height:26px, $color:#959595) 
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    @include fakeLine(2px, $height, $color)
+// 十字
+
+

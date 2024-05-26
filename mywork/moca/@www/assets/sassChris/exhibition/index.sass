@@ -1,0 +1,1951 @@
+//exhibition
+#exhibition
+    .soundBall
+        cursor: pointer
+        color: #fff
+        background-color: #ff6060
+        border-radius: 50%
+        width: 50px
+        height: 50px
+        position: fixed
+        right: 50px
+        bottom: 50px
+        z-index: -1
+        visibility: hidden
+        opacity: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        &.showUp
+            z-index: 1
+            visibility: visible
+            opacity: 1
+            transition: opacity 1s ease
+    footer
+        margin-top: 0
+
+.mocaSNav.detail
+    margin: 0
+    .navBar
+        .link
+            &:after
+                transform: rotate(30deg)
+            .text
+                padding: 0 10px
+            &:last-of-type
+                .text
+                    color: #000
+                    font-weight: 900
+
+//
+.bannerSec
+    .slickArea
+        position: relative
+        .slick-dots
+            bottom: 35px
+            left: 50%
+            transform: translateX(-50%)
+            width: auto
+            li
+                padding: 10px 20px
+                width: auto
+                height: auto
+                margin: 0
+                &.slick-active
+                    .dot
+                        opacity: 1
+            .dot
+                background-color: #fff
+                border-radius: 50%
+                width: 6px
+                height: 6px
+                display: block
+                opacity: 0.5
+            .prev, .next
+                color: #fff
+                +fs(35)
+                padding: 0
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+            .prev
+                left: -35px
+            .next
+                right: -35px
+        .slickArrowBox
+            color: #fff
+            position: absolute
+            left: 0
+            bottom: 35px
+    .slickBox 
+        .list
+            max-width: 1920px
+            max-height: 845px
+            .img
+                margin: 0 auto
+
+//
+.exhibitionDetail
+    .bannerSec
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+    @media (max-width: 767px)
+        .scrollBro
+            .box
+                // padding-top: 53px
+                padding-left: 10px
+                position: relative
+            .search
+                position: absolute
+                top: 0
+                left: 0
+                display: none
+            .shareBtn:after
+                content: none
+            .community
+                width: auto
+                left: 51px
+                top: 50%
+                transform: translateY(-50%)
+                white-space: nowrap
+                .link
+                    width: 57px
+                    display: inline-block
+    
+
+//
+.exDetailBigMac
+    // background-color: #f9f9f9
+    .frameBox
+        width: 100%
+        max-width: 1160px
+        margin: 0 auto
+        padding: 70px 0 25px
+        display: flex
+        align-items: center
+        .leftBox
+            width: 60%
+            padding-right: 20px
+            &.show
+                .title, .subTitle
+                    opacity: 1
+                    transition: opacity 1s ease
+                .dateBox
+                    opacity: 1
+                    transition: opacity 1s ease .3s
+                .addressBox
+                    opacity: 1
+                    transition: opacity 1s ease .5s
+            .title
+                +fs(30)
+                font-weight: 900
+                opacity: 0
+            .subTitle
+                +fs(14)
+                margin: 0 0 25px 0
+                opacity: 0
+            .dateBox
+                +fs(26)
+                display: flex
+                flex-wrap: wrap
+                margin: 0 0 25px 0
+                opacity: 0
+                .interval
+                    display: flex
+                    .text
+                        &.hasline
+                            position: relative
+                            padding-left: 60px
+                            &::after
+                                content: ''
+                                background: #000
+                                width: 20px
+                                height: 1px
+                                left: 20px
+                                bottom: 3px
+                                position: absolute
+                                display: inline-block
+                .time
+                    +fs(20)
+                    font-family: 'FuturaPT-Light','微軟正黑體'
+                    align-self: center
+                    padding-left: 15px
+                .text
+                    font-family: 'MyriadPro-Regular'
+                    span
+                        +fs(20)
+                        font-family: 'FuturaPT-Light','微軟正黑體'
+                .line
+                    background-color: #000
+                    width: 36px
+                    height: 1px
+                    margin: 24px 16px 0 16px
+                    display: block
+            .addressBox
+                display: flex
+                letter-spacing: normal
+                opacity: 0
+                .name
+                    +fs(15)
+                    font-family: 'FuturaPT-Heavy','微軟正黑體'
+                    font-weight: 900
+                    display: flex
+                    white-space: nowrap
+                    &:after
+                        content: ''
+                        display: block
+                        background-color: #acacac
+                        width: 1px
+                        height: 100%
+                        margin: 0 8px
+                .text
+        .rightBox
+            width: 40%
+            padding-left: 20px
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease .3s
+            .box
+                display: flex
+                justify-content: flex-end
+            .list
+                text-align: center
+                padding: 0 20px
+                position: relative
+                &:hover
+                    .icon
+                        color: #fff
+                        background-color: #000
+                        &.icon-chrissound1,&.icon-information
+                            &::before
+                                color: #fff
+                        
+                &:last-child
+                    &:after
+                        display: none
+                // &:after
+                //     content: ''
+                //     display: block
+                //     background-color: #e0e0e0
+                //     width: 2px
+                //     height: 100%
+                //     position: absolute
+                //     right: 0
+                //     top: 50%
+                //     transform: translateY(-50%)
+                .icon
+                    border-radius: 50%
+                    color: #000
+                    width: 40px
+                    height: 40px
+                    margin: 0 auto 10px auto
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border: 1px #000 solid
+                    transition: .5s
+                    &.icon-chrissound1,&.icon-information
+                        +fs(20)
+                        &::before
+                            color: #000
+                            
+                    &.icon-information
+                        position: relative
+                        &::after
+                            content: 'i'
+                            position: absolute
+                            top: 50%
+                            left: 50%
+                            transform: translate(-50%,-50%)
+                            display: inline-block
+                            font-family: serif
+                            font-weight: bolder
+                .name
+                    +fs(15)
+                    font-family: 'FuturaPT-Heavy','微軟正黑體'
+                    font-weight: 900
+                    margin: 0 0 10px 0
+                .text
+                    +fs(18)
+                    font-weight: 900
+            .linkType
+                font-weight: 900
+                color: #e83434
+                .name
+                    +fs(20)
+                    font-family: 'FuturaPT-Heavy','微軟正黑體'
+                    margin: 0
+                    line-height: 40px
+                .text
+                    +fs(15)
+    @media (max-width: 1250px)
+        .frameBox
+            width: 90%
+            // ---
+            flex-direction: column
+            .leftBox, .rightBox
+                width: 100%
+                padding: 0
+            .leftBox
+                margin: 0 0 50px 0
+            .rightBox
+                margin: 0 0 0 -40px
+            // --
+            .leftBox
+                .title
+                    +fs(24)
+                .dateBox
+                    +fs(22)
+                    .line
+                        width: 15px
+    // @media (max-width: 1023px)
+    //     .frameBox
+    //         flex-direction: column
+    //         .leftBox, .rightBox
+    //             width: 100%
+    //             padding: 0
+    //         .leftBox
+    //             margin: 0 0 50px 0
+    //         .rightBox
+    //             margin: 0 0 0 -40px
+    //             .box
+    //                 justify-content: flex-start
+    @media (max-width: 767px)
+        .frameBox
+            .leftBox
+                .interval
+                    margin-bottom: 20px
+                .dateBox
+                    +fs(20)
+                    display: inline-flex
+                    flex-direction: column
+                    .time
+                        padding: 0
+                        align-self: flex-start
+                    .text
+                        span
+                            +fs(18)
+                    .line
+                        width: 1px
+                        height: 10px
+                        margin: 0 auto
+                .addressBox
+                    flex-direction: column
+                    .name
+                        &:after
+                            display: none
+                    .text
+                        +fs(15)
+            .rightBox
+                margin: 0
+                .list
+                    width: 100%
+                    padding: 0 10px
+                    .text
+                        +fs(15)
+                    .name
+                        +fs(12)
+    @media (max-width: 500px)
+        .frameBox .leftBox .dateBox 
+            .interval
+                display: inline-block
+                .text
+                    &.hasline
+                        padding-left: 0
+                        padding-top: 20px
+                        &::after
+                            left: 0
+                            top: 10px
+//
+.exDetailBigMac
+    position: relative
+    &::after
+        content: ''
+        background: #f9f9f9
+        width: 100%
+        height: calc(100% - 140px)
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+    &.noBlock
+        &::after
+            height: 100%
+    .misplacedBlock
+        background: #e2e2e2
+        padding: 50px 0 20px
+        width: 1400px
+        margin: 0 auto
+        @media (max-width: 1500px)
+            width: 100%
+        ul
+            width: 1160px
+            margin: 0 auto
+            display: flex
+            flex-wrap: wrap
+            @media (max-width: 1500px)
+                width: 80%
+            li
+                width: 33.3332%
+                margin-bottom: 50px
+                @media (max-width: 1100px)
+                    width: 50%
+                @media (max-width: 550px)
+                    width: 100%
+            .t
+                display: flex
+                margin-bottom: 20px
+                padding-left: 15px
+                border-left: 4px #5a5a5a solid
+                p
+                    +fs(17)
+                    line-height: px(25)
+                    font-family: $fmeFb
+                    &:first-child
+                        margin: 0 5px 0 0 
+            .p
+                +fs(15)
+                line-height: 23px
+                padding: 0 20px 0 4px
+
+
+//
+.scrollBro
+    height: 58px
+    opacity: 0
+    &.show
+        opacity: 1
+        transition: opacity 1s ease
+    &.fixed
+        .box
+            background-color: #f4f4f4
+            position: fixed
+            left: 0
+            top: 70px
+            z-index: 2
+            animation: myMove 1000ms both
+    .box
+        width: 100%
+        padding-right: 10px
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: row-reverse
+        .ps__rail-x
+            opacity: 0
+    .search
+        position: relative
+        padding: 6px 0
+    .shareBtn
+        cursor: pointer
+        padding: 12px 20px
+        position: relative
+        &:after
+            content: ''
+            display: block
+            background-color: #b2b2b2
+            width: 1px
+            height: 20px
+            position: absolute
+            right: 0
+            top: 50%
+            transform: translateY(-50%)
+    .community
+        background-color: #eee
+        width: 100%
+        text-align: center
+        position: absolute
+        left: 0
+        top: 43px
+        display: none
+        .link
+            color: #aeaeae
+            padding: 10px 0
+            &:hover
+                color: #e83434
+    .sec
+        +fs(15)
+        font-weight: 900
+        padding: 6px 0
+        position: relative
+        &.scrollHide
+            .ps__rail-x, .ps__thumb-x
+                // opacity: 0 !important
+        .secBox
+            display: flex
+        .link
+            text-transform: uppercase
+            padding: 12px 20px
+            display: flex
+            align-items: center
+            position: relative
+            white-space: nowrap
+            color: #aaa
+            &:last-child
+                &:after
+                    display: none
+            &:after
+                content: ''
+                display: block
+                background-color: #b2b2b2
+                width: 1px
+                height: 20px
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
+            &:before
+                content: ''
+                display: block
+                background-color: #e83434
+                width: 0
+                height: 3px
+                position: absolute
+                left: 50%
+                bottom: -6px
+                transform: translateX(-50%)
+                transition: width .4s ease
+            &.now
+                color: #000
+                &:before
+                    width: 100%
+    .ps__rail-x:hover > .ps__thumb-x, .ps__rail-x:focus > .ps__thumb-x, .ps__rail-x.ps--clicking .ps__thumb-x
+        height: 6px
+    @media (max-width: 1250px)
+        .sec
+            width: 65vw
+            margin-right: 20px
+    @media (max-width: 767px)
+        .sec
+            width: auto
+            margin-right: 0
+
+//
+.detailArticle
+    .detailContent
+        padding: 135px 0 170px 0
+        &:nth-child(2n)
+            background-color: #f9f9f9
+        .contentFrame
+            width: 100%
+            max-width: 1160px
+            margin: 0 auto
+            &.show
+                .deTitle
+                    opacity: 1
+                    transform: translate3d(0,0,0)
+                    transition: transform .7s cubic-bezier(.25,.46,.33,.98) .5s,opacity .7s cubic-bezier(.25,.46,.33,.98) .3s
+                .deSubTitle
+                    opacity: 1
+                    transform: translate3d(0,0,0)
+                    transition: transform .7s cubic-bezier(.25,.46,.33,.98) .8s,opacity .7s cubic-bezier(.25,.46,.33,.98) .6s
+            .deTitle
+                opacity: 0
+                transform: translate3d(0,30px,0)
+            .deSubTitle
+                opacity: 0
+                transform: translate3d(0,30px,0)
+    .exArtists 
+        .contentFrame
+            width: 100%
+            max-width: 1200px
+    @media (max-width: 1250px)
+        .exArtists 
+            .contentFrame
+                width: 90%
+        .exEvent
+            .contentFrame
+                width: 90%
+    @media (max-width: 767px)
+        .detailContent
+            padding: 75px 0 110px 0
+
+.deTitle
+    +fs(32)
+    font-family: 'FuturaPT-Heavy','微軟正黑體'
+    font-weight: 900
+    text-align: center
+    margin: 0 0 5px 0
+    padding: 0 20px
+    .vice
+        +fs(30)
+.deSubTitle
+    +fs(18)
+    text-align: center
+    margin: 0 0 50px 0
+    padding: 0 20px
+
+//
+.exAbout
+    .mediaBox
+        max-width: 1160px
+        max-height: 620px
+        overflow: hidden
+        margin: 0 auto 50px auto
+        position: relative
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+        &.hasVideo
+            .maskBox
+                cursor: pointer
+                display: block
+        .maskBox
+            background-color: rgba(0,0,0,0.5)
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            z-index: 1
+            display: none
+        .playBtn
+            border-radius: 50%
+            border: solid 1px #fff
+            color: #fff
+            width: 50px
+            height: 50px
+            display: flex
+            align-items: center
+            justify-content: center
+            position: absolute
+            right: 30px
+            bottom: 20px
+    .contentBox
+        padding: 0 60px
+        margin: 0 0 40px 0
+        // max-height: 310px
+        max-height: 300px
+        overflow: hidden
+        position: relative
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+        .content
+            +fs(17)
+            margin: 0 0 20px 0
+            .italy
+                font-style: italic
+            .text
+                margin: 0 0 30px 0
+                display: block
+                &:last-child
+                    margin: 0
+    .moreBtn
+        color: #5d5d5d
+        +fs(15)
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        display: flex
+        justify-content: flex-end
+        padding: 0 60px 0 0
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+        .btn
+            cursor: pointer
+            transition: color .5s ease
+            display: flex
+            justify-content: center
+            align-items: center
+            &:hover
+                color: #e83434
+                i,i::after
+                    background: #e83434
+            &.expand
+                i::after
+                    display: none
+                .less
+                    display: inline-block
+                .more
+                    display: none
+            .less
+                display: none
+            i
+                display: inline-block
+                width: 10px
+                height: 2px
+                background: #5d5d5d
+                position: relative
+                margin: 0 10px 0 0
+                &::after
+                    content: ''
+                    width: 2px
+                    height: 10px
+                    background: #5d5d5d
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%,-50%)
+
+    @media (max-width: 1250px)
+        .contentBox
+            width: 94%
+            margin: 0 auto 40px auto
+    @media (max-width: 767px)
+        .contentBox
+            width: 90%
+            padding: 0
+
+.slide.fade
+    width: 90%
+    max-width: 560px
+    margin: auto
+//
+@keyframes flogo
+    0%
+        transform: translateX(0)
+    40%
+        transform: translateX(100%)
+    60%
+        transform: translateX(100%)
+    100%
+        transform: translateX(200%)
+.exArtists
+    .artType
+        display: flex
+        flex-wrap: wrap
+        .bearBox
+            margin: 0 0 35px 0
+        .imgFrame
+            color: #fff
+            display: flex
+            flex-direction: column
+            align-items: center
+            .name
+                +fs(17)
+                line-height: 1.5
+                color: #444
+                text-align: center
+                padding: 0 0 35px 0
+                .title
+                    font-weight: 900
+        .imgBox
+            position: relative
+            display: block
+            margin: 0 0 20px 0
+        .hoverBox
+            +fs(16)
+            background-color: rgba(0,0,0,0)
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: background-color .5s ease
+            &:hover
+                background-color: rgba(0,0,0,0.5)
+                .text
+                    opacity: 1
+                    transform: translateY(0)
+            .text
+                opacity: 0
+                transform: translateY(100px)
+                transition: opacity .5s ease, transform .5s ease
+                &:after
+                    content: ''
+                    display: block
+                    background-color: #fff
+                    width: 50%
+                    height: 1px
+                    margin: 10px auto 0 auto
+        .iconBox
+            +fs(22)
+            position: absolute
+            right: 10px
+            bottom: 10px
+    .typeBox50
+        .bearBox
+            width: 50%
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease
+        .imgFrame
+            width: 97%
+            max-width: 560px
+            margin: 0 auto
+            .imgBox
+                max-width: 560px
+                max-height: 335px
+    .typeBox25
+        .bearBox
+            width: 25%
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease
+        .imgFrame
+            width: 85%
+            max-width: 255px
+            margin: 0 auto
+            .imgBox
+                max-width: 255px
+                max-height: 190px
+            .name
+                    display: flex
+                    flex-direction: column
+    .typeBox100
+        justify-content: center
+        position: relative
+        .bearTextBox
+            width: 100%
+            max-width: 1040px
+            margin: 0 auto
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease .2s
+            .textBox
+                position: relative
+                overflow: hidden
+                &.slick-slide
+                    .text
+                        opacity: 0
+                        transition: opacity 0.4 ease
+                &.slick-current
+                    &:after
+                        animation: flogo 1200ms
+                    .text
+                        opacity: 1
+                        transition: opacity 1.5s ease .7s
+                &:after
+                    content: ''
+                    display: block
+                    background-color: #444
+                    width: 100%
+                    height: 100%
+                    position: absolute
+                    left: -100%
+                    top: 0
+            .text
+                +fs(17)
+                color: #444
+        .bearBox
+            width: 100%
+            max-width: 740px
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease
+            .slick-list
+                z-index: 1
+        .slickBtnArea
+            +fs(40)
+            color: #7f7f7f
+            position: absolute
+            left: 0
+            top: 0
+            z-index: 0
+            width: 100%
+            height: 65%
+            .prev, .next
+                cursor: pointer
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+            .prev
+                left: 9%
+            .next
+                right: 9%
+        .hoverBox
+            display: none
+        .iconBox
+            display: none
+        .imgFrame
+            margin: 0 auto
+            display: block
+            width: 100% !important
+            max-width: 740px
+            &.slick-slide
+                .name
+                    opacity: 0
+                    transform: translateY(100px)
+            &.slick-current
+                .name
+                    opacity: 1
+                    transform: translateY(0px)    
+                    transition: opacity 1s ease, transform 1s ease
+            .img
+                margin: 0 auto
+    &.more
+        &.event
+            .typeBox100
+                .imgFrame
+                    padding: 0 5px
+                .imgBox
+                    max-width: 350px
+        .typeBox100 
+            .bearBox
+                max-width: none
+            .slickBtnArea
+                .prev
+                    left: -7%
+                .next
+                        right: -7%
+            .imgFrame
+                width: 100% !important
+                margin: 0
+                max-width: 400px
+                padding: 0 45px
+            .imgBox
+                max-width: 310px
+                max-height: 410px
+        .textInfo
+            color: #444
+            .cnName
+                color: #000
+                +fs(20)
+                margin: 0 0 8px 0
+                overflow: hidden
+                text-overflow: ellipsis
+                display: -webkit-box
+                -webkit-line-clamp: 2
+                -webkit-box-orient: vertical
+                word-break: break-all
+                -webkit-box-orient: vertical
+            .enName
+                color: #000
+                +fs(12)
+                margin: 0 0 22px 0
+                overflow: hidden
+                text-overflow: ellipsis
+                display: -webkit-box
+                -webkit-line-clamp: 2
+                -webkit-box-orient: vertical
+                word-break: break-all
+                -webkit-box-orient: vertical
+            .dateBox
+                +fs(15)
+                display: flex
+                align-items: center
+                flex-wrap: wrap
+                .line
+                    background-color: #000
+                    width: 3px
+                    height: 1px
+                    margin: 0 5px
+                span
+                    +fs(12)
+    @media (max-width: 1365px)
+        &.more
+            .contentFrame
+                max-width: 1024px
+            .typeBox100
+                .bearBox
+                    .slickBtnArea
+                        .prev
+                            left: -5%
+                        .next
+                            right: -5%
+                .imgFrame
+                    padding: 0 25px
+    @media (max-width: 1250px)
+        .typeBox100
+            .slickBtnArea
+                .prev
+                    left: 0%
+                .next
+                    right: 0%
+    @media (max-width: 1200px)
+        &.more
+            .contentFrame
+                max-width: 860px
+    @media (max-width: 1023px)
+        .typeBox25
+            .bearBox
+                width: 33.33%
+        .typeBox100
+            .bearBox
+                width: 80%
+            .imgFrame
+                .name
+                    padding: 0
+        &.more
+            .contentFrame
+                max-width: 650px
+    @media (max-width: 767px)
+        .typeBox25
+            .bearBox
+                width: 50%
+        .typeBox50
+            .bearBox
+                width: 100%
+        .typeBox100
+            .bearBox
+                margin: 0 0 10px 0
+            .imgFrame
+                .name
+                    +fs(16)
+                    padding: 0
+            .slickBtnArea
+                +fs(25)
+                .prev, .next
+                    top: 37%
+        &.more
+            .contentFrame
+                max-width: 400px
+            .typeBox100
+                .imgFrame
+                    padding: 0 45px
+    @media (max-width: 600px)
+        .typeBox25
+            .bearBox
+                width: 100%
+    @media (max-width: 520px)
+        &.more
+            .contentFrame
+                max-width: 300px
+            .typeBox100
+                .imgFrame
+                    padding: 0 25px
+    @media (max-width: 413px)
+        &.more
+            .contentFrame
+                max-width: 250px
+
+//
+.exArtworks
+    .typeBox25
+        .bearBox
+            width: 25%
+        .imgFrame
+            width: 85%
+            max-width: 250px
+            margin: 0 auto
+            .imgBox
+                max-width: 250px
+                max-height: 250px
+            .name
+                padding: 0 0 15px 0
+                flex-direction: row
+                flex-wrap: wrap
+                justify-content: center
+    .btnStyle
+        padding: 40px 0 0 0
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+        .btn
+            width: 230px
+    @media (max-width: 1023px)
+        .typeBox25
+            .bearBox
+                width: 33.33%
+    @media (max-width: 767px)
+        .typeBox25
+            .bearBox
+                width: 50%
+    @media (max-width: 600px)
+        .typeBox25
+            .bearBox
+                width: 100%
+
+//
+.exEvent
+    &.schedule
+        .eventForm 
+            .time
+                // width: 19%
+                width: 30%
+                // max-width: 220px
+                max-width: none
+                div
+                    display: flex
+                    .date
+                        line-height: 28px
+                    @media all and (max-width: 1200px)
+                        display: inline-block
+            .loc
+                // width: 57%
+                width: 46%
+                max-width: 660px
+                padding-right: 10px
+        .formBody
+            // max-height: 800px !important
+            .list
+                flex-direction: column 
+    .btnStyle
+        padding: 40px 0 0 0
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+        .btn
+            width: 230px
+    .eventForm
+        .type
+            width: 17.5%
+            max-width: 200px
+        .name
+            width: 33.3%
+            max-width: 380px
+            padding-right: 3%
+        .loc
+            width: 26%
+            max-width: 300px
+        .time
+            width: 15%
+            max-width: 165px
+        .apply
+            width: 10%
+            max-width: 115px
+        .process
+            width: 15.5%
+            max-width: 180px
+        .macBox
+            width: 50%
+            .loc
+                width: 50%
+                padding-right: 5%
+            .time
+                // width: 30%
+                width: 50%
+                // padding-right: 3%
+                max-width: 100%
+                div
+                    display: flex
+                    flex-wrap: wrap
+            .apply
+                width: 20%
+    .formHead
+        border-top: solid 4px #000
+        padding: 16px 0 12px 0
+        display: flex
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+        .text
+            +fs(15)
+            font-weight: 900
+    .formBody
+        border-top: solid 4px #000
+        border-bottom: solid 4px #000
+        overflow: hidden
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease .2s
+        .mCSB_inside>.mCSB_container
+            margin-right: 0
+        .mCSB_scrollTools
+            width: 2px
+            opacity: 0 !important
+        .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+            background-color: #000 !important
+        .list
+            border-bottom: solid 1px #000
+            display: flex
+            align-items: center
+            min-height: 155px
+            padding: 24px 0
+            .box
+                width: 100%
+                min-height: 100px
+                display: flex
+                align-items: center
+            .processBox
+                width: 100%
+                position: relative
+                display: none
+                &.open
+                    margin: 24px 0 0 0
+                    padding: 35px 0
+                    &:before
+                        width: 100%
+                &:before
+                    content: ''
+                    display: block
+                    background-color: #000
+                    width: 100%
+                    height: 1px
+                    position: absolute
+                    left: 50%
+                    top: 0
+                    transform: translateX(-50%)
+                .boxTitle
+                    +fs(17)
+                    font-weight: 900
+                    margin: 0 0 18px 0
+                .contentBox
+                    margin: 0 0 40px 0
+                    &:last-child
+                        margin: 0
+                .text
+                    +fs(15)
+                    font-family: 'FuturaPT-Light','微軟正黑體'
+                .closeSlideUpBtn
+                    cursor: pointer
+                    width: 40px
+                    height: 40px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    position: absolute
+                    right: 0
+                    bottom: -10px
+        .mac
+            display: flex
+            align-items: center
+            border-bottom: solid 1px #000
+            padding: 16px 0
+            &:first-child
+                padding: 0 0 16px 0
+            &:last-child
+                border-bottom: none
+                padding: 16px 0 0 0
+        .type
+            .imgFrame
+                width: 80%
+        .name
+            +fs(17)
+        .loc
+            +fs(16)
+            .locTitle
+                +fs(17)
+                font-weight: 900
+        .time
+            +fs(15)
+            .date
+                font-weight: 900
+        .apply
+            +fs(14)
+            .link
+                cursor: pointer
+            .big
+                +fs(16)
+                font-weight: 900
+                font-family: 'FuturaPT-Heavy','微軟正黑體'
+        .process
+            cursor: pointer
+            font-weight: 900
+    @media (max-width: 1023px)
+        &.schedule
+            .formBody
+                .list
+                    .box
+                        flex-wrap: wrap
+            .eventForm
+                .time
+                    width: 35%
+                    max-width: none
+                    order: 0
+                .loc
+                    width: 100%
+                    max-width: none
+                    order: 3
+                    padding: 20px 0 0 0
+                .process
+                    width: 45%
+                    max-width: none
+                    order: 1
+                .apply
+                    width: 20%
+                    max-width: none
+                    order: 2
+                    text-align: right
+        .eventForm
+            .type
+                width: 160px
+                margin-right: 20px
+                max-width: none
+            .name
+                width: calc(100% - 180px)
+                max-width: none
+                padding: 0
+            .loc
+                max-width: none
+            .time
+                max-width: none
+            .apply
+                max-width: none
+            .macBox
+                width: 100%
+        .formHead
+            display: none
+        .formBody
+            .list
+                flex-wrap: wrap
+                border-bottom: solid 2px #000
+            .type
+                .imgFrame
+                    width: 100%
+    @media (max-width: 767px)
+        &.schedule
+            .eventForm
+                .time
+                    width: 100%
+                    padding: 0 0 20px 0
+                    display: flex
+                    justify-content: space-between
+                .process
+                    width: 50%
+                .apply
+                    width: 50%
+            .formBody
+                // max-height: 70vh !important
+        .btnStyle
+            display: none
+        .eventForm
+            .type
+                width: 100%
+                margin: 0
+                .img
+                    margin: 0 auto
+            .name
+                width: 100%
+                padding: 15px 0 0 0
+                text-align: center
+            .macBox
+                padding: 15px 0 0 0
+                .loc
+                    width: 100%
+                    padding: 15px 0 0 0
+                    order: 2
+                .time
+                    // width: 65%
+                    width: 100%
+                    // display: flex
+                    // flex-wrap: wrap
+                    order: 0
+                .apply
+                    width: 35%
+                    order: 1
+                    text-align: right
+        .formBody
+            .mac
+                flex-wrap: wrap
+
+//
+.exSmallBox
+    color: #fff
+    overflow: hidden
+    position: fixed
+    left: 0
+    top: 0
+    z-index: -1
+    width: 100vw
+    height: 100vh
+    &.open
+        z-index: 10
+        .bg
+            width: 100%
+            transition: width .8s ease
+        .bookClose
+            transform: translateY(0%)
+            transition: transform .8s ease 1s
+        .extraGum.show
+            opacity: 1
+        .exTitle
+            opacity: 1
+            transform: translateY(0px)
+            transition: opacity 1s ease .5s, transform 1s ease .5s
+        .ruleList
+            &:before, &:after
+                width: 100%
+                transition: width 1s ease .8s
+            .list
+                opacity: 1
+                transition: opacity 1s ease 1.2s
+        .backTopBtn 
+            opacity: 1
+            transition: opacity 1s ease 1s
+    &.close
+        .bg
+            width: 0%
+            transition: width .9s ease .2s
+        .bookClose
+            transform: translateY(-100%)
+            transition: transform .5s
+        .extraGum.show
+            opacity: 0
+            transition: opacity .7s ease
+        .backTopBtn 
+            opacity: 0
+            transition: opacity .7s ease
+
+    .mCSB_inside>.mCSB_container
+        margin: 0
+
+    .bg
+        background-color: rgba(233,62,62,0.9)
+        width: 0
+        height: 100%
+        position: absolute
+        left: 50%
+        top: 0
+        z-index: -1
+        transform: translateX(-50%)
+    .container
+        width: 100%
+        max-width: 740px
+        min-height: 100vh
+        margin: 0 auto
+        position: relative
+    .bookClose 
+        cursor: pointer
+        width: 95px
+        height: 95px
+        margin: 0 auto 120px auto
+        flex-direction: column
+        transform: translateY(-100%)
+        &:before
+            content: ''
+            display: block
+            background-color: #d2d2d2
+            width: 100%
+            height: 8px
+        .iconBox
+            width: 47px
+            height: 47px
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            &:before, &:after
+                background-color: #fff
+                margin: 0
+    .backTopBtn
+        opacity: 0
+        border-color: #fff
+
+    .extraGum
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        visibility: hidden
+        opacity: 0
+        &.show
+            position: relative
+            z-index: 1
+            visibility: visible
+            opacity: 0
+        &.admissionBox
+            .ruleList
+                .list
+                    align-items: flex-start
+    .exTitle
+        +fs(30)
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        text-align: center
+        margin: 0 0 25px 0
+        opacity: 0
+        transform: translateY(100px)
+    .ruleList
+        position: relative
+        &:before
+            content: ''
+            display: block
+            background-color: #ef8989
+            width: 0
+            height: 3px
+            position: absolute
+            left: 50%
+            top: 0
+            transform: translateX(-50%)
+        &:after
+            content: ''
+            display: block
+            background-color: #ef8989
+            width: 0
+            height: 3px
+            position: absolute
+            left: 50%
+            bottom: 0
+            transform: translateX(-50%)
+        .list
+            position: relative
+            display: flex
+            align-items: center
+            opacity: 0
+            &:last-child
+                &:after
+                    display: none
+            &:after
+                content: ''
+                display: block
+                background-color: #ef8989
+                width: 100%
+                height: 1px
+                position: absolute
+                left: 0
+                bottom: 0
+            .leftBox
+                width: 27%
+                padding: 22px 20px 22px 0
+            .rightBox
+                width: 73%
+            .item
+                border-bottom: solid 1px #ef8989
+                padding: 22px 0
+                &:last-child
+                    border-bottom: none
+        .ex
+            +fs(30)
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+        .name
+            +fs(20)
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            font-weight: 900
+    @media (max-width: 767px)
+        .container
+            padding: 0 5%
+        .bookClose
+            margin: 0 auto 60px auto
+        .ruleList
+            .list
+                flex-direction: column
+                .leftBox
+                    width: 100%
+                    text-align: center
+                .rightBox
+                    width: 100%
+
+//
+.exKid
+    .kidArea
+        width: 90%
+        max-width: 900px
+        margin: 0 auto 85px auto
+        &:last-child
+            margin: 0 auto
+        .imgFrame
+            margin: 0 0 30px 0
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease
+        .textFrame
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease .2s
+        .title
+            +fs(20)
+            font-weight: 900
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            margin: 0 0 10px 0
+        .subTitle
+            +fs(16)
+            font-weight: 900
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            margin: 0 0 25px 0
+        .text
+            +fs(15)
+        .list
+            color: #737373
+            display: flex
+            transition: color .5s ease
+            &:hover
+                color: #000
+            &.link
+                .text
+                    word-break: break-all
+            .box
+                padding: 5px 0
+                display: inline-flex
+                align-items: baseline
+            .icon
+                margin-right: 12px
+                
+//取消報名
+=afterLine()
+    content: ''
+    display: block
+    background-color: #000
+    width: 100%
+    height: 1px
+    position: absolute
+    left: 0
+    bottom: 0
+.exEvent
+    .aListInner
+        padding: 15px 0
+        position: relative
+        &:after
+            +afterLine()
+    .chrisAgreeBox
+        padding: 25px 0 0 0
+        max-width: 500px
+        margin: 0 auto
+    .mBookBag
+        .mCSB_scrollTools
+            width: 10px
+            opacity: 1 !important
+        .aList
+            justify-content: space-between
+            .aTitle
+                +fs(18)
+                font-weight: 900
+                width: 20.8%
+                max-width: 210px
+            .aName
+                +fs(15)
+                width: 64%
+                max-width: 670px
+                margin: 0 10px
+                padding: 15px 5px
+            .aMoney
+                width: 15.5%
+                max-width: 155px
+            .aNumber
+                +fs(20)
+                font-family: 'FuturaPT-Heavy','微軟正黑體'
+                .text
+                    +fs(13)
+            .aCount
+                width: 17%
+                max-width: 175px
+                .icon
+                    cursor: pointer
+                    width: 34px
+                    height: 36px
+                    position: relative
+                    &:before, &:after
+                        content: ''
+                        display: block
+                        background-color: #8c8c8c
+                        width: 10px
+                        height: 2px
+                        position: absolute
+                        left: 50%
+                        top: 50%
+                        transform: translate(-50%,-50%)
+                .minus
+                    &:after
+                        display: none
+                .plus
+                    &:after
+                        width: 2px
+                        height: 10px
+                .number
+                    border: none
+                    background-color: rgba(0,0,0,0)
+                    width: calc(100% - 68px)
+                    text-align: center
+                .text
+                    +fs(13)
+                    color: #8c8c8c
+                    width: 100%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                .countBox
+                    background-color: #eaeaea
+                    width: 100%
+                    max-width: 120px
+                    height: 36px
+                    display: flex
+        .soldOut
+            .aMoney
+                color: #cacaca
+        .friBtnBox
+            width: 25.5%
+            max-width: 270px
+            margin-left: auto
+            display: flex
+            align-items: center
+            justify-content: center
+            .icon
+                border-radius: 50%
+                width: 20px
+                height: 20px
+                margin-right: 10px
+                display: flex
+                align-items: center
+                justify-content: center
+            .check
+                +fs(12)
+                color: #000
+                border: solid 1px #000
+                transition: color .5s ease, background-color .5s ease
+                &:before
+                    transform: scale(0.8)
+            .remove
+                border: solid 1px #000
+                &:before
+                    content: ''
+                    display: block
+                    background-color: #000
+                    width: 8px
+                    height: 2px
+            .bar
+                +fs(15)
+                cursor: pointer
+                display: flex
+                align-items: center
+                padding: 5px 10px 5px 10px
+                transition: opacity .5s ease
+                &:hover
+                    .text
+                        transform: translateX(5px)
+                .text
+                    transition: transform .5s ease
+            .alert
+                +fs(13)
+                color: #e83434
+                padding: 5px 10px 5px 10px
+        .bg
+           background-color: rgba(233, 62, 62, 0.9)
+        .container
+            &.noShow
+                display: none
+        .containerA
+            max-width: 1270px
+            .bunBox
+                margin: 0 0 60px 0
+            .bookBox
+                max-width: 1090px
+                padding: 105px 20px
+            .formHeadBox
+                .title
+                    +fs(25)
+                    font-family: 'FuturaPT-Heavy','微軟正黑體'
+            .formBodyBox
+                margin: 0 0 80px 0
+            .aListInner
+                display: flex
+                align-items: center
+            .aList
+                width: 100%
+                min-height: 100px
+                position: relative
+                display: inline-flex
+                &:last-child
+                    .aListInner
+                        &:after
+                            display: none
+            .soldOut
+                .aMoney 
+                    flex-direction: column
+                    align-items: flex-start
+                    justify-content: center
+        .containerB
+            max-width: 1270px
+            .bookBox
+                max-width: 1090px
+                padding: 100px 20px 105px 20px
+            .numberBox
+                padding: 40px 0 0 0
+            .layout
+                border-top: solid 4px #000
+                &:last-child
+                    border-bottom: solid 4px #000
+                &.formBodyBox
+                    border-bottom: none
+            .detail
+                border-top: solid 1px #000
+                padding: 35px 0 25px 0
+                display: flex
+                &.black
+                    .friBtnBox
+                        .check
+                            color: #fff
+                            background-color: #000
+                &.hideMemBtn
+                    .sameMemBtn
+                        opacity: 0
+                        visibility: hidden
+                .dBox
+                    width: 51%
+                    .dText
+                        +fs(14)
+                        border: none
+                        width: 100%
+                        font-weight: normal
+                        word-break: inherit
+                    input[type="date"]
+                        font-size: 14px
+            .aList
+                width: 100%
+                min-height: 100px
+                position: relative
+                display: inline-flex
+                align-items: center
+                .aName
+                    width: 40%
+                    max-width: 420px
+                    padding: 15px 0
+                    margin: 0
+                .aMoney
+                    width: 19.5%
+                    max-width: 200px
+                    padding: 0 4% 0 0
+                    display: flex
+                    justify-content: flex-end
+            .aListInner
+                &:after
+                    display: none
+        .containerC
+            .bookBox
+                padding: 120px 20px 105px 20px
+            .reTitle
+                +fs(30)
+                font-weight: 900
+                text-align: center
+                margin: 0 0 25px 0
+            .bunBox
+                border-top: solid 4px #000
+                padding: 35px 0
+                margin: 0
+                .nameTitle
+                    +fs(20)
+                    font-weight: 900
+            .formBodyBox
+                .list
+                    min-height: auto
+            .numberBox
+                padding: 40px 0 0 0
+            .ufoBall
+                margin: 0 7px
+        .containerD
+            max-width: 610px
+            .for_scroll
+                width: 100%
+            .cancelBlock
+                opacity: 1
+            .container
+                padding: 0
+                min-height: auto
+            .textInfoBox
+                .name
+                    width: 100%
+                    max-width: none
+                    padding: 0
+            .typeInfoBox
+                max-width: 450px
+                text-align: center
+            .btnStyle
+                padding: 0
+                &:hover
+                    .styleG
+                        color: #fff
+                        background-color: #b8b8b8
+                        border-color: #b8b8b8
+                .btn
+                    width: 50%
+                .styleG
+                    background-color: #7f7f7f
+                    border-color: #7f7f7f
+                    &:hover
+                        background-color: #7f7f7f
+                        border-color: #7f7f7f
+        .containerM
+            .bookBox
+                padding: 140px 20px 105px 20px
+            .logArea
+                padding: 0
+                min-height: auto
+            .logFrame
+                width: 100%
+                max-width: 620px
+            .mocaTitleSec
+                color: #000
+            .list
+                min-height: auto
+                background-color: unset
+            .forgotArea
+                color: #000
+                .text
+                    font-weight: 900
+            .ctrlArea
+                .btnB
+                    &:hover
+                        color: #fff
+                        background-color: #e05050
+                .btnA
+                    color: #000
+                    border-color: #000
+                    &:hover
+                        border-color: #e05050
+    @media (max-width: 1023px)
+        .mBookBag
+            .containerB
+                .aList
+                    flex-wrap: wrap
+                    padding: 15px 0
+                    .aTitle
+                        width: 100%
+                        max-width: none
+                        padding: 0
+                    .aName
+                        width: 100%
+                        max-width: none
+                    .aMoney
+                        width: 55%
+                        max-width: none
+                        justify-content: flex-start
+                    .aCount
+                        width: 45%
+                .detail
+                    flex-wrap: wrap
+                    .sNum
+                        width: 30%
+                        order: 0
+                    .dBox
+                        width: 100%
+                        order: 2
+            .friBtnBox
+                width: 70%
+                max-width: none
+                order: 1
+    @media (max-width: 767px)
+        .aListInner
+            &:after
+                display: none
+        .chrisAgreeBox
+            .text
+                width: 60%
+        .mBookBag
+            background-color: #fff
+            .containerA
+                .aList
+                    flex-direction: column
+                    border-bottom: solid 1px #000
+                    padding: 15px 0
+                    &:last-child
+                        border-bottom: none
+                .aTitle
+                    width: 100%
+                    max-width: none
+                    padding: 0
+                .aName
+                    width: 100%
+                    max-width: none
+                    margin: 0
+                    padding: 10px 0
+                .aMoney
+                    width: 100%
+                    max-width: none
+                    padding: 0
+            .containerB
+                .aList
+                    .aCount
+                        max-width: 120px
+            .containerC
+                .bookBox
+                    padding: 120px 20px 40px 20px
+                .formBodyBox
+                    .detail
+                        .sNum
+                            width: 100%
+                            max-width: none
+            .containerD
+                .titleInfoBox
+                    padding: 50px 0 35px 0
+                .typeInfoBox
+                    margin: 0 auto
+                .btnStyle
+                    display: flex

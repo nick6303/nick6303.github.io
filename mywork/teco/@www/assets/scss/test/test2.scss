@@ -1,0 +1,82 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+main {
+    display: block;
+    padding-top: 150px;
+    min-height: 100vh;
+}
+
+.testbox1 {
+    section{
+        position: relative;
+    }
+    .srcbox {
+        height: auto;
+        width: 90vw;
+        max-width: 800px;
+        overflow: hidden;
+        opacity: 0;
+        position: relative;
+        .customizeImg,
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+    }
+
+    .upload {
+        position: relative;
+        @include flex-left;
+        width: 200px;
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        label {
+            background-color: #ccc;
+            padding: 10px 20px;
+            width: 100%;
+            @include flex-center;
+        }
+    }
+    #canvas {
+        @include flex-center;
+        opacity: 0;
+        animation: fadeIn 1s both 1s;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .testImg{
+    }
+    button {
+        width: 100px;
+        height: 50px;
+    }
+}
+
+.testbox2 {
+	margin-top:80px;
+    .bgs {
+    	ul{
+    		display: flex;
+    		li{
+    			width:200px;
+    		}
+    	}
+    }
+    #canvas{
+    	margin-top: 80px;
+    }
+}

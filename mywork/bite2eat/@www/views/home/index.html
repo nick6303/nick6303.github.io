@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>bite2eat</title>
+    <!-- icon -->
+    <!--    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/ico/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/ico/favicon.png"> -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <link rel="stylesheet" href="../../assets/css/home/home.css">
+</head>
+
+<body id="home" class="index">
+    <header></header>
+    <main>
+        <!-- 後端請注意:此處的圖片如果為淺色圖 data-color值為whiteBg 如果為深色圖 data-color 為空白 -->
+        <article class="banner">
+            <div class="_slick">
+                <ul>
+                    <!-- 後端請注意:此處的slick內容有可能是影片或是圖片 如果是影片 請在data-value 填上img 如果是影片請填上video-->
+                    <!-- 後端請注意:banner 是否出現文字 由data-hastext 控制 -->
+                    <li class="list-item " data-value="img" data-hastext="true">
+                        <!--圖片 電腦版尺寸1920*1200  手機板尺寸1024*1366 -->
+                        <picture>
+                            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                            <!-- 後端請注意:手機圖片大小1024_1366 -->
+                            <source srcset="../../upload/fa2/home/banner_img_rwd_1024_1366.jpg" media="(max-width:1024px)">
+                            <!-- 後端請注意:如果圖片是淺色圖的話請在data-color 填入 whiteBg 深色圖請空白-->
+                            <!-- 後端請注意:電腦圖片大小1920_1200 -->
+                            <img src="../../upload/fa2/home/banner_img1_1920_1200.jpg" alt="">
+                        </picture>
+                        <div class="banner_slick_text">
+                            <span class="icon-logo"></span>
+                            <div class="link">
+                                <div class="li"><a href="../menu/index.html">start taste</a></div>
+                                <div class="li menu burger">
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <a href="../reservation/index.html">reservation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item video-item" data-value="video" data-hastext="false">
+                        <!-- 後端請注意:如果是影片的話li請依照此格式 -->
+                        <div class="open-box" data-videoid="wzclxenwTNc"></div>
+                        <div id="player1"></div>
+                        <span></span>
+                        <div class="banner_slick_text">
+                            <span class="icon-logo"></span>
+                            <div class="link">
+                                <div class="li"><a href="../menu/index.html">start taste</a></div>
+                                <div class="li menu burger">
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <a href="../reservation/index.html">reservation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item" data-value="img" data-hastext="true">
+                        <picture>
+                            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                            <source srcset="" media="(max-width:1024px)">
+                            <!-- 後端請注意:如果圖片是淺色圖的話請在data-color 填入 whiteBg 深色圖請空白-->
+                            <img data-color="" src="../../upload/fa2/home/banner_img2_1920_1200.jpg" alt="">
+                        </picture>
+                        <div class="banner_slick_text">
+                            <span class="icon-logo"></span>
+                            <div class="link">
+                                <div class="li"><a href="../menu/index.html">start taste</a></div>
+                                <div class="li menu burger">
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <a href="../reservation/index.html">reservation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item video-item" data-value="video" data-hastext="false">
+                        <!-- 後端請注意:如果是影片的話li請依照此格式 -->
+                        <div class="open-box" data-videoid="z-NGwhrfi98"></div>
+                        <div id="player2"></div>
+                        <span></span>
+                        <div class="banner_slick_text">
+                            <span class="icon-logo"></span>
+                            <div class="link">
+                                <div class="li"><a href="../menu/index.html">start taste</a></div>
+                                <div class="li menu burger">
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <a href="../reservation/index.html">reservation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="dots"></div>
+            <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+            <!-- 後端請注意:小圖的位置有8個組合,1.左上 top_left 2.中上top_center 3.右上 top_right 4.左中 center_left 4.右中 center_right 5.左下 bottom_left 6.中下 bottom_center 7.右下 bottom_right-->
+            <div class="smallImg_area">
+                <div class="smallImg bottom_right" data-X="-30%" data-Y="15%">
+                    <!-- 後端請注意:圖片進場後的動畫必須要讓客戶可選    -->
+                    <div>
+                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/banner_smallImg1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+        </article>
+        <!-- 活動訊息 -->
+        <article class="activity_nav">
+            <ul>
+                <li>
+                    <a href="../news/detail.html">
+                        <div class="date">
+                            <h2>13TH</h2>
+                            <p>DEC. 2017</p>
+                        </div>
+                        <div class="_text">
+                            <h2>平安夜 火雞快閃</h2>
+                            <!-- 後端請注意:此處字數限制35字 超過會變... -->
+                            <p>來薄多義過平安夜，招待你吃火雞大餐！今年的平安夜就和親朋好友就在...</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../news/detail.html">
+                        <div class="date">
+                            <h2>12TH</h2>
+                            <p>DEC. 2017</p>
+                        </div>
+                        <div class="_text">
+                            <h2>台北復南店開幕打卡優惠！</h2>
+                            <!-- 後端請注意:此處字數限制35字 超過會變... -->
+                            <p>在開幕期間到薄多義復南店用餐，拍照打卡上傳臉書或IG就可以免服務費！</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../news/detail.html">
+                        <div class="date">
+                            <h2>01TH</h2>
+                            <p>DEC. 2017</p>
+                        </div>
+                        <div class="_text">
+                            <h2>薄多義小小Pizza師傅，第二期重新招生</h2>
+                            <!-- 後端請注意:此處字數限制35字 超過會變... -->
+                            <p>這次的場次都在禮拜六，爸爸媽媽假日不知道帶小朋友去哪裡，就來參加...
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+            <div class="smallImg_area">
+                <div class="smallImg bottom_right_right" data-X="25%" data-Y="30%">
+                    <div>
+                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/activity_smallImg1.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+        </article>
+        <article class="content">
+            <!-- 最新消息 -->
+            <section class="news">
+                <!-- 後端請注意:此處title要可換顏色 -->
+                <div class="_title" style="color: #d09b37">
+                    <p>LATEST EXPERIENCE 最新體驗</p>
+                    <h2>Fun, Eat, 2gether!</h2>
+                </div>
+                <!-- 後端請注意:此處有三種格式:1.big 2.middle 3.small -->
+                <div class="big open-box" data-videoid="wzclxenwTNc">
+                    <!-- 後端請注意:此處有時是圖片有時是影片 影片請上方big 加上class "open-box" 開啟影片燈箱 data-video放youtube影片的id -->
+                    <a href="javascript:void(0)">
+                        <div class="_img">
+                            <picture>
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source srcset="../../upload/fa2/home/news_big_img2_700_800.jpg" media="(max-width:650px)">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/news_big_img1_1560_840.jpg" alt="">
+                            </picture>
+                        </div>
+                        <!-- 後端請注意:此處_text要可換顏色黑和白 -->
+                        <!-- 後端請注意:處_text 有3個位置 1.left 2.center 3.right 請加上相應的class-->
+                        <div class="_text center white">
+                            <h2>TAIPEI</h2>
+                            <h3>Fuxing South opening!</h3>
+                            <p>台北復南店新開幕，打卡聚餐新地點</p>
+                            <span><i></i></span>
+                        </div>
+                        <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                        <div class="smallImg_area">
+                            <div class="smallImg bottom_left" data-X="-10%" data-Y="-50%">
+                                <!-- 後端請注意:此處的hover動畫有四種 1.jello 2.bounce 3.rubberBand 4.tada 只要在下方的div加上相對應的class 就會有hover效果 預設值為空白 -->
+                                <div class="jello">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/news_smallImg1.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="smallImg center_right" data-X="20%" data-Y="-50%">
+                                <div class="jello">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/news_smallImg2.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+                    </a>
+                </div>
+                <div class="middle">
+                    <a href="javascript:void(0)">
+                        <div class="_img">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/news_middle_img_1020_675.jpg" alt="">
+                        </div>
+                        <!-- 後端請注意:此處_text要可換顏色黑和白 -->
+                        <!-- 後端請注意:處_text 有3個位置 1.top 2.center 3.bottom 請加上相應的class-->
+                        <div class="_text center white">
+                            <h3>naples pizza</h3>
+                            <p>拿波里窯烤披薩</p>
+                        </div>
+                        <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                        <div class="smallImg_area">
+                            <div class="smallImg bottom_left" data-X="20%" data-Y="-50%">
+                                <!-- 後端請注意:此處的hover動畫有四種 1.jello 2.bounce 3.rubberBand 4.tada 只要在下方的div加上相對應的class 就會有hover效果 預設值為空白 -->
+                                <div class="rubberBand">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/news_smallImg3.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+                    </a>
+                </div>
+                <div class="small">
+                    <a href="javascript:void(0)">
+                        <div class="_img">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/news_small_img_900_1130.jpg" alt="">
+                        </div>
+                        <!-- 後端請注意:此處_text要可換顏色黑和白 -->
+                        <!-- 後端請注意:處_text 有3個位置1.top 2.center 3.bottom 請加上相應的class-->
+                        <div class="_text top white">
+                            <h3>Herbs Chicken & Tomato Sauce</h3>
+                            <p>茄汁香草雞肉麵</p>
+                        </div>
+                        <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                        <div class="smallImg_area">
+                            <div class="smallImg bottom_right" data-X="30%" data-Y="-20%">
+                                <!-- 後端請注意:此處的hover動畫有四種 1.jello 2.bounce 3.rubberBand 4.tada 只要在下方的div加上相對應的class 就會有hover效果 預設值為空白 -->
+                                <div class="tada">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/news_smallImg5.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+                    </a>
+                </div>
+            </section>
+            <!-- 菜色選單 -->
+            <section class="category" style="background-image: url('../../upload/fa2/home/category_bg_1530_710.jpg')">
+                <!-- 後端請注意:此處_title要可換顏色 -->
+                <div class="_title" style="color: #d09b37">
+                    <p>CATAGORY 所有菜色</p>
+                    <h2>Bite it Today</h2>
+                </div>
+                <div class="_nav">
+                    <ul>
+                        <!-- 後端請注意:第一個li 務必要有 class="active" data-clicked="true"-->
+                        <li class="active" data-clicked="true">
+                            <h2>non-vegetarian</h2>
+                            <p>葷食與套餐</p>
+                        </li>
+                        <li>
+                            <h2>vegetarian</h2>
+                            <p>素食與套餐</p>
+                        </li>
+                        <li>
+                            <h2>beverage</h2>
+                            <p>飲品介紹</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slick_area">
+                    <div class="_slick active">
+                        <ul>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <!-- 可更換的底圖 -->
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <!-- 可更換的底圖 -->
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <!-- 可更換的底圖 -->
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="_slick">
+                        <ul>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="_slick">
+                        <ul>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../menu/detail.html">
+                                    <div class="_img" style="background-image: url(../../upload/fa2/home/category_icon_bg1_130_130.png);">
+                                        <img src="../../upload/fa2/home/category_icon1.png" alt="">
+                                    </div>
+                                    <div class="_text">
+                                        <h2>pizza</h2>
+                                        <p>手工窯烤披薩</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="arrow">
+                    <span class="icon-arrow_left"></span>
+                    <span class="icon-arrow_right"></span>
+                </div>
+                <span class="hr"></span>
+                <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                <div class="smallImg_area">
+                    <div class="smallImg bottom_right" data-X="10%" data-Y="-60px">
+                        <div>
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/category_smallImg4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="smallImg bottom_left" data-X="-40%" data-Y="-130px">
+                        <div>
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/category_smallImg1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="smallImg bottom_center" data-X="-50%" data-Y="10%">
+                        <div>
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/category_smallImg2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+            </section>
+            <!-- 品牌故事 -->
+            <section class="brandspirit">
+                <!-- 後端請注意:此處_title要可換顏色 -->
+                <div class="_title" style="color: #d09b37">
+                    <p>brandspirit 人人都能享受美好滋味</p>
+                    <h2>Affordable Gourmet</h2>
+                </div>
+                <div class="big" style="background-color: #e4dacd">
+                    <a href="javascript:void(0)">
+                        <!-- 後端請注意:此處_text要可換顏色 -->
+                        <div class="_text" style="color: #403931">
+                            <h2>STORY</h2>
+                            <h3>品牌故事</h3>
+                        </div>
+                        <div class="_img">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/brandspirit_big_img1_420_290.png" alt="">
+                        </div>
+                        <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                        <div class="smallImg_area">
+                            <div class="smallImg top_top_left" data-X="-20%" data-Y="-30%">
+                                <!-- 後端請注意:此處的hover動畫有四種 1.jello 2.bounce 3.rubberBand 4.tada 只要在下方的div加上相對應的class 就會有hover效果 預設值為空白 -->
+                                <div class="bounce">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/brandspirit_smallImg1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="smallImg center_left" data-X="-30%" data-Y="-40%">
+                                <div class="bounce">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/brandspirit_smallImg2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+                    </a>
+                </div>
+                <div class="small">
+                    <!-- 只有一個框 -->
+                    <div class="oneBox" style="background-color:#313d2b">
+                        <a href="javascript:void(0)">
+                            <!-- 後端請注意:此處_text要可換顏色 -->
+                            <div class="_text" style="color: #fff">
+                                <h2>bithday event</h2>
+                                <h3>專屬壽星禮，準備給最特別的您</h3>
+                                <p>當月壽星即可享有，點擊了解活動詳情</p>
+                            </div>
+                            <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                            <div class="smallImg_area">
+                                <div class="smallImg top_top_right" data-X="50%" data-Y="-10%">
+                                    <!-- 後端請注意:此處的hover動畫有四種 1.jello 2.bounce 3.rubberBand 4.tada 只要在下方的div加上相對應的class 就會有hover效果 預設值為空白 -->
+                                    <div class="jello">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/brandspirit_smallImg3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="smallImg bottom_left" data-X="20%" data-Y="20%">
+                                    <div class="jello">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/brandspirit_smallImg4.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+                        </a>
+                    </div>
+                    <!-- 有兩個框 -->
+                    <!-- 後端請注意:此處圖文要可對換 如需要對換 加上class reverse-->
+                    <div class="twoBox">
+                        <a href="javascript:void(0)">
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/brandspirit_small_img_380_400.jpg" alt="">
+                            </div>
+                            <!-- 後端請注意:此處_text要可換顏色 -->
+                            <div class="_text" style="background-color: #a54b41; color: #fff">
+                                <h2>little pizza cooker</h2>
+                                <h3>小小披薩廚師，一起體驗美味</h3>
+                            </div>
+                            <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                            <div class="smallImg_area">
+                                <div class="smallImg bottom_center" data-X="-50%" data-Y="50%">
+                                    <!-- 後端請注意:此處的hover動畫有四種 1.jello 2.bounce 3.rubberBand 4.tada 只要在下方的div加上相對應的class 就會有hover效果 預設值為空白 -->
+                                    <div class="jello">
+                                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/brandspirit_smallImg5.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <!-- 門市據點 -->
+        <article class="storeHold">
+            <!-- 後端請注意:此處_title要可換顏色 -->
+            <div class="_title" style="color: #d09b37">
+                <p>LOCATION 尋找據點</p>
+                <h2>Find Bite 2 Eat</h2>
+            </div>
+            <div class="sideSlick">
+                <ul>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img3_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img4_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img1_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img2_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img3_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sideSlick">
+                <ul>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img4_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img1_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img2_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img3_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img4_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mainSlick">
+                <ul>
+                    <li>
+                        <a href="../storehold/detail.html">
+                            <div class="_img">
+                                <img data-lazy="../../upload/fa2/home/storeHold_slick_img1_875_645.jpg" alt="">
+                                <!-- 黑色布幕 -->
+                                <span></span>
+                            </div>
+                            <div class="_text">
+                                <span><i></i></span>
+                                <h2>taichung</h2>
+                                <p>公益店</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../storehold/detail.html">
+                            <div class="_img">
+                                <img data-lazy="../../upload/fa2/home/storeHold_slick_img2_875_645.jpg" alt="">
+                                <!-- 黑色布幕 -->
+                                <span></span>
+                            </div>
+                            <div class="_text">
+                                <span><i></i></span>
+                                <h2>taichung</h2>
+                                <p>公益店</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../storehold/detail.html">
+                            <div class="_img">
+                                <img data-lazy="../../upload/fa2/home/storeHold_slick_img3_875_645.jpg" alt="">
+                                <!-- 黑色布幕 -->
+                                <span></span>
+                            </div>
+                            <div class="_text">
+                                <span><i></i></span>
+                                <h2>taichung</h2>
+                                <p>公益店</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../storehold/detail.html">
+                            <div class="_img">
+                                <img data-lazy="../../upload/fa2/home/storeHold_slick_img4_875_645.jpg" alt="">
+                                <!-- 黑色布幕 -->
+                                <span></span>
+                            </div>
+                            <div class="_text">
+                                <span><i></i></span>
+                                <h2>taichung</h2>
+                                <p>公益店</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../storehold/detail.html">
+                            <div class="_img">
+                                <img data-lazy="../../upload/fa2/home/storeHold_slick_img4_875_645.jpg" alt="">
+                                <!-- 黑色布幕 -->
+                                <span></span>
+                            </div>
+                            <div class="_text">
+                                <span><i></i></span>
+                                <h2>taichung</h2>
+                                <p>公益店</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="arrow">
+                    <span class="icon-arrow_left"></span>
+                    <span class="icon-arrow_right"></span>
+                </div>
+                <!-- ↓↓↓↓↓小圖放置區塊↓↓↓↓↓↓↓ -->
+                <div class="smallImg_area">
+                    <div class="smallImg bottom_right" data-X="30%" data-Y="70%">
+                        <div>
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/smallImg/storeHold_img1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- ↑↑↑↑↑↑小圖放置區塊↑↑↑↑↑↑ -->
+            </div>
+            <div class="sideSlick">
+                <ul>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img2_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img3_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img4_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img1_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img2_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sideSlick">
+                <ul>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img3_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img4_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img1_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img2_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/home/storeHold_slick_img3_875_645.jpg" alt="">
+                            <!-- 黑色布幕 -->
+                            <span></span>
+                        </div>
+                        <div class="_text">
+                            <h2>taichung</h2>
+                            <p>公益店</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+
+</body>
+
+</html>

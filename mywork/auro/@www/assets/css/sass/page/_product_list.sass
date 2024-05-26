@@ -1,0 +1,132 @@
+.product_list
+    .nav_wrap
+        flex-wrap: wrap
+    .dropdowns
+        +rwd(767)
+            width: 100%
+        &>ul>li
+            min-width: 200px
+            +rwd(600)
+                min-width: auto
+                width: calc(50% - 4px)
+    .bothdoor
+        +rwd(767)
+            width: 100%
+
+    &__content
+
+
+    &__inner
+        width: 100%
+        max-width: 1200px
+        // padding: 0 20px
+        margin: 50px auto 140px
+        text-align: center
+        >ul
+            display: inline-flex
+            justify-content: center
+            flex-wrap: wrap
+            width: auto
+            margin: 0 auto
+            overflow: hidden
+            position: relative
+            width: 100%
+            >li
+                width: 25%
+                max-width: 300px
+                display: flex
+                transition: .5s
+                position: relative
+                +rwd(1440)
+                    width: 33.33%
+                    max-width: 100%
+                +rwd(940)
+                    width: 50%
+                +rwd(600)
+                    min-width: 100%
+
+            .thebg
+                position: absolute
+                top: -500px
+                left: -500px
+                height: 450px
+                width: 25%
+                background: red
+                transition: .5s
+
+
+
+.product_list_box
+    width: 100%
+    padding: 0
+    transition: .5s
+    position: relative
+    z-index: 1
+    .on.fontB &
+        a
+            color: #000
+    .on &
+        a
+            color: #fff
+        .spanhover
+        .spannohover
+            display: none
+        
+    a
+        padding: 50px 0 
+        display: inline-block
+        width: 100%
+        +flex
+        flex-direction: column
+        text-align: center 
+        transition: .25s
+    h4
+        font-size: px(18) 
+        margin-bottom: 15px
+    p
+        font-weight: 700    
+        width: 100%
+        font-size: px(14) 
+        margin-bottom: 20px
+    h5
+        font-size: px(14)
+
+    &__img
+        position: relative
+        margin-bottom: 20px
+        img
+            width: 100%
+            max-width: 200px
+    &__txt
+        div
+            display: inline-block
+            padding: 0 5px 8px
+            position: relative
+            span
+                font-weight: 700
+                display: inline-block
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 4px
+                background: rgba(255,255,255,.5)
+
+.bothdoor
+    // width: 100%
+    font-size: px(14) 
+    height: 40px
+    ul
+        +flex
+        flex-wrap: nowrap
+        height: 100%
+    li
+        +flex
+        height: 100%
+        width: 100%
+        padding: 10px 20px
+        background: #f2f2f2
+        &.on
+            background: #1b41a2
+            color: #fff
+                

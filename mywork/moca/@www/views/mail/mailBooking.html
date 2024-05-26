@@ -1,0 +1,873 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            line-height: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        table,
+        tr,
+        td {
+            font-size: 0;
+        }
+
+        .table_img img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'JaguarJC', serif, 'Microsoft JhengHei';
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+        h5 {
+            font-size: 18px;
+        }
+
+        h5.list1 {
+            font-size: 20px;
+            line-height: 1;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+
+        h5.list2 {
+            font-size: 14px;
+            line-height: 1;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+
+        h5.list3 {
+            font-size: 14px;
+            line-height: 1;
+            margin: 0 0 10px 0;
+            padding: 0;
+            margin-bottom: 70px;
+        }
+
+        h4 {
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        h6 {
+            font-size: 16px;
+            vertical-align: middle;
+            display: inline;
+        }
+
+        @media (max-width: 760px) {
+            h1 {
+                text-align: center;
+                font-size: 30px;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h5.list1 {
+                font-size: 16px;
+                padding: 0 20px 0 20px;
+            }
+
+            h5.list2 {
+                font-size: 12px;
+                padding: 0 20px 0 20px;
+            }
+
+            h5.list3 {
+                font-size: 12px;
+                margin-bottom: 70px;
+                padding: 0 20px 0 20px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            font-family: serif;
+            line-height: 2;
+            letter-spacing: .5px;
+            color: #000;
+        }
+        p .weight {
+            font-weight: 900;
+        }
+
+        @media (max-width: 900px) {
+            p {
+                line-height: 1.5;
+            }
+
+            .footer_padding2 p {
+                font-size: 12px;
+                line-height: 1.5;
+            }
+        }
+
+        hr {
+            background: #aaa;
+            border: 0;
+            height: 1px;
+        }
+
+        .icon img {
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-family: serif;
+            border: 0;
+            outline: none;
+        }
+
+        a img {
+            border: 0;
+        }
+
+        span {
+            display: inline;
+            vertical-align: middle;
+        }
+
+        .table_father {
+            padding: 80px;
+        }
+
+        @media (max-width: 767px) {
+            .table_father {
+                padding: 30px;
+            }
+        }
+
+        .table_wrap {
+            width: 1300px;
+            padding: 60px 80px 60px 80px;
+            margin: 0 auto;
+        }
+
+        .table_wrap.tiger {
+            padding: 20px 80px 20px 80px;
+        }
+
+        @media (max-width: 1400px) {
+            .table_wrap {
+                width: 1100px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .table_wrap {
+                width: 900px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .table_wrap {
+                width: 100%;
+                padding: 60px 80px 60px 80px;
+                margin: 0 auto;
+            }
+        }
+
+        .footer_padding {
+            padding: 60px 20px 20px 20px;
+        }
+
+        .footer_padding2 {
+            padding: 20px 20px 60px 20px;
+        }
+
+        @media (max-width: 760px) {
+            .table_wrap {
+                width: 100%;
+                padding: 20px 20px 20px 20px;
+            }
+
+            .footer_padding2 {
+                padding: 20px 0px 60px 0px;
+            }
+        }
+
+        .span-1 {
+            overflow: hidden;
+            display: inline-block;
+            display: inline-block !important;
+        }
+
+        .span-2 {
+            overflow: hidden;
+            display: none !important;
+        }
+
+        .span-3 {
+            overflow: hidden;
+            display: inline-block !important;
+        }
+
+        .span-logo {
+            text-align: right;
+        }
+
+        .span-title {
+            padding: 25% 0px 0 0px;
+        }
+
+        .table_bg {
+            background: #F4F4F4;
+        }
+
+        .span-td {
+            font-size: 0;
+            border: 1px solid #fff;
+            padding: 50px 0 30px 0;
+        }
+
+        .span-td-border {
+            border: 1px solid #fff;
+            max-width: 368px;
+            padding: 50px 0 30px 0;
+        }
+
+        .span-td .span-td-border {
+            border: 0;
+            width: 100%;
+            max-width: 100% !important;
+            padding: 0px 0px 0px 0px;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .span-1 {
+                display: none !important;
+            }
+
+            .span-2 {
+                display: inline-block !important;
+            }
+
+            .span-3 {
+                max-width: none !important;
+                width: 100% !important;
+            }
+
+            .span-logo {
+                text-align: center;
+            }
+
+            .span-3>table {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+            .last-tag {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <style>
+            /*20190313 新增*/
+            /*
+        @font-face {
+            font-family: 'FuturaPT-Book';
+            src: url("../../assets/font/FuturaPT/Book/FuturaPTBook.woff") format("woff"), url("../../assets/font/FuturaPT/Book/FuturaPTBook.ttf") format("truetype"), url("../../assets/font/FuturaPT/Book/FuturaPTBook.svg") format("svg"); 
+        }
+        @font-face {
+            font-family: 'FuturaPT-Heavy';
+            src: url("../../assets/font/FuturaPT/Heavy/FuturaPTHeavy.woff2") format("woff2"), url("../../assets/font/FuturaPT/Heavy/FuturaPTHeavy.woff") format("woff"), url("../../assets/font/FuturaPT/Heavy/FuturaPTHeavy.ttf") format("truetype"), url("../../assets/font/FuturaPT/Heavy/FuturaPTHeavy.svg") format("svg"); 
+        }
+        */
+        .signUpInfo span { vertical-align: baseline;}
+        .signUpInfo p {font-family: 'FuturaPT-Book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;}
+        .signUpInfo .serialBox { margin: 0 0 50px 0; }
+        .signUpInfo .serialBox .text { font-size: 13px; font-size: 0.8125rem; }
+        .signUpInfo .serialBox .number { font-size: 24px; font-size: 1.5rem; font-weight: 900; }
+        .signUpInfo .bunBox { margin: 0 0 90px 0; text-align: center; }
+        .signUpInfo .bunBox .nameTitle { font-size: 30px; font-size: 1.875rem; padding: 0 0 30px 0; width: 100%; max-width: none; }
+        .signUpInfo .bunBox .stuffing { padding: 0 0 30px 0; }
+        .signUpInfo .bunBox .stuffing:last-child { padding: 0; }
+        .signUpInfo .bunBox .stuffing .title { font-size: 13px; font-size: 0.8125rem; padding: 0 0 8px 0; }
+        .signUpInfo .bunBox .stuffing .text { font-size: 16px; font-size: 1rem; font-weight: 900; font-family: 'FuturaPT-Heavy','微軟正黑體'; }
+        .signUpInfo .formBox { margin: 0 auto; }
+        .signUpInfo .formBox .list { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;  padding: 30px 0 25px 0; -webkit-box-pack: justify; -ms-flex-pack: justify; -webkit-justify-content: space-between; justify-content: space-between;}
+        .signUpInfo .formHeadBox { border-top: solid 4px #000; padding: 15px 0; }
+        .signUpInfo .formHeadBox .title { font-size: 18px; font-size: 1.125rem; text-align: center; font-weight: 900; font-family: 'FuturaPT-Heavy','微軟正黑體'; }
+        .signUpInfo .formBodyBox { border-top: solid 4px #000; border-bottom: solid 4px #000; }
+        .signUpInfo .formBodyBox .detail { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: start; -ms-flex-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start; }
+        .signUpInfo .formBodyBox .detail .sNum { font-size: 30px; font-size: 1.875rem; font-family: 'FuturaPT-Heavy','微軟正黑體'; width: 29%; max-width: 225px; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; }
+        .signUpInfo .formBodyBox .detail .dBox { width: 71%; }
+        .signUpInfo .formBodyBox .detail .dList { border-bottom: solid 1px #000; padding: 16px 0; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
+        .signUpInfo .formBodyBox .detail .dList:last-child { border-bottom: none; }
+        .signUpInfo .formBodyBox .detail .dTitle { font-size: 14px; font-size: 0.875rem; font-weight: 900; width: 100%; width: 165px; min-width: 165px; }
+        .signUpInfo .formBodyBox .detail .dTitle .en { font-size: 15px; font-size: 0.9375rem; font-family: 'FuturaPT-Heavy','微軟正黑體'; }
+        .signUpInfo .formBodyBox .detail .dText { font-size: 14px; font-size: 0.875rem; font-weight: 900; width: -webkit-calc(100% - 165px); width: calc(100% - 165px); word-break: break-all; }
+        .signUpInfo .formBodyBox .list { padding: 30px 0 25px 0; border-bottom: solid 1px #000; -webkit-box-pack: justify; -ms-flex-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; }
+        .signUpInfo .formBodyBox .list:last-child { border-bottom: none; }
+        .signUpInfo .formBodyBox .title { font-size: 18px; font-size: 1.125rem; font-weight: 900; }
+        .signUpInfo .formBodyBox .countBox { font-size: 14px; font-size: 0.875rem; font-weight: 900; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-wrap: wrap; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+        .signUpInfo .formBodyBox .countBox .item:first-child { padding-right: 40px; }
+        .signUpInfo .formBodyBox .countBox .item:last-child { padding-right: 5px; }
+        .signUpInfo .formBodyBox .countBox .num { font-size: 20px; font-size: 1.25rem; font-family: 'FuturaPT-Heavy','微軟正黑體'; }
+        .signUpInfo .numberBox { font-size: 15px; font-size: 0.9375rem; font-weight: 900; padding: 40px 0 60px 0; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -ms-flex-wrap: wrap; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+        .signUpInfo .numberBox .num { font-size: 30px; font-size: 1.875rem; font-family: 'FuturaPT-Heavy','微軟正黑體'; }
+        .signUpInfo .ufoBallBox { position: absolute; left: 50%; bottom: -50px; -webkit-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); transform: translate(-50%, 0); }
+        .signUpInfo .noticeBox { background-color: #e5e5e5; width: 100%; padding: 35px 0; position: relative; }
+        .signUpInfo .noticeBox .articleBox { padding: 0 50px; }
+        .signUpInfo .noticeBox .nameTitle { font-weight: 900; text-align: center; padding: 0 0 35px 0; }
+        .signUpInfo .noticeBox .nameTitle .en { font-size: 25px; font-size: 1.5625rem; font-family: 'FuturaPT-Heavy','微軟正黑體'; }
+        .signUpInfo .noticeBox .nameTitle .cn { font-size: 24px; font-size: 1.5rem; }
+        .signUpInfo .noticeBox .title { font-size: 18px; font-size: 1.125rem; font-weight: 900; padding: 0 0 10px 0; }
+        .signUpInfo .noticeBox .text { font-size: 15px; font-size: 0.9375rem; line-height: 1.7; }
+    </style>
+</head>
+
+<body>
+    <style>
+
+        * {
+            line-height: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        table,
+        tr,
+        td {
+            font-size: 0;
+        }
+
+        .table_img img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'JaguarJC', serif, 'Microsoft JhengHei';
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+        h5 {
+            font-size: 18px;
+        }
+
+        h5.list1 {
+            font-size: 20px;
+            line-height: 1;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+
+        h5.list2 {
+            font-size: 14px;
+            line-height: 1;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+
+        h5.list3 {
+            font-size: 14px;
+            line-height: 1;
+            margin: 0 0 10px 0;
+            padding: 0;
+            margin-bottom: 70px;
+        }
+
+        h4 {
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        h6 {
+            font-size: 16px;
+            vertical-align: middle;
+            display: inline;
+        }
+
+        @media (max-width: 760px) {
+            h1 {
+                text-align: center;
+                font-size: 30px;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h5.list1 {
+                font-size: 16px;
+                padding: 0 20px 0 20px;
+            }
+
+            h5.list2 {
+                font-size: 12px;
+                padding: 0 20px 0 20px;
+            }
+
+            h5.list3 {
+                font-size: 12px;
+                margin-bottom: 70px;
+                padding: 0 20px 0 20px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            font-family: serif;
+            line-height: 2;
+            letter-spacing: .5px;
+            color: #000;
+        }
+        p .weight {
+            font-weight: 900;
+        }
+
+        @media (max-width: 900px) {
+            p {
+                line-height: 1.5;
+            }
+
+            .footer_padding2 p {
+                font-size: 12px;
+                line-height: 1.5;
+            }
+        }
+
+        hr {
+            background: #aaa;
+            border: 0;
+            height: 1px;
+        }
+
+        .icon img {
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-family: serif;
+            border: 0;
+            outline: none;
+        }
+
+        a img {
+            border: 0;
+        }
+
+        span {
+            display: inline;
+            vertical-align: middle;
+        }
+
+        .table_father {
+            padding: 80px;
+        }
+
+        @media (max-width: 767px) {
+            .table_father {
+                padding: 30px;
+            }
+        }
+
+        .table_wrap {
+            width: 1300px;
+            padding: 60px 80px 60px 80px;
+            margin: 0 auto;
+        }
+
+        .table_wrap.tiger {
+            padding: 20px 80px 20px 80px;
+        }
+
+        @media (max-width: 1400px) {
+            .table_wrap {
+                width: 1100px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .table_wrap {
+                width: 900px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .table_wrap {
+                width: 100%;
+                padding: 60px 80px 60px 80px;
+                margin: 0 auto;
+            }
+        }
+
+        .footer_padding {
+            padding: 60px 20px 20px 20px;
+        }
+
+        .footer_padding2 {
+            padding: 20px 20px 60px 20px;
+        }
+
+        @media (max-width: 760px) {
+            .table_wrap {
+                width: 100%;
+                padding: 20px 20px 20px 20px;
+            }
+
+            .footer_padding2 {
+                padding: 20px 0px 60px 0px;
+            }
+        }
+
+        .span-1 {
+            overflow: hidden;
+            display: inline-block;
+            display: inline-block !important;
+        }
+
+        .span-2 {
+            overflow: hidden;
+            display: none !important;
+        }
+
+        .span-3 {
+            overflow: hidden;
+            display: inline-block !important;
+        }
+
+        .span-logo {
+            text-align: right;
+        }
+
+        .span-title {
+            padding: 25% 0px 0 0px;
+        }
+
+        .table_bg {
+            background: #F4F4F4;
+        }
+
+        .span-td {
+            font-size: 0;
+            border: 1px solid #fff;
+            padding: 50px 0 30px 0;
+        }
+
+        .span-td-border {
+            border: 1px solid #fff;
+            max-width: 368px;
+            padding: 50px 0 30px 0;
+        }
+
+        .span-td .span-td-border {
+            border: 0;
+            width: 100%;
+            max-width: 100% !important;
+            padding: 0px 0px 0px 0px;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .span-1 {
+                display: none !important;
+            }
+
+            .span-2 {
+                display: inline-block !important;
+            }
+
+            .span-3 {
+                max-width: none !important;
+                width: 100% !important;
+            }
+
+            .span-logo {
+                text-align: center;
+            }
+
+            .span-3>table {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+            .last-tag {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+
+    </style>
+    <table class="table_father" align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%; margin: 0; background: #E1E1E1;">
+        <tr>
+            <td>
+                <table class="table_wrap tiger" align="center" border="0" cellpadding="0" cellspacing="0" style=" background: #e72e35;">
+                    <!--信件title-->
+                    <tr>
+                        <td>
+                            <div class="span-2" align="center" style="width:100%; padding: 0px 0px 50px 0px;">
+                                <div width="100%" align="center" style="padding: 10px 0px 5px 0px;">
+                                    <h1>MOCA 註冊信</h1>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <img src="http://xwadex.com/_wxw_/mailsendertest-new/phpmailer/examples/images/testImg/logo.png"
+                                            alt="">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table_wrap" align="center" border="0" cellpadding="0" cellspacing="0" style=" background: #fff;">
+                    <tr>
+                        <td>
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+                                <!-- 大標題 -->
+                                <!-- 小內文 -->
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td>
+                                                    <p>
+                                                        <h6 style="font-size: 28px; font-weight: 900;">佩蒂，您已報名活動!</h6>
+                                                    </p>
+                                                    <br>
+                                                    <br>
+
+                                                    <p>
+                                                        親愛的會員您好，恭喜您已報名XXXXXXX活動，您的活動序號為<span class="weight">AE586HJ37</span>。<br>
+                                                        提醒您，若為付費活動，請於三天內完成付款，逾時付款將取消報名資格。您隨時可以在會員中心查詢您的報名紀錄及狀態。
+                                                    </p>
+                                                    <br>
+                                                    <br>
+
+                                                    <p>
+                                                        查看我報名的活動頁面 <a href="http://xwadex.com/_wxw_/mailsendertest-new/phpmailer/examples/images/testImg/victor.jpg">http://moca.wdd.idv.tw/moca/tw/register_confirm/svxTg3qqGnnzufgubGWO</a>
+                                                    </p>
+                                                    <br>
+                                                    <br>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">>
+                                            <tr>
+                                                <td>
+                                                    <p>------------------------------------------------------------------------</p>
+                                                    <br>
+                                                    <!---->
+                                                    <div class="signUpInfo">
+                                                        <div class="container">
+                                                            <div class="bookBlock">
+                                                                <div class="bookBox">
+                                                                    <div class="serialBox">
+                                                                    <p class="text">您的活動序號為</p>
+                                                                    <p class="number">AE586HJ37</p>
+                                                                    </div>
+
+                                                                    <div class="bunBox">
+                                                                    <h3 class="nameTitle">「原」創就是力量－從傳統手藝到當代藝術</h3>
+                                                                    <div class="stuffing">
+                                                                        <p class="title">活動場次</p>
+                                                                        <p class="text">2018/11/03  SAT. 14:00 - 15:30</p>
+                                                                    </div>
+                                                                    <div class="stuffing">
+                                                                        <p class="title">活動地點</p>
+                                                                        <p class="text">台北當代藝術館1F活動大廳</p>
+                                                                    </div>
+                                                                    </div>
+
+                                                                    <div class="formBox">
+                                                                    <div class="formHeadBox">
+                                                                        <p class="title">報名資訊</p>
+                                                                    </div>
+
+                                                                    <ul class="formBodyBox">
+                                                                        <li class="list">
+                                                                        <p class="title">一般定價 / 多人同行</p>
+                                                                        <div class="countBox">
+                                                                            <p class="item">票價 <span class="num">NT$ 4,000</span> /人</p>
+                                                                            <p class="item">人數 <span class="num">2</span></p>
+                                                                        </div>
+                                                                        </li>
+                                                                        <li class="list detail">
+                                                                        <span class="sNum">01</span>
+                                                                        <ul class="dBox">
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">NAME</span> <span class="cn">姓名</span></p>
+                                                                            <p class="dText">王大明</p>
+                                                                            </li>
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">MOBILE</span> <span class="cn">手機號碼</span></p>
+                                                                            <p class="dText">+886 912345678</p>
+                                                                            </li>
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">E-MAIL</span> <span class="cn">電子信箱</span></p>
+                                                                            <p class="dText">mocataipei@gmail.com</p>
+                                                                            </li>
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">BIRTH DATE</span> <span class="cn">生日</span></p>
+                                                                            <p class="dText">1996 . 05 . 18</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        </li>
+                                                                        <li class="list detail">
+                                                                        <span class="sNum">02</span>
+                                                                        <ul class="dBox">
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">NAME</span> <span class="cn">姓名</span></p>
+                                                                            <p class="dText">張小美</p>
+                                                                            </li>
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">MOBILE</span> <span class="cn">手機號碼</span></p>
+                                                                            <p class="dText">+886 912345678</p>
+                                                                            </li>
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">E-MAIL</span> <span class="cn">電子信箱</span></p>
+                                                                            <p class="dText">prettymei@gmail.com</p>
+                                                                            </li>
+                                                                            <li class="dList">
+                                                                            <p class="dTitle"><span class="en">BIRTH DATE</span> <span class="cn">生日</span></p>
+                                                                            <p class="dText">1996 . 05 . 18</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                    <div class="numberBox">
+                                                                        <p class="text">您的報名人數為 <span class="num">2</span>人 ，</p>
+                                                                        <p class="text">費用總計為 <span class="num">NT$8,000</span></p>
+                                                                    </div>
+                                                                    
+                                                                    <div class="noticeBox">
+                                                                        <div class="articleBox">
+                                                                        <h5 class="nameTitle">
+                                                                            <span class="en">Notice</span>
+                                                                            <span class="cn">注意事項</span>
+                                                                        </h5>
+                                                                        <h6 class="title">上課須知</h6>
+                                                                        <p class="text">
+                                                                            1. 上課期間如遇颱風等天災，依臺北市政府規定公告停課，並另擇日補課。<br>
+                                                                            2. 本館保有所有課程變更之權力，活動因故無法執行，本館將另行通知上課日期。<br>
+                                                                            3. 現場繳費收據請妥善保存，開課第一天將依此辦理報到手續。<br>
+                                                                            4. 上課期間請務必攜配上課證。<br>
+                                                                        </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p>
+                                                        這邊以下為當代可以自行補充的文字說明區<br>
+                                                        台北當代藝術博覽會（TAIPEI DANGDAI Art & Ideas），本周18日重磅登場，地點位於台北南港展覽館。<br>
+                                                        瑞士銀行（UBS）為此次活動的贊助者，台灣區總經理陳允懋指出透過這一次的合作，可以促成文化之間的交流，<br>
+                                                        同時讓台灣藝壇的發展更為多元，並藉由瑞士銀行台灣區客戶對當代藝術的支持，為台北當代藝術博覽會帶來更多的效益與客群。<br>
+                                                    </p>
+
+                                                    <p>
+                                                        此信件為系統自動寄發，請勿直接回覆此信！
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>

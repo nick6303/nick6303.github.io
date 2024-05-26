@@ -1,0 +1,2651 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'CenturyGothic';
+  src: url("CenturyGothic");
+  src: url("../../../assets/font/CenturyGothic/regular/CenturyGothic.woff2") format("woff2"), url("../../../assets/font/CenturyGothic/regular/CenturyGothic.woff") format("woff"), url("../../../assets/font/CenturyGothic/regular/CenturyGothic.ttf") format("truetype"), url("../../../assets/font/CenturyGothic/regular/CenturyGothic.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'CenturyGothic-bold';
+  src: url("../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.woff2") format("woff2"), url("../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.woff") format("woff"), url("../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.ttf") format("truetype"), url("../../../assets/font/CenturyGothic/bold/CenturyGothic-Bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MyriadPro-Regular';
+  src: url("../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.woff2") format("woff2"), url("../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.woff") format("woff"), url("../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.ttf") format("truetype"), url("../../../assets/font/MyriadPro/Regular/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MyriadPro-Light';
+  src: url("../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.eot") format("embedded-opentype"), url("../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.woff2") format("woff2"), url("../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.woff") format("woff"), url("../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.ttf") format("truetype"), url("../../../assets/font/MyriadPro/Light/MYRIADPRO-LIGHT.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MyriadPro-Semibold';
+  src: url("../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.eot") format("embedded-opentype"), url("../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.woff2") format("woff2"), url("../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.woff") format("woff"), url("../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.ttf") format("truetype"), url("../../../assets/font/MyriadPro/Semibold/MyriadPro-Semibold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MyriadPro-Bold';
+  src: url("MYRIADPRO-BOLD.eot");
+  src: url("../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.eot") format("embedded-opentype"), url("../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.woff2") format("woff2"), url("../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.woff") format("woff"), url("../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.ttf") format("truetype"), url("../../../assets/font/MyriadPro/Bold/MYRIADPRO-BOLD.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../../../assets/font/allicon/icomoon.eot?sex4r3");
+  src: url("../../../assets/font/allicon/icomoon.eot?sex4r3#iefix") format("embedded-opentype"), url("../../../assets/font/allicon/icomoon.ttf?sex4r3") format("truetype"), url("../../../assets/font/allicon/icomoon.woff?sex4r3") format("woff"), url("../../../assets/font/allicon/icomoon.svg?sex4r3#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-user:before {
+  content: "\e971"; }
+
+.icon-eye:before {
+  content: "\e9ce"; }
+
+.icon-eye-blocked:before {
+  content: "\e9d1"; }
+
+.icon-cross2:before {
+  content: "\ea0f"; }
+
+.icon-batter:before {
+  content: "\e917"; }
+
+.icon-van:before {
+  content: "\e919"; }
+
+.icon-robot:before {
+  content: "\e918"; }
+
+.icon-calendar:before {
+  content: "\e916"; }
+
+.icon-mapdot:before {
+  content: "\e915"; }
+
+.icon-download:before {
+  content: "\e914"; }
+
+.icon-cad:before {
+  content: "\e90d"; }
+
+.icon-doc:before {
+  content: "\e912"; }
+
+.icon-pdf:before {
+  content: "\e913"; }
+
+.icon-home-slick-arrow-top:before {
+  content: "\e911"; }
+
+.icon-home-slick-arrow-left:before {
+  content: "\e90e"; }
+
+.icon-home-slick-arrow-right:before {
+  content: "\e90f"; }
+
+.icon-play:before {
+  content: "\e910"; }
+
+.icon-scroll:before {
+  content: "\e909"; }
+
+.icon-menu:before {
+  content: "\e904"; }
+
+.icon-earth:before {
+  content: "\e90b"; }
+
+.icon-square:before {
+  content: "\e90c"; }
+
+.icon-magnifier:before {
+  content: "\e903"; }
+
+.icon-triangle_down:before {
+  content: "\e905"; }
+
+.icon-triangle_left:before {
+  content: "\e906"; }
+
+.icon-triangle_right:before {
+  content: "\e907"; }
+
+.icon-triangle_up:before {
+  content: "\e908"; }
+
+.icon-house:before {
+  content: "\e90a"; }
+
+.icon-cross:before {
+  content: "\e900"; }
+
+.icon-slick-arrow-left:before {
+  content: "\e901"; }
+
+.icon-slick-arrow-right:before {
+  content: "\e902"; }
+
+.icon-plus:before {
+  content: "\ea0a"; }
+
+.icon-facebook:before {
+  content: "\ea90"; }
+
+.icon-instagram:before {
+  content: "\ea92"; }
+
+.icon-twitter:before {
+  content: "\ea96"; }
+
+.icon-youtube:before {
+  content: "\ea9d"; }
+
+/* ===============  iphone X 修正全螢幕時內容與系統保留區重疊的問題  =============== */
+.container {
+  padding-top: constant(safe-area-inset-top);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-left); }
+
+/* ===============  HTML5 display definitions  =============== */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+/* ===============  Base  =============== */
+html {
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  position: relative;
+  font-size: 100%;
+  line-height: 1;
+  font-weight: normal;
+  font-family: 'CenturyGothic-bold', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif;
+  /*text-rendering: optimizeLegibility; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+  -webkit-overflow-scrolling: touch; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+iframe {
+  display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+img {
+  border: 0;
+  display: block;
+  /*流動圖片設定*/
+  max-width: 100%;
+  height: auto; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 0; }
+
+dl,
+menu,
+ol,
+ul {
+  margin: 0; }
+
+ul {
+  list-style: none;
+  list-style-image: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* ===============  Forms  =============== */
+form {
+  margin: 0; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px; }
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+button,
+input {
+  line-height: normal;
+  border: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible; }
+
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: none; }
+
+/*去除input藍色框框*/
+input,
+button,
+select,
+textarea {
+  outline: none; }
+
+*:focus {
+  outline: none; }
+
+input:focus,
+textarea:focus {
+  outline: none; }
+
+/*placeholder 點一下後緩慢消失*/
+input:placeholder {
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease; }
+
+input::-webkit-input-placeholder {
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease; }
+
+input:-moz-placeholder {
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease; }
+
+input::-moz-placeholder {
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease; }
+
+input:-ms-input-placeholder {
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease; }
+
+input:focus:placeholder {
+  color: transparent; }
+
+input:focus::-webkit-input-placeholder {
+  color: transparent; }
+
+input:focus:-moz-placeholder {
+  color: transparent; }
+
+input:focus::-moz-placeholder {
+  color: transparent; }
+
+input:focus:-ms-input-placeholder {
+  color: transparent; }
+
+/*去除異常空格*/
+picture {
+  overflow: hidden;
+  font-size: 0; }
+
+/* ===============  Typography  =============== */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+small {
+  font-size: 75%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+hr {
+  height: 1px;
+  border: none; }
+
+/* ===============  Global  =============== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit; }
+
+/*----------------------動畫區-------------------*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated-slow {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.hide,
+.wp1,
+.wp2,
+.wp3,
+.wp4,
+.wp5,
+.wp6 {
+  visibility: hidden; }
+
+.fadeInDown,
+.fadeInDown2,
+.fadeInUp,
+.pulse,
+.fadeIn,
+.bounceIn {
+  visibility: visible !important; }
+
+.delay-02s {
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s; }
+
+.delay-03s {
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s; }
+
+.delay-05s {
+  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s; }
+
+.delay-06s {
+  animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s; }
+
+.delay-07s {
+  animation-delay: 0.7s;
+  -webkit-animation-delay: 0.7s; }
+
+.delay-08s {
+  animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s; }
+
+.delay-09s {
+  animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s; }
+
+.delay-10s {
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s; }
+
+.delay-15s {
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s; }
+
+.delay-20s {
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s; }
+
+.delay-25s {
+  animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s; }
+
+.delay-30s {
+  animation-delay: 3s;
+  -webkit-animation-delay: 3s; }
+
+.delay-35s {
+  animation-delay: 3.5s;
+  -webkit-animation-delay: 3.5s; }
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(25%);
+    transform: translateY(5%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(25%);
+    transform: translateY(25%); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0);
+    transform: translate(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  animation-duration: .8s;
+  -webkit-animation-duration: .8s;
+  animation-delay: .2s;
+  -webkit-animation-delay: .2s; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  animation-duration: .8s;
+  -webkit-animation-duration: .8s;
+  animation-delay: .2s;
+  -webkit-animation-delay: .2s; }
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); } }
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+@-webkit-keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); } }
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%); }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); } }
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+/* 由左滑入*/
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight; }
+
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); }
+  100% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); } }
+
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); }
+  100% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); } }
+
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp; }
+
+@-webkit-keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown; }
+
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%); }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%); } }
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp; }
+
+@-webkit-keyframes allin {
+  0% { }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    opacity: 1; } }
+
+@keyframes allin {
+  0% { }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    opacity: 1; } }
+
+/*font-size*/
+/*font-size*/
+/*font-weight*/
+/*font-weight*/
+/*RWD*/
+/*RWD*/
+/*transiton*/
+/*transiton*/
+/*hide word*/
+/*hide word*/
+/* 偽元素線條*/
+/* 標題設定----------------------*/
+/* 偽燈箱detail內頁標題設定---------------*/
+/*圓形十字----------------*/
+/* 藍色方塊X*/
+/*-------------- 基礎燈箱設定-----------------*/
+/* --------------黑色連結按鈕------------*/
+/* --------------首頁應用區的橘色線條------------*/
+/* 內頁版的slogang設定*/
+/* 首頁產品slick的箭頭*/
+/*font-size*/
+/*font-size*/
+/*font-weight*/
+/*font-weight*/
+/*RWD*/
+/*RWD*/
+/*transiton*/
+/*transiton*/
+/*hide word*/
+/*hide word*/
+/* 偽元素線條*/
+/* 標題設定----------------------*/
+/* 偽燈箱detail內頁標題設定---------------*/
+/*圓形十字----------------*/
+/* 藍色方塊X*/
+/*-------------- 基礎燈箱設定-----------------*/
+/* --------------黑色連結按鈕------------*/
+/* --------------首頁應用區的橘色線條------------*/
+/* 內頁版的slogang設定*/
+/* 首頁產品slick的箭頭*/
+body {
+  width: 100vw;
+  overflow-x: hidden; }
+
+/*banner的slick*/
+.banner {
+  position: relative;
+  -webkit-animation: fadeIn 1.8s both ease-out;
+  animation: fadeIn 1.8s both ease-out; }
+  .banner ._slick ul li .slick_img {
+    height: 100vh;
+    overflow: hidden; }
+    @media all and (max-width: 1024px) {
+      .banner ._slick ul li .slick_img {
+        height: 100vh; } }
+    @media all and (max-width: 900px) {
+      .banner ._slick ul li .slick_img {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden; } }
+    .banner ._slick ul li .slick_img picture {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 100%;
+      width: 100%; }
+    .banner ._slick ul li .slick_img img {
+      width: 100%; }
+      @media all and (max-aspect-ratio: 17 / 10) {
+        .banner ._slick ul li .slick_img img {
+          width: auto;
+          max-width: unset;
+          height: 100%; } }
+
+/*banner純圖片*/
+.banner .banner_img picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%; }
+
+.banner .banner_img img {
+  width: 100%; }
+  @media all and (max-aspect-ratio: 17 / 10) {
+    .banner .banner_img img {
+      width: auto;
+      max-width: unset;
+      height: 100%; } }
+
+.banner.full .banner_img {
+  height: 100vh;
+  overflow: hidden; }
+  @media all and (max-width: 1024px) {
+    .banner.full .banner_img {
+      height: 100vh; } }
+  @media all and (max-width: 900px) {
+    .banner.full .banner_img {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden; } }
+
+.banner.short .banner_img {
+  height: 39.0625vw;
+  overflow: hidden; }
+  @media all and (max-width: 900px) {
+    .banner.short .banner_img {
+      height: 50vh;
+      width: 100vw;
+      overflow: hidden; } }
+
+/*banner的slogan*/
+.banner .banner_slogan {
+  max-width: 535px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 1px 1px 20px rgba(255, 255, 255, 0.5);
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease; }
+  .banner .banner_slogan h2 {
+    max-width: 535px;
+    font-size: 3.75rem;
+    font-family: 'MyriadPro-Semibold';
+    line-height: 1;
+    -webkit-animation: fadeInUp 2s both .5s;
+    animation: fadeInUp 2s both .5s; }
+    @media all and (max-width: 1024px) {
+      .banner .banner_slogan h2 {
+        font-size: 2.625rem; } }
+  .banner .banner_slogan h4 {
+    max-width: 535px;
+    font-size: 1.5rem;
+    font-family: 'MyriadPro-Regular';
+    line-height: 1.5;
+    margin-top: 20px;
+    -webkit-animation: fadeInUp 2s both 1s;
+    animation: fadeInUp 2s both 1s;
+    /*手機橫版*/ }
+    @media all and (max-width: 1024px) {
+      .banner .banner_slogan h4 {
+        font-size: 1.375rem; } }
+    @media all and (max-width: 900px) and (min-device-aspect-ratio: 1 / 1) {
+      .banner .banner_slogan h4 {
+        display: none; } }
+    @media all and (max-width: 700px) {
+      .banner .banner_slogan h4 {
+        font-size: 1.25rem; } }
+    @media all and (max-width: 500px) {
+      .banner .banner_slogan h4 {
+        display: none; } }
+  .banner .banner_slogan h3 {
+    max-width: 535px;
+    margin-top: 15px;
+    font-size: 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-weight: bold;
+    line-height: 1.5;
+    -webkit-animation: fadeInUp 2s both 1s;
+    animation: fadeInUp 2s both 1s; }
+    @media all and (max-width: 1024px) {
+      .banner .banner_slogan h3 {
+        font-size: 1.375rem; } }
+    .banner .banner_slogan h3:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: #ea5703;
+      margin: 20px 0;
+      -webkit-animation: w210 1s both 1s;
+      animation: w210 1s both 1s; }
+
+.banner > .banner_scrollDown {
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  bottom: 6.5vh;
+  left: calc(50% - 60px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+  margin-top: 10vh;
+  -webkit-animation: fadeInDown 1.4s both 1.6s;
+  animation: fadeInDown 1.4s both 1.6s; }
+  .banner > .banner_scrollDown p {
+    font-family: 'MyriadPro-Regular';
+    font-size: 0.75rem;
+    letter-spacing: 1px; }
+  .banner > .banner_scrollDown:before {
+    font-family: 'icomoon';
+    content: "\e909";
+    font-size: 1.125rem;
+    margin-bottom: 15px;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease; }
+  @media screen and (min-width: 1025px) {
+    .banner > .banner_scrollDown:hover:before {
+      -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotateZ(180deg);
+      -webkit-transition: all .4s ease;
+      -o-transition: all .4s ease;
+      transition: all .4s ease; } }
+
+.banner.short .banner_slogan {
+  top: 60%; }
+
+.banner.darkBg .banner_slogan {
+  color: #fff;
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease; }
+
+.banner.darkBg > .banner_scrollDown {
+  color: #fff;
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5); }
+
+@-webkit-keyframes w210 {
+  0% {
+    width: 0; }
+  100% {
+    width: 210px; } }
+
+@keyframes w210 {
+  0% {
+    width: 0; }
+  100% {
+    width: 210px; } }
+
+/*產品系列的麵包屑*/
+.content .top_nav {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666666;
+  letter-spacing: 1px; }
+  .content .top_nav ._series {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 0; }
+    @media all and (max-width: 700px) {
+      .content .top_nav ._series {
+        display: none; } }
+    .content .top_nav ._series:before {
+      font-family: 'icomoon';
+      content: "\e90a";
+      color: #000;
+      font-size: 0.8125rem;
+      margin: 0 12px 1px 0; }
+    .content .top_nav ._series span {
+      font-size: 0.875rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-transition: all .4s ease;
+      -o-transition: all .4s ease;
+      transition: all .4s ease; }
+      .content .top_nav ._series span:not(:last-child):after {
+        content: "/";
+        margin: 0 5px 0 5px; }
+      .content .top_nav ._series span:hover {
+        color: #000;
+        -webkit-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        transition: all .4s ease; }
+  .content .top_nav ._back {
+    font-size: 0.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease; }
+    .content .top_nav ._back span {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-right: 25px; }
+      @media all and (max-width: 700px) {
+        .content .top_nav ._back span {
+          margin-right: 10px; } }
+      .content .top_nav ._back span:before {
+        font-family: 'icomoon';
+        content: "\e906";
+        font-size: 0.8125rem; }
+        @media all and (max-width: 700px) {
+          .content .top_nav ._back span:before {
+            font-size: 0.75rem; } }
+      .content .top_nav ._back span:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 45px;
+        background-color: #666666;
+        margin-left: -5px; }
+        @media all and (max-width: 700px) {
+          .content .top_nav ._back span:after {
+            width: 30px; } }
+    .content .top_nav ._back:hover {
+      color: #000;
+      -webkit-transition: all .4s ease;
+      -o-transition: all .4s ease;
+      transition: all .4s ease; }
+  .content .top_nav.show ._series {
+    -webkit-animation: fadeInUp 1s both 1s;
+    animation: fadeInUp 1s both 1s; }
+  .content .top_nav.show ._back {
+    -webkit-animation: fadeInRight 1s both 1s;
+    animation: fadeInRight 1s both 1s; }
+
+/*-------------- slick點點設定-----------*/
+._slick .slick-dots {
+  top: auto;
+  left: 0;
+  right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  ._slick .slick-dots li {
+    width: 10px;
+    height: 10px; }
+    ._slick .slick-dots li button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      ._slick .slick-dots li button:before {
+        -webkit-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        transform: scale(0.6);
+        font-size: 0.75rem;
+        width: 10px;
+        height: 10px;
+        line-height: 1;
+        position: relative;
+        -webkit-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease; }
+      ._slick .slick-dots li button:hover:before, ._slick .slick-dots li button:focus:before {
+        color: #ea5703;
+        opacity: .8;
+        -webkit-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease; }
+    ._slick .slick-dots li.slick-active button:before {
+      color: #ea5703;
+      opacity: 1;
+      -webkit-transition: all .2s ease;
+      -o-transition: all .2s ease;
+      transition: all .2s ease; }
+
+/* 社群軟體按鈕hover設定*/
+.socialMedia ul li span {
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 2.5px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+  .socialMedia ul li span:hover.icon-twitter {
+    color: #5aaceb;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease; }
+  .socialMedia ul li span:hover.icon-instagram {
+    color: #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #c13584), to(#fd1d1d));
+    background-image: -webkit-linear-gradient(top, #c13584 10%, #fd1d1d 100%);
+    background-image: -o-linear-gradient(top, #c13584 10%, #fd1d1d 100%);
+    background-image: linear-gradient(180deg, #c13584 10%, #fd1d1d 100%);
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease; }
+  .socialMedia ul li span:hover.icon-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease; }
+  .socialMedia ul li span:hover.icon-youtube {
+    color: #e52d27;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease; }
+
+/*   電腦版是一行 手機板是下拉式選單*/
+.content ._title .menulist {
+  margin-top: 30px;
+  position: relative;
+  opacity: 0;
+  z-index: 2; }
+  @media all and (max-width: 900px) {
+    .content ._title .menulist {
+      width: 50vw;
+      min-width: 200px;
+      margin: auto;
+      margin-top: 30px; } }
+  .content ._title .menulist .selectMenu {
+    display: none;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #000;
+    position: relative;
+    font-weight: bold; }
+    @media all and (max-width: 900px) {
+      .content ._title .menulist .selectMenu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; } }
+    .content ._title .menulist .selectMenu:after {
+      font-family: 'icomoon';
+      content: "\e905";
+      -webkit-transition: all .4s ease;
+      -o-transition: all .4s ease;
+      transition: all .4s ease;
+      font-size: 0.75rem;
+      margin-left: 15px;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .content ._title .menulist .selectMenu.open:after {
+      -webkit-transform: translateY(-50%) rotateX(180deg);
+      transform: translateY(-50%) rotateX(180deg); }
+  .content ._title .menulist ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    @media all and (max-width: 900px) {
+      .content ._title .menulist ul {
+        display: none;
+        padding: 10px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #2b2b2b;
+        max-height: 164px; } }
+    .content ._title .menulist ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin: 0 0 15px 0;
+      cursor: pointer; }
+      @media all and (max-width: 900px) {
+        .content ._title .menulist ul li {
+          margin: 0; } }
+      .content ._title .menulist ul li p {
+        font-size: 1.125rem;
+        -webkit-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        transition: all .4s ease;
+        letter-spacing: 1px;
+        font-family: "微軟正黑體";
+        font-weight: bold; }
+        @media all and (max-width: 900px) {
+          .content ._title .menulist ul li p {
+            color: #fff;
+            font-weight: normal;
+            font-size: 1rem; } }
+      @media all and (max-width: 900px) {
+        .content ._title .menulist ul li:first-child {
+          padding: 10px; } }
+      .content ._title .menulist ul li:not(:first-child) {
+        padding-left: 30px; }
+        @media all and (max-width: 1024px) {
+          .content ._title .menulist ul li:not(:first-child) {
+            padding-left: 25px; } }
+        @media all and (max-width: 900px) {
+          .content ._title .menulist ul li:not(:first-child) {
+            padding: 10px; } }
+      .content ._title .menulist ul li:not(:last-child):after {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 30px;
+        background-color: #e5e5e5;
+        margin-left: 30px; }
+        @media all and (max-width: 1024px) {
+          .content ._title .menulist ul li:not(:last-child):after {
+            margin-left: 25px; } }
+        @media all and (max-width: 900px) {
+          .content ._title .menulist ul li:not(:last-child):after {
+            display: none; } }
+      @media all and (min-width: 901px) {
+        .content ._title .menulist ul li:hover p {
+          color: #0d65b4;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; } }
+      .content ._title .menulist ul li.checked p {
+        color: #0d65b4; }
+        @media all and (max-width: 900px) {
+          .content ._title .menulist ul li.checked p {
+            color: #ea5703; } }
+
+/* 單元轉換選單*/
+.product_nav,
+.select_nav {
+  margin-top: 1px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  -webkit-animation: fadeIn 1s both;
+  animation: fadeIn 1s both; }
+  @media all and (max-width: 900px) {
+    .product_nav,
+    .select_nav {
+      height: 70px; } }
+  .product_nav p,
+  .product_nav b,
+  .product_nav .selectInf:after,
+  .select_nav p,
+  .select_nav b,
+  .select_nav .selectInf:after {
+    -webkit-animation: fadeInUp 1.2s both .6s;
+    animation: fadeInUp 1.2s both .6s; }
+  .product_nav .selectInf,
+  .select_nav .selectInf {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: none;
+    background-color: #131313;
+    letter-spacing: 1px; }
+    @media all and (max-width: 900px) {
+      .product_nav .selectInf,
+      .select_nav .selectInf {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
+    .product_nav .selectInf p,
+    .select_nav .selectInf p {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      font-size: 1.125rem;
+      color: #fff;
+      line-height: 1.5; }
+      @media all and (max-width: 1024px) {
+        .product_nav .selectInf p,
+        .select_nav .selectInf p {
+          font-size: 1rem; } }
+    .product_nav .selectInf b,
+    .select_nav .selectInf b {
+      font-family: 'MyriadPro-Semibold';
+      font-size: 1.25rem;
+      margin-left: 25px;
+      color: #0d65b4;
+      line-height: 1.5; }
+      @media all and (max-width: 1024px) {
+        .product_nav .selectInf b,
+        .select_nav .selectInf b {
+          font-size: 1.125rem;
+          margin-left: 2vw; } }
+    .product_nav .selectInf:after,
+    .select_nav .selectInf:after {
+      font-family: 'icomoon';
+      content: "\e905";
+      margin-left: 10px;
+      font-size: 0.75rem;
+      color: #fff;
+      line-height: 1.5;
+      -webkit-transition: all .4s ease;
+      -o-transition: all .4s ease;
+      transition: all .4s ease; }
+    .product_nav .selectInf.open:after,
+    .select_nav .selectInf.open:after {
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+      -webkit-transition: all .4s ease;
+      -o-transition: all .4s ease;
+      transition: all .4s ease; }
+  .product_nav ul,
+  .select_nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; }
+    @media all and (max-width: 900px) {
+      .product_nav ul,
+      .select_nav ul {
+        height: auto;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 2; } }
+    .product_nav ul li,
+    .select_nav ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      height: 100%;
+      cursor: pointer;
+      background-color: #e5e5e5;
+      -webkit-transition: all .5s ease .1s;
+      -o-transition: all .5s ease .1s;
+      transition: all .5s ease .1s;
+      letter-spacing: 1px; }
+      .product_nav ul li p,
+      .select_nav ul li p {
+        font-size: 1.125rem;
+        -webkit-transition: all .5s ease .1s;
+        -o-transition: all .5s ease .1s;
+        transition: all .5s ease .1s; }
+        @media all and (max-width: 1024px) {
+          .product_nav ul li p,
+          .select_nav ul li p {
+            font-size: 1rem; } }
+      .product_nav ul li b,
+      .select_nav ul li b {
+        font-family: 'MyriadPro-Semibold';
+        font-size: 1.25rem;
+        margin-left: 20px;
+        color: #a5a5a5;
+        -webkit-transition: all .5s ease .1s;
+        -o-transition: all .5s ease .1s;
+        transition: all .5s ease .1s; }
+        @media all and (max-width: 1024px) {
+          .product_nav ul li b,
+          .select_nav ul li b {
+            font-size: 1.125rem;
+            margin-left: 2vw; } }
+      @media all and (max-width: 900px) {
+        .product_nav ul li.active,
+        .select_nav ul li.active {
+          height: 0;
+          overflow: hidden; } }
+    @media all and (min-width: 901px) {
+      .product_nav ul li.active,
+      .product_nav ul:hover li.active:hover,
+      .product_nav ul li:hover,
+      .select_nav ul li.active,
+      .select_nav ul:hover li.active:hover,
+      .select_nav ul li:hover {
+        background-color: #131313;
+        -webkit-transition: all .5s ease .1s;
+        -o-transition: all .5s ease .1s;
+        transition: all .5s ease .1s; }
+        .product_nav ul li.active p,
+        .product_nav ul:hover li.active:hover p,
+        .product_nav ul li:hover p,
+        .select_nav ul li.active p,
+        .select_nav ul:hover li.active:hover p,
+        .select_nav ul li:hover p {
+          color: #fff;
+          -webkit-transition: all .5s ease .1s;
+          -o-transition: all .5s ease .1s;
+          transition: all .5s ease .1s; }
+        .product_nav ul li.active b,
+        .product_nav ul:hover li.active:hover b,
+        .product_nav ul li:hover b,
+        .select_nav ul li.active b,
+        .select_nav ul:hover li.active:hover b,
+        .select_nav ul li:hover b {
+          color: #0d65b4;
+          -webkit-transition: all .5s ease .1s;
+          -o-transition: all .5s ease .1s;
+          transition: all .5s ease .1s; } }
+    @media all and (max-width: 900px) {
+      .product_nav ul li.active,
+      .product_nav ul:hover li.active:hover,
+      .product_nav ul li:hover,
+      .select_nav ul li.active,
+      .select_nav ul:hover li.active:hover,
+      .select_nav ul li:hover {
+        height: 0;
+        overflow: hidden; } }
+    .product_nav ul:hover li.active,
+    .select_nav ul:hover li.active {
+      background-color: #e5e5e5;
+      -webkit-transition: all .5s ease .1s;
+      -o-transition: all .5s ease .1s;
+      transition: all .5s ease .1s; }
+      .product_nav ul:hover li.active p,
+      .select_nav ul:hover li.active p {
+        color: #000;
+        -webkit-transition: all .5s ease .1s;
+        -o-transition: all .5s ease .1s;
+        transition: all .5s ease .1s; }
+      .product_nav ul:hover li.active b,
+      .select_nav ul:hover li.active b {
+        color: #a5a5a5;
+        -webkit-transition: all .5s ease .1s;
+        -o-transition: all .5s ease .1s;
+        transition: all .5s ease .1s; }
+
+/*相關應用頁面設定*/
+.applicationBoxs {
+  max-width: 1480px;
+  margin: auto;
+  margin-top: 70px; }
+  .applicationBoxs ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .applicationBoxs ul li {
+      width: calc(25% - 60px);
+      margin: 0 30px 90px 30px; }
+      @media all and (max-width: 1480px) {
+        .applicationBoxs ul li {
+          width: calc(25% - 4vw);
+          margin: 0 2vw 90px 2vw; } }
+      @media all and (max-width: 1024px) {
+        .applicationBoxs ul li {
+          width: calc(33.33% - 4vw);
+          margin: 0 2vw 6vh 2vw; } }
+      @media all and (max-width: 700px) {
+        .applicationBoxs ul li {
+          width: calc(50% - 4vw); } }
+      @media all and (max-width: 450px) {
+        .applicationBoxs ul li {
+          width: 100%;
+          margin: 0 2vw 6vh 2vw; } }
+      .applicationBoxs ul li ._img {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: #000; }
+        .applicationBoxs ul li ._img img {
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+      .applicationBoxs ul li ._text {
+        text-align: center;
+        letter-spacing: 1px;
+        margin-top: 20px; }
+        .applicationBoxs ul li ._text h2,
+        .applicationBoxs ul li ._text p {
+          font-size: 1.125rem;
+          line-height: 1.5; }
+          @media all and (max-width: 900px) {
+            .applicationBoxs ul li ._text h2,
+            .applicationBoxs ul li ._text p {
+              font-size: 1rem; } }
+        .applicationBoxs ul li ._text h2 {
+          font-weight: bold;
+          font-family: "微軟正黑體"; }
+        .applicationBoxs ul li ._text p {
+          font-family: 'MyriadPro-Regular'; }
+      .applicationBoxs ul li:hover ._img img {
+        opacity: .6; }
+
+/*相關下載頁面表格*/
+.downloadContent {
+  max-width: 1620px;
+  margin: auto;
+  margin-top: 35px;
+  padding: 0 100px;
+  letter-spacing: 1px; }
+  @media all and (max-width: 1620px) {
+    .downloadContent {
+      padding: 0; } }
+  @media all and (max-width: 700px) {
+    .downloadContent {
+      margin-top: 25px; } }
+  .downloadContent .heading,
+  .downloadContent ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    @media all and (max-width: 700px) {
+      .downloadContent .heading,
+      .downloadContent ul li {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+  .downloadContent .heading .NO,
+  .downloadContent ul li span {
+    width: 14%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 0 18px 0; }
+    @media all and (max-width: 700px) {
+      .downloadContent .heading .NO,
+      .downloadContent ul li span {
+        width: calc(15% - 1px); } }
+  .downloadContent .heading .name,
+  .downloadContent ul li h2 {
+    width: 35%;
+    padding: 20px 10px 18px 55px; }
+    @media all and (max-width: 1024px) {
+      .downloadContent .heading .name,
+      .downloadContent ul li h2 {
+        padding: 20px 10px 18px 4vw; } }
+    @media all and (max-width: 700px) {
+      .downloadContent .heading .name,
+      .downloadContent ul li h2 {
+        width: calc(70% - 1px); } }
+  .downloadContent .heading .description,
+  .downloadContent ul li p {
+    width: 37%;
+    padding: 20px 10px 18px 60px; }
+    @media all and (max-width: 1024px) {
+      .downloadContent .heading .description,
+      .downloadContent ul li p {
+        padding: 20px 10px 18px 4vw; } }
+    @media all and (max-width: 700px) {
+      .downloadContent .heading .description,
+      .downloadContent ul li p {
+        width: 100%; } }
+  .downloadContent .heading .file,
+  .downloadContent ul li a {
+    width: 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 0 18px 0; }
+    @media all and (max-width: 700px) {
+      .downloadContent .heading .file,
+      .downloadContent ul li a {
+        width: calc(15% - 1px); } }
+  .downloadContent .heading {
+    /*進場動畫*/
+    -webkit-animation: fadeInDown 1s both .6s;
+    animation: fadeInDown 1s both .6s; }
+    @media all and (max-width: 700px) {
+      .downloadContent .heading .description {
+        display: none; } }
+    .downloadContent .heading p {
+      background-color: #c3c3c3;
+      font-size: 0.875rem;
+      font-family: 'CenturyGothic';
+      margin: 0 1.5px; }
+      @media all and (max-width: 700px) {
+        .downloadContent .heading p {
+          margin: 0 .5px; } }
+  .downloadContent ul li {
+    /*進場動畫*/
+    -webkit-animation: fadeInUp 1s both .8s;
+    animation: fadeInUp 1s both .8s; }
+    .downloadContent ul li span,
+    .downloadContent ul li h2,
+    .downloadContent ul li p,
+    .downloadContent ul li a {
+      border-bottom: 1px solid #cccccc;
+      margin: 0 1.5px;
+      line-height: 1.5;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      @media all and (max-width: 700px) {
+        .downloadContent ul li span,
+        .downloadContent ul li h2,
+        .downloadContent ul li p,
+        .downloadContent ul li a {
+          margin: 0 .5px;
+          -webkit-box-align: start;
+          -ms-flex-align: start;
+          align-items: flex-start; } }
+    .downloadContent ul li span {
+      font-size: 0.9375rem; }
+      @media all and (max-width: 700px) {
+        .downloadContent ul li span {
+          -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+          order: 1;
+          border: none; } }
+    .downloadContent ul li h2 {
+      font-size: 0.9375rem;
+      font-family: "微軟正黑體"; }
+      @media all and (max-width: 700px) {
+        .downloadContent ul li h2 {
+          -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+          order: 2;
+          font-weight: bold;
+          border: none;
+          font-size: 0.875rem; } }
+    .downloadContent ul li p {
+      font-size: 0.875rem;
+      font-family: "微軟正黑體"; }
+      @media all and (max-width: 700px) {
+        .downloadContent ul li p {
+          -webkit-box-ordinal-group: 5;
+          -ms-flex-order: 4;
+          order: 4;
+          padding: 0 0 20px 0;
+          padding-left: calc(15% + 4vw);
+          padding-right: calc(15% + 10px);
+          color: #999999; } }
+    @media all and (max-width: 700px) {
+      .downloadContent ul li a {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+        border: none;
+        padding: 20px 0 0 0; } }
+    .downloadContent ul li a:before {
+      font-family: 'icomoon';
+      content: "\e914";
+      font-size: 1.75rem;
+      color: #43424d;
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease; }
+      @media all and (max-width: 700px) {
+        .downloadContent ul li a:before {
+          line-height: 1; } }
+    .downloadContent ul li a.pdf:before {
+      content: "\e913"; }
+    .downloadContent ul li a.cad:before {
+      content: "\e90d"; }
+    .downloadContent ul li a.doc:before {
+      content: "\e912"; }
+    .downloadContent ul li a:hover:before {
+      color: #ff7d0d;
+      -webkit-transition: all .4s ease;
+      -o-transition: all .4s ease;
+      transition: all .4s ease; }
+
+/* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓產品系列介紹燈箱↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */
+.seriesIntro {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99; }
+  .seriesIntro .workBox {
+    width: 1170px;
+    margin: auto;
+    background-color: #fff;
+    position: relative; }
+    @media all and (max-width: 1170px) {
+      .seriesIntro .workBox {
+        width: 100vw; } }
+    .seriesIntro .workBox .liboxClose {
+      width: 45px;
+      height: 45px;
+      background-color: #0d65b4;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      position: absolute; }
+      .seriesIntro .workBox .liboxClose span {
+        display: block;
+        position: relative;
+        width: 16px;
+        height: 16px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+        .seriesIntro .workBox .liboxClose span:before {
+          width: 2px;
+          height: 16px;
+          top: calc(50% - 8px);
+          left: calc(50% - 1px);
+          content: "";
+          display: block;
+          background-color: #fff;
+          position: absolute; }
+        .seriesIntro .workBox .liboxClose span:after {
+          width: 16px;
+          height: 2px;
+          left: calc(50% - 8px);
+          top: calc(50% - 1px);
+          content: "";
+          display: block;
+          background-color: #fff;
+          position: absolute; }
+    .seriesIntro .workBox .liboxSlick {
+      position: relative; }
+      .seriesIntro .workBox .liboxSlick ul li .slick_img {
+        max-height: 610px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        overflow: hidden; }
+        @media all and (max-width: 1024px) {
+          .seriesIntro .workBox .liboxSlick ul li .slick_img {
+            max-height: 52vw; } }
+      @media all and (max-width: 700px) {
+        .seriesIntro .workBox .liboxSlick .arrow {
+          display: none; } }
+      .seriesIntro .workBox .liboxSlick .arrow span {
+        position: absolute;
+        top: 50%;
+        font-size: 2.25rem;
+        cursor: pointer;
+        color: #3f3e3f;
+        opacity: .5;
+        -webkit-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease; }
+        .seriesIntro .workBox .liboxSlick .arrow span.icon-slick-arrow-left {
+          left: 40px; }
+        .seriesIntro .workBox .liboxSlick .arrow span.icon-slick-arrow-right {
+          right: 40px; }
+        .seriesIntro .workBox .liboxSlick .arrow span:hover {
+          opacity: 1;
+          -webkit-transition: all .2s ease;
+          -o-transition: all .2s ease;
+          transition: all .2s ease; }
+    .seriesIntro .workBox .liboxContent {
+      padding: 70px 130px 100px 130px;
+      position: relative;
+      overflow: hidden;
+      font-family: "微軟正黑體"; }
+      @media all and (max-width: 1024px) {
+        .seriesIntro .workBox .liboxContent {
+          padding: 5vh 10vw 8vh 10vw; } }
+      @media all and (max-width: 700px) {
+        .seriesIntro .workBox .liboxContent {
+          padding: 5vh 5vw 8vh 5vw; } }
+      .seriesIntro .workBox .liboxContent .single_paragraph,
+      .seriesIntro .workBox .liboxContent .with_ul,
+      .seriesIntro .workBox .liboxContent .ps_word {
+        margin-top: 30px;
+        letter-spacing: 1px;
+        padding: 0 10px; }
+      .seriesIntro .workBox .liboxContent .single_paragraph p {
+        font-size: 1rem;
+        line-height: 1.8; }
+      .seriesIntro .workBox .liboxContent .with_ul h2 {
+        font-size: 1rem;
+        line-height: 1.8; }
+      .seriesIntro .workBox .liboxContent .with_ul ul li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 1rem;
+        line-height: 1.8; }
+        .seriesIntro .workBox .liboxContent .with_ul ul li span {
+          font-family: 'CenturyGothic-bold';
+          margin-right: 5px; }
+      .seriesIntro .workBox .liboxContent .ps_word p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #404040; }
+  .seriesIntro .nicescroll-cursors {
+    margin-right: 2px; }
+
+/* 進場動畫*/
+.seriesIntro {
+  -webkit-animation: fadeIn .4s both;
+  animation: fadeIn .4s both; }
+  .seriesIntro .workBox {
+    -webkit-animation: seriesLiboxOpen .8s both;
+    animation: seriesLiboxOpen .8s both; }
+    .seriesIntro .workBox .liboxSlick {
+      -webkit-animation: fadeIn 1s both .8s;
+      animation: fadeIn 1s both .8s; }
+    .seriesIntro .workBox .liboxContent .single_paragraph,
+    .seriesIntro .workBox .liboxContent .with_ul,
+    .seriesIntro .workBox .liboxContent .ps_word {
+      -webkit-animation: fadeInUp 1s both 1s;
+      animation: fadeInUp 1s both 1s; }
+
+/* 退場動畫*/
+.seriesIntro.close {
+  -webkit-animation: fadeOut .4s both .8s;
+  animation: fadeOut .4s both .8s; }
+  .seriesIntro.close .workBox {
+    -webkit-animation: seriesLiboxClose .6s both .4s;
+    animation: seriesLiboxClose .6s both .4s; }
+    .seriesIntro.close .workBox .liboxSlick {
+      -webkit-animation: fadeOut .5s both;
+      animation: fadeOut .5s both; }
+    .seriesIntro.close .workBox .liboxContent .single_paragraph,
+    .seriesIntro.close .workBox .liboxContent .with_ul,
+    .seriesIntro.close .workBox .liboxContent .ps_word {
+      -webkit-animation: fadeOutUp .5s both;
+      animation: fadeOutUp .5s both; }
+
+@-webkit-keyframes seriesLiboxOpen {
+  0% {
+    height: 0;
+    opacity: 0;
+    margin-top: 50%; }
+  100% {
+    opacity: 1;
+    height: 100%;
+    margin-top: 0; } }
+
+@keyframes seriesLiboxOpen {
+  0% {
+    height: 0;
+    opacity: 0;
+    margin-top: 50%; }
+  100% {
+    opacity: 1;
+    height: 100%;
+    margin-top: 0; } }
+
+@-webkit-keyframes seriesLiboxClose {
+  0% {
+    opacity: 1;
+    height: 100%;
+    margin-top: 0; }
+  100% {
+    height: 0;
+    opacity: 0;
+    margin-top: 50%; } }
+
+@keyframes seriesLiboxClose {
+  0% {
+    opacity: 1;
+    height: 100%;
+    margin-top: 0; }
+  100% {
+    height: 0;
+    opacity: 0;
+    margin-top: 50%; } }
+
+/* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑產品系列介紹燈箱↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */
+/* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓影片燈箱設定↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */
+.videoLibox {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .videoLibox .liboxClose {
+    position: absolute;
+    z-index: 9999999;
+    top: 0;
+    right: 3vw;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    width: 45px;
+    height: 45px;
+    background-color: #0d65b4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer; }
+    @media all and (max-width: 1024px) {
+      .videoLibox .liboxClose {
+        right: 0; } }
+    .videoLibox .liboxClose span {
+      display: block;
+      position: relative;
+      width: 16px;
+      height: 16px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+      .videoLibox .liboxClose span:before {
+        width: 2px;
+        height: 16px;
+        top: calc(50% - 8px);
+        left: calc(50% - 1px);
+        content: "";
+        display: block;
+        background-color: #fff;
+        position: absolute; }
+      .videoLibox .liboxClose span:after {
+        width: 16px;
+        height: 2px;
+        left: calc(50% - 8px);
+        top: calc(50% - 1px);
+        content: "";
+        display: block;
+        background-color: #fff;
+        position: absolute; }
+  .videoLibox ._video {
+    width: 80%;
+    margin: auto; }
+    @media all and (max-width: 1024px) {
+      .videoLibox ._video {
+        width: 100%; } }
+    .videoLibox ._video iframe {
+      width: 100%;
+      height: 100%; }
+
+/* 燈箱進場動畫*/
+.videoLibox.open {
+  display: block;
+  -webkit-animation: fadeIn .5s both;
+  animation: fadeIn .5s both; }
+  .videoLibox.open .liboxClose {
+    -webkit-animation: allin .8s forwards .5s;
+    animation: allin .8s forwards .5s; }
+  .videoLibox.open ._video {
+    margin: auto;
+    -webkit-animation: liboxHeightIn 1s both .4s;
+    animation: liboxHeightIn 1s both .4s; }
+
+@-webkit-keyframes liboxHeightIn {
+  0% {
+    margin-top: 25%;
+    height: 0%; }
+  100% {
+    margin-top: 0%;
+    height: 100%; } }
+
+@keyframes liboxHeightIn {
+  0% {
+    margin-top: 25%;
+    height: 0%; }
+  100% {
+    margin-top: 0%;
+    height: 100%; } }
+
+@media all and (max-aspect-ratio: 8 / 5) {
+  @-webkit-keyframes liboxHeightIn {
+    0% {
+      margin-top: 25%;
+      height: 0%; }
+    100% {
+      margin-top: 50px;
+      height: calc(100% - 90px); } }
+  @keyframes liboxHeightIn {
+    0% {
+      margin-top: 25%;
+      height: 0%; }
+    100% {
+      margin-top: 50px;
+      height: calc(100% - 90px); } } }
+
+/* 燈箱退場動畫*/
+.videoLibox.close {
+  display: block;
+  -webkit-animation: fadeOut .5s both .5s;
+  animation: fadeOut .5s both .5s; }
+  .videoLibox.close .liboxClose {
+    -webkit-animation: slideOutUp .8s both;
+    animation: slideOutUp .8s both; }
+  .videoLibox.close ._video {
+    -webkit-animation: liboxHeightOut 1s both;
+    animation: liboxHeightOut 1s both; }
+
+@-webkit-keyframes liboxHeightOut {
+  0% {
+    margin-top: 0%;
+    height: 100%; }
+  100% {
+    margin-top: 25%;
+    height: 0%; } }
+
+@keyframes liboxHeightOut {
+  0% {
+    margin-top: 0%;
+    height: 100%; }
+  100% {
+    margin-top: 25%;
+    height: 0%; } }
+
+@media all and (max-aspect-ratio: 8 / 5) {
+  @-webkit-keyframes liboxHeightOut {
+    0% {
+      margin-top: 50px;
+      height: calc(100% - 90px); }
+    100% {
+      margin-top: 25%;
+      height: 0%; } }
+  @keyframes liboxHeightOut {
+    0% {
+      margin-top: 50px;
+      height: calc(100% - 90px); }
+    100% {
+      margin-top: 25%;
+      height: 0%; } } }
+
+/* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑影片燈箱設定↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */
+/* ↓↓↓↓↓↓↓↓↓↓↓新聞頁面的進場動畫方格↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+@-webkit-keyframes interBg {
+  0% {
+    width: 0;
+    height: 0; }
+  40% {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: skewY(0deg) translateY(0%);
+    transform: skewY(0deg) translateY(0%); }
+  41% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(20%);
+    transform: skewY(30deg) translateY(20%); }
+  100% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(-80%);
+    transform: skewY(30deg) translateY(-80%); } }
+@keyframes interBg {
+  0% {
+    width: 0;
+    height: 0; }
+  40% {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: skewY(0deg) translateY(0%);
+    transform: skewY(0deg) translateY(0%); }
+  41% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(20%);
+    transform: skewY(30deg) translateY(20%); }
+  100% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(-80%);
+    transform: skewY(30deg) translateY(-80%); } }
+
+/* ie專用動畫*/
+@-webkit-keyframes interBgIE {
+  0% {
+    width: 0;
+    height: 0; }
+  40% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(20%);
+    transform: skewY(30deg) translateY(20%); }
+  41% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(20%);
+    transform: skewY(30deg) translateY(20%); }
+  100% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(-80%);
+    transform: skewY(30deg) translateY(-80%); } }
+@keyframes interBgIE {
+  0% {
+    width: 0;
+    height: 0; }
+  40% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(20%);
+    transform: skewY(30deg) translateY(20%); }
+  41% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(20%);
+    transform: skewY(30deg) translateY(20%); }
+  100% {
+    width: 100%;
+    height: 200%;
+    -webkit-transform: skewY(30deg) translateY(-80%);
+    transform: skewY(30deg) translateY(-80%); } }
+
+/* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑新聞頁面的進場動畫方格↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../upload/f2e/employee/index/bg_1920_1080.jpg");
+  background-size: cover;
+  background-position: left top;
+  background-attachment: fixed; }
+  @media all and (max-width: 1279px) {
+    main {
+      overflow: auto; } }
+  @media all and (max-width: 1023px) {
+    main {
+      padding: 10vw; } }
+  @media all and (max-width: 500px) {
+    main {
+      padding: 8vw 5vw; } }
+
+._text,
+.form {
+  position: absolute; }
+
+._text {
+  top: calc(50% - 320px);
+  left: calc(50% - 480px);
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 60px 190px 50px 80px;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  @media all and (max-width: 1279px) {
+    ._text {
+      top: 11.25vw;
+      left: calc(50% - 380px);
+      padding: 60px 140px 50px 80px; } }
+  @media all and (max-width: 1023px) {
+    ._text {
+      position: relative;
+      left: auto;
+      top: auto;
+      padding: 6vh 12vw; } }
+  @media all and (max-width: 500px) {
+    ._text {
+      padding: 4vh 8vw; } }
+  ._text .logo {
+    padding-bottom: 50px;
+    position: relative; }
+    @media all and (max-width: 500px) {
+      ._text .logo {
+        padding-bottom: 5vh; }
+        ._text .logo img {
+          width: 45vw;
+          max-width: 210px; } }
+    ._text .logo:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #ea5703; }
+  ._text h2 {
+    margin-top: 30px;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    font-size: 1.875rem;
+    line-height: 1.5;
+    font-weight: bold;
+    letter-spacing: 2px; }
+    @media all and (max-width: 500px) {
+      ._text h2 {
+        font-size: 1.625rem;
+        margin-top: 4vh; } }
+  ._text h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 35px; }
+    @media all and (max-width: 500px) {
+      ._text h3 {
+        margin-top: 4vh; } }
+  ._text ul {
+    max-width: 340px;
+    margin-top: 25px; }
+    @media all and (max-width: 1023px) {
+      ._text ul {
+        max-width: 100%; } }
+    @media all and (max-width: 500px) {
+      ._text ul {
+        margin-top: 2vh; } }
+    ._text ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 5px; }
+      ._text ul li span,
+      ._text ul li p {
+        font-size: 0.875rem;
+        font-family: 微軟正黑體;
+        line-height: 1.8; }
+
+.form {
+  z-index: 2;
+  top: calc(50% - 160px);
+  left: calc(50% + 60px);
+  background-color: #003b7f;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 80px 100px; }
+  @media all and (max-width: 1279px) {
+    .form {
+      top: calc(11.25vw + 530px);
+      left: calc(50% - 60px);
+      margin-bottom: 11.25vw; } }
+  @media all and (max-width: 1023px) {
+    .form {
+      position: relative;
+      left: auto;
+      top: auto;
+      padding: 6vh 12vw;
+      margin-top: 6vh; } }
+  @media all and (max-width: 500px) {
+    .form {
+      padding: 6vh 5vw; } }
+  .form form {
+    width: 310px; }
+    @media all and (max-width: 1023px) {
+      .form form {
+        width: 100%; } }
+  .form h2,
+  .form h3 {
+    color: #fff;
+    font-family: MyriadPro-Semibold, 微軟正黑體;
+    line-height: 1.5;
+    text-align: center; }
+  .form h2 {
+    font-size: 1.875rem; }
+  .form h3 {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 30px;
+    color: #bcc0c9;
+    max-width: 270px; }
+  .form ul {
+    margin-top: 25px; }
+    .form ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 0;
+      margin-bottom: 15px; }
+      .form ul li p {
+        width: 110px;
+        font-family: 'MyriadPro-Light';
+        font-size: 0.75rem;
+        padding-left: 25px;
+        font-weight: bold; }
+      .form ul li input {
+        width: calc(100% - 150px);
+        border: none;
+        font-size: 0.75rem;
+        letter-spacing: 1px; }
+        .form ul li input::-webkit-input-placeholder {
+          color: #b1b1b1;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+        .form ul li input:-ms-input-placeholder {
+          color: #b1b1b1;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+        .form ul li input::-ms-input-placeholder {
+          color: #b1b1b1;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+        .form ul li input::placeholder {
+          color: #b1b1b1;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+        .form ul li input:focus::-webkit-input-placeholder {
+          opacity: 0;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+        .form ul li input:focus:-ms-input-placeholder {
+          opacity: 0;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+        .form ul li input:focus::-ms-input-placeholder {
+          opacity: 0;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+        .form ul li input:focus::placeholder {
+          opacity: 0;
+          -webkit-transition: all .4s ease;
+          -o-transition: all .4s ease;
+          transition: all .4s ease; }
+      .form ul li.password {
+        position: relative; }
+        .form ul li.password .showPassWord {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          cursor: pointer; }
+          .form ul li.password .showPassWord input {
+            display: none; }
+          .form ul li.password .showPassWord:before, .form ul li.password .showPassWord:after {
+            font-family: 'icomoon'; }
+          .form ul li.password .showPassWord:before {
+            content: "\e9d1"; }
+          .form ul li.password .showPassWord:after {
+            content: "\e9ce";
+            display: none; }
+          .form ul li.password .showPassWord.show:before {
+            content: "\e9d1";
+            display: none; }
+          .form ul li.password .showPassWord.show:after {
+            content: "\e9ce";
+            display: block; }
+  .form button {
+    width: 100%;
+    border: none;
+    background-color: #292929;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 10px 0; }
+
+/*進場動畫*/
+main {
+  -webkit-animation: fadeIn 2s both;
+  animation: fadeIn 2s both; }
+
+._text {
+  -webkit-animation: fadeInUp 2s both .4s;
+  animation: fadeInUp 2s both .4s; }
+
+.form {
+  -webkit-animation: fadeInUp 2s both .7s;
+  animation: fadeInUp 2s both .7s; }

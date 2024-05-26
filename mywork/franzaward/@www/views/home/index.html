@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/home/home.css">
+</head>
+
+<body id="home" class="index">
+    <header></header>
+    <main>
+        <article class="banner">
+            <!-- ↓↓↓↓↓↓↓這是背景 沒有b-lazy↓↓↓↓↓↓↓ -->
+            <section class="background" style="background-color:#fff ;">
+                <!-- 圖片大小:1920*1080 -->
+                <img src="" alt="">
+            </section>
+            <!-- slick圖片或影片 -->
+            <section class="slickImg">
+                <!-- 後端請注意:此處的slick內容有可能是影片或是圖片 如果是影片 請在data-value 填上img 如果是影片請填上video-->
+                <ul>
+                    <!-- 圖片 -->
+                    <li class="list-item" data-value="img">
+                        <!-- 後端請注意:如果圖片是深色背景的話img的data-color請填上darkBg -->
+                        <picture>
+                            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                            <source srcset="../../upload/fa2/home/bannerImgRwd3_930_1300.jpg" media="(max-width:800px)">
+                            <img data-color="darkBg" src="../../upload/fa2/home/bannerImg3_1740_900.jpg" alt="">
+                        </picture>
+                        <!-- 後端請注意:下方的位置樣式有三種:1.left 左 2.center 中 3.right 右 再加入相對應的class即可-->
+                        <!-- 後端請注意:字的顏色需要讓客戶決定 -->
+                        <div class="text center" style="color: #fff">
+                            <h2>Ignite Your Imagination</h2>
+                            <p>閃亮你的天馬行空</p>
+                        </div>
+                    </li>
+                    <!-- 圖片 -->
+                    <li class="list-item " data-value="img">
+                    <!-- 後端請注意:如果圖片是深色背景的話img的data-color請填上darkBg -->
+                    <picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="../../upload/fa2/home/bannerImgRwd2_930_1300.jpg" media="(max-width:800px)">
+                            <img data-color="" src="../../upload/fa2/home/bannerImg2_1740_900.jpg" alt="">
+                        </picture>
+                    <!-- 後端請注意:下方的位置樣式有三種:1.left 左 2.center 中 3.right 右 再加入相對應的class即可-->
+                    <!-- 後端請注意:字的顏色需要讓客戶決定 -->
+                    <div class="text center" style="color: #fff">
+                            <h2>Rising star Project 2018</h2>
+                            <p>閃亮你的天馬行空</p>
+                        </div>
+                    </li>
+                    <!-- 影片 -->
+                    <!-- <li class="list-item video-item" data-value="video"> -->
+                    <!-- 後端請注意:如果是影片的話li請依照此格式 -->
+                    <!-- <div class="open-box" data-videoid="wzclxenwTNc"></div>
+                        <div id="player1"></div>
+                        <span></span>
+                    </li> -->
+                </ul>
+                <div class="arrow">
+                    <span class="slickLeft"></span>
+                    <span class="slickRight"></span>
+                </div>
+                <!-- 時間條 -->
+                <!-- <span class="loadingBar loading"></span> -->
+            </section>
+            <!-- 左上角文字欄 -->
+            <section class="_title">
+                <div class="logo">
+                    <img src="../../upload/fa2/home/bannerLog2_150_90.png" alt="">
+                    <img src="../../upload/fa2/home/bannerLog2_150_90.png" alt="">
+                </div>
+                <h3>法藍瓷光點計畫｜國際陶瓷設計獎學金<br>International Porcelain Design Scholarship</h3>
+                <!-- 期間 -->
+                <div class="duration">
+                    <div class="start">
+                        <p class="month">FRI.</p>
+                        <p class="day">6.01th</p>
+                    </div>
+                    <span></span>
+                    <div class="end">
+                        <p class="month">FRI.</p>
+                        <p class="day">8.31th</p>
+                    </div>
+                </div>
+                <!-- 後端請注意:下方的文字的li須跟圖片的slick的li數量相等 內容可空白-->
+                <ul class="words">
+                    <!-- 後端請注意:此處文字大小 h5:14px h4:18px p:16px 須讓客戶選擇自這三種字的大小-->
+                    <li>
+                        <h5>GTM +8:00</h5>
+                        <h4>Registration</h4>
+                        <p>申請期間</p>
+                    </li>
+                    <!-- <li>
+                        
+                    </li> -->
+                </ul>
+            </section>
+            <section class="logInLink">
+                <!-- 多語系 -->
+                <div class="language">
+                    <span>language</span>
+                    <ul>
+                        <li class="active">
+                            <a href="javascript:void(0)">中文</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">English</a>
+                        </li>
+                    </ul>
+                    <b class="icon-sphere"></b>
+                    <select>
+                        <!-- 後端請注意:第一個option 請不要更動 此為標題 -->
+                        <option>language</option>
+                        <option value="">
+                            <a href="javascript:void(0)">中文</a>
+                        </option>
+                        <option value="">
+                            <a href="javascript:void(0)">English</a>
+                        </option>
+                    </select>
+                </div>
+                <!-- 登入 -->
+                <div class="link">
+                    <a href="javascript:void(0)">申請者登入</a>
+                    <a href="javascript:void(0)">評審登入</a>
+                </div>
+            </section>
+            <!-- 錨點 -->
+            <section class="anchorPoint">
+                <!-- 後端請注意:data-point 請填入他要滑動到的錨點名稱 -->
+                <a href="javascript:void(0)" class="active">
+                    <p>Sign up</p>
+                </a>
+                <a href="javascript:void(0)" class="discover">
+                    <p>Discover</p>
+                </a>
+            </section>
+        </article>
+        <!-- 活動主文字 -->
+        <article class="titleWords">
+            <!-- ↓↓↓↓↓↓↓這是背景 有b-lazy↓↓↓↓↓↓↓ -->
+            <section class="background" style="">
+                <!-- 圖片大小:1920*1080 -->
+                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/bg2_1920_1080.jpg"
+                    alt="">
+            </section>
+            <section class="_title">
+                <!-- 英文 -->
+                <h2>Fulfill the Goals as Seen and Achieved in Dreams.</h2>
+                <!-- 中文 -->
+                <h3>如夢想所見・如夢想所成</h3>
+            </section>
+            <section class="words">
+                <p>We hope that all the students who aspire to engage in porcelain design across the world can give
+                    full scope to their talent and creativity to their hearts’ content, as they head towards becoming
+                    rising stars in the future.
+                    <br>
+                    <br>我們期盼世界上對陶瓷設計充滿憧憬的學生們，都能盡情揮灑天賦與創意，於明日閃耀成光點。</p>
+            </section>
+        </article>
+        <!-- 得獎作品 -->
+        <article class="awards">
+            <!-- ↓↓↓↓↓↓↓這是背景 有b-lazy↓↓↓↓↓↓↓ -->
+            <!-- 後端請注意:要讓客戶可以換背景 -->
+            <section class="background" style="background-color: ">
+                <!-- 圖片大小:1920*1080 -->
+                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="./../upload/fa2/home/bg1_1920_1080.jpg"
+                    alt="">
+            </section>
+            <section class="works">
+                <div class="box">
+                    <!-- 作品最大 寬 960 x 高 600px -->
+                    <div class="_img">
+                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg1.png"
+                            alt="">
+                    </div>
+                    <div class="_text">
+                        <!-- 獎項 -->
+                        <div class="circle">
+                            <h3>talent</h3>
+                            <p>award</p>
+                        </div>
+                        <div class="inf">
+                            <!-- 比賽名稱 -->
+                            <h2>outstanding Technology design</h2>
+                            <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                            <div class="designBox">
+                                <div class="designer">
+                                    <h3>Designer</h3>
+                                    <p>Hevroni Eden</p>
+                                </div>
+                                <!-- 作品名 -->
+                                <div class="design">
+                                    <h3>Design</h3>
+                                    <p>VENIN VOIR</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <!-- 作品最大 寬 960 x 高 600px -->
+                    <div class="_img">
+                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg2.jpg"
+                            alt="">
+                    </div>
+                    <div class="_text">
+                        <!-- 獎項 -->
+                        <div class="circle">
+                            <h3>talent</h3>
+                            <p>award</p>
+                        </div>
+                        <div class="inf">
+                            <!-- 比賽名稱 -->
+                            <h2>talented concept desing</h2>
+                            <div class="designBox">
+                                <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                <div class="designer">
+                                    <h3>Designer</h3>
+                                    <p>張進</p>
+                                </div>
+                                <!-- 作品名 -->
+                                <div class="design">
+                                    <h3>Design</h3>
+                                    <p>MouldFlexi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <!-- 作品最大 寬 960 x 高 600px -->
+                    <div class="_img">
+                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg"
+                            alt="">
+                    </div>
+                    <div class="_text">
+                        <!-- 獎項 -->
+                        <div class="circle">
+                            <h3>talent</h3>
+                            <p>award</p>
+                        </div>
+                        <div class="inf">
+                            <!-- 比賽名稱 -->
+                            <h2>Innovative design</h2>
+                            <div class="designBox">
+                                <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                <div class="designer">
+                                    <h3>Designer</h3>
+                                    <p>Hevroni Eden</p>
+                                </div>
+                                <!-- 作品名 -->
+                                <div class="design">
+                                    <h3>Design</h3>
+                                    <p>VENIN VOIR</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <!-- 作品最大 寬 960 x 高 600px -->
+                    <div class="_img">
+                        <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg4.jpg"
+                            alt="">
+                    </div>
+                    <div class="_text">
+                        <!-- 獎項 -->
+                        <div class="circle">
+                            <h3>talent</h3>
+                            <p>award</p>
+                        </div>
+                        <div class="inf">
+                            <!-- 比賽名稱 -->
+                            <h2>Dramatic beauty of art</h2>
+                            <div class="designBox">
+                                <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                <div class="designer">
+                                    <h3>Designer</h3>
+                                    <p>Kunikazu Hamanishi</p>
+                                </div>
+                                <!-- 作品名 -->
+                                <div class="design">
+                                    <h3>Design</h3>
+                                    <p>Pile Lamp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="awardsLink">
+                <a href="javascript:void(0)">
+                    <span></span>
+                    <p>More design</p>
+                </a>
+            </section>
+        </article>
+        <!-- 活動細節 -->
+        <article class="activety">
+            <!-- ↓↓↓↓↓↓↓這是背景 有b-lazy↓↓↓↓↓↓↓ -->
+            <!-- 後端請注意:要讓客戶可以換背景 -->
+            <section class="background" style="background-color: white">
+                <!-- 圖片大小:1920*1080 -->
+                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/bg2_1920_1080.jpg"
+                    alt="">
+            </section>
+            <section class="detailLink">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="numb">100</span>
+                            <h3>Number of Scholarships</h3>
+                            <h2>Scholarships</h2>
+                            <p>法藍瓷光點計畫獎學金名額</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="numb">10</span>
+                            <h3>Number of</h3>
+                            <h2>Rising Star Award</h2>
+                            <p>法藍瓷光點新秀獎獲獎名額</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="mainLink">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span></span>
+                            <p>Sigh up</p>
+                            <p>申請光點</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span></span>
+                            <p>Introduction</p>
+                            <p>探索光點計畫</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <!-- 新知新訊 -->
+        <article class="news">
+            <!-- ↓↓↓↓↓↓↓這是背景 有b-lazy↓↓↓↓↓↓↓ -->
+            <!-- 後端請注意:要讓客戶可以換背景 -->
+            <section class="background" style="background-color:#fff">
+                <!-- 圖片大小:1920*1080 -->
+                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="" alt="">
+            </section>
+            <section class="_title">
+                <h2>FRANZ AWARD Agenda</h2>
+                <p>新知新訊</p>
+                <!-- 新聞分類 -->
+                <ul>
+                    <li class="active">
+                        <p>OVERVIEW</p>
+                    </li>
+                    <li>
+                        <p>計畫新訊</p>
+                    </li>
+                    <li>
+                        <p>原創新知</p>
+                    </li>
+                </ul>
+            </section>
+            <!-- 後端請注意:此處有二種格式:1.只有背景圖bgOnly、2.有照片hasImg-->
+            <section class="newsBox">
+                <div class="bgOnly" style="background-color:#6a77c3;background-image: url('../../assets/img/homeBg/newsFullBg_615_510.png');">
+                    <a href="javascript:void(0)" class="openNewsDetail" data-whitchNews="detailLibox1">
+                        <div class="logo">
+                            <img src="../../upload/fa2/home/newsLogo_35_65.png" alt="">
+                        </div>
+                        <div class="dateAndWords">
+                            <div class="words">
+                                <h4>2016 決賽評審名單公布</h4>
+                                <!-- 後端請注意:下方p文字數量最多100字 請標記在後台 -->
+                                <p>從 2007 年到現在 FRANZ AWARD 從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來從 2007 年到現在 FRANZ WARD
+                                    從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來...</p>
+                            </div>
+                            <div class="date">
+                                <h5>25th</h5>
+                                <p>2018 DEC.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="bgOnly" style="background-color:#6a77c3;background-image: url('../../assets/img/homeBg/newsFullBg_615_510.png');">
+                    <a href="javascript:void(0)" class="openNewsDetail" data-whitchNews="detailLibox1">
+                        <div class="logo">
+                            <img src="../../upload/fa2/home/newsLogo_35_65.png" alt="">
+                        </div>
+                        <div class="dateAndWords">
+                            <div class="words">
+                                <h4>2016 決賽評審名單公布</h4>
+                                <!-- 後端請注意:下方p文字數量最多100字 請標記在後台 -->
+                                <p>從 2007 年到現在 FRANZ AWARD 從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來從 2007 年到現在 FRANZ WARD
+                                    從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來...</p>
+                            </div>
+                            <div class="date">
+                                <h5>25th</h5>
+                                <p>2018 DEC.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="hasImg">
+                    <a href="javascript:void(0)" class="openNewsDetail" data-whitchNews="detailLibox2">
+                        <div class="_img">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/newsImg4_1240_690.jpg"
+                                alt="">
+                        </div>
+                        <!-- 後端請注意:文字區塊顏色需要讓客戶決定需與背景配合 -->
+                        <div class="dateAndWords" style="background-color:#fff ">
+                            <div class="date" style="background-color:#fff ">
+                                <h5>01th</h5>
+                                <p>2018 JAN.</p>
+                            </div>
+                            <div class="words">
+                                <h4>法藍瓷光點計畫 北京起跑記者會</h4>
+                                <!-- 後端請注意:下方p文字數量最多100字 請標記在後台 -->
+                                <p>從 2007 年到現在 FRANZ AWARD 從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來從 2007 年到現在 FRANZ WARD
+                                    從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="hasImg">
+                    <a href="javascript:void(0)" class="openNewsDetail" data-whitchNews="detailLibox3">
+                        <div class="_img">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/newsImg3_1240_690.jpg"
+                                alt="">
+                        </div>
+                        <!-- 後端請注意:文字區塊顏色需要讓客戶決定需與背景配合 -->
+                        <div class="dateAndWords" style="background-color:#fff ">
+                            <div class="date" style="background-color:#fff ">
+                                <h5>01th</h5>
+                                <p>2018 JAN.</p>
+                            </div>
+                            <div class="words">
+                                <h4>法藍瓷光點計畫 北京起跑記者會</h4>
+                                <!-- 後端請注意:下方p文字數量最多100字 請標記在後台 -->
+                                <p>從 2007 年到現在 FRANZ AWARD 從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來從 2007 年到現在 FRANZ WARD
+                                    從東方立足，展望世界我們不斷希望藉由瓷器，來探索改美好未來...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+            <section class="newsLink">
+                <a href="javascript:void(0)">
+                    <span></span>
+                    <p>More News</p>
+                </a>
+            </section>
+        </article>
+        <!-- 評審介紹 -->
+        <article class="jury">
+            <!-- ↓↓↓↓↓↓↓這是背景 有b-lazy↓↓↓↓↓↓↓ -->
+            <!-- 後端請注意:要讓客戶可以換背景顏色 -->
+            <section class="background" style="background-color: ">
+                <!-- 圖片大小:1920*1080 -->
+                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/bg1_1920_1080.jpg"
+                    alt="">
+            </section>
+            <section class="mainSlick">
+                <div class="_title">
+                    <h2>About the Jury</h2>
+                    <p>2018 評審介紹</p>
+                </div>
+                <ul class="_text">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="juryWords">
+                                <h2>Excellent design is a global challege. <br><br>Franz Award gives extraordinary
+                                    impact promotingthe future generation of designers a world wide stage.</h2>
+                                <p>引萬道清泉 育十年尚品引萬道清泉 育十年尚品引萬道清泉 育十年尚品</p>
+                            </div>
+                            <div class="juryName">
+                                <h2>Wilhelm Siemen</h2>
+                                <p>Germany, Curator of Porzellanikon SELB</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="juryWords">
+                                <h2>Excellent design is a global challege. <br><br>Franz Award gives extraordinary
+                                    impact promotingthe future generation of designers a world wide stage.</h2>
+                                <p>引萬道清泉 育十年尚品</p>
+                            </div>
+                            <div class="juryName">
+                                <h2>Wilhelm Siemen</h2>
+                                <p>Germany, Curator of Porzellanikon SELB</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="arrow">
+                    <span class="icon-slickLeft"></span>
+                    <i></i>
+                    <span class="icon-slickRight"></span>
+                </div>
+                <ul class="juryImg">
+                    <!-- 圖片大小:580*745 -->
+                    <li>
+                        <img data-lazy="../../upload/fa2/home/juryImg1_580_745.png" alt="">
+                    </li>
+                    <li>
+                        <img data-lazy="../../upload/fa2/home/juryImg1_580_745.png" alt="">
+                    </li>
+                </ul>
+            </section>
+            <section class="sideSlick left">
+                <ul>
+                    <li>
+                        <img data-lazy="../../upload/fa2/home/juryImg1_580_745.png" alt="">
+                    </li>
+                    <li>
+                        <img data-lazy="../../upload/fa2/home/juryImg1_580_745.png" alt="">
+                    </li>
+                </ul>
+            </section>
+            <section class="sideSlick right">
+                <ul>
+                    <li>
+                        <img data-lazy="../../upload/fa2/home/juryImg1_580_745.png" alt="">
+                    </li>
+                    <li>
+                        <img data-lazy="../../upload/fa2/home/juryImg1_580_745.png" alt="">
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <!-- 光點藝廊 -->
+        <article class="gallery">
+            <!-- ↓↓↓↓↓↓↓這是背景 有b-lazy↓↓↓↓↓↓↓ -->
+            <section class="background" style="background-color:white">
+                <!-- 圖片大小:1920*1080 -->
+                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="" alt="">
+            </section>
+            <section class="_title">
+                <h2>Spotlight Gallery</h2>
+                <p>2018 光點藝廊</p>
+                <ul>
+                    <li class="active">
+                        <p>Decoration</p>
+                    </li>
+                    <li>
+                        <p>Daily Use</p>
+                    </li>
+                    <li>
+                        <p>Tableware</p>
+                    </li>
+                    <li>
+                        <p>Else</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="_slick">
+                <div>
+                    <!-- 電腦版 -->
+                    <ul class="pc">
+                        <!-- 後端請注意:每個li的第2個a連結只有一個圖 -->
+                        <!-- 圖片大小統一550*550 -->
+                        <li>
+                            <!-- 第一組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg2_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg2_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                            <!-- 第二組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg1_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                            <!-- 第三組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg4_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg3_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                            <!-- 第四組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg1_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <!-- 第五組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg1_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg1_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                            <!-- 第六組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg2_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                            <!-- 第七組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg2_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                            <!-- 第八組 -->
+                            <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg4_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg3_550_550.jpg" alt="">
+                                </div>
+                                <span></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 手機板 -->
+                    <ul class="mobile">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg1_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg1_550_550.jpg" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg2_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg1_550_550.jpg" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg2_550_550.jpg" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg2_550_550.jpg" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="_img design">
+                                    <img data-lazy="../../upload/fa2/home/designImg4_550_550.jpg" alt="">
+                                </div>
+                                <div class="_img designer">
+                                    <img data-lazy="../../upload/fa2/home/designerImg3_550_550.jpg" alt="">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="arrow">
+                    <span class="icon-slickLeft"></span>
+                    <i></i>
+                    <span class="icon-slickRight"></span>
+                </div>
+            </section>
+        </article>
+        <!-- 後端請注意:下面的提醒視窗結構 有可能沒有 文字要可以編輯 -->
+        <article class="reminderLibox" onclick="home.reminderClose(event)">
+            <section>
+                <div class="_title">
+                    <p class="en">SIGN UP NOW !</p>
+                    <p class="ch">《重要通知》</p>
+                </div>
+                <div class="_text">
+                    <p>法藍瓷光點計畫將於</p>
+                    <!-- 後端請注意:將文字用strong標籤標起來的話她字體會變大且加粗 -->
+                    <p>
+                        <strong>8月31日（五）中午12時
+                            <br>（台北/北京/香港時區）
+                        </strong>
+                    </p>
+                    <p>關閉帳號申請與作品上傳系統，為避免截止前的網路壅塞
+                        <br>而導致您申請失敗，建議您儘早完成申請與上傳手續。</p>
+                </div>
+                <button type="button" onclick="home.reminderbutton()">
+                    <span></span>
+                    <p>OK：確認</p>
+                </button>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+<script>
+    function mouseover(target){
+        var color = $(target).attr("data-color")
+        $(target).css("color",color);
+        $(target).find(".line").css("background-color",color);
+    }
+    function mouseout(target){
+        $(target).css("color","");
+        $(target).find(".line").css("background-color","");
+    }
+</script>
+
+</html>

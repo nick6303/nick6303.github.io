@@ -1,0 +1,52 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#guide.commercial
+    main(style="background-image: url('../../upload/fa2/guide/commerBg_1080_500.jpg')")
+        article.title
+            span.icon-finger
+            p 歡迎觸控螢幕即可瀏覽各項訊息
+        article._slick
+            ul.single-item
+                li.item.video-item(data-value="video")
+                    // 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任
+                    // 後端請注意:data-videoid 請填入 youtube 影片的id
+                    div.videoBox(data-videoId="kCU3ht6rMMg")
+                    // 後端請注意: 圖片建議尺寸 1080*1920
+                    figure
+                        img(src="../../upload/fa2/guide/videoImg_1080_1200.jpg" alt="")
+                li.item(data-value="img")
+                    // 後端請注意: 圖片建議尺寸 1080*1810
+                    figure
+                        img(src="../../upload/fa2/guide/fullImg_1080_1810.jpg" alt="")
+                li.item.video-item(data-value="video")
+                    // 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任
+                    // 後端請注意:data-videoid 請填入 youtube 影片的id
+                    div.videoBox(data-videoId="VhCr88-MFfM")
+                    // 後端請注意: 圖片建議尺寸 1080*1200
+                    figure
+                        img(src="../../upload/fa2/guide/videoImg2_1080_1200.jpg" alt="")
+                li.item.video-item(data-value="video")
+                    // 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任
+                    // 後端請注意:data-videoid 請填入 youtube 影片的id
+                    div.videoBox(data-videoId="dpfsUCOq75s")
+                    // 後端請注意: 圖片建議尺寸 1080*1920
+                    figure
+                        img(src="../../upload/fa2/guide/videoImg_1080_1200.jpg" alt="")
+        //回導覽機首頁
+        article.toHome
+            a(href="../guide/index.html")
++script
+|
+|
+</html>

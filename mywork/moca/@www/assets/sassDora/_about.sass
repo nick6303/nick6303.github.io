@@ -1,0 +1,706 @@
+.about
+    .titleSec
+        margin: 0 auto 70px
+        text-align: center
+        color: #000
+        width: 1100px 
+        opacity: 0
+        +rwdm(1400)
+            width: 80%
+        &.show
+            animation: 1s fadeIn forwards  
+        h2
+            +fshm($fm:$fmeFb,$fs:px(36),$lh:px(41),$mb:0 0 20px)
+        h3
+            +fshm($fm:$fmeF,$fs:px(18),$lh:px(23),$mb:0)
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////                   
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+// about
+.doraPageBody_about
+    .editSec
+        width: 80%
+        margin: 0 auto
+        transition: .5s
+        +rwdm(600)
+            width: 100%
+        & > div
+            &:nth-child(1),&:nth-child(2)
+                margin-bottom: 90px
+        .txt
+            .h5
+                +fshm($fm:$fmeFb,$fs:px(22),$lh:px(27),$mb:0)
+                opacity: 0
+                transform: translateY(100px)
+                &:first-child
+                    margin-bottom: 10px
+                &:nth-child(2)
+                    margin-bottom: 40px
+                    font-weight: bold
+            p
+                +fshm($fs:px(16),$lh:px(25),$mb:0)
+                opacity: 0
+    .fixedImg
+        height: 500px
+        position: relative
+        overflow: hidden
+        &.show
+            &:after
+                animation: gogoball 1000ms
+            .bgImg
+                opacity: 1
+                transition: opacity 0s ease .5s
+        &:after
+            content: ''
+            display: block
+            background-color: #fff
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            transform: translateY(-100%)
+        p
+            +fshm($fm:$fmeF,$fs:px(22),$lh:px(27),$mb:0)
+            position: absolute
+            right: 20px
+            bottom: 20px
+            color: #fff
+        .bgImg
+            width: 100%
+            height: 100%
+            background-position: center
+            background-attachment: fixed
+            background-size: cover
+            opacity: 0
+        img
+            width: 100%
+    .twoOpen
+        display: flex
+        position: relative
+        overflow: hidden
+        z-index: 2
+        transition: .5s
+        &.show
+            .img
+                &:after
+                    animation: gogoball 1000ms
+                img
+                    opacity: 1
+                    transition: opacity 0s ease .5s
+            .txt
+                .h5
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity 1s ease .5s, transform 1s ease .5s
+                p
+                    opacity: 1
+                    transition: opacity 1s ease .9s
+        +rwdm(1400)
+            flex-direction: column
+        &.reverse
+            flex-direction: row-reverse
+            +rwdm(1400)
+                flex-direction: column
+        & > div
+            width: 50%
+            padding: 0 50px
+            transition: .5s
+            +rwdm(1400)
+                width: 100%
+        .img
+            +flex($dis:flex,$jc:center,$ai:center)
+            position: relative
+            &:after
+                content: ''
+                display: block
+                background-color: #fff
+                width: 100%
+                height: 100%
+                position: absolute
+                left: 0
+                top: 0
+                transform: translateY(-100%)
+            img
+                width: 100%
+                opacity: 0
+        .txt
+            +flex($dis:flex,$jc:center,$ai:flex-start)
+            flex-direction: column
+            +rwdm(1400)
+                margin-bottom: 70px
+    .bgbox
+        width: 100%
+        height: 100%
+        padding: 210px 0 170px
+        transform: translateY(-40px)
+        background-size: cover
+        position: relative
+        overflow: hidden
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+            .txt
+                .h5
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1s ease .5s, transform 1s ease .5s
+                p
+                    opacity: 1
+                    transition: opacity 1s ease .8s
+        .txt
+            width: 60%
+            margin: 0 auto
+            transition: .5s
+            .h5
+                text-align: center
+                opacity: 0
+                transform: translateY(100px)
+            p
+                text-align: left
+                opacity: 0
+            +rwdm(600)
+                width: 80%
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////                   
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+// history
+.doraPageBody_history
+    .arrowPre,.arrowNext
+        width: 25px
+        height: 25px
+        background: #000
+        border-radius: 50%
+        position: absolute
+        bottom: -5px
+        z-index: 3
+        cursor: pointer
+        & > div
+            width: 50%
+            height: 100%
+            position: relative
+            margin: 0 auto
+            span
+                display: inline-block
+                top: 50%
+                &:first-child
+                    width: 10px
+                    height: 1px
+                    background: #fff
+                    transform: translateY(-50%)
+                &:last-child
+                    width: 5px
+                    height: 5px
+                    transform: rotate(-45deg) translateY(calc(-50% - 1px))
+                    position: absolute
+    .arrowPre
+        left: 0
+        span
+            &:first-child
+                right: 0
+            &:last-child
+                left: 2px
+                border-left: 1px #fff solid
+                border-top: 1px #fff solid
+                
+    .arrowNext
+        right: 0
+        span
+            &:first-child
+                left: 0
+            &:last-child
+                right: -2px
+                border-right: 1px #fff solid
+                border-bottom: 1px #fff solid
+    .yearSlick
+        width: 70%
+        margin: 0 auto 90px
+        position: relative
+        transition: .5s
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease .5s
+        +rwdm(600)
+            width: 90%
+        .line
+            background-color: #fad6d6
+            display: block
+            width: 2px
+            height: 0
+            position: absolute
+            left: calc(50% + 1px)
+            top: calc(100% - 2px)
+            &.open
+                height: 90px
+                transition: height .8s ease
+        ul
+            width: 100%
+            position: relative
+            z-index: 2
+            &::after
+                +pseudo($w:100%,$h:1px)
+                border-bottom: 1px #000 dashed
+                position: absolute
+                bottom: 5px
+                left: 0
+                transform: translateY(-50%)
+                z-index: -1
+        li
+            text-align: center
+            position: relative
+            padding: 75px 0 0
+            p
+                +fshm($fm:$fmeF,$fs:px(26),$lh:px(32),$mb:0 0 30px)
+                color: rgba(0,0,0,.2)
+                transition: .5s
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+                +rwdm(600)
+                    font-size: px(18)
+                    line-height: px(22)
+            .dot
+                display: inline-block
+                width: 10px
+                height: 10px
+                border: 3px #e83434 solid
+                border-radius: 50%
+                transition: 1s
+                background: #fff
+        .slick-center
+            p
+                font-size: px(60)
+                line-height: px(60)
+                color: #e83434
+                font-family: $fmeFb
+                +rwdm(600)
+                    font-size: px(40)
+                    line-height: px(40)
+            .dot
+                background: #e83434
+    .doraNo
+        .box
+            opacity: 0
+            transform: translateY(200px)
+            &.show
+                opacity: 1
+                transform: translateY(0px)
+                transition: opacity 1.2s ease, transform 1.2s ease
+.doraPageBody_history
+    .editSec
+        background: #fef5f5
+        width: 80%
+        margin: 0 auto
+        padding: 80px 0
+        transform: .5s
+        +rwdm(600)
+            width: 100%
+        & > div
+            width: 850px
+            margin: 0 auto
+            +rwdm(1200)
+                width: 90%
+            & > div
+                width: 90%
+                margin: 0 auto
+                &.twoOpen
+                    width: 100%
+                &:not(:last-child)
+                    margin-bottom: 100px
+                    +rwdm(600)
+                        margin-bottom: 50px
+        .img
+            img
+                width: 100%
+            p
+                text-align: center
+                +fshm($fm:$fmeF,$fs:px(18),$lh:px(23),$mb:0)
+                padding: 20px 20px 0
+        .txt
+            padding: 0 20px
+            .h5
+                +fshm($fm:$fmeF,$fs:px(18),$lh:px(23),$mb:0 0 10px)
+                font-weight: bold
+            p
+                +fshm($fm:$fmeF,$fs:px(16),$lh:px(20),$mb:0)
+        .twoOpen
+            display: flex
+            +rwdm(900)
+                flex-direction: column
+                .img
+                    margin: 0 auto 20px
+            &.reverse
+                flex-direction: row-reverse
+                +rwdm(900)
+                    flex-direction: column
+                .txt
+                    padding: 0 10% 0 20px
+                    +rwdm(900)
+                        padding: 0 20px
+            & > div
+                width: 50%
+                transition: .5s
+                +rwdm(900)
+                    width: 100%
+            .txt
+                padding: 0 20px 0 10%
+                +flex($dis:flex,$jc:center,$ai:flex-start)
+                flex-direction: column
+                +rwdm(900)
+                    padding: 0 20px
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////                   
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+//   curator
+.doraPageBody_curator
+    .switchSec
+        margin-bottom: 110px
+        +rwdm(600)
+            margin-bottom: 70px
+        ul
+            +flex($dis:flex,$jc:center,$ai:center)
+            li
+                color: #cccccc
+                margin: 0 50px
+                cursor: pointer
+                +rwdm(600)
+                    margin: 0 20px
+                &.active
+                    color: #000
+                    p
+                        &::before
+                            width: 100%
+                p
+                    +fshm($fm:$fmeF,$fs:px(14),$lh:px(19),$mb:0)
+                    padding: 0 10px 15px
+                    position: relative
+                    transition: .5s
+                    &::after,&::before
+                        position: absolute
+                        bottom: 0
+                        transition: .5s
+                    &::after
+                        +pseudo($w:100%,$h:2px)
+                        left: 0
+                        background: #cccccc
+                    &::before
+                        +pseudo($w:0,$h:2px)
+                        background: #000
+                        right: 0
+                        z-index: 1
+
+.doraPageBody_curator
+    .currentSec,.successiveSec
+        position: fixed
+        left: -200%
+        top: 0
+        z-index: -1
+        opacity: 0
+        transform: translateY(300px)
+        transition: .5s
+        &.back
+            position: relative
+            left: auto
+            top: auto
+            z-index: 1
+        &.active
+            transition: 1s
+            transform: translateY(0)
+            opacity: 1
+            
+
+
+.doraPageBody_curator .currentSec
+    .photoDiv
+        width: 70%
+        margin: 0 auto
+        display: flex
+        justify-content: space-between
+        position: relative
+        z-index: 2
+        +rwdm(1200)
+            flex-direction: column
+            justify-content: center
+        & > div
+            width: calc(50% - 60px)
+            transition: .5s
+            +rwdm(1200)
+                width: 80%
+                margin: 0 auto
+            +rwdm(900)
+                width: 100%
+        .img
+            +flex($dis:flex,$jc:center,$ai:center)
+            img
+                width: 100%
+        .txt
+            padding: 0 10% 100px 0
+            transition: .5s
+            +rwdm(1500)
+                padding: 0 0 100px 0
+            .slogan
+                padding: 110px 0
+                transition: .5s
+                +rwdm(1200)
+                    padding: 80px 0
+                p
+                    +fshm($fm:$fmeFb,$fs:px(24),$lh:px(29),$mb:0)
+                    font-weight: bold
+            h2
+                +fshm($fm:$fmeFb,$fs:px(22),$lh:px(27),$mb:0 0 10px)
+                font-weight: bold
+            h3
+                +fshm($fm:$fmeFb,$fs:px(18),$lh:px(23),$mb:0 0 50px)
+                font-weight: bold
+            p
+                +fshm($fm:$fmeF,$fs:px(16),$lh:px(21),$mb:0)
+    .itemDiv
+        background: #f2f2f2
+        padding: 250px 0 0
+        transform: translateY(-70px)
+        transition: .5s
+        +rwdm(1200)
+            transform: translateY(0)
+            padding: 150px 0 0
+        .up
+            width: 1140px
+            margin: 0 auto
+            transition: .5s
+            +rwdm(1500)
+                width: 80%
+            & > p
+                +fshm($fm:$fmeFb,$fs:px(36),$lh:px(41),$mb:0 0 130px)
+                font-weight: bold
+                text-align: center
+            ul
+                li
+                    position: relative
+                    transition: .5s
+                    &.show
+                        .h4
+                            opacity: 1
+                            transform: translateY(0px)
+                            transition: opacity 1s ease .2s, transform 1s ease .2s
+                        .h5
+                            opacity: 1
+                            transform: translateY(0px)
+                            transition: opacity 1s ease .2s, transform 1s ease .2s
+                        p
+                            opacity: 1
+                            transition: opacity 1s ease .6s
+                    &.continuous
+                        &:not(:last-child)
+                            margin-bottom: 100px
+                            +rwdm(900)
+                                margin-bottom: 60px
+                        &:last-child
+                            margin-bottom: 10px
+                            +rwdm(1200)
+                                margin-bottom: 60px
+                    &.close
+                        &:nth-child(2n-1),&:nth-child(2n)
+                            padding: 0 5%
+                        &::after
+                            display: none
+                    &:not(:last-child)
+                        margin-bottom: 165px
+                        +rwdm(900)
+                            margin-bottom: 100px
+                    &:last-child
+                        margin-bottom: 75px
+                        +rwdm(1200)
+                            margin-bottom: 125px
+                        +rwdm(900)
+                            margin-bottom: 60px
+                    &:nth-child(2n-1)
+                        padding-right: 10%
+                        &::after
+                            right: 0
+                            top: 0
+                    &:nth-child(2n)
+                        padding-left: 10%
+                        &::after
+                            left: 0
+                            top: 0
+                            transform: translate(-50%,-40%)
+                    &::after
+                        content: attr(data-watermark)
+                        display: inline-block
+                        +fshm($fm:$fmeFb,$fs:14vw,$lh:9vw,$mb:0)
+                        position: absolute
+                        font-weight: bold
+                        color: #e6e6e6
+                    .h4
+                        +fshm($fm:$fmeFb,$fs:px(22),$lh:px(27),$mb:0 0 10px)
+                        font-weight: bold
+                        opacity: 0
+                        transform: translateY(100px)
+                    .h5
+                        +fshm($fm:$fmeFb,$fs:px(20),$lh:px(25),$mb:0 0 25px)
+                        font-weight: bold
+                        opacity: 0
+                        transform: translateY(100px)
+                    p
+                        +fshm($fm:$fmeF,$fs:px(16),$lh:px(21),$mb:0)
+                        position: relative
+                        z-index: 2
+                        opacity: 0
+        .down
+            width: 90%
+            margin: 0 auto
+            padding: 130px 0
+            background-position: center
+            background-size: cover
+            background-repeat: no-repeat
+            transform: translateY(90px)
+            +rwdm(1200)
+                transform: translateY(40px)
+            & > div
+                width: 80%
+                margin: 0 auto
+                & > p
+                    text-align: center
+                    font-weight: bold
+                    +fshm($fm:$fmeFb,$fs:px(36),$lh:px(41),$mb:0 0 110px)
+                ul
+                    +flex($dis:flex,$jc:center,$ai:center)
+                    +rwdm(1200)
+                        flex-wrap: wrap
+                    li
+                        margin: 0 30px
+                        text-align: center
+                        transition: .5s
+                        +rwdm(1200)
+                            width: calc(50% - 60px)
+                            margin-bottom: 50px
+                        +rwdm(600)
+                            width: calc(100% - 60px)
+                        img
+                            margin: 0 auto 30px
+                        span
+                            +fshm($fm:$fmeFb,$fs:px(18),$lh:px(23),$mb:0 0 5px)
+                            display: inline-block
+                            font-weight: bold
+                        p
+                            +fshm($fm:$fmeF,$fs:px(16),$lh:px(21),$mb:0)
+
+.doraPageBody_curator .successiveSec
+    width: 1100px
+    margin: 0 auto
+    transition: .5s
+    padding-bottom: 40px
+    +rwdm(1200)
+        width: 80%
+    .listDiv
+        overflow: hidden
+        .list
+            display: flex
+            &.show
+                .img
+                    opacity: 1
+                    transition: opacity .7s ease
+                .txt
+                    span
+                        opacity: 1
+                        transition: opacity 1s ease
+                        &:after
+                            width: 270px
+                            transition: width .8s ease .4s
+                    h3
+                        opacity: 1
+                        transform: translateY(0px)
+                        transition: opacity 1s ease .6s, transform 1s ease .5s
+                    h4
+                        opacity: 1
+                        transform: translateY(0px)
+                        transition: opacity 1s ease .6s, transform 1s ease .5s
+                    p
+                        opacity: 1
+                        transition: opacity 1s ease .9s, transform 1s ease .9s
+
+            +rwdm(900)
+                flex-direction: column-reverse
+            &:not(:last-child)
+                margin-bottom: 70px
+            &:nth-child(2n-1)
+                .img
+                    padding-left: 10%
+                    +rwdm(600)
+                        padding-left: 0
+                .txt
+                    span
+                        &::after
+                            right: 0
+                            transform: translateX(100%)
+            &:nth-child(2n)
+                flex-direction: row-reverse
+                +rwdm(900)
+                    flex-direction: column-reverse
+                .txt
+                    text-align: right
+                    span
+                        &::after
+                            left: 0
+                            transform: translateX(-100%)
+                .img
+                    padding-right: 10%
+                    +rwdm(600)
+                        padding-right: 0
+            & > div
+                width: 50%
+                transition: .5s
+                +rwdm(900)
+                    width: 80%
+                    margin: 0 auto
+                +rwdm(600)
+                    width: 100%
+            .txt
+                padding-top: 80px
+                span
+                    display: inline-block
+                    +fshm($fm:$fmeFb,$fs:px(54),$lh:px(59),$mb:0 0 60px)
+                    color: #cccccc
+                    font-weight: bold
+                    width: 80%
+                    position: relative
+                    transition: .5s
+                    opacity: 0
+                    +rwdm(900)
+                        font-size: px(30)
+                        line-height: px(35)
+                    &::after
+                        +pseudo($w:0px,$h:1px)
+                        background: #b2b2b2
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-50%)
+                        transition: .5s
+                        +rwdm(1200)
+                            width: 60%
+                h3
+                    +fshm($fm:$fmeFb,$fs:px(24),$lh:px(29),$mb:0 0 5px)
+                    font-weight: bold
+                    opacity: 0
+                    transform: translateY(100px)
+                h4
+                    +fshm($fm:$fmeFb,$fs:px(18),$lh:px(23),$mb:0 0 40px)
+                    font-weight: bold
+                    opacity: 0
+                    transform: translateY(100px)
+                p
+                    +fshm($fm:$fmeF,$fs:px(16),$lh:px(26),$mb:0)
+                    opacity: 0
+                    +rwdm(600)
+                        text-align: justify
+            .img
+                opacity: 0
+                img
+                    width: 100%

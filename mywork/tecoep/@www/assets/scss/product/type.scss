@@ -1,0 +1,384 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+.content {
+    padding: 0 100px 0 100px;
+    @media all and (max-width: 1024px) {
+        padding: 0 5vw 0 5vw;
+    }
+    ._title {
+        margin-top: 150px;
+        @media all and (max-width: 900px) {
+            padding: 0 5vw;
+        }
+        @media all and (max-width: 700px) {
+            margin-top: 14vh;
+        }
+        h2 {
+            @include title_h2;
+            span{
+                @include title_h2_span;
+            }
+        }
+        h3 {
+            @include title_h3;
+        }
+        p {
+            @include title_p;
+            max-width: 720px;
+        }
+        h4{
+            @include title_p;
+            max-width: 720px;
+            margin-top: 15px;
+        }
+        li{
+           max-width: 720px;
+           margin: auto;
+           margin-top: 10px;
+           list-style-type: none;
+           animation:fadeInUp 1.6s both .6s ;
+        }
+    }
+    .product_boxs {
+        margin: auto;
+        margin-top: 60px;
+        max-width: 1375px;
+        @include flex-space-between;
+        flex-wrap: wrap;
+        @media all and (max-width: 700px) {
+            @include flex-center;
+            flex-direction: column;
+            margin-top: 8vh;
+        }
+    }
+}
+
+.product_box_bg {
+    width: calc(50% - 7.5px);
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    @media all and (max-width: 700px) {
+        width: 100%;
+        margin-top: 8vh;
+    }
+    .interBg {
+        width: 100%;
+        height: 0%;
+        background-color: #F1F1F1;
+        ;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .product_box {
+        height: 600px;
+        background-color: #e5e5e5;
+        @include flex-center;
+        flex-direction: column;
+        padding: 0 60px;
+        position: relative;
+        opacity: 0;
+        @media all and (max-width: 1575px) {
+            height: calc(44.12vw - 94.85px);
+        }
+        @media all and (max-width: 1024px) {
+            height: auto;
+            padding: 4vh 5vw;
+        }
+        ._img {
+            height: 260px;
+            overflow: hidden;
+            margin-top: -108px;
+            transition: all .8s ease;
+            @include flex-center;
+            @media all and (max-width: 1080px) {
+                margin-top: -70px;
+            }
+            @media all and (max-width: 1024px) {
+                margin-top: 0;
+            }
+            @media all and (max-width: 700px) {
+                padding: 0 5vw;
+                height: 70vw;
+                max-height: 260px;
+            }
+            img {
+                max-height: 100%;
+                max-width: unset;
+            }
+        }
+        .hoverBg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .8);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .4s ease;
+            @media all and (max-width: 1024px) {
+                display: none;
+            }
+        }
+        ._text {
+            width: 100%;
+            transition: all .8s ease;
+            position: absolute;
+            @include flex-center;
+            flex-direction: column;
+            letter-spacing: 1px;
+            top: 50%;
+            transform: translateY(100px);
+            left: 0;
+            text-align: center;
+            padding: 0 5vw;
+            @media all and (max-width: 1024px) {
+                transform:translateY(0);
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-top: 2vh;
+            }
+            h2 {
+                @include font-size(32);
+                line-height: 1.5;
+
+                @media all and (max-width: 1024px) {
+                    @include font-size(28);
+                }
+            }
+            h3 {
+                @include font-size(20);
+                line-height: 1.5;
+                @media all and (max-width: 1024px) {
+                    @include font-size(18);
+                }
+            }
+            ul {
+                margin-top: 55px;
+                width: 280px;
+                @include flex-space-between;
+                overflow: hidden;
+                @media all and (max-width: 350px) {
+                    padding: 0 5vw;
+                }
+                li {
+                    width: calc(50% - 4px);
+                    @include flex-center;
+                    flex-direction: column;
+                    transform: translateY(100%);
+                    color: #fff;
+                    transition: all .6s ease;
+                    cursor: pointer;
+                    position: relative;
+                    @media all and (max-width: 1024px) {
+                        transform: translateY(0%);
+                        color: #000;
+                    }
+                    p {
+                        @include flex-center;
+                        @include font-size(16);
+                        line-height: 1.5;
+                        &:before {
+                            font-family: 'icomoon';
+                            @include font-size(13);
+                            margin-right: 10px;
+                        }
+                    }
+                    &:after,
+                    &:before {
+                        content: "";
+                        display: block;
+                        height: 8px;
+                        position: absolute;
+                        bottom: 0;
+                        transition: all .4s ease;
+                    }
+                    &:before,
+                    &:after {
+                        width: 0%;
+                        left: 50%;
+                    }
+                    &:after {
+                        background-color: $base_gray;
+                    }
+                    /*系列介紹*/
+                    &:first-child {
+                        padding-bottom: 18px;
+                        p {
+                            &:before {
+                                content: "\ea0a";
+                            }
+                        }
+                        &:before {
+                            background-color: $base_blue;
+                        }
+                    }
+                    /*產品總覽*/
+                    &:last-child {
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            padding-bottom: 18px;
+                            p {
+                                &:before {
+                                    content: "\e90c";
+                                }
+                            }
+                        }
+                        &:before {
+                            background-color: $base_orange;
+                        }
+                    }
+                    @media all and (max-width:1024px) {
+                        &:before {
+                            width: 100%;
+                            left: 0;
+                        }
+                        &:first-child {
+                            &:before {
+                                background-color: $base_blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:hover {
+            ._img {
+                margin-top: 0px;
+                transition: all .8s ease;
+            }
+            .hoverBg {
+                opacity: 1;
+                transition: all .4s ease;
+            }
+            ._text {
+                transform: translateY(-81px);
+                color: #fff;
+                transition: all .8s ease;
+                @media all and (max-width: 1024px) {
+                    transform:translateY(0);
+                    color: #000;
+                }
+                ul {
+                    li {
+                        transform: translateY(0%);
+                        transition: all .6s ease .2s;
+                        &:before {
+                            width: 100%;
+                            left: 0;
+                            transition: all .8s ease .4s;
+                        }
+                        &:hover {
+                            @media all and (min-width: 1025px) {
+                                &:after {
+                                    width: 100%;
+                                    left: 0;
+                                    transition: all .4s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* waypoint進場動畫*/
+
+.content {
+    ._title {
+        &.show {
+            h2 {
+                animation: fadeInDown .8s both;
+            }
+            h3 {
+                animation: fadeInDown .8s both .2s;
+            }
+            p {
+                animation: fadeInUp 1s both .4s;
+            }
+            h4{
+                animation: fadeInUp 1s both .4s;
+            }
+            li{
+                animation: fadeInUp 1s both .4s;
+            }
+        }
+    }
+    .product_box_bg {
+        &.show {
+            .interBg {
+                animation: interBg 1.4s both;
+                @media all and (max-width: 700px) {
+                    animation: interBg 1.4s both;
+                }
+            }
+            .product_box {
+                animation: fadeIn 0s both .56s;
+                @media all and (max-width: 700px) {
+                    animation: fadeIn 0s both .28s;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes interBg {
+    0% {
+        height: 0%;
+    }
+    40% {
+        height: 101%;
+        transform: skewY(0deg) translateY(0%);
+    }
+    41% {
+        height: 200%;
+        transform: skewY(30deg) translateY(-20%);
+    }
+    100% {
+        height: 200%;
+        transform: skewY(30deg) translateY(80%);
+    }
+}
+
+@media all and (max-width: 700px) {
+    @keyframes interBg {
+        0% {
+            height: 0%;
+        }
+        20% {
+            height: 101%;
+            transform: skewY(0deg) translateY(0%);
+        }
+        21% {
+            height: 200%;
+            transform: skewY(30deg) translateY(-20%);
+        }
+        100% {
+            height: 200%;
+            transform: skewY(30deg) translateY(80%);
+        }
+    }
+}

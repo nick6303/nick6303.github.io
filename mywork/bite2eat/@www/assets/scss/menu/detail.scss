@@ -1,0 +1,1012 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+@import "../base/_header.scss";
+@import "../menu/_dishDetailLibox.scss";
+
+main {
+    width: 100%;
+    position: relative;
+}
+
+#ascrail2002 {
+    display: none !important;
+}
+
+.header {
+    .dish_nav {
+        width: 100%;
+        @include flex-center;
+        display: none;
+        background-color: #252525;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        overflow: hidden;
+        ul {
+            @include flex-center;
+            li {
+                font-family: CenturyGothic, 微軟正黑體;
+                @include font-size(14);
+                @include flex-center;
+                cursor: pointer;
+                transition: all .4s ease;
+                color: #a0a0a0;
+                letter-spacing: 1px;
+                padding: 10px 0;
+                &:not(:first-child) {
+                    padding-left: 20px;
+                    @media all and (max-width: 1180px) {
+                        padding-left: 15px;
+                    }
+                }
+                &:not(:last-child):after {
+                    margin-left: 20px;
+                    @include fakeLine(1px, 12px, #515151);
+                    @media all and (max-width: 1180px) {
+                        margin-left:15px;
+                    }
+                }
+
+                span {
+                    @media all and (max-width: 1800px) {
+                        display: none;
+                    }
+                }
+            }
+            li:hover,
+            li.active,
+            &:hover li.active:hover {
+                color: #fff;
+            }
+            &:hover {
+                li.active {
+                    color: #a0a0a0;
+                }
+            }
+        }
+    }
+    &.prepare {
+        .dish_nav {
+            display: flex;
+            height: 0;
+            transition: all 1s ease;
+            @media all and (max-width: 1023px) {
+                display: none;
+            }
+        }
+    }
+    &.fixed,
+    &.whiteBg {
+        .dish_nav {
+            opacity: 1;
+            height: 50px;
+        }
+    }
+}
+
+
+.banner.short .banner_text {
+    @media all and (max-width: 700px) {
+        top: 35%;
+    }
+}
+
+.content {
+    background-image: url("../../img/menuBg/detail/contentBg_1920_1290.jpg");
+}
+
+.dish_menu {
+    @include flex-center;
+    flex-direction: column;
+    ._title {
+        letter-spacing: 1px;
+        color: #3a342e;
+        text-align: center;
+        margin-top: 130px;
+        h5 {
+            font-family: 'Ramaraja-Regular';
+            @include font-size(36);
+            line-height: 1.5;
+            @media all and (max-width: 700px) {
+                @include font-size(32);
+            }
+        }
+        p {
+            @include font-size(18);
+            line-height: 1.5;
+        }
+    }
+    ul {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 50px;
+        max-width: 90vw;
+        .ps__rail-x {
+            display: none;
+        }
+        li {
+            @include flex-center;
+            flex-direction: column;
+            cursor: pointer;
+            ._img {
+                position: relative;
+                width: 70px;
+                height: 70px;
+                img {
+                    position: absolute;
+                    top: calc(50% - 25px);
+                    left: calc(50% - 25px);
+                    width: 50px;
+                    height: 50px;
+                    &:first-child {
+                        z-index: 1;
+                        opacity: 1;
+                        transition: all .2s ease .3s;
+                    }
+                    &:nth-child(2) {
+                        transition: all .4s ease;
+                    }
+                    &:last-child {
+                        transition: all .4s ease;
+                    }
+                }
+            }
+            ._text {
+                text-align: center;
+                letter-spacing: 1px;
+                width: 100%;
+                margin-top: 15px;
+                p {
+                    @include font-size(14);
+                    line-height: 1.5;
+                    color: #a6a6a6;
+                    font-family: CenturyGothic, 微軟正黑體;
+                    transition: all .4s ease;
+                    position: relative;
+                    width: 150px;
+                    @media all and (max-width: 700px) {
+                        padding: 0 7vw;
+                    }
+                    &:first-child:after {
+                        @include fakeLine(1px,
+                        12px,
+                        #c2c2c2);
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            &:first-child ._text p:first-child:before {
+                @include fakeLine(1px,
+                12px,
+                #c2c2c2);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        li:hover,
+        li.active,
+        &:hover li.active:hover {
+            ._text p {
+                color: #000;
+            }
+            ._img img:first-child {
+                opacity: 0;
+                transition: all .2s ease
+            }
+            ._img img:nth-child(2) {
+                transition: all .4s ease;
+            }
+            ._img img:last-child {
+                transition: all .4s ease;
+            }
+            /*右上斜*/
+            ._img.topRightTilt img:last-child {
+                transform: translate(10%, -15%); // animation:topRightTilt .8s infinite;
+            }
+            /*左上斜*/
+            ._img.topLeftTilt img:last-child {
+                transform: translate(-10%, -15%); // animation:topLeftTilt .8s infinite;
+            }
+            /*向上*/
+            ._img.top img:last-child {
+                transform: translateY(-15%); // animation:top .8s infinite;
+            }
+            /*向左右*/
+            ._img.horizon img {
+                &:nth-child(2) {
+                    transform: translateX(15%);
+                }
+                &:last-child {
+                    transform: translateX(-15%);
+                }
+            }
+            /*順時針旋轉*/
+            ._img.rightTurn img:last-child {
+                transform: rotateZ(30deg);
+                transform-origin: right 65%;
+            }
+            /*逆時針旋轉*/
+            ._img.leftTurn img:last-child {
+                transform: rotateZ(-30deg);
+                transform-origin: left 65%;
+            }
+        }
+        &:hover li.active {
+            ._text p {
+                color: #a6a6a6;
+            }
+            ._img img {
+                &:first-child {
+                    opacity: 1;
+                    transition: all .2s ease .3s;
+                }
+                &:last-child,
+                &:nth-child(2) {
+                    transform: translate(0);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@keyframes topRightTilt {
+    from,
+    to {}
+
+    50% {
+        transform: translate(10%, -15%);
+    }
+}
+
+@keyframes topLeftTilt {
+    from,
+    to {}
+
+    50% {
+        transform: translate(-10%, -15%);
+    }
+}
+
+
+@keyframes top {
+    from,
+    to {}
+
+    50% {
+        transform: translateY(-15%);
+    }
+}
+
+
+
+.dish_content {
+    background-image: url("../../img/menuBg/detail/dish_contentBg_1820_1515.jpg");
+    margin-top: 130px;
+    margin-left: 5vw;
+    padding-right: 5vw;
+    color: #fff;
+    @media all and (min-width: 1921px) {
+        margin-left: 100px;
+        padding-right: 100px;
+    }
+    @media all and (max-width: 1024px) {
+        margin-left: 0;
+        padding-right: 0;
+    }
+    .dishImg {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transform: translateY(-50px);
+        min-height: 400px;
+        @media all and (max-width: 1024px) {
+            min-height:30vw;
+        }
+        img {
+            animation: fadeInUp 1s both 1s;
+            /*↓ie debug↓*/
+            @media \0screen {
+                width: 100%;
+            }
+            @media screen\0 {
+                width: 100%;
+            }
+            @media screen and (min-width: 0\0) {
+                width: 100%;
+            }
+            @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+                width: 100%;
+            }
+            /*↑ie debug↑*/
+        }
+    }
+    &.brownWords {
+        /*
+        color: rgba(58, 52, 46, 5);
+        .dish_detail ._title ul {
+            h5,
+            p,
+            &:hover li.active h5,
+            &:hover li.active p {
+                color: rgba(58, 52, 46, .5);
+            }
+            li:hover h5,
+            li:hover p,
+            li.active h5,
+            li.active p,
+            &:hover li.active:hover h5,
+            &:hover li.active:hover p {
+                color: #3a342e;
+            }
+        }
+        .dishes .typeName .icon,
+        .dishes ul .dish:before,
+        .goTop {
+            background-color: #3a342e;
+        }
+        .dishes ul .dish .openDetailLibox:hover {
+            background-color: #3a342e;
+        }
+        .dishes ul .dish .ps,
+        .dish_detail ._title ul li ._img,
+        .dish_detail ._title ul:hover li.active ._img {
+            border: 3px solid rgba(58, 52, 46, .5);
+        }
+        .dish_detail ._title ul li:hover ._img,
+        .dish_detail ._title ul li.active ._img,
+        .dish_detail ._title ul:hover li.active:hover ._img {
+            border: 3px solid #d09b37;
+        }
+        .goTop span:before {
+            color: #fff;
+        }*/
+        .dishes ul .dish .dishName h5,
+        .dishes ul .dish .dishName p {
+            color: #fff;
+        }
+        .dishes ul .dish .dishName .dishPrice {
+            color: #fff;
+        }
+        .dishes ul .dish .dishName h4,
+        .dishes ul .dish .dishName h3 {
+            color: #251f1a;
+            opacity: .8;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 共同符號設定*/
+
+span {
+    &.seafood:before {
+        content: "\e918";
+        font-family: 'icomoon';
+    }
+
+    &.chicken:before {
+        content: "\e916";
+        font-family: 'icomoon';
+    }
+
+    &.vegetable:before {
+        content: "\e919";
+        font-family: 'icomoon';
+    }
+
+    &.pork:before {
+        content: "\e917";
+        font-family: 'icomoon';
+    }
+}
+
+
+.dish_detail {
+    position: relative;
+    margin: -50px 0 0 -5vw;
+    padding-left: 5vw;
+    transition: all 1s ease;
+    opacity: 0;
+    animation: fadeIn 1s both 1s;
+    min-height: 1000px;
+    @media all and (min-width: 1921px) {
+        margin: -50px 0 0 -100px;
+        padding-left: 100px;
+    }
+    @media all and (max-width: 1024px) {
+        margin: -50px 0 0 0;
+        padding-left: 0;
+    }
+    ._title {
+        position: relative;
+        @include flex-center;
+        flex-direction: column;
+        transform: translateY(-25px);
+        @media all and (max-width: 700px) {
+            padding:0 5vw;
+        }
+        h2,
+        h3 {
+            width: 90vw;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Ramaraja-Regular';
+            @include font-size(54);
+            letter-spacing: 2px;
+            animation: fadeInUp 1.4s both 1.2s;
+        }
+        h3 {
+            @include font-size(18);
+            letter-spacing: 1px;
+            animation: fadeInUp 2s both 1.4s;
+            margin-top: 15px;
+        }
+        p {
+            margin-top: 55px;
+            max-width: 720px;
+            padding: 0 10px;
+            line-height: 1.8;
+            @include font-size(14);
+            letter-spacing: 1px;
+            font-family: "微軟正黑體";
+            text-align: justify;
+        }
+        &>p {
+            animation: fadeInUp 1.4s both 1.6s;
+        }
+        ul {
+            display: flex;
+            max-width: 90vw;
+            padding: 0 10px;
+            margin-top: 60px;
+            animation: fadeInUp 1.4s both 1.6s;
+            .ps__rail-x,
+            .ps__rail-y {
+                display: none;
+            }
+            li {
+                @include flex-center;
+                flex-direction: column;
+                cursor: pointer;
+                letter-spacing: 1px;
+                ._img {
+                    width: 65px;
+                    height: 65px;
+                    @include flex-center;
+                    border: 3px solid rgb(255, 255, 255);
+                    opacity: .2;
+                    border-radius: 50%;
+                    transition: all .4s ease .1s;
+                    img {
+                        width: 35px;
+                        height: 35px;
+                    }
+                } // span {
+                //     border: 3px solid rgba(255, 255, 255, .2);
+                //     border-radius: 50%;
+                //     width: 65px;
+                //     height: 65px;
+                //     @include flex-center;
+                //     transition: all .4s ease .1s;
+                //     &:before {
+                //         opacity: .2;
+                //         transition: all .4s ease .1s;
+                //     }
+                //     &.seafood:before {
+                //         @include font-size(25);
+                //     }
+                //     &.chicken:before {
+                //         @include font-size(30);
+                //     }
+                //     &.vegetable:before {
+                //         @include font-size(32);
+                //     }
+                //     &.pork:before {
+                //         @include font-size(26);
+                //     }
+                // }
+                h5 span,
+                p {
+                    white-space: nowrap;
+                    transition: all .4s ease .1s;
+                    opacity: .2;
+                }
+                h5 {
+                    padding: 0 40px;
+                    margin-top: 15px;
+                    line-height: 1.5;
+                    font-family: 'CenturyGothic';
+                    white-space: nowrap;
+                    @media all and (max-width: 700px) {
+                        padding: 0 20px;
+                    }
+                }
+                p {
+                    line-height: 1.5;
+                }
+                &:not(:first-child) h5 {
+                    position: relative;
+                    &:before {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        @include fakeLine(1px,
+                        12px,
+                        rgba(255,
+                        255,
+                        255,
+                        .2));
+                    }
+                }
+            }
+            li:hover,
+            li.active,
+            &:hover li.active:hover {
+                ._img {
+                    border: 3px solid $base_gold;
+                    opacity: 1;
+                }
+                h5 span,
+                p {
+                    opacity: 1;
+                }
+            }
+            &:hover li.active {
+                ._img {
+                    opacity: .2;
+                }
+                h5 span,
+                p {
+                    opacity: .2;
+                }
+            }
+        }
+    }
+}
+
+
+
+.dish_type {
+    padding-bottom: 200px;
+    margin-top: -25px;
+    @media all and (max-width: 700px) {
+        padding: 0 10vw;
+    }
+}
+
+.dishes {
+    position: relative;
+    padding: 70px 75px 0 75px;
+    @media all and (max-width: 1024px) {
+        padding: 70px 6vw 0 6vw;
+    }
+
+    @media all and (max-width: 700px) {
+        padding: 6vh 0 6vh 0;
+        &:first-child {
+            padding: 12vh 0 6vh 0;
+        }
+        &:not(:first-child) {
+            border-top: 2px dashed $base_gold;
+        }
+    }
+
+    .typeName {
+        @include flex-center;
+        flex-direction: column;
+        animation: fadeInUp 1s both 1s;
+        .icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #fff;
+            padding: 5px;
+            ._img {
+                @include flex-center;
+                width: 100%;
+                height: 100%;
+                border: 1px dashed $base_gold;
+                border-radius: 50%;
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            } // span {
+            //     width: 100%;
+            //     height: 100%;
+            //     @include flex-center;
+            //     border: 1px dashed $base_gold;
+            //     border-radius: 50%;
+            //     &:before {
+            //         @include font-size(30);
+            //     }
+            // }
+        }
+        ._text {
+            @include flex-center;
+            letter-spacing: 1px;
+            @media all and (max-width: 700px) {
+                margin-top: 10px;
+            }
+            h5 {
+                @include font-size(24);
+                font-family: 'Ramaraja-Regular';
+                line-height: 1.5;
+                padding-top: 9px;
+                margin-right: 12px;
+                letter-spacing: 1.8px;
+            }
+            p {
+                @include font-size(18);
+                line-height: 1.5
+            }
+        }
+    }
+}
+
+
+
+.dish_content {
+    .dishes ul {
+        @media all and (max-width: 700px) {
+            display: none;
+        }
+    }
+    &.theOne {
+        .dishes ul {
+            @media all and (max-width: 700px) {
+                display: flex;
+            }
+        }
+        .mobileCross {
+            @media all and (max-width: 700px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.dishes ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1360px;
+    margin: auto;
+
+    background-image: url("../../img/menuBg/detail/dishesLine.png");
+    background-position: center;
+    background-repeat: repeat-y;
+    @media all and (min-width: 701px) {
+        animation: fadeIn 1s both 1s;
+    }
+    @media all and (max-width: 700px) {
+        flex-direction: column;
+        background: none;
+    }
+    &:not(:first-child) {
+        margin-top: 50px;
+    }
+    .dish {
+        width: calc(50% - 7vw);
+        position: relative;
+        padding: 50px 10px;
+        @media all and (min-width: 1401px) {
+            width: calc(50% - 100px);
+        }
+        @media all and (max-width: 1024px) {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 25px 10px 70px 10px;
+        }
+        @media all and (max-width: 700px) {
+            width: 100%;
+            padding: 25px 10px 50px 10px;
+        }
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include fakeLine(100%,
+            1px,
+            #fff);
+        }
+        .psAndSpicy {
+            @media all and (max-width: 1024px) {
+                width: 100%;
+                position: relative;
+                min-height: 20px;
+                padding-top: 10px;
+            }
+        }
+        .spicy {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            @include flex-center;
+            @media all and (max-width: 1024px) {
+                top: 50%;
+                transform: translateY(-16%);
+            }
+            span {
+                &:before {
+                    font-family: 'icomoon';
+                    content: "\e915";
+                    @include font-size(14);
+                    color: #e00000;
+                }
+            }
+        }
+        .ps {
+            position: absolute;
+            top: 50px;
+            left: -5vw;
+            border: 3px solid #ff5400;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            @include flex-center;
+            transform: rotate(-30deg);
+            color: #ff5400;
+            @media all and (min-width: 1401px) {
+                left: -75px;
+            }
+            @media all and (max-width: 1024px) {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-left: -10px;
+            }
+            @media all and (max-width: 900px) {}
+            p {
+                text-transform: uppercase;
+                font-family: Ramaraja-Regular, 微軟正黑體;
+                @include font-size(14);
+                letter-spacing: 1px;
+                line-height: 1.2;
+                padding: 5px 5px 0 5px;
+                text-align: center;
+            }
+        }
+        .dishName {
+            position: relative;
+            padding:0 0 50px 0;
+            @media all and (max-width: 1024px) {
+                margin-top: 25px;
+                position: static;
+            }
+            h5,p{
+                padding-right: 105px;
+                @media all and (max-width: 1024px){
+                    padding-right: 0;
+                }
+            }
+            h5 {
+                font-family: 'Ramaraja-Regular';
+                @include font-size(24);
+                line-height: 1.2;
+                letter-spacing: 2px;
+                color: $base_gold;
+
+            }
+            p {
+                margin-top: 8px;
+                line-height: 1.5;
+                @include font-size(18);
+                letter-spacing: 1.5px;
+                font-family: CenturyGothic, 微軟正黑體;
+                color: $base_gold;
+            }
+            h4,
+            h3 {
+                font-family: CenturyGothic, 微軟正黑體;
+                @include font-size(14);
+                line-height: 2;
+                letter-spacing: 1px;
+            }
+            h4 {
+                margin-top: 30px;
+                @media all and (max-width: 1440px) {
+                    margin-top: 20px;
+                }
+            }
+            .dishPrice {
+                position: absolute;
+                right: 10px;
+                bottom: 0;
+                @include font-size(20);
+                letter-spacing: 1px;
+                color: $base_gold;
+                @media all and (max-width: 1024px) {
+                    bottom:66px;
+                    right: auto;
+                    left: 10px;
+                }
+            }
+        }
+        .openDetailLibox {
+            border: 1px solid #fff;
+            width: 170px;
+            height: 45px;
+            cursor: pointer;
+            @include flex-center;
+            border-radius: 25px;
+            margin: 25px 0 0 auto;
+            @include font-size(14);
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: all .4s ease;
+            color: #fff;
+            @media all and (max-width: 1024px) {
+                position: absolute;
+                bottom: 55px;
+                right: 0;
+                margin: 0;
+            }
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+
+.mobileCross {
+    @media all and (max-width: 700px) {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin: auto;
+        margin-top: 20px;
+        &:before,
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:before {
+            @include fakeLine(0,
+            1px,
+            #fff);
+            animation: w32 1s both 1s;
+        }
+        &:after {
+            @include fakeLine(1px,
+            0,
+            #fff);
+            animation: h32 1s both 1s;
+        }
+    }
+}
+
+@keyframes w32 {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 32px;
+    }
+}
+
+@keyframes h32 {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 32px;
+    }
+}
+
+.goTop {
+    @include circle;
+    margin: auto;
+    margin-top: 65px;
+    span {
+        @include circle_span($base_gold);
+        @include flex-center;
+        &:before {
+            font-family: 'icomoon';
+            content: "\e914";
+            color: #534d48;
+            @include font-size(12);
+            transform: scale(.6);
+            font-weight: bold;
+        }
+    }
+}
+
+.nextImg {
+    transform: translateY(-50px);
+    @include flex-center;
+    img {
+        /*↓ie debug↓*/
+        @media \0screen {
+            width: 100%;
+        }
+        @media screen\0 {
+            width: 100%;
+        }
+        @media screen and (min-width: 0\0) {
+            width: 100%;
+        }
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            width: 100%;
+        }
+        /*↑ie debug↑*/
+    }
+    &.show img {
+        animation: fadeInUp 1s both;
+    }
+}
+
+.next {
+    margin-top: -50px;
+    position: relative;
+    width: 100%;
+    animation: fadeIn 1s both;
+    .bg {
+        height: 330px;
+        @include flex-center;
+        overflow: hidden;
+        img {
+            max-width: unset;
+            height: 100%;
+            width: auto;
+        }
+    }
+    ._text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include flex-center;
+        flex-direction: column;
+        letter-spacing: 1px;
+        padding-top: 30px;
+        p {
+            @include font-size(14);
+        }
+        h2 {
+            font-family: 'Ramaraja-Regular';
+            @include font-size(54);
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+        h3 {
+            @include font-size(18);
+        }
+        &:after {
+            font-family: 'icomoon';
+            content: "\e912";
+            @include font-size(14);
+            margin-top: 40px;
+            animation: jumping 1s both infinite .4s;
+        }
+    }
+}

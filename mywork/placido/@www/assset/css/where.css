@@ -1,0 +1,922 @@
+@charset "utf-8";
+
+
+
+.banner {
+    position: relative;
+}
+
+.favorite {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.favorite {
+    top: 120px;
+    left: 50px;
+}
+
+.favorite p {
+    font-family: '微軟正黑體';
+    letter-spacing: 1.5px;
+    font-size: .75rem;
+    writing-mode: vertical-lr;
+    margin-bottom: 12px;
+}
+
+.favorite span {
+    font-size: .75rem;
+}
+
+
+
+
+/*----------------------banner結束---------------------------*/
+
+
+/*----------------------selectSore開始-----------------------*/
+
+.selectSore {
+    background-color: #f3f3f3;
+    margin: 0 3vw 0 9vw;
+    padding: 15vh 6vw 6vh 0;
+}
+
+
+.selectSore_title {
+    text-align: center;
+    letter-spacing: 1px
+}
+
+.selectSore_title h2 {
+    font-family: 'JosefinSans-Bold';
+    font-size: 3rem;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.selectSore_title h2 span {
+    display: block;
+}
+
+.selectSore_title h3 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.selectSore_title h3 span {
+    display: block;
+}
+
+.selectSore_title p {
+    display: none;
+}
+
+.selectors {
+    width: 100%;
+    display: flex;
+    max-width: 840px;
+    margin: auto;
+    margin-top: 8vh;
+    justify-content: space-between;
+}
+
+
+
+
+
+/*下拉式選單設定開始------------*/
+
+.menu_list_bg {
+    width: calc(33.333% - 2px);
+}
+
+.menu_list {
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.selectMenu,
+.menu_list ul li {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.selectMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    height: 55px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all .5s ease ;
+}
+
+.selectMenu div:before {
+    font-family: 'icomoon';
+    content: "\e904";
+    font-size: .75rem;
+    margin-right: 10px;
+}
+
+.selectMenu.open {
+    border-radius: 3px;
+}
+
+.selectMenu:hover{
+    background-color: #333333;
+    transition: all .5s ease ;
+    color: #fff;
+}
+
+.selectMenu div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu_list ul {
+    display: none;
+    width: 100%;
+    margin-top: 1px;
+    background-color: #333333;
+    padding: 35px 0;
+    max-height: 260px;
+    overflow-y: auto;
+    position: absolute;
+    top: 56px;
+}
+
+.menu_list .mCSB_inside>.mCSB_container {
+    margin: 0 30px;
+}
+
+.menu_list ul li {
+    width: 100%;
+    height: 30px;
+    margin: 8px 0;
+    color: #fff;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+
+
+.menu_list ul li:hover {
+    background-color: #3d3d3d;
+}
+
+.menu_list ul li.active:after {
+    display: none;
+}
+
+.menu_list ul li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectMenu h2 {
+    display: none;
+}
+
+
+
+
+/*下拉式選單設定結束------------*/
+
+.select_btn {
+    height: 50px;
+    margin-top: calc(260px + 2vh);
+    position: relative;
+}
+
+
+.hidden_message {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: calc(50% - 90px);
+    width: 180px;
+    height: 40px;
+    color: #6f0064;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 2px solid #6f0064;
+    padding-top: 9px;
+}
+
+.hidden_message2 {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: calc(50% - 90px);
+    width: 180px;
+    height: 40px;
+    color: #6f0064;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 2px solid #6f0064;
+    padding-top: 9px;
+}
+
+.select_btn ul {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.select_btn ul li {
+    margin: 0 15px;
+}
+
+.select_btn ul li button {
+    border: none;
+    background-color: transparent;
+    letter-spacing: 1px;
+    font-family: "微軟正黑體";
+    font-size: .875rem;
+    transition: all .5s ease;
+}
+
+.select_btn ul li:hover button {
+    transform: scale(1.15);
+    transition: all .5s ease;
+    font-weight: 900;
+}
+
+.select_btn ul li:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 4px;
+    background-color: #6f0064;
+    margin-top: 12px;
+    margin-left: 50%;
+    transition: .5s ease;
+}
+
+.select_btn ul li:hover:after {
+    margin-left: 0;
+    width: 100%;
+    transition: .5s ease;
+}
+
+
+
+
+/*----------------------selectSore結束-----------------------*/
+
+
+/*---------------------result開始-----------------------------*/
+
+.result {
+    margin: auto;
+    margin-top: 120px;
+    height: 0;
+    display: none;
+    max-width: 1340px;
+}
+
+.result.open {
+    display: flex;
+    animation: height1 1.2s both;
+}
+
+@keyframes height1 {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 720px;
+    }
+}
+
+
+
+/*地圖設定*/
+
+.map {
+    width: 65%;
+}
+
+.map div {
+    width: 100%;
+    height: 720px;
+}
+
+
+.result_arrow {
+    display: none;
+}
+
+
+
+
+
+/*文字設定*/
+
+.resultList {
+    width: 35%;
+    max-height: 720px;
+    margin-left: -10px;
+}
+
+.resultList ul {
+    width: 100%;
+    height: 100%;
+}
+
+.resultList .mCSB_container {
+    padding-left: 10px;
+}
+
+.resultList ul li {
+    padding-left: 40px;
+    height: 144px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    transition: all .4s ease;
+    border: 1px solid rgba(111, 0, 100, 0);
+    position: relative;
+}
+
+.resultList ul li.active {
+    border: 1px solid rgba(111, 0, 100, 1);
+    transition: all .4s ease;
+}
+
+.resultList ul li:before {
+    font-family: 'icomoon';
+    content: "\e910";
+    color: rgba(111, 0, 100, 0);
+    font-size: .75rem;
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%);
+    top: 50%;
+    transform: translateX(-100%);
+    z-index: 1;
+    transition: all .4s ease
+}
+
+.resultList ul li.active:before {
+    color: rgba(111, 0, 100, 1);
+    transition: all .4s ease
+}
+
+.resultList ul li h2 {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.resultList ul li h3 {
+    font-weight: bold;
+    font-size: .875rem;
+    margin-top: 15px;
+    color: #666666;
+}
+
+.resultList ul li p {
+    font-size: .875rem;
+    font-weight: bold;
+    font-family: 'MyriadPro-Regular';
+    color: #666666;
+    margin-top: 10px;
+}
+
+
+
+
+/*---------------------result結束-----------------------------*/
+
+
+/*隱藏的libox  */
+
+.selectLibox {
+    display: none;
+}
+
+.resultLibox {
+    display: none;
+}
+
+
+
+
+/*進場動畫------------*/
+
+.favorite div {
+    transform: translateX(-100%);
+    animation: left_slidein 1s both .5s;
+}
+
+.selectSore_title h2 span {
+    animation: top_slidein .8s both .5s
+}
+
+.selectSore_title h3 span {
+    animation: top_slidein .8s both .8s
+}
+
+.selectMenu {
+    animation: fadeIn .8s both .8s;
+}
+
+.selectMenu div {
+    animation: top_slidein_op .8s both 1s;
+}
+
+.select_btn ul {
+    animation: bt_slidein_op .8s both 1s;
+}
+
+
+/*------------------max-width: 1024px-----------------------*/
+
+@media only screen and (max-width: 1024px) {
+    main {
+        padding-top: 60px;
+        margin-bottom: 14vh;
+    }
+
+    .favorite {
+        display: none;
+    }
+
+    .banner {
+        margin-top: 0;
+    }
+
+    /*---------------------selectSore開始------------------*/
+    .selectSore {
+        background-color: transparent;
+        padding: 12vh 5vw 0 5vw;
+        margin: 0;
+    }
+
+
+    .selectSore_title h2 {
+        font-size: 2.25rem;
+    }
+
+    .selectSore_title p {
+        font-size: .875rem;
+        display: block;
+        margin-top: 9.5vh;
+        letter-spacing: 1px;
+        overflow: hidden;
+    }
+
+    .selectors {
+        flex-direction: column;
+        margin: auto;
+        margin-top: 5.5vh;
+        width: 280px;
+    }
+
+    .menu_list_bg {
+        width: 100%;
+        margin-bottom: -1px;
+    }
+
+    .menu_list {
+        height: auto;
+    }
+
+    .menu_list ul {
+        position: relative;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        top: auto;
+    }
+
+    .selectMenu {
+        font-size: .875rem;
+        height: 50px;
+        border: 1px solid #e4e4e4;
+    }
+
+    .selectMenu div {
+        justify-content: space-around;
+    }
+
+    .selectMenu div:before {
+        display: none;
+    }
+
+    .selectMenu h2 {
+        display: block;
+        font-size: .75rem;
+    }
+
+    .selectMenu h2:before {
+        font-family: 'icomoon';
+        content: "\e904";
+        font-size: .75rem;
+        margin-right: 10px;
+    }
+
+    .menu_list .mCSB_inside>.mCSB_container {
+        margin: 0 30px 0 0;
+    }
+
+    .select_btn {
+        margin-top: 14vh;
+        height: 50px;
+    }
+
+    .select_btn ul li {
+
+        height: 100%;
+        margin: 0;
+    }
+
+    .select_btn ul li:after {
+        display: none;
+    }
+
+    .select_btn ul li button {
+        height: 100%;
+        width: 50px;
+    }
+
+    .select_btn ul li:hover button {
+        transform: scale(1);
+        font-weight: normal;
+    }
+
+    .select_btn ul li button p {
+        display: none;
+    }
+
+    .select_btn ul li:nth-child(1) button span:before {
+        font-family: 'icomoon';
+        content: "\e90d";
+        color: #6f0064;
+    }
+
+    .select_btn ul li:nth-child(2) button span:before {
+        font-family: 'icomoon';
+        content: "\ea56";
+        color: #6f0064;
+    }
+
+    .hidden_message {
+        bottom: calc(100% + 20px);
+    }
+
+    .hidden_message2 {
+        bottom: calc(100% + 20px);
+    }
+
+
+    /*進場動畫*/
+
+
+    .selectSore_title p span{
+        display: block;
+        animation: top_slidein .5s both 1s
+    }
+
+    .selectMenu {
+        animation: fadeIn .8s both 1s;
+    }
+
+    .selectMenu div {
+        animation: top_slidein .8s both 1.2s;
+    }
+
+    .select_btn ul {
+        animation: bt_slidein_op .8s both 1.4s;
+    }
+
+    /*-----------------selectSore結束------------------*/
+    /*-----------------result開始----------------------*/
+    .result {
+        padding: 0 5vw;
+        margin: 20vh 0 0 0;
+        position: relative;
+    }
+
+    .result:before {
+        content: "";
+        display: block;
+        background-color: #000;
+        width: 1px;
+        height: 90px;
+        position: absolute;
+        top: -45px;
+        left: calc(50% - 1px);
+    }
+
+
+    .map {
+        width: 100%;
+        position: relative;
+    }
+
+    .map div {
+        height: 55vh;
+    }
+
+    .result_arrow {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        transform: translateX(50%);
+        z-index: 1;
+    }
+
+    .result_arrow span {
+        font-size: 1.875rem;
+        background-color: #fff;
+    }
+
+    .resultList {
+        display: none;
+    }
+
+    @keyframes height1 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 100%;
+        }
+    }
+
+
+    /*-----------------result結束----------------------*/
+    /*-----------------resultLibox開始----------------*/
+    .resultLibox {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    .resultLibox_close {
+        width: 80px;
+        height: 80px;
+        background-color: #6f0064;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 22px;
+    }
+
+    .open .resultLibox_close {
+        transform: translateX(100%);
+    }
+
+    .resultLibox_close div {
+        width: 20px;
+        height: 20px;
+        margin: auto;
+        position: relative;
+        transform: rotate(45deg);
+    }
+
+    .icon-arrow-left01 {
+        color: #fff;
+        display: block;
+        text-align: center;
+    }
+
+    .resultLibox_close p {
+        text-align: center;
+        font-family: 'JosefinSans-Bold';
+        font-size: .75rem;
+        color: #fff;
+        letter-spacing: 1px;
+        margin-top: 8px;
+    }
+
+    .resultLibox_title {
+        position: absolute;
+        top: 30px;
+        overflow: hidden;
+    }
+
+    .resultLibox_title h2 {
+        font-weight: bold;
+        font-size: 1.125rem;
+        letter-spacing: 1px;
+        padding-left: 15vw;
+    }
+
+    .resultLibox_map {
+        margin-top: 80px;
+        overflow: hidden;
+    }
+
+    .resultLibox_map div {
+        height: 0;
+        width: 100%;
+    }
+
+    .resultLibox_map.on div {
+        height: 32vh;
+        transition: all .8s ease;
+    }
+
+    .open .conditions ul {
+        transform: translateY(-100%);
+    }
+
+    .result_show {
+        padding: 0 1vw 0 5vw;
+        overflow: hidden;
+    }
+
+    .result_show ul {
+        overflow: hidden;
+        height: calc(100vh - 80px);
+    }
+
+    .result_show.on ul {
+        height: calc(100vh - 32vh - 90px);
+        transition: all .8s ease;
+    }
+
+    .open .result_show ul {
+        transform: translateY(-100%);
+    }
+
+    .mCSB_container {
+        padding-left: 5vw;
+    }
+
+    .result_show .mCSB_inside>.mCSB_container {
+        margin-right: 8vw;
+        padding-left: 0;
+    }
+
+    .result_show ul li {
+        /*height: 15vh;*/
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+        padding: 2vh 5vw;
+        position: relative;
+        border: 1.5px solid rgba(111, 0, 100, 0);
+        transition: all .4s ease;
+    }
+
+    .result_show ul li.active {
+        border: 1.5px solid rgba(111, 0, 100, 1);
+        transition: all .4s ease
+    }
+
+    .result_show ul li:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #9e9c9c;
+        position: absolute;
+        bottom: -2px;
+        transition: all .3s ease;
+    }
+
+    .result_show ul li.active:after {
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    .result_show ul li.active:before {
+        color: rgba(111, 0, 100, 1);
+        transition: all .4s ease
+    }
+
+    .result_show ul li h2 {
+        font-weight: bold;
+        font-size: 1.125rem;
+    }
+
+    .result_show ul li h3 {
+        font-weight: bold;
+        font-size: .875rem;
+        color: #666666;
+        margin-top: 15px;
+        line-height: 1.5;
+    }
+
+    .result_show ul li p {
+        font-weight: bold;
+        font-size: .875rem;
+        font-family: 'MyriadPro-Regular';
+        color: #666666;
+        margin-top: 10px;
+    }
+
+    .result_show .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        background-color: #6f0064;
+    }
+
+
+    /*進場動畫*/
+    .resultLibox.open {
+        width: 100%;
+        transition: all .8s ease;
+    }
+
+    .open .resultLibox_close {
+        animation: allin0 .5s both .6s;
+    }
+
+    .open .resultLibox_title h2 {
+        animation: right_slidein .8s both .6s;
+    }
+
+    .open .resultLibox_map div {
+        animation: top_slidein .8s both .6s;
+    }
+
+    .open .result_show ul {
+        animation: allin0 .8s both .6s;
+    }
+
+
+    /*退場動畫*/
+    .resultLibox.close {
+        transition: all .6s ease .5s;
+    }
+
+    .close .resultLibox_close {
+        animation: slideRightOut .5s both;
+    }
+
+    .close .resultLibox_title h2 {
+        animation: slideRightOut .5s both;
+    }
+
+    .close .resultLibox_map div {
+        animation: slideTopOut .8s both;
+    }
+
+    .close .result_show ul {
+        animation: slideTopOut .8s both;
+    }
+
+
+    /*resultLibox結束----------------*/
+}
+
+/*------------------max-width: 350px-----------------------*/
+
+@media only screen and (max-width: 350px) {
+    .otherSelect ul {
+        width: 100%;
+    }
+
+    .selectSore {
+        padding: 10vh 5vw 0 5vw
+    }
+
+    .selectors {
+        margin-top: 8vh;
+    }
+
+    .selectSore_title p {
+        margin-top: 8vh;
+    }
+
+    .select_btn {
+        margin-top: 8vh;
+    }
+
+    .hidden_message,
+    .hidden_message2 {
+        bottom: 100%;
+        font-size: .75rem;
+        height: 30px;
+        padding-top: 7px;
+    }
+}

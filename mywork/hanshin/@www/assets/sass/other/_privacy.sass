@@ -1,0 +1,90 @@
+#other.privacy
+    main
+        display: block
+        +bgSeting
+        background-attachment: fixed
+    .rules
+        max-width: 1050px
+        margin: auto
+        padding: 0 50px
+        @media all and (max-width: 1024px)
+            padding: 0 5vw
+        h6
+            font-size: px(20)
+            +JaguarJC-Bold
+            opacity: 0
+        p,ul li
+            font-size: px(16)
+            text-align: justify
+            line-height: 1.7
+            opacity: 0
+        .declare,.rule
+            padding-bottom: 60px
+            position: relative
+            
+            &:not(:first-child)
+                padding-top: 60px
+            &:after
+                +borderBottom(0%,1px,#bfbfbf)
+                max-width: 550px
+        .declare
+            h6
+                text-align: center
+                animation: fadeInDown 1s both 
+                &:not(:last-child)
+                    margin: 0 0 15px
+            p
+                animation: fadeInUp 1.2s both 
+            &:after
+                animation: w80 1s both .5s 
+        .rule
+            &.show
+                h6
+                    animation: fadeInDown 1s both 
+                p,ul li
+                    animation: fadeInUp 1.2s both 
+                &:after
+                    animation: w80 1s both .5s 
+            h6
+                color: #5955f2
+                &:after
+                    content: " -"
+                &:not(:last-child)
+                    margin: 0 0 5px
+            ul 
+                counter-reset: num
+                li
+                    counter-increment: num
+                    display: flex
+                    &:before
+                        font-family: 'JaguarJC-Bold'
+                        content: '('counter(num) ')'
+        .ps 
+            padding: 60px 0 100px
+            display: flex
+            align-items: center
+            &.show
+                span
+                    animation: fadeInLeft .8s both 
+                p
+                    animation: fadeInUp 1s both 
+            span
+                width: 40px
+                height: 40px
+                border-radius: 50%
+                background-color: #acb4d8
+                font-size: px(24)
+                color: #fff
+                +flex-center
+                opacity: 0
+                margin: 0 10px 0 0
+            p
+                +JaguarJC-Bold
+                font-size: px(16)
+                width: calc(100% - 50px)
+                a
+                    color: #bc7c2f
+                    border-bottom: 1px solid #bc7c2f
+                    transition: all .4s ease
+                    &:hover 
+                        letter-spacing: 4px

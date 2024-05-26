@@ -1,0 +1,1605 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+
+main {
+    position: relative;
+    padding: 9.375vw 0 12.5vw 0;
+    @media all and (max-width: 1024px) {
+        padding: 10vh 0 12vh 0;
+    }
+    @media all and (max-width: 700px) {
+        padding: 12vh 0 10vh 0;
+    }
+}
+
+
+
+/*下拉式選單基本設定*/
+
+.menuList {
+    position: relative;
+    z-index: 1;
+    .selectMenu {
+        width: 100%;
+        height: 100%;
+        p {
+            transition: all .4s ease;
+        }
+        &:after {
+            font-family: 'icomoon';
+            content: "\e905";
+            @include font-size(12);
+            transition: all .4s ease;
+        }
+        &.open:after {
+            transform: rotateX(180deg);
+        }
+    }
+    ul {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: #2b2b2b;
+        li {
+            cursor: pointer;
+            color: #fff;
+            transition: all .3s ease;
+            &:hover,
+            &.checked {
+                color: $base_orange;
+                transition: all .4s ease;
+            }
+        }
+    }
+}
+
+
+
+.logOut {
+    position: absolute;
+    top: 60px;
+    right: 6.25vw;
+    letter-spacing: 1px;
+    cursor: pointer;
+    @media all and (max-width: 1024px) {
+        top: 4vh;
+    }
+    @media all and (max-width: 700px) {
+        top: 5vh;
+    }
+    &:before {
+        font-family: 'icomoon';
+        content: "\e971";
+        @include font-size(15);
+        margin-right: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*標題設定*/
+
+._title,
+.libox_title {
+    @include flex-center;
+    flex-direction: column;
+    padding: 0 5vw;
+    h2 {
+        @include title_h2 opacity: 1;
+        span {
+            @include title_h2_span;
+        }
+    }
+    h3 {
+        @include title_h3;
+        opacity: 1;
+    }
+}
+
+
+.nav {
+    @include flex-center;
+    margin: auto;
+    max-width: 1720px;
+    padding: 0 90px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+    @media all and (max-width: 1720px) {
+        padding: 0 5vw;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 0 2vw;
+    }
+    @media all and (max-width: 900px) {
+        padding: 0 10px;
+    }
+    @media all and(max-width: 700px) {
+        padding: 0 5vw;
+        flex-direction: column;
+    }
+    &:hover .box:nth-child(2):hover,
+    .box:nth-child(2),
+    .box.record:hover {
+        background-color: #131313;
+        transition: all .4s ease .1s;
+        h2 {
+            color: #fff;
+            transition: all .4s ease .1s;
+        }
+        p {
+            color: $base_blue;
+            transition: all .4s ease .1s;
+        }
+    }
+    .box {
+        margin: 1px;
+        width: 33.33%;
+        height: 85px;
+        @include flex-center;
+        background-color: #dedddd;
+        cursor: pointer;
+        transition: all .4s ease .1s;
+        @media all and (max-width: 700px) {
+            width: 100%;
+            max-width: 400px;
+            height: 10vh;
+            max-height: 70px;
+        }
+        &.menuList:hover {
+            background-color: #131313;
+            .selectMenu {
+                p,
+                &:after {
+                    transition: all .4s ease .1s;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .menuList {
+        p {
+            @include font-size(18);
+            font-family: MyriadPro-Semibold, 微軟正黑體;
+            @media all and(max-width: 700px) {
+                @include font-size(16);
+            }
+            span {
+                @include font-size(20);
+                margin-left: 15px;
+                @media all and(max-width: 700px) {
+                    @include font-size(18);
+                }
+            }
+        }
+        .selectMenu {
+            @include flex-center;
+            p {
+                margin-right: 40px;
+            }
+        }
+        ul {
+            padding: 20px;
+            li {
+                @include flex-center;
+                padding: 20px 0;
+            }
+        }
+    }
+    .booking,
+    .record {
+        letter-spacing: 1px;
+        h2,
+        p {
+            height: 100%;
+            @include flex-center;
+            transition: all .4s ease .1s;
+        }
+        h2 {
+            @include font-size(18);
+            margin-right: 15px;
+            @media all and(max-width: 700px) {
+                @include font-size(16);
+            }
+        }
+        p {
+            @include font-size(20);
+            font-family: 'MyriadPro-Semibold';
+            color: #a5a5a5;
+            -ms-transform:translateY(4px);
+            @media all and(max-width: 700px) {
+                @include font-size(18);
+                -ms-transform:translateY(4px);
+            }
+        }
+    }
+    &:hover {
+        .box:nth-child(2) {
+            background-color: #dedddd;
+            transition: all .4s ease .1s;
+            h2 {
+                color: #000;
+                transition: all .4s ease .1s;
+            }
+            p {
+                color: #a5a5a5;
+                transition: all .4s ease .1s;
+            }
+        }
+    }
+}
+
+.table {
+    margin: auto;
+    max-width: 1720px;
+    padding: 0 90px;
+    @media all and (max-width: 1720px) {
+        padding: 0 5vw;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 0 2vw;
+    }
+    @media all and (max-width: 900px) {
+        padding: 0 10px;
+    }
+    @media all and (max-width: 700px) {
+        padding: 0 5vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 日期更換按鈕基礎設定*/
+
+.table_nav {
+    width: 100%;
+    @include flex-space-between;
+    position: relative;
+    /*.year_mounth {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include flex-center;
+        @include font-size(26);
+        font-family: MyriadPro-Semibold, 微軟正黑體;
+        line-height: 1.5;
+        .mounth {
+            margin-left: 30px;
+        }
+        b {
+            font-weight: normal;
+            margin-left: 5px;
+        }
+    }*/
+    .prev,
+    .next {
+        @include flex-center;
+        cursor: pointer;
+    }
+    .prev:before,
+    .next:after {
+        font-family: 'icomoon';
+        @include font-size(28);
+        margin: 0 20px;
+    }
+    .prev {
+        &:before {
+            content: "\e90e";
+        }
+    }
+    .next {
+        &:after {
+            content: "\e90f";
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*表格基礎設定*/
+
+.tableContent {
+    letter-spacing: 1px;
+    position: relative;
+    &:before {
+        @include fakeLine(0%, 1px, #000);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .date {
+        @include flex-center;
+        padding: 20px 0;
+        color: #626262;
+        span {
+            font-family: 'MyriadPro-Regular';
+            @include font-size(26);
+            padding-top: 4px;
+        }
+        p {
+            @include font-size(20);
+            margin: 0 0 0 15px;
+        }
+    }
+    .box {
+        margin: 2px 1px;
+        @include flex-center;
+        flex-direction: column;
+        height: 130px;
+        background-color: #f7f6f6;
+        @media all and (max-width: 700px) {
+            margin:4px 1px;
+        }
+        p {
+            color: #c4c3c3;
+            @include font-size(20);
+            line-height: 1.5;
+            font-family: 'MyriadPro-Regular';
+            text-align: center;
+            @media all and (max-width: 800px) and (min-width: 701px) {
+                @include font-size(18);
+            }
+            @media all and (max-width: 700px) {
+                @include font-size(22);
+            }
+            i {
+                font-style: normal;
+                &:before {
+                    content: "-";
+                    margin: 8px;
+                }
+            }
+        }
+        span {
+            @include font-size(15);
+            line-height: 1.5;
+            font-family: '微軟正黑體';
+            text-align: center;
+            @media all and (max-width: 700px) {
+                @include font-size(18);
+            }
+            i {
+                font-style: normal;
+            }
+        }
+        &.other {
+            background-color: #dbdbdb;
+            cursor: pointer;
+            p,
+            span {
+                color: #000;
+                font-weight: bold;
+            }
+        }
+        &.mine {
+            background-color: #0d65b4;
+            cursor: pointer;
+            p,
+            span {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*電腦版表格*/
+
+.pc {
+    @media all and(max-width: 700px) {
+        display: none;
+    }
+    .table_nav {
+        padding: 25px 20px 20px 20px;
+        .prev,
+        .next {
+            p {
+                font-family: 'MyriadPro-Semibold';
+                @include font-size(20);
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .tableContent {
+        width: 100%;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            li {
+                width: 14.28%;
+                .date {
+                    @media all and (max-width: 1280px) {
+                        flex-direction:column;
+                        p {
+                            margin: 5px 0 0 0;
+                        }
+                    }
+                }
+                .box {
+                    @media all and (max-width: 1280px) and(min-width: 701px) {
+                        height: 150px;
+                        p i {
+                            @include flex-center;
+                            flex-direction: column;
+                            width: 100%;
+                            &:before {
+                                margin: 0px;
+                                content: "|";
+                                font-weight: bold;
+                                @include font-size(12);
+                                transform: scale(0.8);
+                            }
+                        }
+                        span {
+                            @include flex-center;
+                            flex-direction: column;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*手機板表格*/
+
+.moblie {
+    @media all and (min-width: 701px) {
+        display: none;
+    }
+    .table_nav {
+        margin-top: 6vh;
+        padding: 25px 0 20px 0;
+        position: relative;
+        .prev:before,
+        .next:after {
+            margin: 0 10px;
+        }
+        ul {
+            width: calc(100% - 80px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            li {
+                @include flex-center;
+                span {
+                    font-family: 'MyriadPro-Regular';
+                    @include font-size(26);
+                    padding-top: 4px;
+                }
+                p {
+                    @include font-size(20);
+                    margin: 0 0 0 15px;
+                }
+            }
+        }
+    }
+    .tableContent {
+        padding-top: 3vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* 進場動畫*/
+
+._title {
+    h2,
+    h3 {
+        animation: fadeInDown 2s both;
+    }
+}
+
+.nav {
+    .box {
+        animation: fadeInUp 2s both .2s;
+        .selectMenu,
+        &>h2,
+        &>p {
+            animation: fadeInUp 1.8s both .2s;
+            -ms-animation:fadeIn 1.8s both .2s;
+        }
+    }
+}
+
+.table {
+    .table_nav {
+        .prev {
+            animation: fadeInRight 2s both .4s;
+        }
+        .year_mounth {
+            animation: fadeIn 2s both .4s;
+        }
+        .next {
+            animation: fadeInLeft 2s both .4s;
+        }
+    }
+    .tableContent {
+        &:before {
+            animation: w100 2s both .6s;
+        }
+        .date {
+            animation: fadeInUp 2s both .8s;
+        }
+        .box {
+            animation: fadeInUp 2s both .8s;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓資訊表格設定↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+.infLibox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 370px;
+    height: 0;
+    z-index: 999;
+    @media all and (max-width: 450px) {
+        width: 90vw;
+        max-width: 350px;
+    }
+    .liboxBg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #e6e6e6;
+        overflow: hidden;
+        @include flex-center;
+    }
+    .liboxClose {
+        @include close;
+        position: absolute;
+        top: 0;
+        right: 0;
+        span {
+            @include close_span;
+            &:before {
+                @include close_span_before;
+            }
+            &:after {
+                @include close_span_after;
+            }
+        }
+    }
+    ._text {
+        letter-spacing: 1px;
+        h2 {
+            @include font-size(20);
+            font-family: 'MyriadPro-Regular';
+        }
+        ul {
+            margin-top: 25px;
+            li {
+                @include font-size(15);
+                line-height: 1.5;
+                font-family: '微軟正黑體';
+                @media all and (max-width: 7000px) {
+                    @include font-size(16);
+                }
+                &.meetingName {
+                    color: $base_orange;
+                    max-width: 350px;
+                    @media all and (max-width: 450px) {
+                        max-width: 330px;
+                    }
+                }
+            }
+        }
+    }
+    /*進場動畫*/
+    &.open {
+        animation: h300 .8s both;
+        .liboxClose {
+            animation: slideInDown .8s both .5s;
+        }
+        ._text {
+            animation: fadeInUp 1s both .4s;
+        }
+    }
+    /*退場動畫*/
+    &.close {
+        animation: h003 .6s both .3s;
+        .liboxClose {
+            animation: slideOutUp .4s both;
+        }
+        ._text {
+            animation: fadeOutUp .4s both;
+        }
+    }
+}
+
+
+@keyframes h300 {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 300px;
+        opacity: 1;
+    }
+}
+
+
+@keyframes h003 {
+    0% {
+        height: 300px;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ↑↑↑↑↑↑↑↑↑↑↑↑資訊表格設定↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+/*預約表單燈箱及預約紀錄燈箱共同設定*/
+
+.formLibox,
+.recordLibox {
+    @include libox;
+    background-color: rgba(0, 0, 0, .8);
+    height: 100vh;
+    .liboxBg {
+        width: 100%;
+        max-width: 1540px;
+        background-color: #fff;
+        position: relative;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        padding: 0;
+        overflow: hidden;
+        .liboxClose {
+            @include close;
+            position: absolute;
+            top: 0;
+            right: 0;
+            span {
+                @include close_span;
+                &:before {
+                    @include close_span_before;
+                }
+                &:after {
+                    @include close_span_after;
+                }
+            }
+        }
+        .libox_title {
+            padding-top: 120px;
+            @media all and (max-width: 1230px) and (max-height:990px) {
+                padding-top: 12vh;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓預約表格設定↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+.formLibox {
+    .liboxBg {
+        @media all and (max-width: 1230px) and (max-height:990px) {
+            position: absolute; // top: 0;
+            // transform: translate(-50%, 0);
+            overflow-y: auto;
+
+        }
+        @media all and (max-height:770px) {
+            position: absolute; // top: 0;
+            // transform: translate(-50%, 0);
+            overflow-y: auto;
+        }
+        form {
+            margin: auto;
+            margin-top: 80px;
+            max-width: 1330px;
+            padding: 0 50px 110px 50px;
+            @include flex-space-between;
+            flex-wrap: wrap;
+            letter-spacing: 1px;
+            @media all and (max-width: 1230px) and (max-height:990px) {
+                padding: 0 50px 11vh 50px;
+            }
+            @media all and (max-width: 700px) {
+                padding: 0 5vw 11vh 5vw;
+            }
+            h2 {
+                @include font-size(16);
+                &:after {
+                    content: ":";
+                    margin: 0 0 0 10px;
+                    @media all and (max-width: 350px) {
+                        margin: 0 0 0 5px;
+                    }
+                }
+            }
+            .smallBox {
+                width: calc(33.33% - 20px);
+                border-bottom: 1px solid #000;
+                @include flex-center;
+                padding: 0 0 0 20px;
+                position: relative;
+                @media all and (max-width: 1230px) {
+                    width: calc(50% - 15px);
+                }
+                @media all and (max-width:900px) {
+                    width: 100%;
+                }
+                @media all and (max-width:700px) {
+                    padding: 0 0 0 5px;
+                }
+                h2 {
+                    white-space: nowrap;
+                    padding: 15px 0;
+                }
+                input,
+                &>p,
+                .menuList {
+                    width: 100%;
+                    padding: 15px 0;
+                }
+                .menuList {
+                    font-family: MyriadPro-Regular, 微軟正黑體;
+                    i {
+                        font-style: normal;
+                    }
+                    .selectMenu {
+                        @include flex-space-between;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                        padding: 0 10px 0 15px;
+                        @media all and (max-width: 350px) {
+                            padding: 0 10px 0 5px;
+                        }
+                        p {
+                            padding-top: 4px;
+                        }
+                    }
+                    ul {
+                        width: calc(100% + 30px);
+                        display: none;
+                        padding: 30px 45px;
+                        @media all and (max-width: 700px) {
+                            padding: 2vh 5vw;
+                        }
+                        li {
+                            position: relative;
+                            margin: 5px 0;
+                            padding: 5px 0;
+                            @media all and (max-width: 700px) {
+                                @include flex-center;
+                            }
+                            label {
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                transform: translateY(-50%);
+                                display: block;
+                                width: 10px;
+                                height: 10px;
+                                border: 1px solid #fff;
+                                transition: all .4s ease;
+                                @media all and (max-width: 700px) {
+                                    position:relative;
+                                    top: auto;
+                                    right: auto;
+                                    transform: translateY(0%);
+                                    margin-left: 5vw;
+                                }
+                            }
+                            &:hover,
+                            &.checked {
+                                label {
+                                    border: 1px solid $base_orange;
+                                    background-color: $base_orange;
+                                }
+                            }
+                        }
+                    }
+                }
+                input,
+                &>p {
+                    padding: 15px 0 15px 15px;
+                    @include font-size(16);
+                    line-height: 1.5;
+                    position: relative;
+                    @media all and (max-width: 350px) {
+                        padding: 15px 0 15px 5px;
+                    }
+                    &::placeholder {
+                        font-family: "微軟正黑體";
+                    }
+                }
+            }
+            .date {
+                position: relative;
+                input {
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 1;
+                    background-color: transparent;
+                }
+                span {
+                    position: absolute;
+                    top: 50%;
+                    right: 5px;
+                    transform: translateY(-50%);
+                    @media all and (max-width: 900px) {
+                        right: 8px;
+                    }
+                }
+            }
+            .time {
+                z-index: 3;
+                .menuList .selectMenu i:after {
+                    content: "-";
+                    margin: 0 5px;
+                }
+            }
+            .room {
+                z-index: 2;
+            }
+            .department,
+            .name,
+            .tel {
+                z-index: 1;
+            }
+            .ps {
+                width: 100%;
+                padding: 15px 0 15px 20px;
+                border-bottom: 1px solid #000;
+                @media all and (max-width: 700px) {
+                    padding: 15px 0 15px 5px;
+                }
+                textarea {
+                    display: block;
+                    border: none;
+                    width: 100%;
+                    height: 100px;
+                    margin-top: 20px;
+                    letter-spacing: 1px;
+                    @include font-size(16);
+                    font-family: "微軟正黑體";
+                    &::placeholder {
+                        @include font-size(16);
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+            ._btn {
+                width: 100%;
+                margin-top: 50px;
+                @include flex-center;
+                button {
+                    width: 180px;
+                    height: 40px;
+                    color: #fff;
+                    @include font-size(12);
+                    font-family: "微軟正黑體";
+                    letter-spacing: 1px;
+                    margin: 0 6px;
+                    &:first-child {
+                        background-color: #0c5ea7;
+                    }
+                    &:last-child {
+                        background-color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 動畫*/
+
+.formLibox {
+    /*進場動畫*/
+    &.open {
+        display: block;
+        animation: fadeIn .4s both;
+        .liboxBg {
+            animation: formLiboxOpen 1s both;
+            .liboxClose {
+                animation: slideInDown 1s both .6s;
+            }
+            .libox_title {
+                h2,
+                h3 {
+                    animation: fadeInDown 2s both .6s;
+                }
+            }
+            form {
+                .smallBox,
+                .ps {
+                    animation: fadeInUp 2s both .6s;
+                }
+                ._btn {
+                    animation: fadeInUp 2s both 1.2s;
+                }
+            }
+        }
+    }
+    /*退場動畫*/
+    &.close {
+        display: block;
+        animation: fadeOut .4s both .8s;
+        .liboxBg {
+            animation: formLiboxClose .8s both .4s;
+            .liboxClose {
+                animation: slideOutUp .4s both;
+            }
+            .libox_title h2,
+            .libox_title h3,
+            form .smallBox,
+            form ._btn {
+                animation: fadeOutUp .5s both;
+            }
+            form .ps {
+                animation: fadeOut .5s both;
+            }
+        }
+    }
+}
+
+@keyframes formLiboxOpen {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 770px;
+        opacity: 1;
+    }
+}
+
+
+@keyframes formLiboxClose {
+    0% {
+        height: 770px;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+
+
+
+
+@media all and (max-width: 1230px) and (max-height:1024px) {
+    @keyframes formLiboxOpen {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+        100% {
+            height: 100%;
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes formLiboxClose {
+        0% {
+            height: 100%;
+            opacity: 1;
+        }
+        100% {
+            height: 0;
+            opacity: 0;
+        }
+    }
+}
+
+@media all and (max-height:770px) {
+    @keyframes formLiboxOpen {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+        100% {
+            height: 100%;
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes formLiboxClose {
+        0% {
+            height: 100%;
+            opacity: 1;
+        }
+        100% {
+            height: 0;
+            opacity: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑預約表格設定↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓預約紀錄表格設定↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+.recordLibox .liboxBg {
+    @media all and (max-width: 1540px) and (max-height: 850px) {
+        position: absolute;
+    }
+    /* scroll設定*/
+    .mCSB_inside {
+        .mCSB_dragger_bar,
+        .mCSB_dragger:hover .mCSB_dragger_bar,
+        .mCSB_dragger_onDrag .mCSB_dragger_bar {
+            background-color: #666;
+        }
+        .mCSB_container {
+            margin: 0;
+        }
+    }
+    .liboxClose {
+        z-index: 2;
+    }
+    ._table {
+        max-width: 1330px;
+        padding: 0 50px 110px 50px;
+        margin: auto;
+        margin-top: 70px;
+        letter-spacing: 1px;
+        font-family: MyriadPro-Regular, 微軟正黑體;
+        @include font-size(16);
+        @media all and (max-width: 1330px) {
+            padding: 0 4vw 11vh 4vw;
+        }
+        @media all and (max-width: 900px) {
+            padding: 0 5vw 11vh 5vw;
+            margin-top: 6vh;
+        }
+        .date {
+            width: 16%;
+        }
+        .time {
+            width: 18%;
+            @media all and (max-width: 1260px) {
+                width: 16%;
+            }
+        }
+        .room {
+            width: 18.5%;
+            @media all and (max-width: 1260px) {
+                width: 18%;
+            }
+        }
+        .date,
+        .time,
+        .room {
+            @media all and (max-width: 900px) {
+                width: 30%;
+            }
+            @media all and (max-width: 700px) {
+                width: 100%;
+            }
+        }
+        /*到手機板會被刪掉的部分*/
+        .department {
+            width: 18.5%;
+            @media all and (max-width: 1260px) {
+                width: 18%;
+            }
+        }
+        .name {
+            width: 14%;
+            @media all and (max-width: 1260px) {
+                width: 11%;
+            }
+        }
+        .tel {
+            width: 10%;
+        }
+        .department,
+        .name,
+        .tel {
+            @media all and (max-width: 900px) {
+                display: none;
+            }
+        }
+        .table_title {
+            background-color: #e5e5e5;
+            padding: 0 50px;
+            display: flex;
+            align-items: center;
+            @media all and (max-width: 1330px) {
+                padding: 0 20px;
+            }
+            @media all and (max-width: 900px) {
+                padding: 0 5vw;
+            }
+            @media all and (max-width: 700px) {
+                display: none;
+            }
+            p {
+                line-height: 1.5;
+                padding: 20px 0;
+            }
+        }
+        .table_content {
+            @media all and (max-width: 700px) {
+                position: relative;
+                &:before {
+                    @include fakeLine(0%, 1px, #000);
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            li {
+                display: flex;
+                align-items: center;
+                padding: 20px 50px;
+                border-bottom: 1px solid #e5e5e5;
+                @media all and (max-width: 1330px) {
+                    padding: 20px 20px;
+                }
+                @media all and (max-width: 900px) {
+                    padding: 20px 5vw;
+                }
+                @media all and (max-width: 700px) {
+                    flex-direction: column;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.5;
+                }
+                .room p span {
+                    @include font-size(20);
+                }
+                .cancel {
+                    width: 5%;
+                    @include font-size(13);
+                    cursor: pointer;
+                    color: #969696;
+                    transition: all .4s ease;
+                    @media all and (max-width: 1260px) {
+                        width: 10%;
+                    }
+                    @media all and (max-width: 700px) {
+                        width: auto;
+                        margin-top: 2vh;
+                        color: $base_blue;
+                    }
+                    &:hover {
+                        color: #000;
+                        transition: all .4s ease;
+                    }
+                }
+                &.pass {
+                    color: #969696;
+                    .cancel {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.recordLibox {
+    &.open {
+        animation: fadeIn .4s both;
+        display: block;
+        .liboxBg {
+            animation: recordLiboxOpen 1s both;
+            .liboxClose {
+                animation: slideInDown 1s both .6s;
+            }
+            .libox_title {
+                h2,
+                h3 {
+                    animation: fadeInDown 2s both .6s;
+                }
+            }
+            ._table {
+                .table_title {
+                    animation: fadeInDown 2s both .6s;
+                }
+                .table_content {
+                    &:before {
+                        animation: w100 1s both .6s;
+                    }
+                    li {
+                        animation: fadeInUp 2s both .6s;
+                    }
+                }
+            }
+        }
+    }
+    &.close {
+        display: block;
+        animation: fadeOut .4s both .8s;
+        .liboxBg {
+            animation: recordLiboxClose .8s both .4s;
+            .liboxClose {
+                animation: slideOutUp .4s both;
+            }
+            .libox_title {
+                h2,
+                h3 {
+                    animation: fadeOutUp .4s both;
+                }
+            }
+            ._table {
+                .table_title {
+                    animation: fadeOutUp .4s both;
+                }
+                .table_content {
+                    &:before {
+                        animation: fadeOutUp .4s both;
+                    }
+                    li {
+                        animation: fadeOutUp .4s both;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes w100 {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes recordLiboxOpen {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        height: 800px;
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes recordLiboxClose {
+    0% {
+        opacity: 1;
+        height: 800px;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+
+
+@media all and (max-height: 850px) {
+    @keyframes recordLiboxOpen {
+        0% {
+            opacity: 0;
+            height: 0;
+        }
+        100% {
+            height: 100vh;
+            opacity: 1;
+        }
+    }
+
+    @keyframes recordLiboxClose {
+        0% {
+            opacity: 1;
+            height: 100vh;
+        }
+        100% {
+            height: 0;
+            opacity: 0;
+        }
+    }
+}
+
+
+
+
+
+.cancelLibox_bg {
+    @include libox;
+    background-color: rgba(0, 0, 0, .8);
+    .cancelLibox {
+        max-width: 810px;
+        background-color: #fff;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        padding: 0 5vw;
+        .liboxClose {
+            @include close;
+            position: absolute;
+            top: 0;
+            right: 0;
+            span {
+                @include close_span;
+                &:before {
+                    @include close_span_before
+                }
+                &:after {
+                    @include close_span_after
+                }
+            }
+        }
+        .libox_title {
+            padding: 130px 0 0 0;
+        }
+        ._text {
+            margin-top: 50px;
+            @include flex-center;
+            flex-direction: column;
+            p {
+                @include font-size(16);
+                line-height: 1.5;
+                font-family: "微軟正黑體";
+                text-align: center;
+                &.cancelTime {
+                    font-weight: bold;
+                    margin-top: 5px;
+                    span {
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+        ._btn {
+            padding: 0 0 130px 0;
+            margin-top: 60px;
+            @include flex-center;
+            button {
+                width: 180px;
+                height: 40px;
+                margin: 0 6px;
+                color: #fff;
+                @include font-size(12);
+                font-family: "微軟正黑體";
+                letter-spacing: 1px;
+                &:first-child {
+                    background-color: #0c5ea7;
+                }
+                &:last-child {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+}
+
+
+.cancelLibox_bg {
+    &.open {
+        display: block;
+        animation: fadeIn .4s both;
+        .cancelLibox {
+            animation: cancelLiboxOpen 1s both;
+            .liboxClose {
+                animation: slideInDown 1s both .3s;
+            }
+            .libox_title h2,
+            .libox_title h3,
+            ._text p {
+                animation: fadeInDown 1.4s both .3s;
+            }
+            ._btn {
+                animation: fadeInUp 2s both .3s;
+            }
+        }
+    }
+    &.close {
+        display: block;
+        animation: fadeOut .4s both .8s;
+        .cancelLibox {
+            animation: cancelLiboxClose .8s both .4s;
+            .liboxClose {
+                animation: slideOutUp .4s both;
+            }
+            .libox_title h2,
+            .libox_title h3,
+            ._text p,
+            ._btn {
+                animation: fadeOutUp .4s both;
+            }
+        }
+    }
+}
+
+
+@keyframes cancelLiboxOpen {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 550px;
+    }
+}
+
+@keyframes cancelLiboxClose {
+    0% {
+        opacity: 1;
+        height: 550px;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@media all and (max-height: 600px) {
+    @keyframes cancelLiboxOpen {
+        0% {
+            opacity: 0;
+            height: 0;
+        }
+        100% {
+            opacity: 1;
+            height: 100vh;
+        }
+    }
+
+    @keyframes cancelLiboxClose {
+        0% {
+            opacity: 1;
+            height: 100vh;
+        }
+        100% {
+            opacity: 0;
+            height: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑預約紀錄表格設定↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/

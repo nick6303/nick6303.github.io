@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/member/member.css">
+</head>
+
+<body id="member" class="index">
+    <header data-nobanner="true"></header>
+    <main>
+        <article class="topTitle">
+            <h2>Contestant Service</h2>
+            <p>帳號服務中心</p>
+            <section>
+                <div class="logOut">
+                    <a href="javascript:void(0)">
+                        <p>log out 登出</p>
+                    </a>
+                </div>
+                <div class="_text">
+                    <!-- 後端請注意:下方是使用者名子 -->
+                    <div class="h2">hello,Lin!</div>
+                    <p>Welcome to the account service center, please select the relevant operation you want to perform
+                        through the following menu.
+                        <br>歡迎來到帳號服務中心，請透過下方選單選擇您欲進行的相關操作。</p>
+                </div>
+            </section>
+        </article>
+        <article class="boxContent">
+            <section class="information">
+                <div class="_title">
+                    <h6>Information</h6>
+                    <p>基本資料與帳號管理</p>
+                </div>
+                <div class="hideBox">
+                    <ul class="link">
+                        <li>
+                            <a href="../member/information.html">
+                                <span></span>
+                                <p>Account & Basic Information</p>
+                                <p>帳號與基本資料管理</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../member/academic.html">
+                                <span></span>
+                                <p>Academic information</p>
+                                <p>學歷資訊管理</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../member/beneficiary.html">
+                                <span></span>
+                                <p>Beneficiary Information</p>
+                                <p>受款資訊管理</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span></span>
+                                <p>Job Information</p>
+                                <p>職業資訊管理</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="design">
+                <div class="_title">
+                    <h6>Design</h6>
+                    <p>設計作品管理</p>
+                </div>
+                <div class="hideBox">
+                    <div class="design_slick">
+                        <ul class="_slick">
+                            <!-- <li>
+                                <div class="_img">
+                                    <img data-lazy="../../upload/fa2/member/index/slickImg2_225_225.png" alt="">
+                                </div>
+                                <h6>You hasn’t sign up your design</h6>
+                                <p>您尚未有近期作品</p>
+                            </li>
+                            <li>
+                                <div class="_img">
+                                    <img data-lazy="../../upload/fa2/member/index/slickImg2_225_225.png" alt="">
+                                </div>
+                                <h6>You hasn’t sign up your design</h6>
+                                <p>您尚未有近期作品</p>
+                            </li> -->
+                        </ul>
+                        <!-- 後端請注意:下方ul只有在上方ul._slick的數量為0時才會出現 -->
+                        <!-- 請搜尋 nodesign() -->
+                        <ul class="nodesign">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="_img">
+                                        <img src="../../upload/fa2/member/index/slickImg_225_225.png" alt="">
+                                    </div>
+                                    <h6>You hasn’t sign up your design</h6>
+                                    <p>您尚未有近期作品</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="arrow">
+                            <span class="icon-slickLeft"></span>
+                            <span class="icon-slickRight"></span>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <ul>
+                            <li class="blue">
+                                <a href="../member/design.html">
+                                    <p>Overview</p>
+                                    <p>作品總覽</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../service/signup.html">
+                                    <p>Add a new design</p>
+                                    <p>新增一筆作品</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="QA">
+                <div class="_title">
+                    <h6>Q&A</h6>
+                    <p>客服訊息問答</p>
+                </div>
+                <div class="hideBox">
+                    <div class="message">
+                        <a href="javascript:void(0)">
+                            <div class="cicle">1</div>
+                            <p>You got a new message</p>
+                            <p>您有<span class="numb">1</span>則新訊息</p>
+                        </a>
+                    </div>
+                    <div class="button">
+                        <ul>
+                            <li class="blue">
+                                <a href="../member/message.html">
+                                    <p>Overview</p>
+                                    <p>訊息總覽</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="addMessage" href="javascript:void(0)">
+                                    <p>Add a new message</p>
+                                    <p>新增一則訊息</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+</html>

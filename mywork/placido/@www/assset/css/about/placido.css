@@ -1,0 +1,702 @@
+@charset "utf-8";
+.placido .detail {
+    position: fixed;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+/*detail_content開始--------------------------------------------------*/
+
+
+/*placido開始-------------*/
+
+._placido {
+    position: relative;
+    padding: 80px 50px 0 50px;
+    width: 100%;
+    margin: auto;
+    max-width: 1440px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1440px) {
+    ._placido {
+        padding: 80px 5vw 0 5vw;
+    }
+}
+
+.placido_slide {
+    width: 50px;
+    position: absolute;
+    top: -45px;
+    left: calc(50% - 25px);
+}
+
+.placido_slide span {
+    margin: auto;
+    display: block;
+    height: 0px;
+    width: 1px;
+    background-color: #000;
+}
+
+.placido_title {
+    text-align: center;
+    overflow: hidden;
+}
+
+.placido_title div {
+    transform: translateY(-100%);
+}
+
+.placido_title h2 {
+    font-family: 'JosefinSans-Bold';
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.placido_title p {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.placido_boxs {
+    margin-top: 70px;
+}
+
+.placido_logo {
+    width: 50%;
+    padding-left: 150px;
+}
+
+.placido_logo img {
+    width: 330px;
+    height: 310px;
+}
+
+.on .placido_logo img,
+.load .placido_logo img {
+    transform: scale(0);
+}
+
+.placido_box {
+    width: 50%;
+}
+
+.placido_box:nth-child(odd) {
+    padding-right: 110px;
+    margin-top: -270px;
+}
+
+.placido_box:nth-child(even) {
+    margin-left: 50%;
+    margin-top: -340px;
+}
+
+.placido_box:nth-child(2) {
+    padding-right: 130px;
+    margin-top: -130px;
+}
+
+
+
+
+
+
+
+
+/*圖片設定*/
+
+.placido_box_img {
+    position: relative;
+}
+
+.on .placido_box_img,
+.load .placido_box_img {
+    transform: scale(0);
+}
+
+.placido_box_img h2 {
+    position: absolute;
+    top: -30px;
+    left: -40px;
+    font-family: 'JosefinSans-Bold';
+    font-size: 4.5rem;
+    color: #d2d2d2;
+}
+
+
+
+
+
+
+
+
+/*文字設定*/
+
+.placido_box_text {
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.placido_box_text div {
+    transform: translateX(-100%);
+}
+
+
+
+.placido_box_text h2 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.placido_box_text p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 2;
+    margin-top: 40px;
+}
+
+
+
+
+
+/*2018/3/13新增*/
+
+.placido_boxs ._img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load .placido_boxs ._img img,
+.on .placido_boxs ._img img {
+    transform: scale(0);
+}
+
+
+.placido_boxs ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 60px 40px 0 40px;
+}
+
+
+
+.placido_boxs ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    letter-spacing: 1px;
+    width: 33.33%;
+    margin: 0 40px;
+    overflow: hidden;
+}
+
+.placido_boxs ul li h2 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    transform: translateY(-100%);
+}
+
+.placido_boxs ul li h2:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #cdcdcd;
+    margin: 20px auto;
+}
+
+.placido_boxs ul li p {
+    text-align: justify;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    transform: translateY(100%);
+}
+
+@media only screen and (max-width: 1440px) {
+    .placido_boxs ul {
+        padding: 60px 2.5vw 0 2.5vw;
+    }
+    .placido_boxs ul li {
+        margin: 0 2.5vw;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .placido_boxs ul li h2 {
+
+    }
+    .placido_boxs ul li p {}
+}
+
+@media only screen and (max-width: 1024px) {
+    .placido_boxs ul {
+        flex-direction: column;
+        padding: 12vh 6vw 0 6vw;
+    }
+    .placido_boxs ul li {
+        width: 100%;
+        margin: 0 0 70px 0 ;
+    }
+    .placido_boxs ul li h2:after {
+       margin: 20px auto 20px 0;
+    }
+}
+
+
+}
+
+
+
+
+/*placido結束-------------*/
+
+/*culture開始-------------*/
+.culture {
+    padding: 0 40px 0 60px;
+    max-width: 1280px;
+    width: 100%;
+    margin: auto;
+    margin-top: 85px;
+}
+
+.culture_slide {
+    width: 50px;
+    margin-left: calc(50% - 25px);
+}
+
+.culture_slide span {
+    display: block;
+    width: 1px;
+    height: 0px;
+    background-color: #000;
+    margin: auto;
+}
+
+.culture_title {
+    text-align: center;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.culture_title div {
+    transform: translateY(-100%);
+}
+
+.culture_title h2 {
+    font-family: 'JosefinSans-Bold';
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.culture_title p {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.culture_row {
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.culture_row_text,
+.culture_row_img {
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+/*文字設定*/
+.culture_row_text {
+    display: table;
+    padding-right: 30px;
+    overflow: hidden;
+}
+
+.culture_row_text div {
+    transform: translateX(-100%);
+}
+
+
+.culture_row_text h2 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.culture_row_text p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 2;
+    margin-top: 45px;
+}
+
+.culture_row_text h2:not(:first-child) {
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+/*圖片設定*/
+.culture_row_img {
+    padding: 0 50px 0 30px;
+}
+
+.culture_row_img img {
+    transform: scale(0);
+    opacity: 0;
+}
+
+
+
+
+
+
+
+/*culturer結束-------------*/
+
+/*detail_content結束--------------------------------------------------*/
+
+/*detail_ft開始-----------*/
+.placido .detail_ft {
+    width: 100%;
+    padding: 0 50px;
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 120px;
+    position: relative;
+}
+
+.placido .detail_ft picture {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.placido .detail_ft_slogan {
+    max-width: 570px;
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    overflow: hidden;
+}
+
+.placido .detail_ft_slogan div {
+    transform: translateY(100%);
+}
+
+.placido .detail_ft_slogan h2 {
+    font-size: 2.25rem;
+    font-family: 'JosefinSans-Bold';
+    letter-spacing: .5px;
+    line-height: 1.5;
+}
+
+.placido .detail_ft_slogan h3 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.placido .detail_ft_slogan p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 2;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+/*detail_ft結束-----------*/
+
+/*進場動畫*/
+.placido.load .detail {
+    height: 100%;
+    transition: all 1s ease;
+}
+
+.placido.on .detail {
+    height: 100%;
+}
+
+.on .placido_slide span {
+    animation: line1 .8s both 1s;
+}
+
+.on .placido_title div {
+    animation: allin0 .8s both 1.5s
+}
+
+
+
+
+
+
+
+
+/*waypoint動畫專區-----------*/
+.placido_logo.show img {
+    animation: zoomIn .8s both;
+}
+
+.show .placido_box_img {
+    animation: zoomIn .8s both;
+}
+
+.placido_boxs ._img.show img {
+    animation: zoomIn .8s both;
+}
+
+.show .placido_box_text div {
+    animation: allin0 .8s both .5s;
+}
+
+.placido_boxs ul li.show h2 {
+    animation: allin0 .8s both .5s;
+}
+
+.placido_boxs ul li.show h2:after {
+    width: calc(100% - 10px);
+    transition: all .8s ease 1s;
+}
+
+.placido_boxs ul li.show p {
+    animation: allin0 .8s both .5s;
+}
+
+.culture_slide.show span {
+    height: 90px;
+    transition: all .8s ease;
+}
+
+.culture_title.show div {
+    animation: allin0 .8s both .5s;
+}
+
+.culture_row_img.show img {
+    transform: scale(1);
+    opacity: 1;
+    transition: all .8s ease;
+}
+
+.culture_row_text.show div {
+    animation: allin0 .8s both .5s;
+}
+
+.placido .detail_ft picture.show {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 1.2s ease;
+}
+
+.placido .detail_ft_slogan.show div {
+    animation: allin0 1s both 1.2s;
+}
+
+
+
+
+
+
+
+
+/*離場動畫*/
+.placido.off .detail {
+    height: 0%;
+    transition: all .8s ease;
+}
+
+.off .detail_close {
+    animation: zoomOut .5s forwards;
+}
+
+.off .fixed_menu {
+    animation: zoomOut .5s forwards;
+}
+
+
+
+
+
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+@media only screen and (max-width: 1024px) {
+    /*placido開始---------*/
+
+    ._placido {
+        padding: 80px 0 0 0;
+    }
+
+    .placido_slide {
+        position: relative;
+    }
+
+    .placido_boxs {
+        margin-top: 4vh;
+    }
+
+    .placido_logo {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .placido_logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .placido_box:nth-child(2),
+    .placido_box:nth-child(odd),
+    .placido_box:nth-child(even) {
+        padding: 0;
+        margin: 12vh 0 0 0;
+        width: 100%;
+    }
+
+    .placido_box_img h2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        font-size: 1.875rem;
+        color: #000;
+        margin-top: 6vh;
+        text-align: center;
+    }
+
+    .placido_box_text {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .placido_box_text div {
+        transform: translateY(-100%);
+    }
+
+    .placido_box_text h2 {
+        font-size: 1.25rem;
+    }
+
+    .placido_box_text p {
+        margin-top: 15px;
+        padding: 0 10px;
+    }
+    /*placido結束---------*/
+    /*culture開始---------*/
+
+    .culture {
+        padding: 0;
+    }
+
+    .culture_title p {
+        margin-top: 0;
+    }
+
+    .culture_row {
+        flex-direction: column-reverse;
+        margin-top: 4vh;
+    }
+
+    .culture_row_text,
+    .culture_row_img {
+        width: 100%;
+    }
+    /*圖片設定*/
+
+    .culture_row_img {
+        padding: 0;
+    }
+    /*文字設定*/
+
+    .culture_row_text {
+        margin-top: 5.5vh;
+    }
+
+    .culture_row_text div {
+        padding: 0 20px;
+    }
+
+
+    .culture_row_text h2 {
+        font-size: 1.25rem;
+    }
+
+    .culture_row_text h2:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    .culture_row_text p {
+        margin-top: 10px
+    }
+    /*culturer結束---------*/
+
+    .placido .detail_ft {
+        padding: 0 20px;
+    }
+
+    .placido .detail_ft_slogan {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        margin-top: 7.5vh;
+    }
+
+    .placido .detail_ft_slogan h2 {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+
+    .placido .detail_ft_slogan h3 {
+        margin-top: 15px;
+    }
+    /*waypoint動畫專區*/
+
+    .placido .detail_ft_slogan.show div {
+        animation: allin0 1s forwards;
+    }
+}

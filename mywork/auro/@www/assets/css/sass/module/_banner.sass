@@ -1,0 +1,399 @@
+
+#home   
+    .banner_slick
+        &>ul
+            opacity: 0
+            transition: .5s
+            &.movein
+                opacity: 1
+
+    
+.banner_home
+    position: relative
+    width: 100%
+    &__img
+        width: 100%
+        height: 120vh
+        overflow: hidden
+        position: relative
+        img
+            width: 100%
+            height: auto
+            +poac    
+            +rwdr(1920 / 100 * 120 ,1440)
+                height: 100%
+                width: auto
+            &.b-lazy
+                opacity: 0 
+                transition: .5s
+                &.b-loaded
+                    opacity: 1
+
+    &__down
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        bottom: calc(20vh + 20px)
+        text-align: center
+        opacity: 0
+        transition: .5s
+        p
+            font-size: px(16)
+            letter-spacing: 1px
+
+        span
+            display: inline-block
+            height: 4px
+            width: 4px  
+            border-radius: 50%
+            border: 0
+            background: #1b41a2
+        .fontw &
+            a
+                color: #fff
+            span
+                background: #fff
+        .mmove &
+            opacity: 1
+            transition-delay: 1.5s
+    &__title
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        text-align: center
+        z-index: 5
+        display: flex
+        justify-content: center
+        width: 100%
+        flex-wrap: wrap
+        .fontw &
+            color:#fff
+        .style1 &
+            top: calc(50% - 20vh)
+            h3
+                font-size: px(117)
+                letter-spacing: 2px
+                margin-bottom: 10px
+                opacity: 0
+                transition: .5s
+                transition-delay: 0s
+            h4
+                font-size: px(24)
+                letter-spacing: 1px
+                position: absolute
+                transition: .5s
+                transition-delay: 0s
+            +rwd(1024)
+                h3
+                    font-size: px(80)
+                h4
+                    font-size: px(18)
+            +rwd(768)
+                h3
+                    font-size: px(60)
+                h4
+                    font-size: px(16)
+
+            >div
+                margin: 0 10px
+                transition: .5s
+                transform: translate(0%,0%)
+            .left
+                transition-delay: .5s
+                +rwd(768)
+                    width: 100%
+                    transform: translate(0%,50%)
+                h4
+                    top: -10px
+                    left: 0
+                    opacity: 0
+                    +rwd(768)
+                        left: 50%
+                        transform: translate(-50%,0%)
+            .right
+                transition-delay: .5s
+                +rwd(768)
+                    width: 100%
+                    transform: translate(0%,-50%)
+                h4
+                    bottom: 0
+                    right: 0
+                    opacity: 0
+                    +rwd(768)
+                        right: auto
+                        left: 50%
+                        transform: translate(-50%,0%)
+        .style1.mmove &
+            h3
+                opacity: 1
+                
+            h4
+                transition-delay: 1s
+            .left
+                transform: translate(-20px,-25%)
+                +rwd(1024)
+                    transform: translate(0px,-25%)
+                +rwd(768)
+                    transform: translate(0px,0%)
+                h4
+                    opacity: 1
+                    transform: translateY(-25%)
+                    +rwd(768)
+                        transform: translate(-50%,-50%)
+            .right
+                transform: translate(20px,25%)
+                +rwd(1024)
+                    transform: translate(0px,25%)
+                +rwd(768)
+                    transform: translate(0px,0%)
+                h4
+                    opacity: 1
+                    transform: translateY(25%)
+                    +rwd(768)
+                        transform: translate(-50%,50%)
+        .style2 &
+            bottom: 40vh
+            h3
+                font-size: px(72)
+                letter-spacing: 2px
+                margin-bottom: 10px
+                opacity: 0
+                transition: .5s
+                transform: translateY(10%)
+            h4
+                font-size: px(24)
+                letter-spacing: 1px
+                opacity: 0
+                transition: .5s
+                transition-delay: 0s
+                transform: translateY(20%)
+            +rwd(1024)
+                h3
+                    font-size: px(60)
+                h4
+                    font-size: px(18)
+            +rwd(768)
+                h3
+                    font-size: px(40)
+                h4
+                    font-size: px(16)
+        .style2.mmove &
+            h3
+                opacity: 1
+                transform: translateY(0%)
+            h4
+                opacity: 1
+                transform: translateY(0%)
+                transition-delay: .5s
+.banner_dot
+    position: absolute
+    right: 50px
+    top: 50%
+    transform: translateY(-50%)
+    +rwd(1024)
+        right: 20px
+
+
+@keyframes home_banner1
+    0%
+        transform: translateY(0%)
+    100%
+        transform: translateY(-25%)
+@keyframes home_banner1s
+    0%
+        transform: translateY(0%)
+        opacity: 0
+    100%
+        transform: translateY(-25%)
+        opacity: 1
+@keyframes home_banner2
+    0%
+        transform: translateY(0%)
+    100%
+        transform: translateY(25%)   
+@keyframes home_banner2s
+    0%
+        transform: translateY(0%)
+        opacity: 0
+    100%
+        transform: translateY(25%)    
+        opacity: 1
+
+.banner
+    position: relative
+    width: 100%
+    &__img
+        width: 100%
+        height: 60vh
+        overflow: hidden
+        position: relative
+        img
+            width: 100%
+            height: auto
+            +poac    
+            +rwdr(1920 / 100 * 60,600)
+                height: 100%
+                width: auto
+    &__title
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%)
+        color: #fff
+        text-align: center
+        z-index: 5
+        h4
+            font-size: px(44)
+            letter-spacing: 2px
+            margin-bottom: 10px
+        h5
+            font-size: px(22)
+            letter-spacing: 1px
+    &__img
+        &:before,&:after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            transition: .5s
+        &:before
+            background: #fff
+            z-index: 4
+        &:after
+            background: $CblueM
+            z-index: 3
+        
+        &:before
+            width: 0%
+            animation: enter .5s .25s forwards
+        &:after
+            animation: enter .5s .75s forwards
+
+.banner_noImg
+    position: relative
+    width: 100%
+    height: 35vh
+    &__title
+        width: 100%
+        position: absolute
+        left: 50%
+        bottom: 0%
+        transform: translateX(-50%)
+        color: #000
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        h4
+            font-size: px(44)
+            letter-spacing: 2px
+            margin-bottom: 10px
+        h5
+            font-size: px(22)
+            letter-spacing: 1px
+
+.banner_member
+    position: relative
+    width: 100%
+    height: 30vh
+    &__title
+        position: absolute
+        left: 50%
+        bottom: 0%
+        transform: translateX(-50%)
+        color: #000
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        margin-bottom: 30px
+        h4
+            font-size: px(40)
+            letter-spacing: 2px
+            margin-bottom: 10px
+        h5
+            font-size: px(22)
+            letter-spacing: 1px
+
+.banner_vip
+    position: relative
+    width: 100%
+    height: 35vh
+    &__title
+        position: absolute
+        left: 50%
+        bottom: 0%
+        transform: translateX(-50%)
+        color: #000
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        margin-bottom: 30px
+        h4
+            font-size: px(40)
+            letter-spacing: 2px
+            margin-bottom: 10px
+        h5
+            font-size: px(22)
+            letter-spacing: 1px
+        h6
+            font-size: px(14)
+            letter-spacing: 1px
+            margin-bottom: 20px
+.banner_the4
+    position: relative
+    width: 100%
+    height: 30vh
+    #shoppingCar &
+        height: 35vh
+        h6
+            font-size: px(14)
+            letter-spacing: 1px
+            line-height: 1.5
+    #purchase &
+        height: 40vh
+        min-height: 300px
+        h6
+            font-size: px(14)
+            letter-spacing: 1px
+            line-height: 1.5
+    &__title
+        position: absolute
+        left: 50%
+        bottom: 0%
+        transform: translateX(-50%)
+        color: #000
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        margin-bottom: 30px
+        width: 100%
+        max-width: 500px
+        padding: 0 20px
+        h4
+            font-size: px(40)
+            letter-spacing: 2px
+            margin-bottom: 10px
+        h5
+            font-size: px(22)
+            letter-spacing: 1px
+        hr
+            display: inline-block
+            border: 0px
+            width: 60px
+            height: 1px
+            background: #8CA1D0
+            margin: 20px 0 30px
+        h6
+            font-size: px(16)
+            span
+                color: #1a42a3
+        

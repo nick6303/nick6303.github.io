@@ -1,0 +1,264 @@
+#news.index
+    main 
+        position: relative
+        z-index: 1
+    // .mocaPageHead 
+    //     .navBar 
+    //         .dropDown
+    //             .selectMenu
+    //                 transition: all .4s ease 
+    //                 &:hover
+    //                     background-color: #e83434
+    //                     color: #fff
+    //                 p 
+    //                     &:after
+    //                         content: attr(data-name)
+    //         .search
+    //             width: 50px
+    //             .icon-magnifier
+    //                 width: 100%
+    //                 height: 100%
+    //                 +flex-center
+    //                 transition: all .3s ease
+    //                 &:hover
+    //                     background-color: #e83434
+    //                     color: #fff
+    .ajaxContent
+        max-width: 1580px 
+        margin: auto
+        padding: 120px 50px 80px
+        @media all and (max-width: 1024px)
+            padding: 120px 5vw 80px
+        ._title
+            position: relative
+            z-index: 1
+            .en
+                +title_en
+                text-align: center
+                span
+                    font-size: px(34)
+                    font-family: 微軟正黑體
+                    font-weight: bold
+                    @media all and (max-width: 700px)
+                        font-size: px(24)
+            .ch
+                +title_ch
+                text-align: center
+                margin-top: 5px
+            .year
+                display: flex
+                justify-content: center
+                margin: 50px 0 70px
+                .ajax,.dropDown
+                    margin: 0 30px
+                    position: relative
+                    cursor: pointer
+                    font-size: px(15)
+                    font-family: FuturaPT-Medium,微軟正黑體
+                    &:before,&:after
+                        position: absolute
+                        bottom: 0
+                        left: 50%
+                        transform: translateX(-50%)
+                    &:before
+                        +fakeLine(100%,2px,#ccc)
+                    &:after
+                        +fakeLine(0%,2px,#000)
+                        transition: all .4s ease
+                        @media all and (max-width: 1024px)
+                            width: 100%
+                    &:hover,&.active
+                        &:after
+                            width: 100%
+                .ajax
+                    padding: 0 20px 15px
+                    @media all and (max-width: 700px)
+                        display: none
+                .dropDown
+                    width: 200px
+                    .selectMenu
+                        padding: 0 20px 10px 0
+                        p 
+                            text-align: center
+                            padding: 0 20px
+                    ul
+                        top: calc(100% - 2px)
+                        li 
+        .grid-size
+            width: calc(25% - 22.5px)
+            @media all and (max-width: 1024px)
+                width: calc(50% - 7.5px)
+            @media all and (max-width: 460px)
+                width: 100%
+        .masonry
+            &.out,ul.out
+                li a
+                    animation: fadeOutUp 0.8s both 
+            ul 
+                li
+                    margin-bottom: 30px
+                    overflow: hidden
+                    @media all and (max-width: 1024px)
+                        margin-bottom: 15px
+                    @media all and (max-width: 600px)
+                        margin-bottom: 50px
+                    &.show.in
+                        figure
+                            animation: fadeInDown 1.2s both
+                        &.big,&.middle,&.small
+                            ._text
+                                .dateAndType
+                                    animation: fadeInUp 1.6s both .6s
+                                .words
+                                    animation: fadeInUp 1.6s both .8s
+                    a
+                        position: relative
+                        display: block
+                        &:hover figure img
+                            transform: scale(1.1)
+                    figure
+                        overflow: hidden
+                        opacity: 0
+                        transition: all .4s ease
+                        img
+                            transition: all 1s ease
+                    ._text
+                        .dateAndType
+                            display: flex
+                            align-items: flex-end
+                            .date
+                                font-family: 'FuturaPT-Heavy'
+                                font-size: px(24)
+                            .type
+                                font-size: px(14)
+                                padding: 0 0 5px
+                                +flex-center
+                                &:before
+                                    content: "/"
+                                    margin: 0 8px
+                                    font-size: px(12)
+                        .words
+                            margin-top: 5px
+                            h6
+                                font-family: FuturaPT-Medium,微軟正黑體
+                                font-size: px(20)
+                                @media all and (max-width: 700px)
+                                    font-size: px(18)
+                            p
+                                font-size: px(15)
+                                margin-top: 20px
+                                line-height: 2
+                    &.big,&.middle,&.small
+                        ._text .dateAndType,._text .words
+                            opacity: 0
+                    &.big,&.middle
+                        width: calc(50% - 15px)
+                        @media all and (max-width: 1024px)
+                            width: 100%
+                        ._text
+                            position: absolute
+                            bottom: 0
+                            left: 0
+                            padding: 40px
+                            color: #fff
+                            @media all and (max-width: 1024px)
+                                padding: 5vw
+                            @media all and (max-width: 600px)
+                                position: relative 
+                                bottom: auto
+                                left: auto
+                                padding: 10px 5px
+                                color: #000
+                        figure
+                            background-color: #000
+                        a:hover figure img 
+                            opacity: 0.5
+                    &.big
+                        figure
+                            height: 725px
+                            @media all and (max-width: 1580px)
+                                height: calc(50vw - 72px)
+                            @media all and (max-width: 1024px)
+                                height: auto
+                    &.middle
+                        figure
+                            height: 345px
+                            @media all and (max-width: 1580px)
+                                height: calc(25vw - 50px)
+                            @media all and (max-width: 1024px)
+                                width: 100% 
+                                height: auto
+                    &.small
+                        height: 350px
+                        width: calc(25% - 22.5px)
+                        @media all and (max-width: 1580px)
+                            height: calc(25vw - 50px)
+                        @media all and (max-width: 1024px)
+                            width: calc(50% - 7.5px)
+                            height: auto
+                        @media all and (max-width: 460px)
+                            width: 100%
+                            height: auto
+                        figure
+                            height: 230px
+                            @media all and (max-width: 1580px)
+                                height: calc(16.42vw - 31px)
+                            @media all and (max-width: 1024px)
+                                height: auto
+                        ._text
+                            padding: 10px 5px
+                            height: calc(100% - 230px)
+                            @media all and (max-width: 1580px)
+                                height: calc(100% - 16.42vw + 31px)
+                            @media all and (max-width: 1580px) and (min-width: 461px)
+                                .dateAndType 
+                                    .date
+                                        font-size: px(20)
+                                    .type
+                                        padding: 0
+                                h6
+                                    font-size: px(16)
+
+                    &.textOnly
+                        width: calc(50% - 15px)
+                        @media all and (max-width: 1024px)
+                            width: 100%
+                        &.show a
+                            animation: fadeInDown 1.2s both 
+                            ._text 
+                                .dateAndType 
+                                    animation: fadeInDown 1.6s both .2s
+                                .words
+                                    h6
+                                        animation: fadeInDown 1.6s both .4s
+                                    p
+                                        animation: fadeInUp 1.6s both .6s
+                        a
+                            height: 350px
+                            opacity: 0
+                            @media all and (max-width: 1580px)
+                                height: calc(25vw - 50px)
+                            @media all and (max-width: 1024px)
+                                height: auto
+                        ._text
+                            width: 100%
+                            height: 100%
+                            padding: 40px
+                            color: #fff
+                            +flex-left
+                            @media all and (max-width: 1280px) and (min-width: 1025px)
+                                .dateAndType 
+                                    opacity: 0
+                                    .date
+                                        font-size: px(20)
+                                    .type
+                                        padding: 0
+                                .words
+                                    h6
+                                        font-size: px(16)
+                                        opacity: 0
+                                    p
+                                        font-size: px(14)
+                                        opacity: 0
+                            @media all and (max-width: 1024px)
+                                padding: 60px 5vw

@@ -1,0 +1,438 @@
+@charset "UTF-8";
+/*font-size*/
+/*font-size*/
+/*font-weight*/
+/*font-weight*/
+/*RWD*/
+/*RWD*/
+/*transiton*/
+/*transiton*/
+/*hide word*/
+/*hide word*/
+/* display: flex 置中*/
+/* display: flex 置中*/
+/* display: flex 左右至頂*/
+/* display: flex 左右至頂*/
+/* display: flex 向左靠*/
+/* display: flex 向右靠*/
+/* display: flex 左右至頂*/
+/* 偽元素線條*/
+/* 偽元素線條*/
+/* 標題文字設定-------------*/
+/* 標題文字設定-------------*/
+/* 圓圈十字--------*/
+/* 圓圈十字--------*/
+/*文字動畫*/
+/*文字動畫*/
+/*圓圈內虛線*/
+/*圓圈內虛線*/
+header,
+.header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  padding: 0 8vw;
+  z-index: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+  @media all and (max-width: 1024px) {
+    header,
+    .header {
+      padding: 0 6vw; } }
+  @media all and (max-width: 650px) {
+    header,
+    .header {
+      padding: 0 15px 0 0;
+      height: 45px; } }
+  @media all and (max-width: 650px) {
+    header,
+    .header {
+      padding: 0 10px 0 0; } }
+  header.prepare,
+  .header.prepare {
+    position: fixed;
+    top: -120px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  header.fixed,
+  .header.fixed {
+    top: 0;
+    background-color: #fff; }
+    header.fixed .linkList,
+    .header.fixed .linkList {
+      color: #000; }
+      header.fixed .linkList ul,
+      .header.fixed .linkList ul {
+        padding-top: 0; }
+    header.fixed .hd_logo span,
+    .header.fixed .hd_logo span {
+      padding-top: 0; }
+  header.whiteBg .linkList, header.prepare .linkList,
+  .header.whiteBg .linkList,
+  .header.prepare .linkList {
+    color: #000;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5); }
+    header.whiteBg .linkList .burger span, header.prepare .linkList .burger span,
+    .header.whiteBg .linkList .burger span,
+    .header.prepare .linkList .burger span {
+      background-color: #353535; }
+  header .booking,
+  .header .booking {
+    background: url("../../../assets/img/bookingBg.png");
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    cursor: pointer;
+    -webkit-animation: slideInDown 1s both .1s;
+    animation: slideInDown 1s both .1s; }
+    @media all and (max-width: 650px) {
+      header .booking,
+      .header .booking {
+        width: 60px;
+        height: 60px; } }
+    header .booking span,
+    .header .booking span {
+      color: #d09b37;
+      font-size: 1.875rem; }
+      @media all and (max-width: 650px) {
+        header .booking span,
+        .header .booking span {
+          font-size: 1.25rem; } }
+    header .booking h2,
+    header .booking h3,
+    .header .booking h2,
+    .header .booking h3 {
+      font-size: 0.875rem;
+      color: #fff;
+      line-height: 1.8;
+      letter-spacing: 1px; }
+      @media all and (max-width: 650px) {
+        header .booking h2,
+        header .booking h3,
+        .header .booking h2,
+        .header .booking h3 {
+          display: none; } }
+    header .booking h2,
+    .header .booking h2 {
+      font-weight: bold; }
+    header .booking h3,
+    .header .booking h3 {
+      font-family: 'CenturyGothic-bold'; }
+  header .linkList,
+  .header .linkList {
+    height: 100%;
+    color: #fff;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    header .linkList ul,
+    .header .linkList ul {
+      -webkit-animation: slideInDown 1s both .1s;
+      animation: slideInDown 1s both .1s;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-top: 2.6vw;
+      -webkit-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease; }
+      @media all and (max-width: 1024px) {
+        header .linkList ul,
+        .header .linkList ul {
+          display: none; } }
+      @media all and (min-width: 1921px) {
+        header .linkList ul,
+        .header .linkList ul {
+          padding-top: 50px; } }
+      header .linkList ul li,
+      .header .linkList ul li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        header .linkList ul li a,
+        .header .linkList ul li a {
+          margin: 0 16px;
+          font-size: 0.875rem;
+          letter-spacing: 1px; }
+        header .linkList ul li:not(:last-child):after,
+        .header .linkList ul li:not(:last-child):after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 12px;
+          background-color: #cccccc; }
+    header .linkList .burger,
+    .header .linkList .burger {
+      -webkit-animation: slideInDown 1s both .1s;
+      animation: slideInDown 1s both .1s;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 100%;
+      width: 14vw; }
+      @media all and (min-width: 1025px) {
+        header .linkList .burger,
+        .header .linkList .burger {
+          display: none; } }
+      header .linkList .burger div,
+      .header .linkList .burger div {
+        width: 30px;
+        height: 12px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+        header .linkList .burger div span,
+        .header .linkList .burger div span {
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: #fff; }
+  header .hd_logo,
+  .header .hd_logo {
+    height: 100%;
+    -webkit-animation: slideInDown 1s both .1s;
+    animation: slideInDown 1s both .1s; }
+    header .hd_logo span,
+    .header .hd_logo span {
+      font-size: 2.5rem;
+      color: #d09b37;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-top: 40px;
+      -webkit-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease; }
+      @media all and (max-width: 1024px) {
+        header .hd_logo span,
+        .header .hd_logo span {
+          padding-top: 2.6vw; } }
+      @media all and (max-width: 650px) {
+        header .hd_logo span,
+        .header .hd_logo span {
+          font-size: 2rem; } }
+      @media all and (max-width: 350px) {
+        header .hd_logo span,
+        .header .hd_logo span {
+          font-size: 1.75rem; } }
+      header .hd_logo span:before,
+      .header .hd_logo span:before {
+        content: "\e91a";
+        font-family: 'icomoon'; }
+        @media all and (max-width: 650px) {
+          header .hd_logo span:before,
+          .header .hd_logo span:before {
+            content: "\e91b"; } }
+
+@-webkit-keyframes turnWhite {
+  0% {
+    background-color: transparent; }
+  100% {
+    background-color: #fff; } }
+
+@keyframes turnWhite {
+  0% {
+    background-color: transparent; }
+  100% {
+    background-color: #fff; } }
+
+.header {
+  width: 100vw; }
+  .header .booking,
+  .header .hd_logo {
+    position: relative;
+    z-index: 1; }
+  .header .backAndMenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: calc(50% - 100px);
+    height: 100%;
+    color: #fff;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    padding-top: 2.6vw;
+    -webkit-animation: slideInDown 1s both .1s;
+    animation: slideInDown 1s both .1s; }
+    @media all and (min-width: 1921px) {
+      .header .backAndMenu {
+        padding-top: 50px; } }
+    @media all and (max-width: 700px) {
+      .header .backAndMenu {
+        width: 150px;
+        left: calc(50% - 90px); } }
+    @media all and (max-width: 500px) {
+      .header .backAndMenu {
+        left: calc(50% - 75px); } }
+    .header .backAndMenu .back {
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-family: CenturyGothic, 微軟正黑體;
+      font-size: 0.875rem;
+      letter-spacing: 1px; }
+      @media all and (max-width: 500px) {
+        .header .backAndMenu .back {
+          display: none; } }
+      .header .backAndMenu .back a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .header .backAndMenu .back a:before {
+          font-family: 'icomoon';
+          content: "\e904";
+          font-size: 0.75rem;
+          margin-right: 10px; }
+          @media all and (max-width: 350px) {
+            .header .backAndMenu .back a:before {
+              margin-right: 5px; } }
+      .header .backAndMenu .back:after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 10px;
+        background-color: #cccccc;
+        margin: 18px; }
+        @media all and (max-width: 700px) {
+          .header .backAndMenu .back:after {
+            margin: 5vw; } }
+      @media all and (max-width: 900px) {
+        .header .backAndMenu .back span {
+          display: none; } }
+    .header .backAndMenu .burger {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      cursor: pointer; }
+      .header .backAndMenu .burger div {
+        width: 30px;
+        height: 13px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+        @media all and (max-width: 350px) {
+          .header .backAndMenu .burger div {
+            width: 25px; } }
+        .header .backAndMenu .burger div span {
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: #fff;
+          -webkit-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          transition: all 1s ease; }
+  .header .hd_logo {
+    position: absolute;
+    top: 0;
+    right: 8vw; }
+    @media all and (max-width: 1024px) {
+      .header .hd_logo {
+        right: 4vw; } }
+    @media all and (max-width: 700px) {
+      .header .hd_logo {
+        right: 15px; } }
+    @media all and (max-width: 350px) {
+      .header .hd_logo {
+        right: 10px; } }
+  .header.fixed .backAndMenu {
+    padding-top: 0; }
+  .header.fixed .backAndMenu, .header.whiteBg .backAndMenu {
+    color: #000; }
+    .header.fixed .backAndMenu .burger span, .header.whiteBg .backAndMenu .burger span {
+      background-color: #000; }

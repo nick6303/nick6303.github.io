@@ -1,0 +1,201 @@
+.service_center
+    &__content
+    &__inner
+        width: 100%
+        max-width: 1600px
+        margin: 50px auto 140px
+        +rwd(1024)
+            margin: 50px auto 0
+        >ul
+            display: flex
+            flex-wrap: wrap
+            >li
+                width: calc(100% / 3)
+                &:nth-child(1)
+                    position: relative
+                    z-index: 3
+                &:nth-child(2)
+                    position: relative
+                    z-index: 2
+                &:nth-child(3)
+                    position: relative
+                +rwd(1024)
+                    width: 50%
+                    &:nth-child(2)
+                        display: none
+                +rwd(768)
+                    width: 100%
+.service_center_box
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    height: 100%
+    h4
+        font-size: px(30)
+        margin-bottom: 20px
+    h5
+        font-size: px(20)
+        margin-bottom: 30px
+    h6
+        font-size: px(14)
+    p
+        font-size: px(14)
+        line-height: 1.5
+        margin-bottom: 50px
+    hr
+        display: inline-block
+        width: 60px
+        height: 1px
+        border: 0
+        background: #889cd0
+        margin-bottom: 30px
+    >div
+        width: 100%
+        min-height: 350px
+        border: 4px solid #fff
+        +flex
+        flex-direction: column
+        padding: 80px
+        opacity: 0
+        transform: translate(0%,20%)
+        transition: 1s
+        &.movein
+            opacity: 1
+            transform: translate(0%,0%)
+        ul
+            +flex
+        li
+            margin: 0 20px
+            +flex
+            flex-direction: column
+            .circle
+                margin-bottom: 20px
+    a
+        width: 100%
+        height: 100%
+        // padding: 80px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        color: #fff
+
+    &__left
+        >div:first-child
+            height: 40%
+            background: #64b3ca
+            color: #fff
+        >div:last-child
+            height: 60%
+            background: #ecbc56
+            color: #fff
+            background-size: cover
+    &__center
+        >div
+            height: 100%
+            width: 100%
+            background-position: center center
+            background-repeat: no-repeat
+            background-size: cover
+
+    &__right
+        >div:first-child
+            height: 60%
+            background: #f5f7ff
+            box-shadow: 0 0 0 50px #f5f7ff
+            border: 4px solid transparent
+            a
+                color: #000
+        >div:last-child
+            height: 40%
+            background: #a6a6a6
+            color: #fff
+
+.service_center__video
+    width: 100%
+    max-width: 1600px
+    margin: 50px auto 140px
+    display: flex
+    flex-wrap: wrap
+    +rwd(1200)
+        margin: 0 auto 140px
+    a
+        +flex
+        flex-direction: column
+    >div
+        opacity: 0
+        transform: translate(0%,20%)
+        transition: 1s
+        &.movein
+            opacity: 1
+            transform: translate(0%,0%)
+    .txt
+        background: #f5f7ff
+        padding: 20px 80px
+        width: calc(100% / 3)
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        +rwd(1200)
+            width: 100%
+            padding: 80px
+        h4
+            font-size: px(30)
+            margin-bottom: 20px
+        h5
+            font-size: px(20)
+            margin-bottom: 30px
+        h6
+            font-size: px(14)
+        p
+            width: 100%
+            font-size: px(14)
+            line-height: 1.5
+            margin-bottom: 50px
+        hr
+            display: inline-block
+            width: 60px
+            height: 1px
+            border: 0
+            background: #889cd0
+            margin-bottom: 30px
+        ul
+            +flex
+        li
+            margin: 0 20px
+            +flex
+            flex-direction: column
+            .circle
+                margin-bottom: 20px
+    .img
+        border: 1px solid #000
+        width: calc(100% / 3 * 2)
+        position: relative
+        overflow: hidden
+        +rwd(1200)
+            width: 100%
+        .video_img
+            +flex
+            &:before
+                content: ''
+                display: inline-block
+                height: 0
+                padding-bottom: 60%
+
+            &:after
+                content: ''
+                position: absolute
+                left: 0
+                top: 0
+                height: 100%
+                width: 100%
+                background: #000
+                opacity: 0.7
+            img
+                width: 100%
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)    

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/gallery/gallery.css">
+</head>
+
+<body id="gallery" class="index">
+    <header data-nobanner="true"></header>
+    <main>
+        <article class="topTitle">
+            <h2>Spotlight Gallery</h2>
+            <p>光點藝廊</p>
+            <div class="searchAndText">
+                <div class="search">
+                    <a class="openSearch" href="javascript:void(0)">
+                        <span class="icon-magnifier"></span>
+                        <p>Search 其他年度或主題作品</p>
+                    </a>
+                </div>
+                <div class="_text">
+                    <div class="h2">2018 FRANZ RISING STAR</div>
+                    <p>我們期盼世界上對陶瓷設計充滿憧憬的學生們，都能盡情揮灑天賦與創意，於明日閃耀成光點。</p>
+                </div>
+            </div>
+            <div class="selectUnitBg">
+                <div class="selectUnit">
+                    <ul>
+                        <!-- 後端請注意:此處要可新增li但第一個li一定要有class"active" -->
+                        <li class="active" onclick="gallery.selectUnit(this)">
+                            <p>overview 總覽</p>
+                        </li>
+                        <li onclick="gallery.selectUnit(this)">
+                            <p>Decoration 裝飾</p>
+                        </li>
+                        <li onclick="gallery.selectUnit(this)">
+                            <p>Daily Use 日用</p>
+                        </li>
+                        <li onclick="gallery.selectUnit(this)">
+                            <p>Tableware 擺飾</p>
+                        </li>
+                        <li onclick="gallery.selectUnit(this)">
+                            <p>Else 其他</p>
+                        </li>
+                    </ul>
+                    <div class="rwdSearch openSearch">
+                        <span class="icon-magnifier"></span>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="galleryContent">
+            <section class="works">
+                <!-- 作品一 -->
+                <div class="box">
+                    <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                        <div class="productPicture">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designImg1_550_550.jpg" alt="">
+                        </div>
+                        <div class="designer">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designerImg1_550_550.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            <span>DESIGN</span>
+                            <p>Blossom</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 作品二 -->
+                <div class="box">
+                    <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                        <div class="productPicture">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designImg2_550_550.jpg" alt="">
+                        </div>
+                        <div class="designer">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designerImg2_550_550.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            <span>DESIGN</span>
+                            <p>VENIN VOIR</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 作品三 -->
+                <div class="box">
+                    <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                        <div class="productPicture">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="designer">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designerImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            <span>DESIGN</span>
+                            <p>Solar Wind</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 作品四 -->
+                <div class="box">
+                    <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                        <div class="productPicture">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="designer">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designerImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            <span>DESIGN</span>
+                            <p>Solar Wind</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 作品五 -->
+                <div class="box">
+                    <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                        <div class="productPicture">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="designer">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designerImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            <span>DESIGN</span>
+                            <p>Solar Wind</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 作品六 -->
+                <div class="box">
+                    <a href="javascript:void(0)" onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html">
+                        <div class="productPicture">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="designer">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/designerImg3_550_550.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            <span>DESIGN</span>
+                            <p>Solar Wind</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="getMore">
+                    <a href="javascript:void(0)">
+                        <span></span>
+                        <p>Load More</p>
+                     </a>
+                </div>
+            </section>
+        </article>
+        <!-- 篩選比賽 -->
+        <article class="filterLibox">
+            <section class="liboxClose">
+                <span></span>
+            </section>
+            <section class="left">
+                <div class="_title">
+                    <p>SELECT YEAR</p>
+                </div>
+                <div class="years">
+                    <ul>
+                        <li class="active">
+                            <p>2020</p>
+                        </li>
+                        <li>
+                            <p>2019</p>
+                        </li>
+                        <li>
+                            <p>2018</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ps">scroll</div>
+            </section>
+            <section class="back"></section>
+            <section class="right">
+                <div class="_title">
+                    <p>SELECT COMPETITION</p>
+                </div>
+                <div class="projects">
+                    <div class="projectYear active">
+                        <div class="box">
+                            <div class="name">
+                                <a href="javascript:void(0)">
+                                    <p class="en">FRANZ RISING STAR</p>
+                                    <p class="ch">法藍瓷光點計畫</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="name">
+                                <a href="javascript:void(0)">
+                                    <p class="en">video competition</p>
+                                    <p class="ch">法藍瓷影片比賽</p>
+                                </a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <p class="en">Porcelain＆Ceramic PRODUCT</p>
+                                        <p class="ch">陶瓷設計組</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <p class="en">Porcelain＆Ceramic CONCEPT</p>
+                                        <p class="ch">概念設計組</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <p class="en">Porcelain＆Ceramic video</p>
+                                        <p class="ch">影片設計組</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <p class="en">Project of Rising Star</p>
+                                        <p class="ch">法藍瓷光點計畫</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="projectYear">
+                        <div class="box">
+                            <div class="name">
+                                <a href="javascript:void(0)">
+                                    <p class="en">FRANZ RISING STAR</p>
+                                    <p class="ch">法藍瓷光點計畫</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projectYear">
+                        <div class="box">
+                            <div class="name">
+                                <a href="javascript:void(0)">
+                                    <p class="en">FRANZ RISING STAR</p>
+                                    <p class="ch">法藍瓷光點計畫</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+</html>

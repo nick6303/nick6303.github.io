@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Philosopher-Regular';
+  src: url('../assets/font/Philosopher/Regular/Philosopher-Regular.woff2') format('woff2'),
+       url('../assets/font/Philosopher/Regular/Philosopher-Regular.woff') format('woff'),
+       url('../assets/font/Philosopher/Regular/Philosopher-Regular.ttf') format('truetype'),
+       url('../assets/font/Philosopher/Regular/Philosopher-Regular.svg') format('svg'),
+       url('../assets/font/Philosopher/Regular/Philosopher-Regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}

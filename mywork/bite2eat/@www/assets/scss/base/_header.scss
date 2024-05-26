@@ -1,0 +1,304 @@
+@import "_variable.scss";
+
+header,
+.header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    padding: 0 8vw;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    transition: all 1s ease;
+    @media all and (max-width: 1024px) {
+        padding: 0 6vw;
+    }
+    @media all and (max-width: 650px) {
+        padding: 0 15px 0 0;
+        height: 45px;
+    }
+    @media all and (max-width: 650px) {
+        padding: 0 10px 0 0;
+    }
+    &.prepare {
+        position: fixed;
+        top: -120px;
+        align-items: flex-start;
+    }
+    &.fixed {
+        top: 0;
+        background-color: #fff;
+        .linkList {
+            color: #000;
+            ul {
+                padding-top: 0;
+            }
+        }
+        .hd_logo span {
+            padding-top: 0;
+        }
+    }
+    &.whiteBg,
+    &.prepare {
+        .linkList {
+            color: #000;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, .5);
+            .burger span {
+                background-color: #353535;
+            }
+        }
+    }
+    .booking {
+        background: url("../../../assets/img/bookingBg.png");
+        background-size: cover;
+        width: 120px;
+        height: 120px;
+        @include flex-center;
+        flex-direction: column;
+        cursor: pointer;
+        animation: slideInDown 1s both .1s;
+        @media all and (max-width: 650px) {
+            width: 60px;
+            height: 60px;
+        }
+        span {
+            color: $base_gold;
+            @include font-size(24);
+            margin-bottom: 10px;
+            @media all and (max-width: 650px) {
+                @include font-size(20);
+            }
+        }
+        h2,
+        h3 {
+            @include font-size(14);
+            color: #fff;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            @media all and (max-width: 650px) {
+                display: none;
+            }
+        }
+        h2 {
+            font-weight: bold;
+        }
+        h3 {
+            font-family: 'CenturyGothic-bold';
+        }
+    }
+    .linkList {
+        height: 100%;
+        color: #fff;
+        text-shadow: 0px 0px 15px rgba(0, 0, 0, .5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        ul {
+            animation: slideInDown 1s both .1s;
+            height: 100%;
+            @include flex-center;
+            padding-top: 2.6vw;
+            transition: all .5s ease;
+            @media all and (max-width: 1024px) {
+                display: none;
+            }
+            @media all and (min-width: 1921px) {
+                padding-top: 50px;
+            }
+            li {
+                display: flex;
+                a {
+                    margin: 0 16px;
+                    @include font-size(14);
+                    letter-spacing: 1px;
+                }
+                &:not(:last-child):after {
+                    @include fakeLine(1px,
+                    12px,
+                    #cccccc);
+                }
+            }
+        }
+        .burger {
+            animation: slideInDown 1s both .1s;
+            @include flex-center;
+            height: 100%;
+            width: 14vw;
+            @media all and (min-width: 1025px) {
+                display: none;
+            }
+            div {
+                width: 30px;
+                height: 12px;
+                @include flex-space-between;
+                flex-direction: column;
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    .hd_logo {
+        height: 100%;
+        animation: slideInDown 1s both .1s;
+        span {
+            @include font-size(32);
+            color: $base_gold;
+            height: 100%;
+            @include flex-center;
+            padding-top: 40px;
+            transition: all .5s ease;
+            @media all and (max-width: 1024px) {
+                padding-top: 2.6vw;
+            }
+            @media all and (max-width: 350px) {
+                @include font-size(28);
+            }
+            &:before {
+                content: "\e91a";
+                font-family: 'icomoon';
+                @media all and (max-width: 650px) {
+                    content: "\e91b";
+                }
+            }
+        }
+    }
+}
+
+
+
+@keyframes turnWhite {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+
+.header {
+    width: 100vw;
+    .booking,
+    .hd_logo {
+        position: relative;
+        z-index: 1;
+    }
+    .backAndMenu {
+        @include flex-center;
+        position: absolute;
+        width: 200px;
+        top: 0;
+        left: calc(50% - 100px);
+        height: 100%;
+        color: #fff;
+        transition: all 1s ease;
+        padding-top: 2.6vw;
+        animation: slideInDown 1s both .1s;
+        @media all and (min-width: 1921px) {
+            padding-top: 50px;
+        }
+        @media all and (max-width: 700px) {
+            width: 150px;
+            left: calc(50% - 90px);
+        }
+        @media all and (max-width: 500px) {
+            left: calc(50% - 75px);
+        }
+        .back {
+            height: 100%;
+            @include flex-center;
+            text-transform: uppercase;
+            font-family: CenturyGothic, 微軟正黑體;
+            @include font-size(14);
+            letter-spacing: 1px;
+            @media all and (max-width: 500px) {
+                display:none;
+            }
+            a {
+                @include flex-center;
+                white-space: nowrap;
+                &:before {
+                    font-family: 'icomoon';
+                    content: "\e904";
+                    @include font-size(12);
+                    margin-right: 10px;
+                    @media all and (max-width: 350px) {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            &:after {
+                @include fakeLine(1px,
+                10px,
+                #cccccc);
+                margin: 18px;
+                @media all and (max-width: 700px) {
+                    margin:5vw;
+                }
+            }
+            p{
+                white-space: nowrap;
+            }
+            span {
+                @media all and (max-width: 900px) {
+                    display: none;
+                }
+            }
+        }
+        .burger {
+            @include flex-center;
+            cursor: pointer;
+            div {
+                width: 30px;
+                height: 13px;
+                @include flex-space-between;
+                flex-direction: column;
+                @media all and (max-width: 350px) {
+                    width: 25px;
+                }
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #fff;
+                    transition: all 1s ease;
+                }
+            }
+        }
+    }
+    .hd_logo {
+        position: absolute;
+        top: 0;
+        right: 8vw;
+        @media all and (max-width: 1024px) {
+            right: 4vw;
+        }
+        @media all and (max-width: 700px) {
+            right: 15px;
+        }
+        @media all and (max-width: 350px) {
+            right: 10px;
+        }
+    }
+    &.fixed {
+        .backAndMenu {
+            padding-top: 0;
+        }
+    }
+    &.fixed,
+    &.whiteBg {
+        .backAndMenu {
+            color: #000;
+            .burger span {
+                background-color: #000;
+            }
+        }
+    }
+}
+

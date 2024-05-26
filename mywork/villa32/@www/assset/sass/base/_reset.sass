@@ -1,0 +1,290 @@
+
+@-webkit-keyframes fadeInUp
+  from
+    opacity: 0
+    -webkit-transform: translateY(25%)
+    transform: translateY(5%)
+
+  to
+    opacity: 1
+    -webkit-transform: none
+    transform: none
+
+@keyframes fadeInUp
+  from
+    opacity: 0
+    -webkit-transform: translateY(25%)
+    transform: translateY(25%)
+
+  to
+    opacity: 1
+    -webkit-transform: translate(0)
+    transform: translate(0)
+
+@-webkit-keyframes fadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1
+
+@keyframes fadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1
+
+
+@-webkit-keyframes fadeInDown
+  from
+    opacity: 0
+    transform: translateY(-50%)
+
+  to
+    opacity: 1
+    transform: none
+
+@keyframes fadeInDown
+  from
+    opacity: 0
+    transform: translateY(-50%)
+
+  to
+    opacity: 1
+    transform: translateY(0%)
+
+@-webkit-keyframes fadeOut
+  from
+    opacity: 1
+
+  to
+    opacity: 0
+
+@keyframes fadeOut
+  from
+    opacity: 1
+
+  to
+    opacity: 0
+
+@-webkit-keyframes fadeOutUp
+  from
+    opacity: 1
+    transform: translateY(0%)
+
+  to
+    opacity: 0
+    transform: translateY(-50%)
+
+@keyframes fadeOutUp
+  from
+    opacity: 1
+    transform: translateY(0%)
+
+  to
+    opacity: 0
+    transform: translateY(-50%)
+
+@-webkit-keyframes fadeOutLeft
+  from
+    opacity: 1
+    transform: translateX(0%)
+
+  to
+    opacity: 0
+    transform: translateX(-50%)
+
+@keyframes fadeOutLeft
+  from
+    opacity: 1
+    transform: translateX(0%)
+
+  to
+    opacity: 0
+    transform: translateX(-50%)
+
+@keyframes fadeOutDown 
+  from 
+    opacity: 1
+    transform: translateY(0%)
+  to 
+    opacity: 0
+    transform: translateY(50%)
+
+@-webkit-keyframes fadeOutRight 
+  from 
+    opacity: 1
+    transform: translateX(0%)
+  to 
+    opacity: 0
+    transform: translateX(50%)
+    
+@keyframes fadeOutRight 
+  from 
+    opacity: 1
+    transform: translateX(0%)
+  to 
+    opacity: 0
+    transform: translateX(50%)
+
+// fadeInLeft
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translateX(-50%)
+
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+// fadeInRight
+@keyframes fadeInRight
+  0%
+    opacity: 0
+    transform: translateX(50%)
+
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes slideOutUp
+  0%
+    transform: translateY(0%)
+
+  100%
+    transform: translateY(-100%)
+
+@keyframes slideOutDown 
+    0% 
+        transform: translateY(0%)
+    100% 
+        transform: translateY(100%)
+
+@keyframes slideOutLeft 
+    0% 
+        transform: translateX(0%)
+    
+    100% 
+        transform: translateX(-100%)
+
+
+@keyframes slideOutRight 
+    0% 
+        transform: translateX(0%)
+    100% 
+        transform: translateX(100%)
+
+
+@keyframes slideInDown
+  0%
+    transform: translateY(-101%)
+
+  100%
+    transform: translateY(0%)
+
+@keyframes slideInUp
+  0%
+    transform: translateY(101%)
+
+  100%
+    transform: translateY(0%)
+
+@keyframes allin
+  0%
+
+  100%
+    transform: translate(0)
+    opacity: 1
+
+@keyframes slideInLeft 
+    0% 
+        transform: translateX(-101%)
+    
+    100% 
+        transform: translateX(0%)
+
+@keyframes slideInRight 
+  0% 
+      transform: translateX(101%)
+  100% 
+      transform: translateX(0%)
+
+@keyframes allin 
+    0% 
+    100% 
+        transform: translate(0)
+        opacity: 1
+
+@keyframes w100 
+    0% 
+    100% 
+        width: 100%
+
+@keyframes h100 
+    0%
+    100% 
+        height: 100%
+
+@keyframes w0 
+    0% 
+        width: 100%
+    100% 
+        width: 0%
+
+@keyframes h0 
+    0% 
+        height: 100%
+    100% 
+        height: 0%
+
+/* 水平線方式出現 ps:ie不支援*/
+
+@keyframes horizontalShow 
+    0% 
+        -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%)
+        clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%)
+    100% 
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+/* 垂直線方式出現 ps:ie不支援*/
+
+@keyframes verticalShow 
+    0% 
+        -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%)
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%)
+    100% 
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+@keyframes out
+  0%
+
+  100%
+    display: none
+
+@keyframes imgSpan 
+  0% 
+      width: 0%
+  40% 
+      width: 101%
+      transform: skewX(0deg) translateX(0%)
+  41% 
+      width: 200%
+      transform: skewX(30deg) translateX(-20%)
+  100% 
+      width: 200%
+      transform: skewX(30deg) translateX(80%)
+
+@keyframes zoomOut 
+    from 
+        transform: translate(0)
+        opacity: 1
+    50% 
+        transform: translate(0) scale3d(.3, .3, .3)
+        opacity: 0
+    to 
+        transform: translate(0)
+        opacity: 0

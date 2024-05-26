@@ -1,0 +1,810 @@
+//member logPage
+
+.member
+    .bgDecoration
+        position: absolute
+    .degA
+        width: 57%
+        left: 0
+        top: 0
+    .degB
+        width: 58%
+        right: 0
+        bottom: 0
+
+.logPage
+    .bgPic
+        background-color: #191919
+        width: 100%
+        height: 100%
+        min-height: 100vh
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+    .chrisCloseBtn
+        color: #fff
+        display: inline-flex
+        position: absolute
+        right: 60px
+        top: 60px
+
+    .logArea
+        width: 100%
+        min-height: 100vh
+        padding: 100px 0
+        display: flex
+        align-items: center
+        justify-content: center
+    .logFrame
+        width: 90%
+        max-width: 570px
+    .mocaTitleSec
+        color: #fff
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        margin: 0 0 50px 0
+        .title
+            opacity: 1
+            transform: translateY(0px)
+            margin: 0 0 20px 0
+            font-weight: 900
+            .aa
+                +fs(36)
+            .bb
+                +fs(34)
+        .subTitle
+            +fs(15)
+            opacity: 1
+            margin: 0
+    .formLog
+        .list
+            background-color: #d1d1d1
+            margin: 0 0 4px 0
+            padding: 0 30px 0 40px
+            &:last-child
+                margin: 0
+        input
+            background-color: rgba(0,0,0,0)
+            width: 100%
+        .lableTitle
+            color: #383030
+            min-width: 190px
+            span
+                &:first-child
+                    margin-right: 3px
+    .forgotArea
+        color: #fff
+        padding: 10px 0 0 0
+        margin: 0 0 60px 0
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        .text
+            +fs(14)
+            cursor: pointer
+            padding: 15px
+            transition: color .5s ease
+            &:hover
+                color: #e83434
+        .en
+            font-family: 'FuturaPT-Light','微軟正黑體'
+        span
+            font-family: '微軟正黑體'
+    .ctrlArea
+        color: #fff
+        display: flex
+        justify-content: center
+        .link
+            color: #fff
+            +fs(14)
+            cursor: pointer
+            border-radius: 50%
+            width: 80px
+            height: 80px
+            margin: 0 20px
+            display: flex
+            align-items: center
+            justify-content: center
+        .btnA
+            border: dashed
+            border-width: 1.2px
+        .btnB
+            background-color: #e83434
+    @media (max-width: 767px)
+        .chrisCloseBtn
+            right: 15px
+            top: 30px
+        .formLog
+            .list
+                padding: 0 20px
+            .verifi
+                position: relative
+                input
+                    width: calc(100% - 80px)
+                .code
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+
+
+
+.hideAccountType
+    background-color: #191919
+    width: 100%
+    height: calc(var(--vh, 1vh) * 100)
+    -webkit-overflow-scrolling: touch
+    min-height: 100vh
+    position: fixed
+    left: 0
+    top: 0
+.registAccount
+    z-index: -1
+    visibility: hidden
+    opacity: 0
+    &.open
+        z-index: 1
+        visibility: visible
+        opacity: 1
+        .pageAbox.showUp
+            .mocaTitleSec
+                .title
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity 1.2s ease, transform 1.2s ease
+                .subTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1.2s ease .2s, transform 1.2s ease .2s
+            .formRegister 
+                opacity: 1
+                transition: opacity 1s ease .5s
+            .serviceRule
+                opacity: 1
+                transition: opacity 1s ease .7s
+            .ctrlArea
+                opacity: 1
+                transition: opacity 1s ease .9s
+        .pageBbox.showUp
+            .img
+                transform: translateY(0px)
+                transition: transform 1.2s ease
+            .textInfo
+                opacity: 1
+                transition: opacity 1s ease .3s
+            .ctrlArea
+                opacity: 1
+                transition: opacity 1s ease .6s
+    &.close
+        opacity: 0
+        transition: opacity .5s ease
+    .chrisCloseBtn
+        cursor: pointer
+        z-index: 1
+    .pizzaBox
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        visibility: hidden
+        &.showUp
+            position: relative
+            z-index: 0
+            visibility: visible
+    .pageA
+        width: 100%
+        min-height: 100vh
+        padding: 100px 0
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        .mocaTitleSec
+            margin: 0 0 25px 0
+            .title
+                margin: 0 0 35px 0
+    .pageAbox
+        width: 90%
+        max-width: 670px
+        .mocaTitleSec
+            .title
+                opacity: 0
+                transform: translateY(100px)
+            .subTitle
+                opacity: 0
+                transform: translateY(100px)
+        .serviceRule
+            color: #fff
+            margin: 0 0 60px 0
+            display: flex
+            align-items: center
+            justify-content: center
+            opacity: 0
+            .iconBox
+                cursor: pointer
+                color: #fff
+                border-radius: 50%
+                border: solid 2px #fff
+                width: 25px
+                height: 25px
+                margin: 0 20px 0 0
+                display: flex
+                align-items: center
+                justify-content: center
+                &.red
+                    color: #fff
+                    border-color: #ff0000
+                    background-color: #ff0000
+            .icon
+                +fs(12)
+            .text
+                +fs(14)
+                text-align: center
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+            .openRule
+                cursor: pointer
+                &:after
+                    content: ''
+                    display: block
+                    background-color: #fff
+                    width: 100%
+                    height: 1px
+        .ctrlArea
+            opacity: 0
+    .pageBbox
+        color: #fff
+        width: 90%
+        max-width: 670px
+        .imgFrame
+            margin: 0 0 40px 0
+            overflow: hidden
+        .img
+            margin: 0 auto
+            transform: translateY(100px)
+        .textInfo
+            text-align: center
+            margin: 0 auto 75px auto
+            opacity: 0
+        .ctrlArea
+            opacity: 0
+    .formRegister
+        color: #fff
+        margin: 0 0 40px 0
+        opacity: 0
+        .verifi
+            position: relative
+        .list
+            background-color: #484848
+            margin: 1px
+            &.break
+                margin: 1px 1px 20px 1px
+            &.verifi
+                .code
+                    margin-left: auto
+        .lableTitle
+            flex-wrap: inherit
+            white-space: pre
+            &:before
+                content: '*'
+                display: block
+                margin-right: 5px
+            span
+                &:first-child
+                    margin-right: 5px
+        input
+            color: #fff
+            background-color: rgba(0,0,0,0)
+            width: 100%
+        .w100
+            .lableTitle
+                width: auto
+                padding-right: 40px
+        .w50
+            .lableTitle
+                width: auto
+                padding-right: 20px
+        .chrisSelect
+            .showBox
+                padding: 0
+            .dropList
+                .list
+                    color: #fff
+                    padding: 0
+                    margin: 0
+    @media (max-width: 767px)
+        .chrisCloseBtn
+
+        .pageAbox
+            .serviceRule
+                flex-direction: column
+                .iconBox
+                    margin: 0 0 15px 0
+        .formRegister
+            .verifi
+                .code
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+            .w100
+                .lableTitle
+                    padding-right: 0
+            .w50
+                .lableTitle
+                    padding-right: 0
+        .list
+            padding: 0 10px
+            .lableTitle
+                +fs(14)
+                padding: 15px 0 0 0
+
+.modelA
+    z-index: -1
+    visibility: hidden
+    opacity: 0
+    height: 0
+    &.open
+        z-index: 10
+        visibility: visible
+        opacity: 1
+        height: calc(var(--vh, 1vh) * 100)
+        -webkit-overflow-scrolling: touch
+        .pageAbox.showUp
+            .mocaTitleSec
+                .title
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity 1.2s ease, transform 1.2s ease
+                .subTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1.2s ease .2s, transform 1.2s ease .2s
+                .text
+                    opacity: 1
+                    transition: opacity 1.2s ease .4s
+            .memberForm
+                opacity: 1
+                transition: opacity 1.2s ease .6s
+            .ctrlArea
+                opacity: 1
+                transition: opacity 1.2s ease .8s
+        .pageBbox.showUp
+            .mocaTitleSec
+                .title
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity 1.2s ease, transform 1.2s ease
+                .subTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1.2s ease .2s, transform 1.2s ease .2s
+                .text
+                    opacity: 1
+                    transition: opacity 1.2s ease .4s
+            .ctrlArea
+                opacity: 1
+                transition: opacity 1.2s ease .8s
+    &.close
+        opacity: 0
+        transition: opacity .6s ease
+    .mCSB_scrollTools
+        opacity: 0 !important
+    .chrisCloseBtn
+        cursor: pointer
+        z-index: 1
+    .mocaTitleSec
+        .title
+            opacity: 0
+            transform: translateY(100px)
+        .subTitle
+            opacity: 0
+            transform: translateY(100px)
+        .text
+            opacity: 0
+    .memberForm
+        opacity: 0
+    .ctrlArea
+        opacity: 0
+    .pizzaBox
+        width: 90%
+        max-width: 670px
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        visibility: hidden
+        &.showUp
+            position: relative
+            z-index: 0
+            visibility: visible
+    .pageA
+        width: 100%
+        min-height: 100vh
+        padding: 100px 0
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        .mocaTitleSec
+            margin: 0 0 60px 0
+            .title
+                +fs(40)
+                font-weight: 900
+                font-family: 'FuturaPT-Heavy','微軟正黑體'
+                margin: 0 0 10px 0
+            .subTitle
+                +fs(24)
+                font-weight: 900
+                font-family: 'FuturaPT-Heavy','微軟正黑體'
+                margin: 0 0 50px 0
+            .text
+                +fs(14)
+    .ctrlArea
+        color: #fff
+        display: flex
+        justify-content: center
+        .link
+            color: #fff
+            +fs(14)
+            cursor: pointer
+            border-radius: 50%
+            width: 80px
+            height: 80px
+            margin: 0 20px
+            display: flex
+            align-items: center
+            justify-content: center
+        .btnA
+            border: dashed
+            border-width: 1.2px
+        .btnB
+            background-color: #e83434
+.fAccountA
+    .formFaccount
+        color: #fff
+        margin: 0 0 80px 0
+        .lableTitle
+            flex-wrap: inherit
+            white-space: pre
+            &:before
+                content: '*'
+                display: block
+                margin-right: 5px
+        .w100
+            .lableTitle
+                width: auto
+                padding-right: 40px
+        .list
+            background-color: #484848
+            margin: 1px
+        input
+            color: #fff
+            background-color: rgba(0,0,0,0)
+            width: 100%
+        .verifi
+            position: relative
+            .code
+                margin-left: auto
+    @media (max-width: 767px)
+        .formFaccount
+            .verifi
+                .code
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+.fPasswordA
+    .formFpassword
+        color: #fff
+        margin: 0 0 80px 0
+        .lableTitle
+            flex-wrap: inherit
+            white-space: pre
+            &:before
+                content: '*'
+                display: block
+                margin-right: 5px
+        .w100
+            .lableTitle
+                width: auto
+                padding-right: 40px
+        .list
+            background-color: #484848
+            margin: 1px
+        input
+            color: #fff
+            background-color: rgba(0,0,0,0)
+            width: 100%
+        .verifi
+            position: relative
+            .code
+                margin-left: auto
+    @media (max-width: 767px)
+        .formFpassword
+            .verifi
+                .code
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+.RePassword
+    .formRpassword
+        color: #fff
+        margin: 0 0 80px 0
+        .lableTitle
+            flex-wrap: inherit
+            white-space: pre
+            &:before
+                content: '*'
+                display: block
+                margin-right: 5px
+        .w100
+            .lableTitle
+                width: auto
+                padding-right: 40px
+        .list
+            background-color: #484848
+            margin: 1px
+        input
+            color: #fff
+            background-color: rgba(0,0,0,0)
+            width: 100%
+.chAccount, .chPassword
+    &.open
+        .pageAbox.showUp
+            .mocaTitleSec
+                .title
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity 1.2s ease, transform 1.2s ease
+                .subTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1.2s ease .2s, transform 1.2s ease .2s
+                .text
+                    opacity: 1
+                    transition: opacity 1.2s ease .4s
+            .memberForm
+                opacity: 1
+                transition: opacity 1.2s ease .6s
+            .ctrlArea
+                opacity: 1
+                transition: opacity 1.2s ease .8s
+        .pageBbox.showUp
+            .mocaTitleSec
+                .title
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity 1.2s ease, transform 1.2s ease
+                .subTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1.2s ease .2s, transform 1.2s ease .2s
+                .text
+                    opacity: 1
+                    transition: opacity 1.2s ease .4s
+            .ctrlArea
+                opacity: 1
+                transition: opacity 1.2s ease .8s
+    .chrisCloseBtn
+        color: #fff
+        display: inline-flex
+        position: absolute
+        right: 60px
+        top: 60px
+    .ctrlArea
+        opacity: 0
+    .mocaTitleSec
+        color: #fff
+        .text
+            max-width: 465px
+            margin: 0 auto
+            opacity: 0
+    .memberForm
+        color: #fff
+        margin: 0 0 70px 0
+        opacity: 0
+    .list
+        background-color: #484848
+        margin: 1px
+        &.break
+            margin: 1px 1px 20px 1px
+    input
+        color: #fff
+        background-color: rgba(0,0,0,0)
+        width: 100%
+    .w100
+        .lableTitle
+            width: auto
+    .lableTitle
+        flex-wrap: inherit
+        white-space: pre
+        width: auto
+        padding-right: 40px
+        &:before
+            content: '*'
+            display: block
+            margin-right: 5px
+
+
+.scarlett
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    position: fixed
+    left: 0
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    visibility: hidden
+    opacity: 0
+    z-index: -1
+    &.open
+        visibility: visible
+        opacity: 1
+        z-index: 2
+        .bg
+            transform: translateY(0%)
+            transition: transform .5s ease
+        .btnStyle
+            opacity: 1
+            transition: opacity 1s ease .6s
+        .container
+            opacity: 1
+            transition: opacity 1s ease .3s
+    &.close
+        .bg
+            transform: translateY(100%)
+            transition: transform .5s ease .4s
+        .btnStyle
+            opacity: 0
+            transition: opacity .5s ease
+        .container
+            opacity: 0
+            transition: opacity .5s ease
+    .bg
+        background-color: rgba(232,52,52,0.6)
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        transform: translateY(-100%)
+    .btnStyle
+        width: 100%
+        max-width: 860px
+        opacity: 0
+        .btn
+            height: 50px
+            padding: 0 20px
+            text-align: center
+            line-height: 1.4
+        .styleG
+            color: #fff
+            background-color: #b2b2b2
+            border-color: #b2b2b2
+    .container
+        background-color: #fff
+        width: 100%
+        position: relative
+        opacity: 0
+        .mCSB_scrollTools
+            width: 2px
+        .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+            background-color: #5a5a5a
+        .closeBtnBox
+            color: #000
+            cursor: pointer
+            border: solid 2px #000
+            border-radius: 50%
+            width: 37px
+            height: 37px
+            display: flex
+            align-items: center
+            justify-content: center
+            position: absolute
+            right: 26px
+            top: 26px
+            .icon
+                display: block
+                transform: rotate(45deg)
+                font-weight: 900
+    
+    &.successHideBox, &.timeoutHideBox
+        .mocaTitleSec
+            color: #000
+            padding: 0
+            font-weight: 900
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            .title
+                +fs(36)
+                margin: 0
+            .subTitle
+                +fs(24)
+                margin: 0 0 30px 0
+            .line
+                background-color: #e5e5e5
+                width: 100%
+                height: 6px
+                display: block
+        .btnStyle
+            max-width: 615px
+            .btn
+                width: 100%
+        .container
+            max-width: 615px
+            padding: 100px 70px
+        .content
+            .text
+                +fs(16)
+                text-align: center
+                line-height: 2
+
+    @media (max-width: 767px)
+        .container
+            height: calc(100vh - 50px)
+            padding: 0 5%
+        &.successHideBox, &.timeoutHideBox
+            .container
+                    padding: 60px 20px
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+    @media (max-width: 767px) and (max-height: 500px)
+        .container
+            .closeBtnBox
+                top: 10px
+.serviceRuleHideBox
+    .mocaTitleSec
+        color: #000
+        padding: 65px 0 0 0
+        font-weight: 900
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        .title
+            +fs(30)
+            margin: 0 0 10px 0
+        .subTitle
+            +fs(20)
+            margin: 0 0 15px 0
+        .line
+            background-color: #000
+            width: 100%
+            height: 4px
+            display: block
+    .container
+        max-width: 860px
+        padding: 0 95px
+    .content
+        height: 50vh
+        margin: 0 0 65px 0
+        .list
+            margin: 0 0 50px 0
+            padding: 0 25px
+        .title
+            +fs(18)
+            font-weight: 900
+            margin: 0 0 35px 0
+        .text
+            +fs(14)
+            line-height: 2
+    @media (max-width: 767px)
+        .content
+            height: 100%
+            max-height: calc(100% - 300px)
+            .list
+                padding: 0 10px
+    @media (max-width: 767px) and (max-height: 500px)
+        .mocaTitleSec
+            margin: 0 0 20px 0
+            padding: 40px 0 0 0
+        .content
+            max-height: calc(100% - 190px)
+            margin: 0 0 30px 0
+
+
+    

@@ -1,0 +1,512 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"廠商專區",
+            link:"../supplier/index.html"},
+        {
+            title:"進項發票檔",
+            link:"../supplier/invoice.html"},
+    ]
+
+    var unit = [
+        {
+            title:"日對帳",
+            link:"../supplier/day.html"},
+        {
+            title:"月對帳",
+            link:"../supplier/month.html"},
+        {
+            title:"進項發票檔",
+            link:"../supplier/invoice.html"},
+        {
+            title:"修改密碼",
+            link:"../supplier/changepassword.html"},
+        {
+            title:"登出",
+            link:"javascript:void(0)"},
+    ]
+
+    var table = [
+        {
+            date:"2018/10",
+            invoice:"月結",
+            numb:"709972",
+            turn:"未轉檔"},
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#supplier.invoice
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title(style="background-image:url('../../upload/fa2/supplier/bannerTitleBg_1670_410.jpg')")
+                p.ch 廠商專區
+                p.en Supplier area
+                p.words 請先選擇登入的身份，再輸入帳號及密碼，以利提供日、月對帳及進項發票輸入等服務，謝謝。
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val == unit[2])?"active":"")
+                        a(href=val.link)
+                            p=val.title
+        article.topTitle
+            p.en INVOICE FILE
+            form
+                // 選擇專櫃
+                // 後端請注意: 如果想讓表格出現紅字 顯示輸入錯誤的項目時 請在 <div class="dropDown"> 加上class "wrong"
+                // 後端請注意: 因為此區域的帳號分兩種
+                    1.廠商:可控制多個櫃位 所以可以選擇專櫃編號
+                    2.專櫃: 只有一個櫃位 所以下方的選擇專櫃不須出現
+                .dropDown
+                    span.selectMenu
+                        p 下拉選擇專櫃編號
+                    ul
+                        // 後端請注意: 下方的data-counterName 填入專櫃名稱 他會在點擊之後自動帶入到下方的<div class="counterName">中
+                        li(data-counterName="卡友來店禮") 709000
+                        li(data-counterName="華安") 9527
+                        li(data-counterName="黎明到來的那一天") 1987
+                        li(data-counterName="就是你") 5438
+                        li(data-counterName="是芥末日") 2012
+                // 專櫃名稱
+                .counterName
+                    p 卡友來店禮
+                // 選擇月份
+                // 後端請注意: 如果想讓表格出現紅字 顯示輸入錯誤的項目時 請在 <div class="inputArea"> 加上class "wrong"
+                .inputArea
+                    .sel_date.getDay
+                        input(type="text"  placeholder="下拉選擇日期" readonly="readonly")
+                        label
+                .button
+                    button(type="button")
+                        span.icon-magnifier
+                        p 搜尋
+        article.content
+            section._title
+                h6 進項發票檔表格
+                button(type="button")
+                    span
+                    p 新增項目
+            section.list
+                .listHeader
+                    p 帳款年月
+                    p 結帳別
+                    p 期別
+                    p 專櫃編號
+                    p 轉檔
+                    p 內容
+                    p 刪除
+                .listContent
+                    ul
+                        -for(var i = 0;i<7;i++)
+                            each val in table
+                                li.list
+                                    p(data-name="帳款年月")=val.date
+                                    p(data-name="結帳別")=val.invoice
+                                    p(data-name="期別")=i
+                                    p(data-name="專櫃編號")=val.numb
+                                    p(data-name="轉檔")=val.turn
+                                    .enter(data-name="內容")
+                                        button(type="button" onclick="formLibox.open();") ENTER
+                                    //後端請注意: 這邊的刪除只是remove()而已 資料庫記得也要跟著移除
+                                        下方button的onclick事件只是展示用重要的是裡面的function
+                                    .delect(data-name="刪除")
+                                        button(type="button" onclick="liboxs.delect(this);liboxs.open(0);")
+                                            span
+        article.liboxs
+            // 確認刪除
+            section.libox
+                .box
+                    .content
+                        ._title 
+                            img(src="../../upload/fa2/supplier/invoice/trashcan.png", alt="")
+                            p.ch 確定刪除此項目嗎?
+                            p.en Delete item
+                        .word 
+                            p 確定要刪除此內容嗎 ? 一旦刪除此項內容，資訊將不會被此網站儲存，需要再重新填寫相關資料，建議可以繼續保留，謝謝您。
+                        .buttons
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="liboxs.close(this);")
+                                span.icon-reset
+                                p 取消刪除
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="liboxs.delect();liboxs.close(this);")
+                                span.icon-hook
+                                p 確定刪除
+            // 確認離開
+            section.libox
+                .box
+                    .content
+                        ._title 
+                            img(src="../../upload/fa2/news/signup/X.png", alt="")
+                            p.ch 確定離開此頁嗎?
+                            p.en Cancel save
+                        .word 
+                            p 確定要離開此內容頁嗎 ? 未儲存就離開本頁，資訊將不會被網頁儲存，會需要再重新填寫相關資料，建議可以繼續輸入，謝謝。
+                        .buttons
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="liboxs.close(this);")
+                                span.icon-pen
+                                p 繼續填寫
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="liboxs.close(this);formLibox.close();")
+                                span.icon-hook
+                                p 確定離開
+            // 進項發票檔:內容項目
+            // 後端請注意: 如果想要讓表單無法被修改的話 請在下方<section class="formLibox"> 加上class "noChange"
+            section.formLibox
+                div
+                    .liboxClose
+                        span
+                    .topTitle
+                        p.en Invoice added item
+                        p.ch 進項發票檔 : 內容項目
+                        p.ps 請確實填寫以下所有欄位，以利後續資料查詢，謝謝。
+                    .form
+                        form
+                            // 帳目基本資料
+                            .basicInf
+                                .type
+                                    .typeName
+                                        p 帳款年月
+                                    .inputArea
+                                        .sel_date.getMonth
+                                            input(type="text"  placeholder="下拉選擇月份" readonly="readonly")
+                                            label
+                                .type
+                                    .typeName
+                                        p 結帳別
+                                    .inputArea
+                                        input(type="text")
+                                .type
+                                    .typeName
+                                        p 期別
+                                    .inputArea
+                                        .dropDown
+                                            span.selectMenu
+                                                p 1
+                                            ul
+                                                -for (var i = 1; i<5;i++)
+                                                    li=i
+                                .type
+                                    .typeName
+                                        p 專櫃編號
+                                    .inputArea
+                                        .dropDown
+                                            span.selectMenu
+                                                p 709000
+                                            ul
+                                                // 後端請注意: 下方的data-counterName 填入專櫃名稱 他會在點擊之後自動帶入到下方的<div class="counterName">中
+                                                li(data-counterName="卡友來店禮") 709000
+                                                li(data-counterName="華安") 9527
+                                                li(data-counterName="黎明到來的那一天") 1987
+                                                li(data-counterName="就是你") 5438
+                                                li(data-counterName="是芥末日") 2012
+                            // 新增表單
+                            .table
+                                - for (var x= 0 ;x <1;x++)
+                                    .list
+                                        .numbAndDelect
+                                            button.delect(type="button" onclick="liboxs.delect(this);liboxs.open(0);")
+                                                p 刪除此項目
+                                        .type
+                                            .typeName
+                                                p 字軌
+                                            .inputArea
+                                                input(type="text")
+                                        .type
+                                            .typeName
+                                                p 發票號碼
+                                            .inputArea
+                                                input(type="text")
+                                        .type
+                                            .typeName
+                                                p 發票日期
+                                            .inputArea
+                                                .sel_date.getDay
+                                                    input(type="text"  placeholder="下拉選擇日期" readonly="readonly")
+                                                    label
+                                        .type
+                                            .typeName
+                                                p 憑證種類
+                                            .inputArea
+                                                .dropDown
+                                                    span.selectMenu
+                                                        p 
+                                                    ul
+                                                        -for (var i = 1; i<5;i++)
+                                                            li=i
+                                        .type
+                                            .typeName
+                                                p 發票種類
+                                            .inputArea
+                                                .dropDown
+                                                    span.selectMenu
+                                                        p 
+                                                    ul
+                                                        -for (var i = 1; i<5;i++)
+                                                            li=i
+                                        .type
+                                            .typeName
+                                                p 發票淨額
+                                            .inputArea
+                                                input(type="text")
+                                        .type
+                                            .typeName
+                                                p 發票稅額
+                                            .inputArea
+                                                input(type="text")
+                                        .type
+                                            .typeName
+                                                p 發票總計
+                                            .inputArea
+                                                input(type="text")
+                            .add
+                                button(type="button" onclick="formLibox.add()")
+                                    span
+                                    p 新增檔案
+                            .buttons
+                                button(type="reset")
+                                    span.icon-reset
+                                    p 重新填寫
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="formLibox.close()")
+                                    span.icon-hook
+                                    p 確認儲存
+    include ../layout/_footer.pug
++script
+// 進項發票檔:內容項目 新增格式
+script(id="table"  type="text/x-template").
+    <div class="list">
+        <div class="numbAndDelect">
+            <button class="delect" type="button" onclick="liboxs.delect(this);liboxs.open(0);">
+                <p>刪除此項目</p>
+            </button>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>字軌</p>
+        </div>
+        <div class="inputArea">
+            <input type="text">
+        </div>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>發票號碼</p>
+        </div>
+        <div class="inputArea">
+            <input type="text">
+        </div>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>發票日期</p>
+        </div>
+        <div class="inputArea">
+            <div class="sel_date getDay">
+            <input type="text" placeholder="下拉選擇日期" readonly="readonly">
+            <label></label>
+            </div>
+        </div>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>憑證種類</p>
+        </div>
+        <div class="inputArea">
+            <div class="dropDown"><span class="selectMenu">
+                <p> </p></span>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>發票種類</p>
+        </div>
+        <div class="inputArea">
+            <div class="dropDown"><span class="selectMenu">
+                <p> </p></span>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>發票淨額</p>
+        </div>
+        <div class="inputArea">
+            <input type="text">
+        </div>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>發票稅額</p>
+        </div>
+        <div class="inputArea">
+            <input type="text">
+        </div>
+        </div>
+        <div class="type">
+        <div class="typeName">
+            <p>發票總計</p>
+        </div>
+        <div class="inputArea">
+            <input type="text">
+        </div>
+        </div>
+    </div>
+
+script.
+    var formLibox ={
+        open: function () {
+            $(".formLibox").addClass("open")
+            if (!mobile() && !$("body").hasClass("guide")) {
+                $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+            } else {
+                $("body").css("overflow-y", "hidden")
+            }
+
+            alreadyHidden = true
+
+            formLibox.all();
+        },
+
+        close_click: function () {
+            $(".formLibox .liboxClose").click(function () {
+                liboxs.open(1)
+            });
+
+        },
+        
+        close: function () {
+            $(".formLibox").addClass("close").removeClass("open");
+            alreadyHidden = false
+            if (!mobile()) {
+                $("body").css({"overflow-y": "visible","padding-right":"0rem"});
+            } else {
+                $("body").css("overflow-y", "visible");
+            }
+            setTimeout(function () {
+                $(".formLibox").removeClass("close check");
+                $(".formLibox .form form .type").slideDown()
+            }, 1000)
+        },
+        
+        add:function(){
+            var components = document.querySelector("#table").innerText
+            $("#supplier.invoice .liboxs .formLibox .form form .table").append(components)
+            dropDown();
+            supplier.dateDropper();
+        },
+
+        //- delect:function(target){
+        //-     $(target).closest(".list").remove()
+        //- },
+
+        all:function(){
+            formLibox.close_click();
+        }
+    }
+
+    // 紀錄要移除哪一個
+    var whitchOne
+
+    var liboxs = {
+        open: function (index) {
+            $(".liboxs .libox").eq(index).addClass("open")
+            if (!mobile() && !$("body").hasClass("guide")) {
+                $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+            } else {
+                $("body").css("overflow-y", "hidden")
+            }
+
+            liboxs.all();
+        },
+
+        close_click: function () {
+
+            $(".liboxs .libox .liboxClose").click(function () {
+                liboxs.close(this);
+            });
+
+            $(".liboxs .libox").click(function(e){
+                if($(e.target).hasClass("libox")){
+                    liboxs.close(this);
+                }
+            });
+        },
+
+        close: function (target) {
+            $(target).closest(".libox").addClass("close").removeClass("open");
+            // var action = (alreadyHidden !== undefined) ? (!alreadyHidden) : true
+            if (!mobile() && !alreadyHidden) {
+                $("body").css({
+                    "overflow-y": "visible",
+                    "padding-right": "0rem"
+                })
+            } else if (mobile() && !alreadyHidden) {
+                $("body").css("overflow-y", "visible");
+            }
+
+            whitchOne = undefined
+
+            setTimeout(function () {
+                $(target).closest(".libox").removeClass("close");
+            }, 400)
+        },
+
+        delect:function(target){
+            if(whitchOne == undefined){
+                whitchOne = $(target).closest(".list").index();
+            }else{
+                if(alreadyHidden){
+                    $(".formLibox .form form .table .list").eq(whitchOne).remove();
+                }else{
+                    $("article.content .list .listContent ul li").eq(whitchOne).remove();
+                }
+                whitchOne = undefined
+            }
+        },
+
+        all:function(){
+            liboxs.close_click();
+        }
+    }
+
+    
+|
+|
+</html>

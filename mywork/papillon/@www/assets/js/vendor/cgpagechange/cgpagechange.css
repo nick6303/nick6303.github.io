@@ -1,0 +1,178 @@
+/*----- cgpagechange A -----*/
+.cg_page {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.cg_page.open {
+    z-index: 13;
+}
+.cg_page svg {
+    display: block;
+}
+.cg_page #shape_1 {
+    opacity: 0;
+    transform-origin: center center;
+    transform: translate(50%,50%);
+}
+.cg_page #shape_2,
+.cg_page #shape_3,
+.cg_page #shape_4,
+.cg_page #shape_5,
+.cg_page #shape_6 {
+    visibility: hidden;
+
+    transform: translate(50%,50%);
+    transform-origin: center center;
+}
+
+
+
+#cgbox {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1111111;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.cgABg {
+    width: 100vw;
+    height: 100vh;
+    background-color: #151936;
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    z-index: 1111112;
+}
+
+.cgBBg {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ff002a;
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    z-index: 1111112;
+}
+
+.cgCBg {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e4e4e4;
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    z-index: 1111112;
+}
+
+.cgLogo {
+    width: 100px;
+    height: auto;
+    position: fixed;
+    z-index: 1111112;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.cgLogo img {
+    width: 100px;
+    height: 100px;
+}
+
+
+/*******************************************/
+
+
+/*                                         */
+
+
+/*              cgpagechange B             */
+
+
+/*                                         */
+
+
+/*******************************************/
+
+#cgBbox {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1111111;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.cgB1 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    top: -100vh;
+    left: 0;
+}
+
+.cgB2 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    bottom: -100vh;
+    left: 0;
+}
+
+
+/*******************************************/
+
+
+/*                                         */
+
+
+/*              cgpagechange C             */
+
+
+/*                                         */
+
+
+/*******************************************/
+
+#cgCbox {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1111111;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.cgC1 {
+    width: 0.5px;
+    height: 100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    left: 50vw;
+    top: -100vh;
+}
+
+.cgC2 {
+    width: 0.5px;
+    height: 100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    right: 50vw;
+    top: -100vh;
+}

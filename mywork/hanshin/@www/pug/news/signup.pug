@@ -1,0 +1,781 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"最新消息",
+            link:"../news/index.html"},
+        {
+            title:"中獎名單",
+            link:"../news/detail.html"},
+    ]
+
+    var table = [
+        {
+            awards:"都法獎",
+            content:"墾丁都法豪華莊園 - 關山泳池Villa",
+            quota:"04",
+            numb:[
+                "3566-XXXX-XXXX-2101",
+            ],
+            name:[
+                "蔡X筑",
+            ]
+        },
+    ]
+
+    var eventTime = [
+        {
+            name:"寶寶健康大球組",
+            place:"8F 活動會館",
+            date:"2019-02-12(六)",
+            time:"20:00~21:30"},
+        {
+            name:"寶寶強壯幼童組",
+            place:"8F 活動會館",
+            date:"2019-02-12(六)",
+            time:"20:00~21:30"},
+        {
+            name:"寶寶小球組",
+            place:"8F 活動會館",
+            date:"2019-02-12(六)",
+            time:"20:00~21:30"},
+        {
+            name:"健康大童組",
+            place:"8F 活動會館",
+            date:"2019-02-12(六)",
+            time:"20:00~21:30"},
+    ]
+
+    var formLibox = [
+        {
+            h3:"早鳥票",
+            p:"2/12前報名即可享受早鳥票優惠",
+            price:"免費"},
+        {
+            h3:"早鳥票",
+            p:"2/12前報名即可享受早鳥票優惠",
+            price:"200"},
+        {
+            h3:"會員票",
+            p:"需為漢神會員",
+            price:"500"},
+        {
+            h3:"VIP會員票",
+            p:"需為漢神VIP白金會員",
+            price:"1,000"},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#news.detail
+    include ../layout/_header.pug
+    main
+        // 後端請注意: 要讓客戶可以自訂背景圖片和背景顏色
+        // 後端請注意: 要讓客戶可以決定字的顏色 預設是黑色  如果要白色 就在 <section class="banner"> 加上class "white"
+        article.banner.white(style="background-image: url('../../upload/fa2/news/detail/bannerBg2_1670_420.jpg');background-color: #ebeaea")
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link)=val.title
+            section._text
+                h1 足球寶寶爬爬GOGO ! 線上報名表格
+                .inf
+                    .type
+                        ._title
+                            p.ch 活動時間
+                            p.en Time
+                        div
+                            p 108/02/10(四)～108/02/12(六)
+                    .location
+                        ._title
+                            p.ch 活動地點 
+                            p.en Location
+                        div
+                            p 8F 活動會館 
+                    .share
+                        ._title
+                            p.ch 分享
+                            p.en Share to
+                        ul.socialMedia
+                            li
+                                a(href=java)
+                                    span.icon-facebook
+                            li
+                                a(href=java)
+                                    span.icon-twitter
+                            li
+                                a(href=java)
+                                    span.icon-line
+        article._slick
+            ul
+                -for(var i = 0;i<3;i++)
+                    // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                    li(data-videoId=(i==0)?"jIzOIsQWMfg":"")
+                        div
+                            figure
+                                img(data-lazy="../../upload/fa2/news/detail/slickImg2_1030_650.jpg", alt="")
+                            b 眾多品牌推出限量禮盒，加碼商品大放送
+            .arrows 
+                span.icon-arrowLeft
+                span.icon-arrowRight
+        article.rows
+            section.row
+                ._text
+                    h2 ※聖誕樹/櫥窗票選活動注意事項：
+                    p 1.漢神百貨、非當日、二聯及三聯式、漢來大飯店巨蛋會館、ZARA、H&M、星巴克儲值金額、鼎泰豐、一風堂、丸龜製麵、海港及漢來蔬食之餐券、海底撈、漢神百貨網購消費金額、已開發票禮券及商品券、提貨單、香菸之健康捐、信用卡紅利折抵及超集卡點數折抵金額等，發票兌迄恕不重新合併累計。
+                    p 2.中獎卡號將於抽獎隔日公告於1F服務台旁中獎立牌及漢神巨蛋網站，本次抽獎必須自行對獎，恕不另行通知中獎者。
+                    p 3.中獎資格及權利不得轉讓，獎項不得兌換現金、折換及配送。
+                    p 4.依法規定，中獎人於同一抽獎活動中，中獎之全部獎項總價值超過1,000元者，需以新台幣計價列入本年度個人所得。
+            section.row
+                // 活動場次
+                .eventTime
+                    h6 線上報名活動場次
+                    .listTable
+                        .listhead
+                            .name
+                                p 活動場次
+                            .place
+                                p 活動地點
+                            .time
+                                p 活動時間
+                            .seeIntro
+                                p 查看介紹
+                            .signButton
+                                p 立即報名
+                        .listbody
+                            each val in eventTime
+                                // 後端請注意: 如果活動已額滿 請在下方<div class="list"> 加上class "full"
+                                .list(class=(val==eventTime[0])?"full":"")
+                                    .name
+                                        p=val.name
+                                    .place(data-name="活動地點")
+                                        p=val.place
+                                    .time(data-name="活動時間")
+                                        p=val.date
+                                        p=val.time
+                                    .seeIntro(data-name="查看介紹")
+                                        button(type="button")
+                                    .signButton(data-name="立即報名")
+                                        // 後端請注意: 啟動formLibox.open()這個function 可以直接開啟報名表格
+                                        a.openLogin(href=java  onclick="liboxs.open(0)")
+                                            p ENTER
+                                    .intro
+                                        div
+                                            ._title
+                                                span.icon-chat
+                                                p 場次介紹
+                                            ._text
+                                                p 以世足賽為造型主題參賽，最快到終點的寶寶就有機會獲得漢神商品禮券及精美好禮。攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。您所提供之個人資料，得向本公司請求補充或更正之當前述蒐集之特定目的消失。
+                                        div
+                                            ._title
+                                                span.icon-start
+                                                p 注意事項
+                                            ._text
+                                                p 1.最快到終點的寶寶就有機會獲得漢神商品禮券精美好禮，您所提供之個人資料蒐集目的。
+                                                p 2.攜帶小朋友之健保卡至1F服務台報名，名額有限，額滿為止。
+                                        div
+                                            ._title
+                                                span.icon-text
+                                                p 票種說明
+                                            ._text
+                                                p 1.早鳥票 : 2/12前報名即可享受早鳥票優惠
+                                                    span.price(data-name="售價") 免費
+                                                p 2.會員票 : 需為漢神會員
+                                                    span.price(data-name="售價") 2,00/人
+                                                p 3.VIP會員票 : 需為漢神VIP白金會員
+                                                    span.price(data-name="售價") 1,00/人
+        article.more
+            section._title
+                p.ch 更多最新消息
+                p.en More news
+            section.links
+                a(href=java)
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/news/newsImg_400_370.jpg", alt="")
+                        .hoverBox
+                            span
+                            p ENTER
+                    ._text
+                        // 後端請注意: 如果未填入文字的話 把下方div移除
+                        // 後端請注意: 下方背景顏色要讓客戶可以換
+                        .slogan(style=('background-color: #a13838')) HOT !
+                        p.type BRANDS
+                        p.name MaxMara 時尚冬裝新上市
+                a(href=java)
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/news/newsImg9_400_370.jpg", alt="")
+                        .hoverBox
+                            span
+                            p ENTER
+                    ._text
+                        p.type Member 
+                        p.name 周年慶全館八折起 卡友享專屬加碼優惠
+        //會員登入
+        article.loginLibox
+            section(style="background-image:url('../../upload/fa2/card/detail/liboxBg_900_670.jpg')")
+                .box
+                    .liboxClose
+                        span
+                    ._title
+                        span.icon-person2
+                        p.ch 登入會員
+                        p.en Login member
+                        p.words 1. 外籍人士帳號(ID) : 西元生日碼 + 英文姓氐前2位英文<br>2. 預設密碼 : ID後3碼 + 生日6碼
+                    form
+                        .item.must
+                            .name
+                                p.ch 帳號
+                                p.en ID
+                            .inputArea
+                                input(type="text" placeholder="")
+                        .item.must
+                            .name
+                                p.ch 密碼
+                                p.en password
+                            .inputArea
+                                input(type="password" placeholder="")
+                        .item.must.code
+                            .name
+                                p.ch 驗證碼
+                                p.en code
+                            .inputArea
+                                input(type="text" placeholder="點擊圖片即可更換")
+                                div
+                                    img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                        .forget
+                            a(href=java) 忘記密碼 ? 按此立即查詢
+                        .buttons 
+                            button(type="reset")
+                                span.icon-reset
+                                p 重新填寫
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="loginLibox.close();infoLibox.open()")
+                                span.icon-person
+                                p 確認登入
+        // 會員報名資料
+        article.infoLibox
+            section(style="background-image:url('../../upload/fa2/card/detail/liboxBg_900_670.jpg')")
+                .box
+                    .liboxClose
+                        span
+                    ._title
+                        span.icon-paper
+                        p.ch 會員報名資料
+                        p.en Information
+                        p.words 報名資訊會以下述會員資料進行報名，若需修改可直接更改，<b>此為報名重要資訊，請務必確認 !</b>
+                    form
+                        .item.must
+                            .name
+                                p.ch 姓名
+                                p.en name
+                            .inputArea
+                                p(data-ps="(此欄無法更動)") 王艾倫
+                        .item.must
+                            .name
+                                p.ch 手機
+                                p.en phone
+                            .inputArea
+                                input(type="text" placeholder="")
+                        .item.must
+                            .name
+                                p.ch 信箱
+                                p.en E-mail
+                            .inputArea
+                                input(type="text" placeholder="")
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="infoLibox.close();formLibox.open()")
+                                span.icon-person
+                                p 確認登入
+        // 報名表格
+        article.liboxs
+            // 是否為會員
+            section.libox
+                .box
+                    .content
+                        .liboxClose
+                            span
+                        ._title 
+                            img(src="../../upload/fa2/news/signup/logo.png", alt="")
+                            p.ch 親愛的客戶您好，請問您是否為漢神超集卡會員?
+                            p.en Ask for membership
+                        .buttons
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="liboxs.close(this);formLibox.open();isMember=false")
+                                span.icon-X
+                                p 否，非會員
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="loginLibox.open();liboxs.close(this);isMember=true")
+                                span.icon-person
+                                p 是，為會員
+            section.formLibox
+                div
+                    .liboxClose
+                        span
+                    .topTitle
+                        // 活動名稱
+                        .eventName
+                            p.en Booking event
+                            p.ch 足球寶寶爬爬GOGO
+                            // 會員名
+                            .member
+                                p.name 王艾倫
+                                p.phone 0912345678
+                                p.email Hsca@gmail.com
+                        // 資訊
+                        .inf
+                            .type
+                                ._title
+                                    p.ch 活動場次
+                                    p.en Event
+                                div
+                                    p 寶寶強壯幼童組
+                            .type
+                                ._title
+                                    p.ch 活動地點
+                                    p.en Location
+                                div
+                                    p 8F 活動會館
+                            .type
+                                ._title
+                                    p.ch 活動時間
+                                    p.en Time
+                                div
+                                    p 2019-02-12(六)  20:00~21:30
+                    .form
+                        p.ps 請確實填寫以下欄位，有紅色標註為必填欄位。
+                        form
+                            each val in formLibox
+                                .type
+                                    // 票類
+                                    .typeName
+                                        h3=val.h3
+                                        p=val.p
+                                    // 價格
+                                    // 後端請注意: 請將價格填入下方data-price 有"，"也沒關西
+                                    .price(data-price=val.price)
+                                        p(data-name="售價")=val.price
+                                        .count
+                                            p 人數
+                                            div
+                                                button.plus(type="button" onclick="plus(this)")
+                                                input(type='number' value="0" max="" disabled="disable")
+                                                button.decrease(type="button" onclick="decrease(this)")
+                                            p 位
+                                    // 報名表單
+                                    .table
+                                        // 後端請注意: 
+                                            如果要顯示 必填項目 請在<div class="box"> 加上class "must"
+                                            如果要顯示 錯誤項目 請在<div class="box"> 加上class "worng" 就會有紅線出來
+                            //- .list
+                            //-     .left
+                            //-         span.numb 01
+                            //-         button.same(type="button")
+                            //-             p 同會員資料
+                            //-         button.delete(type="button")
+                            //-             p 刪除此報名
+                            //-     .right
+                            //-         .box.must
+                            //-             .name
+                            //-                 p 姓名
+                            //-             .inputArea
+                            //-                 input(placeholder="")
+                            //-         .box.must
+                            //-             .name
+                            //-                 p 性別
+                            //-             .inputArea
+                            //-                 .dropDown
+                            //-                     span.selectMenu
+                            //-                         p 請下拉選擇
+                            //-                     ul
+                            //-                         li 男
+                            //-                         li 女
+                            //-         .box.must
+                            //-             .name
+                            //-                 p 生日
+                            //-             .inputArea
+                            //-                 input(placeholder="")
+                            //-         .box
+                            //-             .name
+                            //-                 p 電話
+                            //-             .inputArea
+                            //-                 input(placeholder="")
+                            .buttons
+                                p.total 以上報名人數共<span class="totalNumb">0</span>位，總金額共<span class="totalPrice">0</span>元
+                                button(type="reset")
+                                    span.icon-reset
+                                    p 重新填寫
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="check();")
+                                    span.icon-hook
+                                    p 確認送出
+            // 取消報名
+            section.libox
+                .box
+                    .content
+                        ._title 
+                            img(src="../../upload/fa2/news/signup/X.png", alt="")
+                            p.ch 確定取消報名?
+                            p.en  Cancel registration
+                        .word 
+                            p 確定取消報名 足球寶寶爬爬GOGO 此活動嗎 ? 離開此報名頁，本頁資訊將不會被網頁所儲存，需要重新填寫相關資料，建議您可以繼續輸入報名流程，謝謝。
+                        .buttons
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="liboxs.close(this);")
+                                span.icon-pen
+                                p 繼續報名
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(onclick="formLibox.close();liboxs.close(this)")
+                                span.icon-hook
+                                p 確定取消
+            // 權益規章
+            section.libox
+                .box
+                    .content
+                        .word 
+                            p ※報名權益規章及範本：
+                            p 本公司於本活動及報名後之相關作業期間，在漢神巨蛋購物廣場，基於本活動之進行及行銷目的，蒐集、處理、利用您及您的子女提供之下列個人資料：辨別類（姓名、電話等）及個人描述類（出生年月日等）等資料，以供本活動身分辨識、電話通知、稅務等相關作業之用；未提供個人資料者，恕無法參加本活動。您所提供之個人資料，得向本公司請求補充或更正之，或請求查詢、閱覽或製給複製本。當前述蒐集之特定目的消失時，您得請求停止蒐集、處理或利用及請求刪除。本活動之個人資料將於活動結束完畢後銷毀之。
+                            p.ps 本人確認所填資料正確無誤；並已審閱及同意上述個人資料使用相關事項。此致漢神名店百貨股份有限公司(漢神百貨)
+                        .buttons
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this)")
+                                span.icon-pen
+                                p 取消返回
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);liboxs.open(3)")
+                                span.icon-hook
+                                p 同意並送出
+            // 報名成功
+            section.libox
+                .box
+                    .content
+                        ._title 
+                            img(src="../../upload/fa2/news/signup/V.png", alt="")
+                            p.ch 報名成功
+                            p.en Successful registration
+                        .word 
+                            p 感謝報名 足球寶寶爬爬GOGO 此活動，漢神百貨歡迎您的參與，請依對應時間及地點參加，底下的報名序號及驗證碼會寄簡訊至您手機，或可至會員服務前往查看，謝謝。
+                            // 報名序號 
+                        .verification
+                            p(data-name="報名序號 :") A05006
+                            p(data-name="報名驗證碼 :") 5K67JU6
+                        // 後端請注意: 下方的日期要可以修改--------- 因為很重要所以要說三次 
+                        // 後端請注意: 下方的日期要可以修改--------- 因為很重要所以要說三次 
+                        // 後端請注意: 下方的日期要可以修改--------- 因為很重要所以要說三次 
+                        p.ps 請在 <span>2019-02-12(三)</span> 前至 8F活動會館 完成繳費，逾期繳費將失去報名名額。
+                        .buttons
+                            a(href="../card/detail.html" onclick="formLibox.close();liboxs.close(this)")
+                                span.icon-card
+                                p 申辦漢神超集卡
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="formLibox.close();liboxs.close(this)")
+                                span.icon-hook
+                                p 返回活動頁
+                                
+    include ../layout/_footer.pug
++script
+// 後端請注意: 因為他表單裡的內容要可以編輯 所以我把它寫在這裡
+// 後端請注意: 
+    如果要顯示 必填項目 請在<div class="box"> 加上class "must"
+    如果要顯示 錯誤項目 請在<div class="box"> 加上class "wrong" 就會有紅線出來
+script(id="table"  type="text/x-template").
+    <div class="list" style="display:none">
+        <div class="left">
+            <button class="same" type="button">
+            <p>同會員資料</p>
+            </button>
+            <button class="delete" type="button" onclick="getout(this);">
+            <p>刪除此報名</p>
+            </button>
+        </div>
+        <div class="right">
+            <div class="box must">
+            <div class="name">
+                <p>姓名</p>
+            </div>
+            <div class="inputArea">
+                <input placeholder="">
+            </div>
+            </div>
+            <div class="box must">
+            <div class="name">
+                <p>性別</p>
+            </div>
+            <div class="inputArea">
+                <div class="dropDown"><span class="selectMenu">
+                    <p>請下拉選擇</p></span>
+                <ul>
+                    <li>男</li>
+                    <li>女</li>
+                </ul>
+                </div>
+            </div>
+            </div>
+            <div class="box must">
+            <div class="name">
+                <p>生日</p>
+            </div>
+            <div class="inputArea">
+                <input placeholder="">
+            </div>
+            </div>
+            <div class="box">
+            <div class="name">
+                <p>電話</p>
+            </div>
+            <div class="inputArea">
+                <input placeholder="">
+            </div>
+            </div>
+        </div>
+    </div>
+script.
+    var formLibox ={
+        open: function () {
+            $(".formLibox").addClass("open")
+            if (!mobile() && !$("body").hasClass("guide")) {
+                $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+            } else {
+                $("body").css("overflow-y", "hidden")
+            }
+            alreadyHidden = true
+
+            formLibox.all();
+        },
+
+        close_click: function () {
+            $(".formLibox .liboxClose").click(function () {
+                liboxs.open(1)
+            });
+        },
+        
+        close: function () {
+            $(".formLibox").addClass("close").removeClass("open");
+            alreadyHidden = false
+            if (!mobile()) {
+                $("body").css({"overflow-y": "visible","padding-right":"0rem"});
+            } else {
+                $("body").css("overflow-y", "visible");
+            }
+            setTimeout(function () {
+                $(".formLibox").removeClass("close check");
+
+                $(".formLibox .form form .type").slideDown();
+                // 移除表格結構及已填寫的資料
+                $(".formLibox .form form .table .list").remove();
+                $(".formLibox .form form")[0].reset()
+            }, 1000)
+        },
+        
+
+        all:function(){
+            formLibox.close_click();
+        }
+    }
+
+    var isMember 
+
+    var liboxs = {
+        open: function (index) {
+            $(".liboxs .libox").eq(index).addClass("open")
+            if (!mobile() && !$("body").hasClass("guide")) {
+                $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+            } else {
+                $("body").css("overflow-y", "hidden")
+            }
+
+            if(isMember){
+                $(".liboxs .libox .box .buttons a").css("display","none")
+            }else{
+                $(".liboxs .libox .box .buttons a").css("display","flex")
+            }
+
+            liboxs.all();
+        },
+
+        close_click: function () {
+            $(".liboxs .libox .liboxClose").click(function () {
+                liboxs.close(this);
+            });
+
+            $(".liboxs .libox").click(function(e){
+                if($(e.target).hasClass("libox")){
+                    liboxs.close(this);
+                }
+            });
+        },
+
+        close: function (target) {
+            $(target).closest(".libox").addClass("close").removeClass("open");
+            // var action = (alreadyHidden !== undefined) ? (!alreadyHidden) : true
+            if (!mobile() && !alreadyHidden) {
+                $("body").css({
+                    "overflow-y": "visible",
+                    "padding-right": "0rem"
+                })
+            } else if (mobile() && !alreadyHidden) {
+                $("body").css("overflow-y", "visible");
+            }
+            setTimeout(function () {
+                $(target).closest(".libox").removeClass("close");
+            }, 400)
+        },
+
+        all:function(){
+            liboxs.close_click();
+        }
+    }
+    
+script.
+    // 新增一個報名表格
+    function plus(target){
+        var components = document.querySelector("#table").innerText
+        $(target).closest(".type").find(".table").append(components)
+        // 加入動畫
+        $(".formLibox .form form .table .list").slideDown(500);
+        // 重新啟動 下拉選單的function
+        dropDown();
+
+        // 增加人數
+        var val = parseInt($(target).parent().find("input[type='number']").val()) + 1
+        var max = $(target).parent().find("input[type='number']").attr("max")
+        if (val > max && max !== "") {
+            val = $(target).parent().find("input[type='number']").attr("max")
+        }
+        $(target).parent().find("input[type='number']").val(val)
+    }
+
+    // 減少一個報名表格
+    function decrease(target){
+        // 加入動畫
+        $(target).closest(".type").find(".table .list:last-child").slideUp(500)
+        // 動畫結束後
+        setTimeout(function(){
+            // 移除表格結構
+            $(target).closest(".type").find(".table .list:last-child").remove()
+        },500)
+
+        // 減少人數
+        var val = parseInt($(target).parent().find("input[type='number']").val()) - 1
+        if (val <= 0) {
+            $(target).parent().find("input[type='number']").val(0)
+        } else {
+            $(target).parent().find("input[type='number']").val(val)
+        }
+    }
+
+    // 刪除報名表格
+    function getout(target){
+        // 加入動畫
+        $(target).closest(".list").slideUp(500)
+        // 動畫結束後
+        setTimeout(function(){
+            // 移除表格結構
+            $(target).closest(".list").remove()
+        },500)
+
+        // 減少人數
+        var val = parseInt($(target).closest(".type").find("input[type='number']").val()) - 1
+        if (val <= 0) {
+            $(target).closest(".type").find("input[type='number']").val(0)
+        } else {
+            $(target).closest(".type").find("input[type='number']").val(val)
+        }
+    }
+
+    // 確認送出
+    function check(){
+        
+        // 已完成檢查 確定送出 直接開啟規章燈箱
+        if($(".formLibox").hasClass("check")){
+            liboxs.open(2);
+            // 停止function
+            return
+        }
+
+        var checkReady = false
+
+        // 檢查是否至少報名一位
+        var counter = document.querySelectorAll(".formLibox .form form .type .price .count input")
+        var counterTotal = 0
+        for(var i = 0 ; i<counter.length ;i++){
+            counterTotal += parseInt(counter[i].value)
+        }
+        if(counterTotal !==0){
+            checkReady = true
+        }else{
+            alert("至少報名一位")
+        }
+
+        // 檢查必填欄位是否已填寫
+        $(".formLibox .form form .table .list .right .box.must").each(function(){
+            // 欄位未填
+            if($(this).find("input").val()=="" && !$(this).find("input").length ==0){
+                $(this).addClass("wrong")
+                $(this).find("input").attr("placeholder","此為必填")
+                checkReady = false
+            }
+            // 下拉選單未選
+            else if(!$(this).find(".dropDown").hasClass("active") && !$(this).find(".dropDown").length ==0){
+                $(this).addClass("wrong")
+                checkReady = false
+            }
+            else{
+                $(this).removeClass("wrong")
+            }
+        });
+
+        // 檢查完成後所做的動作
+        if(checkReady){
+            var totalCount = 0
+            var totalPrice = 0
+            $(".formLibox .form form .type").each(function(){
+                // 取得價格參數
+                var p = $(this).find(".price").attr("data-price")
+                var x = parseInt(p.replace(/,/g,''));
+                var price = (isNaN(x))?0:x
+                var count = parseInt($(this).find(".price .count input").val())
+                totalCount += count
+                totalPrice += (price*count)
+                if(count == 0){
+                    $(this).slideUp(500)
+                }
+            })
+            // 填入金額及人數
+            $(".formLibox .form form .buttons .total .totalNumb").text(totalCount)
+            $(".formLibox .form form .buttons .total .totalPrice").text(totalPrice)
+            // 加上已完成檢查的class
+            document.querySelector('.formLibox').classList.add('check');
+        }
+    }
+
+    // 重新填寫
+    var reset = function(){
+        $(".formLibox .form form button[type='reset']").click(function(){
+            $(".formLibox").removeClass("check")
+            // 加入動畫
+            $(".formLibox .form form .table .list").slideUp(500);
+            $(".formLibox .form form .type").slideDown(500);
+            // 動畫結束後
+            setTimeout(function(){
+                // 移除表格結構
+                $(".formLibox .form form .table .list").remove()
+            },500);
+        })
+    }();
+|
+|
+</html>

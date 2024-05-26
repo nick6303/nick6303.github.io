@@ -1,0 +1,356 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var news = [
+        {
+            day:"31",
+            year:"2019 . Mar ",
+            img:"../../upload/fa2/home/news/slickImg_660_400.jpg",
+            title:"幾米x南豐城豐尚街，一家一城一世界",
+            words:"閉上眼睛想像世界變得更美好，睜開眼睛只見最美的。閉上眼睛想像世界變得更美好，睜開眼睛只見最美的。 閉上眼睛想像世界變得更美好，睜開眼睛只見最美的。生命何其美麗，但也同時充滿不確定性與挫折，幾米用創作紓解對疾病的恐懼，而他的創作...",
+            link:java},
+        {
+            day:"06",
+            year:"2019 . Feb",
+            img:"../../upload/fa2/home/news/slickImg2_660_400.jpg",
+            title:"幾米x南豐城豐尚街，一家一城一世界  ",
+            words:"閉上眼睛想像世界變得更美好，睜開眼睛只見最美的。生命何其美麗，但也同時充滿不確定性與挫折，幾米用創作紓解對疾病的恐懼，而他的創作...",
+            link:java},
+        {
+            day:"03",
+            year:"2019 . Jan",
+            img:"../../upload/fa2/home/news/slickImg3_660_400.jpg",
+            title:"幾米x南豐城豐尚街，一家一城一世界",
+            words:"閉上眼睛想像世界變得更美好，睜開眼睛只見最美的。生命何其美麗，但也同時充滿不確定性與挫折，幾米用創作紓解對疾病的恐懼，而他的創作...",
+            link:java},
+    ]
+
+    var works = [
+        {
+            img:"../../upload/fa2/home/works/slickImg_680_410.jpg",
+            ch:"四季",
+            en:"Four Season",
+            link:java},
+        {
+            img:"../../upload/fa2/home/works/slickImg2_335_410.jpg",
+            ch:"忘記親一下",
+            en:"Kiss & Goodbye",
+            link:java},
+        {
+            img:"../../upload/fa2/home/works/slickImg3_690_410.jpg",
+            ch:"如果我可以許一個願望",
+            en:"I Wish I Could Make A Wish",
+            link:java},
+    ]
+
+    var ftLink = [
+        {
+            name:"聯絡我們",
+            link:"javascript:void(0)"},
+        {
+            name:"下載專區",
+            link:"javascript:void(0)"},
+        {
+            name:"幾米報報",
+            link:"javascript:void(0)"},
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#home.index
+    include ../layout/_header.pug
+    
+    main(id="fullpage")
+        article.banner.n-lazy(data-src="../../upload/fa2/home/banner/bannerBg.jpg" data-src-1024="../../upload/fa2/home/banner/bannerBgRWD.jpg")
+            section
+                ._title
+                    h4 開始吧  !
+                    p 進入幾米世界，展開奇幻的探索旅程。
+                ._img
+                    figure.book
+                        img(src="../../upload/fa2/home/banner/book.png", alt="")
+                    figure.girl
+                        img(src="../../upload/fa2/home/banner/girl.png", alt="")
+                .seemore
+                    a(href=java) 開始探索
+        // 最新消息
+        article.news
+            section.bgImg.n-lazy(data-src="../../upload/fa2/home/news/bg.jpg")
+                figure.tree
+                    img(src="../../upload/fa2/home/news/tree.png", alt="")
+                    img(src="../../upload/fa2/home/news/treeMoon.png", alt="")
+                figure.moon
+                    img(src="../../upload/fa2/home/news/moon1.png", alt="")
+                    img(src="../../upload/fa2/home/news/moon2.png", alt="")
+            section.content
+                // 側邊slick 使用js自動產生結構
+                .sideSlick
+                    ul.one
+                    ul.two
+                ._title
+                    p.ch 最新消息
+                    p.en Jimmy News
+                .mainslick
+                    ul
+                        each val in news
+                            li
+                                .date
+                                    // 日期
+                                    p=val.day
+                                    // 年月
+                                    p=val.year
+                                figure
+                                    img(data-lazy=val.img, alt="")
+                                .inf
+                                    h5=val.title
+                                    // 後端請注意: 此處會顯示兩行文字多的會變...
+                                    p=val.words
+                                a(href=val.link)
+                    .arrow
+                        span.icon-keyboard_arrow_left
+                        span.icon-keyboard_arrow_right
+                .seemore
+                    a(href=java) All news
+            section.stairsAndGirl
+                figure.stairBack
+                    img(src="../../upload/fa2/home/news/stairBack.png", alt="")
+                figure.girl
+                    img(src="../../upload/fa2/home/news/girl.png", alt="")
+                figure.stairFront
+                    img(src="../../upload/fa2/home/news/stairFront.png", alt="")
+        // 品牌故事
+        article.about
+            section.bgImg
+                .bg.n-lazy(data-src="../../upload/fa2/home/about/bg.jpg" data-src-1024="../../upload/fa2/home/about/bgPad.jpg" data-src-700="../../upload/fa2/home/about/bgRWD.jpg")
+                .stair.n-lazy(data-src="../../upload/fa2/home/about/stair.png")
+                .girl
+                    figure
+                        img(src="../../upload/fa2/home/about/girl.png", alt="")
+                .squirrel
+                    figure
+                        img(src="../../upload/fa2/home/about/squirrel.png", alt="")
+            section.aboutJimmy
+                ._title
+                    p.ch 關於幾米
+                    p.en About Jimmy
+                ._slick
+                    ul
+                        -for(var i = 0 ;i<3;i++)
+                            li
+                                .type
+                                    p.ch 幾米聊聊
+                                    p.en Jimmy‘s talk
+                                p.words 所有的悲傷，總會留下一絲歡樂的線索。所有的遺憾，總會留下一處完美的角落。我在冰封的深海，尋找希望的缺口...
+                a(href=java) About Jimmy
+            section.brandStory
+                ._title
+                    p.ch 品牌故事
+                    p.en Brand Story
+                .type
+                    p.ch 閱讀 . 旅行 . 生活
+                    p.en Reading . Travel . Life
+                p.words 透過幾米的繪本，開啟一趟心靈旅程，仔細聆聽內心的聲音，從平凡又不簡單的生活中，獲得勇氣與獲得滿滿的能量...      
+                a(href=java) Brand story
+        // 幾米創作
+        article.works
+            section.bgImg.n-lazy(data-src="../../upload/fa2/home/works/bg.jpg" data-src-1024="../../upload/fa2/home/works/bgPad.jpg" data-src-700="../../upload/fa2/home/works/bgRWD.jpg" )
+                figure.rabit
+                    img.n-lazy(data-src="../../upload/fa2/home/works/rabit.png" data-src-1024="../../upload/fa2/home/works/rabitPad.png" data-src-700="../../upload/fa2/home/works/rabitRWD.png" alt="")
+            section._slicks
+                .sideSlick
+                    ul
+                ._title
+                    p.ch 幾米創作
+                    p.en Jimmy Works
+                .wordsSlick
+                    ul
+                        each val in works
+                            li
+                                .type
+                                    p.ch=val.ch
+                                    p.en=val.en
+                                p.words 人生如同四季，好壞都會發生，可真正決定故事的人只有自己。《四季》裡的幾個角色，曾在《我的世界都是你》粉墨登場過，幫助失去小狗的女孩完成了一個動人的故事...
+                .seemore
+                    a(href=java) All works
+                    .arrow
+                        span.icon-keyboard_arrow_left
+                        span.icon-keyboard_arrow_right
+                .mainSlick
+                    ul
+                        //後端請注意: 下方圖片尺寸為680*410
+                        each val in works
+                            li
+                                a(href=val.link)
+                                    img(data-lazy=val.img, alt="")
+            section.frontImg
+                figure.stair
+                    img(src="../../upload/fa2/home/works/stair.png", alt="")
+                .girl
+                    figure.head
+                        img(src="../../upload/fa2/home/works/girlHead.png", alt="")
+                    figure.body
+                        img(src="../../upload/fa2/home/works/girlBody.png", alt="")
+                figure.train
+                    img(src="../../upload/fa2/home/works/train.png", alt="")
+        // 探索幾米
+        article.explore
+            section.bgImg.n-lazy(data-src="../../upload/fa2/home/explore/bg.jpg" )
+                .catAndWall
+                    figure.cat    
+                        img(src="../../upload/fa2/home/explore/cat.png", alt="")
+                    picture.wall
+                        // [if IE 9]><video style="display: none;"><![endif]
+                        source(srcset="../../upload/fa2/home/explore/wallRWD.png" media="(max-width:1024px)")
+                        img(src="../../upload/fa2/home/explore/wall.png" alt="")
+                figure.train
+                    img(src="../../upload/fa2/home/explore/train.png", alt="")
+            section._title
+                div
+                    p.ch 探索幾米
+                    p.en Explore Jimmy
+                .anchor
+                    ul 
+                        li.active 影視娛樂
+                        li 展覽演出
+                        li 公共藝術
+                        li 主題空間
+                        li 公益項目
+            section._slicks
+                .imgSlick
+                    // 圖片建議尺寸600*440
+                    ul
+                        li
+                            a(href=java)
+                                img(data-lazy="../../upload/fa2/home/explore/slickImg_600_440.jpg", alt="")
+                        li
+                            a(href=java)
+                                img(data-lazy="../../upload/fa2/home/explore/slickImg2_600_440.jpg", alt="")
+                    .arrow
+                        span.icon-keyboard_arrow_left
+                        span.icon-keyboard_arrow_right
+                .wordSlick
+                    ul
+                        li
+                            .type
+                                p.ch 幸福轉運站
+                                p.en Happy Station
+                            p.words 園區以幾米「忘記親一下」繪本風格為主要設計，包括外牆彩繪、室內空間及大型裝置作品等，都可以看到幾米繪本裡各個可愛角色的蹤跡  ...  
+                            a.more(href=java) 
+                                span 
+                                p more
+                        li
+                            .type
+                                p.ch 幸福轉運站
+                                p.en Happy Station
+                            p.words 園區以幾米「忘記親一下」繪本風格為主要設計，包括外牆彩繪、室內空間及大型裝置作品等，都可以看到幾米繪本裡各個可愛角色的蹤跡  ...  
+                            a.more(href=java) 
+                                span 
+                                p more
+                    .seeMore
+                        a(href=java) 瀏覽所有公共藝術
+        // 授權合作
+        article.authorization
+            section.bgImg.n-lazy(data-src="../../upload/fa2/home/authorization/bg.jpg" data-src-1024="../../upload/fa2/home/authorization/bgPad.jpg" data-src-700="../../upload/fa2/home/authorization/bgRWD.jpg")
+                .birdAndFlower
+                    figure.flower1
+                        img(src="../../upload/fa2/home/authorization/flower1.png", alt="")
+                    figure.bird
+                        img(src="../../upload/fa2/home/authorization/bird.png", alt="")
+                figure.flower2
+                    img(src="../../upload/fa2/home/authorization/flower2.png", alt="")
+                figure.train
+                    img(src="../../upload/fa2/home/authorization/train.png", alt="")
+            section.container
+                ._title
+                    div
+                        p.ch 授權合作
+                        p.en Authorization
+                    .anchor
+                        ul
+                            li.active 行銷授權
+                            li 商品授權
+                    .seeMore
+                        a(href=java) Learn more
+                ._slicks
+                    .imgSlick
+                        ul
+                            -for(var i = 0 ;i<2;i++)
+                                li
+                                    a(href=java)
+                                        img(data-lazy="../../upload/fa2/home/authorization/img_720_430.jpg", alt="")
+                        .arrow
+                            span.icon-keyboard_arrow_left
+                            span.icon-keyboard_arrow_right
+                    .wordSlick
+                        ul
+                            -for(var i = 0 ;i<2;i++)
+                                li
+                                    p.date 2017 . Sep
+                                    a(href=java)
+                                        p.type 行銷授權
+                                        p.name 幾米聯名一卡通儲值卡
+                .seeMore
+                    a(href=java) Learn more
+        // 未完待續
+        article.tobeContinue
+            section.bgImg
+                figure
+                    img(src="../../upload/fa2/home/tobeContinue/bg.jpg")
+            section.container
+                ._title
+                    h6 未完待續
+                    p 下一段旅程，幾米仍然與你同在。
+                .hats
+                    figure.yellow
+                        img(src="../../upload/fa2/home/tobeContinue/yellowHat.png", alt="")
+                    figure.pink
+                        img(src="../../upload/fa2/home/tobeContinue/pinkHat.png", alt="")
+                    figure.blue
+                        img(src="../../upload/fa2/home/tobeContinue/blueHat.png", alt="")
+                .trainAndBook
+                    .train
+                        figure
+                            img(src="../../upload/fa2/home/tobeContinue/train.png", alt="")
+                    figure.book
+                        img(src="../../upload/fa2/home/tobeContinue/book.png", alt="")
+            section.footer
+                .ftLink
+                    each val in ftLink
+                        a(href=val.link)
+                            p=val.name
+                .ftGotop
+                    button TOP
+                .ftBottom
+                    .socialMedia
+                        a(href=java)
+                            span.icon-facebook
+                        a(href=java)
+                            span.icon-instagram
+                        a(href=java)
+                            span.icon-wechat
+                        a(href=java)
+                            span.icon-sina-weibo
+                    .copyright
+                        p Copyright © Jimmy S.P.A. Co., Ltd. All Rights Reserved. Website designed by
+                            a(href=java) WDD.
+                            a.openPrivacy(href=java)  隱私權政策
+        // 行動裝置橫版通知
+        article.alertLibox
+            section
+                h2 請旋轉您的螢幕
+                p 為確保功能正常，且讓您有最好的使用體驗，請將您的螢幕旋轉為直向，謝謝！
++script
+
+|
+|
+</html>

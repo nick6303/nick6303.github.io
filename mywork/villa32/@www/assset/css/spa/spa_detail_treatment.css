@@ -1,0 +1,879 @@
+@charset "utf-8";
+
+.detail {
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    overflow: scroll;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+/*detail_nav開始--------------------------------*/
+
+.detail_nav {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.detail_nav>div {
+    position: relative;
+}
+
+.back {
+    position: absolute;
+    top: 50px;
+    left: 3vw;
+}
+
+.back ul {
+    display: flex;
+}
+
+.back ul li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.back ul li:nth-child(1) {
+    padding-right: 18px;
+}
+
+.back ul li:nth-child(1):after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    margin-left: 18px;
+}
+
+.back ul li p {
+    display: inline-block;
+    color: #fff;
+    font-family: 'TrajanPro-Regular';
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+/*detail選單按鈕開始--------------------------*/
+
+.detail_menu_icom {
+    position: absolute;
+    top: 50px;
+    left: 95vw;
+    overflow: hidden;
+}
+
+.detail_menu_icom .cuisine {
+    display: none;
+}
+
+.icom_box {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+
+
+.icom_box span {
+    position: absolute;
+    left: 0px;
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #fff;
+    transition: all .3s ease-out;
+}
+
+.icom_box span:nth-child(1) {
+    top: 0px;
+    transition: all 1s ease;
+}
+
+.icom_box span:nth-child(2) {
+    top: 50%;
+}
+
+.icom_box span:nth-child(3) {
+    bottom: -1px;
+    transition: all 1s ease;
+}
+
+.icom_box:hover span:nth-child(2) {
+    width: 20px;
+    transition: all .4s ease-out;
+}
+
+
+
+
+
+
+
+/*取自main.css的menu_icon設定*/
+
+
+/*三條線變X 開始*/
+
+.open .icom_box {
+    width: 30px;
+    height: 14px;
+    /*position: fixed;*/
+    animation: top_slidein 0s ease;
+    /*初始進場動畫歸零*/
+}
+
+.open .icom_box span {
+    width: 30px;
+    top: 50%;
+    background-color: #000;
+    /*transition: all 1s ease;*/
+}
+
+.open .icom_box:hover span {
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+/*浮動nav設定----------*/
+
+.detail_nav.hide {
+    position: fixed;
+    z-index: 1;
+    top: -90px;
+    left: 0;
+    display: block;
+    width: 100vw;
+    opacity: 1;
+    transition: all 1s ease;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+}
+
+.detail_nav.hide p {
+    font-size: .75rem;
+}
+
+.close .detail_nav.hide {
+    transition: all 1s ease 1.4s;
+}
+
+.fixed .detail_nav.hide {
+    opacity: 1;
+    top: 0;
+}
+
+
+
+
+
+
+
+/*顏色更變設定*/
+
+.detail_nav.hide p {
+    color: #000;
+}
+
+.hide .back ul li:nth-child(1):after {
+    background-color: #000;
+}
+
+.hide.back ul li:nth-child(1):after {
+    background-color: #000;
+}
+
+.hide .icom_box span {
+    background-color: #000;
+}
+
+.hide .back,
+.hide .detail_menu_icom {
+    top: 25px;
+}
+
+
+
+/*detail_nav結束--------------------------------*/
+
+
+/*detail_content開始--------------------------------*/
+
+.detail_content {
+    margin-top: 170px;
+}
+
+.detail_title_bg {
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.detail_title {
+    text-align: center;
+}
+
+.on .detail_title,
+.load .detail_title {
+    transform: translateY(100%);
+}
+
+.detail_title h4 {
+    font-size: 1.875rem;
+    line-height: 1.5;
+}
+
+.detail_title p {
+    font-size: 1.125rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    line-height:2.2;
+}
+
+
+
+
+
+
+/*.detail_row開始-------------------*/
+
+.treatment .detail_row {
+    max-width: 1300px;
+    display: flex;
+    margin: auto;
+    /*margin-bottom: 100px;*/
+    padding: 0 20px;
+    align-items: center;
+}
+
+.treatment .detail_row:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+
+.treatment .detail_row_img,
+.treatment .detail_row_text_bg {
+    width: 50%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+/*圖片設定*/
+
+.treatment .detail_row:nth-child(even) .detail_row_img {
+    /*padding-right: 30px;*/
+}
+
+.treatment .detail_row:nth-child(odd) .detail_row_img {
+    /*padding-left: 30px;*/
+}
+
+.treatment.on .detail_row_img img {
+    transform: translateY(160%);
+}
+
+
+
+
+/*文字設定*/
+
+
+.treatment.on .detail_row_text {
+    transform: translateY(160%);
+}
+
+.treatment .detail_row:nth-child(even) .detail_row_text_bg {
+    padding-left:70px;
+    padding-right: 30px;
+}
+
+.treatment .detail_row:nth-child(odd) .detail_row_text_bg {
+    padding-left:calc(9vw + 30px);
+}
+
+.treatment .detail_row_text{
+    max-width: 400px;
+}
+
+.treatment .detail_text_title h5 {
+    font-size: 1.3125rem;
+    letter-spacing: 1px;
+}
+
+.treatment .detail_text_title p {
+    font-size: .875rem;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+
+
+/*補丁*/
+
+.treatment .detail_row {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/*表格按鈕設定開始*/
+
+.treatment .detail_row_text .more {
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.treatment .detailr_ow_text .more p {
+    font-family: 'MyriadPro-Regular';
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+
+.treatment .detail_row_text .more:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: #000;
+    margin-bottom: 25px;
+}
+
+
+
+/*表格按鈕設定結束*/
+
+
+/*表格燈箱設定開始*/
+
+.treatment .moreLibox {
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .2);
+    display: none;
+}
+
+.treatment .moreLibox.open {
+    display: flex;
+    animation: fadeIn .8s both;
+}
+
+.treatment .moreLibox.close {
+    display: flex;
+    animation: fadeOut .4s both .2s;
+}
+
+.treatment .moreLibox .whiteBox {
+    background-color: #fff;
+    width: 775px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px 0 20px 100px;
+    letter-spacing: 1px;
+}
+
+@media all and (max-width: 700px) {
+    .treatment .moreLibox .whiteBox {
+        padding: 0;
+    }
+}
+
+.treatment .moreLibox.open .whiteBox {
+    animation:whiteBoxIn 1s forwards;
+}
+
+@keyframes whiteBoxIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.treatment .moreLibox.close .whiteBox {
+    animation:whiteBoxOut .6s forwards;
+}
+
+@keyframes whiteBoxOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+}
+
+.treatment .moreLibox .whiteBox .mCSB_container {
+    padding-right: 100px;
+    margin-right: 0;
+}
+
+@media all and (max-width: 700px) {
+    .treatment .moreLibox .whiteBox .mCSB_container {
+        padding: 0 5vw;
+    }
+    .mCSB_scrollTools {
+        width: 8px !important;
+    }
+}
+
+.treatment .moreLibox .whiteBox .mCSB_dragger_bar {
+    background-color: #000 !important;
+    width: 2px;
+}
+
+.treatment .moreLibox .whiteBox .liboxClose {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+@media all and (max-width: 700px) {
+    .treatment .moreLibox .whiteBox .liboxClose {
+        top: 30px;
+        right: 5vw;
+    }
+}
+
+.treatment .moreLibox .whiteBox .liboxClose:before,
+.treatment .moreLibox .whiteBox .liboxClose:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+}
+
+.treatment .moreLibox .whiteBox .liboxClose:before {
+    width: 100%;
+    height: 1px;
+}
+
+.treatment .moreLibox .whiteBox .liboxClose:after {
+    height: 100%;
+    width: 1px;
+}
+
+.treatment .moreLibox .whiteBox .liboxClose:before {}
+
+.treatment .moreLibox .whiteBox ._title {
+    padding: 70px 0 0 0;
+    text-align: center;
+}
+
+.treatment .moreLibox .whiteBox ._title:after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    margin: 50px auto;
+}
+
+.treatment .moreLibox .whiteBox ._title h5 {
+    font-size: 1.5rem;
+    font-family: JaguarJC,微軟正黑體;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.treatment .moreLibox .whiteBox ._title p {
+    font-family: MyriadPro-Regular,微軟正黑體;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.treatment .moreLibox .serviceAndPrice h6 {
+    font-size: 1.3125rem;
+    line-height: 1.5;
+    text-align: center;
+    font-family: 'JaguarJC';
+}
+
+.treatment .moreLibox .serviceAndPrice ul {
+    margin-top: 20px;
+    padding-bottom: 60px;
+}
+
+.treatment .moreLibox .serviceAndPrice ul li {
+    display: flex;
+    padding: 20px 0;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-family: MyriadPro-Regular,微軟正黑體;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.treatment .moreLibox .serviceAndPrice ul li p{
+    line-height: 1.5;
+}
+
+.treatment .moreLibox .serviceName {
+    width: calc(100% - 240px);
+}
+
+.treatment .moreLibox .serviceTime {
+    width: 120px;
+    text-align: right;
+}
+
+.treatment .moreLibox .servicePrice {
+    width: 120px;
+    text-align: right;
+}
+
+
+
+/*表格燈箱設定結束*/
+
+
+
+
+
+
+
+
+/*.detail_row結束-------------------*/
+
+.make_a_reservation {
+    width: 150px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+
+.make_a_reservation span {
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #000;
+    margin: auto;
+    margin-bottom: 25px;
+    transition: all .5s ease-out;
+}
+
+.make_a_reservation p {
+    font-size: .875rem;
+}
+
+.on .make_a_reservation p {
+    transform: translateY(100%);
+}
+
+
+
+/*detail_content結束--------------------------------*/
+
+
+/*detail初進場動畫*/
+
+.load .detail {
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+    transition: all .8s;
+}
+
+.on .detail {
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+}
+
+
+.on .back {
+    animation: top_slidein 1s both;
+}
+
+
+/*waypoint專區-------------*/
+
+
+/*content部分*/
+
+.on .detail_title.show {
+    animation: allin0 1s forwards;
+}
+
+.treatment.on .show .detail_row_img img {
+    animation: allin0 1.2s both;
+}
+
+.treatment.on .show .detail_row_text {
+    animation: allin0 1.2s both ;
+}
+
+.on .make_a_reservation.show span {
+    width: 80px;
+    transition: all .5s ease-out .3s
+}
+
+.on .make_a_reservation.show p {
+    animation: allin0 .5s both .5s;
+}
+
+
+
+
+
+/*detail離場動畫*/
+
+.off .detail {
+    height: 0%;
+    opacity: 0;
+    transition: all 1.2s ease .8s;
+}
+
+
+
+/*banner部分*/
+
+.off .back {
+    animation: zoomOut .4s forwards;
+}
+
+.off .detail_menu_icom {
+    animation: zoomOut .4s forwards;
+}
+
+/*content部分*/
+
+.off .detail_title {
+    animation: zoomOut 1s both .2s;
+}
+
+.treatment.off .detail_row_text {
+    animation: zoomOut 1s both .4s;
+}
+
+.treatment.off .detail_row_img img {
+    animation: zoomOut 1s both .6s;
+}
+
+.off .make_a_reservation p {
+    animation: slideOutDown .5s both .3s;
+}
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+    /*back按鈕設定*/
+    .back {
+        top: 35px;
+        left: 20px;
+    }
+    .back ul li:nth-child(1) {
+        display: none;
+    }
+
+    /*banner三條線選單設定*/
+    .detail_menu_icom {
+        display: flex;
+        align-items: center;
+        left: auto;
+        right: 20px;
+        top: 35px;
+    }
+
+    .icom_box {
+        width: 20px;
+        height: 10px;
+    }
+
+    .icom_box span {
+        width: 20px;
+    }
+    .open .icom_box {
+        width: 20px;
+        height: 10px;
+    }
+    .open .icom_box span {
+        width: 20px;
+        top: 50%;
+    }
+
+    .open .icom_box:hover span {
+        width: 20px;
+    }
+
+    .open .icom_box:hover span:nth-child(1) {
+        width: 20px;
+    }
+
+    .open .icom_box:hover span:nth-child(2) {
+        width: 20px;
+    }
+
+    .detail_menu_icom .cuisine {
+        display: inline-block;
+        color: #fff;
+        font-family: 'TrajanPro-Regular';
+        font-size: .75rem;
+        margin-right: 5px;
+    }
+
+    .cuisine p {
+        font-size: .75rem;
+        transform: scale(1);
+    }
+    /*浮動選單設定-----------*/
+    .detail_nav.hide {
+        height: 50px;
+    }
+
+    .hide .back,
+    .hide .detail_menu_icom {
+        top: 17px;
+    }
+
+    .detail_content {
+        padding: 0 5vw;
+        margin-top: 100px;
+    }
+
+
+    .treatment .detail_content {
+        padding: 0 5vw;
+    }
+
+    .detail_title_bg {
+        margin-bottom: 40px;
+    }
+
+    .detail_title p{
+        margin-top: 4vh;
+        font-size: 1rem;
+    }
+
+
+    .treatment .detail_row {
+        padding: 0;
+    }
+
+    .treatment .detail_row:nth-child(even) .detail_row_img {
+        /*padding-right:3vw;*/
+    }
+
+    .treatment .detail_row:nth-child(odd) .detail_row_img{
+        /*padding-left: 2vw;*/
+    }
+
+    .treatment .detail_row:nth-child(even) .detail_row_text_bg{
+        padding-left: 3vw;
+        padding-right: 0;
+    }
+
+    .treatment .detail_row:nth-child(odd) .detail_row_text_bg{
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+
+
+    .detail_title h4{
+        font-size: 1.5rem;
+    }
+
+    .treatment .detail_row,
+    .treatment .detail_row:nth-child(odd) {
+        flex-direction: column;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+
+    .treatment .detail_row_img,
+    .treatment .detail_row_text_bg {
+        width: 100%;
+    }
+
+    /*圖片設定*/
+    /*原邊距設定歸零*/
+    .treatment .detail_row:nth-child(even) .detail_row_img {
+        padding-right: 0;
+    }
+    .treatment .detail_row:nth-child(odd) .detail_row_img {
+        padding-left: 0;
+    }
+
+    /*文字設定*/
+    /*原邊距設定歸零*/
+    .treatment .detail_row:nth-child(even) .detail_row_text_bg {
+        padding:0 10px;
+    }
+    .treatment .detail_row:nth-child(odd) .detail_row_text_bg {
+        padding: 0 10px;
+    }
+
+    .treatment .detail_row_text_bg {
+        margin-top: 40px;
+    }
+
+    .treatment .detail_row_text {
+        margin: auto;
+        max-width: 100%;
+    }
+
+    .treatment .detail_row_text table {
+        margin-top: 20px;
+    }
+    .treatment .detail_row_text table tr{
+        max-width: 100%;
+    }
+}

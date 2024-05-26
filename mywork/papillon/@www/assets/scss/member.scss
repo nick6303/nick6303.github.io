@@ -1,0 +1,4695 @@
+@import "base/_reset.scss";
+@import "base/_variable.scss";
+@import "base/_common.scss";
+@import "base/_header.scss";
+@import "base/_footer.scss";
+
+
+
+
+
+
+/*--------------------------member共通--------------------------*/
+
+.member main {
+    padding: 0;
+}
+
+
+
+
+
+/*關閉按鈕*/
+
+.member ._close {
+    cursor: pointer;
+    width: 50px;
+    height: 84px;
+    margin: auto;
+    a:before {
+        content: "";
+        width: 1px;
+        background-color: #d2b055;
+        margin: auto;
+        animation: closeLine .8s both .2s;
+
+        display: block;
+    }
+    a:hover p {
+        color: $base_color;
+    }
+    p {
+        @include font-size(12);
+        letter-spacing: .5px;
+        text-align: center;
+        padding-top: 12px;
+        @include trans(.5s);
+    }
+}
+.memberJoin_frame.member ._close,
+.memberPassword_frame.member ._close {
+    a:before {
+        animation: none;
+    }
+    &.animate {
+        a:before {
+            animation: closeLine 2s both .2s;
+        }
+    }
+}
+
+
+
+
+
+/*icon 按鈕*/
+
+.icon_btn_group {
+    margin: 0 0 60px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 1.2s both .6s;
+    @media #{$phone} and (orientation: portrait) {
+        justify-content: space-around;
+    }
+    .icon-slick-arrow-left {
+        @include font-size(12);
+    }
+    .black {
+        background-color: #303030;
+        color: #fff;
+    }
+    .gray {
+        background-color: #ccc;
+        color: #fff;
+    }
+    a {
+        margin: 0 40px;
+        padding: 0 10px;
+        @media #{$phone} and (orientation: portrait) {
+            width: 50%;
+            margin: 0;
+        }
+        &.agree .icon-check {
+            background-color: #1c6b06;
+        }
+        &.resend:hover .icon-refresh {
+            background-color: #1c6b06;
+        }
+    }
+    a:hover {
+        color: $base_color;
+    }
+    span {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto 12px auto;
+        position: relative;
+
+        display: block;
+        @include trans(.5s);
+        &:before {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    p {
+        @include font-size(13);
+        font-weight: $font-900;
+    }
+}
+
+
+.form_btn {
+    @include font-size(13);
+    margin: 0 auto;
+    max-width: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .one {
+        width: 100%;
+    }
+    .two {
+        width: 50%;
+    }
+    p {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .black {
+        background-color: #303030;
+        color: #fff;
+    }
+    .gray {
+        background-color: #ccc;
+        color: #000;
+    }
+    a {
+        transition: all .3s ease;
+        &:hover {
+            background-color: #d80b18;
+            transition: all .3s ease;
+            color: #fff;
+        }
+    }
+}
+.memberJoin_frame .form_btn,
+.memberPassword_frame .form_btn {
+    animation: fadeInUp 1.2s both .8s;
+}
+
+
+.member_authen {
+    @include font-size(12);
+}
+
+
+.memberLogin_frame .m_box {
+    padding: 200px 0 200px 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media #{$phone} {
+        padding: 150px 0 200px 0;
+    }
+}
+
+.memberLogin_frame ._top {
+    margin: 0 0 70px 0;
+}
+
+//
+.tick_countdown {
+    animation: fadeInUp 1.2s both .6s;
+}
+
+//
+.m_box {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .m_box_inner {
+        // height: 100vh;
+        overflow-y: scroll;
+    }
+    .not_show {
+        height: 0; // opacity: 1;
+        // visibility: visible;
+        overflow: hidden;
+        ._top ._title {
+            h2 {
+                animation: none;
+            }
+            p {
+                animation: none;
+            }
+        }
+        .information {
+            animation: none;
+        }
+        .icon_btn_group {
+            animation: none;
+        }
+        .form_btn {
+            animation: none;
+        }
+        .tick_countdown {
+            animation: none;
+        }
+        .member_form {
+            animation: none;
+        }
+    }
+}
+
+.m_box .title {
+    h2 {
+        text-align: center;
+    }
+}
+
+.m_box .frame_box {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.m_box .information {
+    text-align: center;
+    animation: fadeInUp 1.2s .4s;
+}
+
+.m_box .member_form {
+    .login_member {
+        border-top: solid 4px #000;
+        width: 100%;
+        max-width: 355px;
+        margin: 0 auto;
+    }
+    li {
+        border-bottom: solid 1px #000;
+        padding: 0 20px;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        @media #{$phone} {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &.dropMenu,
+        &.calender {
+            position: relative;
+        }
+    }
+    label {
+        @include font-size(14);
+        font-family: 'Cinzel-Regular', '微軟正黑體';
+        width: 35%;
+        text-align: left;
+        @media #{$phone} {
+            width: 100%;
+            padding-top: 14px;
+        }
+    }
+    input {
+        @include font-size(14); // font-family: 'Cinzel-Regular','微軟正黑體';
+        width: 65%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 20px 0;
+        @media #{$phone} {
+            width: 100%;
+            padding: 14px 0;
+        }
+    }
+    input:placeholder {
+        color: #000;
+    }
+    input::-webkit-input-placeholder {
+        color: #000;
+    }
+    input:-moz-placeholder {
+        color: #000;
+    }
+    input::-moz-placeholder {
+        color: #000;
+    }
+    input:-ms-input-placeholder {
+        color: #000;
+    }
+}
+
+.m_box .member_form .member_verification {
+    display: flex;
+    align-items: center;
+    @media #{$phone} {
+        flex-direction: row;
+        align-items: center;
+    }
+    input {
+        width: 100%;
+        padding: 20px 15px 20px 0;
+    }
+}
+
+.member_form .enter_verification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #dfdfdf;
+        border: none;
+        margin: 0 4px;
+        padding: 0;
+        position: relative;
+        @media #{$phone} {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    input {
+        @include font-size(44);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        @media #{$phone} {
+            @include font-size(28);
+        }
+    }
+}
+
+
+.member_login {
+    .information {
+        @include font-size(13);
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 20px auto;
+        .warning {
+            margin: 0 0 55px 0;
+        }
+        .agree_info {
+            margin: 0 0 45px 0;
+        }
+    }
+    .member_form {
+        margin: 0 0 20px 0;
+    }
+}
+
+.member_form {
+    .dropMenu {
+        @include font-size(14);
+        .menulist {
+            width: 65%;
+            text-align: left;
+            @media #{$phone} {
+                width: 100%;
+            }
+            .selectMenu {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                padding: 20px 0;
+
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .dropMenu ul {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #303030;
+        max-height: 140px;
+
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 1;
+
+        display: none;
+        li {
+            cursor: pointer;
+            border-bottom: none;
+            text-align: center;
+        }
+        li:hover {
+            p {
+                color: #fff;
+            }
+        }
+        p {
+            width: 100%;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
+            @include trans(.5s);
+        }
+    }
+    .calender {
+        input {
+            cursor: pointer;
+        }
+    }
+    .arrow-icon:after {
+        font-family: 'icomoon';
+        content: "\e90b";
+        font-size: 1.125rem;
+
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include trans(.8s);
+        @media #{$phone} {
+            transform: none;
+        }
+    }
+}
+.memberJoin_frame .member_form,
+.memberPassword_frame .member_form {
+    animation: fadeIn 1.2s both 1s;
+}
+
+// .detail_nav-------------------------------------
+.detail_nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1540px;
+    margin: 60px auto;
+    padding: 0 50px;
+    @include font-size(13);
+    @media (max-width: 900px) {
+        padding: 0 5vw;
+        justify-content: flex-end;
+    }
+    .series {
+        animation: fadeInUp 1s both 1s;
+        @media (max-width: 900px) {
+            display: none;
+        }
+        span {
+            margin-right: 5px;
+            font-family: "微軟正黑體";
+            letter-spacing: 1px;
+            &:not(:last-child) {
+                &:after {
+                    content: "/";
+                    margin-left: 5px;
+                }
+            }
+        }
+    } // 回到上一頁按鈕
+    ._back {
+        animation: fadeInRight 1s both 1s;
+        @include flex-center;
+        cursor: pointer;
+        span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 50%;
+            color: #fff;
+            transition: all .3s ease;
+            &:before {
+                font-family: 'icomoon';
+                content: "\e908";
+                margin-right: 1px;
+            }
+        }
+        p {
+            display: inline-block;
+            font-family: 'Raleway-regular';
+            letter-spacing: .5px;
+            margin-left: 10px;
+        }
+        a {
+            transition: all .3s ease;
+            &:hover {
+                color: #d80b18;
+                transition: all .3s ease;
+                span {
+                    background-color: #d80b18;
+                    transition: all .3s ease;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*--------------------------member共通--------------------------*/
+
+
+/*  memberLogin  */
+
+.memberLogin_frame .frame_box {
+    width: 50%;
+    max-width: 510px;
+    margin: 0 30px;
+    padding: 104px 15px;
+    background-color: #fff;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+    animation: fadeInUp 1.5s both 0.8s;
+    @media #{$pad_V} {
+        width: 100%;
+        margin: 0 auto 40px auto;
+    }
+    @media #{$phone} {
+        height: auto;
+        padding: 60px 15px;
+    }
+}
+
+.memberLogin_frame .title {
+    h2 {
+        @include font-size(28);
+        margin-bottom: 50px;
+    }
+}
+
+.memberLogin_frame .member_login {
+    position: relative;
+}
+
+.memberLogin_frame .member_join {
+    .message {
+        margin: 0 0 64px 0;
+        p {
+            @include font-size(13);
+            line-height: 1.6;
+            margin: 0 auto 28px auto;
+        }
+        p:nth-child(1) {
+            width: 100%;
+            max-width: 180px;
+        }
+        p:nth-child(2) {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}
+
+.memberLogin {
+    display: flex;
+    justify-content: center;
+    @media #{$pad_V} {
+        flex-direction: column;
+    }
+    @media #{$phone} {
+        padding: 0 10px;
+    }
+}
+
+.memberLogin .member_form {
+    margin-bottom: 50px;
+}
+
+.memberLogin .member_authen {
+    font-style: italic;
+
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+
+    transform: translateX(-50%);
+    @media #{$phone} {
+        bottom: 25px;
+    }
+}
+
+
+
+
+
+/*  memberJoin_frame  */
+
+.memberJoin_frame {
+    main {
+        padding-top: 0;
+    }
+    ._top {
+        margin: 120px 0 85px 0;
+    }
+    .member_success ._top {
+        margin: 0 0 70px 0;
+    }
+    .information {
+        @include font-size(14);
+        line-height: 1.6;
+    }
+    .frame_box .form_btn {
+        margin: 0 auto 280px auto;
+    }
+}
+
+.memberJoin_frame .member_form {
+    .login_member {
+        max-width: 460px;
+    }
+}
+
+//memberJoin_frame 的 member_login 
+.service_term {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    
+    .box {
+        width: 50%;
+        height: 100vh;
+        margin-left: auto;
+        padding: 0 10% 180px 10%;
+        background-color: #fff;
+
+        transform: translateX(100%);
+        @media #{$pad_V} {
+            width: 100%;
+        }
+        @media #{$phone} {
+            padding: 0 20px 80px 20px;
+        }
+        ._close {
+            a:before {
+                animation: closeLineOut .6s both;
+            }
+        }
+    }
+    ._top {
+        margin: 70px 0 80px 0;
+        ._title h2 {
+            animation: fadeOutUp .6s both;
+        }
+        ._title h2:after {
+            animation: fadeOutUp .6s both;
+        }
+        ._title p {
+            animation: fadeOutUp .6s both;
+        }
+    }
+    .content {
+        text-align: left;
+        p {
+            @include font-size(13);
+            line-height: 1.6;
+            color: #4c4c4c;
+        }
+        .out_title {
+            @include font-size(18);
+            color: #000;
+            margin-bottom: 10px;
+        }
+        .out_side {
+            .out_list {
+                margin-bottom: 40px;
+            }
+            .paragraph {
+                margin-bottom: 10px;
+            }
+        }
+        .in_side {
+            li {
+                padding-left: 50px;
+                margin-bottom: 14px;
+                position: relative;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &:before {
+                    content: '';
+                    width: 6px;
+                    height: 3px;
+                    background-color: $base_red;
+
+                    position: absolute;
+                    left: 30px;
+                    top: 10px;
+
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.service_term.open {
+    opacity: 1;
+    visibility: visible;
+
+    @include trans(1.5s);
+    ._top {
+        ._title h2 {
+            animation: fadeInDown .8s both 1s;
+        }
+        ._title h2:after {
+            animation: titleLine .5s both 2s;
+        }
+        ._title p {
+            animation: fadeInDown .8s both 1.4s;
+        }
+    }
+    .box {
+        -webkit-transition: all .7s ease-out;
+        -moz-transition: all .7s ease-out;
+        -ms-transition: all .7s ease-out;
+        -o-transition: all .7s ease-out;
+        transition: all .7s ease-out;
+
+        transform: translateX(0%);
+        ._close {
+            a:before {
+                animation: closeLine .8s both .7s;
+            }
+        }
+    }
+    .content {
+        .animate {
+            animation: fadeInDown .8s both 1.8s;
+        }
+    }
+}
+
+.service_term.close {
+    opacity: 0;
+    visibility: hidden;
+
+    @include trans(.4s, 1s);
+    ._top {
+        margin: 70px 0 80px 0;
+        ._title h2 {
+            animation: fadeOutUp .6s both;
+        }
+        ._title h2:after {
+            animation: fadeOutUp .6s both;
+        }
+        ._title p {
+            animation: fadeOutUp .6s both;
+        }
+    }
+    .content {
+        .animate {
+            animation: fadeOutUp .6s both;
+        }
+    }
+    .box {
+        -webkit-transition: all .6s ease-out .6s;
+        -moz-transition: all .6s ease-out .6s;
+        -ms-transition: all .6s ease-out .6s;
+        -o-transition: all .6s ease-out .6s;
+        transition: all .6s ease-out .6s;
+
+        transform: translateX(100%);
+        ._close {
+            a:before {
+                animation: closeLineOut .6s both;
+            }
+        }
+    }
+}
+
+
+//member_identity 
+.member_identity {
+    .information {
+        width: 100%;
+        max-width: 540px;
+        margin: 0 auto 55px auto;
+    }
+    .tick_countdown {
+        .tick {
+            height: 22px;
+            margin-bottom: 30px;
+            position: relative;
+            span {
+                @include font-size(20);
+                font-weight: $font-900;
+
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+
+                @include trans(.5s);
+            }
+            span.show:first-child,
+            span.show:last-child {
+                opacity: 1;
+            }
+            span:first-child {
+                color: #1c6b06;
+                opacity: 0;
+            }
+            span:last-child {
+                color: $base_red;
+                opacity: 0;
+            }
+        }
+        .countdown {
+            @include font-size(14);
+            color: $base_red;
+            margin-bottom: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p:first-child:after {
+                content: '：';
+                margin: 0 3px;
+
+                display: block;
+            }
+        }
+    }
+}
+
+//member_success 
+.member_success {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-height: 560px) and (orientation: landscape) {
+        overflow-y: scroll;
+
+        display: block;
+        align-items: unset;
+        justify-content: unset;
+    }
+    .box {
+        width: 100%;
+        max-width: 686px;
+        padding: 90px 20px 90px 20px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (max-height: 560px) and (orientation: landscape) {
+            margin: 0 auto;
+        }
+    }
+    .information {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto 115px auto;
+    }
+}
+
+
+
+
+
+/*  member_password  */
+
+.memberPassword_frame {
+    main {
+        padding-top: 0;
+    }
+    ._top {
+        margin: 120px 0 85px 0;
+    }
+    .member_success ._top {
+        margin: 0 0 70px 0;
+    }
+    .member_success.frame_box {
+        .form_btn {
+            margin: 0 auto;
+        }
+    }
+    .information {
+        @include font-size(14);
+        line-height: 1.6;
+        max-width: 415px;
+    }
+    .member_identity {
+        .information {
+            max-width: 560px;
+        }
+    }
+    .frame_box .form_btn {
+        margin: 0 auto 280px auto;
+    }
+    .member_form {
+        margin: 0 0 70px 0;
+    }
+}
+
+.memberPassword_frame .m_box {
+    .member_form .login_member {
+        max-width: 460px;
+    }
+}
+
+
+
+
+
+
+/*  member_guide  */
+
+
+/*  memberAccount_frame  */
+
+.memberAccount_frame {
+    .m_box {
+        .member_form .login_member {
+            max-width: none;
+            border-top: none;
+        }
+        .member_form li {
+            @media #{$phone} {
+                padding: 0 10px 0 0;
+            }
+        }
+    }
+    .form_btn {
+        a {
+            @media #{$phone} {
+                width: 100%;
+            }
+        }
+        a:first-child {
+            @media #{$phone} {
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
+
+.memberAccount_frame .work_1 {
+    padding: 0 20px;
+    margin: 0 0 80px 0;
+    .member_section {
+        width: 100%;
+        max-width: 860px;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        @media #{$phone} {
+            flex-direction: column;
+        }
+    }
+    .member_selfie {
+        margin: 0 45px;
+        @media #{$phone} {
+            margin: 0 20px 45px 20px;
+        }
+        img {
+            border: solid 12px #e6e6e6;
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+        }
+    }
+    .member_block {
+        margin: 0 45px;
+        @media #{$phone} {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .notify {
+            @include font-size(18);
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+            @media #{$phone} {
+                margin: 0 auto 10px auto;
+                max-width: 345px;
+            }
+        }
+        .member_serial {
+            @include font-size(13);
+            font-weight: $font-900;
+            line-height: 1.6;
+            margin: 0 0 12px 0;
+            @media #{$phone} {
+                margin: 0 auto 20px auto;
+                max-width: 345px;
+            }
+        }
+        .form_btn {
+            width: 345px;
+            max-width: 345px;
+            @media #{$phone} {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+            }
+            a:first-child {
+                margin-right: 5px;
+                @media #{$phone} {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .set_picture {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 12;
+
+        opacity: 0;
+        visibility: hidden;
+
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow-x: hidden;
+        @media #{$phone} {
+            display: block;
+            align-items: unset;
+            justify-content: unset;
+        }
+        .set_box {
+            width: 100%;
+            max-width: 686px;
+            max-height: 770px;
+            padding: 85px 10px;
+            background-color: #fff;
+            overflow: hidden;
+            @include trans(1s);
+            @media #{$phone} {
+                max-height: none;
+            }
+            ._top {
+                margin: 0 0 35px 0;
+            }
+            .upload {
+                text-align: center;
+                margin-bottom: 65px;
+                .form_btn {
+                    margin: 0 auto 20px auto;
+                    max-width: 215px;
+                }
+                .notify {
+                    @include font-size(12);
+                    line-height: 1.6;
+                    letter-spacing: 1px;
+                }
+            }
+            .member_selfie {
+                margin: 0 0 45px 0;
+                img {
+                    width: 100%;
+                    margin: 0 auto;
+                    max-width: 306px;
+                    max-height: 226px;
+                }
+            }
+            .form_btn {
+                max-width: 345px;
+                a:first-child {
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+    }
+    .set_picture.show {
+        visibility: visible;
+        animation: fadeIn .3s both;
+        .set_box {
+            animation: workboxOpen .9s both;
+            @media (max-width:767px) {
+                animation: mobile_workboxOpen .9s both;
+            }
+        }
+    }
+    .set_picture.no_show {
+        visibility: visible;
+        animation: fadeOut .3s both .9s;
+        .set_box {
+            animation: workboxClose .9s both;
+            @media (max-width:767px) {
+                animation: mobile_workboxClose .9s both;
+            }
+        }
+    }
+}
+
+.memberAccount_frame .work_2 {
+    padding: 0 20px;
+    &>.form_btn {
+        margin: 0 auto 200px auto;
+        max-width: 345px;
+        a:first-child {
+            margin-right: 5px;
+            @media #{$phone} {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .account_detail_box {
+        width: 100%;
+        max-width: 1090px;
+        margin: 0 auto 50px auto;
+    }
+    .account_detail_box .list {
+        padding: 30px 0 40px 0;
+        border-bottom: solid 4px #000;
+
+        display: flex;
+        align-items: center;
+        @media #{$pad_V} {
+            flex-direction: column;
+        }
+        &:first-child {
+            border-top: solid 4px #000;
+        }
+        .detail {
+            width: 50%;
+            padding: 0 40px;
+            @media #{$pad_V} {
+                width: 90%;
+                padding: 0;
+                margin: 0 0 16px 0;
+            }
+            p {
+                @include font-size(13);
+                line-height: 1.6;
+            }
+            .title {
+                @include font-size(26);
+                font-family: 'Raleway-light', '微軟正黑體';
+            }
+            .vice {
+                @include font-size(18);
+                font-weight: $font-900;
+                margin-bottom: 16px;
+            }
+            .text {
+                max-width: 355px;
+            }
+        }
+        .option {
+            width: 50%;
+            @media #{$pad_V} {
+                width: 90%;
+            }
+            .form_btn {
+                width: 100%;
+                max-width: none;
+                padding: 0;
+                margin-top: 30px;
+                a:first-child {
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes workboxOpen {
+    0% {
+        height: 0px;
+        opacity: 0;
+        padding: 0px 10px;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+        padding: 85px 10px;
+    }
+}
+@keyframes workboxClose {
+    0% {
+        height: 100%;
+        opacity: 1;
+        padding: 85px 10px;
+    }
+    100% {
+        height: 0px;
+        opacity: 0;
+        padding: 0px 10px;
+    }
+}
+
+@keyframes mobile_workboxOpen {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes mobile_workboxClose {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+/* orderReturn_frame */
+
+.orderReturn_frame {
+    .m_box {
+        padding: 0 20px 50px 20px;
+        @media #{$phone} {
+            padding: 0 10px 50px 10px;
+        }
+    }
+}
+
+.orderReturn_box {
+    width: 100%;
+    max-width: 1090px;
+    margin: 0 auto;
+}
+
+.orderReturn_box .orderReturn_list {
+    padding: 50px 40px 35px 40px;
+    background-color: #f2f2f2;
+    margin: 0 0 35px 0;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(100px);
+
+    display: flex;
+    align-items: center;
+    @include trans(.8s,.3s);
+    &.show {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    @media #{$pad_V} {
+        padding: 50px 15px 35px 15px;
+        flex-direction: column
+    }
+    @media #{$phone} {
+        padding: 50px 5px 50px 5px;
+    }
+    .red {
+        color: #d80b18;
+    }
+    .grizzle {
+        color: #d9d9d9;
+    }
+    .big_num {
+        @include font-size(48);
+        font-family: 'Cinzel-Regular';
+        font-weight: $font-900;
+        padding: 0 40px 0 0;
+
+        align-self: baseline;
+        @media #{$pad_V} {
+            align-self: center;
+            padding: 0;
+            margin-bottom: 22px;
+        }
+    }
+    .box_1 {
+        width: 100%;
+        max-width: 635px;
+
+        display: flex;
+        flex-wrap: wrap;
+        @media #{$pad_V} {
+            max-width: none;
+        }
+        li {
+            width: 33.3%;
+            margin-bottom: 35px;
+            padding-right: 2%;
+            @media #{$pad_V} {
+                text-align: center;
+                padding: 0 2%;
+            }
+            @media #{$phone} {
+                width: 50%;
+            }
+        }
+        p {
+            line-height: 1.6;
+        }
+        .warning {
+            @include font-size(12);
+            max-width: 120px;
+            @media #{$pad_V} {
+                margin: 0 auto;
+            }
+        }
+        .state {
+            @include font-size(16);
+            font-weight: $font-900;
+        }
+        .title {
+            @include font-size(12);
+        }
+        .number {
+            @include font-size(18);
+            font-family: 'Cinzel-Regular';
+        }
+        .form_btn {
+            @include font-size(12);
+            max-width: 135px;
+            margin: 0;
+            @media #{$pad_V} {
+                margin: 0 auto;
+            }
+        }
+    }
+    .box_2 {
+        width: 100%;
+        max-width: 275px;
+        .payment {
+            text-align: center;
+            line-height: 1.6;
+            .title {
+                @include font-size(12);
+                margin-bottom: 4px;
+            }
+            .money {
+                @include font-size(22);
+                font-family: 'Cinzel-Regular';
+                margin-bottom: 25px;
+            }
+        }
+        .form_btn {
+            a {
+                margin: 0 1px;
+            }
+            p {
+                @include font-size(12);
+            }
+        }
+    }
+}
+
+
+
+
+
+/* orderDetail_frame */
+
+.orderDetail_frame {
+    .m_box {
+        padding: 0 20px 150px 20px;
+        min-height: calc(100vh + 1px);
+    }
+    ._top {
+        margin: 110px 0 70px 0;
+    }
+}
+
+.orderDetail_frame .order_nav {
+    .serial_number {
+        @include font-size(16);
+        font-family: '微軟正黑體';
+        text-align: center;
+        margin-bottom: 30px;
+        animation: fadeInDown .8s both 1s;
+    }
+    .form_btn {
+        max-width: 846px;
+        margin: 0 auto 40px auto;
+        animation: fadeInDown 1.5s both 1.2s;
+        @media #{$phone} {
+            flex-direction: column;
+        }
+        a {
+            width: 100%;
+            margin: 0 1px;
+            @media #{$phone} {
+                margin: 0 0 8px 0;
+            }
+        }
+        p {
+            height: 55px;
+        }
+    }
+}
+
+.orderDetail_frame .order_navBox {
+    border-bottom: solid 4px #000;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &:first-child {
+        border-top: solid 4px #000;
+    }
+    @media #{$pad_V} {
+        flex-direction: column;
+    }
+    .order_li_title {
+        width: 27%;
+        max-width: 300px;
+        padding: 20px 3.5% 0 3.5%;
+        line-height: 1.6;
+        @media #{$pad_V} {
+            width: 100%;
+            max-width: none;
+            padding: 20px 5% 0 5%;
+        }
+        .title {
+            @include font-size(26);
+            font-family: 'Raleway-light';
+        }
+        .vice {
+            @include font-size(18);
+            font-weight: $font-900;
+        }
+    }
+    .order_list_box {
+        .order_ul {
+            margin-bottom: 30px;
+        }
+        .order_li {
+            border-bottom: solid 1px #000;
+            &:last-child {
+                border-bottom: none;
+            }
+            .box_1 {
+                width: 100%;
+                max-width: 230px;
+                padding: 0 5%;
+                @media #{$phone} {
+                    width: 50%;
+                    max-width: none;
+                }
+            }
+            .box_2 {
+                width: 100%;
+                max-width: 280px;
+                @media #{$phone} {
+                    width: 50%;
+                    max-width: none;
+                }
+            }
+            .box_3 {
+                width: 100%;
+                max-width: 175px;
+                text-align: center;
+                @media #{$phone} {
+                    max-width: none;
+                    margin-top: 12px;
+                }
+            }
+            .box_4 {
+                width: 100%;
+                max-width: 140px;
+                text-align: center;
+                @media #{$phone} {
+                    max-width: none;
+                }
+            }
+            .img {
+                img {
+                    margin: 0 auto;
+                }
+            }
+            .info {
+                line-height: 1.6;
+                .s_number {
+                    @include font-size(12);
+                    font-family: 'Cinzel-Regular';
+                }
+                .name {
+                    @include font-size(16);
+                    font-family: 'Raleway-SemiBold';
+                }
+                .vice {
+                    @include font-size(16);
+                    margin-bottom: 5px;
+                }
+                .size {
+                    @include font-size(13);
+                    font-family: 'Cinzel-Regular', '微軟正黑體';
+                    span {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            .quantity {
+                letter-spacing: 1px;
+            }
+            .title {
+                @include font-size(18);
+                font-weight: $font-900;
+            }
+            .notice {
+                @include font-size(13);
+                padding: 0 4% 0 0;
+                @media #{$pad_V} {
+                    padding: 0 2% 0 0;
+                }
+            }
+            .num_word {
+                @include font-size(18);
+                font-family: 'Cinzel-Bold';
+                &.minus {
+                    p {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    p:before {
+                        content: '-';
+                        margin-right: 3px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//購買明細
+.orderDetail_frame .order_nav_frame {
+    //商品明細
+    .order_nav_detail {
+        .order_list_box {
+            width: 73%;
+            max-width: 820px;
+            @media #{$pad_V} {
+                width: 100%;
+                max-width: none;
+            }
+            .order_li {
+                padding: 40px 0 25px 0;
+                line-height: 1.6;
+
+                display: flex;
+                align-items: center;
+                @media #{$phone} {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    } //優惠折抵
+    .order_nav_discount {
+        .order_list_box {
+            width: 73%;
+            max-width: 820px;
+            @media #{$pad_V} {
+                width: 100%;
+                max-width: none;
+            }
+            .order_li {
+                line-height: 1.6;
+                padding: 25px 0%;
+
+                display: flex;
+                align-items: center;
+                @media #{$phone} {
+                    padding: 25px 5%;
+                    flex-wrap: wrap;
+                }
+                .box_1 {
+                    @media #{$phone} {
+                        width: 100%;
+                        margin-bottom: 6px;
+                        padding: 0;
+                    }
+                }
+                .box_2 {
+                    @media #{$phone} {
+                        width: 100%;
+                        padding: 0;
+                        margin-bottom: 16px;
+                    }
+                }
+                .box_3 {
+                    @media #{$phone} {
+                        width: 50%;
+                        margin-top: 0;
+                        text-align: left;
+                    }
+                }
+                .box_4 {
+                    @media #{$phone} {
+                        width: 50%;
+                        text-align: right;
+                    }
+                    p {
+                        @media #{$phone} {
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    } //紅利回饋
+    .order_nav_bonus {
+        .order_list_box {
+            width: 73%;
+            max-width: 820px;
+            @media #{$pad_V} {
+                width: 100%;
+                max-width: none;
+            }
+            .order_li {
+                line-height: 1.6;
+                padding: 25px 0;
+
+                display: flex;
+                align-items: center;
+                @media #{$phone} {
+                    padding: 25px 5%;
+
+                    flex-wrap: wrap;
+                }
+                .box_1 {
+                    @media #{$phone} {
+                        width: 100%;
+                        margin-bottom: 6px;
+                        padding: 0;
+                    }
+                }
+                .box_2 {
+                    @media #{$phone} {
+                        width: 100%;
+                        padding: 0;
+                        margin-bottom: 16px;
+                    }
+                }
+                .box_3 {
+                    @media #{$phone} {
+                        width: 50%;
+                        margin-top: 0;
+                        text-align: left;
+                    }
+                }
+                .box_4 {
+                    @media #{$phone} {
+                        width: 50%;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    } //商品總金額
+    .total {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 40px 0 0 0;
+        .box {
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            @media #{$phone} {
+                padding: 0 5%;
+            }
+        }
+        .title {
+            @include font-size(18);
+            font-weight: $font-900;
+            width: 100%;
+            max-width: 175px;
+            @media #{$phone} {
+                width: 50%;
+                max-width: none;
+                text-align: left;
+            }
+        }
+        .number {
+            @include font-size(18);
+            font-family: 'Cinzel-Bold';
+            width: 100%;
+            max-width: 140px;
+            @media #{$phone} {
+                width: 50%;
+                max-width: none;
+                text-align: right;
+            }
+        }
+    }
+}
+
+//收件人/宅配/發票資訊
+.orderDetail_frame .order_nav_info {
+    .order_list_box {
+        width: 73%;
+        max-width: 820px;
+        @media #{$pad_V} {
+            width: 100%;
+            max-width: none;
+        }
+        .order_ul {
+            margin-top: 15px;
+        }
+        .order_li {
+            padding: 25px 0;
+            line-height: 1.6;
+
+            display: flex;
+            align-items: center;
+            @media #{$phone} {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+//備註留言
+.orderDetail_frame .order_nav_message {
+    .order_navBox {
+        max-width: 846px;
+    }
+    .order_nav_remarks {
+        form {
+            border-bottom: solid 1px #7f7f7f;
+            width: 100%;
+            margin-bottom: 60px;
+            padding: 25px 100px 25px 40px;
+            position: relative;
+            @media (max-width: 520px) {
+                padding: 25px 100px 25px 20px;
+            }
+            textarea {
+                border: none;
+                width: 100%;
+                height: 180px;
+                letter-spacing: 1px;
+            }
+        }
+        .btn {
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            .icon-enter_arrow {
+                @include font-size(18);
+                color: #fff;
+
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .send {
+                border: none;
+                width: 63px;
+                height: 63px;
+                background-color: #000;
+            }
+        }
+    }
+    .order_nav_talk {
+        .talk_box {
+            width: 100%;
+        }
+        .talk_list {
+            border-bottom: solid 1px #7f7f7f;
+            width: 100%;
+            max-width: 670px;
+            padding: 25px 0;
+
+            display: flex;
+            align-items: center;
+            @media #{$phone} {
+                max-width: none;
+            }
+            @media (max-width:413px) {
+                flex-direction: column;
+            }
+            p {
+                line-height: 1.6;
+            }
+            .text {
+                @include font-size(13);
+                width: 70%;
+                @media (max-width: 413px) {
+                    width: 100%;
+                    max-width: none;
+                }
+            }
+            .identity {
+                @include font-size(13);
+                width: 30%;
+                max-width: 200px;
+                align-self: flex-start;
+                @media (max-width: 413px) {
+                    width: 100%;
+                    max-width: none;
+                    padding: 0 20px;
+                    margin-bottom: 10px;
+                }
+                .who {
+                    @include font-size(18);
+                }
+                .date {
+                    @include font-size(12);
+                    font-family: 'Cinzel-Bold';
+                }
+            }
+            .red {
+                color: $base_red;
+            }
+        }
+        .talk_list.official {
+            .identity {
+                padding-left: 40px;
+                @media (max-width: 520px) {
+                    padding-left: 20px;
+                }
+            }
+            .text {
+                @media #{$phone} {
+                    padding: 0 40px 0 0;
+                }
+                @media (max-width:520px) {
+                    padding: 0 20px 0 12px;
+                }
+                @media (max-width:413px) {
+                    padding: 0 20px;
+                }
+            }
+        }
+        .talk_list.client {
+            margin-left: auto;
+            @media (max-width: 413px) {
+                flex-direction: column-reverse;
+            }
+            .identity {
+                order: 1;
+                padding-right: 40px;
+                text-align: right;
+                @media (max-width: 520px) {
+                    padding-right: 20px;
+                }
+            }
+            .text {
+                order: 0;
+                padding: 0 0 0 24px;
+                @media #{$phone} {
+                    padding: 0 0 0 40px;
+                }
+                @media (max-width:520px) {
+                    padding: 0 12px 0 20px;
+                }
+                @media (max-width:413px) {
+                    padding: 0 20px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+//動畫
+.orderDetail_frame .detail_content {
+    overflow: hidden;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    @include trans(.8s,.5s);
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+
+        visibility: visible;
+        opacity: 1;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        display: block;
+        @include trans(4s);
+    }
+}
+
+.orderDetail_frame .detail_content.show {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    &:after {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+
+
+
+
+/* shopping_cart */
+
+.shopping_cart {
+    main {
+        padding-top: 114px;
+    }
+    .m_box {
+        padding: 0 20px 150px 20px;
+    }
+    ._top {
+        margin-top: 80px;
+        margin-bottom: 60px;
+        @media #{$phone} {
+            margin-top: 0;
+        }
+    }
+    .chosen {
+        margin-bottom: 20px;
+        p {
+            @include font-size(13);
+            text-align: center;
+            line-height: 1.6;
+            span {
+                @include font-size(24);
+                color: $base_red;
+                margin: 0 12px;
+            }
+        }
+    }
+}
+
+.shopping_cart .order_navBox {
+    border-bottom: solid 4px #000;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &:first-child {
+        border-top: solid 4px #000;
+    }
+    @media #{$pad_V} {
+        flex-direction: column;
+    }
+    .order_li_title {
+        width: 23%;
+        max-width: 300px;
+        padding: 20px 3.5% 0 3.5%;
+        line-height: 1.6;
+        @media #{$pad_V} {
+            width: 100%;
+            max-width: none;
+            padding: 20px 5% 0 5%;
+        }
+        .title {
+            @include font-size(26);
+            font-family: 'Raleway-light';
+        }
+        .vice {
+            @include font-size(18);
+            font-weight: $font-900;
+        }
+    }
+    .order_list_box {
+        width: 78%;
+        max-width: 1024px;
+        @media #{$pad_V} {
+            width: 100%;
+            max-width: none;
+        }
+        .order_ul {
+            margin-bottom: 30px;
+            @media #{$phone} {
+                margin: 0;
+            }
+        }
+        .order_li {
+            border-bottom: solid 1px #000;
+            line-height: 1.6;
+            padding: 25px 0%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &:last-child {
+                border-bottom: none;
+            }
+            .box_1 {
+                // width: 100%;
+                max-width: 230px;
+                padding: 0 40px;
+                @media #{$phone} {
+                    // width: 50%;
+                    max-width: none;
+                    padding: 0 20px;
+                }
+            }
+            .box_2 {
+                // width: 100%;
+                max-width: 330px;
+                @media #{$phone} {
+                    // width: 50%;
+                    max-width: none;
+                }
+            }
+            .box_3 {
+                // width: 100%;
+                max-width: 300px;
+                text-align: center;
+                padding-right: 15px;
+                @media #{$phone} {
+                    max-width: none;
+                    padding: 0;
+                }
+            }
+            .box_4 {
+                // width: 100%;
+                max-width: 160px;
+                padding-right: 18px;
+                @media #{$phone} {
+                    max-width: none;
+                    padding: 0;
+                }
+            }
+            .box_5 {
+                width: 100%;
+            }
+            .box_6 {
+                width: 100%;
+            }
+            .box_7 {
+                width: 100%;
+            }
+            .img {
+                width: 100%;
+                @media #{$phone} {
+                    width: 50%;
+                }
+                img {
+                    margin: 0 auto;
+                }
+            }
+            .info {
+                line-height: 1.6;
+                padding: 0 4% 0 0;
+                width: 100%;
+                @media #{$pad_V} {
+                    padding: 0 2% 0 0;
+                }
+                @media #{$phone} {
+                    width: 50%;
+                }
+                .s_number {
+                    @include font-size(12);
+                    font-family: 'Cinzel-Regular';
+                }
+                .name {
+                    @include font-size(16);
+                    font-family: 'Raleway-SemiBold';
+                }
+                .vice {
+                    @include font-size(16);
+                    margin-bottom: 5px;
+                }
+                .size {
+                    @include font-size(13);
+                    font-family: 'Cinzel-Regular', '微軟正黑體';
+                    span {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            .quantity {
+                letter-spacing: 1px;
+            }
+            .title {
+                width: 100%;
+                @include font-size(18);
+                font-weight: $font-900;
+                @media #{$phone} {
+                    padding: 0;
+                    margin-bottom: 20px;
+                }
+            }
+            .notice {
+                @include font-size(13);
+                width: 100%;
+                padding: 0 4% 0 0;
+                @media #{$pad_V} {
+                    padding: 0 2% 0 0;
+                }
+                @media #{$phone} {
+                    padding: 0;
+                    margin-bottom: 20px;
+                }
+                span:first-child {
+                    white-space: nowrap;
+                    display: block;
+                }
+                span:last-child {
+                    width: 80%;
+                    padding-left: 10px;
+                    display: block;
+                }
+                p {
+                    max-width: 245px;
+                    display: flex;
+                    @media #{$phone} {
+                        max-width: none;
+                    }
+                }
+                &.box_6 {
+                    p {
+                        max-width: none;
+                    }
+                    .tip {
+                        max-width: 320px;
+                    }
+                }
+            }
+            .num_word {
+                width: 100%;
+                @include font-size(18);
+                font-family: 'Cinzel-Bold';
+                @media #{$phone} {
+                    text-align: center;
+                }
+                &.box_3 {
+                    p {
+                        width: 170px;
+                        @media #{$phone} {
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+                &.minus {
+                    p {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        @media #{$phone} {
+                            justify-content: center;
+                        }
+                    }
+                    p:before {
+                        content: '-';
+                        margin-right: 3px;
+                        display: block;
+                    }
+                }
+                &.box_4 p {
+                    text-align: right;
+                    @media #{$phone} {
+                        text-align: center;
+                    }
+                }
+            }
+            .operation {
+                width: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                @media (max-width: 1300px) {
+                    flex-direction: column;
+                }
+                @media #{$phone} {
+                    padding: 0;
+
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .count {
+                    border: solid 1px #000;
+                    width: 170px;
+                    height: 40px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    @media #{$phone} {
+                        margin-bottom: 20px;
+                    }
+                    button {
+                        border: none;
+                        width: 30px;
+                        min-width: 30px;
+                        height: 100%;
+                        background-color: inherit;
+                        position: relative;
+                    }
+                    button:first-child {
+                        &:after {
+                            content: "";
+                            height: 1px;
+                            width: 10px;
+                            background-color: #000;
+
+                            position: absolute;
+                            top: calc(50% - 0.5px);
+                            left: calc(50% - 5px);
+
+                            display: block;
+                        }
+                    }
+                    button:last-child {
+                        &:before,
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            background-color: #000;
+                            display: block;
+                        }
+                        &:before {
+                            width: 1px;
+                            height: 10px;
+                            top: calc(50% - 5px);
+                            left: calc(50% - 0.5px);
+                        }
+                        &:after {
+                            height: 1px;
+                            width: 10px;
+                            top: calc(50% - 0.5px);
+                            left: calc(50% - 5px);
+                        }
+                    }
+                }
+                .delete {
+                    cursor: pointer;
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    margin: 0 16%;
+                    background-color: #000;
+                    position: relative;
+                    @media (max-width: 1300px) {
+                        margin: 20px 0 0 0;
+                    }
+                    &:before {
+                        content: '';
+                        width: 9px;
+                        height: 1px;
+                        background-color: #fff;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+
+                        display: block;
+                    }
+                    &:after {
+                        content: '';
+                        width: 1px;
+                        height: 9px;
+                        background-color: #fff;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+
+                        display: block;
+                    }
+                }
+                .check {
+                    @include font-size(18);
+                    width: 25px;
+                    margin: 0 16%;
+                    position: relative;
+                    @media (max-width: 1300px) {
+                        top: 20px;
+                    }
+                    @media #{$phone} {
+                        margin: 0;
+                        position: absolute;
+                        right: 30px;
+                        top: 10px;
+                    }
+                    @media (max-width:374px) {
+                        right: 0;
+                    }
+                    span {
+                        opacity: 0;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        @include trans(.5s);
+                        @media #{$phone} {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            transform: none;
+                        }
+                    }
+                    span.show {
+                        opacity: 1;
+                    }
+                    .icon-check {
+                        color: #1c6b06;
+                    }
+                    .icon-x {
+                        color: #d80b18;
+                    }
+                }
+            }
+            .pack {
+                @media #{$phone} {
+                    margin-bottom: 20px;
+                }
+                .text {
+                    @include font-size(13);
+                    line-height: 1.6;
+                    width: 100%;
+                    max-width: 350px;
+                    margin-bottom: 12px;
+                    @media #{$phone} {
+                        text-align: left;
+                    }
+                }
+                .img {
+                    max-width: 570px;
+                    overflow: hidden;
+                    @media #{$phone} {
+                        width: 100%;
+                    }
+                    img {
+                        @include trans(2.5s);
+                        margin: 0 0 0 0;
+                    }
+                    img:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            .text {
+                width: 100%;
+                @include font-size(18);
+                font-weight: $font-900;
+                font-family: '微軟正黑體';
+                @media #{$phone} {
+                    text-align: center;
+                    padding: 0;
+                }
+                &.box_4 p {
+                    text-align: right;
+                    @media #{$phone} {
+                        text-align: center;
+                    }
+                }
+            }
+            .invoce {
+                .check_list {
+                    @include font-size(14);
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
+                    @media #{$phone} {
+                        align-items: flex-start;
+                        flex-direction: column;
+                    }
+                }
+                .input_list {
+                    input {
+                        border: solid 1px #000;
+                        padding: 12px 0;
+                    }
+                    input:first-child {
+                        max-width: 170px;
+                        @media #{$phone} {
+                            max-width: none;
+                            margin-bottom: 8px;
+                        }
+                    }
+                    input:last-child {
+                        max-width: 385px;
+                    }
+                }
+            }
+            .form_btn {
+                width: 100%;
+                max-width: 160px;
+            }
+        }
+    } //刪除物件動畫
+    .order_li.close {
+        overflow: hidden;
+        height: 0;
+        padding: 0 !important;
+        @include trans(1s);
+    }
+}
+
+//購買明細
+.shopping_cart .order_nav_frame {
+    //商品明細
+    .order_nav_detail {
+        .order_li {
+            @media #{$phone} {
+                // padding: 40px 5% 25px 5%;
+                flex-wrap: wrap;
+            }
+            .operation .count {
+                @media #{$phone} {
+                    margin-top: 30px;
+                    margin-bottom: 0;
+                }
+            }
+            .num_word {
+                @media #{$phone} {
+                    margin-top: 30px;
+                }
+            }
+        }
+    } //優惠折抵
+    .order_nav_discount {
+        .order_li {
+            @media #{$phone} {
+                padding: 25px 5%;
+                flex-wrap: wrap;
+            }
+            .box_1 {
+            }
+            .box_2 {
+            }
+            .box_3 {
+            }
+            .box_4 {
+            }
+        }
+    } //紅利回饋
+    .order_nav_bonus {
+        .order_li {
+            @media #{$phone} {
+                padding: 25px 5%;
+
+                flex-wrap: wrap;
+            }
+            .box_1 {
+            }
+            .box_2 {
+            }
+            .box_3 {
+            }
+            .box_4 {
+            }
+        }
+    } //商品運送
+    .order_nav_shipping {
+        .order_li {
+            @media #{$phone} {
+                padding: 25px 5%;
+
+                flex-wrap: wrap;
+            }
+            .box_1 {
+            }
+            .box_2 {
+            }
+            .box_3 {
+            }
+            .box_4 {
+            }
+        }
+    }
+}
+
+//消費總金額
+.shopping_cart .total {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    .box {
+        text-align: center;
+        line-height: 1.6;
+        @media #{$phone} {
+            padding: 0 5%;
+        }
+    }
+    .title {
+        @include font-size(14);
+        font-weight: $font-900;
+        width: 100%;
+        margin-bottom: 12px;
+        display: block;
+    }
+    .number {
+        @include font-size(34);
+        font-family: 'Cinzel-Bold';
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .form_btn {
+        max-width: 350px;
+        a {
+            margin: 0 2px;
+        }
+    }
+}
+
+//input
+.shopping_cart input {
+    @include font-size(13);
+    border: none;
+    width: 100%;
+    text-align: center;
+    &:placeholder {
+        color: #000;
+    }
+    &::-webkit-input-placeholder {
+        color: #000;
+    }
+    &:-moz-placeholder {
+        color: #000;
+    }
+    &::-moz-placeholder {
+        color: #000;
+    }
+    &:-ms-input-placeholder {
+        color: #000;
+    }
+}
+
+//發票check_box
+.check_box {
+    cursor: pointer;
+    margin-right: 30px;
+    input[type="radio"] {
+        display: none;
+    }
+    input[type="radio"]+label {
+        cursor: pointer;
+        line-height: 1.6;
+    }
+    input[type="radio"]+label span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: solid 1px #000;
+        margin-bottom: 2px;
+        margin-right: 5px;
+        vertical-align: middle;
+        cursor: pointer;
+        @include trans(.5s);
+    }
+}
+
+.check_box.show {
+    input[type="radio"]+label span {
+        background-color: #000;
+    }
+}
+
+//結帳區塊
+.payment_block {
+    // width: 100%;
+    // height: 100%;
+    // background-color: rgba(0, 0, 0, 0.8);
+
+    // position: fixed;
+    // left: 0;
+    // top: 0;
+    // z-index: -1;
+    // opacity: 0;
+
+    // display: block;
+    // overflow-y: scroll;
+    display: block;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+}
+
+.payment_block .payment {
+    width: 100%;
+    min-height: 100%;
+    padding: 45px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media #{$phone} {
+        padding: 0;
+        display: block;
+    }
+    .box {
+        width: 100%;
+        max-width: 686px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 0px 70px;
+        overflow: hidden;
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+        @media #{$phone} {
+            padding: 0 20px;
+        }
+        ._top {
+            margin-top: 80px;
+            margin-bottom: 70px;
+        }
+        .total_amount {
+            border-top: solid 4px #000;
+            border-bottom: solid 1px #000;
+            padding: 24px 80px;
+            margin-bottom: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media #{$phone} {
+                padding: 24px 10px;
+            }
+            .title {
+                @include font-size(14);
+                font-family: 'Cinzel-Regular', '微軟正黑體';
+            }
+            .number {
+                @include font-size(14);
+                font-family: 'Cinzel-Bold';
+                color: #ccc;
+            }
+        }
+        .pay_way {
+            margin-bottom: 50px;
+            ul {}
+            li {
+                background-color: #e6e6e6;
+                margin-bottom: 1px;
+
+                display: flex;
+                align-items: center;
+                @include trans(.5s);
+                a {
+                    width: 100%;
+                    min-height: 160px;
+                    padding: 5px 0;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    @media #{$phone} and (orientation: portrait) {
+                        padding: 12px 20px;
+                        flex-wrap: wrap;
+                    }
+                }
+                &.clicked {
+                    background-color: #303030;
+                    .tick {
+                        div {
+                            background-color: #e30000;
+                        }
+                    }
+                    .notice {
+                        color: #fff;
+                    }
+                    .logo {
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .credit {
+                .logo {
+                    img {
+                        width: 30px;
+                        height: 23px;
+                        margin-bottom: 3px;
+                    }
+                }
+            }
+            .express {
+                .logo {
+                    span {
+                        @include font-size(23);
+                    }
+                }
+            }
+            .phone_pay {
+                .logo {
+                    span {
+                        @include font-size(42);
+                    }
+                }
+            }
+            .tick {
+                width: 100%;
+                max-width: 125px;
+                @media #{$phone} and (orientation: portrait) {
+                    width: 50%;
+                }
+                div {
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    background-color: #ccc;
+                    margin: 0 50px;
+                    position: relative;
+                    @media #{$phone} and (orientation: portrait) {
+                        margin: 0 15px;
+                    }
+                }
+                span {
+                    color: #e6e6e6;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .notice {
+                width: 100%;
+                max-width: 275px;
+                @media #{$phone} and (orientation: portrait) {
+                    max-width: none;
+                    order: 2;
+                }
+                div {}
+                p {
+                    @include font-size(12);
+                    line-height: 1.6;
+                }
+                .title {
+                    @include font-size(14);
+                    font-weight: $font-900;
+                    margin-bottom: 6px;
+                }
+            }
+            .logo {
+                width: 100%;
+                max-width: 145px;
+                display: flex;
+                justify-content: center;
+                @media #{$phone} and (orientation: portrait) {
+                    width: 50%;
+                }
+                div {
+                    @media #{$phone} and (orientation: portrait) {
+                        display: flex;
+                    }
+                }
+                img {
+                    width: 100%;
+                    @media #{$phone} and (orientation: portrait) {
+                        margin: 0 3px;
+                    }
+                }
+            }
+        }
+        .form_btn {
+            max-width: 350px;
+            margin: 0 auto 80px auto;
+            a {
+                margin: 0 2px;
+            }
+        }
+        .notify {
+            @include font-size(14);
+            line-height: 1.6;
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto 30px auto;
+        }
+        .warning {
+            @include font-size(22);
+            text-align: center;
+            margin: 0 0 55px 0;
+        }
+    }
+}
+
+.payment_block .payment.pay {
+    .box {}
+    .box_2 {}
+    .box_3 {
+        .notify {
+            margin: 0 auto 80px auto;
+        }
+    }
+}
+
+//結帳區塊 動畫
+.payment_block.show {
+    visibility: visible;
+    animation: fadeIn .3s both;
+}
+
+.payment_block.no_show {
+    visibility: visible;
+    animation: fadeOut .3s both 1s;
+}
+
+.payment_block .payment.pay {
+    .box.show {
+        animation: payOpen 2.5s both;
+        @media #{$phone} {
+            animation: mobile_payOpen 1s both;
+            height: 100%;
+            min-height: 100vh;
+        }
+    }
+    .box.no_show {
+        animation: payClose 1s both;
+        @media #{$phone} {
+            animation: mobile_payClose .5s both;
+        }
+    }
+}
+
+@keyframes payOpen {
+    0% {
+        height: 0;
+        // max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        height: 100%;
+        // max-height: 2000px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes payClose {
+    0% {
+        height: 100%;
+        // max-height: 2000px;
+        opacity: 1;
+        visibility: visible;
+        // min-height: 510px;
+    }
+    100% {
+        height: 0;
+        // max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        // min-height: 0px;
+    }
+}
+@keyframes mobile_payOpen {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes mobile_payClose {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+//商品運送區塊
+.shipping_block {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+
+    opacity: 0;
+    visibility: hidden;
+
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+}
+
+.shipping_frame {
+    width: 50%;
+    background-color: #fff;
+    margin-left: auto;
+    position: relative;
+    @include trans(.5s);
+    @media #{$pad_proV} {
+        width: 75%;
+    }
+    @media #{$pad_V} {
+        width: 100%;
+    }
+    ._top {
+        margin-bottom: 70px;
+    }
+    ._close {
+        a {
+            display: block;
+        }
+        a:before {
+            animation: none;
+        }
+    }
+    ._top {
+        ._title h2 {
+            animation: none;
+        }
+        ._title h2:after {
+            animation: none;
+        }
+        ._title p {
+            animation: none;
+        }
+    }
+}
+
+.shipping_frame .shipping_nav {
+    margin: 0 0 95px 0;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    li {
+        width: 33.3%;
+        text-align: center;
+        margin-right: 3px;
+        &:last-child {
+            margin: 0;
+        }
+    }
+    a {
+        display: block;
+    }
+    p {
+        @include font-size(15);
+        padding: 24px 0;
+    }
+    .black {
+        background-color: #000;
+        color: #fff;
+    }
+    .gray {
+        background-color: #d9d9d9;
+        color: #000
+    }
+}
+
+.shipping_frame .shipping_list {
+    .box {
+        width: 100%;
+        max-width: 550px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        &.show {
+            height: auto;
+            opacity: 1;
+            @include trans(2s);
+        }
+        &.open_show {
+            height: auto;
+            opacity: 1;
+            @include trans(2s, 2s);
+        }
+        .box_ul {
+            border-top: solid 4px #000;
+            border-bottom: solid 4px #000;
+            margin: 0 0 50px 0;
+        }
+        li {
+            @include font-size(14);
+            border-bottom: solid 1px #000;
+            padding: 0 25px;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            &:last-child {
+                border-bottom: none;
+            }
+            @media #{$phone} {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+        label {
+            width: 100%;
+            max-width: 190px;
+            font-family: 'Cinzel-Regular', '微軟正黑體';
+            padding-right: 16px;
+            @media #{$phone} {
+                position: absolute;
+                left: 25px;
+                top: 12px;
+            }
+        }
+        .content {
+            width: 100%;
+            max-width: 360px;
+            text-align: left;
+            padding: 22px 0;
+            @media #{$phone} {
+                padding: 36px 0 22px 0;
+            }
+        }
+        input {
+            &:placeholder {
+                color: #000;
+            }
+            &::-webkit-input-placeholder {
+                color: #000;
+            }
+            &:-moz-placeholder {
+                color: #000;
+            }
+            &::-moz-placeholder {
+                color: #000;
+            }
+            &:-ms-input-placeholder {
+                color: #000;
+            }
+        }
+        .form_btn {
+            margin: 0 auto 100px auto;
+        }
+        .dropMenu {
+            .menulist {
+                width: 100%;
+            }
+            .selectMenu {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                padding: 22px 0;
+
+                display: flex;
+                justify-content: space-between;
+                @media #{$phone} {
+                    padding: 36px 0 22px 0;
+                }
+            }
+        }
+        .dropMenu ul {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #303030;
+            max-height: 140px;
+
+            position: absolute;
+            left: 0;
+            top: 100%;
+            z-index: 1;
+
+            display: none;
+            li {
+                cursor: pointer;
+                border-bottom: none;
+                text-align: center;
+            }
+            li:hover {
+                p {
+                    color: #fff;
+                }
+            }
+            p {
+                width: 100%;
+                line-height: 2;
+                color: rgba(255, 255, 255, 0.5);
+                letter-spacing: 1px;
+                @include trans(.5s);
+            }
+        }
+        .arrow-icon:after {
+            font-family: 'icomoon';
+            content: "\e90b";
+            font-size: 1.125rem;
+
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include trans(.8s);
+        }
+    }
+}
+
+//商品運送區塊 動畫
+.shipping_block.show {
+    animation: getIn .3s both;
+    .shipping_frame {
+        animation: boxIn .7s both .3s;
+    }
+    ._close {
+        a:before {
+            animation: closeLine .8s both 1s;
+        }
+    }
+    ._top {
+        ._title h2 {
+            animation: fadeInDown .8s both 1s;
+        }
+        ._title h2:after {
+            animation: titleLine .5s both 2s;
+        }
+        ._title p {
+            animation: fadeInDown .8s both 1.4s;
+        }
+    }
+    .shipping_nav {
+        animation: fadeInDown .8s both 1.6s;
+    }
+}
+
+.shipping_block.no_show {
+    animation: getOut .3s both 1s;
+    .shipping_frame {
+        animation: boxOut .7s both .3s;
+    }
+    ._close {
+        a:before {
+            animation: closeLineOut .6s both;
+        }
+    }
+    ._top {
+        ._title h2 {
+            animation: fadeOutUp .6s both;
+        }
+        ._title h2:after {
+            animation: fadeOutUp .6s both;
+        }
+        ._title p {
+            animation: fadeOutUp .6s both;
+        }
+    }
+    .shipping_nav {
+        animation: fadeOutUp .6s both;
+    }
+    .box {
+        animation: showOut .6s both;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* member_bonus */
+
+.member_bonus main {
+    padding-top: 114px;
+    ._top {
+        @media #{$phone} {
+            margin-top: 0;
+        }
+    }
+}
+
+.member_bonus .box_1 {
+    margin: 0 0 90px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media #{$phone} {
+        padding: 0 30px;
+        flex-direction: column;
+    }
+
+    .b_point {
+        padding-right: 110px;
+        @media #{$phone} {
+            padding: 0;
+            margin-bottom: 40px;
+        }
+        &.show {
+            animation: fadeInUp 1s both .5s;
+        }
+        p {
+            @include font-size(12);
+            text-align: center;
+        }
+        .info {
+            @include font-size(13);
+        }
+        .big_point {
+            @include font-size(44);
+            font-family: 'Cinzel-Bold';
+            color: $base_red;
+            margin-bottom: 25px;
+        }
+        .change {
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .use_information {
+        padding-left: 45px;
+        opacity: 0;
+        @media #{$phone} {
+            padding: 0;
+        }
+        &.show {
+            opacity: 1;
+            @include trans(1s,.5s);
+        }
+        p {
+            @include font-size(13);
+            max-width: 290px;
+        }
+        .info {
+            color: #4c4c4c;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+        .date {
+            @include font-size(15);
+            font-weight: $font-900;
+            font-family: '微軟正黑體';
+            margin-bottom: 30px;
+        }
+        .form_btn {
+            max-width: 170px;
+            margin-left: 0;
+            @media #{$phone} {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.member_bonus .box_2 {
+    .frame {
+        width: 100%;
+        max-width: 1224px;
+        margin: 0 auto 200px auto;
+        padding: 0 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        @media (max-width:1240px) {
+            max-width: 1024px;
+        }
+        @media (max-width:1023px) {
+            max-width: 778px;
+        }
+        @media (max-width:767px) {
+            max-width: 676px;
+        }
+        @media (max-width:680px) {
+            max-width: 464px;
+        }
+        @media #{$phone} and (orientation: landscape) {
+            justify-content: space-around;
+        }
+        li {
+            max-width: 200px;
+            margin: 0 48px 60px 48px;
+            opacity: 0;
+            @media (max-width: 1240px) {
+                margin: 0 23px 60px 23px;
+            }
+            @media (max-width:1023px) {
+                margin: 0 21px 60px 21px;
+            }
+            @media (max-width:767px) {
+                max-width: 170px;
+            }
+            @media (max-width:463px) {
+                margin: 0 auto 60px auto;
+            }
+            @media (max-width:413px) and (orientation: portrait) {
+                max-width: 200px;
+            }
+            &.show {
+                opacity: 1;
+            }
+        }
+    }
+
+    .color_1 {
+        border: solid 8px #576897;
+    }
+    .color_2 {
+        border: solid 8px #46c1bc;
+    }
+    .color_3 {
+        border: solid 8px #f0587f;
+    }
+    .color_4 {
+        border: solid 8px #f07b45;
+    }
+    .color_5 {
+        border: solid 8px #00b8de;
+    }
+    .color_6 {
+        border: solid 8px #fcca09;
+    }
+    .color_7 {
+        border: solid 8px $base_red;
+    }
+
+    .point {
+        @include font-size(24);
+        font-family: 'Cinzel-Bold';
+        color: #fff;
+        @media #{$phone} {
+            @include font-size(16);
+        }
+        p {
+            letter-spacing: 1px;
+            position: relative;
+
+            display: flex;
+            span {
+                margin-left: 8px;
+            }
+            &.plus:before {
+                content: '+';
+                margin-right: 10px;
+
+                display: block;
+            }
+            &.minus:before {
+                content: '-';
+                margin-right: 10px;
+
+                display: block;
+            }
+        }
+    }
+    .out_circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media #{$phone} {
+            width: 170px;
+            height: 170px;
+        }
+        @media (max-width:413px) {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    .in_circle {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        background-color: #4d4d4d;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media #{$phone} {
+            width: 140px;
+            height: 140px;
+        }
+        @media (max-width:413px) {
+            width: 170px;
+            height: 170px;
+        }
+    }
+
+    .block {
+        text-align: center;
+        p {
+            line-height: 1.6;
+        }
+        .date {
+            @include font-size(12);
+        }
+        .title {
+            @include font-size(18);
+            font-weight: $font-900;
+        }
+        .info {
+            @include font-size(13);
+        }
+    }
+}
+
+.member_bonus .use_box {
+    width: 100vw; // height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+    .box {
+        width: 50%;
+        height: 100vh;
+        background-color: #fff;
+        margin-left: auto;
+        padding: 0 10% 100px 10%;
+        position: relative;
+        transform: translateX(100%);
+        @media #{$pad_V} {
+            width: 100%;
+        }
+        @media #{$phone} {
+            padding: 0 20px 100px 20px;
+        }
+        ._top {
+            margin-bottom: 70px;
+            h2 {
+                animation: none;
+            }
+            h2:after {
+                animation: none;
+            }
+            p {
+                animation: none;
+            }
+        }
+        ._close {
+            a:before {
+                animation: none;
+            }
+        }
+    }
+    .frame {
+        border-top: solid 4px #000;
+        border-bottom: solid 4px #000;
+        margin: 0 auto;
+        opacity: 0;
+    }
+    .frame li {
+        border-bottom: solid 1px #000;
+        padding: 0 35px;
+        @media #{$phone} {
+            padding: 0 20px;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+        &.open {
+            .title {
+                color: $base_red;
+                padding: 25px 0 12px 0;
+            }
+        }
+        .title {
+            padding: 25px 0;
+            display: flex;
+            align-items: center;
+            font-weight: $font-900;
+            @include trans(.5s);
+            .num {
+                @include font-size(18);
+                font-family: 'Cinzel-Bold';
+            }
+            .text {
+                padding-left: 20px;
+            }
+        }
+        .content {
+            @include font-size(14);
+            line-height: 1.6;
+            padding-left: 46px;
+            margin-bottom: 25px;
+
+            display: none;
+        }
+    }
+}
+
+//動畫
+.member_bonus .use_box.open {
+    animation: getIn .3s both;
+    .box {
+        animation: boxIn .7s both .3s;
+        ._top {
+            h2 {
+                animation: fadeInDown .8s both 1s;
+            }
+            h2:after {
+                animation: titleLine .5s both 2s;
+            }
+            p {
+                animation: fadeInDown .8s both 1.4s;
+            }
+        }
+        ._close {
+            a:before {
+                animation: closeLine .8s both .4s;
+            }
+        }
+    }
+    .frame {
+        opacity: 1;
+        @include trans(1s, 1.5s);
+    }
+}
+
+.member_bonus .use_box.close {
+    animation: getOut .3s both 1s;
+    .box {
+        animation: boxOut .7s both .3s;
+        ._top {
+            h2 {
+                animation: fadeOutUp .6s both;
+            }
+            h2:after {
+                animation: fadeOutUp .6s both;
+            }
+            p {
+                animation: fadeOutUp .6s both;
+            }
+        }
+        ._close {
+            a:before {
+                animation: closeLineOut .6s both;
+            }
+        }
+    }
+    .frame {
+        opacity: 0;
+        @include trans(.8s);
+    }
+}
+
+
+
+
+
+
+
+
+
+/* member_favorite */
+
+.member_favorite main {
+    padding-top: 114px;
+    ._top {
+        @media #{$phone} {
+            margin-top: 0;
+        }
+    }
+}
+
+.member_favorite .box_1 {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 110px;
+    max-width: 1540px;
+    padding: 0 40px;
+    @media #{$phone} {
+        padding: 0 2vw;
+    }
+    .frame {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .list {
+        width: calc(20% - 20px);
+        margin: 0 10px 70px 10px;
+        padding-bottom: 30px;
+        position: relative;
+        opacity: 0;
+        @include trans(.5s);
+        &.show {
+            opacity: 1;
+        }
+        @media #{$pad_V} {
+            width: calc(25% - 20px);
+        }
+        @media (max-width:860px) {
+            width: calc(33.3% - 20px);
+        }
+        @media #{$phone} {
+            width: calc(50% - 10px);
+            margin: 0 5px 70px 5px;
+        }
+        @media (max-width:374px) {
+            width: calc(50% - 10px);
+            margin: 0 5px 70px 5px;
+        }
+    }
+}
+
+.member_favorite {
+    .block {}
+    .block .link {
+        @include font-size(12);
+        padding: 0 6px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: baseline;
+        @media (max-width: 374px) {
+            padding: 0;
+            width: 100%;
+
+            justify-content: center;
+        }
+        p {
+            padding: 0 14px;
+            @media (max-width: 374px) {
+                padding: 0;
+            }
+        }
+        a {
+            display: flex;
+        }
+        a:first-child:after {
+            content: '';
+            width: 1px;
+            height: 13px;
+            background-color: #d2b055;
+
+            display: block;
+            @media (max-width: 374px) {
+                margin: 0 10px;
+            }
+        }
+        .delete {
+            color: $base_red;
+        }
+    }
+    .block .info {
+        h2 {
+            @include font-size(15);
+            font-family: 'Raleway-SemiBold';
+            letter-spacing: 1px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        h3 {
+            @include font-size(15);
+            letter-spacing: 1px;
+            line-height: 1.4;
+            color: #404040;
+        }
+        .text {
+            padding: 0 20px;
+        }
+        ._img {
+            max-width: 272px;
+            max-height: 272px;
+            overflow: hidden;
+            margin: 0 auto 20px auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                transition: all .8s ease;
+            }
+            img:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.member_favorite .delete_box {
+    width: 100vw;
+    height: 100%;
+    padding: 50px 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+    @media (max-device-height: 1024px) and (orientation: landscape) {
+        display: block;
+    }
+    @media #{$phone} and (orientation: portrait) {
+        padding: 0;
+        display: block;
+    }
+    .box {
+        width: 100%;
+        max-width: 686px;
+        background-color: #fff;
+        padding: 0 8% 100px 8%;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+        @media #{$phone} and (orientation: portrait) {
+            padding: 0 20px 100px 20px;
+        }
+        ._top {
+            margin-top: 60px;
+            margin-bottom: 50px;
+            h2 {
+                animation: none;
+            }
+            h2:after {
+                animation: none;
+            }
+            p {
+                animation: none;
+            }
+        }
+        ._close {
+            a:before {
+                animation: none;
+            }
+        }
+        .block {
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            ._img {
+                margin: 0 auto 20px auto;
+            }
+            .text {
+                max-width: 272px;
+                margin: 0 auto;
+                .price {
+                    @include font-size(13);
+                    font-family: 'Cinzel-Regular';
+                    font-weight: $font-600;
+                    margin-top: 12px;
+                    letter-spacing: 0.5px;
+                    color: $base_red;
+                }
+            }
+        }
+        .form_btn {
+            opacity: 0;
+            max-width: 348px;
+            a {
+                margin: 0 2px;
+            }
+        }
+    }
+}
+
+//動畫
+.member_favorite .delete_box.open {
+    animation: getIn .3s both;
+    .box {
+        animation: openBox 3s both;
+        ._top {
+            h2 {
+                animation: fadeInDown .8s both 1s;
+            }
+            h2:after {
+                animation: titleLine .5s both 2s;
+            }
+            p {
+                animation: fadeInDown .8s both 1.4s;
+            }
+        }
+        ._close {
+            a:before {
+                animation: closeLine .8s both .6s;
+            }
+        }
+        .block {
+            opacity: 1;
+            @include trans(.8s, 2s);
+        }
+        .form_btn {
+            opacity: 1;
+            @include trans(.8s, 2.4s);
+        }
+    }
+}
+
+.member_favorite .delete_box.close {
+    animation: getOut .3s both 1s;
+    .box {
+        animation: closeBox 1s both;
+        ._top {
+            h2 {
+                animation: fadeOutUp .6s both;
+            }
+            h2:after {
+                animation: fadeOutUp .6s both;
+            }
+            p {
+                animation: fadeOutUp .6s both;
+            }
+        }
+        ._close {
+            a:before {
+                animation: closeLineOut .6s both;
+            }
+        }
+        .block {
+            opacity: 0;
+            @include trans(.6s);
+        }
+        .form_btn {
+            opacity: 0;
+            @include trans(.6s);
+        }
+    }
+}
+
+
+
+
+
+
+
+/* member_favorite */
+
+.member_address main {
+    padding-top: 114px;
+    ._top {
+        @media #{$phone} {
+            margin-top: 0;
+        }
+    }
+}
+
+.member_address .box_1 {
+    margin-bottom: 185px;
+    padding: 0 20px;
+    .frame {
+        max-width: 1160px;
+        margin: 0 auto;
+
+        display: flex;
+        flex-wrap: wrap;
+        @media #{$phone} {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .list {
+        width: calc(50% - 40px);
+        max-width: 540px;
+        margin: 0 20px 40px 20px;
+        position: relative;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        &:nth-child(2n+1) {
+            transform: translateY(150px);
+            @include trans(1s,.5s);
+        }
+        &:nth-child(2n) {
+            transform: translateY(150px);
+            @include trans(1.1s,.7s);
+        }
+        &.show {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        @media #{$phone} {
+            width: 100%;
+            margin: 0 0 40px 0;
+        }
+    }
+    .state_1 {
+        cursor: pointer;
+        border: solid 4px #000;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), 8px 8px 8px rgba(0, 0, 0, 0.2) inset;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            span {
+                color: $base_red;
+                transform: rotateZ(180deg);
+            }
+        }
+        @media #{$phone} {
+            min-height: 430px;
+        }
+        .add_tetx {
+            text-align: center;
+            span {
+                @include font-size(20);
+                margin-bottom: 20px;
+                display: block;
+                @include trans(.7s);
+            }
+            h2 {
+                @include font-size(26);
+                font-family: 'Raleway-light';
+                margin-bottom: 14px;
+            }
+            p {
+                @include font-size(18);
+                font-weight: $font-900;
+                color: #404040;
+            }
+        }
+    }
+    .state_2 {
+        background-color: #f2f2f2;
+    }
+    .member_form {
+        padding: 0 40px;
+        @media #{$phone} {
+            padding: 0 20px;
+        }
+        li {
+            flex-direction: row;
+            align-items: baseline;
+        }
+        label {
+            @media #{$phone} {
+                width: 110px;
+                margin-right: 12px;
+            }
+        }
+        .title {
+            @include font-size(18);
+            font-weight: $font-900;
+            color: #333333;
+            text-align: center;
+            line-height: 1.6;
+            margin-top: 45px;
+            margin-bottom: 14px;
+        }
+        .login_member {
+            border-bottom: solid 4px #000;
+            margin-bottom: 50px;
+            max-width: none;
+            li:last-child {
+                border-bottom: none;
+            }
+        }
+        .text {
+            @include font-size(14);
+            font-family: '微軟正黑體';
+            width: 65%;
+            padding: 20px 0;
+            line-height: 1.6;
+            @media #{$phone} {
+                width: 100%;
+            }
+        }
+        .form_btn {
+            margin-bottom: 60px;
+            max-width: 348px;
+            a {
+                margin: 0 2px;
+            }
+        }
+    }
+}
+
+.member_address .address_box {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    opacity: 0;
+    visibility: hidden;
+
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+    input {
+        letter-spacing: 0.5px;
+    }
+    ._top {
+        margin-bottom: 70px;
+    }
+    .member_form {
+        .login_member {
+            border-bottom: solid 4px #000;
+        }
+        .text {
+            font-size: 0.875rem;
+            font-family: '微軟正黑體';
+            width: 65%;
+            padding: 20px 0;
+            line-height: 1.6;
+        }
+    }
+    .box {
+        width: 50%;
+        min-height: 100%;
+        background-color: #fff;
+        margin-left: auto;
+        padding: 0 10%;
+        position: relative;
+        transform: translateX(100%);
+        @media (max-width: 1365px) {
+            padding: 0 5% 100px 5%;
+        }
+        @media #{$pad_V} {
+            width: 100%;
+        }
+        @media #{$phone} {
+            padding: 0 20px 100px 20px;
+        }
+        .member_form {
+            margin-bottom: 50px;
+            opacity: 0;
+        }
+        .login_member {
+            max-width: none;
+        }
+        .form_btn {
+            max-width: 348px;
+            opacity: 0;
+            a {
+                margin: 0 2px;
+            }
+        }
+        ._top {
+            h2 {
+                animation: none;
+            }
+            h2:after {
+                animation: none;
+            }
+            p {
+                animation: none;
+            }
+        }
+        ._close {
+            a:before {
+                animation: none;
+            }
+        }
+    }
+    .adbox {}
+    .adbox_1 {
+        display: none;
+        &.open {
+            display: block;
+        }
+    }
+    .adbox_2 {
+        display: none;
+        &.open {
+            display: block;
+        }
+    }
+    .adbox_3 {
+        display: none;
+        &.open {
+            display: block;
+        }
+    }
+}
+
+//動畫
+.member_address .address_box.open {
+    animation: getIn .3s both;
+    .box {
+        animation: boxIn .7s both .3s;
+        ._top {
+            h2 {
+                animation: fadeInDown .8s both 1s;
+            }
+            h2:after {
+                animation: titleLine .5s both 2s;
+            }
+            p {
+                animation: fadeInDown .8s both 1.4s;
+            }
+        }
+        ._close {
+            a:before {
+                animation: closeLine .8s both .4s;
+            }
+        }
+        .member_form {
+            opacity: 1;
+            animation: fadeIn .8s both 2s;
+        }
+        .form_btn {
+            opacity: 1;
+            animation: fadeIn .8s both 2.4s;
+        }
+    }
+}
+
+.member_address .address_box.close {
+    animation: getOut .3s both 1s;
+    .box {
+        animation: boxOut .7s both .3s;
+        ._top {
+            h2 {
+                animation: fadeOutUp .6s both;
+            }
+            h2:after {
+                animation: fadeOutUp .6s both;
+            }
+            p {
+                animation: fadeOutUp .6s both;
+            }
+        }
+        ._close {
+            a:before {
+                animation: closeLineOut .6s both;
+            }
+        }
+        .member_form {
+            opacity: 0;
+            @include trans(.6s);
+        }
+        .form_btn {
+            opacity: 0;
+            @include trans(.6s);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/* member_guide */
+
+.member_guide main {
+    padding-top: 114px;
+    ._top {
+        margin-bottom: 135px;
+        @media #{$phone} {
+            margin-top: 0;
+            margin-bottom: 80px;
+        }
+    }
+}
+
+.member_guide .work_1 {
+    max-width: 1260px;
+    padding: 0 20px;
+    margin: 0 auto 120px auto;
+    @media (max-width: 1260px) {
+        padding: 0 50px;
+    }
+    @media #{$pad_V} {
+        margin: 0 auto 90px auto;
+    }
+    @media #{$phone} {
+        padding: 0 30px;
+        flex-direction: column;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .box_1 {
+        display: flex;
+        align-items: center;
+        animation: fadeInUp 1s both 1s;
+        @media #{$pad_V} {
+            width: 50%;
+            flex-direction: column;
+        }
+        @media #{$phone} {
+            width: 100%;
+            margin-bottom: 80px;
+        }
+        .selfie {
+            margin: 0 90px 0 50px;
+            @media (max-width: 1260px) {
+                margin: 0 90px 0 0px;
+            }
+            @media #{$pad_V} {
+                margin: 0 auto 50px auto;
+            }
+            @media #{$phone} {
+                margin: 0 20px 45px 20px;
+            }
+            @media (max-width:374px) {
+                margin: 0 0 45px 0;
+            }
+            img {
+                border: solid 12px #e6e6e6;
+                box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+            }
+        }
+        .block {
+            padding-right: 40px;
+            @media #{$pad_V} {
+                padding-right: 0px;
+            }
+            .notify {
+                margin-bottom: 40px;
+                @media #{$phone} {
+                    margin-bottom: 20px;
+                }
+                p {
+                    @include font-size(18);
+                    color: #303030;
+                    line-height: 1.6;
+                }
+                .name {
+                    @include font-size(26);
+                    span {
+                        @include font-size(15);
+                        color: #4c4c4c;
+                    }
+                }
+            }
+            .serial {
+                p {
+                    @include font-size(13);
+                    font-weight: $font-900;
+                    font-family: '微軟正黑體';
+                    margin-bottom: 15px;
+                    letter-spacing: 0.5px;
+                }
+            }
+            .link {
+                display: flex;
+                align-items: center;
+                .red {
+                    color: $base_red;
+                }
+                li:first-child {
+                    display: flex;
+                    align-items: center;
+                }
+                li:first-child:after {
+                    content: '';
+                    width: 1px;
+                    height: 15px;
+                    background-color: #999999;
+                    margin: 0 14px;
+
+                    display: block;
+                }
+                p {
+                    @include font-size(13);
+                    padding: 5px 0;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+    .box_2 {
+        margin-right: 70px;
+        animation: fadeInUp 1s both 1.4s;
+        @media (max-width: 1260px) {
+            margin-right: 0px;
+        }
+        @media #{$pad_V} {
+            width: 50%;
+        }
+        @media #{$phone} {
+            width: 100%;
+        }
+        p {
+            font-family: '微軟正黑體';
+            text-align: center;
+        }
+        .title {
+            @include font-size(14);
+            font-family: 'Raleway-SemiBold';
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        ._top {
+            margin-top: 0;
+            margin-bottom: 0;
+            h2 {
+                @include font-size(16);
+                color: #404040;
+                margin-bottom: 25px;
+                &:after {
+                    margin-top: 10px;
+                }
+            }
+        }
+        .point {
+            @include font-size(34);
+            font-family: 'Cinzel-Bold';
+            color: $base_red;
+            margin-bottom: 30px;
+            span {
+                margin-left: 14px;
+            }
+        }
+        .change {
+            @include font-size(12);
+            margin-bottom: 15px;
+        }
+        .date {
+            @include font-size(12);
+            margin-bottom: 15px;
+        }
+        .form_btn {
+            width: 170px;
+        }
+    }
+}
+
+.member_guide .work_2 {
+    max-width: 1320px; // padding: 0 20px;
+    margin: 0 auto 120px auto;
+    .box_1 {
+        .frame {
+            // display: flex;
+            // flex-wrap: wrap;
+            &.clearfix:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+        .list {
+            width: 50%;
+            padding: 0 50px 100px 50px;
+            @include trans(.5s);
+            @media #{$pad_V} {
+                padding: 0 40px 100px 40px;
+            }
+            @media #{$phone} {
+                width: 100%;
+                padding: 0 30px 60px 30px;
+            }
+            .block {
+                margin: 0 auto;
+            }
+            &.show {
+                animation: fadeInUp 1.2s both;
+                .count {
+                    height: 100px;
+                    p {
+                        opacity: 1;
+                    }
+                }
+            }
+            &.regular {
+                .text {
+                    padding: 0 15%;
+                    @media #{$pad_V} {
+                        padding: 0 10%;
+                    }
+                }
+            }
+            &.commer {
+                .text {
+                    padding: 0 35px;
+                    @media #{$pad_V} {
+                        padding: 0 25px;
+                    }
+                    @media #{$phone} {
+                        padding: 0 15px;
+                    }
+                }
+            }
+        }
+        .list:nth-child(2) {
+            margin-top: 100px;
+            @media #{$phone} {
+                margin-top: 0;
+            }
+        }
+        .list:nth-child(2n) {
+            float: right;
+        }
+        .list:nth-child(2n+1) {
+            float: left;
+        }
+
+        .img {
+            margin-bottom: 45px;
+            position: relative;
+            img {
+                width: 100%;
+                margin: 0 auto;
+            }
+            .count {
+                width: 100%;
+                height: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include trans(1s, 1s);
+                @media #{$pad_V} {
+                    height: 70px;
+                }
+                p {
+                    @include font-size(13);
+                    color: #fff;
+                    opacity: 0;
+                    display: flex;
+                    align-items: center;
+                    @include trans(.5s, 2s);
+                    span {
+                        @include font-size(40);
+                        font-family: 'Raleway-Medium';
+                        margin-right: 18px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+        .text {
+            @include trans(.5s);
+            .title {
+                @include font-size(28);
+                margin-bottom: 28px;
+                line-height: 1.4;
+                @media #{$phone} {
+                    @include font-size(23);
+                }
+            }
+            .info {
+                @include font-size(13);
+                line-height: 1.6;
+                width: 100%;
+                max-width: 310px;
+                color: #4c4c4c;
+                margin-bottom: 26px;
+            }
+            .link {
+                margin-bottom: 14px;
+                display: flex;
+                align-items: center;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                p {
+                    @include font-size(13);
+                }
+                span {
+                    font-size: 0;
+                    border: none;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                    background-color: #d80b18;
+                    position: relative;
+
+                    display: block;
+                }
+                span:before,
+                span:after {
+                    content: "";
+                    background-color: #fff;
+                    position: absolute;
+                    display: block;
+                }
+                span:before {
+                    height: 2px;
+                    width: 10px;
+                    top: calc(50% - 1px);
+                    left: calc(50% - 5px);
+                }
+                span:after {
+                    height: 10px;
+                    width: 2px;
+                    left: calc(50% - 1px);
+                    top: calc(50% - 5px);
+                }
+                &:hover {
+                    span {
+                        transform: rotateZ(180deg);
+                        transition: all .4s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+@keyframes openBox {
+    0% {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        padding: 0 8% 0 8%;
+    }
+    100% {
+        max-height: 2000px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes closeBox {
+    0% {
+        max-height: 2000px;
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        padding: 0 8% 0 8%;
+    }
+}
+
+@keyframes getIn {
+    0% {
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        z-index: 12;
+        visibility: visible;
+    }
+}
+
+@keyframes getOut {
+    0% {
+        opacity: 1;
+        z-index: 12;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+}
+
+@keyframes boxIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes boxOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes showIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        z-index: 13;
+    }
+    100% {
+        opacity: 1;
+        z-index: 13;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        z-index: 13;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes frameIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes frameOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

@@ -1,0 +1,874 @@
+#news.detail
+    &.guide .more
+        display: none
+    .rows .row
+        .eventTime
+            width: calc(100% + 120px)
+            margin: 40px -60px
+            text-align: center
+            @media (max-width: 1500px)
+                width: calc(100% + 70px)
+                margin: 40px -35px
+            @media (max-width: 1024px)
+                margin: 40px 0
+            &.show 
+                h6
+                    animation: fadeInDown 1.2s both
+                .listTable
+                    animation: fadeInUp 1.5s both .4s
+            p
+                opacity: 1
+            h6
+                text-align: center
+            .listTable
+                width: 100%
+                border: 1px solid #c4c4c4
+                padding: 45px 90px 80px
+                opacity: 0
+                @media (max-width: 1500px)
+                    padding: 45px 5vw 80px
+                @media (max-width: 1300px)
+                    padding: 45px 3vw 80px
+                @media (max-width: 900px)
+                    padding: 20px 3vw 80px
+                .name,.time
+                    position: relative
+                    &:after
+                        +fakeLine(5px,calc(100% + 6px),#fff)
+                        position: absolute
+                        top: 0
+                        right: 0
+                        @media (max-width: 900px)
+                            display: none
+                .name
+                    width: 38%
+                    text-align: left
+                    @media (max-width: 1300px)
+                        width: 26%
+                    @media (max-width: 900px)
+                        width: 100%
+                    @media (max-width: 550px)
+                        order: 1
+                .place
+                    width: 17%
+                    @media (max-width: 1300px)
+                        width: 20%
+                    @media (max-width: 900px)
+                        width: calc(50% - 8px)
+                    @media (max-width: 550px)
+                        width: calc(100% - 10px)
+                        order: 2
+                .time
+                    width: 17%
+                    @media (max-width: 1300px)
+                        width: 22%
+                    @media (max-width: 900px)
+                        width: calc(50% - 8px)
+                    @media (max-width: 550px)
+                        width: calc(100% - 10px)
+                        order: 3
+                .seeIntro
+                    width: 14%
+                    @media (max-width: 1300px)
+                        width: 16%
+                    @media (max-width: 900px)
+                        width: calc(50% - 8px)
+                    @media (max-width: 550px)
+                        width: calc(100% - 10px)
+                        order: 5
+                .signButton
+                    width: 14%
+                    @media (max-width: 1300px)
+                        width: 16%
+                    @media (max-width: 900px)
+                        width: calc(50% - 8px)
+                        border-bottom: none
+                    @media (max-width: 550px)
+                        width: calc(100% - 10px)
+                        order: 4
+                // 標題
+                .listhead
+                    width: 100%
+                    display: flex
+                    align-items: flex-end
+                    @media (max-width: 900px)
+                        display: none
+                    &>div
+                        border-bottom: 3px solid #4c4c4c
+                        padding: 10px 0
+                        &.name
+                            padding: 10px 0 10px 90px 
+                            @media (max-width: 1500px)
+                                padding: 10px 0 10px 5vw
+                            @media (max-width: 1300px)
+                                padding: 10px 0 10px 20px
+                    p
+                        font-size: px(15)
+                        font-weight: bolder
+                // 內容
+                .listbody .list
+                    display: flex
+                    justify-content: space-around
+                    flex-wrap: wrap
+                    @media (max-width: 900px)
+                        padding: 10px 0 0
+                        border-bottom: 3px solid #a9a9a9
+                        &:not(:last-child)
+                            margin-bottom: 100px
+                        &.active .seeIntro:after
+                            width: 100%
+                            transition: 1s ease .5s
+                    &.full .signButton
+                        &:after
+                            content: "已額滿"
+                            color: #8e8e8e
+                            font-size: px(15)
+                            display: block
+                            padding: 10px 0
+                        .openLogin
+                            display: none
+                    &>div
+                        border-bottom: 1px solid #a9a9a9
+                        @media (max-width: 900px)
+                            position: relative
+                        &:before
+                            @media (max-width: 900px)
+                                content: attr(data-name)
+                                font-size: px(17)
+                                font-weight: bold
+                                position: absolute
+                                top: 50%
+                                left: 5px
+                                transform: translateY(-50%)
+                            @media (max-width: 550px)
+                                width: 40%
+                                left: 0
+                        p
+                            font-size: px(15)
+                        &:not(.intro)
+                            +flex-center
+                            flex-direction: column
+                            padding: 15px 0
+                            @media (max-width: 900px)
+                                padding: 15px 0 15px 20%
+                            @media (max-width: 550px)
+                                padding: 15px 0 15px 40%
+                        &.name
+                            padding: 15px 0 15px 90px 
+                            align-items: flex-start
+                            font-weight: bold
+                            @media (max-width: 1500px)
+                                padding: 15px 0 15px 5vw
+                            @media (max-width: 1300px)
+                                padding: 15px 0 15px 20px
+                            @media (max-width: 900px)
+                                align-items: center
+                                padding: 15px 0
+                                border-bottom: 3px solid #a9a9a9
+                            p
+                                font-size: px(17)
+                        &.time
+                            p:nth-child(2)
+                                +JaguarJC-Bold
+                        &.seeIntro
+                            @media (max-width: 900px)
+                                border-bottom: none
+                        &.signButton
+                            @media (max-width: 900px)
+                                border-bottom: none
+                            @media (max-width: 550px)
+                                border-bottom: 1px solid #a9a9a9
+                    .seeIntro
+                        @media (max-width: 900px)
+                            position: relative
+                        &:after
+                            @media (max-width: 550px)
+                                +fakeLine(0%,1px,#000)
+                                position: absolute
+                                left: 50%
+                                bottom: 0
+                                transform: translateX(-50%)
+                                transition: all .5s ease 
+                        button
+                            border: none
+                            background-color: transparent
+                            padding: 15px 
+                            &:before
+                                content: "▼"
+                                height: 30px
+                                width: 30px
+                                +flex-center
+                                font-size: px(12)
+                                transform: scale(0.83)
+                                transition: all .5s ease
+                                border-radius: 50%
+                                background-color: #c8c8c8
+                                color: #494949
+                            &:hover:before,&.active:before
+                                background-color: #dab17b
+                                color: #fff
+                            &.active:before
+                                transform: scale(0.83) rotateX(180deg)
+                    .signButton a
+                        padding: 10px 0
+                        color: #565656
+                        transition: all .3s ease
+                        &:hover
+                            color: #c99454
+                            
+                    .intro
+                        width: 100%
+                        display: none
+                        position: relative
+                        @media (max-width: 550px)
+                            order: 6
+                        &.active:before,&.active:after
+                            width: 100%
+                            transition: all 1s ease .5s
+                        &:before,&:after
+                            +fakeLine(0%,1px,#000)
+                            position: absolute
+                            left: 50%
+                            transform: translateX(-50%)
+                            transition: all .5s ease 
+                        &:before
+                            top: -1px
+                            @media (max-width: 550px)
+                                display: none
+                        &:after
+                            bottom: -1px
+                            @media (max-width: 900px)
+                                display: none
+                        &>div
+                            text-align: justify
+                            max-width: 690px
+                            width: 100%
+                            padding: 15px 0 15px 90px
+                            @media (max-width: 1500px)
+                                padding: 15px 0 15px 5vw
+                            @media (max-width: 1300px)
+                                padding: 15px 0 15px 20px
+                            @media (max-width: 900px)
+                                max-width: none
+                                padding: 15px 5px
+                            @media (max-width: 550px)
+                                padding: 25px 10px
+                            &:not(:last-child)
+                                border-bottom: 1px solid #a9a9a9
+                            ._title
+                                color: #908eed
+                                display: flex
+                                margin-bottom: 5px
+                                @media (max-width: 550px)
+                                    justify-content: center
+                                    margin-bottom: 15px
+                                span
+                                    margin-right: 10px
+                                    font-size: px(21)
+                                p
+                                    font-weight: bold
+                                    @media (max-width: 550px)
+                                        font-size: px(17)
+                            ._text
+                                font-size: px(15)
+                                letter-spacing: 0
+                                .price
+                                    padding: 0 0 0 28px
+                                    position: relative
+                                    font-size: px(17)
+                                    color: #d11414
+                                    font-weight: bold
+                                    letter-spacing: 0
+                                    @media (max-width: 550px)
+                                        padding: 0 0 0 14px
+                                    &:before
+                                        content: attr(data-name) " "
+                                        font-size: px(15)
+                                        color: rgba(0,0,0,.9)
+                                        font-weight: normal
+                                    &:after
+                                        position: absolute
+                                        left: 13px
+                                        top: 2px
+                                        +fakeLine(1px,17px,#c3c3c3)
+                                        @media (max-width: 550px)
+                                            left: 6px
+    .more
+        margin-top: 50px
+        @media all and (max-width: 1279px)
+            margin-top: 0
+        ._title
+            +flex-center
+            flex-direction: column
+            .ch
+                font-size: px(20)
+                opacity: 0
+                @media all and (max-width: 1279px)
+                    font-size: px(18)
+            .en
+                font-size: px(38)
+                opacity: 0
+                @media all and (max-width: 1279px)
+                    font-size: px(34)
+                &:after
+                    margin: 10px auto 30px
+                    +fakeLine(0px,2px,#575757)
+            &.show
+                .ch
+                    animation: fadeInDown 1.2s both 
+                .en
+                    animation: fadeInUp 1.5s both .2s
+                    &:after
+                        animation: w40 .6s both .6s
+        .links
+            display: flex
+            justify-content: space-between
+            @media all and (max-width: 700px)
+                flex-direction: column
+            a
+                width: calc(50% - 3px)
+                background-color: #f1f1f1
+                display: flex
+                align-items: center
+                @media all and (max-width: 1279px) and (min-width: 701px)
+                    flex-direction: column
+                    align-items: flex-start
+                @media all and (max-width: 700px)
+                    width: 100%
+                &:nth-child(odd)
+                    justify-content: flex-end
+                    padding: 100px 4vw 100px 6vw
+                    @media all and (max-width: 1440px)
+                        padding: 7vw 2vw 7vw 3vw
+                    @media all and (max-width: 1279px)
+                        justify-content: flex-start 
+                        padding: 50px 30px 
+                    @media all and (max-width: 700px)
+                        margin: 0 0 3px
+                        padding: 10vw 0 10vw 5vw
+                &:nth-child(even)
+                    justify-content: flex-start
+                    padding: 100px 6vw 100px 4vw 
+                    @media all and (max-width: 1440px)
+                        padding: 7vw 3vw 7vw 2vw 
+                    @media all and (max-width: 1279px)
+                        padding: 50px 30px 
+                    @media all and (max-width: 700px)
+                        flex-direction: row-reverse
+                        margin: 3px 0 0 
+                        padding: 10vw 5vw 10vw 0
+                &.show
+                    figure.in
+                        animation: fadeInUp 1.2s both
+                    ._text
+                        animation: fadeInUp 1.5s both .5s
+                &:hover figure .hoverBox
+                    opacity: 1
+                    span:before
+                        width: 100%
+                        transition: all .4s ease .1s
+                    span:after
+                        height: 100%
+                        transition: all .4s ease .1s
+                figure
+                    width: 270px
+                    height: 250px
+                    position: relative
+                    opacity: 0
+                    @media all and (max-width: 1279px)
+                        width: 100%
+                        height: auto
+                    .hoverBox
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%  
+                        +flex-center
+                        flex-direction: column 
+                        font-size: px(15)
+                        color: #fff
+                        background-color: rgba(0,0,0,.65)
+                        opacity: 0
+                        transition: all .4s ease
+                        span
+                            +cross(40px,40px)
+                            display: block
+                            margin: 0 0 15px
+                            &:before
+                                +cross_before(0%,#fff)
+                                transition: all .4s ease
+                            &:after
+                                +cross_after(0%,#fff)
+                                transition: all .4s ease
+                ._text
+                    +flex-left
+                    padding: 0 0 0 30px
+                    width: calc(100% - 270px)
+                    max-width: 270px
+                    letter-spacing: 0
+                    opacity: 0
+                    @media all and (max-width: 1279px)
+                        width: 100%
+                    @media all and (max-width: 1279px) and (min-width: 701px)
+                        padding: 20px 5px 0
+                    @media all and (max-width: 700px)
+                        padding: 0 5vw
+                    .slogan
+                        color: #fff
+                        font-size: px(15)
+                        padding: 5px 30px 5px 20px
+                        margin: 0 0 25px
+                        @media all and (max-width: 700px)
+                            font-size: px(13)
+                            margin: 0 0 20px
+                            padding: 5px 25px 5px 15px
+                    .type
+                        font-size: px(16)
+                        color: rgba(0,0,0,.8)
+                        @media all and (max-width: 700px)
+                            font-size: px(15)
+                        &:after
+                            +fakeLine(20px,1px,#000)
+                            margin: 5px 0 10px
+                    .name
+                        font-size: px(22)
+                        font-weight: bold
+                        @media all and (max-width: 1440px)
+                            font-size: px(20)
+                        @media all and (max-width: 700px)
+                            font-size: px(18)
+    .liboxs .libox
+        background-color: rgba(0,0,0,.8)
+        color: #000
+        .box
+            background-image: url('../../upload/fa2/card/detail/liboxBg_900_670.jpg')
+            .word 
+                p,ul li
+                    line-height: 1.8
+            .buttons
+                .icon-person
+                    font-size: px(22)
+                .icon-hook
+                    font-size: px(15)
+    .formLibox
+        +basicLibox
+        background-color: rgba(0,0,0,.8)
+        z-index: 11
+        overflow-y: auto
+        overflow-x: hidden
+        display: none
+        &.open
+            display: block
+            animation: fadeIn .4s both
+            &>div
+                animation: slideInRight 1s both 
+        &.close
+            display: block
+            animation: fadeOut .4s both .2s
+            &>div
+                animation: slideOutRight .6s both
+        &.check
+            .topTitle .eventName .ch:after
+                content: " 報名資訊確認"
+            .form 
+                input
+                    pointer-events: none
+                .count div button
+                    display: none
+                form .type .price>p
+                    color: rgba(0,0,0,.9)
+                .table .list 
+                    .left button
+                        display: none
+                    .right
+                        .box.must .name p:before
+                            opacity: 0
+                        .dropDown .selectMenu
+                            pointer-events: none
+                            p
+                                color: #000
+                            &:after
+                                opacity: 0
+                .buttons
+                    .total
+                        display: flex
+        &>div
+            background-color: #fff
+            min-height: 100%
+            width: 100%
+            margin: auto 0 auto auto
+            max-width: 1250px
+            position: relative
+            padding: 0 0 100px
+        .liboxClose
+            position: absolute
+            top: 0
+            left: 0
+            width: 180px
+            height: 60px
+            background-color: #4c4c4c
+            +flex-center
+            cursor: pointer
+            @media (max-width: 700px)
+                width: 40px
+                height: 40px
+            span
+                +cross(25px,25px)
+                display: block
+                transform: rotate(45deg)
+                @media (max-width: 700px)
+                    width: 20px
+                    height: 20px
+                &:before
+                    +cross_before(100%,#fff)
+                &:after
+                    +cross_after(100%,#fff)
+        .topTitle
+            background-color: #ebeaea
+            padding: 140px 50px 45px
+            @media (max-width: 1024px)
+                padding: 120px 5vw 45px
+            @media (max-width: 700px)
+                padding: 90px 5vw 45px
+            &>*
+                max-width: 780px
+                width: 100%
+                margin: auto
+            .eventName
+                position: relative
+                padding-right: 150px
+                @media (max-width: 700px)
+                    padding-right: 0
+                    position: static
+                .en
+                    color: #b7b7b7
+                    font-size: px(38)
+                    +JaguarJC-Bold
+                    @media (max-width: 700px)
+                        font-size: px(34)
+                .ch
+                    font-size: px(24)
+                    font-weight: bold
+                    @media (max-width: 700px)
+                        font-size: px(22)
+                    &:after
+                        content: " 報名表格"
+                .hi
+                    position: absolute
+                    top: 10px
+                    right: 0
+                    display: flex
+                    align-items: flex-end
+                    opacity: 0
+                    animation: fadeInUp 1.2s both 1s
+                    @media (max-width: 700px)
+                        right: 5vw
+                        top: 20px
+                    &:before
+                        font-family: 'icomoon'
+                        content: "\e906"
+                        font-size: px(22)
+                        color: #464646
+                        margin-right: 5px
+                    p
+                        font-size: px(15)
+                        font-weight: bold
+            .inf
+                margin-top: 80px
+                +inf
+                justify-content: flex-start
+                @media (max-width: 700px)
+                    justify-content: center
+                .type
+                    margin: 10px 50px 10px 0
+                    @media (max-width: 700px)
+                        margin: 10px 4px 40px
+        .form
+            padding: 50px 50px 0
+            @media (max-width: 1024px)
+                padding: 50px 5vw 100px
+            &>*
+                max-width: 780px
+                width: 100%
+                margin: auto
+            .ps 
+                color: #707070
+                font-size: px(15)
+                display: flex
+                align-items: center
+                font-weight: bold
+                &:before
+                    content: "i"
+                    +flex-center
+                    font-weight: normal
+                    color: #fff
+                    background-color: #707070
+                    width: 30px
+                    height: 30px
+                    border-radius: 50%
+                    margin-right: 10px
+            form
+                margin-top: 45px
+                .type
+                    display: flex
+                    justify-content: space-between
+                    flex-wrap: wrap
+                    position: relative
+                    &:after
+                        position: absolute
+                        +fakeLine(100%,1px,#b2b2b2)
+                        bottom: 0
+                        left: 0
+                        @media (max-width: 700px)
+                            height: 4px
+                    &:first-of-type
+                        border-top: 4px solid #b2b2b2
+                    &:nth-last-child(2):after
+                        height: 4px
+                    .typeName
+                        color: rgba(0,0,0,.8)
+                        display: flex
+                        align-items: flex-end
+                        flex-wrap: wrap
+                        padding: 35px 0 35px 80px
+                        max-width: 60%
+                        @media (max-width: 1024px)
+                            padding: 35px 5vw
+                        @media (max-width: 800px)
+                            padding: 35px 30px 35px 5px
+                            max-width: 100%
+                        @media (max-width: 700px)
+                            padding: 35px 30px 20px 5px
+                            flex-direction: column
+                            align-items: flex-start
+                            width: 100%
+                        h3
+                            font-size: px(20)
+                            font-weight: bold
+                            line-height: 1
+                            &:not(:last-child)
+                                margin-right: 10px
+                        p
+                            font-size: px(15)
+                            line-height: 1
+                            margin: 10px 0 0
+                            &:before
+                                content: " - "
+                                font-weight: bold
+                    .price
+                        display: flex
+                        align-items: center
+                        max-width: 40%
+                        padding: 20px 20px 20px 0 
+                        margin: 0 0 0 auto
+                        @media (max-width: 1024px)
+                            padding: 20px 10px 20px 5vw 
+                        @media (max-width: 800px)
+                            max-width: 100%
+                        @media (max-width: 700px)
+                            padding: 20px 10px 35px 5vw 
+                        &>p
+                            font-size: px(22)
+                            color: #d11414
+                            font-weight: bold
+                            letter-spacing: 0
+                            &:before
+                                content: attr(data-name) " "
+                                font-size: px(15)
+                                color: rgba(0,0,0,.9)
+                                font-weight: normal
+                            &:after
+                                content: " /人"
+                                font-size: px(13)
+                        .count
+                            position: relative
+                            display: flex
+                            align-items: center
+                            font-size: px(15)
+                            padding: 0 0 0 28px
+                            &:before
+                                position: absolute
+                                left: 13px
+                                top: 50%
+                                +fakeLine(2px,18px,#b5b5b5)
+                                transform: translateY(-50%)
+                                @media (max-width: 550px)
+                                    left: 6px
+                            div
+                                position: relative
+                                input,button
+                                    background-color: transparent
+                                    border: none
+                                input
+                                    width: 30px
+                                    text-align: center
+                                    font-size: px(22)
+                                button
+                                    position: absolute
+                                    left: 50%
+                                    transform: translateX(-50%)
+                                    padding: 5px
+                                    &:before
+                                        color: #5e5e5e
+                                    &.plus
+                                        bottom: calc(100% - 5px)
+                                        &:before
+                                            content: "▲"
+                                    &.decrease
+                                        top: calc(100% - 5px)
+                                        &:before
+                                            content: "▼"
+                .buttons
+                    max-width: 400px !important
+                    width: 100%
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                    margin: auto
+                    .total
+                        display: none
+                        width: 100%
+                        justify-content: center
+                        align-items: center
+                        font-size: px(17)
+                        margin-top: 45px
+                        p
+                            color: #d11414
+                            font-size: px(24)
+                            line-height: 1
+                            padding: 0 3px 5px
+                    a,button
+                        width: calc(50% - 2px)
+                        +flex-center
+                        border: none
+                        padding: 10px
+                        margin: 80px 0 0
+                        span
+                            margin-right: 10px
+                            font-size: px(18)
+                        p
+                            font-size: px(14)
+                        &:first-child
+                            background-color: #c0c0c0
+                            color: rgba(0,0,0,.7)
+                            span
+                                font-weight: bold
+                        &:last-child
+                            background-color: #000000
+                            color: rgba(255,255,255,.7)
+        // 插入的表單
+        .form form .table 
+            width: 100%
+            .list
+                display: flex
+                border-bottom: 1px solid #000
+                padding: 0 5px 0 0
+                @media (max-width: 800px)
+                    justify-content: space-between
+                @media (max-width: 500px)
+                    flex-direction: column
+                &:first-child
+                    border-top: 1px solid #000
+                &:not(:first-child)
+                    .left .same
+                        display: none
+                .left
+                    width: 300px
+                    padding: 35px 120px 35px 80px
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-start
+                    justify-content: center
+                    @media (max-width: 1024px)
+                        padding: 35px 12vw 35px 5vw
+                    @media (max-width: 800px)
+                        width: auto
+                        padding: 35px 20px 35px 5px
+                    @media (max-width: 500px)
+                        width: 100%
+                        flex-direction: row
+                        align-items: flex-end
+                        justify-content: flex-start
+                    .numb 
+                        color: #908eed
+                        font-size: px(32)
+                        margin: 0 0 20px
+                        @media (max-width: 500px)
+                            margin: 0 20px 0 0
+                    button
+                        border: none
+                        background-color: transparent
+                        +flex-center
+                        &:not(:last-child)
+                            margin: 0 0 15px
+                            @media (max-width: 500px)
+                                margin: 0 20px 0 0
+                        p
+                            font-size: px(14)
+                        &:after
+                            +fakeLine(15px,15px,transparent)
+                            border-radius: 3px
+                            border: 1px solid #a0a0a0
+                            margin-left: 5px
+                .right
+                    max-width: 360px
+                    width: calc(100% - 300px)
+                    padding: 0 0 35px
+                    @media (max-width: 800px)
+                        flex: 1 1 0
+                    @media (max-width: 500px)
+                        width: 100%
+                        flex: none
+                        max-width: unset
+                    .box
+                        display: flex
+                        justify-content: space-between
+                        &>div
+                            position: relative
+                            &:after
+                                position: absolute
+                                bottom: -1px
+                                left: 50%
+                                transform: translateX(-50%)
+                                +fakeLine(0%,1px,#ff7070)
+                        &.must .name p:before
+                            content: "*"
+                            color: #ff4b4b
+                            font-size: px(13)
+                            font-weight: bold
+                            position: absolute
+                            top: -5px
+                            left: 0
+                        &.wrong
+                            input::placeholder,.dropDown .selectMenu p
+                                color: #ff7070
+                            .dropDown.active .selectMenu p
+                                color: #000 !important
+                            &>div:after
+                                width: 100%
+                        .name
+                            width: calc(40% - 6px)
+                            border-bottom: 1px solid #a9a9a9
+                            padding: 20px 0 10px 
+                            +flex-center
+                            font-size: px(15)
+                            p
+                                font-weight: bold
+                                position: relative
+                                padding: 0 10px
+                        .inputArea
+                            width: 60%
+                            border-bottom: 1px solid #a9a9a9
+                            input
+                                padding: 25px 5px 10px 15px 
+                                border: none
+                                width: 100%
+                            .dropDown
+                                .selectMenu
+                                    padding: 25px 0 10px 15px 
+                                    opacity: 1
+                                    p
+                                        text-align: left
+                                    &:after
+                                        border-left: none

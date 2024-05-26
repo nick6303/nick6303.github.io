@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+</head>
+
+<body id="vip">
+    <header id="header"></header>
+    <main>
+        <article class="banner_wrap">
+            <div class="banner_vip">
+                <div class="banner_vip__title movein">
+                    <h4 class="txtin">Account Management</h4>
+                    <h5 class="txtin2">會員資料管理</h5>
+                </div>
+            </div>
+        </article>
+
+        <article class="nav_wrap nav_vip">
+            <div class="navbit">
+                <ul>
+                    <li>
+                        <a href="../vip/index.html">
+                            <h4>會員總覽</h4>
+                        </a>
+                    </li>
+                    <li class="focus">
+                        <a href="../vip/info.html">
+                            <h4>會員資料管理</h4>
+                        </a>
+                
+                    </li>
+                    <li>
+                        <!-- 專業用戶 -->
+                        <a href="../vip/company.html">
+                            <h4>企業資料管理</h4>
+                        </a>
+                        <!-- 一般用戶未申請 -->
+                        <!-- <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_oops1.html">
+                            <h4>會員資料管理</h4>
+                        </a> -->
+                        <!-- 審查中 -->
+                        <!-- <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_oops2.html">
+                            <h4>會員資料管理</h4>
+                        </a> -->
+                    </li>
+                    <li>
+                        <a href="../vip/bill.html">
+                            <h4>訂單查詢</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vip/address.html">
+                            <h4>我的地址簿 </h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vip/love.html">
+                            <h4>我的收藏</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vip/redpoint.html">
+                            <h4>紅利點數管理 </h4>
+                        </a>
+                    </li>
+                    <li class="vip_signout">
+                        <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_logout.html">
+                            <h4>會員登出</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="content_wrap ">
+            <div class="vip__content">
+                <div class="vip__inner vip_info">
+                    <div class="account">
+                        <div class="title">
+                            <h3>ACCOUNT & PASSWORD</h3>
+                            <h4>帳號密碼設定</h4>
+                            <hr>
+                            <p>若您需要重新設定電子郵件、手機號碼以及密碼，我們將進行手機驗證，以確認此操作為您本人親自進行。此外，為確保您的帳號使用安全，建議您每三個月更換一次密碼。</p>
+                        </div>
+                        <div class="input">
+                            <input type="text" name="phone" placeholder="phone">
+                            <h4>+866 912 345 678</h4>
+                        </div>
+                        <div class="input">
+                            <input type="text" name="e-mail" placeholder="e-mail">
+                            <h4>sandywu@gmail.com</h4>
+                        </div>
+                        <div class="thebtns">
+                            <ul class="list">
+                                <li class="">
+                                    <a href="../vip/member_change_account.html">
+                                        <div class="circle circle--40 circle--about_bit">
+                                            <span></span>
+                                        </div>
+                                        <h6>重設帳號</h6>
+                                    </a>
+                                </li>
+                                <li class="focus">
+                                    <a href="../vip/member_change_password.html">
+                                        <div class="circle circle--40 circle--about_bit">
+                                            <span></span>
+                                        </div>
+                                        <h6>重設密碼</h6>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <h3>MEMBER INFORMATION</h3>
+                            <h4>會員基本資料</h4>
+                            <hr>
+                            <p>請將正確資料詳細填寫於下方表單，以確保後續在使用、驗證與會員福利等權益。 完成所有資料的填寫即獲贈紅利點數 100 點唷！</p>
+                        </div>
+                        <div class="img_wrap">
+                            <h4>MY PHOTO 我的個人照片</h4>
+                            <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_photo.html">
+                                <div class="img">
+                                    <img src="../../upload/f2e/member/member_center_03.jpg">
+                                </div>
+                                <div class="circle circle--60 circle--info">
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="theform">
+                            <ul>
+                                <li class="w50">
+                                    <label for="name">NAME 姓名</label>
+                                    <input id="name" type="text">
+                                </li>
+
+                                <li class="w50">
+                                    <label for="name">GENDER 性別</label>
+                                    <div class="form_dropdown">
+                                        <select class="dropdown dropdown_vip" data-placeholder="請選擇你的性別">
+                                            <option value=""></option>
+                                            <option value="0">男</option>
+                                            <option value="1">女</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li class="w100 br">
+                                    <label for="corporation_add">BIRTH DAY 您的生日</label>
+                                    <div class="form_dropdown">
+                                        <select class="dropdown dropdown_vip" data-placeholder="年分">
+                                            <option value=""></option>
+                                            <option value="1">50</option>
+                                            <option value="2">51</option>
+                                            <option value="3">52</option>
+                                            <option value="4">53</option>
+                                            <option value="5">54</option>
+                                            <option value="6">55</option>
+                                            <option value="7">56</option>
+                                            <option value="8">57</option>
+                                            <option value="9">58</option>
+                                            <option value="10">59</option>
+                                            <option value="11">60</option>
+                                            <option value="12">61</option>
+                                            <option value="13">62</option>
+                                            <option value="14">63</option>
+                                            <option value="15">64</option>
+                                            <option value="16">65</option>
+                                            <option value="17">66</option>
+                                            <option value="18">67</option>
+                                            <option value="19">68</option>
+                                            <option value="20">69</option>
+                                        </select>
+                                    </div>
+                                    <div class="form_dropdown">
+                                        <select class="dropdown dropdown_vip" data-placeholder="月分">
+                                            <option value=""></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="form_dropdown">
+                                        <select class="dropdown dropdown_vip" data-placeholder="日期">
+                                            <option value=""></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li class="w100">
+                                    <label for="corporation_add">ADDRESS 聯繫地址</label>
+                                    <div class="form_dropdown">
+                                        <select class="dropdown dropdown_vip" data-placeholder="國家">
+                                            <option value=""></option>
+                                            <option value="1">台灣</option>
+                                            <option value="2">美國</option>
+                                            <option value="3">日本</option>
+                                        </select>
+                                    </div>
+                                    <div class="form_dropdown">
+                                        <select class="dropdown dropdown_vip" data-placeholder="省/洲">
+                                            <option value=""></option>
+                                            <option value="1">台灣省</option>
+                                            <option value="2">台灣省</option>
+                                            <option value="3">日本</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form_dropdown">
+                                        <select class="dropdown dropdown_vip" data-placeholder="縣市">
+                                            <option value=""></option>
+                                            <option value="1">南投縣</option>
+                                            <option value="2">台中縣</option>
+                                            <option value="3">台南縣</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="w100 br">
+                                    <input id="" type="text" placeholder="請輸入詳細地址">
+                                </li>
+
+
+
+                                <li class="w40">
+                                    <label for="corporation">CORPORATION 公司號碼</label>
+                                    <div class="form_tel">
+                                        <label for="">+</label>
+                                        <input id="name" type="text" placeholder="886">
+                                    </div>
+                                </li>
+                                <li class="w60">
+                                    <input id="corporation" type="text" placeholder="x-xxxx-xxxx">
+                                    <label for="">ext.</label>
+                                    <input id="name" type="text">
+                                </li>
+
+                                <li class="w40">
+                                    <label for="corporation">FAX 傳真號碼</label>
+                                    <div class="form_tel">
+                                        <label for="">+</label>
+                                        <input id="name" type="text" placeholder="886">
+                                    </div>
+                                </li>
+                                <li class="w60">
+                                    <input id="corporation" type="text" placeholder="x-xxxx-xxxx">
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="thebtns">
+                            <ul class="list">
+                                <li class="focus">
+                                    <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_success.html">
+                                        <div class="circle circle--40 circle--v">
+                                            <span></span>
+                                        </div>
+                                        <h6>儲存設定</h6>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    <footer id="footer"></footer>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="../../assets/js/vendor/slick/slick.js"></script>
+    <script src="../../assets/js/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../../assets/js/vendor/blazy.js"></script>
+    <script src="../../assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/imagesloaded.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/cgpagechange.js"></script>
+    <script src="../../assets/js/vendor/lbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <!-- 主要 -->
+    <script src="../../assets/js/main.js"></script>
+    <!-- 個別 -->
+    <script src="../../assets/js/vip.js"></script>
+
+</body>
+
+</html>

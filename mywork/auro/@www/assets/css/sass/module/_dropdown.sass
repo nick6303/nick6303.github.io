@@ -1,0 +1,235 @@
+.dropdowns
+    ul
+        +flex
+        flex-wrap: wrap
+    li    
+        margin: 2px 
+
+.dropdown
+    position: relative
+    width: 100%
+    min-width: 250px
+
+// 商品list的
+.select2-container--dropdownA
+    background: #f2f2f2
+    transition: background .5s,color .5s
+    font-size: px(15)
+    &.select2-container--open
+        background: #1b41a2
+        color: #fff
+    .select2-selection 
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        height: 40px
+        .select2-selection 
+            &__rendered
+                padding-left: 20px
+            &__arrow
+                height: 100%
+                position: absolute
+                top: 0px
+                right: 0px
+                width: 20px
+                b
+                    border-color: #888 transparent transparent transparent
+                    border-style: solid
+                    border-width: 5px 4px 0 4px
+                    height: 0
+                    left: 50%
+                    margin-left: -4px
+                    margin-top: -2px
+                    position: absolute
+                    top: 50%
+                    width: 0
+    span:focus 
+        outline: 0px
+
+    .select2-dropdown
+        margin-top: 1px
+        border-radius: 0px
+        background: #f2f2f2
+        color: #000
+        border: 0
+    .select2-results
+        &__option 
+            padding-left: 20px
+            height: 40px
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            &:hover
+                background: #1b41a2
+                color: #fff
+
+// 商品內的product_normal
+.select2-container--dropdownB
+    background: transparent
+    transition: background .5s,color .5s
+    font-size: px(15)
+    color: #000
+    font-family:  'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+    &.select2-container--open
+        color: #000
+    .select2-selection 
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        height: 40px
+        .select2-selection 
+            &__rendered
+                padding-left: 20px
+            &__arrow
+                height: 100%
+                position: absolute
+                top: 0px
+                right: 0px
+                width: 20px
+                b
+                    border-color: #888 transparent transparent transparent
+                    border-style: solid
+                    border-width: 5px 4px 0 4px
+                    height: 0
+                    left: 50%
+                    margin-left: -4px
+                    margin-top: -2px
+                    position: absolute
+                    top: 50%
+                    width: 0
+    span:focus 
+        outline: 0px
+    .select2-dropdown
+        margin-top: 1px
+        border-radius: 0px
+        background: #f2f2f2
+        color: #000
+        border: 0
+        max-height: 200px
+        overflow: auto
+
+    .select2-results
+        &__option 
+            padding-left: 20px
+            height: 40px
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            margin-bottom: 1px
+            &:hover
+                background: rgba(0,0,0,.5)
+                color: #fff
+
+// 註冊的
+.select2-container--dropdownC
+    background: #fff
+    background: transparent
+    transition: background .5s,color .5s
+    font-size: px(15)
+    color: #000
+    font-family:  'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+    &.select2-container--open
+        color: #000
+    .select2-selection 
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        height: 40px
+        .select2-selection 
+            &__rendered
+                padding-left: 20px
+            &__arrow
+                height: 100%
+                position: absolute
+                top: 0px
+                right: 0px
+                width: 20px
+                b
+                    border-color: #888 transparent transparent transparent
+                    border-style: solid
+                    border-width: 5px 4px 0 4px
+                    height: 0
+                    left: 50%
+                    margin-left: -4px
+                    margin-top: -2px
+                    position: absolute
+                    top: 50%
+                    width: 0
+    span:focus 
+        outline: 0px
+    .select2-dropdown
+        margin-top: 1px
+        border-radius: 0px
+        background: #fff
+        color: #000
+        border: 0
+        max-height: 200px
+        overflow: auto
+
+    .select2-results
+        &__option 
+            padding-left: 20px
+            height: 40px
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            margin-bottom: 1px
+            &:hover
+                background: rgba(0,0,0,.5)
+                color: #fff
+//  購買商品黑暗夕
+.select2-container--dropdownD
+    background: #151925
+    transition: background .5s,color .5s
+    font-size: px(15)
+    color: #fff
+    font-family:  'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+    &.select2-container--open
+        color: #000
+    .select2-selection 
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        height: 40px
+        .select2-selection 
+            &__rendered
+                padding-left: 20px
+            &__arrow
+                height: 100%
+                position: absolute
+                top: 0px
+                right: 0px
+                width: 20px
+                b
+                    border-color: #888 transparent transparent transparent
+                    border-style: solid
+                    border-width: 5px 4px 0 4px
+                    height: 0
+                    left: 50%
+                    margin-left: -4px
+                    margin-top: -2px
+                    position: absolute
+                    top: 50%
+                    width: 0
+    span:focus 
+        outline: 0px
+    .select2-dropdown
+        margin-top: 1px
+        border-radius: 0px
+        background: #f2f2f2
+        color: #000
+        border: 0
+        max-height: 200px
+        overflow: auto
+
+    .select2-results
+        &__option 
+            padding-left: 20px
+            height: 40px
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            margin-bottom: 1px
+            &:hover
+                background: rgba(0,0,0,.5)
+                color: #fff

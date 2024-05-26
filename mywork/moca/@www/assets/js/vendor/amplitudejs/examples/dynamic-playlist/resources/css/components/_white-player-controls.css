@@ -1,0 +1,53 @@
+div#white-player-controls {
+  text-align: center;
+  padding-bottom: 35px; }
+  div#white-player-controls div#shuffle {
+    display: inline-block;
+    width: 19px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 24px; }
+    div#white-player-controls div#shuffle.amplitude-shuffle-off {
+      background: url("../img/shuffle-off.svg"); }
+    div#white-player-controls div#shuffle.amplitude-shuffle-on {
+      background: url("../img/shuffle-on.svg"); }
+  div#white-player-controls div#previous {
+    display: inline-block;
+    height: 53px;
+    width: 53px;
+    cursor: pointer;
+    background: url("../img/previous.svg");
+    vertical-align: middle;
+    margin-right: 16px; }
+  div#white-player-controls div#play-pause {
+    display: inline-block;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 16px; }
+    div#white-player-controls div#play-pause.amplitude-paused {
+      background: url("../img/play.svg"); }
+    div#white-player-controls div#play-pause.amplitude-playing {
+      background: url("../img/pause.svg"); }
+  div#white-player-controls div#next {
+    display: inline-block;
+    height: 53px;
+    width: 53px;
+    cursor: pointer;
+    background: url("../img/next.svg");
+    vertical-align: middle;
+    margin-right: 24px; }
+  div#white-player-controls div#repeat {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle; }
+    div#white-player-controls div#repeat.amplitude-repeat-off {
+      background: url("../img/repeat-off.svg"); }
+    div#white-player-controls div#repeat.amplitude-repeat-on {
+      background: url("../img/repeat-on.svg"); }
+
+/*# sourceMappingURL=_white-player-controls.css.map */

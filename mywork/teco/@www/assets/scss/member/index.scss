@@ -1,0 +1,165 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+.logIn {
+    padding-top: 110px !important;
+    position: relative;
+    min-height: 100vh;
+    background-position: center 110px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../../upload/member/indexBg_1920_980.jpg");
+
+    @include flex-center;
+
+    @media all and (max-width: 1024px) {
+        padding-top: 70px !important;
+        background-position: center 70px;
+    }
+
+    @media all and (max-width: 640px) {
+        background-color: #fff;
+        background-image: none;
+    }
+
+    .logInForm {
+        background-color: #fff;
+        max-width: 640px;
+        width: 100%;
+        @include flex-center;
+        flex-direction: column;
+        padding: 65px 50px;
+
+        @media all and (max-width: 1024px) {
+            padding: 65px 5vw;
+        }
+
+        ._title {
+            text-align: center;
+
+            .en {
+                @include title_en;
+                animation: fadeInDown 1s both 0.4s;
+            }
+
+            .ch {
+                @include title_ch;
+                animation: fadeInDown 1s both 0.6s;
+            }
+        }
+
+        form {
+            max-width: 360px;
+            width: 100%;
+            margin-top: 45px;
+            @include font-size(14);
+
+            .inputBox {
+                display: flex;
+                background-color: #f2f2f2;
+                padding: 15px 20px;
+                margin: 3px 0;
+                animation: fadeIn 1.2s both 0.8s;
+
+                p {
+                    width: 60px;
+                    margin-right: 45px;
+                }
+
+                input {
+                    width: calc(100% - 105px);
+                    border: none;
+                    background-color: transparent;
+                    @include font-size(14);
+
+                    &::placeholder {
+                        transition: all .4s ease;
+                    }
+
+                    &:focus::placeholder {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .forgetPassword {
+                @include flex-right;
+                margin-top: 15px;
+                font-family: "微軟正黑體";
+                overflow: hidden;
+
+                .openForget {
+                    cursor: pointer;
+                    padding: 0 5px;
+                    animation: fadeInDown 0.8s both 1s;
+                }
+            }
+
+            .buttons {
+                @include flex-center;
+                margin-top: 30px;
+
+                a,
+                button {
+                    @include flex-center;
+                    color: #4c4c4c;
+                    border: none;
+                    background-color: transparent;
+                    position: relative;
+                    padding: 0 10px 5px 10px;
+                    margin: 0 10px;
+                    transition: all .4s ease;
+
+                    span {
+                        margin-right: 10px;
+                        animation: fadeInUp .8s both 1.6s;
+
+                        &.iconN-people {
+                            @include font-size(13);
+                        }
+
+                        &.iconN-hook {
+                            @include font-size(12);
+                        }
+                    }
+
+                    p {
+                        animation: fadeInUp .8s both 1.6s;
+                    }
+
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+
+                    &:before {
+                        @include fakeLine(100%, 1px, #000);
+                        transition: all .6s ease;
+                        animation: horizontalShow 1.2s both 1.2s;
+                    }
+
+                    &:after {
+                        @include fakeLine(0%, 1px, #000);
+                    }
+
+                    &:hover {
+                        color: #000;
+
+                        &:before {
+                            transition: all 0s ease;
+                            width: 0;
+                        }
+
+                        &:after {
+                            animation: navmeun 1.2s ease infinite;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

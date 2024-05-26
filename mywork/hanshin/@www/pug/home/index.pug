@@ -1,0 +1,506 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var news = [
+        {
+            slogan:{bg:"#a13838",p:"HOT !"},
+            img:"../../upload/fa2/home/newsImg_420_390.jpg",
+            type:"BRANDS",
+            date:"2019-02-30",
+            title:"MaxMara 時尚冬裝新上市",
+            words:"購買新品滿3000折300元，再送高級質感圍巾"},
+        {
+            slogan:{bg:"",p:""},
+            img:"../../upload/fa2/home/newsImg2_420_390.jpg",
+            type:"EVENTS",
+            date:"2019-02-30",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送"},
+        {
+            slogan:{bg:"#3c3b52",p:"SALE !"},
+            img:"../../upload/fa2/home/newsImg3_420_390.jpg",
+            type:"Member",
+            date:"2019-02-30",
+            title:"周年慶全館八折起 卡友享專屬加碼優惠",
+            words:"活動自11/10到11/23，全館八折起，再享瘋狂回饋"},
+        {
+            slogan:{bg:"",p:""},
+            img:"../../upload/fa2/home/newsImg2_420_390.jpg",
+            type:"EVENTS",
+            date:"2019-02-30",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送"},
+    ]
+
+    var living =[
+        {
+            img:"../../upload/fa2/home/livingImg_300_290.jpg",
+            media: "fb",
+            hasVideo:false},
+        {
+            img:"../../upload/fa2/home/livingImg2_300_290.jpg",
+            media: "ig",
+            hasVideo:false},
+        {
+            img:"../../upload/fa2/home/livingImg3_300_290.jpg",
+            media: "fb",
+            hasVideo:false},
+        {
+            img:"../../upload/fa2/home/livingImg4_300_290.jpg",
+            media: "ig",
+            hasVideo:false},
+        {
+            img:"../../upload/fa2/home/livingImg5_300_290.jpg",
+            media: "ig",
+            hasVideo:true},
+        {
+            img:"../../upload/fa2/home/livingImg6_300_290.jpg",
+            media: "fb",
+            hasVideo:false},
+        {
+            img:"../../upload/fa2/home/livingImg7_300_290.jpg",
+            media: "ig",
+            hasVideo:false},
+        {
+            img:"../../upload/fa2/home/livingImg8_300_290.jpg",
+            media: "fb",
+            hasVideo:false},
+    ]
+
+    var dishes = [
+        {
+            type:"type1",
+            smallImg:"../../upload/fa2/home/cuisineSmallImg_430_700.jpg",
+            title:{ch:"經典私藏菜",en:"Home cuisine"},
+            bgColor: "#c19685",
+            content:[
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg1_840_700.jpg",
+                    ch:"下午茶",
+                    en:"Afternoon tea",
+                    link:"javascript:void(0)"},
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg2_840_700.jpg",
+                    ch:"米其林一星",
+                    en:"Michelin",
+                    link:"javascript:void(0)"},
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg1_840_700.jpg",
+                    ch:"北京烤鴨",
+                    en:"Peking duck ",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"type1",
+            smallImg:"../../upload/fa2/home/cuisineSmallImg_430_700.jpg",
+            title:{ch:"經典私藏菜",en:"Home cuisine"},
+            bgColor: "#c19685",
+            content:[
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg1_840_700.jpg",
+                    ch:"下午茶",
+                    en:"Afternoon tea",
+                    link:"javascript:void(0)"},
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg2_840_700.jpg",
+                    ch:"米其林一星",
+                    en:"Michelin",
+                    link:"javascript:void(0)"},
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg1_840_700.jpg",
+                    ch:"北京烤鴨",
+                    en:"Peking duck ",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"type2",
+            smallImg:"",
+            title:{ch:"異國料理",en:"Exotic dishes"},
+            bgColor: "#851d27",
+            content:[
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg3_840_470.jpg",
+                    ch:"義式餐廳",
+                    en:"Italian restaurant",
+                    link:"javascript:void(0)"},
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg4_840_470.jpg",
+                    ch:"港式點心",
+                    en:"Hong Kong style",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"type2",
+            smallImg:"",
+            title:{ch:"異國料理",en:"Exotic dishes"},
+            bgColor: "#851d27",
+            content:[
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg3_840_470.jpg",
+                    ch:"義式餐廳",
+                    en:"Italian restaurant",
+                    link:"javascript:void(0)"},
+                {
+                    bigImg:"../../upload/fa2/home/cuisineImg4_840_470.jpg",
+                    ch:"港式點心",
+                    en:"Hong Kong style",
+                    link:"javascript:void(0)"},
+            ]},
+    ]
+
+    var explore = [
+        {
+            img:"../../upload/fa2/home/exploreSmall1_360_500.jpg",
+            type:"",
+            className:"small",
+            whiteWords:false,
+            en:"",
+            ch:"",
+            where:""},
+        {
+            img:"../../upload/fa2/home/exploreBig1_720_700.jpg",
+            type:"國際精品",
+            className:"big",
+            en:"Miracle,So Magic!",
+            ch:"每個人都渴望用擁有的香水品牌",
+            where:"leftUp"},
+        {
+            img:"../../upload/fa2/home/exploreSmall2_360_500.jpg",
+            type:"生活品味",
+            className:"small",
+            whiteWords:true,
+            en:"Men’s Collection",
+            ch:"休閒品牌穿出男人味",
+            where:"leftUp"},
+        {
+            img:"../../upload/fa2/home/exploreSmall3_360_500.jpg",
+            type:"獨家聯名",
+            className:"small",
+            whiteWords:false,
+            en:"Don’t Miss Out!",
+            ch:"絕不能錯過的藝術聯名托特包",
+            where:"leftDown"},
+        {
+            img:"../../upload/fa2/home/exploreSmall4_360_500.jpg",
+            type:"",
+            className:"small",
+            whiteWords:false,
+            en:"",
+            ch:"",
+            where:""},
+        {
+            img:"../../upload/fa2/home/exploreMiddle1_720_300.jpg",
+            type:"專櫃活動",
+            className:"middle",
+            whiteWords:false,
+            en:"Top5 Cosmetic",
+            ch:"時尚業界彩妝師給你完美無瑕妝感",
+            where:"rightDown"},
+        {
+            img:"../../upload/fa2/home/exploreSmall1_360_500.jpg",
+            type:"",
+            className:"small",
+            whiteWords:false,
+            en:"",
+            ch:"",
+            where:""},
+        {
+            img:"../../upload/fa2/home/exploreBig1_720_700.jpg",
+            type:"國際精品",
+            className:"big",
+            en:"Miracle,So Magic!",
+            ch:"每個人都渴望用擁有的香水品牌",
+            where:"leftUp"},
+        {
+            img:"../../upload/fa2/home/exploreSmall2_360_500.jpg",
+            type:"生活品味",
+            className:"small",
+            whiteWords:true,
+            en:"Men’s Collection",
+            ch:"休閒品牌穿出男人味",
+            where:"leftUp"},
+        {
+            img:"../../upload/fa2/home/exploreSmall3_360_500.jpg",
+            type:"獨家聯名",
+            className:"small",
+            whiteWords:false,
+            en:"Don’t Miss Out!",
+            ch:"絕不能錯過的藝術聯名托特包",
+            where:"leftDown"},
+        {
+            img:"../../upload/fa2/home/exploreSmall4_360_500.jpg",
+            type:"",
+            className:"small",
+            whiteWords:false,
+            en:"",
+            ch:"",
+            where:""},
+        {
+            img:"../../upload/fa2/home/exploreMiddle1_720_300.jpg",
+            type:"專櫃活動",
+            className:"middle",
+            whiteWords:false,
+            en:"Top5 Cosmetic",
+            ch:"時尚業界彩妝師給你完美無瑕妝感",
+            where:"rightDown"},
+    ]
+
+    var member =[
+        {
+            img:"../../upload/fa2/home/memberImg1_900_535.jpg",
+            h6:"尊榮服務",
+            ch:"Enjoy more benefits ",
+            en:"享受更多優惠及好禮滿額贈 ",
+            textBg:"../../upload/fa2/home/memberTextBg_770_500.jpg",
+            content:[
+                {
+                    link:"javascript:void(0)",
+                    span:"icon-discount",
+                    ch:"超級卡專區",
+                    en:"Discount"},
+                {
+                    link:"javascript:void(0)",
+                    span:"icon-member",
+                    ch:"會員專區",
+                    en:"Member"},
+                {
+                    link:"javascript:void(0)",
+                    span:"icon-floor",
+                    ch:"樓層導覽",
+                    en:"Floor tour"},
+            ]
+        },
+        {
+            img:"../../upload/fa2/home/memberImg2_900_535.jpg",
+            h6:"專屬為您",
+            ch:"A Day for Special",
+            en:"打造與眾不同的精緻生活美學",
+            textBg:"../../upload/fa2/home/memberTextBg2_770_500.jpg",
+            content:[
+                {
+                    link:"javascript:void(0)",
+                    span:["../../assets/img/discount_gray_40_40.png","../../assets/img/discount_gold_40_40.png"],
+                    ch:"關於漢神百貨",
+                    en:"About Hanshin"},
+                {
+                    link:"javascript:void(0)",
+                    span:"",
+                    ch:"交通資訊",
+                    en:"How to arrive"},
+                {
+                    link:"javascript:void(0)",
+                    span:"",
+                    ch:"商業合作",
+                    en:"Cooperation"},
+            ]
+        }
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#home.index(data-delaySecond="10" data-indexHerf="../home/index.html")
+    include ../layout/_header.pug
+    main
+        article.banner
+            section._slick
+                ul 
+                    li
+                        // 後端請注意: 圖片如果是深色圖的話  請在下方 data-imgColor 填入 dark 文字顏色就會變白色 (因為很重要所以要說三次)
+                        // 後端請注意: 圖片如果是深色圖的話  請在下方 data-imgColor 填入 dark 文字顏色就會變白色 (因為很重要所以要說三次)
+                        // 後端請注意: 圖片如果是深色圖的話  請在下方 data-imgColor 填入 dark 文字顏色就會變白色 (因為很重要所以要說三次)
+                        picture(data-imgColor="dark")
+                            // [if IE 9]><video style="display: none;"><![endif]
+                            // 後端請注意:手機圖片大小
+                            source(srcset="../../upload/fa2/home/bannerImgRWD_1030_1320.jpg" media="(max-width:1024px)")
+                            // 後端請注意:電腦圖片大小
+                            img(src="../../upload/fa2/home/bannerImg_1670_1080.jpg" alt="")
+                        .slogan
+                            .type 
+                                h6 SPECIAL SALE
+                                span
+                            h5 Lovely Women Anniversary
+                            p 寵愛女人周年慶  瘋狂回饋大折扣
+                    li
+                        picture(data-imgColor="")
+                            // [if IE 9]><video style="display: none;"><![endif]
+                            // 後端請注意:手機圖片大小
+                            source(srcset="../../upload/fa2/home/bannerImgRWD2_1030_1320.jpg" media="(max-width:1024px)")
+                            // 後端請注意:電腦圖片大小
+                            img(src="../../upload/fa2/home/bannerImg2_1670_1080.jpg" alt="")
+                        // 後端請注意: 如果客戶他想要讓文字靠右的話 就在下方填上 class "right"
+                        .slogan.right
+                            .type 
+                                h6 SPECIAL SALE
+                                span
+                            h5 Lovely Women Anniversary
+                            p 寵愛女人周年慶  瘋狂回饋大折扣
+            section.bannerScrollDown
+                p SCROLL
+                span.icon-scrollDown
+        // 後端請注意: 下方背景圖片data-src要可更換
+        // 後端請注意:如需重整slick 請使用resetSlick() 這個function
+        article.news.b-lazy(data-src='../../upload/fa2/home/newsBg_1670_1080.jpg')
+            section._title
+                p.ch 最新消息
+                p.en News & Events
+                ul
+                    li.active 全館特別活動
+                    li 全館抽獎/滿額贈
+                    li 卡友限定專寵禮
+                    li 銀行特別活動
+            section._slick
+                ul
+                    // 後端請注意: 如要更新內容 請不要刪除ul 刪它裡面的東西
+                    each val in news
+                        li
+                            a(href=java)
+                                if (val.slogan.p !== "")
+                                    // 後端請注意: 如果未填入文字的話 把下方div移除
+                                    // 後端請注意: 下方背景顏色要讓客戶可以換
+                                    .slogan(style=('background-color:'+val.slogan.bg))=val.slogan.p
+                                figure
+                                    img(data-lazy=val.img, alt="")
+                                ._text
+                                    //類型
+                                    p.type=val.type 
+                                        //日期
+                                        span=val.date
+                                    p.title=val.title
+                                    // 字數限制 55字
+                                    p.words=val.words
+        // 後端請注意: 下方背景圖片data-src要可更換
+        article.living.b-lazy(data-src='../../upload/fa2/home/livingBg_1670_1080.jpg')
+            section._title
+                p.ch 社群動態
+                p.en Living with us
+                p.words 創造新新生活 讓夢想在這裡發光為中心理念，國際級都會型百貨，強調One Stop Shopping
+            section.content
+                ul
+                    //後端請注意: li 有兩種模式 請在下方li依序填入相對應的class
+                        1.fb
+                        2.ig
+                    //後端請注意: 連結有可能是影片 設計師希望影片hover過去時要有撥放圖示 所以請在下方li加上 class "hasVideo"
+                    each val in living
+                        li(class=(val.hasVideo)?(val.media + " hasVideo"):(val.media))
+                            a(href=java target="_blank")
+                                figure
+                                    //- img.b-lazy(src=blazy data-src=val.img, alt="")
+                                    img(data-lazy=val.img, alt="")
+                                p 一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+        article.dishes
+            // 後端請注意: 下方section 有兩種模式 需要讓客戶可以選擇要哪種模式
+                1. type1 兩張圖
+                2. type2 一張圖
+            each item in dishes
+                section(class=item.type)
+                    // 後端請注意: 下方的background-color 要讓客戶可以選擇
+                    ._title(style=("background-color:"+item.bgColor))
+                        div
+                            p.ch=item.title.ch
+                            p.en=item.title.en
+                            ul
+                                // 後端請注意: 請在後台備註 下方li的數量 建議不要上傳超過4個
+                                each val in item.content
+                                    // data-src:大圖位置 
+                                    if (item.type=="type1")
+                                        //圖片建議尺寸: 840*700
+                                    else
+                                        //圖片建議尺寸: 840*470
+                                    li(data-src=val.bigImg)
+                                        a(href=val.link)
+                                            //中文 
+                                            p=val.ch
+                                            // 英文
+                                            span=val.en
+                    //大圖
+                    figure.big
+                        //- // 大的圖片要跟著文字hover換
+                        //- img(src="", alt="")
+                    if (item.smallImg !=="")
+                        //小圖
+                        figure.small
+                            // 小圖不必跟著換
+                            // 圖片建議尺寸: 430*700
+                            img.b-lazy(src=blazy data-src=item.smallImg, alt="")
+        article.explore
+            section._title
+                p.ch 品牌導覽
+                p.en Explore HANSIN
+            section.masonry
+                .grid-sizer
+                //後端請注意: 下方區塊有三種模式 請填入相對應的class
+                    1. big   圖片建議尺寸: 720*670
+                    2. middle   圖片建議尺寸: 720*330
+                    3. small   圖片建議尺寸: 380*500
+                each val in explore
+                    div(class=val.className)
+                        a(href=java)
+                            figure
+                                if (val.className=="big")
+                                    //圖片建議尺寸: 700*630 
+                                else if (val.className=="middle")
+                                    //圖片建議尺寸: 700*290 
+                                else if (val.className=="small")
+                                    //圖片建議尺寸: 330*460 
+                                img.b-lazy(src=blazy data-src=val.img, alt="")
+                            if (val.type !== "")
+                                // 後端請注意: 如果沒有文字的話請把結構移除
+                                // 後端請注意: 文字位置有四個 須讓客戶選擇
+                                    1. 左下 leftDown
+                                    2. 右下 rightDown
+                                    3. 左上 leftUp
+                                    4. 右上 rightUp
+                                // 後端請注意: 須讓客戶選擇文字要白色或是黑色  如果要白色的話請在下方div加上class "white"
+                                ._text(class=(val.whiteWords)?(val.where+" white"):val.where)
+                                    p.type=val.type
+                                    p.en=val.en
+                                    p.ch=val.ch
+
+        article.member
+            //後端請注意: 下方data-src要可以更換
+            section._title.b-lazy(data-src='../../upload/fa2/home/memberTitleBg_1670_1080.jpg')
+                ._text
+                    p.ch 寵愛漢神
+                    p.en Only member
+                    p.words 評鑑為全台灣百貨公司服務品質第一名，在百貨業百家爭鳴的高度競爭下，獲此殊榮，令漢神百貨更加堅定
+            section.content
+                each item in member
+                    .row
+                        figure
+                            img.b-lazy(src=blazy data-src=item.img, alt="")
+                        //後端請注意: 下方background-image要可以更換
+                        ._text.b-lazy(data-src=item.textBg)
+                            div
+                                h6=item.h6
+                                p.ch=item.ch
+                                p.en=item.en
+                                ul
+                                    each val in item.content
+                                        li
+                                            a(href=val.link)
+                                                span(class=(val.span !== "")?val.span:'')
+                                                    if (item==member[1])
+                                                        img(src=val.span[0], alt="")
+                                                        img(src=val.span[1], alt="")
+                                                p=val.ch
+                                                p=val.en
+
+    include  ../layout/_footer.pug
++script
+script.
+    function resetSlick(){
+        $(".news ._slick ul").slick('unslick');
+    }
+|
+|
+</html>

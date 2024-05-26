@@ -1,0 +1,236 @@
+#dm.book
+    background-color: rgba(0, 0, 0, 0.9)
+    width: 100%
+    height: 100%
+    padding: 0 !important
+    overflow: hidden
+    #page 
+        position: absolute
+        left: 50%
+        top: 50%
+        z-index: 5
+        display: none
+        width: 1100px
+        height: 715px
+        @media (max-width: 1081px) and (min-width: 1079px) and (max-aspect-ratio: 1/1)
+            top: 40% !important
+        &.mobile 
+            width: 550px
+            height: 358px
+        &.grab
+            cursor: grab
+        &.grab.draggable
+            cursor: grabbing
+    .cursor-grab 
+        cursor: -webkit-grab
+        cursor: -moz-grab
+    .overlay 
+        position: absolute
+        left: -10000px
+        top: 0
+        z-index: 20
+        /**old wrb*/
+        background: rgba(0, 0, 0, 0.9)
+        width: 100%
+        height: 100%
+        padding: 100px 0
+        opacity: 0
+        // position: relative
+        overflow-y: auto
+        @media (max-width: 1081px) and (min-width: 1079px) and (max-aspect-ratio: 1/1)
+            padding: 25vh 0
+        &.active 
+            left: 0
+            .btn-close 
+                @media (max-width: 1081px) and (min-width: 1079px) and (max-aspect-ratio: 1/1)
+                    position: fixed
+                    top: 50%
+    .btn-close 
+        position: absolute
+        right: 0
+        top: 0
+        z-index: 2
+        width: 95px
+        height: 95px
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        background: linear-gradient(to right, #1469a0, #2482aa)
+        @media (max-width: 1024px)
+            width: 30px
+            height: 30px
+        span 
+            position: relative
+            width: 21px
+            height: 21px
+            display: block
+            transform: rotate(45deg)
+        span:after 
+            position: absolute
+            content: ''
+            width: 2px
+            height: 100%
+            top: 50%
+            left: 50%
+            background-color: #fff
+            transform: translate(-50%, -50%)
+        span:before 
+            position: absolute
+            content: ''
+            width: 100%
+            height: 2px
+            top: 50%
+            left: 50%
+            background-color: #fff
+            transform: translate(-50%, -50%)
+    #menu_holder 
+        max-width: 1600px
+        margin: auto
+        width: 100%
+        min-height: 100%
+        display: flex
+        align-items: center
+        @media screen and (max-width: 1600px)
+            max-width: 100%
+        #slider 
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+            li 
+                text-align: center
+                margin: 0 10px
+                cursor: pointer
+                @media screen and (max-width: 1600px) 
+                    width: 300px
+                @media (max-width: 480px) 
+                    width: auto
+                &:hover 
+                    opacity: 0.5
+                    -moz-transition: 0.2s
+                    -o-transition: 0.2s
+                    -webkit-transition: 0.2s
+                    transition: 0.2s
+                figure
+                    // display: flex
+                    // flex-wrap: wrap
+                    width: 300px
+                img
+                    display: inline-block
+                    width: 50%
+            p
+                font-size: 16px
+                color: #fff
+                width: 100%
+                margin: 5px auto
+    /* = Book-------------------------------------------------------------- */
+    #book 
+        position: relative
+        z-index: 10
+        width: 100%
+        height: 100%
+        overflow: hidden
+        
+        .turn-page 
+            background-color: white
+            background-size: 100% 100%
+            position: relative
+        div
+            a
+                position: absolute
+                opacity: 0
+                display: block
+                transition: all .4s ease
+                @media (max-width: 1024px),(max-width: 1081px) and (min-width: 1079px) and (max-aspect-ratio: 1/1)
+                    display: none
+                &:hover
+                    opacity: 0.5
+                    background-color: blue
+    .double 
+        background-size: 200% 100% !important
+        &.first 
+            background-position: 0% 0%
+        &.second 
+            background-position: -100% 0%
+    .nav_arrow 
+        position: absolute
+        top: 50%
+        z-index: 15
+        transform: translateY(-50%)
+        @media (max-width: 1081px) and (min-width: 1079px) and (max-aspect-ratio: 1/1)
+            top: 40%
+        i 
+            color: #fff
+            font-size: 50px
+            cursor: pointer
+        &.prev 
+            left: 0
+        &.next 
+            right: 0
+
+    /* = Menu-------------------------------------------------------------- */
+    nav 
+        text-align: center
+        padding: 10px 0
+        ul 
+            list-style: none
+            margin: 0
+            padding: 0
+        li 
+            display: inline-block
+            vertical-align: middle
+            position: relative
+            margin: 0 10px
+            @media screen and (max-width: 1024px) 
+                &:nth-last-child(2)
+                    display: none
+            a 
+                display: block
+                width: 30px
+                height: 40px
+                font-size: 18px
+                color: gray
+                cursor: pointer
+                transition: all .3s
+                &:hover 
+                    transform: translateY(-5px)
+                    color: rgb(200, 200, 200)
+            .download 
+                background-position: 0 0
+                &:hover 
+                    background-position: 0 -90px
+            .home 
+                background-position: 0 -175px
+                &:hover 
+                    background-position: 0 -265px
+            .contact 
+                background-position: 0 -355px
+                &:hover 
+                    background-position: 0 -445px
+            .show_all 
+                background-position: 0 -535px
+                &:hover 
+                    background-position: 0 -625px
+            .zoom_auto 
+                background-position: 0 -715px
+                &:hover 
+                    background-position: 0 -805px
+            .icon-zoomin 
+            .zoom_out 
+                background-position: 0 -1255px
+                &:hover 
+                    background-position: 0 -1345px
+    /* = Footer-------------------------------------------------------------- */
+    footer
+        position: fixed
+        bottom: 0
+        left: 0
+        z-index: 15
+        width: 100%
+        min-height: 60px
+        margin: 0
+        padding: 0
+        @media (max-width: 1081px) and (min-width: 1079px) and (max-aspect-ratio: 1/1)
+            bottom: auto
+            top: calc(40% + 70vw - 140px)

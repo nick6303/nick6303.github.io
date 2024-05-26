@@ -1,0 +1,460 @@
+//discover
+
+
+.discoverPageBody
+    .imgTitle
+        +fs(24)
+        font-weight: 900
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        word-break: break-all
+        -webkit-box-orient: vertical
+    .imgSubTitle
+        +fs(22)
+        font-weight: 900
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        word-break: break-all
+        -webkit-box-orient: vertical
+    .imgText
+        +fs(16)
+        padding: 15px 0 0 0
+
+    .clickScrollArea
+        .mCSB_scrollTools.mCSB_scrollTools_horizontal
+            opacity: 0 !important
+        .link
+            &.now
+                color: #000
+                &:after
+                    width: 100%
+                    transition: width .5s ease
+
+    .colaPig
+        margin: 0 auto 100px auto
+
+    .fullFrame
+        max-width: 1480px
+        margin: 0 auto 100px auto
+        .imgBox
+            display: inline-block
+            position: relative
+            overflow: hidden
+            margin: 0 0 35px 0
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: box-shadow .2s linear
+            &::after
+                content: ''
+                background: rgba(0,0,0,.5)
+                width: 100%
+                height: 0
+                position: absolute
+                top: 0
+                left: 0
+                transition: .5s
+            &::before
+                content: 'read more'
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                font-size: 0.9875rem
+                opacity: 0
+                display: inline-block
+                color: #fff
+                z-index: 10
+            &:hover
+                box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5)
+                &::after
+                    height: 100%
+                &::before
+                    transition: .5s .5s
+                    opacity: 1
+            &.show
+                img
+                    animation: fadeInDown 1.2s both
+            img
+                opacity: 0
+        .caption
+            text-align: center
+            padding: 0 5%
+            &.show
+                .imgTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1s ease, transform 1.2s ease
+                .imgSubTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1s ease .4s, transform 1.2s ease .4s
+                .imgText
+                    opacity: 1
+                    transition: opacity 1s ease .8s
+            .imgTitle
+                opacity: 0
+                transform: translateY(100px)
+            .imgSubTitle
+                opacity: 0
+                transform: translateY(100px)
+            .imgText
+                opacity: 0
+        .imgText
+            width: 75%
+            margin: 0 auto
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+
+    .smallFrame
+        display: flex
+        max-width: 1280px
+        position: relative
+        &.show
+            &:before
+                width: 66.4%
+                transition: width 2s ease .5s
+        &.return
+            &:before
+                left: auto
+                right: 0
+            .textFrame
+                order: 1
+                padding: 0 16.4% 0 0
+            .imgFrame
+                order: 0
+                justify-content: flex-start
+                .img
+                    margin: 0 auto 0 0
+        &:before
+            content: ''
+            display: block
+            background-color: #cfcfcf
+            width: 0
+            height: 1px
+            position: absolute
+            left: 0
+            top: 80px
+        .textBox
+            margin: 0 0 45px 0
+            padding: 120px 0 0 0
+        .imgText
+            padding: 15px 0 0 0
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+        .textFrame, .imgFrame
+            width: 50%
+        .textFrame
+            padding: 0 0 0 16.4%
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            &.show
+                .imgTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1s ease, transform 1.2s ease
+                .imgSubTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1s ease .4s, transform 1.2s ease .4s
+                .imgText
+                    opacity: 1
+                    transition: opacity 1s ease .8s
+                .btnStyle
+                    opacity: 1
+                    transition: opacity 1s ease 1.2s
+            .imgTitle
+                opacity: 0
+                transform: translateY(100px)
+            .imgSubTitle
+                opacity: 0
+                transform: translateY(100px)
+            .imgText
+                opacity: 0
+            .btnStyle
+                opacity: 0
+        .imgFrame
+            display: flex
+            justify-content: flex-end
+            &.show
+                .imgBox
+                    img
+                        animation: fadeInDown 1.2s both
+            .imgBox
+                max-width: 475px
+                display: inline-block
+                position: relative
+                overflow: hidden
+                display: flex
+                align-items: center
+                justify-content: center
+                transition: box-shadow .2s linear
+                &::after
+                    content: ''
+                    background: rgba(0,0,0,.5)
+                    width: 100%
+                    height: 0
+                    position: absolute
+                    top: 0
+                    left: 0
+                    transition: .5s
+                &::before
+                    content: 'read more'
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                    font-size: 0.9875rem
+                    opacity: 0
+                    display: inline-block
+                    color: #fff
+                    z-index: 10
+                &:hover
+                    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5)
+                    &::after
+                        height: 100%
+                    &::before
+                        transition: .5s .5s
+                        opacity: 1
+            .img
+                opacity: 0
+                margin: 0 0 0 auto
+
+    .tripleFrame
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        max-width: 1545px
+        margin: 0 auto 60px auto
+        &.left
+            justify-content: flex-start
+        &.right
+            justify-content: flex-end
+        .tirpleBox
+            width: 33.33%
+            padding: 0 32.5px
+            margin: 0 0 40px 0
+        .imgBox
+            position: relative
+            overflow: hidden
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: box-shadow .2s linear
+            &.show
+                img
+                    animation: fadeInDown 1.2s both
+            &:hover
+                box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5)
+            .img
+                opacity: 0
+        .caption
+            padding: 9px 0 0 0
+            &.show
+                .imgTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1s ease, transform 1.2s ease
+                .imgSubTitle
+                    opacity: 1
+                    transform: translateY(0px)
+                    transition: opacity 1s ease .4s, transform 1.2s ease .4s
+            .imgTitle
+                opacity: 0
+                transform: translateY(100px)
+            .imgSubTitle
+                opacity: 0
+                transform: translateY(100px)
+    @media (max-width: 1024px)
+        .smallFrame
+            &.return      
+                .textFrame
+                    padding: 0 30px 0 10%
+            .textFrame
+                padding: 0 30px 0 10%
+            .imgText
+                -webkit-line-clamp: 4
+        .tripleFrame
+            .tirpleBox
+                width: 50%
+    @media (max-width: 767px)
+        .clickScrollArea
+            width: 90%
+        .fullFrame
+            .imgText
+                width: 100%
+        .smallFrame
+            flex-direction: column
+            &.return      
+                .textFrame
+                    padding: 0 20px
+                .imgFrame
+                    justify-content: center
+            &:before
+                display: none
+            .textBox
+                padding: 0
+            .textFrame, .imgFrame
+                width: 100%
+            .textFrame
+                order: 1
+                padding: 0 20px
+            .imgFrame
+                order: 0
+                justify-content: center
+                margin: 0 0 20px 0
+        .tripleFrame
+            .tirpleBox
+                width: 100%
+                padding: 0 20px
+                display: flex
+                justify-content: center
+
+
+//燈箱
+#discover
+    .ajaxVisitDetail
+        .hamburgerBox
+            background-color: inherit
+    .egg
+        overflow: hidden
+        margin: 0 0 40px 0
+        opacity: 0
+        &.show
+            opacity: 1
+            transition: opacity 1s ease
+        .imgFrame
+            overflow: hidden
+        .chrisLoaded
+            &.img
+                animation: fadeInDown 1.2s both
+        .b-loaded
+            &.img
+                animation: fadeInDown 1.2s both
+    .eggBall
+        +fs(20)
+        font-weight: 900
+        margin: 0 0 25px 0
+    .eggTower
+        padding: 0 12%
+        .video
+            width: 100%
+            height: 545px
+    .eggTitleBox
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        font-weight: 900
+        .title
+            +fs(28)
+        .subTitle
+            +fs(24)
+    .eggTextBox
+        .text
+            +fs(16)
+            color: #222
+    .eggTea
+        display: flex
+        align-items: center
+        &.return
+            .imgFrame
+                order: 1
+            .textFrame
+                order: 0
+                padding: 0 6% 0 0
+        .imgFrame
+            width: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+        .textFrame
+            width: 50%
+            padding: 0 0 0 6%
+    .eggMap
+        .map
+            width: 100%
+            height: 425px
+    .eggList
+        +fs(15)
+        color: #666
+        display: flex
+        flex-wrap: wrap
+        .list
+            background-color: #f2f2f2
+            display: flex
+            width: calc(50% - 2px)
+            margin: 0 0 4px 0
+            padding: 10px 0
+            &:nth-child(2n)
+                margin-left: 2px
+            &:nth-child(2n+1)
+                margin-right: 2px
+        .name
+            min-width: 39%
+            padding-left: 6%
+            position: relative
+            display: flex
+            justify-content: space-between
+            &:after
+                content: ''
+                display: block
+                background-color: #a9a9a9
+                width: 1px
+                height: 14px
+                margin-top: 5px
+        .ans
+            width: 62%
+            padding: 0 16px
+    .eggBurger
+        display: flex
+        align-items: center
+        justify-content: center
+    @media (max-width: 1023px)
+        .eggTower
+            padding: 0 40px
+    @media (max-width: 767px)
+        .eggTower
+            padding: 0 20px
+            .video
+                height: 300px
+        .eggTea
+            flex-direction: column
+            &.return
+                .textFrame
+                    order: 1
+            .imgFrame
+                order: 0
+                width: 100%
+                margin: 0 0 20px 0
+            .textFrame
+                order: 1
+                padding: 0
+                width: 100%
+        .eggList
+            .list
+                width: 100%
+                flex-wrap: wrap
+            .name
+                width: 100%
+                padding: 0 16px
+                &:after
+                    display: none
+
+

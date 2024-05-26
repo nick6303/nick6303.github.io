@@ -1,0 +1,776 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+header {
+    @media all and (max-width: 500px) {
+        top: 65px;
+    }
+    .hdLink ul {
+        animation: fadeInLeft 1s both .5s;
+    }
+    .burgerMenu {
+        div {
+            animation: fadeInLeft 1s both .5s;
+        }
+    }
+    .hdLogo a {
+        display: block;
+        animation: fadeInRight 1s both .5s;
+    }
+}
+
+
+main {
+    padding: 150px 0 170px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media all and (max-width: 500px) {
+        padding:100px 0;
+    }
+    .topTitle {
+        &>h2 {
+            animation: fadeInUp .8s both .2s;
+        }
+    }
+    article:not(.filterLibox) {
+        @media all and (max-width: 1800px) and (min-width: 1025px) {
+            margin-left: calc(5vw + 120px);
+            margin-right: calc(5vw + 120px);
+        }
+    }
+}
+
+.topTitle {
+    width: 100%;
+    max-width: calc(960px + 10vw);
+    @media all and (max-width: 1024px) {
+        padding: 0 0 60px 0;
+    }
+    p {
+        @include font-size(14);
+        letter-spacing: 1px;
+    }
+    .searchAndText {
+        margin-top: 120px;
+        width: 100%;
+        @include flex-space-between;
+        margin-bottom: 50px;
+        @media all and (max-width: 1024px) {
+            padding: 0 5vw;
+        }
+        @media all and (max-width: 700px) {
+            flex-direction: column;
+        }
+    }
+    .search,
+    ._text {
+        width: 50%;
+        @media all and (max-width: 700px) {
+            width: 100%;
+        }
+    }
+    .search {
+        display: flex;
+        @media all and (max-width: 700px) {
+            order:2;
+            justify-content: flex-start;
+            margin-top: 25px;
+        }
+        a {
+            cursor: pointer;
+            @include flex-center;
+        }
+        .icon-magnifier {
+            display: block;
+            margin-right: 10px;
+            animation: fadeInUp 1s both .3s;
+            font-weight: bold;
+        }
+        p {
+            @include font-size(14);
+        }
+    }
+    ._text {
+        @media all and (max-width: 700px) {
+            order:1;
+        }
+        .h2 {
+            color: $base_blue;
+            @include font-size(30);
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+    .selectUnitBg {
+        height: 21px;
+        width: 100%;
+        @media all and (max-width: 1024px) {
+            height: 71px;
+        }
+    }
+    .selectUnit {
+        width: 100%;
+        display: flex;
+        @media all and (max-width: 1024px) {
+            background-color: $base_gray;
+            padding: 25px 5vw;
+            &.prepare {
+                transform: translate(0, -100%);
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 9;
+                padding: 15px 50px 15px 5vw;
+                .rwdSearch {
+                    display: flex;
+                }
+            }
+            &.prepare.fixed {
+                transform: translate(0, 65px);
+                transition: all .8s ease;
+            }
+        }
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        max-width: 100%;
+        li {
+            color: #7c7c7c;
+            transition: all .4s ease;
+            cursor: pointer;
+            animation: slideInUp 1s both .4s;
+            &:not(:first-child) {
+                @include flex-center;
+                &:before {
+                    @include fakeLine(1px, 0, #c7c7c7);
+                    margin-right: 20px;
+                    animation: h13 .4s both 1.2s;
+                }
+            }
+            &:not(:last-child) {
+                padding-right: 20px;
+            }
+            p {
+                font-family: Quicksand-Medium, 微軟正黑體;
+                text-transform: uppercase;
+                white-space: nowrap;
+                margin-top: 0;
+            }
+            &.active {
+                color: #000;
+            }
+        }
+        @media all and (min-width: 1025px) {
+            &:hover li.active {
+                color: #7c7c7c;
+            }
+            &:hover li.active:hover,
+            li:hover {
+                color: #000;
+            }
+        }
+    }
+    .rwdSearch {
+        display: none;
+        @include font-size(16);
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border-left: 3px solid #fff;
+    }
+}
+
+@keyframes h13 {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 13px;
+    }
+}
+
+
+.galleryContent {
+    max-width: 1310px;
+    @media all and (max-width: 1024px) {
+        padding: 0 5vw;
+    }
+    @media all and (max-width: 600px) {
+        padding: 0;
+    }
+}
+
+.galleryContent .works {
+    display: flex;
+    flex-wrap: wrap;
+    .box {
+        width: calc(25% - 53.75px);
+        margin-right: 20px;
+        margin-bottom: 150px;
+        @media all and (max-width: 1720px) {
+            width: calc(25% - 3.125vw);
+            margin-right: 1.1vw;
+        }
+        @media all and (max-width: 1440px) {
+            width: calc(25% - 2.25vw);
+            margin-right: 1vw;
+        }
+        @media all and (max-width: 600px) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 60px;
+            .designer {
+                display: none;
+            }
+        }
+        .productPicture,
+        .designer {
+            overflow: hidden;
+            max-height: 275px;
+            @media all and (max-width: 1720px) {
+                max-height: calc(19.375vw - 60px);
+            }
+            @media all and (max-width: 1440px) {
+                max-height: calc(20.25vw - 60px);
+            }
+            @media all and (max-width: 600px) {
+                max-height: calc(100vw - 40px);
+            }
+            img {
+                display: block;
+            }
+        }
+        .designer img {
+            transform: translate(-101%, 0);
+            -ms-transform: translate(0);
+            -ms-animation: fadeIn 1s both .2s;
+        }
+        .productPicture img {
+            transform: translate(101%, 0);
+            -ms-transform: translate(0);
+            -ms-animation: fadeIn 1s both .2s;
+        }
+        .name {
+            margin-top: 15px;
+            line-height: 1.8;
+            padding: 0 25px;
+            &>* {
+                opacity: 0;
+            }
+            span {
+                @include font-size(14);
+                font-family: Quicksand-Bold, 微軟正黑體;
+            }
+            p {
+                @include font-size(16);
+                font-family: Quicksand-Regular, 微軟正黑體;
+            }
+        }
+        &.show.in {
+            .productPicture img,
+            .designer img {
+                animation: allin 1s both;
+            }
+            .name>* {
+                animation: fadeInUp 2s both .5s;
+            }
+        }
+        &:nth-child(3n+2) {
+            width: calc(50% - 107.5px);
+            @media all and (max-width: 1720px) {
+                width: calc(50% - 6.25vw);
+            }
+            @media all and (max-width: 1440px) {
+                width: calc(50% - 4.5vw);
+            }
+            @media all and (max-width: 600px) {
+                width: 100%;
+            }
+            .designer {
+                display: none;
+            }
+            .productPicture {
+                max-height: 550px;
+                @media all and (max-width: 1720px) {
+                    max-height: calc(38.75vw - 120px);
+                }
+                @media all and (max-width: 1440px) {
+                    max-height: calc(40.5vw - 120px);
+                }
+                @media all and (max-width: 600px) {
+                    max-height: calc(100vw - 40px);
+                }
+                img {
+                    @media all and (min-width: 601px) {
+                        transform: translate(0, 101%);
+                        -ms-transform: translate(0);
+                    }
+                }
+            }
+        }
+        &:nth-child(6n+3) {
+            margin-right: 175px;
+            @media all and (max-width: 1720px) {
+                margin-right: 10.17vw;
+            }
+            @media all and (max-width: 1440px) {
+                margin-right: 7vw;
+            }
+            @media all and (max-width: 600px) {
+                margin-right: 0;
+            }
+        }
+        &:nth-child(6n+4) {
+            margin-left: 175px;
+            @media all and (max-width: 1720px) {
+                margin-left: 10.17vw;
+            }
+            @media all and (max-width: 1440px) {
+                margin-left: 7vw;
+            }
+            @media all and (max-width: 600px) {
+                margin-left: 0;
+            }
+        }
+        &:nth-child(6n+6) {
+            margin-right: 0;
+        }
+        &:nth-child(odd) {
+            @media all and (max-width: 600px) {
+                margin-right: 40px;
+                a {
+                    @include flex-right;
+                }
+            }
+        }
+        &:nth-child(even) {
+            @media all and (max-width: 600px) {
+                margin-left: 40px;
+                .productPicture img {
+                    transform: translate(-101%, 0)
+                }
+            }
+        }
+    }
+}
+
+
+.galleryContent .getMore {
+    @include flex-center;
+    width: 100%;
+    a {
+        @include flex-center;
+        flex-direction: column;
+        &:hover {
+            span:before,
+            span:after {
+                background-color: #000;
+            }
+            p {
+                color: #000;
+            }
+        }
+    }
+    span {
+        @include cross(28px, 28px);
+        display: block;
+        margin-bottom: 15px;
+        &:before {
+            transition: all .4s ease;
+            @include cross_before(100%, #7f7f7f);
+        }
+        &:after {
+            transition: all .4s ease;
+            @include cross_after(100%, #7f7f7f);
+        }
+    }
+    p {
+        @include font-size(14);
+        font-family: 'Philosopher-Bold';
+        color: #7f7f7f;
+        transition: all .4s ease;
+    }
+}
+
+
+
+.filterLibox {
+    @include basicLibox;
+    z-index: 11;
+    background-color: #0c6d9e;
+    letter-spacing: 1px;
+    display: none;
+    &.open {
+        display: flex;
+        animation: fadeIn .5s both;
+        ._title:after {
+            animation: w100 .6s both .6s;
+        }
+    }
+    &.close {
+        display: flex;
+        animation: fadeOut .4s both;
+        ._title:after {
+            width: 100%;
+        }
+    }
+    .liboxClose {
+        position: absolute;
+        top: calc(12vh - 6px);
+        left: 8.6vw;
+        cursor: pointer;
+        z-index: 1;
+        @media all and (min-height: 1081px) and (min-width: 1025px) {
+            top: 130px;
+        }
+        @media all and (min-width: 1921px) {
+            left: 165px;
+        }
+        @media all and (max-width: 1366px) {
+            left: 3.5vw;
+        }
+        @media all and (max-width: 1366px) {
+            top: 5vw;
+            left: 5vw;
+        }
+        span {
+            display: block;
+            transform: rotate(45deg);
+            @include cross(38px, 38px);
+            &:before {
+                position: absolute;
+                top: calc(50% - 1px);
+                left: 0;
+                @include fakeLine(0%, 2px, #7a7a7a);
+                animation: w100 .6s both .4s;
+            }
+            &:after {
+                top: 0;
+                left: calc(50% - 1px);
+                position: absolute;
+                @include fakeLine(2px, 0%, #7a7a7a);
+                animation: h100 .6s both .7s;
+            }
+        }
+    }
+    ._title {
+        font-family: 'Quicksand-Medium';
+        @include font-size(12);
+        position: absolute;
+        top: 12vh;
+        animation: fadeInUp 1s both .2s;
+        @media all and (min-height: 1081px) and (min-width: 1025px) {
+            top: 130px;
+        }
+        @media all and (max-width: 1024px) {
+            position: relative;
+            top: auto;
+        }
+        &:after {
+            margin: auto;
+            margin-top: 10px;
+            @include fakeLine(0,
+            3px,
+            $base_blue);
+        }
+    }
+}
+
+.filterLibox .left {
+    padding: 14.35vh 0 12vh 0;
+    background-image: url("../../img/gallery/filterBg_640_1080.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex-right;
+    width: 33.33vw;
+    position: relative;
+    @media all and (min-height: 1081px) and (min-width: 1025px) {
+        padding: 155px 0 130px 0;
+        width: 640px;
+    }
+    @media all and (max-width: 1024px) {
+        width: 100%;
+        align-items: center;
+    }
+    @media all and (max-width: 700px) {
+        padding: 10vh 0 6vh 0;
+    }
+
+    ._title {
+        right: 130px;
+        @media all and (max-width: 1024px) {
+            right:auto;
+        }
+    }
+    .years {
+        height: calc(100% - 60px);
+        transform: translateX(70px);
+        margin: 30px 0;
+        @media all and (max-width: 1024px) {
+            transform: translateX(0px);
+            height: auto;
+            max-height: calc(100% - 100px);
+            width: 100%;
+        }
+        ul {
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            li {
+                padding: 0 190px 0 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #bcbcbc;
+                cursor: pointer;
+                position: relative;
+                transition: all .4s ease;
+                overflow: hidden;
+                @media all and (max-width: 1024px) {
+                    padding: 0;
+                }
+                &:after {
+                    position: absolute;
+                    top: calc(50 - 1.5px);
+                    left: calc(100% - 140px);
+                    transition: all .4s ease;
+                    @include fakeLine(0px,
+                    3px,
+                    $base_blue);
+                    animation: blueLineShow .8s both .4s;
+                    @media all and (max-width: 1024px) {
+                        display: none;
+                    }
+                }
+                p {
+                    @include font-size(52);
+                    line-height: 1.5;
+                    animation: slideInUp .8s both;
+                    @media all and (max-width: 700px) {
+                        @include font-size(40);
+                    }
+                }
+                &.active {
+                    // @media all and (min-width: 1025px) {
+                    color: $base_blue;
+                    &:after {
+                        width: 140px; // }
+                    }
+                }
+            }
+        }
+    }
+    .ps {
+        color: $base_blue;
+        font-family: 'Quicksand-Bold';
+        @include font-size(12);
+        position: absolute;
+        bottom: 100px;
+        right: 130px;
+        animation: fadeInUp 2s both .6s;
+        @media all and (max-width: 1024px) {
+            position: relative;
+            bottom: auto;
+            right: auto;
+        }
+    }
+}
+
+@keyframes blueLineShow {
+    0% {
+        -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    100% {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.filterLibox .back {
+    @media all and (max-width: 1024px) {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: fixed;
+        z-index: 3;
+        top: 5vw;
+        left: 5vw;
+        @include flex-center;
+        transform: translateX(-40vw);
+        transition: all 1s ease;
+        &:before {
+            font-family: 'icomoon';
+            content: "\e905";
+            @include font-size(13);
+            color: #000;
+        }
+        &.active {
+            transform: translateX(0);
+        }
+    }
+}
+
+.filterLibox .right {
+    padding: 14.35vh 40px 12vh 120px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+    width: 66.66vw;
+    @media all and (min-height: 1081px) and (min-width: 1025px) {
+        padding: 155px 40px 130px 120px;
+    }
+    @media all and (max-width: 1024px) {
+        width: 100%;
+        transform: translateX(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #0c6d9e;
+        height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 14.35vh 20vw 12vh 20vw;
+        transition: all 1s ease;
+        &.active {
+            transform: translateX(0%);
+        }
+    }
+    @media all and (max-width: 700px) {
+        padding: 80px 5vw 0 5vw;
+        align-items: center;
+    }
+
+    ._title {
+        &:after {
+            background-color: #3d8ab1;
+        }
+    }
+    .projects {
+        max-height: calc(100% - 85px);
+        margin: 30px 0;
+    }
+    .projectYear {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    .box {
+        counter-increment: num;
+        @media all and (max-width: 1024px) {
+            max-width: 60vw;
+        }
+        @media all and (max-width:700px) {
+            max-width: none;
+        }
+        &:not(:last-child) {
+            margin-bottom: 40px;
+            @media all and (max-width: 700px) {
+                margin-bottom: 10px;
+            }
+        }
+        .name {
+            line-height: 1.8;
+            display: flex;
+            overflow: hidden;
+            .en {
+                @include font-size(22);
+                text-transform: uppercase;
+            }
+            .ch {
+                @include font-size(18);
+            }
+            a {
+                display: block;
+                padding: 0 0 0 100px;
+                position: relative;
+                transform: translateY(100%);
+                animation: allin 1s both .4s;
+                -ms-transform: translateY(0);
+                @media all and (max-width: 700px) {
+                    padding: 0;
+                }
+                &:before {
+                    font-family: 'Quicksand-Light';
+                    @include font-size(60);
+                    position: absolute;
+                    color: $base_blue;
+                    top: 50%;
+                    left: 0;
+                    display: block;
+                    transform: translateY(-50%);
+                    content: "0" counter(num);
+                    @media all and (max-width: 700px) {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        transform: translateY(0%);
+                        @include font-size(40);
+                    }
+                }
+            }
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px 0 0 0;
+            @media all and (max-width: 700px) {
+                flex-direction:column;
+            }
+            li {
+                width: 200px;
+                line-height: 1.8;
+                margin: 0 30px 35px 0;
+                opacity: 0.5;
+                transition: all .4s ease;
+                overflow: hidden;
+                @media all and (max-width: 1024px) {
+                    width: calc(50% - 15px);
+                    margin: 0 15px 35px 0;
+                }
+                @media all and (max-width:700px) {
+                    width: auto;
+                    margin: 0 0 35px 0;
+                }
+                a {
+                    display: block;
+                    transform: translateY(-100%);
+                    animation: allin 1s both .4s;
+                    -ms-transform: translateY(0%);
+                }
+                .en {
+                    text-transform: uppercase;
+                    @include font-size(14);
+                    font-family: Quicksand-Bold, 微軟正黑體;
+                }
+                .ch {
+                    @include font-size(16);
+                    margin-top: 10px;
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

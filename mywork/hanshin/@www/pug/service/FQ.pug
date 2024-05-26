@@ -1,0 +1,223 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"顧客服務",
+            link:"../service/index.html"},
+        {
+            title:"常見問題",
+            link:"../service/FQ.html"},
+    ]
+
+    var QAtype = [
+        {
+            typeName:"關於漢神禮券",
+            question:[
+                "特殊活動時所贈送之商品券使用方式為何？",
+                "請問禮券遺失了怎麼辦？",
+                "禮券有哪些面額呢？購買禮券有折扣嗎？",
+                "特殊活動時所贈送之商品券使用方式為何？"
+            ]},
+        {
+            typeName:"漢神聯名卡申辦、優惠說明及館內信用卡使用",
+            question:[
+                "館內可使用『銀聯卡』嗎？",
+                "請問漢神百貨聯名卡可享哪些優惠呢？",
+                "請問如何申辦漢神百貨聯名卡？",
+                "可否使用『國民旅遊卡』消費？"
+            ]},
+        {
+            typeName:"停車優惠",
+            question:[
+                "若超過營業時間，應如何取車呢？",
+                "使用商品禮券購物，可否兌換停車券？",
+                "來拿取修改的衣服，是否可免費停車呢？",
+                "停車場設置在哪裡？有提供平面停車位嗎？"
+            ]},
+        {
+            typeName:"購物宅配服務",
+            question:[
+                "免費宅配服務有沒有什麼限制？",
+                "消費滿多少才可以免費宅配呢？"
+            ]},
+    ]
+
+    var moreService = [
+        {
+            img:"../../upload/fa2/service/index/icon1_50_50.png",
+            ch:"1F 服務台",
+            en:"information desk",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon2_50_50.png",
+            ch:"4F 卡友服務中心",
+            en:"card member service center",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon3_50_50.png",
+            ch:"4F 貴賓廳",
+            en:"VIP lounge",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon4_50_50.png",
+            ch:"B3F 諮詢台",
+            en:"information desk",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon5_50_50.png",
+            ch:"失物招領",
+            en:" lost and found",
+            link:"../service/lost.html"},
+        {
+            img:"../../upload/fa2/service/index/icon6_50_50.png",
+            ch:"禮卷專區",
+            en:"gift certificate",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon7_50_50.png",
+            ch:"退稅服務",
+            en:"tax refund service",
+            link:"../service/tax.html"},
+        {
+            img:"../../upload/fa2/service/index/icon8_50_50.png",
+            ch:"停車優惠辦法",
+            en:"parking offer",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon9_50_50.png",
+            ch:"商品券相關注意事項",
+            en:"product ticket",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon10_50_50.png",
+            ch:"貼心服務 設施指南",
+            en:"service facility guide",
+            link:"../service/facility.html"},
+        {
+            img:"../../upload/fa2/service/index/icon11_50_50.png",
+            ch:"常見問題",
+            en:"Q&A",
+            link:"../service/FQ.html"},
+        {
+            img:"../../upload/fa2/service/index/icon12_50_50.png",
+            ch:"購物配送服務",
+            en:"shopping delivery",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon13_50_50.png",
+            ch:"電子發票",
+            en:"electronic invoice",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon14_50_50.png",
+            ch:"聯絡我們",
+            en:"contact us",
+            link:"../service/contact.html"},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#service.FQ
+    include ../layout/_header.pug
+    
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            setion._title(style="background-image:url('../../upload/fa2/service/FQ/bannerBg_1670_410.jpg')")
+                p.ch 常見問題
+                p.en Q & A
+                p.words 開闊明朗的空間，順暢動線設計，提供消費者輕鬆歡愉，擁50家以上國際精品名牌進駐，名品雲集世界同步。
+        article.content
+            section.topTitle
+                p.en CATEGORY
+                form
+                    .dropDown.active
+                        span.selectMenu
+                            p 全部類別
+                        ul
+                            li 關於漢神禮券
+                            li 漢神聯名卡申辦、優惠說明及館內信用卡使用
+                            li 停車優惠
+                            li 購物宅配服務
+                    .inputArea
+                        input(type="text" placeholder="輸入品牌搜尋")
+                        // 後端請注意: 下方的onclick 只是展示用 記得要移除 重要的是裡面的function
+                        //後端請注意: 搜尋結果出來後 請啟動 hasResult() 這個function 
+                        button.icon-magnifier(type="button" onclick="hasResult();")
+            section.QAtable
+                each val in QAtype
+                    .type
+                        .typeName
+                            p=val.typeName
+                        .lists
+                            each item in val.question
+                                .list
+                                    .question
+                                        p=item
+                                        span.icon-play3
+                                    .answer(style="display:none")
+                                        ._text
+                                            p 您好，DM是依地域性 / 消費習性抽樣寄送，建議您於漢神巨蛋購物廣場購物，多加使用漢神巨蛋聯名卡刷卡消費或漢神超集卡消費集點，以累計您的漢神巨蛋聯名卡消費或漢神超集卡消費集點紀錄，提高其DM抽選機率。
+                                        ._text
+                                            p 漢神百貨禮券分置介紹 :
+                                            ul
+                                                li 
+                                                    p 漢神百貨禮券分『現金禮券』（未開發票禮券）與『商品禮券』二種 
+                                                    p.dot 現金禮券（未開發票禮券）－於購買時僅開立銷售證明單，需持現金禮券購物時才依實際消費金額開立發票。
+                                                    p.dot 商品禮券（已開發票禮券）－於購買即開立全額發票，持禮券不再開發票。
+                                                li 
+                                                    p 漢神禮券共有500元（100元5張）、1000元（100元10張）、5000元（500元10張）、10,000元（1,000元10張）四種面額，依本數販售。
+                                        ._text
+                                            a(href=java) 禮卷專區介紹連結
+                                        ._img
+                                            figure
+                                                img(src="../../upload/fa2/service/FQ/answerImg.jpg", alt="")
+                                            b 眾多品牌推出限量禮盒，加碼商品大放送
+        article.moreService
+            section._title
+                p.en 觀看更多服務
+                p.ch More service
+            section.link(style="background: linear-gradient(90deg,#eaecf1,#b0c9fd,#eaecf1)")
+                ._slick
+                    ul
+                        each val in moreService
+                            li
+                                a(href=val.link)
+                                    figure
+                                        img(data-lazy=val.img, alt="")
+                                    ._text
+                                        p.ch=val.ch
+                                        p.en=val.en
+                    .arrows
+                        span.icon-arrowLeft
+                        span.icon-arrowRight
+    include ../layout/_footer.pug
++script
+script.
+    function hasResult(){
+        // 重新整理畫面
+        _Blazy.serviceW();
+        _slick.serviceW();
+    }
+
+
+|
+|
+</html>

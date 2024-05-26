@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TECO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link href="../../assets/img/favicon-20170414044912706.ico" rel="icon" type="image/x-icon">
+    <!--slick-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick.css" />
+    <!--fons-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/fontAwesome/font-awesome.css" />
+    <!--semanticwp-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.css" />
+    <!--mCustomScrollbar-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.css" />
+    <!-- 非共用的套件css -->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/perfect-scrollbar/perfect-scrollbar.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/datedropper/datedropper.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/datedropper/my-style.css" />
+    <!--style.css-->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/member/returnDetail.css" />
+</head>
+
+<body class="fontM" id="top">
+    <main id="member" class="returnDetail">
+        <article class="topNav">
+            <section class="back" onclick="history.back()">
+                <span></span>
+                <p>CLOSE</p>
+            </section>
+        </article>
+        <article class="topTitle">
+            <p class="en">Cancel Detail</p>
+            <p class="ch">退換貨明細</p>
+        </article>
+        <article class="content">
+            <section class="order">
+                <div class="listhead">
+                    <div class="ocerview">
+                        <p class="en">Order Ocerview</p>
+                        <p class="ch">退換貨商品</p>
+                    </div>
+                    <div class="price">
+                        <p class="en">Price</p>
+                        <p class="ch">價格</p>
+                    </div>
+                    <div class="edit">
+                        <p class="en">Cancel</p>
+                        <p class="ch">狀態</p>
+                    </div>
+                </div>
+                <ul>
+                    <!-- 後端請注意: 下方li有2種商品
+                            1.普通商品 甚麼都不用加
+                            2.加購商品 purchase 需在li加上class "purchase"
+                    -->
+                    <!-- 後端請注意:
+                            1.已退貨的商品  甚麼都不用加
+                            1.審核退貨中的商品  需在li加上class "check"
+                    -->
+                    <li class="check purchase">
+                        <!-- 1.審核退貨中的商品  需在li加上class "check" -->
+                        <!-- 2.加購商品 purchase 需在li加上class "purchase" -->
+                        <div class="_img">
+                            <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                            <img src="../../upload/shop/giftImg1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p class="ps">加購商品</p>
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                                <p class="productName">雅適變頻ZR冷暖/11-13坪冷專系列</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">66,700</div>
+                        <div class="edit">
+                            <div class="check">
+                                <span class="iconN-returned"></span>
+                                <p>審核中</p>
+                            </div>
+                            <div class="returned">
+                                <span class="iconN-returned"></span>
+                                <p>已退貨</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="shipping">
+                <div class="listhead">
+                    <div>
+                        <p class="en">Return</p>
+                        <p class="ch">退貨訂單明細</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <h6>退貨資訊</h6>
+                        <div>
+                            <p data-name="退貨編號：">201810220001</p>
+                            <p data-name="退貨狀態：">待收貨</p>
+                            <p data-name="退貨金額：">$88,888</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>退款資訊</h6>
+                        <div>
+                            <p data-name="交易序號：">201810220001</p>
+                            <p data-name="退款方式：">信用卡</p>
+                            <p data-name="退款狀態：">未退款</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="shipping">
+                <div class="listhead">
+                    <div>
+                        <p class="en">Shipping</p>
+                        <p class="ch">訂單明細</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <h6>訂單資訊</h6>
+                        <div>
+                            <p data-name="訂單編號：">201810220001</p>
+                            <p data-name="訂單狀態：">待出貨</p>
+                            <p data-name="訂單金額：">$88,888</p>
+                            <p data-name="交易序號：">201810220001</p>
+                            <p data-name="付款方式 : ">信用卡</p>
+                            <p data-name="款項狀態 : ">第一期款項完成</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>宅配資訊</h6>
+                        <div>
+                            <p data-name="宅配公司：">黑貓宅急便</p>
+                            <p data-name="宅配編號：">201810220001</p>
+                            <p data-name="廢四機回收：">需要回收</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>預計到貨時間</h6>
+                        <div>
+                            <p data-name="時間：">2018/10/22</p>
+                            <p data-name="時段：">上午</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>收件人資訊</h6>
+                        <div>
+                            <p data-name="收件人姓名：">王東元</p>
+                            <p data-name="收件人地址：">407 西屯區四川路66號2樓</p>
+                            <p data-name="收件人電話：">04 12345678</p>
+                            <p data-name="收件人手機：">0988 123 456</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>發票內容</h6>
+                        <div>
+                            <p data-name="發票：">個人載具發票</p>
+                            <p data-name="載具號碼：">3KK4LV2</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>發票收件人</h6>
+                        <div>
+                            <p data-name="收件人姓名：">王東元</p>
+                            <p data-name="收件人地址：">407 西屯區四川路66號2樓</p>
+                            <p data-name="收件人電話：">04 12345678</p>
+                            <p data-name="收件人手機：">0988 123 456</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vedor/jquery-1.11.3.min.js"></script>
+    <!--共用-->
+    <script src="../../assets/js/vedor/slick/slick.js"></script>
+    <script src="../../assets/js/vedor/bLazy/bLazy.js"></script>
+    <script src="../../assets/js/vedor/waypoints.min.js"></script>
+    <script src="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../assets/js/vedor/jquery.easings.min.js"></script>
+    <script src="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.js"></script>
+    <script src="../../assets/js/vedor/prefixfree.min.js"></script>
+    <script src="../../assets/js/vedor/picturefill.min.js"></script>
+    <script>
+        document.createElement("picture");
+    </script>
+    <!--非共用-->
+    <script src="../../assets/js/vedor/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../assets/js/vedor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!--main js-->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/nick.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

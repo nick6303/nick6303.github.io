@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+  <meta charset="UTF-8"/>
+  <meta name="language" content="tw"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="title" content="網站標題名稱"/>
+  <meta name="description" content="網站描敘"/>
+  <meta name="keywords" content="網站關鍵字"/>
+  <meta name="copyright" content="作者名子"/>
+  <title itemprop="name">hanshin</title>
+  <link rel="canonical" href="網址" itemprop="url"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
+</head>
+
+<body class="detail" id="card">
+  <header>
+    <!--左邊選單-->
+    <article class="hdContent" style="background-image: url('../../assets/img/hdBg_250_1080.jpg')">
+      <section class="top">
+        <div class="logo"><a href="../home/index.html"><img src="../../assets/img/hdLogo.png" alt=""><img src="../../assets/img/hdLogoRWD.png" alt=""></a></div>
+        <div class="openMenu"><span class="icon-square"></span>
+          <p>FIND MORE</p>
+        </div>
+        <div class="socialMedia">
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="list">
+        <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li itemprop="name"><a href="../news/index.html" itemprop="url">
+              <p>最新消息</p></a></li>
+          <li itemprop="name"><a href="../brand/index.html" itemprop="url">
+              <p>品牌導覽</p></a></li>
+          <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+              <p>樓層導覽</p></a></li>
+          <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+              <p>會員專區</p></a></li>
+          <li itemprop="name"><a href="../service/index.html" itemprop="url">
+              <p>服務中心</p></a></li>
+          <li itemprop="name"><a href="../about/index.html" itemprop="url">
+              <p>交通資訊</p></a></li>
+        </ul>
+      </section>
+      <section class="bottom">
+        <div class="buttons"><a class="openSearch" href="javascript:void(0)"><span class="icon-magnifier"></span>
+            <p>搜尋</p></a><a href="javascript:void(0)"><span class="icon-person"></span>
+            <p>會員</p></a></div>
+        <div class="openSelectStore"><a href="javascript:void(0)">
+            <p>SELECT STORE</p></a></div>
+        <div class="openTime"><span>Business Hours Today</span>
+          <p>10:30 - 22:00</p>
+        </div>
+      </section>
+    </article>
+    <!--右下按鈕-->
+    <article class="sideButton">
+      <section class="socialMedia"> 
+        <div class="link"><a href="javascript:void(0)"><span class="icon-youtube"></span></a><a href="javascript:void(0)"><span class="icon-twitter"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-facebook"></span></a></div>
+        <button><span class="icon-share"></span></button>
+      </section>
+      <section class="openSearch"><span class="icon-magnifier"></span></section>
+      <section class="DM"><a href="../dm/index.html">DM</a></section>
+      <section class="goTop">TOP</section>
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 導覽機新增的按鈕 ------------>
+      <section class="back" onclick="back()">返回</section>
+      <section class="toHome"><a class="icon-house" href="../guide/index.html"></a></section>
+      <section class="arrows">
+        <button class="up" onclick="scrollUp();"></button>
+        <button class="down" onclick="scrollDown();"></button>
+      </section>
+    </article>
+    <!--選擇分店-->
+    <article class="selectStore">
+      <section class="buttons">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <div class="_title">
+          <p class="ch">選擇分站</p>
+          <p class="en">Select substation</p>
+          <ul>
+            <li class="active">全台分站  </li>
+            <li>南部地區</li>
+            <li>中部地區</li>
+            <li>北部地區</li>
+          </ul>
+        </div>
+        <div class="_slick">
+          <ul>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg2_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神巨蛋購物廣場</p>
+                    <p class="en">Hanshin Arena Shopping Plaza</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="https://tw.mall.yahoo.com/store/hanshin">
+                  <figure><img src="../../upload/fa2/storeImg3_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨網路購物</p>
+                    <p class="en">Hanshin Online Shopping</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+          </ul>
+          <div class="arrows"><span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+        </div>
+      </section>
+    </article>
+    <!-- 主選單-->
+    <article class="hdMenu">
+      <section class="topButton">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <!--後端請注意: 未登入狀態請在下方<div class="login"> 加上class "active"-->
+        <div class="login active">
+          <p>LOGIN</p>
+          <div class="buttons"><a href="javascript:void(0)">登入</a><a href="javascript:void(0)">註冊</a></div>
+        </div>
+        <!--後端請注意: 未登入狀態請在下方<div class="logout"> 加上class "active"-->
+        <div class="logout">
+          <p>LOGOUT</p>
+          <div class="buttons">
+            <p class="name">我的名子</p><a href="javascript:void(0)">登出</a>
+          </div>
+        </div>
+        <div class="mainLink">
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../news/index.html" itemprop="url">
+                <p class="ch">最新消息</p>
+                <p class="en">NEWS</p></a></li>
+            <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+                <p class="ch">會員專區</p>
+                <p class="en">MEMBER</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="ch">樓層導覽</p>
+                <p class="en">FLOOR</p></a></li>
+            <li itemprop="name"><a href="../service/index.html" itemprop="url">
+                <p class="ch">顧客服務</p>
+                <p class="en">SERVICE</p></a></li>
+            <li itemprop="name"><a href="../about/index.html" itemprop="url">
+                <p class="ch">關於漢神</p>
+                <p class="en">ABOUT</p></a></li>
+            <li itemprop="name"><a href="../dm/index.html" itemprop="url">
+                <p class="ch">電子型錄</p>
+                <p class="en">DM</p></a></li>
+            <li itemprop="name"><a href="../other/join.html" itemprop="url">
+                <p class="ch">加入我們</p>
+                <p class="en">JOIN US</p></a></li>
+            <li itemprop="name"><a href="../card/index.html" itemprop="url">
+                <p class="ch">超集卡/聯名卡</p>
+                <p class="en">CARD</p></a></li>
+            <li itemprop="name"><a href="../other/cooperation.html" itemprop="url">
+                <p class="ch">合作找我</p>
+                <p class="en">COOPERATE</p></a></li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <div class="about">
+            <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+              <li itemprop="name"><a href="javascript:void(0)" onclick="subscribe.open()">訂閱電子報</a></li>
+              <li itemprop="name"><a href="../supplier/index.html" itemprop="url">廠商專區  </a></li>
+              <li itemprop="name"><a href="../other/related.html" itemprop="url">相關企業</a></li>
+              <li itemprop="name"><a href="../other/privacy.html" itemprop="url">隱私權政策</a></li>
+            </ul>
+          </div>
+          <div class="socialMedia">
+            <p>FOLLOW US</p>
+            <ul>
+              <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="floorIntro">
+          <div class="_title">
+            <p>Floor</p><span>introduction</span>
+          </div>
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">1F</p>
+                <p class="name">精品美妍</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">2F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">3F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">4F</p>
+                <p class="name">國際名品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">5F</p>
+                <p class="name">都會名媛</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">6F</p>
+                <p class="name">品味質男</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">7F</p>
+                <p class="name">生活逸品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">8F</p>
+                <p class="name">活力休閒</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B1F</p>
+                <p class="name">名品鞋履</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B2F</p>
+                <p class="name">潮流風尚</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B3F</p>
+                <p class="name">雅緻食尚</p></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!--搜尋燈箱-->
+    <article class="searchLibox">
+      <section>
+        <div class="liboxClose"><span></span></div>
+        <div class="_title">
+          <p class="ch">搜尋</p>
+          <p class="en">Search</p>
+          <p class="words">歡迎搜尋您想找尋的商品或是新訊，漢神提供最佳優質商品及貼心服務機能。</p>
+          <div class="buttons">
+            <button class="active" type="button">
+              <p>尋找品牌</p>
+            </button>
+            <button type="button">
+              <p>尋找訊息</p>
+            </button>
+          </div>
+        </div>
+        <div class="forms">
+          <!-- 尋找品牌表格-->
+          <form class="active">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box floor">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇樓層</p></span>
+                <ul>
+                  <li>樓層一</li>
+                  <li>樓層二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+          <!-- 尋找訊息表格-->
+          <form style="display:none">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <article class="guideLogo"><img src="../../assets/img/guideLogo.png" alt=""></article>
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <article class="subscribe">
+      <section>
+        <div class="box">
+          <div class="liboxClose"><span></span></div>
+          <div class="_title"><span class="icon-book"></span>
+            <p class="ch">訂閱電子報</p>
+            <p class="en">Subscribe newsletters</p>
+            <p class="words">如果你想訂閱電子報，請選擇想要收到的店別，並填寫e-mail，確認送出後，請至您所填寫的e-mail收取確認信件，回覆連結後即訂閱成功。</p>
+          </div>
+          <form>
+            <div class="item">
+              <div class="name">
+                <p class="ch">信箱</p>
+                <p class="en">E-mail</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="name">
+                <p class="ch">選擇店別</p>
+                <p class="en">store</p>
+              </div>
+              <div class="inputArea">
+                <div class="dropDown"><span class="selectMenu">
+                    <p>請下拉選擇店別</p></span>
+                  <ul>
+                    <li>漢神店</li>
+                    <li>巨蛋店</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="subscribe.close()"><span class="icon-hook"></span>
+                <p>確認送出</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+  </header>
+  <main>
+    <article class="banner">
+      <section class="breadcrumbs">
+        <ul>
+          <li><a href="../home/index.html">首頁</a></li>
+          <li><a href="../card/index.html">超級卡/聯名卡專區</a></li>
+          <li><a href="../card/detail.html">漢神聯名世界卡</a></li>
+        </ul>
+      </section>
+      <section class="cover">
+        <!-- 後端請注意: 如果要讓字變白色的話 請在下方的left 加上class"whiteWord"-->
+        <div class="left" style="background-image:url('../../upload/fa2/card/index/textBg2_1020_650.png')">
+          <div class="_title">
+            <h2>漢神聯名世界卡</h2>
+            <p>貴賓廳尊榮貼心服務，停車有優惠讓您逛街不煩惱，尊竉禮及卡友獨享折扣商品，一卡同享超集卡點數優惠。</p>
+          </div>
+          <div class="inf">
+            <div class="share">
+              <div class="type">
+                <p class="ch">分享</p>
+                <p class="en">Share to</p>
+              </div>
+              <ul class="socialMedia">
+                <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+                <li><a href="javascript:void(0)"><span class="icon-twitter"></span></a></li>
+                <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+              </ul>
+            </div>
+            <div class="apply">
+              <div class="type">
+                <p class="ch">立即申辦此卡 </p>
+                <p class="en">Apply</p>
+              </div><a class="book" href="javascript:void(0)" target="_blank">ENTER</a>
+            </div>
+            <div class="other">
+              <div class="type">
+                <p class="ch">請下拉選擇</p>
+                <p class="en">Other</p>
+              </div>
+              <div class="dropDown">
+                <div class="selectMenu">
+                  <p>全部類別</p>
+                </div>
+                <ul>
+                  <li> <a href="javascript:void(0)">斜槓進行式  Sale流行品最後折扣"</a></li>
+                  <li> <a href="javascript:void(0)">斜槓進行式  Sale流行品最後折扣"</a></li>
+                  <li> <a href="javascript:void(0)">斜槓進行式  Sale流行品最後折扣"</a></li>
+                  <li> <a href="javascript:void(0)">斜槓進行式  Sale流行品最後折扣"</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <figure><img src="../../upload/fa2/card/index/rowImg2.png" alt=""></figure>
+        </div>
+      </section>
+    </article>
+    <article class="topTitle">
+      <p class="en">INTRODUCTION</p>
+      <div class="anchor">
+        <ul>
+          <li class="active"> 
+            <p>專屬優惠</p>
+          </li>
+          <li>
+            <p>尊榮禮遇</p>
+          </li>
+          <li>
+            <p>申請辦法</p>
+          </li>
+          <li>
+            <p>常見問題</p>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="offer">
+      <section class="_title">
+        <p class="ch">專屬優惠</p>
+        <p class="en">Exclusive offer</p>
+        <div class="date">
+          <div class="type"> 
+            <p>活動期間</p>
+            <p>Date</p>
+          </div>
+          <div class="time">
+            <p>2019/03/16(四)～2019/04/17(二)</p>
+          </div>
+        </div>
+      </section>
+      <section class="rows">
+        <!--後端請注意: 這邊有點小複雜 請一定要注意 
+        此處p的有分層級 需要讓客戶選擇自行編排
+        第一層 <p class="s1">   一定會有那個點
+        第二層 <p class="s2">   
+        第三層 <p class="s3">   
+        -->
+        <div class="row">
+          <div class="_text">
+            <h6>(1)一卡雙回饋，同享超集卡點數優惠: </h6>
+            <p class="s1">享超集卡集點/折抵優惠，持漢神聯名卡於漢神刷卡消費，單筆消費即可累積「漢神超集卡」點數，兩館點數可合併累積計算。折抵現金：單筆消費500元(含)以上，超集卡點數每100點可折抵30元，折抵無上限。</p>
+          </div>
+          <div class="ps">
+            <h6>*注意事項 :</h6>
+            <p>1.漢神聯名卡卡友免申辦「漢神超集卡」，僅須持卡至「超集卡查詢機」完成開卡登錄，即擁有漢神超集卡集點/折抵等功能。</p>
+            <p>2.相關優惠內容、使用辦法及注意事項以漢神百貨公告為準。 </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>(2)交易免簽名，快速又便利:</h6>
+            <p class="s1">刷卡購物消費享9折優惠(折扣期間95折，部分專櫃、商品除外)。</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>(3)來店禮遇:</h6>
+            <p class="s1">漢神不定期舉辦卡友來店禮及卡友獨享折扣商品，回饋您的愛護，並不定期寄發各項流行資訊與活動訊息，讓您掌握流行資訊的每一腳步。</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>(4)停車有優惠，讓您逛街不煩惱:</h6>
+            <p class="s1">外籍旅客持當日消費發票，含稅累積消費新臺幣 2,000 元(含)以上(需扣除不可退稅貨物)，及出示外籍旅客入境證件（護照／         中國、香港、澳門旅客需出示入台證）正本，即可至卡友服務中心辦理退稅服務，旅客需於申辦當日起算 90 天內離境。</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>(5)貴賓廳尊榮貼心服務:</h6>
+            <p class="s2">1.漢神百貨貴賓廳，提供每位貴賓優雅舒適的休憩空間，免費提供飲料、點心書報雜誌，讓您置身其中，輕鬆舒適、倍感尊榮。</p>
+            <p class="s2">2.每年1/1至同年12/31止，持漢神百貨聯名卡於漢神百貨館內消費累計達指定金額，即可獲贈免費使用貴賓廳數次。(以同一身分證字號計算，正、附卡分別累計，依消費級距核定使用貴賓廳資格及次數，使用期限一年，限持卡者本人使用。)</p>
+            <p><a href="javascript:void(0)">詳情及期限參閱信用卡網站說明</a></p>
+          </div>
+        </div>
+      </section>
+    </article>
+    <article class="treatment" style="background-image:url('../../upload/fa2/card/detail/treatmentBg_1670_1080.jpg')">
+      <section class="_title">
+        <p class="ch">尊榮禮遇</p>
+        <p class="en">Honorable courtesy</p>
+      </section>
+      <section class="content">
+        <ul>
+          <li>
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/treatmentImg1_370_220.jpg" alt=""></figure>
+            <div class="_text">
+              <h6>消費最高紅利點數5倍回饋</h6>
+              <!-- 後端請注意: 字數限制40字 超過會變.....-->
+              <p>國內消費紅利點數3倍回饋，海外消費紅利點數5倍回饋。</p>
+            </div>
+          </li>
+          <li>
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/treatmentImg2_370_220.jpg" alt=""></figure>
+            <div class="_text">
+              <h6>回饋享免費停車4小時</h6>
+              <!-- 後端請注意: 字數限制40字 超過會變.....-->
+              <p></p>
+            </div>
+          </li>
+          <li>
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/treatmentImg3_370_220.jpg" alt=""></figure>
+            <div class="_text">
+              <h6>免費使用漢神百貨貴賓廳</h6>
+              <!-- 後端請注意: 字數限制40字 超過會變.....-->
+              <p>首年可免費獲一年期「尊榮金卡」乙張，免費使用漢神百貨貴賓廳，尊榮金卡每卡戶限贈。</p>
+            </div>
+          </li>
+          <li>
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/treatmentImg4_370_220.jpg" alt=""></figure>
+            <div class="_text">
+              <h6>回饋金終身有效，自動折抵次期消費</h6>
+              <!-- 後端請注意: 字數限制40字 超過會變.....-->
+              <p>國內消費金額依下表級距，決定當期及次期帳單海外消費回饋率，系統自動取較高回饋率...</p>
+            </div>
+          </li>
+          <li>
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/treatmentImg5_370_220.jpg" alt=""></figure>
+            <div class="_text">
+              <h6>年度2次、每次最高7天國際機場貴賓室服務</h6>
+              <!-- 後端請注意: 字數限制40字 超過會變.....-->
+              <p></p>
+            </div>
+          </li>
+          <li>
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/treatmentImg6_370_220.jpg" alt=""></figure>
+            <div class="_text">
+              <h6>高額旅行平安險及旅行不便險保障</h6>
+              <!-- 後端請注意: 字數限制40字 超過會變.....-->
+              <p>只要您使用鈦金卡刷卡支付80%以上之團費，或全部公共交通工具費用，您可享有2,000...</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </article>
+    <article class="application">
+      <section class="_title">
+        <p class="ch">申請辦法</p>
+        <p class="en">Application method</p>
+      </section>
+      <section class="content">
+        <ul>
+          <li><a href="javascript:void(0)" data-src="../card/applicationLibox.html" onclick="applicationLibox.open(this)">
+              <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/applicationImg1.png" alt=""></figure>
+              <div class="_text">
+                <p class="ch">申請條件</p>
+                <p class="en">Condition</p>
+              </div></a></li>
+          <li><a href="javascript:void(0)" data-src="../card/applicationLibox.html" onclick="applicationLibox.open(this)">
+              <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/applicationImg2.png" alt=""></figure>
+              <div class="_text">
+                <p class="ch">所需文件</p>
+                <p class="en">File</p>
+              </div></a></li>
+          <li><a href="javascript:void(0)" data-src="../card/applicationLibox.html" onclick="applicationLibox.open(this)">
+              <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/applicationImg3.png" alt=""></figure>
+              <div class="_text">
+                <p class="ch">其他證明</p>
+                <p class="en">Other proof</p>
+              </div></a></li>
+          <li><a href="javascript:void(0)" data-src="../card/applicationLibox.html" onclick="applicationLibox.open(this)">
+              <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/applicationImg4.png" alt=""></figure>
+              <div class="_text">
+                <p class="ch">年費及減免辦法</p>
+                <p class="en">Annual fee</p>
+              </div></a></li>
+          <li><a href="javascript:void(0)" data-src="../card/applicationLibox.html" onclick="applicationLibox.open(this)">
+              <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/applicationImg5.png" alt=""></figure>
+              <div class="_text">
+                <p class="ch">個人資料使用條款</p>
+                <p class="en">Terms of use</p>
+              </div></a></li>
+          <li><a href="javascript:void(0)" data-src="../card/applicationLibox.html" onclick="applicationLibox.open(this)">
+              <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/card/detail/applicationImg6.png" alt=""></figure>
+              <div class="_text">
+                <p class="ch">超集卡相關事項</p>
+                <p class="en">Related matters</p>
+              </div></a></li>
+        </ul>
+      </section>
+    </article>
+    <article class="qa">
+      <section class="_title">
+        <p class="ch">常見問題</p>
+        <p class="en">Q & A</p>
+      </section>
+      <section class="QAtable">
+        <div class="type">
+          <div class="typeName">
+            <p>點數累積</p>
+          </div>
+          <div class="lists">
+            <div class="list">
+              <div class="question">
+                <p>如何累積點數？點數多久入帳？</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。</p>
+                </div>
+                <div class="_text">
+                  <p>您可利用下列方式查詢：</p>
+                  <ul>
+                    <li> 
+                      <p>下載APP並綁定超集卡，即可線上於"會員中心"查詢。</p>
+                    </li>
+                    <li>
+                      <p>於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。</p>
+                    </li>
+                    <li>
+                      <p>致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text"><a href="javascript:void(0)">4F卡友服務中心連結</a></div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/card/detail/QAImg.jpg" alt=""></figure><b>不定期舉辦加碼活動、扣點換贈品等活動</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>若客戶要查詢漢神超集卡的點數，怎麼查？</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。</p>
+                </div>
+                <div class="_text">
+                  <p>您可利用下列方式查詢：</p>
+                  <ul>
+                    <li> 
+                      <p>下載APP並綁定超集卡，即可線上於"會員中心"查詢。</p>
+                    </li>
+                    <li>
+                      <p>於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。</p>
+                    </li>
+                    <li>
+                      <p>致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text"><a href="javascript:void(0)">4F卡友服務中心連結</a></div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/card/detail/QAImg.jpg" alt=""></figure><b>不定期舉辦加碼活動、扣點換贈品等活動</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>購物後才申辦超集卡，還可以補登之前消費金額的點數嗎？</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。</p>
+                </div>
+                <div class="_text">
+                  <p>您可利用下列方式查詢：</p>
+                  <ul>
+                    <li> 
+                      <p>下載APP並綁定超集卡，即可線上於"會員中心"查詢。</p>
+                    </li>
+                    <li>
+                      <p>於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。</p>
+                    </li>
+                    <li>
+                      <p>致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text"><a href="javascript:void(0)">4F卡友服務中心連結</a></div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/card/detail/QAImg.jpg" alt=""></figure><b>不定期舉辦加碼活動、扣點換贈品等活動</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>特殊活動時所贈送之商品券使用方式為何？</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。</p>
+                </div>
+                <div class="_text">
+                  <p>您可利用下列方式查詢：</p>
+                  <ul>
+                    <li> 
+                      <p>下載APP並綁定超集卡，即可線上於"會員中心"查詢。</p>
+                    </li>
+                    <li>
+                      <p>於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。</p>
+                    </li>
+                    <li>
+                      <p>致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text"><a href="javascript:void(0)">4F卡友服務中心連結</a></div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/card/detail/QAImg.jpg" alt=""></figure><b>不定期舉辦加碼活動、扣點換贈品等活動</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>其他相關問題</p>
+          </div>
+          <div class="lists">
+            <div class="list">
+              <div class="question">
+                <p>我的個人資料有變動，請問該如何更改？</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。</p>
+                </div>
+                <div class="_text">
+                  <p>您可利用下列方式查詢：</p>
+                  <ul>
+                    <li> 
+                      <p>下載APP並綁定超集卡，即可線上於"會員中心"查詢。</p>
+                    </li>
+                    <li>
+                      <p>於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。</p>
+                    </li>
+                    <li>
+                      <p>致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text"><a href="javascript:void(0)">4F卡友服務中心連結</a></div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/card/detail/QAImg.jpg" alt=""></figure><b>不定期舉辦加碼活動、扣點換贈品等活動</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>請問個人密碼為何？</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。</p>
+                </div>
+                <div class="_text">
+                  <p>您可利用下列方式查詢：</p>
+                  <ul>
+                    <li> 
+                      <p>下載APP並綁定超集卡，即可線上於"會員中心"查詢。</p>
+                    </li>
+                    <li>
+                      <p>於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。</p>
+                    </li>
+                    <li>
+                      <p>致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text"><a href="javascript:void(0)">4F卡友服務中心連結</a></div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/card/detail/QAImg.jpg" alt=""></figure><b>不定期舉辦加碼活動、扣點換贈品等活動</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>如果漢神超集卡不見了要如何掛失，會有什麼風險嗎？</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>在您消費當日辦妥漢神超集卡後，即可至卡友服務中心作點數補登作業。消費當日未帶卡或未集點，可於消費次日起七日內，持漢神超集卡及發票至原消費地點之卡友服務中心辦理補登，逾期恕無法受理。</p>
+                </div>
+                <div class="_text">
+                  <p>您可利用下列方式查詢：</p>
+                  <ul>
+                    <li> 
+                      <p>下載APP並綁定超集卡，即可線上於"會員中心"查詢。</p>
+                    </li>
+                    <li>
+                      <p>於漢神百貨/漢神巨蛋購物廣場館內各樓層之「查詢機/導覽機」查詢。</p>
+                    </li>
+                    <li>
+                      <p>致電漢神百貨4F卡友服務中心，專線(07)215-7266轉6801服務人員查詢。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text"><a href="javascript:void(0)">4F卡友服務中心連結</a></div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/card/detail/QAImg.jpg" alt=""></figure><b>不定期舉辦加碼活動、扣點換贈品等活動</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <article class="topNav">
+      <section>
+        <div class="_title">
+          <p class="en">Need any helps?</p>
+          <p class="ch">您需要什麼幫助呢?</p>
+        </div>
+        <ul>
+          <li><a href="javascript:void(0)">
+              <p class="en">Tax Refund Service</p>
+              <p class="ch">退稅服務</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Voucher</p>
+              <p class="ch">禮卷專區</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Become our Member</p>
+              <p class="ch">我想申辦超集卡</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Parking</p>
+              <p class="ch">停車優惠</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Lost &amp; Found</p>
+              <p class="ch">失物招領</p></a></li>
+        </ul>
+      </section>
+    </article>
+    <article class="ftContent" style="background-image:url('../../assets/img/ftBg_1670_520.jpg')">
+      <section class="webMap">
+        <div class="type">
+          <div class="typeName">
+            <p>ABOUT</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">關於漢神百貨</a></li>
+              <li><a href="javascript:void(0)">交通資訊</a></li>
+              <li><a href="javascript:void(0)">最新消息</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>SERVICE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">服務中心</a></li>
+              <li><a href="javascript:void(0)">聯繫我們</a></li>
+              <li><a href="javascript:void(0)">電子型錄</a></li>
+              <li><a href="javascript:void(0)">服務之星</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>EXPLORE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">樓層導覽</a></li>
+              <li><a href="javascript:void(0)">品牌導覽</a></li>
+              <li><a href="javascript:void(0)">美食導覽</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>COOPERATE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">廠商專區</a></li>
+              <li><a href="javascript:void(0)">相關企業</a></li>
+              <li><a href="javascript:void(0)">商業合作</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>JOIN US</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">會員專區</a></li>
+              <li><a href="javascript:void(0)">超集卡專區</a></li>
+              <li><a href="javascript:void(0)">人才招募</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>Online shopping</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">漢神百貨網路購物</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="infomation">
+        <div class="address">
+          <h6>ADDRESS</h6>
+          <p>高雄市前金區成功一路266-1號</p>
+          <div class="number">
+            <p data-name="電話">07-215-7266</p>
+            <p data-name="服務專線">0800-018-980</p>
+          </div>
+        </div>
+        <div class="businessHours">
+          <h6>BUSINESS HOURS</h6>
+          <ul>
+            <li>
+              <p>週一至週四 11:00 - 22:00</p>
+            </li>
+            <li>
+              <p>週六/例假日 10:30 - 22:30</p>
+            </li>
+            <li>
+              <p>週五/假日前一天 11:00 - 22:30</p>
+            </li>
+            <li>
+              <p>例假最終日 10:30 - 22:00</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="ftBottom">
+        <div class="copyRight"><img src="../../assets/img/ftLogo_160_40.png" alt="">
+          <p>© Hanshin department store co.ltd all right reserve. Design by <a href="https://www.wddgroup.com">WDD</a></p>
+        </div>
+        <div class="follow">
+          <h6>FOLLOW US</h6>
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-twitter"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!-- 廣告-->
+    <article class="commercial">
+      <section style="background-image: url('../../upload/fa2/commercialBg_1090_535.jpg')">
+        <div class="liboxClose"><span></span></div>
+        <div class="_slick">
+          <ul class="single-item">
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="kCU3ht6rMMg"></div>
+              <div class="open-box" data-videoid="kCU3ht6rMMg"></div>
+            </li>
+            <li class="item" data-value="img"><a href="javascript:void(0)">
+                <!-- 後端請注意:如果是圖片請照這個格式 可以放gif圖片-->
+                <picture>
+                  <!-- [if IE 9]><video style="display: none;"><![endif]-->
+                  <!-- 後端請注意:手機圖片大小-->
+                  <source srcset="../../upload/fa2/commercialImg_1060_400.jpg" media="(max-width:1024px)">
+                  <!-- 後端請注意:電腦圖片大小 1050*590--><img data-lazy="../../upload/fa2/commercialImg_1060_400.jpg" alt="">
+                </picture></a></li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="VhCr88-MFfM"></div>
+              <div class="open-box" data-videoid="VhCr88-MFfM"></div>
+            </li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="dpfsUCOq75s"></div>
+              <div class="open-box" data-videoid="dpfsUCOq75s"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <artilce class="guideFooter">
+      <ul>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+      </ul>
+    </artilce>
+  </footer>
+</body>
+  <!-- 套件js:我把它弄成一包-->
+  <script src="../../assets/js/nick.js"></script>
+  <!-- 自訂的 js-->
+  <script src="../../assets/js/main.js"></script>
+  <script type="application/ld+json">
+    {  
+        "@context": "http://www.schema.org",
+        "@type": "ProfessionalService",
+        //- 網站名子
+        "name": "hanshin",   
+        //- email
+        "email": "mailto:wdd@wddgroup.com",
+        //- 本站網址
+        "url": "https://www.hanshin.com/",
+        //- logo位置
+        "image": "https://www.hanshin.com/assets/img/fb-creatop.jpg",
+        //- 商品價格區間
+        "priceRange":"500,000~3,000,000",
+        //- 電話
+        "telephone": "+886-4-23223899",
+        //- logo位置
+        "logo": "https://www.hanshin.com/fb-creatop.jpg",
+        //- 地址
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "大容東街90號7樓-1",
+            "addressLocality": "西屯區",
+            "addressRegion": "台中市",
+            "postalCode": "40758",
+            "addressCountry": "中華民國 (台灣)"
+        },
+        //- 銷售據點
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "24.1577281",
+            "longitude": "120.6488368"
+        },
+        //- 據點地圖
+        "hasMap": "https://www.google.com.tw/maps/place/%E5%A8%81%E5%BE%B7%E6%95%B8%E4%BD%8D%E8%A8%AD%E8%A8%88/@24.1577281,120.6488368,15z/data=!4m5!3m4!1s0x0:0x9d235559e0bbc032!8m2!3d24.1577281!4d120.6488368",
+        //- 營業時間
+        "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:30",
+        //- 聯絡方式
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+886-4-23223899",
+            "faxNumber": "+886-4-23223898"
+        },
+        //- 外部相關連結
+        "sameAs": ["https://www.facebook.com/wddgroup/"]
+    }
+  </script>
+<script>
+  var applicationLibox ={
+  
+      open:function(target){
+          var src = $(target).attr("data-src")
+          $("body").append("<article class='applicationLibox'></article>")
+  
+          if (!mobile()  && !$("body").hasClass("guide")) {
+              $("body").css({
+                  "overflow-y": "hidden",
+                  "padding-right": "1rem"
+              })
+          } else {
+              $("body").css("overflow-y", "hidden");
+          }
+  
+          $.ajax({
+                  // 載入資料
+                  url: src,
+              })
+              .done(function (data) {
+                  // 將資料塞入結構
+                  $(".applicationLibox").html(data);
+                  applicationLibox.all();
+              });
+      },
+  
+      close_click:function(){
+          $(".applicationLibox .liboxClose").click(function () {
+              applicationLibox.close();
+          });
+          $(".applicationLibox").click(function (e) {
+              if ($(e.target).hasClass("applicationLibox")){applicationLibox.close(); }
+          })
+      },
+  
+      close:function(){
+          $(".applicationLibox").addClass("close");
+          if (!mobile()) {$("body").css({"overflow-y":"visible","padding-right":"0rem"})}
+          else{ $("body").css("overflow-y", "visible")}
+          setTimeout(function () {
+              $(".applicationLibox").remove()
+          }, 400)
+      },
+  
+      scrollBar:function(){
+          $(".applicationLibox section").niceScroll({
+              horizrailenabled: false,
+              nativeparentscrolling: false,
+              cursorborder: "none",
+              cursorwidth: "3px",
+              cursorcolor: "#000",
+              railpadding: {
+                  top: 0,
+                  right: 1,
+                  left: 0,
+                  bottom: 0
+              },
+          })
+      },
+  
+      all:function(){
+          applicationLibox.close_click();
+          applicationLibox.scrollBar();
+      }
+  }
+  
+</script>
+</html>

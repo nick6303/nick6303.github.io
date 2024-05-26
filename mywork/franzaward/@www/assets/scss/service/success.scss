@@ -1,0 +1,139 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_common.scss";
+
+body {
+    background-image: url("../../img/serviceBg/success/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#service .header {
+    background: none;
+}
+
+.message {
+    max-width: 1190px;
+    margin: auto;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 120px 180px;
+    flex-wrap: wrap;
+    animation: messageIn 1.4s both .5s;
+    animation-timing-function: linear;
+    @media all and (max-width: 1279px) {
+        margin: 0 5vw;
+        padding: 8vw 5vw;
+    }
+    @media all and (max-width: 900px) {
+        flex-direction: column;
+    }
+    .left {
+        width: 310px;
+        padding-bottom: 20px;
+        ._img {
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            overflow: hidden;
+            @include flex-center;
+        }
+        @media all and (max-width: 900px) {
+            width: 100%;
+            @include flex-center;
+        }
+    }
+    .right {
+        width: calc(100% - 310px);
+        @media all and (max-width: 900px) {
+            width: 100%;
+        }
+        ._title {
+            line-height: 1.5;
+            position: relative;
+            padding-top: 65px;
+            &:before,
+            h4,
+            h5 {
+                color: $base_blue;
+            }
+            &:before {
+                content: "“";
+                @include font-size(84);
+                position: absolute;
+                top: 0;
+                left: 0;
+                @media all and (max-width: 700px) {
+                    @include font-size(72);
+                }
+            }
+            h4 {
+                @include font-size(34);
+                @media all and (max-width: 700px) {
+                    @include font-size(28);
+                }
+            }
+            h5 {
+                @include font-size(24);
+                margin-top: 15px;
+                @media all and (max-width: 700px) {
+                    @include font-size(20);
+                }
+            }
+            p {
+                @include font-size(14);
+                margin-top: 30px;
+                line-height: 1.8;
+            }
+        }
+        .button {
+            margin-top: 60px;
+            display: flex;
+            justify-content: flex-end;
+            @media all and (max-width: 400px) {
+                flex-direction:column;
+                align-items: flex-end;
+            }
+            a {
+                margin: 0 20px 0 60px;
+                @include flex-center;
+                @media all and (max-width: 700px) {
+                    margin: 0 2.5vw 0 8vw;
+                }
+                @media all and (max-width: 400px) {
+                    margin: 2vh 0;
+                }
+                p {
+                    @include font-size(14);
+                }
+                &:after {
+                    font-family: 'icomoon';
+                    content: "\e906";
+                    @include font-size(24);
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes messageIn {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        box-shadow: 0 0 60px rgba(0, 0, 0, .1);
+    }
+}
+
+
+#service .goTop span {
+    background-color: #fff;
+}

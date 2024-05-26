@@ -1,0 +1,81 @@
+#search.index
+    .guide
+        .newsContent
+            padding: 0 30px
+    main
+        background-image: url('../../upload/fa2/search/bg_1680_990.jpg')
+        background-size: 100% auto
+        background-position: top center
+        background-repeat: no-repeat
+    .banner ._title 
+        +bannerTitle
+        padding: 140px 50px 0
+        @media all and (max-width: 1024px)
+            padding: 140px 5vw 0
+        .words
+            font-size: px(18)
+            .numb
+                color: #f00808
+                font-size: px(23)
+                margin: 0 5px
+        button
+            display: flex
+            align-items: center
+            background-color: transparent
+            border: none
+            font-size: px(16)
+            margin: 40px 0 0
+            animation: fadeInUp 1s both 1.2s
+            &:hover span 
+                transform: rotateY(360deg)
+            span
+                padding: 0 0 0 2px
+                width: 40px
+                height: 40px
+                +flex-center
+                color: #fff
+                background-color: #dfbc91
+                border-radius: 50%
+                margin-right: 15px
+                transition: all .6s ease
+            p
+                font-weight: bold
+    .floorContent
+        padding: 0 0 110px
+    .newsContent
+        padding: 0 50px 
+        @media all and (max-width: 1024px)
+            padding: 0 5vw 
+    .notFound 
+        display: none
+        .ps
+            margin: 160px auto 80px
+            font-size: px(14)
+            text-align: center
+            +flex-center
+            padding: 0 50px
+            opacity: 0
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            &.show
+                animation: fadeInUp 1.2s both 
+            p
+                position: relative
+                padding: 5px 12px
+                color: #4b4b4b
+                line-height: 1.8
+                span,a
+                    color: #000
+                    line-height: 1.8
+                    border-bottom: 1px solid #000
+                    border-left: 5px solid #ffffff
+                    border-right: 5px solid #ffffff
+                    +JaguarJC-Bold
+                &:before
+                    position: absolute
+                    top: 0
+                    left: 0
+                    display: block
+                    content: "＊"
+                    font-size: px(13)
+                    color: red

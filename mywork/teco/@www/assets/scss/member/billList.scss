@@ -1,0 +1,49 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+.list {
+    max-width: 1330px;
+    margin: auto;
+    padding: 60px 50px 170px;
+    counter-reset: num;
+
+    @media all and (max-width: 1024px) {
+        padding: 60px 5vw 100px;
+    }
+
+    .box .dateAndStatus {
+        width: calc(30% - 100px);
+
+        @media all and (max-width: 1330px) {
+            width: 200px;
+        }
+
+        @media all and (max-width: 1024px) {
+            width: 170px;
+        }
+
+        h6 {
+            @include font-size(26);
+
+            @media all and (max-width: 1024px) {
+                @include font-size(21);
+            }
+        }
+    }
+
+    .box .inf {
+        width: 20%;
+
+        @media all and (max-width: 1330px) {
+            width: calc(30% - 100px);
+        }
+
+        @media all and (max-width: 1024px) {
+            width: calc(31% - 90px);
+        }
+    }
+    .box  a {
+        width: 100px;
+    }
+}

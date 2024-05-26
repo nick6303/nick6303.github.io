@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <meta charset="UTF-8" />
+    <meta name="language" content="tw" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title itemprop="name">api測試</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body class="detail" id="winform">
+    <main>
+        <article class="container" id="app">
+            <section class="branchLink">
+                <a @click="changBranch();whitchOne=700" href="javascript:void(0)" :class="{'unclick': !commoditySuccess,'active': whitchOne=='700'}">漢神百貨活動查詢</a>
+                <a @click="changBranch();whitchOne=710" href="javascript:void(0)" :class="{'unclick': !commoditySuccess,'active': whitchOne=='710'}">漢神巨蛋活動查詢</a>
+            </section>
+            <section class="type">
+                <!-- 後端請注意: 下方的data-src請放資料ajax的網址-->
+                <ul>
+                    <li class="active" @click="show='commodity'">
+                        <p>電子商品券</p>
+                    </li>
+                    <li @click="show='point'">
+                        <p>漢神集星樂</p>
+                    </li>
+                    <li @click="show='lottery'">
+                        <p>電子摸彩券</p>
+                    </li>
+                </ul>
+            </section>
+            <!--表格內容放置處 (ajax資料放置處)-->
+            <section class="content">
+                <commodity-component v-if="show=='commodity'" :success="commoditySuccess" :show="show" :datajson="commodityData" :userexsit="userexsit"></commodity-component>
+                <point-component v-if="show=='point'" :success="pointSuccess" :show="show" :datajson="pointData" :userexsit="userexsit"></point-component>
+                <lottery-component v-if="show=='lottery'" :success="lotterySuccess" :show="show" :datajson="lotteryData" :userexsit="userexsit"></lottery-component>
+            </section>
+            <!--倒數計時-->
+            <section class="countDown" data-second="20" data-noMovement="5">
+                <p>若沒按鍵動作，於 <span class="second"></span> 秒自動離開此畫面。</p>
+            </section>
+        </article>
+    </main>
+</body>
+<!-- 套件js:我把它弄成一包-->
+<script src="../../assets/js/nick.js"></script>
+<!-- 自訂的 js-->
+<script src="../../assets/js/main.js"></script>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../../assets/js/vendor/md5.min.js"></script>
+
+<!-- 電子商品券-->
+<script id="commodity" type="text/x-template">
+    <div>
+        <div class="loading" v-if="!success && userexsit == undefined">
+            <img src="../../assets/img/ring.png" alt="">
+        </div>
+        <div class="typeBox" v-if="success && datajson.length !== 0">
+            <div class="dropDown topHeader">
+                <div class="selectMenu">
+                    <p v-for="(item,index) in datajson" v-if="index==0">{{item.aAttrib.name}}</p>
+                </div>
+                <ul>
+                    <li v-for="(item,index) in datajson"  @click="num=index">{{item.aAttrib.name}}</li>
+                </ul>
+            </div>
+            <div class="_title"> 
+                <p class="red" data-before="電子商品券餘額 :" data-after="元">{{showData.tot_amount | dot}}</p>
+                <p class="px16">({{showData.sdate | date}} ~ {{showData.edate | date}} 逾期作廢)</p>
+            </div>
+            <div class="box">
+                <div class="select">
+                    <p class="active" @click="ticket(datajson)">兌換紀錄 </p>
+                    <p @click="use(datajson)">使用紀錄</p>
+                    <p @click="norecord=false">使用簡則</p>
+                </div>
+                <div class="table">
+                    <!--兌換紀錄 -->
+                    <div class="listTable active" v-show="showData.ticket_list[0].aAttrib.count !== 0">
+                        <div class="listhead">
+                            <div class="w245">
+                                <p>兌換日期</p>
+                            </div>
+                            <div class="w245">
+                                <p>商品券金額</p>
+                            </div>
+                            <div class="w150">
+                                <p>兌換明細</p>
+                            </div>
+                        </div>
+                        <div class="listbody">
+                            <div class="list" v-for="(item,index) in showData.ticket_list[0].aItem">
+                                <div class="w245">
+                                    <p>{{item.aAttrib.issuedate | date}}</p>
+                                </div>
+                                <div class="w245">
+                                    <p>{{item.aAttrib.date_amount | dot}}元</p>
+                                </div>
+                                <div class="w150">
+                                    <button class="openIntro" type="button"><span></span></button>
+                                </div>
+                                <div class="intro">
+                                    <!-- 活動名稱-->
+                                    <div class="name">
+                                        <h6>活動名稱</h6>
+                                        <p>{{item.aItem[0].appname}}</p>
+                                    </div>
+                                    <!-- 發票內容-->
+                                    <ul class="invoice">
+                                        <li v-for="val in item.aItem">
+                                            <div class="numb">
+                                                <h6>發票號碼</h6>
+                                                <p>{{val.invoice_nolist[0].aItem[0].uino}}</p>
+                                            </div>
+                                            <div class="price">
+                                                <h6>活動兌換金額</h6>
+                                                <p>{{val.invoice_nolist[0].aItem[0].amount | dot}}元</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- 小計-->
+                                    <div class="subtotal">
+                                        <h6>活動兌換金額小計</h6>
+                                        <p>{{actionTotal(item.aItem)}}元</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 總計-->
+                        <div class="total">
+                            <div class="w245">
+                                <p>合計</p>
+                            </div>
+                            <div class="w245">
+                                <p>{{changFinal(showData.ticket_list[0].aItem) | dot}}元</p>
+                            </div>
+                            <div class="w150">
+                                <!--空值 佔位置用的-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 使用紀錄-->
+                    <div class="listTable" v-show="showData.return_list[0].aAttrib.count !== 0">
+                        <div class="listhead">
+                            <div class="w245">
+                                <p>使用日期</p>
+                            </div>
+                            <div class="w245">
+                                <p>發票號碼</p>
+                            </div>
+                            <div class="w150">
+                                <p>電子商品卷</p>
+                            </div>
+                        </div>
+                        <div class="listbody">
+                            <div class="list" v-for="item in showData.return_list[0].aItem">
+                                <div class="w245">
+                                    <p>{{item.rtn_date | date}}</p>
+                                </div>
+                                <div class="w245">
+                                    <p>{{item.uino}}</p>
+                                </div>
+                                <div class="w150">
+                                    <p>{{item.rtn_amt | dot}}元</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 總計-->
+                        <div class="total">
+                            <div class="w245">
+                                <p>合計</p>
+                            </div>
+                            <div class="w245">
+                                <!--空值 佔位置用的-->
+                            </div>
+                            <div class="w150">
+                                <p>{{usedFinal(showData.return_list[0].aItem) | dot}}元</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 使用簡則-->
+                    <div class="rule">
+                        <div>
+                            <p>本券為無償取得商品券，可換同等金額商品，但不找零、兌換現金及抵付欠款。本券兌換商品不需開立發票，不計入消費停車券，亦不參加集點。</p>
+                        </div>
+                        <div>
+                            <p>本券遺失、被竊、滅失恕不掛失或補發。本券逾期、塗改均無效，偽造本券依法追究。 </p>
+                        </div>
+                        <div>
+                            <p>本券於漢神百貨不得兌換下列專櫃商品：精品店、點睛品、超市、丸龜製麵、星巴克儲值。</p>
+                        </div>
+                        <div>
+                            <p>以上不得兌換之專櫃如有變動，以現場標示或官網公告為準。</p>
+                        </div>
+                        <div>
+                            <p>若有疑問請洽本公司服務台及卡友服務中心。</p>
+                        </div>
+                    </div>
+                    <div class="noActivity" style="display:flex" v-if="norecord">
+                        <span class="icon-alert"></span>
+                        <p>抱歉，目前無紀錄可供查詢</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="noActivity" style="display:flex" v-if="datajson.length == 0">
+            <span class="icon-alert"></span>
+            <p>抱歉，目前無檔期活動可供查詢</p>
+        </div>
+        <div class="noActivity" style="display:flex"  v-if="userexsit !== undefined">
+            <p>{{userexsit}}</p>
+        </div>
+    </div>
+</script>
+<!-- 漢神集星樂-->
+<script id="point" type="text/x-template">
+    <div>
+        <div class="loading" v-if=" !success && userexsit == undefined">
+            <img src="../../assets/img/ring.png" alt="">
+        </div>
+        <div class="typeBox" v-if="success && datajson.length !== 0">
+            <div class="dropDown topHeader">
+                <div class="selectMenu">
+                    <p v-for="(item,index) in datajson" v-if="index==0">{{item.aAttrib.name}}</p>
+                </div>
+                <ul>
+                    <li v-for="(item,index) in datajson"  @click="num=index">{{item.aAttrib.name}}</li>
+                </ul>
+            </div>
+            <div class="_title"> 
+                <p class="red" data-before="電子集星剩餘數量 :" data-after="顆">{{showData.famt}}</p>
+                <p class="px16">(至 {{showData.end_date | date}} 逾期作廢)</p>
+            </div>
+            <div class="box">
+                <div class="select">
+                    <p class="active" @click="act(datajson)">兌換紀錄 </p>
+                    <p @click="b(datajson)">使用紀錄</p>
+                    <p @click="norecord=false">使用簡則</p>
+                </div>
+                <div class="table">
+                    <!--兌換紀錄 -->
+                    <div class="listTable active" v-show="showData.act_list[0].aAttrib.count !== 0">
+                        <div class="listhead">
+                            <div class="w245">
+                                <p>兌換日期</p>
+                            </div>
+                            <div class="w150">
+                                <p>電子集星數(顆)</p>
+                            </div>
+                            <div class="w245">
+                                <p>發票號碼</p>
+                            </div>
+                        </div>
+                        <div class="listbody">
+                            <div class="list" v-for="item in showData.act_list[0].aItem">
+                                <div class="w245">
+                                    <p>{{item.pdate | date}}</p>
+                                </div>
+                                <div class="w150">
+                                    <p>{{item.count1}}</p>
+                                </div>
+                                <div class="w245">
+                                    <p v-for="val in item.invoice_nolist">{{val.aItem[0].uino}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 總計-->
+                        <div class="total">
+                            <div class="w245">
+                                <p>合計</p>
+                            </div>
+                            <div class="w150">
+                                <p>{{showData.act_list[0].aAttrib.f_tot}}</p>
+                            </div>
+                            <div class="w245">
+                                <!--空值 佔位置用的-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 使用紀錄-->
+                    <div class="listTable" v-show="showData.b_list[0].aAttrib.count !== 0">
+                        <div class="listhead">
+                            <div class="w245">
+                                <p>兌換日期</p>
+                            </div>
+                            <div class="w150">
+                                <p>電子集星數(顆)</p>
+                            </div>
+                            <div class="w245">
+                                <p>贈品</p>
+                            </div>
+                        </div>
+                        <div class="listbody">
+                            <div class="list" v-for="item in showData.b_list[0].aItem">
+                                <div class="w245">
+                                    <p>{{item.date1b | date}}</p>
+                                </div>
+                                <div class="w150">
+                                    <p>{{item.count1b}}</p>
+                                </div>
+                                <div class="w245">
+                                    <p>{{item.itemname}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 總計-->
+                        <div class="total">
+                            <div class="w245">
+                                <p>合計</p>
+                            </div>
+                            <div class="w150">
+                                <p>{{showData.b_list[0].aAttrib.b_tot}}</p>
+                            </div>
+                            <div class="w245">
+                                <!--空值 佔位置用的-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 使用簡則-->
+                    <div class="rule">
+                        <div>
+                            <p>本券為無償取得商品券，可換同等金額商品，但不找零、兌換現金及抵付欠款。本券兌換商品不需開立發票，不計入消費停車券，亦不參加集點。</p>
+                        </div>
+                        <div>
+                            <p>本券遺失、被竊、滅失恕不掛失或補發。本券逾期、塗改均無效，偽造本券依法追究。 </p>
+                        </div>
+                        <div>
+                            <p>本券於漢神百貨不得兌換下列專櫃商品：精品店、點睛品、超市、丸龜製麵、星巴克儲值。</p>
+                        </div>
+                        <div>
+                            <p>以上不得兌換之專櫃如有變動，以現場標示或官網公告為準。</p>
+                        </div>
+                        <div>
+                            <p>若有疑問請洽本公司服務台及卡友服務中心。</p>
+                        </div>
+                    </div>
+                    <div class="noActivity" style="display:flex" v-if="norecord">
+                        <span class="icon-alert"></span>
+                        <p>抱歉，目前無紀錄可供查詢</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="noActivity" style="display:flex" v-if="datajson.length == 0">
+            <span class="icon-alert"></span>
+            <p>抱歉，目前無檔期活動可供查詢</p>
+        </div>
+    </div>
+</script>
+<!-- 電子摸彩券-->
+<script id="lottery" type="text/x-template">
+    <div>
+        <div class="loading" v-if=" !success && userexsit == undefined">
+            <img src="../../assets/img/ring.png" alt="">
+        </div>
+        <div class="typeBox" v-if="success && datajson.length !== 0">
+            <div class="dropDown topHeader">
+                <div class="selectMenu">
+                    <p v-for="(item,index) in datajson" v-if="index==0">{{item.aAttrib.name}}</p>
+                </div>
+                <ul>
+                    <li v-for="(item,index) in datajson"  @click="num=index">{{item.aAttrib.name}}</li>
+                </ul>
+            </div>
+            <div class="_title" v-for="(item,index) in datajson[num].aItem" v-if="index==0"> 
+                <p class="red" data-before="摸彩卷數量 :" data-after="張">{{item.act_list[0].aAttrib.l_tot}}</p>
+                <p class="px16">(抽獎日期: {{showData.act2DrawDate | date}})</p>
+            </div>
+            <div class="box">
+                <div class="select">
+                    <p class="active" @click="act(datajson)">兌換紀錄 </p>
+                    <p  @click="norecord=false"> 注意事項</p>
+                </div>
+                <div class="table">
+                    <!--兌換紀錄 -->
+                    <div class="listTable active" v-show="showData.act_list[0].aAttrib.count !== 0">
+                        <div class="listhead">
+                            <div class="w245">
+                                <p>兌換日期</p>
+                            </div>
+                            <div class="w245">
+                                <p>摸彩券號</p>
+                            </div>
+                            <div class="w150">
+                                <p>發票號碼</p>
+                            </div>
+                        </div>
+                        <div class="listbody">
+                            <div class="list" v-for="item in showData.act_list[0].aItem">
+                                <div class="w245">
+                                    <p>{{item.pdate | date}}</p>
+                                </div>
+                                <div class="w245 ticket">
+                                    <!-- 起始號碼-->
+                                    <p>{{item.blotto}}</p>
+                                    <!--結束號碼-->
+                                    <p>{{item.elotto}}</p>
+                                </div>
+                                <div class="w150">
+                                    <p v-for="val in item.invoice_nolist[0].aItem">{{val.uino}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 總計-->
+                        <div class="total">
+                            <div class="w245">
+                                <p>合計</p>
+                            </div>
+                            <div class="w245">
+                                <p>{{showData.act_list[0].aAttrib.l_tot}}張</p>
+                            </div>
+                            <div class="w150">
+                                <!--空值 佔位置用的-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 注意事項-->
+                    <div class="rule">
+                        <div>
+                            <p>{{showData.act2DrawDate | date}} {{showData.act2DrawTime | time}} 於1F服務台旁公開抽獎，中獎人需於開獎後30日內對領獎項，逾期視同放棄，不得領獎。</p>
+                        </div>
+                        <div v-if="showData.act2Memo !== ''">
+                            <p>{{showData.act2Memo}}</p>
+                        </div>
+                    </div>
+                    <div class="noActivity"  style="display:flex" v-if="norecord">
+                        <span class="icon-alert"></span>
+                        <p>抱歉，目前無紀錄可供查詢</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="noActivity"  style="display:flex" v-if="datajson.length == 0">
+            <span class="icon-alert"></span>
+            <p>抱歉，目前無檔期活動可供查詢</p>
+        </div>
+    </div>
+</script>
+
+<script src="../../assets/js/api.js"></script>
+
+</html>

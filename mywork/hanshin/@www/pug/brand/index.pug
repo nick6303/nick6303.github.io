@@ -1,0 +1,136 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"品牌總覽",
+            link:"../brand/index.html"},
+    ]
+
+    var unit = [
+        "全部類別",
+        "美食饗宴",
+        "精品時尚",
+        "化妝保養",
+        "女鞋女包",
+        "珠寶/配件品",
+        "男仕商品區",
+        "家庭用品",
+        "兒童專區",
+        "其他商品",
+    ]
+
+    var block = [
+        {
+            img:"../../upload/fa2/brand/sortImg.png",
+            bgc:"#ebebeb",},
+        {
+            img:"../../upload/fa2/brand/sortImg2.png",
+            bgc:"#246629"},
+        {
+            img:"../../upload/fa2/brand/sortImg3.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg4.png",
+            bgc:"#313131"},
+        {
+            img:"../../upload/fa2/brand/sortImg5.png",
+            bgc:"#e3017f"},
+        {
+            img:"../../upload/fa2/brand/sortImg6.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg7.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg8.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg9.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg10.png",
+            bgc:"#09176f"},
+        {
+            img:"../../upload/fa2/brand/sortImg11.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg12.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg13.png",
+            bgc:"#09176f"},
+        {
+            img:"../../upload/fa2/brand/sortImg14.png",
+            bgc:""},
+        {
+            img:"../../upload/fa2/brand/sortImg15.png",
+            bgc:""},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#brand.index
+    include ../layout/_header.pug
+    
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title(style="background-image:url('../../upload/fa2/brand/bannerImg_1670_410.jpg')") 
+                p.ch 品牌總覽
+                p.en Brand overview
+                p.words 開闊明朗的空間，順暢動線設計，提供消費者輕鬆歡愉，擁有50家以上國際精品名牌進駐，名品雲集世界同步。
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val == unit[1])?"active":"")
+                        a(href=java)
+                            p=val
+        article.brandContent
+            section.topTitle
+                p.en Food tasting
+                p.words 此樓提供國際經典精品，及奢華化妝品，名品雲集世界同步
+            section.tableContent
+                .block
+                    .sort
+                        .masonry
+                            each item in block
+                                .grid-box
+                                    a(href="../floor/detail.html")
+                                        // 後端請注意: 下方的背景顏色需要由客戶決定
+                                        if (item.bgc !== "")
+                                            figure(style=("background-color:"+item.bgc))
+                                                img.b-lazy(src=blazy data-src=item.img, alt="")
+                                        else 
+                                            figure(style="border: 1px solid #cccccc")
+                                                img.b-lazy(src=blazy data-src=item.img, alt="")
+                                        // 後端請注意: 下方的文字顏色需要由客戶決定
+                                        ._text(style=("color:"+item.color))
+                                            //品牌名稱
+                                            h6 HERMES
+
+            section.ps
+                p 找不到您想搜尋的品牌嗎 ? 歡迎撥打<span>顧客專線 0800-018-980</span>將有專人問您服務，謝謝。
+
+    include ../layout/_footer.pug
++script
+|
+|
+</html>

@@ -1,0 +1,116 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <p align="center">
+    <a href="https://521dimensions.com/open-source/amplitudejs" target="_blank">
+        <img src="https://521dimensions.com/img/open-source/amplitudejs/AmplitudeLogo-WithSlogan.svg" width="600" alt="AmplitudeJS Logo">
+    </a>
+</p>
+<p align="center">
+    <a href="https://gitter.im/521dimensions/amplitudejs" target="_blank">
+        <img src="https://badges.gitter.im/gitterHQ/gitter.svg" alt="Gitter">
+    </a>
+    <a href="https://www.npmjs.com/package/amplitudejs" target="_blank">
+        <img src="https://badge.fury.io/js/amplitudejs.svg" alt="npm version">
+    </a>
+    <a href="https://david-dm.org/521dimensions/amplitudejs" target="_blank">
+        <img src="https://david-dm.org/521dimensions/amplitudejs.svg" alt="david-dm">
+    </a>
+    <a href="https://raw.githubusercontent.com/521dimensions/amplitudejs/master/LICENSE" target="_blank">
+        <img src="https://521dimensions.com/img/open-source/amplitudejs/license.svg" alt="MIT License">
+    </a>
+</p>
+
+<p>Amplitude.js is a lightweight JavaScript library that allows you to control the design of your media controls in your webpage -- not the browser. No dependencies (jQuery not required). Amplitude.js is available under the <a href="https://raw.githubusercontent.com/521dimensions/amplitudejs/master/LICENSE">MIT License</a>.</p>
+<h2 id="demo">Demo</h2>
+<p align="center">
+    <a href="https://521dimensions.com/open-source/amplitudejs" target="_blank">
+        <img src="https://521dimensions.com/img/open-source/amplitudejs/AmplitudeDemo.jpg" alt="MIT License" width="600">
+    </a><br />
+    Click the image above to go to the demo site or <a href="https://521dimensions.com/open-source/amplitudejs" target="_blank">click here</a>.
+</p>
+
+<h2 id="features">Features</h2>
+<ul>
+<li>Completely independent library (no jQuery required)</li>
+<li>100% customizable design of all player elements</li>
+<li>Available by CDN or single command install: <code>npm install --save amplitudejs</code></li>
+<li>Multiple playlist support on single page</li>
+<li>Song meta data display</li>
+<li>Soundcloud integration</li>
+<li>Live streaming support</li>
+<li>Call back functions for events<ul>
+<li>Play/Pause</li>
+<li>Stop</li>
+<li>Next Song</li>
+<li>Previous Song</li>
+<li>Shuffle</li>
+</ul>
+</li>
+</ul>
+<h2 id="browsers-support">Browsers support</h2>
+<p>| <img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/edge.png" alt="IE / Edge" width="16px" height="16px" /></br>IE / Edge | <img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/firefox.png" alt="Firefox" width="16px" height="16px" /></br>Firefox | <img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/chrome.png" alt="Chrome" width="16px" height="16px" /></br>Chrome |
+<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/safari.png" alt="Safari" width="16px" height="16px" /></br>Safari | <img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/opera.png" alt="Opera" width="16px" height="16px" /></br>Opera |
+| --------- | --------- | --------- | --------- | --------- |
+| IE11, Edge| 4.0+| 3.5+| 4.0+| 10.5+|</p>
+<h2 id="installation">Installation</h2>
+<h3 id="option-1-use-cdn-from-jsdelivr">Option 1: Use CDN from <a href="https://cdn.jsdelivr.net/npm/amplitudejs/">jsDelivr</a></h3>
+<p>No installation is required to use Amplitude.js. All you need to do is include a single line in your <code>&lt;head&gt;</code> section of your HTML page.</p>
+<p>Replace <code>{{version-number}}</code> with the exact version number that you would like to use (see <a href="https://github.com/521dimensions/amplitudejs/releases">our releases</a> for what version number to use):</p>
+<pre><code class="lang-html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/amplitudejs@{{version-number}}/dist/amplitude.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p><strong>NOTE:</strong> It&#39;s best to set your version number manually to make sure you have full control of what version you are running. If you need to upgrade in the future, just change <code>{{version-number}}</code> to the latest version.</p>
+<h3 id="option-2-automatic-install-via-npm">Option 2: Automatic install via <code>npm</code></h3>
+<p>Download it via NPM to your existing project:</p>
+<pre><code class="lang-sh">npm install --save amplitudejs
+</code></pre>
+<p>You will see the file under <code>node_modules/amplitudejs/dist/amplitude.js</code>.</p>
+<h3 id="option-3-manual-download">Option 3: Manual download</h3>
+<p>Download the <code>amplitude.js</code> file from <a href="https://github.com/521dimensions/amplitudejs/releases">our releases page</a> and include the file manually with your project.</p>
+<h3 id="after-install-you-must-initialize-amplitude-js">After install, you must initialize Amplitude.js</h3>
+<p>To initialize Amplitude.js, you must call the <code>Amplitude.init()</code> method and pass in an object that
+contains an array of songs and settings. Amplitude.js will then take care of configuring and setting up your
+player by finding all of the Amplitude elements (defined later in the docs) and binding the appropriate
+event handlers.</p>
+<p>To configure Amplitude.js, you need to call the init function on the Amplitude object
+and you can pass it a JSON object of configuration variables ( we will go through ALL of these <a href="https://521dimensions.com/open-source/amplitudejs/docs">in the
+documentation</a> ). At the bare minimum, you need to pass it all of the song objects that your page will
+be using. More information about the song object next.</p>
+<pre><code class="lang-javascript">    Amplitude.init({
+        &quot;songs&quot;: [
+            {
+                &quot;name&quot;: &quot;Song Name 1&quot;,
+                &quot;artist&quot;: &quot;Artist Name&quot;,
+                &quot;album&quot;: &quot;Album Name&quot;,
+                &quot;url&quot;: &quot;/song/url.mp3&quot;,
+                &quot;cover_art_url&quot;: &quot;/cover/art/url.jpg&quot;
+            },
+            {
+                &quot;name&quot;: &quot;Song Name 2&quot;,
+                &quot;artist&quot;: &quot;Artist Name&quot;,
+                &quot;album&quot;: &quot;Album Name&quot;,
+                &quot;url&quot;: &quot;/song/url.mp3&quot;,
+                &quot;cover_art_url&quot;: &quot;/cover/art/url.jpg&quot;
+            },
+            {
+                &quot;name&quot;: &quot;Song Name 3&quot;,
+                &quot;artist&quot;: &quot;Artist Name&quot;,
+                &quot;album&quot;: &quot;Album Name&quot;,
+                &quot;url&quot;: &quot;/song/url.mp3&quot;,
+                &quot;cover_art_url&quot;: &quot;/cover/art/url.jpg&quot;
+            }
+        ]
+    });
+</code></pre>
+<p>This configuration will set up Amplitude.js to work the way you want it. The config JSON is used heavily
+to configure and optimize Amplitude.js for what your app needs.</p>
+<h2 id="documentation-usage">Documentation &amp; Usage</h2>
+<p>There are a lot more features that are explained in greater detail in our <a href="https://521dimensions.com/open-source/amplitudejs/docs">latest documentation</a>. If you find errors or places for improvement on our documentation, submit a pull request with the documentation located at <code>/docs/DOCUMENTATION.md</code>. The documentation site reads directly from the GitHub Repo.</p>
+<h2 id="reporting-issues">Reporting Issues</h2>
+<p>If you are experiencing any issues or if you have a feature request, please <a href="https://github.com/521dimensions/amplitudejs/issues/new/choose">open up a new GitHub Issue</a></p>
+
+      </body>
+    </html>

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/competition/detail.css">
+</head>
+<!-- 後端請注意:body的background-color要讓客戶可以自己決定 -->
+
+<body id="competition" class="detail" style="background-color: ">
+    <header data-nobanner="true"></header>
+    <main>
+        <article class="banner">
+            <section class="_img">
+                <!-- 後端請注意:圖片最大寬:1400 高度統一950 -->
+                <picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="">
+                    <img data-color="" src="../../upload/fa2/competition/bannerImg2_660_950.jpg" alt="">
+                </picture>
+            </section>
+            <!-- 後端請注意:_text的位置有三種1.左left 2.中center 3.右right -->
+            <section class="_text center">
+                <h6><span>Franz Rising Star Project</span></h6>
+                <p><span>2018 法藍瓷光點計畫</span></p>
+            </section>
+            <!-- 後端請注意:下方的div元素總共有四種模式:
+            1.往下滑動錨點:典籍之後會往下滑動到指定位置
+            2.開啟新的內容:將下方的內容換開啟成新的內容
+            3.開啟燈箱:開啟指定燈箱
+            4.分頁連結:開啟a連結  -->
+            <!-- 後端請注意:每個結構都不一樣，須注意 -->
+            <section class="button">
+                <div class="buttonBox">
+                    <!-- 往下滑動錨點 -->
+                    <!-- 後端請注意:data-anchor 內填入的數字代表他想連結到第幾個錨點 -->
+                    <!-- <div class="item anchor" data-class="class2">
+                        <p>Introduction</p>
+                    </div> -->
+                    <!-- 往下滑動錨點 -->
+                    <!-- 後端請注意:data-anchor 內填入的數字代表他想連結到第幾個錨點 -->
+                    <!-- <div class="item anchor" data-class="class2">
+                        <p>Rules</p>
+                    </div> -->
+                    <!-- 往下滑動錨點 -->
+                    <!-- 後端請注意:data-anchor 內填入的數字代表他想連結到第幾個錨點 -->
+                    <!-- <div class="item anchor" data-class="class3">
+                        <p>Award</p>
+                    </div> -->
+                    <!-- 往下滑動錨點 -->
+                    <!-- 後端請注意:data-anchor 內填入的數字代表他想連結到第幾個錨點 -->
+                   <!--  <div class="item anchor" data-class="class2">
+                        <p>Download</p>
+                    </div> -->
+                    <!-- 開啟介紹 -->
+                     <div class="item area introduction">
+                        <p>Introduction</p>
+                    </div>
+                    <!-- 開啟QA燈箱 -->
+                    <div class="item QA">
+                        <p>Q&A</p>
+                    </div>
+                    <!-- 開啟評審 -->
+                      <div class="item area jury">
+                        <p>Jury</p>
+                    </div>
+                    <!-- 開啟得獎作品 -->
+                    <div class="item area winner">
+                        <p>Adward Winner</p>
+                    </div>
+                    <!-- 分頁連結 -->
+                    <div class="item link">
+                        <a href="../service/signup.html">
+                            <p>Sign up</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article class="content">
+            <!-- 錨點連結 -->
+            <section class="type1 active">
+                <!-- 後端請注意:下方的背景需讓客戶決定 -->
+                <div class="anchorNav" style="background-image: url('../../assets/img/competition/anchorNavBg_640_1080.png'); ">
+                    <div class="numb">
+                        <p>01</p>
+                    </div>
+                    <ul>
+                        <li class="active class1">
+                            <p class="en">About Rising star project</p>
+                            <p class="ch">關於2018光點計畫</p>
+                        </li>
+                        <li class="class2">
+                            <p class="en">Rules of RSP</p>
+                            <p class="ch">關於2018光點計畫</p>
+                        </li>
+                        <li class="class3">
+                            <p class="en">FRANZ Rising Star Award</p>
+                            <p class="ch">關於2018光點計畫</p>
+                        </li>
+                        <li class="class4">
+                            <p class="en">Download</p>
+                            <p class="ch">關於2018光點計畫</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="anchorContent">
+                    <ul>
+                        <li class="active class1">
+                            <div class="_title" style="display: none;">
+                                <div class="countNumb"></div>
+                                <h6>About Rising star project  關於2018光點計畫</h6>
+                                <div class="cross">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="imgAndWord">
+                                <!-- Capture 1  -->
+                                <div class="paragraph_sec capture1">
+                                    <div class="text_block">
+                                        <div class="h2">Capture 1 緣起</div>
+                                    </div>
+                                    <div class="paragraph_objblock_frame">
+                                        <div class="paragraph_objblock_list">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-1Img_880_460.jpg" alt="">
+                                            <b>2017.05.18，聯合報報導</b>
+                                        </div>
+                                    </div>
+                                    <div class="text_block">
+                                        <p>法藍瓷光點計畫前身為2007至2016年間「 法藍瓷陶瓷設計大賽 FRANZ AWARD 」。
+                                            <br>
+                                            <br> 在法藍瓷在舉辦設計大賽十年來，每年不斷透過與設計院校教師產生緊密的聯繫，省思改善賽制來鼓舞更多的設計學子勇敢擁抱夢想。然而在近年來，法藍瓷傾聽到許多「大多數的設計競賽資源多只挹注予少數得獎者，其實對廣泛的設計學生很可惜」的回饋。
+                                            <br>
+                                            <br> 有鑑於此，法藍瓷決定以增加更多作品入圍名額，並專屬在校生的陶瓷設計獎學金，將法藍瓷陶瓷設計大賽轉型為「光點計畫 Rising Star Project」，用獎學金鼓勵學生對陶瓷的熱情，以不變的遠見理念，持續鼓勵新一代的陶瓷創作！
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Capture 2  -->
+                                <div class="paragraph_sec capture2">
+                                    <div class="paragraph_objblock_frame w_50">
+                                        <div class="paragraph_objblock_list">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-2img1_400_380.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="text_block w_50">
+                                        <div class="h2">Capture 2 關於</div>
+                                        <p>陶瓷，是人類自石器時代至今最偉大的發明；堅硬但溫潤，脆弱但永恆，不易捏塑的形體在千度高溫的淬煉下，化為一件件精品並百世傳承。
+                                            <br>
+                                            <br> 法藍瓷因瓷而生，以瓷載道。為了持續探索陶瓷的未來可能性，並支持更多具潛力的新一代進行陶瓷設計，將提供一百個陶瓷設計獎學金名額，鼓舞這群以行動開始築夢的學生。
+                                            <br>藉由法藍瓷光點計畫，冀望減輕學生在陶瓷打樣費上的負擔，法藍瓷更期盼新一代能全心全意將創意，化為明日發光的設計光點！
+                                            <br>
+                                            <br> 匯聚光點，淬煉天賦；我們所遇見的未來，將閃耀百道光芒。</p>
+                                    </div>
+                                </div>
+                                <!-- Capture 3  -->
+                                <div class="paragraph_sec capture3">
+                                    <div class="text_block">
+                                        <div class="h2">Capture 3 願景
+                                            <br>「 如夢想所見，如夢想所成 」</div>
+                                        <p>我們期盼世界上對陶瓷設計充滿憧憬的學生們，都能盡情揮灑天賦與創意，將腦海中所構思的夢想於明日實現 。</p>
+                                    </div>
+                                    <div class="paragraph_objblock_frame wrap">
+                                        <div class="paragraph_objblock_list w_33">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-3Img1_400_300.jpg" alt="">
+                                        </div>
+                                        <div class="paragraph_objblock_list w_33">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-3Img2_400_300.jpg" alt="">
+                                        </div>
+                                        <div class="paragraph_objblock_list w_33">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-3Img3_400_300.jpg" alt="">
+                                        </div>
+                                        <div class="paragraph_objblock_list w_33">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-3Img4_400_300.jpg" alt="">
+                                        </div>
+                                        <div class="paragraph_objblock_list w_33">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-3Img5_400_300.jpg" alt="">
+                                        </div>
+                                        <div class="paragraph_objblock_list w_33">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/1-3Img6_400_300.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Capture 4  -->
+                                <div class="paragraph_sec capture4">
+                                    <div class="text_block">
+                                        <div class="h2">Capture 4 年度標語
+                                            <br>「 閃亮你的天馬行空｜ Ignite Your Imagination 」</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="class2">
+                            <div class="_title">
+                                <div class="countNumb"></div>
+                                <h6>Rules of RSP  二〇一八年度細則與辦法</h6>
+                                <div class="cross">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="imgAndWord">
+                                <!-- Capture 1  -->
+                                <div class="paragraph_sec capture1">
+                                    <div class="text_block">
+                                        <div class="h2">I. 獎學金名額</div>
+                                        <p>二〇一八年度光點計畫獎學金名額為一百件作品。</p>
+                                    </div>
+                                    <div class="paragraph_objblock_frame">
+                                        <div class="paragraph_objblock_list">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/2-1img_880_510.jpg" alt="">
+                                            <b>百件作品，將由各領域專業評審進行評選</b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Capture 2  -->
+                                <div class="paragraph_sec nowrap capture2">
+                                    <div class="text_block ">
+                                        <div class="h2">II. 獎學金金額</div>
+                                        <p>
+                                            1. 二〇一八年度光點計畫獎學金金額，每件作品可獲得新台幣三萬元整。
+                                            <br>
+                                            <br> 2. 獎學金金額以新台幣為主要計價單位，也可選擇以美金、歐元計價匯款。前段所述之非以新台幣計價之幣別匯率，以匯款當日為主。
+                                            <br>
+                                            <br> 3. 獎學金申請人將負擔匯款所需之一切費用，以及產生的政府稅金。前段所述之費用將從獎學金中扣除。
+                                        </p>
+                                    </div>
+                                    <div class="paragraph_objblock_frame">
+                                        <div class="paragraph_objblock_list ">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/2-2Img_250_250.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Capture 3  -->
+                                <div class="paragraph_sec capture3">
+                                    <div class="text_block">
+                                        <div class="h2">III. 申請時程</div>
+                                        <p>二〇一八年度光點計畫申請時程，自六月一日起至同年八月三十一日止，以主辦單位所在地時區（台北 GMT+8）為主。</p>
+                                    </div>
+                                </div>
+                                <!-- Capture 4  -->
+                                <div class="paragraph_sec capture4">
+                                    <div class="text_block">
+                                        <div class="h2">IV. 申請方式</div>
+                                        <p>光點計畫申請方式，皆採網路線上申請，於官方網站依照步驟註冊及填寫相關資料，恕不接受其他方式申請。</p>
+                                    </div>
+                                </div>
+                                <!-- Capture 5  -->
+                                <div class="paragraph_sec capture5">
+                                    <div class="text_block">
+                                        <div class="h2">V. 結果公告</div>
+                                        <p>二〇一八年度光點計畫獎學金結果，將於十月一日於官網公告。</p>
+                                    </div>
+                                </div>
+                                <!-- Capture 6  -->
+                                <div class="paragraph_sec capture6">
+                                    <div class="text_block">
+                                        <div class="h2">VI. 申請資格</div>
+                                        <p>
+                                            1. 二〇一八年度光點計畫開放全球申請。
+                                            <br>
+                                            <br> 2. 光點計畫申請資格僅限大學或以上學歷之在學學生、應屆畢業生。
+                                            <br>
+                                            <br> 3. 在籍學生指於二〇一八年六月前擁有學籍身份，應屆畢業生定義指舉辦年二〇一八年度取得畢業證書者。前段前項所述之在籍學生，須以蓋有當年度註冊章學生證或當年度最後學期之成績單或當年度所申請之在學證明為學籍佐證資料。
+                                            <br>
+                                            <br> 4. 在籍學生與應屆畢業生學制涵蓋大學、科技大學、大專、副學士、研究所碩士、在職碩士、博士，不涵蓋補習班、社區大學、推廣進修班、學分班，實際資格認證主辦單位保有最終審核權。
+                                            <br>
+                                            <br> 5. 申請資格僅依申請人之學籍身份認定，不限申請者之年齡、年級、科系狀態。
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Capture 7  -->
+                                <div class="paragraph_sec capture7">
+                                    <div class="text_block">
+                                        <div class="h2">VII. 申請作品</div>
+                                    </div>
+                                    <div class="paragraph_objblock_frame">
+                                        <div class="paragraph_objblock_list">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/2-7Img1_880_340.jpg" alt="">
+                                            <b>2016 年參賽作品範例</b>
+                                        </div>
+                                    </div>
+                                    <div class="text_block">
+                                        <p>
+                                            1. 光點計畫僅接受已完成、以陶瓷媒材打樣之陶瓷作品申請，不接受以草稿圖、3D繪圖、非實際使用陶瓷製作之打樣品，主辦單位擁有最終審核權。
+                                            <br>
+                                            <br>2. 申請作品本體需50%以上（含50%）使用陶瓷媒材進行製作，對於作品所佔陶瓷比例認定，光點計畫主辦單位擁有最終審核權。
+                                            <br>
+                                            <br>3. 申請作品須為原創，不得剽竊、模仿、組合他人或非原創之作品，若經檢舉或查核屬實，主辦單位有權逕行取消資格並公告於官網。
+                                            <br>
+                                            <br>4. 申請作品需填寫完整申請表單，若有缺失或遺漏，經通知逾期未補齊，主辦單位將視為資格不符而放棄申請。
+                                            <br>
+                                            <br>5. 申請者需填寫主辦單位提供之作品原創聲明書，若非使用主辦單位格式，或聲明書中未填寫完善且經通知逾期未補正，主辦單位將視為資格不符。
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Capture 8  -->
+                                <div class="paragraph_sec capture8">
+                                    <div class="text_block">
+                                        <div class="h2">VIII. 領款資訊</div>
+                                        <p>1. 申請者須填寫完善、清楚之領款資訊，若有缺失或遺漏，經通知逾期未補齊，主辦單位將視為資格不符而放棄申請。
+                                            <br>2. 領款帳號或稱帳戶名稱，需與申請者姓名相同，若非相同經通知逾期未補正，主辦單位將視為資格不符而放棄申請。</p>
+                                    </div>
+                                </div>
+                                <!-- Capture 9  -->
+                                <div class="paragraph_sec nowrap capture9">
+                                    <div class="paragraph_objblock_frame">
+                                        <div class="paragraph_objblock_list">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/2-9Img1_350_550.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="text_block">
+                                        <div class="h2">IX. 資格審核</div>
+                                        <p>
+                                            1. 光點計畫將針對申請者與申請作品，進行資格審核與作品審核兩階段機制。
+                                            <br>
+                                            <br>2. 光點計畫資格審核，主辦單位將針對申請者學籍資料、指導教授資料進行審核，會採以電話詢問、書信詢問、面訪詢問等方式確認，若資格不符將不主動通知申請者。
+                                            <br>
+                                            <br>3. 光點計畫作品審核，主辦單位將邀請十位專家學者擔任評審委員並進行評比。
+                                            <br>
+                                            <br> 4. 二〇一八年作品評選標準將分為四大項目：
+                                            <br>創新度（占25%）指作品使用、材質、理念等的創新程度
+                                            <br>美感度（占25％）指作品的外觀呈現或材質運用搭配表現
+                                            <br>理念度（占25%）指設計理念和使用者體驗間連結緊密度
+                                            <br> 工藝度（占25％）指作品運用陶瓷技巧或異材質結合工藝
+                                            <br>
+                                            <br>5. 二〇一八年度光點計畫評審委員，將於八月份於官網公告。
+                                            <br>
+                                            <br>6. 光點計畫評選結果將依據十位評審委員給予作品之成績加總，由高至低排序，擇取前一百件作品獲得光點計畫獎學金。
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Capture 10  -->
+                                <div class="paragraph_sec capture10">
+                                    <div class="text_block">
+                                        <div class="h2">X. 其他</div>
+                                        <p>1. 凡申請光點計畫即視同承認本章細則與辦法，主辦單位對本活動所有文件、資訊保留最終解釋權，任何與本活動有關的未盡事項，主辦單位保留隨時修正的權利。
+                                            <br>
+                                            <br> 2. 光點計畫申請者須無償授權主辦單位可逕行將所有人像、作品及其圖像包括但不限於使用於宣傳、發表、出版、佈置、展覽、刊登報章雜誌、或印製圖書等屬於光點計畫推廣範圍內非營利之用途。
+                                            <br>
+                                            <br> 3. 主辦單位得視情況需要，斟酌申請、收退件等各項日期之延長或縮短。
+                                            <br>
+                                            <br> 4. 主辦單位員工及其一等親親屬子女，不得申請光點計畫。
+                                            <br>
+                                            <br> 5. 本章各條細則與辦法，若在各語言版本產生疑慮，以繁體中文版詮釋為主。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="class3">
+                            <div class="_title">
+                                <div class="countNumb"></div>
+                                <h6>FRANZ Rising Star Award  法藍瓷光點新秀獎</h6>
+                                <div class="cross">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="imgAndWord">
+                                <!-- Capture 1  -->
+                                <div class="paragraph_sec capture1">
+                                    <div class="text_block">
+                                        <div class="h2">I. 新秀獎名額</div>
+                                        <p>新秀獎獲獎者，將獲得獎狀乙紙。</p>
+                                    </div>
+                                </div>
+                                <!-- Capture 2  -->
+                                <div class="paragraph_sec capture2">
+                                    <div class="text_block">
+                                        <div class="h2">II. 新秀獎獎勵</div>
+                                        <p>1. 新秀獎獲獎者，將獲得獎狀乙紙。
+                                            <br>
+                                            <br> 2. 新秀獎獲獎者，將擁有新秀獎標誌使用權。前段所述之使用權僅限於二〇一八年度申請之得獎作品，不設使用期限，毋需繳付標誌權利金，但所使用新秀獎標誌之圖像、視覺、廣告仍需向主辦單位報備留存。
+                                            <br>
+                                            <br> 3. 新秀獎獲獎者，將獲得二〇一八年度特別獎勵。前段所述之特別獎勵，由主辦單位公告為主。
+                                            <br>
+                                            <br> 4. 若因獲獎者個人因素而無法享受獎勵，或主辦單位因不可抗力之第三方因素而取消獎勵，獲獎者將無法要求主辦單位更換等值獎金或其他替換補償。
+                                            <br>
+                                            <br> 5. 本條各項獎勵有所異動，依主辦單位公告為主。
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Capture 3  -->
+                                <div class="paragraph_sec capture3">
+                                    <div class="text_block">
+                                        <div class="h2">III. 申請方式</div>
+                                        <p>新秀獎毋需額外申請，將由光點計畫申請之通過者中，從中評選出。</p>
+                                    </div>
+                                </div>
+                                <!-- Capture 4  -->
+                                <div class="paragraph_sec capture4">
+                                    <div class="text_block">
+                                        <div class="h2">IV. 獲獎公告</div>
+                                        <p>
+                                            1. 二〇一八年新秀獎獲獎名單，將於十月一日於官網公告。
+                                            <br> 2. 新秀獎獲獎將不公告名次與總分數，依作品英文名稱字母順序排列，公告所有獲獎作品與其相關資訊。
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Capture 5  -->
+                                <div class="paragraph_sec nowrap capture5">
+                                    <div class="text_block">
+                                        <div class="h2">V. 評選機制</div>
+                                        <p>1. 新秀獎評選機制將由主辦單位將邀請十位專家學者擔任評審委員並進行評比。
+                                            <br>
+                                            <br> 2. 二〇一八年評選標準將分為四大項目：
+                                            <br>創新度（占25%）指作品使用、材質、理念等的創新程度
+                                            <br>美感度（占25％）指作品的外觀呈現或材質運用搭配表現
+                                            <br>理念度（占25%）指設計理念和使用者體驗間連結緊密度
+                                            <br>工藝度（占25％）指作品運用陶瓷技巧或異材質結合工藝
+                                            <br>
+                                            <br> 3. 二〇一八年度新秀獎評審委員，將於八月份於官網公告。
+                                            <br>
+                                            <br>4. 光點計畫評選結果將依據十位評審委員給予作品之成績加總，由高至低排序，擇取前十件作品獲得光點計畫獎學金。
+                                        </p>
+                                    </div>
+                                    <div class="paragraph_objblock_frame">
+                                        <div class="paragraph_objblock_list">
+                                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/3-3Img_350_470.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Capture 6  -->
+                                <div class="paragraph_sec line_left capture6">
+                                    <div class="text_block">
+                                        <div class="h2">VI. 其他</div>
+                                        <p>1. 凡申請光點計畫即視同承認本章新秀獎細則與辦法，主辦單位對本活動所有文件、資訊保留最終解釋權，任何與本活動有關的未盡事項，主辦單位保留隨時修正的權利。
+                                            <br>
+                                            <br>2. 新秀獎得獎者須無償授權主辦單位可逕行將所有人像、作品及其圖像包括但不限於使用於宣傳、發表、出版、佈置、展覽、刊登報章雜誌、或印製圖書等屬於新秀獎推廣範圍內非營利之用途。
+                                            <br>
+                                            <br>3. 主辦單位得視情況需要，斟酌評選日期、獲獎公告等各項日期之延長或縮短。
+                                            <br>
+                                            <br>4. 本章各條細則與辦法，若在各語言版本產生疑慮，以繁體中文版詮釋為主。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="download class4">
+                            <div class="_title">
+                                <div class="countNumb"></div>
+                                <h6>Download  資料下載</h6>
+                                <div class="cross">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="imgAndWord">
+                                <p>請選擇您的慣用語系下載競賽簡章，若有其他問題，請透過聯繫我們進行詢問。</p>
+                                <div class="download">
+                                    <a href="javascript:void(0)">
+                                        <h6>2018 光點計畫簡章－繁體中文</h6>
+                                    </a>
+                                </div>
+                                <div class="download">
+                                    <a href="javascript:void(0)">
+                                        <h6>Guideline of 2018 rising star project English version</h6>
+                                    </a>
+                                </div>
+                                <div class="download">
+                                    <a href="javascript:void(0)">
+                                        <h6>2018 光点计画简章 - 简体中文</h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="company">
+                        <div class="organizer">
+                            <p>Organizer　主辦單位</p>
+                            <div>
+                                <a href="https://www.franzcollection.com.tw/zh-tw">
+                                    <img src="../../upload/fa2/sponsors1_80_70.png" alt="">
+                                </a>
+                                <a href="http://www.ccia.org.tw/">
+                                    <img src="../../upload/fa2/sponsors3_80_50.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="partner">
+                            <p>Partner　合作單位</p>
+                            <div>
+                                <a href="http://www.wddgroup.com/">
+                                    <img src="../../upload/fa2/sponsors2_130_30.png" alt="">
+                                </a>
+                                <a href="https://britishceramicsbiennial.com/" target="_blank">
+                                    <img src="../../upload/fa2/british_logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <!-- 評審 -->
+            <section class="type2">
+                <!-- 後端請注意:下方的背景需讓客戶決定 -->
+                <div class="anchorNav" style="background-image: url('../../assets/img/competition/anchorNavBg_640_1080.png');">
+                    <div class="_title">
+                        <p class="en">Jury</p>
+                        <p class="ch">光點計畫評審名單</p>
+                    </div>
+                    <div class="_text">
+                        <p>FRANZ AWARD 歷年廣邀國際間陶瓷、教育及文創領域間具影響力專家學者，擔任初選與決賽評審。
+                            <br>
+                            <br>藉由多元與前瞻眼光一同與 FRANZ AWARD 找尋陶瓷未來的可能性。</p>
+                    </div>
+                </div>
+                <div class="juryContent">
+                    <ul>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg1_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">Wilhelm Siemen</p>
+                                    <p class="intro">Germany, Curator of Porzellanikon SELB</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg2_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">Chantal Meslin</p>
+                                    <p class="intro">France, National Museum Director of Art History</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg1_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">Ute Patel-MissfeldtSiemen</p>
+                                    <p class="intro">Germany, Designer</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg2_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">Michel Bernardaud</p>
+                                    <p class="intro">France, President of Centennial Ceramics Brand Bernardaud</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg1_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">Serge Nicole</p>
+                                    <p class="intro">Germany, Artist Association President</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg2_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">田中一雄</p>
+                                    <p class="intro">Japan, 日本工業設計協會理事長</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg1_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">高鵬</p>
+                                    <p class="intro">China Mainland, 北京今日美術館館長</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="a_jury" href="../competition/juryDtail.html">
+                                <div class="_img">
+                                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/competition/detail/jury/juryImg2_580_745.jpg" alt="">
+                                </div>
+                                <div class="_text">
+                                    <p class="name">Anthony Quinn</p>
+                                    <p class="intro">U.K., Director of Ceramic Design Department, Saint Martin College of Art</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 得獎 -->
+            <section class="type3">
+                <!-- 後端請注意:下方的背景需讓客戶決定 -->
+                <div class="anchorNav" style=" background-image: url('../../assets/img/competition/anchorNavBg_640_1080.png');">
+                    <div class="_title">
+                        <p class="en">Award Winner</p>
+                        <p class="ch">法藍瓷得獎名單</p>
+                    </div>
+                    <div class="anchors">
+                        <ul>
+                            <li class="award1 active ">
+                                <p class="en">Gold Award</p>
+                                <p class="ch">光點計畫金獎</p>
+                            </li>
+                            <li class="award2">
+                                <p class="en">Silver Award</p>
+                                <p class="ch">光點計畫銀獎</p>
+                            </li>
+                            <li class="award3">
+                                <p class="en">Bronze Award</p>
+                                <p class="ch">光點計畫銅獎</p>
+                            </li>
+                            <li class="award4">
+                                <p class="en">FRANZ Rising Star Award</p>
+                                <p class="ch">光點計畫特獎</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="winnerContent">
+                    <div class="box award1">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/goldBg_90_90.png');color: #fff">
+                                    <h3>GOLD</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>outstanding Technology design</h2>
+                                    <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                    <div class="designBox">
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>Hevroni Eden</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>VENIN VOIR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box award1">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/goldBg_90_90.png');color: #fff">
+                                    <h3>GOLD</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>outstanding Technology design</h2>
+                                    <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                    <div class="designBox">
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>Hevroni Eden</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>VENIN VOIR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box award2">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/silverBg_90_90.png'); color: #fff">
+                                    <h3>SLIVER</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>talented concept desing</h2>
+                                    <div class="designBox">
+                                        <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>張進</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>MouldFlexi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box award2">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/silverBg_90_90.png');color: #fff;">
+                                    <h3>SLIVER</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>talented concept desing</h2>
+                                    <div class="designBox">
+                                        <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>張進</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>MouldFlexi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box award3">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/bronzeBg_90_90.png');color: #fff">
+                                    <h3>BRONZE</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>talented concept desing</h2>
+                                    <div class="designBox">
+                                        <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>張進</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>MouldFlexi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box award3">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/bronzeBg_90_90.png');color: #fff">
+                                    <h3>BRONZE</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>talented concept desing</h2>
+                                    <div class="designBox">
+                                        <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>張進</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>MouldFlexi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box award4">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/blueBg_90_90.png');color: #fff">
+                                    <h3>RSP</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>talented concept desing</h2>
+                                    <div class="designBox">
+                                        <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>張進</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>MouldFlexi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box award4">
+                        <a href="javascript:void(0)"  onclick="ajaxWinnerLibox(this)" data-href="../../views/competition/winnerLibox.html"">
+                            <!-- 作品最大 寬 960 x 高 600px -->
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/home/adwardsImg3.jpg" alt="">
+                            </div>
+                            <div class="_text">
+                                <!-- 獎項 -->
+                                <!-- 後端請注意下方的背景圖片和文字顏色要讓客戶可以自己上 -->
+                                <div class="circle" style="background-image: url('../../upload/fa2/competition/detail/winner/blueBg_90_90.png');color: #fff">
+                                    <h3>RSP</h3>
+                                    <p>award</p>
+                                </div>
+                                <div class="inf">
+                                    <!-- 比賽名稱 -->
+                                    <h2>talented concept desing</h2>
+                                    <div class="designBox">
+                                        <!-- 作者:如果要加另一個作者的話，就再加一個p -->
+                                        <div class="designer">
+                                            <h3>Designer</h3>
+                                            <p>張進</p>
+                                        </div>
+                                        <!-- 作品名 -->
+                                        <div class="design">
+                                            <h3>Design</h3>
+                                            <p>MouldFlexi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article class="bottomBtn">
+            <section class="backIndex">
+                <a href="../competition/index.html">
+                    <p>Back to Overview</p>
+                </a>
+            </section>
+            <section class="button">
+                <!-- 往下滑動錨點 -->
+                <!-- 後端請注意:data-anchor 內填入的數字代表他想連結到第幾個錨點 -->
+                <div class="item anchor" data-class="class2">
+                    <p>Introduction</p>
+                </div>
+                <!-- 開啟燈箱 -->
+                <div class="item QA">
+                    <p>Q&A</p>
+                </div>
+                <!-- 開啟評審 -->
+                <div class="item area jury">
+                    <p>Jury</p>
+                </div>
+                <!-- 開啟獲選作品 -->
+                <div class="item area winner">
+                    <p>Adward Winner</p>
+                </div>
+                <!-- 分頁連結 -->
+                <div class="item link">
+                    <a href="../service/signup.html">
+                        <p>Sign up</p>
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,399 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+- 
+    var menuList= [
+        {
+            name:"最新消息",
+            link:"../news/index.html"},
+        {
+            name:"品牌導覽",
+            link:"../brand/index.html"},
+        {
+            name:"樓層導覽",
+            link:"../floor/index.html"},
+        {
+            name:"會員專區",
+            link:"javascript:void(0)"},
+        {
+            name:"服務中心",
+            link:"../service/index.html"},
+        {
+            name:"交通資訊",
+            link:"../about/index.html"},
+        
+    ]
+
+    var store = [
+        {
+            img:"../../upload/fa2/storeImg1_370_500.jpg",
+            ch:"漢神百貨",
+            en:"Hanshin Department Store",
+            link:"javascript:void(0)"},
+        {
+            img:"../../upload/fa2/storeImg2_370_500.jpg",
+            ch:"漢神巨蛋購物廣場",
+            en:"Hanshin Arena Shopping Plaza",
+            link:"javascript:void(0)"},
+        {
+            img:"../../upload/fa2/storeImg3_370_500.jpg",
+            ch:"漢神百貨網路購物",
+            en:"Hanshin Online Shopping",
+            link:"https://tw.mall.yahoo.com/store/hanshin"},
+        {
+            img:"../../upload/fa2/storeImg1_370_500.jpg",
+            ch:"漢神百貨",
+            en:"Hanshin Department Store",
+            link:"javascript:void(0)"},
+    ]
+
+    var mainList = [
+        {
+            link:"../news/index.html",
+            ch:"最新消息",
+            en:"NEWS"},
+        {
+            link:"javascript:void(0)",
+            ch:"會員專區",
+            en:"MEMBER"},
+        {
+            link:"../floor/index.html",
+            ch:"樓層導覽",
+            en:"FLOOR"},
+        {
+            link:"../service/index.html",
+            ch:"顧客服務",
+            en:"SERVICE"},
+        {
+            link:"../about/index.html",
+            ch:"關於漢神",
+            en:"ABOUT"},
+        {
+            link:"../dm/index.html",
+            ch:"電子型錄",
+            en:"DM"},
+        {
+            link:"../other/join.html",
+            ch:"加入我們",
+            en:"JOIN US"},
+        {
+            link:"../card/index.html",
+            ch:"超集卡/聯名卡",
+            en:"CARD"},
+        {
+            link:"../other/cooperation.html",
+            ch:"合作找我",
+            en:"COOPERATE"},
+    ]
+
+
+    var floorIntro =[
+        {
+            floor:"1F",
+            name:"精品美妍"},
+        {
+            floor:"2F",
+            name:"世界精品"},
+        {
+            floor:"3F",
+            name:"世界精品"},
+        {
+            floor:"4F",
+            name:"國際名品"},
+        {
+            floor:"5F",
+            name:"都會名媛"},
+        {
+            floor:"6F",
+            name:"品味質男"},
+        {
+            floor:"7F",
+            name:"生活逸品"},
+        {
+            floor:"8F",
+            name:"活力休閒"},
+        {
+            floor:"B1F",
+            name:"名品鞋履"},
+        {
+            floor:"B2F",
+            name:"潮流風尚"},
+        {
+            floor:"B3F",
+            name:"雅緻食尚"},
+    ]
+
+
+
+header
+    //左邊選單
+    article.hdContent(style="background-image: url('../../assets/img/hdBg_250_1080.jpg')")
+        section.top
+            .logo
+                a(href="../home/index.html")
+                    img(src="../../assets/img/hdLogo.png", alt="")
+                    img(src="../../assets/img/hdLogoRWD.png", alt="")
+            .openMenu
+                span.icon-square
+                p FIND MORE
+            .socialMedia
+                ul
+                    li
+                        a(href=java)
+                            span.icon-facebook
+                    li
+                        a(href=java)
+                            span.icon-instagram
+                    li
+                        a(href=java)
+                            span.icon-line
+        section.list
+            ul(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                each val in menuList
+                    li(itemprop="name")
+                        a(href=val.link, itemprop="url")
+                            p=val.name
+        section.bottom
+            .buttons
+                a.openSearch(href=java)
+                    span.icon-magnifier
+                    p 搜尋
+                a(href=java)
+                    span.icon-person
+                    p 會員
+            .openSelectStore
+                a(href=java)
+                    p SELECT STORE
+            .openTime
+                span Business Hours Today
+                p 10:30 - 22:00
+    //右下按鈕
+    article.sideButton
+        section.socialMedia 
+            .link
+                a(href=java)
+                    span.icon-youtube
+                a(href=java)
+                    span.icon-twitter
+                a(href=java)
+                    span.icon-instagram
+                a(href=java)
+                    span.icon-facebook
+            button
+                span.icon-share
+        section.openSearch
+            span.icon-magnifier
+        section.DM
+            a(href="../dm/index.html") DM
+        section.goTop TOP
+        // 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次
+        // 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次
+        // 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次
+        // 導覽機新增的按鈕 ----------
+        section.back(onclick="back()") 返回
+        section.toHome
+            a.icon-house(href="../guide/index.html")
+        section.arrows
+            button.up(onclick="scrollUp();")
+            button.down(onclick="scrollDown();")
+    //選擇分店
+    article.selectStore
+        section.buttons
+            .liboxClose
+                span
+            a(href="../index/index.html")
+                p 返回品牌入口頁 
+        section.content
+            ._title
+                p.ch 選擇分站
+                p.en Select substation
+                ul
+                    li.active 全台分站  
+                    li 南部地區
+                    li 中部地區
+                    li 北部地區
+            ._slick
+                ul
+                    each item in store
+                        li
+                            .box
+                                a(href=item.link)
+                                    figure
+                                        img(src=item.img, alt="")
+                                        p 
+                                            span ENTER
+                                    ._text
+                                        p.ch=item.ch
+                                        p.en=item.en
+                                .socailMedia 
+                                    a(href=java)
+                                        span.icon-facebook
+                                    a(href=java)
+                                        span.icon-instagram
+                                    a(href=java)
+                                        span.icon-line
+                .arrows
+                    span.icon-arrowLeft
+                    span.icon-arrowRight
+
+    // 主選單
+    article.hdMenu
+        section.topButton
+            .liboxClose
+                span
+            a(href="../index/index.html")
+                p 返回品牌入口頁 
+        section.content
+            //後端請注意: 未登入狀態請在下方<div class="login"> 加上class "active"
+            .login.active
+                p LOGIN
+                .buttons
+                    a(href=java) 登入
+                    a(href=java) 註冊
+            //後端請注意: 未登入狀態請在下方<div class="logout"> 加上class "active"
+            .logout
+                p LOGOUT
+                .buttons
+                    p.name 我的名子
+                    a(href=java) 登出
+            .mainLink
+                ul(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                    each val in mainList
+                        li(itemprop="name")
+                            a(href=val.link itemprop="url")
+                                p.ch=val.ch
+                                p.en=val.en
+            .bottom
+                .about
+                    ul(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                        li(itemprop="name")
+                            a(href=java onclick="subscribe.open()") 訂閱電子報
+                        li(itemprop="name")
+                            a(href="../supplier/index.html" itemprop="url") 廠商專區  
+                        li(itemprop="name")
+                            a(href="../other/related.html" itemprop="url") 相關企業
+                        li(itemprop="name")
+                            a(href="../other/privacy.html" itemprop="url") 隱私權政策
+                .socialMedia
+                    p FOLLOW US
+                    ul
+                        li
+                            a(href=java)
+                                span.icon-facebook
+                        li
+                            a(href=java)
+                                span.icon-instagram
+                        li
+                            a(href=java)
+                                span.icon-line
+                        li
+                            a(href=java)
+                                span.icon-youtube
+            .floorIntro
+                ._title
+                    p Floor
+                    span introduction
+                ul(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                    each val in floorIntro
+                        li(itemprop="name")
+                            a(href="../floor/index.html" itemprop="url")
+                                p.floor=val.floor
+                                p.name=val.name
+    //搜尋燈箱
+    article.searchLibox
+        section
+            .liboxClose
+                span
+            ._title
+                p.ch 搜尋
+                p.en Search
+                p.words 歡迎搜尋您想找尋的商品或是新訊，漢神提供最佳優質商品及貼心服務機能。
+                .buttons
+                    button.active(type="button")
+                        p 尋找品牌
+                    button(type="button")
+                        p 尋找訊息
+            .forms
+                // 尋找品牌表格
+                form.active
+                    .box.type
+                        .dropDown 
+                            span.selectMenu
+                                p 下拉選擇類別
+                            ul
+                                li 類別一
+                                li 類別二
+                    .box.floor
+                        .dropDown 
+                            span.selectMenu
+                                p 下拉選擇樓層
+                            ul
+                                li 樓層一
+                                li 樓層二
+                    .box.keywords
+                        .inputArea
+                            span.icon-magnifier
+                            input(type="text" placeholder="輸入關鍵字搜尋 ")
+                    .buttons
+                        // 後端請注意: 下方的onclick只是展示用的 記得要刪掉
+                        button(type="button" onclick="location.href='../search/brand.html'")
+                            p ENTER
+                // 尋找訊息表格
+                form(style="display:none")
+                    .box.type
+                        .dropDown 
+                            span.selectMenu
+                                p 下拉選擇類別
+                            ul
+                                li 類別一
+                                li 類別二
+                    .box.keywords
+                        .inputArea
+                            span.icon-magnifier
+                            input(type="text" placeholder="輸入關鍵字搜尋 ")
+                    .buttons
+                        // 後端請注意: 下方的onclick只是展示用的 記得要刪掉
+                        button(type="button" onclick="location.href='../search/brand.html'")
+                            p ENTER
+    // 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次
+    // 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次
+    // 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次
+    article.guideLogo
+        img(src="../../assets/img/guideLogo.png", alt="")
+    // 後端請注意: 這邊有新增的東西 因為很重要所以要說三次
+    // 後端請注意: 這邊有新增的東西 因為很重要所以要說三次
+    // 後端請注意: 這邊有新增的東西 因為很重要所以要說三次
+    article.subscribe
+        section
+            .box
+                .liboxClose
+                    span
+                ._title
+                    span.icon-book
+                    p.ch 訂閱電子報
+                    p.en Subscribe newsletters
+                    p.words 如果你想訂閱電子報，請選擇想要收到的店別，並填寫e-mail，確認送出後，請至您所填寫的e-mail收取確認信件，回覆連結後即訂閱成功。
+                form
+                    .item
+                        .name
+                            p.ch 信箱
+                            p.en E-mail
+                        .inputArea
+                            input(type="text" placeholder="")
+                    .item
+                        .name
+                            p.ch 選擇店別
+                            p.en store
+                        .inputArea
+                            .dropDown
+                                span.selectMenu
+                                    p 請下拉選擇店別
+                                ul
+                                    li 漢神店
+                                    li 巨蛋店
+                    .buttons
+                        // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                        button(type="button" onclick="subscribe.close()")
+                            span.icon-hook
+                            p 確認送出

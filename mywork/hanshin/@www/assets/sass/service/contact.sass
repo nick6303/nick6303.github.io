@@ -1,0 +1,47 @@
+#service.contact
+    main
+        display: block
+        background-image: url("../../upload/fa2/service/contact/mainBg_1670_1080.jpg")
+        +bgSeting
+        background-attachment: fixed
+    .banner ._title .words
+        max-width: 400px
+    .content 
+        +flex-center
+        flex-direction: column
+        padding: 0 50px
+        @media all and (max-width: 1024px)
+            padding: 0 5vw
+        .formContent
+            background-color: #fff
+            max-width: 1070px
+            box-shadow: 0 0 50px rgba(0,0,0,.1)
+            form
+                max-width: 750px
+                .boxs
+                    .box
+                        ._title
+                            width: 140px
+                        .inputArea
+                            width: calc(100% - 140px)
+                            border-left: 5px solid #fff
+                        &.card
+                            ._title
+                                width: calc(50% - 2px)
+                                flex-wrap: wrap
+                                @media all and (max-width: 1420px) and (min-width: 1025px)
+                                    width: 100%
+                                    border-bottom: none
+                                @media all and (max-width: 940px)
+                                    width: 100%
+                                    border-bottom: none
+                            .inputArea
+                                width: calc(50% + 2px)
+                                @media all and (max-width: 1420px) and (min-width: 1025px)
+                                    width: 100%
+                                    .dropDown .selectMenu
+                                        padding: 20px 0 10px 20px
+                                @media all and (max-width: 940px)
+                                    width: 100%
+                                    .dropDown .selectMenu
+                                        padding: 20px 0 10px 20px

@@ -1,0 +1,258 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+.content {
+    padding: 14vh 100px 0 100px;
+    @media all and (max-width: 1024px) {
+        padding: 8vh 5vw 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding: 10vh 5vw 0 5vw;
+    }
+    ._title {
+        h2 {
+            @include title_h2;
+            span{
+                @include title_h2_span;
+            }
+        }
+        h3 {
+            @include title_h3;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/* scrollbar設定*/
+
+.nicescroll-cursors {
+    transition: all .2s ease;
+    transform: translateX(-1px);
+    &.hide {
+        opacity: 0;
+        transition: all .2s ease;
+    }
+}
+
+.news_boxs {
+    margin: auto;
+    margin-top: 60px;
+    max-width: calc(1545px + 5vw);
+    flex-wrap: wrap;
+    display: none;
+    .news_box {
+        width: calc(33.33% - 5vw);
+        margin: 0 2.5vw 8vh 2.5vw;
+        position: relative;
+        @media all and (max-width: 1024px) {
+            margin-bottom: 8vh;
+        }
+        @media all and (max-width: 900px) {
+            width: calc(50% - 5vw);
+        }
+        @media all and (max-width: 700px) {
+            width: 100%;
+            margin: 0 0 8vh 0;
+        }
+        ._img_bg {
+            height: 450px;
+            @include flex-center;
+            overflow: hidden;
+            font-size: 0;
+            position: relative;
+            @media all and (max-width: 1745px) {
+                height: calc(28.3vw - 66px);
+            }
+            @media all and (max-width: 1024px) {
+                height: 25vw;
+            }
+            @media all and (max-width: 900px) {
+                height: 40vw;
+            }
+            @media all and (max-width: 700px) {
+                height: 90vw;
+            }
+            span {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #000;
+                opacity: 0;
+                transition: all .3s ease;
+            }
+            ._img {
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                img {
+                    @media all and (max-width: 700px) {
+                        height: 100%;
+                        max-width: unset;
+                    }
+                }
+            }
+        }
+        /*文字設定*/
+        h5,
+        h2,
+        p {
+            text-align: justify;
+            letter-spacing: 1px;
+            opacity: 0;
+            @media all and (max-width: 700px) {
+                padding: 0 10px;
+            }
+        }
+        h5 {
+            font-family: 'MyriadPro-Semibold';
+            @include font-size(16);
+            margin-top: 35px;
+        }
+        h2 {
+            font-family: "微軟正黑體";
+            font-weight: bold;
+            @include font-size(16);
+            margin-top: 20px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        p {
+            font-family: "微軟正黑體";
+            @include font-size(14);
+            line-height: 1.5;
+            @media all and (max-width: 1545px) {
+                height: 63px;
+            }
+        }
+        &.show {
+            &:hover {
+                ._img {
+                    span {
+                        opacity: .6;
+                        transition: all .4s ease;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+/*進場方格設定*/
+
+.news_box {
+    ._img_bg {
+        .interBg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #F1F1F1;
+            z-index: 1;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* 進場動畫*/
+
+.content {
+    ._title {
+        h2 {
+            animation: fadeInDown .8s both;
+        }
+        h3 {
+            animation: fadeInDown .8s both .2s;
+        }
+        .menulist {
+            animation: fadeInDown .8s both .5s;
+        }
+    }
+    .news_box {
+        &.show {
+            ._img_bg {
+                .interBg {
+                    animation: interBg 1.4s both;
+                    -ms-animation: interBgIE 1.4s both;
+                }
+                ._img {
+                    animation: fadeIn 0s both .56s;
+                }
+            }
+            h5,
+            h2,
+            p {
+                animation: fadeIn 1.2s both .56s ease-out;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/* 偽燈箱進場動畫*/
+
+.fakeLibox {
+    .banner {
+        animation-duration: 0s;
+    }
+    .content {
+        ._title {
+            h2,
+            h3,
+            .menulist {
+                animation-duration: 0s;
+                animation-delay: 0s;
+            }
+        }
+        .news_box {
+            ._img_bg {
+                .interBg {
+                    animation-duration: 0s;
+                }
+                ._img {
+                    animation-delay: 0s;
+                }
+            }
+            h5,
+            h2,
+            p {
+                animation-delay: 0s;
+                animation-duration: 0s;
+            }
+        }
+    }
+}

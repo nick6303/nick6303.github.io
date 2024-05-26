@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?q9hlfx');
+  src:  url('fonts/icomoon.eot?q9hlfx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?q9hlfx') format('truetype'),
+    url('fonts/icomoon.woff?q9hlfx') format('woff'),
+    url('fonts/icomoon.svg?q9hlfx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bold-plus:before {
+  content: "\e921";
+}
+.icon-instagram2:before {
+  content: "\ea92";
+}
+.icon-play:before {
+  content: "\ea1c";
+}
+.icon-volume-mute:before {
+  content: "\e90c";
+}
+.icon-volume-high:before {
+  content: "\e90d";
+}
+.icon-instagram:before {
+  content: "\e902";
+}
+.icon-facebook:before {
+  content: "\e903";
+}
+.icon-twitter:before {
+  content: "\e904";
+}
+.icon-youtube:before {
+  content: "\e905";
+}
+.icon-gift:before {
+  content: "\e901";
+}
+.icon-enter_arrow:before {
+  content: "\e91a";
+}
+.icon-x:before {
+  content: "\e920";
+}
+.icon-express:before {
+  content: "\e91c";
+}
+.icon-phonePay:before {
+  content: "\e91d";
+}
+.icon-check:before {
+  content: "\e919";
+}
+.icon-person:before {
+  content: "\e918";
+}
+.icon-mapdot2:before {
+  content: "\e916";
+}
+.icon-house:before {
+  content: "\e915";
+}
+.icon-line:before {
+  content: "\e914";
+}
+.icon-mapdot:before {
+  content: "\e913";
+}
+.icon-flag:before {
+  content: "\e911";
+}
+.icon-chat:before {
+  content: "\e912";
+}
+.icon-slick-arrow-left:before {
+  content: "\e90f";
+}
+.icon-slick-arrow-right:before {
+  content: "\e910";
+}
+.icon-i:before {
+  content: "\e90e";
+}
+.icon-keyboard_arrow_up:before {
+  content: "\e906";
+}
+.icon-keyboard_arrow_right:before {
+  content: "\e907";
+}
+.icon-keyboard_arrow_left:before {
+  content: "\e908";
+}
+.icon-keyboard_arrow_down:before {
+  content: "\e909";
+}
+.icon-arrow_drop_up:before {
+  content: "\e90a";
+}
+.icon-arrow_drop_down:before {
+  content: "\e90b";
+}
+.icon-refresh:before {
+  content: "\e91b";
+}
+.icon-big-logo:before {
+  content: "\e917";
+}
+.icon-search:before {
+  content: "\e900";
+}

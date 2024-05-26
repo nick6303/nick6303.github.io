@@ -1,0 +1,387 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"會員專區",
+            link:"../member/member.html"},
+    ]
+
+    var unit =[
+        {
+            name: "會員總覽",
+            link:"../member/member.html"},
+        {
+            name: "超集卡點數&遊戲次數",
+            link:"../member/point.html"},
+        {
+            name: "我的贈品",
+            link:"../member/gift.html"},
+        {
+            name: "停車管理",
+            link:""},
+        {
+            name: "基本資料",
+            link:"../member/basicInfo.html"},
+        {
+            name: "修改密碼",
+            link:java},
+        {
+            name: "會員條碼",
+            link:"../member/barCode.html"}
+    ]
+
+    var buttons = [
+        {
+            class:"icon-calm",
+            h6:"點數補登",
+            p:"Repair",
+            onclick:"liboxs.open(0)"},
+        {
+            class:"icon-transfer",
+            h6:"點數轉移",
+            p:"Transfer",
+            onclick:"liboxs.open(3)"},
+        {
+            class:"icon-shop",
+            h6:"消費紀錄",
+            p:"Record",
+            onclick:"member.showRecord('open');"}
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#member.point
+    include ../layout/_header.pug
+
+    main    
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section.topTitle
+                .left
+                    p.ch 會員專區
+                    p.en Member area
+                    p.words 歡迎登入漢神超集卡會員專區，提供您專屬的漢神超集卡點數、遊戲、贈品管理、電子報訂閱及停車查詢等眾多便利及貼心服務。
+                .right
+                    figure
+                        img(src="../../upload/fa2/member/member/picture_170_170.jpg", alt="")
+                    ._text
+                        p(data-name="Welcome , ") 王艾倫
+                        a(href=java)
+                            span.icon-logout
+                            p.en LOGOUT 
+                            p.ch 登出
+                .unit
+                    ul  
+                        each val in unit
+                            li(class=(val==unit[1])?"active":"")
+                                if(val==unit[unit.length-2])
+                                    // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                                    a(href=val.link onclick="liboxs.ajax(this)" data-src="../member/changPassword.html")=val.name
+                                else
+                                    a(href=val.link)=val.name
+        article.content
+            section.overview
+                p.en CARD POINTS & GAMES 
+                p.words Smart消費、Smart回饋，跨店集點點數折抵無上限。
+            section.usablePoints.b-lazy(data-src='../../upload/fa2/member/point/usablePointsBg_950_270.jpg')
+                ._title
+                    p.en Usable points
+                    p.ch 累積可使用點數
+                .info
+                    ul
+                        li
+                            h6 您尚有漢神超集卡點數 : 
+                            p 3,005
+                        li
+                            h6 108/12/31到期點數 : 
+                            p 2,000
+                        li
+                            h6 109/12/31到期點數 :
+                            p 1,005
+            section.remainingGames.b-lazy(data-src='../../upload/fa2/member/point/remainingGamesBg_950_270.jpg')
+                ._title
+                    p.en Remaining games
+                    p.ch 剩餘遊戲次數
+                    p.ps (超集卡可玩遊戲地點為 : 查詢機/導覽機/APP)
+                .info
+                    ul
+                        li
+                            h6 今日可玩遊戲次數 :   
+                            p 5
+                        li
+                            h6 108/12/31到期次數 : 
+                            p 10
+                        li
+                            h6 109/12/31到期次數 : 
+                            p 3
+                        li
+                            h6 玩遊戲總共次數為 :
+                            p 0
+            section.buttons
+                each val in buttons
+                    button(type="button" onclick=val.onclick)
+                        b
+                        span(class=val.class)
+                        h6=val.h6
+                        p=val.p
+                        if (val == buttons[buttons.length - 1])
+                            // 箭頭
+                            i
+            section.table
+                .listTable
+                    .listhead
+                        p.date 日期
+                        p.branch 店名
+                        p.counter 櫃名
+                        p.ticketNum 發票號
+                        p.type 交易型態
+                        p.seeMore 查看內容
+                    .listbody
+                        -for (var i = 0 ;i<4;i++)
+                            .list
+                                .date
+                                    p 2019 / 05 / 20
+                                .branch
+                                    p 漢神巨蛋購物廣場
+                                .counter
+                                    p Escents 伊聖詩芳療生活館
+                                .ticketNum
+                                    p WQ02031113
+                                .type
+                                    p 集點補登
+                                .seeMore
+                                    button(type="button")
+                                        span
+                                .moreInfo
+                                    ul
+                                        li(data-name="集點金額 : ") 981
+                                        li(data-name="異動後點數 : ") 9604
+                                        li(data-name="點數變動 : ") +9
+                                        li(data-name="卡號(末四碼) : ") 3906
+                button(type="button" onclick="member.showRecord('close');")
+                    span.icon-hook
+                    p 確認關閉
+        article.precautions
+            section.words
+                p 如您有任何意見歡迎填寫 <span>聯絡表單</span>，或撥打 <span>顧客專線0800-018-980</span> 將有專人問您服務，謝謝。
+                // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                button(type="button" onclick="liboxs.ajax(this)" data-src="../member/precautions.html") 漢神超集卡約定事項
+        // 燈箱
+        article.memberFormLibox
+            // 點數補登(0)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-calm
+                            p.ch 點數補登
+                            p.en Repair
+                            p.words 請輸入補登序號，即可完成點數補登，只接受漢神POS系統所開立的電子發票，其他發票須至1F服務台補登。
+                        form
+                            .item
+                                .name
+                                    p.ch 序號
+                                    p.en number
+                                .inputArea
+                                    input(type="password" placeholder="輸入點數補登序號")
+                            .item.code
+                                .name
+                                    p.ch 驗證碼
+                                    p.en code
+                                .inputArea
+                                    input(type="text" placeholder="點擊圖片即可更換")
+                                    div
+                                        img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                            .buttons 
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                // 後端請注意: 如果要顯示"贈品補登失敗"的燈箱，請啟動 liboxs.open(2) 而非 liboxs.open(1) 
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(1)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 點數補登成功(1)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-hook2
+                            p.ch 點數補登成功
+                            p.en Successful repair
+                            p.words 恭喜您輸入的補登序號已成功存入超集卡點數帳戶中，如有問題洽詢 : 07-215-7266，謝謝您。
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);")
+                                span.icon-hook
+                                p 確認離開
+            // 點數補登失敗(2)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-hook2
+                            p.ch 點數補登失敗
+                            p.en Failed repair
+                            p.words 您輸入的補登序號無法正常存入超集卡點數帳戶中，可返回上一步重新填寫，如有問題洽詢 : 07-215-7266。
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);")
+                                span.icon-reset
+                                p 重新填寫
+            // 點數轉移密碼確認(3)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-transfer
+                            p.ch 點數轉移密碼確認
+                            p.en Password confirmation
+                            p.words 請先輸入您的會員密碼，確認身分。未變更密碼之預設為 : 身分證末三碼 + 生日六碼，共九碼。
+                        form
+                            .item
+                                .name
+                                    p.ch 密碼
+                                    p.en code
+                                .inputArea
+                                    input(type="passward" placeholder="輸入點數補登序號")
+                            .item.code
+                                .name
+                                    p.ch 驗證碼
+                                    p.en code
+                                .inputArea
+                                    input(type="text" placeholder="點擊圖片即可更換")
+                                    div
+                                        img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                            .buttons 
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(4)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 點數轉移(4)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-transfer
+                            p.ch 點數轉移
+                            p.en Transfer
+                            p.words 親愛的顧客請注意 ! 轉移超集卡點數將會扣除您的帳戶10點當轉移的手續費。
+                        form
+                            .item
+                                .name
+                                    p.ch 累積點數
+                                    p.en points
+                                .inputArea
+                                    p(data-unit="點") 35
+                            .item
+                                .name
+                                    p.ch 轉入身份
+                                    p.en ID
+                                .inputArea
+                                    input(type="text" placeholder="轉入會員卡號或身分證號")
+                            .item
+                                .name
+                                    p.ch 轉出點數
+                                    p.en points
+                                .inputArea
+                                    input(type="number" placeholder="輸入轉出點數")
+                            .buttons 
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(5)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 點數轉移確認(5)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-transfer
+                            p.ch 點數轉移確認
+                            p.en Transfer confirm
+                        form
+                            .item
+                                .name
+                                    p.ch 累積點數
+                                    p.en points
+                                .inputArea
+                                    p(data-unit="點") 35
+                            .item
+                                .name
+                                    p.ch 轉入身份
+                                    p.en ID
+                                .inputArea
+                                    p T102345678
+                            .item
+                                .name
+                                    p.ch 轉出點數
+                                    p.en points
+                                .inputArea
+                                    p(data-unit="點") 5
+                            .item
+                                .name
+                                    p.ch 轉移手續費
+                                    p.en fee
+                                .inputArea
+                                    p(data-unit="點") 10
+                            .item
+                                .name
+                                    p.ch 剩餘點數
+                                    p.en points
+                                .inputArea
+                                    p(data-unit="點") 30
+                            .buttons 
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(6)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 點數轉移成功(6)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-hook2
+                            p.ch 點數轉移成功
+                            p.en Successful transfer
+                            p.words 恭喜您輸入的點數已成功轉移給 <span>T102345678</span> 超集卡會員，如有問題洽詢 : 07-215-7266，謝謝您。
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);")
+                                span.icon-hook
+                                p 確認離開
+    include  ../layout/_footer.pug
++script
+// 後端請注意: 下方的js只有會員單元才會有
+script(src="../../assets/js/member.js")
+|
+|
+</html>

@@ -1,0 +1,206 @@
+footer
+    background-color: #1b1b1b
+    color: rgba(255,255,255,.6)
+    position: relative
+    +flex-center
+    flex-direction: column
+    padding: 160px 50px 0
+    margin-top: 100px
+    @media all and (max-width: 1024px)
+        padding: 160px 5vw 0
+    @media all and (max-width: 700px)
+        padding: 90px 7vw 0
+    .goTop
+        position: absolute
+        top: 140px
+        left: 150px
+        cursor: pointer
+        @media all and (max-width: 1420px)
+            left: auto
+            right: calc(50% + 530px)
+        @media all and (max-width: 1220px)
+            left: 50px
+            right: auto
+        @media all and (max-width: 700px)
+            top: 30px
+            left: calc(50% - 15px)
+    .linkList,.middle,.informatioin
+        max-width: 1120px
+        width: 100%
+    .logo
+        max-width: 66vw
+    .linkList
+        margin-top: 80px
+        @media all and (max-width: 700px)
+            display: none
+        ul
+            +flex-space-between
+            li
+                +flex-center
+                flex-direction: column
+                a
+                    font-family: FuturaPT-Heavy,微軟正黑體
+                    font-size: px(15)
+                    line-height: 2
+                    &:first-child
+                        color: rgba(255,255,255,.8)
+                        font-size: px(22)
+    .middle
+        display: flex
+        justify-content: space-between
+        margin-top: 110px
+        flex-wrap: wrap
+        @media all and (max-width: 700px)
+            margin-top: 60px
+        &>*
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            margin-bottom: 50px
+            @media all and (max-width: 700px)
+                width: 50%
+            @media all and (max-width: 550px)
+                width: 100%
+        h6 
+            color: rgba(255,255,255,.8)
+            font-size: px(22)
+            font-family: 'FuturaPT-Heavy'
+            margin-bottom: 20px
+            @media all and (max-width: 700px)
+                font-size: px(20)
+        .openTime
+            padding: 0 50px 0 0 
+            @media all and (max-width: 1024px)
+                padding: 0 5vw 0 0 
+            p
+                font-size: px(15)
+        .Newsletter
+            form
+                padding: 0 5px 10px
+                position: relative
+                +flex-center
+                @media all and (max-width: 550px)
+                    justify-content: space-between
+                input,button
+                    background-color: transparent
+                    border: none
+                    color: #e6e6e6
+                input
+                    font-size: px(13)
+                    letter-spacing: 1px
+                    font-family: FuturaPT-Book, 微軟正黑體
+                    width: 280px
+                    @media all and (max-width: 550px)
+                        width: calc(100% - 50px)
+                    &::placeholder
+                        color: rgba(255,255,255,.3)
+                        transition: all .4s ease
+                    &:focus::placeholder
+                        opacity: 0
+                button
+                    font-size: px(25)
+                &:after
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    +fakeLine(100%,3px,#e83434)
+        .socialMedia
+            ul
+                display: flex
+                justify-content: flex-start
+                li
+                    margin: 0 10px
+                    transition: all .4s ease
+                    font-size: px(20)
+                    color: #606060
+                    &:first-child
+                        margin: 0 10px 0 0
+                    &:last-child
+                        margin: 0 0 0 10px
+                    &:hover
+                        color: #fff
+    .informatioin
+        margin-top: 50px
+        display: flex
+        flex-wrap: wrap
+        .left,.right
+            width: 50%
+            display: flex
+            flex-wrap: wrap
+            @media all and (max-width: 700px)
+                width: 100%
+                justify-content: flex-start !important
+                align-items: center
+        .left
+            font-family: 'CenturyGothic-regular'
+            font-size: px(12)
+            line-height: px(20)
+            letter-spacing: 0.5px
+            padding-right: 50px
+            @media all and (max-width: 700px)
+                padding-right: 0
+            p
+                line-height: 2
+                white-space: nowrap
+                position: relative
+                &:before
+                    content: attr(data-name)
+                    color: #636363
+                    display: inline-block
+                    position: absolute
+                    top: 0
+                    left: 0
+            .address
+                width: 100%
+            .mail
+                padding-left: 40px
+            .tel,.fax
+                padding-left: 25px
+                margin-right: 20px
+                &:after
+                    content: "/"
+                    color: rgba(147,147,147,.6)
+                    display: inline-block
+                    position: absolute
+                    top: 0
+                    right: -12px
+        .right
+            justify-content: flex-end
+            flex-wrap: wrap
+            @media all and (max-width: 700px)
+                margin-top: 20px
+                display: inline-block
+            .liboxs,.sponsor
+                display: flex
+                align-items: flex-end
+                flex-wrap: wrap
+                justify-content: center
+                @media all and (max-width: 700px)
+                    justify-content: flex-start
+            .liboxs
+                font-size: px(11)
+                font-family: 'CenturyGothic-regular'
+            .sponsor
+                a
+                    margin-left: 30px
+                    @media all and (max-width: 700px)
+                        margin: 20px 20px 0 0
+        .copyright
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+            position: relative
+            margin-top: 70px
+            padding: 30px 0 20px
+            font-size: px(11)
+            color: rgba(255,255,255,.2)
+            @media all and (max-width: 700px)
+                margin-top: 50px
+            &:before
+                position: absolute
+                top: 0
+                left: 50%
+                transform: translateX(-50%)
+                max-width: 1630px
+                +fakeLine(90vw,1px,#323232)

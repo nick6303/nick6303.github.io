@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+  <meta charset="UTF-8"/>
+  <meta name="language" content="tw"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="title" content="網站標題名稱"/>
+  <meta name="description" content="網站描敘"/>
+  <meta name="keywords" content="網站關鍵字"/>
+  <meta name="copyright" content="作者名子"/>
+  <title itemprop="name">hanshin</title>
+  <link rel="canonical" href="網址" itemprop="url"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.png"/>
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
+</head>
+
+<body class="index" id="about">
+  <header>
+    <!--左邊選單-->
+    <article class="hdContent" style="background-image: url('../../assets/img/hdBg_250_1080.jpg')">
+      <section class="top">
+        <div class="logo"><a href="../home/index.html"><img src="../../assets/img/hdLogo.png" alt=""><img src="../../assets/img/hdLogoRWD.png" alt=""></a></div>
+        <div class="openMenu"><span class="icon-square"></span>
+          <p>FIND MORE</p>
+        </div>
+        <div class="socialMedia">
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="list">
+        <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li itemprop="name"><a href="../news/index.html" itemprop="url">
+              <p>最新消息</p></a></li>
+          <li itemprop="name"><a href="../brand/index.html" itemprop="url">
+              <p>品牌導覽</p></a></li>
+          <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+              <p>樓層導覽</p></a></li>
+          <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+              <p>會員專區</p></a></li>
+          <li itemprop="name"><a href="../service/index.html" itemprop="url">
+              <p>服務中心</p></a></li>
+          <li itemprop="name"><a href="../about/index.html" itemprop="url">
+              <p>交通資訊</p></a></li>
+        </ul>
+      </section>
+      <section class="bottom">
+        <div class="buttons"><a class="openSearch" href="javascript:void(0)"><span class="icon-magnifier"></span>
+            <p>搜尋</p></a><a href="javascript:void(0)"><span class="icon-person"></span>
+            <p>會員</p></a></div>
+        <div class="openSelectStore"><a href="javascript:void(0)">
+            <p>SELECT STORE</p></a></div>
+        <div class="openTime"><span>Business Hours Today</span>
+          <p>10:30 - 22:00</p>
+        </div>
+      </section>
+    </article>
+    <!--右下按鈕-->
+    <article class="sideButton">
+      <section class="socialMedia"> 
+        <div class="link"><a href="javascript:void(0)"><span class="icon-youtube"></span></a><a href="javascript:void(0)"><span class="icon-twitter"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-facebook"></span></a></div>
+        <button><span class="icon-share"></span></button>
+      </section>
+      <section class="openSearch"><span class="icon-magnifier"></span></section>
+      <section class="DM"><a href="../dm/index.html">DM</a></section>
+      <section class="goTop">TOP</section>
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+      <!-- 導覽機新增的按鈕 ------------>
+      <section class="back" onclick="back()">返回</section>
+      <section class="toHome"><a class="icon-house" href="../guide/index.html"></a></section>
+      <section class="arrows">
+        <button class="up" onclick="scrollUp();"></button>
+        <button class="down" onclick="scrollDown();"></button>
+      </section>
+    </article>
+    <!--選擇分店-->
+    <article class="selectStore">
+      <section class="buttons">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <div class="_title">
+          <p class="ch">選擇分站</p>
+          <p class="en">Select substation</p>
+          <ul>
+            <li class="active">全台分站  </li>
+            <li>南部地區</li>
+            <li>中部地區</li>
+            <li>北部地區</li>
+          </ul>
+        </div>
+        <div class="_slick">
+          <ul>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg2_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神巨蛋購物廣場</p>
+                    <p class="en">Hanshin Arena Shopping Plaza</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="https://tw.mall.yahoo.com/store/hanshin">
+                  <figure><img src="../../upload/fa2/storeImg3_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨網路購物</p>
+                    <p class="en">Hanshin Online Shopping</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="box"><a href="javascript:void(0)">
+                  <figure><img src="../../upload/fa2/storeImg1_370_500.jpg" alt="">
+                    <p> <span>ENTER</span></p>
+                  </figure>
+                  <div class="_text">
+                    <p class="ch">漢神百貨</p>
+                    <p class="en">Hanshin Department Store</p>
+                  </div></a>
+                <div class="socailMedia"> <a href="javascript:void(0)"><span class="icon-facebook"></span></a><a href="javascript:void(0)"><span class="icon-instagram"></span></a><a href="javascript:void(0)"><span class="icon-line"></span></a></div>
+              </div>
+            </li>
+          </ul>
+          <div class="arrows"><span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+        </div>
+      </section>
+    </article>
+    <!-- 主選單-->
+    <article class="hdMenu">
+      <section class="topButton">
+        <div class="liboxClose"><span></span></div><a href="../index/index.html">
+          <p>返回品牌入口頁 </p></a>
+      </section>
+      <section class="content">
+        <!--後端請注意: 未登入狀態請在下方<div class="login"> 加上class "active"-->
+        <div class="login active">
+          <p>LOGIN</p>
+          <div class="buttons"><a href="javascript:void(0)">登入</a><a href="javascript:void(0)">註冊</a></div>
+        </div>
+        <!--後端請注意: 未登入狀態請在下方<div class="logout"> 加上class "active"-->
+        <div class="logout">
+          <p>LOGOUT</p>
+          <div class="buttons">
+            <p class="name">我的名子</p><a href="javascript:void(0)">登出</a>
+          </div>
+        </div>
+        <div class="mainLink">
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../news/index.html" itemprop="url">
+                <p class="ch">最新消息</p>
+                <p class="en">NEWS</p></a></li>
+            <li itemprop="name"><a href="javascript:void(0)" itemprop="url">
+                <p class="ch">會員專區</p>
+                <p class="en">MEMBER</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="ch">樓層導覽</p>
+                <p class="en">FLOOR</p></a></li>
+            <li itemprop="name"><a href="../service/index.html" itemprop="url">
+                <p class="ch">顧客服務</p>
+                <p class="en">SERVICE</p></a></li>
+            <li itemprop="name"><a href="../about/index.html" itemprop="url">
+                <p class="ch">關於漢神</p>
+                <p class="en">ABOUT</p></a></li>
+            <li itemprop="name"><a href="../dm/index.html" itemprop="url">
+                <p class="ch">電子型錄</p>
+                <p class="en">DM</p></a></li>
+            <li itemprop="name"><a href="../other/join.html" itemprop="url">
+                <p class="ch">加入我們</p>
+                <p class="en">JOIN US</p></a></li>
+            <li itemprop="name"><a href="../card/index.html" itemprop="url">
+                <p class="ch">超集卡/聯名卡</p>
+                <p class="en">CARD</p></a></li>
+            <li itemprop="name"><a href="../other/cooperation.html" itemprop="url">
+                <p class="ch">合作找我</p>
+                <p class="en">COOPERATE</p></a></li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <div class="about">
+            <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+              <li itemprop="name"><a href="javascript:void(0)" onclick="subscribe.open()">訂閱電子報</a></li>
+              <li itemprop="name"><a href="../supplier/index.html" itemprop="url">廠商專區  </a></li>
+              <li itemprop="name"><a href="../other/related.html" itemprop="url">相關企業</a></li>
+              <li itemprop="name"><a href="../other/privacy.html" itemprop="url">隱私權政策</a></li>
+            </ul>
+          </div>
+          <div class="socialMedia">
+            <p>FOLLOW US</p>
+            <ul>
+              <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-line"></span></a></li>
+              <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="floorIntro">
+          <div class="_title">
+            <p>Floor</p><span>introduction</span>
+          </div>
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">1F</p>
+                <p class="name">精品美妍</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">2F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">3F</p>
+                <p class="name">世界精品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">4F</p>
+                <p class="name">國際名品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">5F</p>
+                <p class="name">都會名媛</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">6F</p>
+                <p class="name">品味質男</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">7F</p>
+                <p class="name">生活逸品</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">8F</p>
+                <p class="name">活力休閒</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B1F</p>
+                <p class="name">名品鞋履</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B2F</p>
+                <p class="name">潮流風尚</p></a></li>
+            <li itemprop="name"><a href="../floor/index.html" itemprop="url">
+                <p class="floor">B3F</p>
+                <p class="name">雅緻食尚</p></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!--搜尋燈箱-->
+    <article class="searchLibox">
+      <section>
+        <div class="liboxClose"><span></span></div>
+        <div class="_title">
+          <p class="ch">搜尋</p>
+          <p class="en">Search</p>
+          <p class="words">歡迎搜尋您想找尋的商品或是新訊，漢神提供最佳優質商品及貼心服務機能。</p>
+          <div class="buttons">
+            <button class="active" type="button">
+              <p>尋找品牌</p>
+            </button>
+            <button type="button">
+              <p>尋找訊息</p>
+            </button>
+          </div>
+        </div>
+        <div class="forms">
+          <!-- 尋找品牌表格-->
+          <form class="active">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box floor">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇樓層</p></span>
+                <ul>
+                  <li>樓層一</li>
+                  <li>樓層二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+          <!-- 尋找訊息表格-->
+          <form style="display:none">
+            <div class="box type">
+              <div class="dropDown"> <span class="selectMenu">
+                  <p>下拉選擇類別</p></span>
+                <ul>
+                  <li>類別一</li>
+                  <li>類別二</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box keywords">
+              <div class="inputArea"><span class="icon-magnifier"></span>
+                <input type="text" placeholder="輸入關鍵字搜尋 ">
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: 下方的onclick只是展示用的 記得要刪掉-->
+              <button type="button" onclick="location.href='../search/brand.html'">
+                <p>ENTER</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有導覽機新增的東西 因為很重要所以要說三次-->
+    <article class="guideLogo"><img src="../../assets/img/guideLogo.png" alt=""></article>
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <!-- 後端請注意: 這邊有新增的東西 因為很重要所以要說三次-->
+    <article class="subscribe">
+      <section>
+        <div class="box">
+          <div class="liboxClose"><span></span></div>
+          <div class="_title"><span class="icon-book"></span>
+            <p class="ch">訂閱電子報</p>
+            <p class="en">Subscribe newsletters</p>
+            <p class="words">如果你想訂閱電子報，請選擇想要收到的店別，並填寫e-mail，確認送出後，請至您所填寫的e-mail收取確認信件，回覆連結後即訂閱成功。</p>
+          </div>
+          <form>
+            <div class="item">
+              <div class="name">
+                <p class="ch">信箱</p>
+                <p class="en">E-mail</p>
+              </div>
+              <div class="inputArea">
+                <input type="text" placeholder="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="name">
+                <p class="ch">選擇店別</p>
+                <p class="en">store</p>
+              </div>
+              <div class="inputArea">
+                <div class="dropDown"><span class="selectMenu">
+                    <p>請下拉選擇店別</p></span>
+                  <ul>
+                    <li>漢神店</li>
+                    <li>巨蛋店</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- 後端請注意: onclick事件本身並不重要 重要的是裡面的 function-->
+              <button type="button" onclick="subscribe.close()"><span class="icon-hook"></span>
+                <p>確認送出</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+  </header>
+  <main style="background-image:url('../../upload/fa2/about/bg.jpg')">
+    <article class="banner">
+      <section class="breadcrumbs">
+        <ul>
+          <li><a href="../home/index.html">首頁</a></li>
+          <li><a href="../about/index.html">關於漢神</a></li>
+        </ul>
+      </section>
+      <setion class="_title" style="background-image:url('../../upload/fa2/about/bannerImg_1670_410.jpg')">
+        <p class="ch">關於漢神</p>
+        <p class="en">About Hanshin</p>
+        <p class="words">以「創造新新生活 讓夢想在這裡發光」為中心的理念，定位國際級都會型百貨，提供齊全商品及貼心服務機能</p>
+      </setion>
+    </article>
+    <article class="unit">
+      <ul>
+        <li class="active"><a href="javascript:void(0)">
+            <p>探索漢神</p></a></li>
+        <li><a href="javascript:void(0)">
+            <p>特色空間</p></a></li>
+        <li><a href="javascript:void(0)">
+            <p>交通資訊</p></a></li>
+      </ul>
+    </article>
+    <article class="explore active">
+      <section class="topTitle">
+        <p class="en">EXPLORE HANSHIN</p>
+        <p class="words">介紹漢神百貨歷史及故事，創造一個精緻、豐富獲得滿足高品質百貨公司。</p>
+      </section>
+      <section class="topSlick">
+        <ul>
+          <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+          <li data-videoId="jIzOIsQWMfg">
+            <div>
+              <figure><img data-lazy="../../upload/fa2/about/topTitleImg_1180_650.jpg" alt=""></figure><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+            </div>
+          </li>
+          <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+          <li data-videoId="">
+            <div>
+              <figure><img data-lazy="../../upload/fa2/about/topTitleImg_1180_650.jpg" alt=""></figure><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+            </div>
+          </li>
+          <!-- 後端請注意 如果是影片的話 請在下方data-videoId填入影片id-->
+          <li data-videoId="">
+            <div>
+              <figure><img data-lazy="../../upload/fa2/about/topTitleImg_1180_650.jpg" alt=""></figure><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+            </div>
+          </li>
+        </ul>
+        <div class="arrows"><span class="icon-arrowLeft"></span><span class="icon-arrowRight"></span></div>
+      </section>
+      <section class="rows">
+        <div class="row">
+          <div class="_text">
+            <h6>五星級大飯店及百貨公司的複合型大樓</h6>
+            <p>座落於成功路與新田路口的新古典宮廷式建築——『漢來新世界中心』，樓高 186 米，含地上 45 層及地下 7 層，是一幢結合超五星級大飯店及百貨公司的複合型大樓。評鑑為全台灣百貨公司服務品質第一名，在百貨業百家爭鳴的高度競爭下，獲此殊榮，更加堅定「好還要更好」的服務信念。</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>開啟南部百貨業新紀元</h6>
+            <p>漢神百貨位於漢來新世界中心的地下三樓至地上八樓，與日本阪神百貨技術合作，引進日系百貨的經營方式，經過五年半的籌備時期，於 1995 年 5 月 10 日正式試行營運，同年 12 月 12 日與漢來國際觀光大飯店聯合盛大開幕，正式開啟南部百貨業新紀元。</p>
+            <h6>創造新生活，讓夢想在這裡發光</h6>
+            <p>1995年 ，漢神百貨以「創造新新生活 讓夢想在這裡發光」為中心理念， 定位國際級都會型百貨，強調「ONE STOP SHOPPING一次購足」， 提供齊全的商品及完整貼心的服務機能，開啟百貨業的新紀元； 20年過去，漢神百貨深耕茁壯，同時擴展版圖，從單點延伸成了集團， 因此，2017年，漢神集團以「精采生活、夢想起飛」這個進階理念， 持續為廣大消費者，創造一個精緻、豐富、且食、衣、住、行皆可獲得滿足的高品質百貨公司。</p>
+          </div>
+          <div class="_img">
+            <ul>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg1.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>漢來新世界中心及周邊夜景概覽</b>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg2.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>漢來新世界中心及周邊夜景概覽</b>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg3.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>漢來新世界中心及周邊夜景概覽</b>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>動線流暢購物新體驗</h6>
+            <p>本館擁有約55,000㎡的樓地板面積，開闊明朗的空間，順暢的動線設計，提供消費者輕鬆歡愉且能「一次購足」的精品百貨規劃。</p>
+            <h6>率先引進國際大品牌</h6>
+            <p>漢神百貨為台灣第一家引進精品設立店中店的百貨公司，擁有50家以上國際精品名牌進駐，名品雲集與世界同步。</p>
+          </div>
+          <div class="_img">
+            <ul>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg1.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg2.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg3.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>無微不至的貼心服務</h6>
+            <p>雙向手服梯、貴賓廳、仕女補妝間、自動化廁所、VIP泊車服務，均是漢神百貨對於顧客的貼心設計。</p>
+            <h6>全台百貨服務品質NO.1</h6>
+            <p>2010年、2012年及2015漢神百貨集團榮獲知名的《遠見雜誌》評鑑為全台灣百貨公司服務品質第一名，在百貨業百家爭鳴的高度競爭下，獲此殊榮，令漢神百貨更加堅定「好還要更好」服務信念。</p>
+          </div>
+          <div class="_img">
+            <ul>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg4.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>漢神百貨3F女仕時尚樓層專櫃及動線概覽</b>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="_text">
+            <h6>知性美食新感受 純淨綠活新態度</h6>
+            <p>引進17間全省人氣主題餐廳，極致美味的多國料理名菜，滿足您喜愛嚐鮮的味蕾，並引進新一代的頂級超市，完整豐富的精緻生活特色規劃，滿足全階層生活型態需求，具體打造出與時俱進的環保概念店，不論在建材與空間設計以節能為指標。</p>
+          </div>
+          <div class="_img">
+            <ul>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg1.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg2.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <figure><img data-lazy="../../upload/fa2/about/exploreImg3.jpg" alt=""></figure>
+                  <!-- 後端請注意: 如果沒有文字的話請把<b>移除--><b>眾多品牌推出限量禮盒，加碼商品大放送</b>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+    <article class="space">
+      <section class="topTitle">
+        <p class="en">SPECIAL SPACE</p>
+        <p class="words">介紹漢神各區域特別精心規畫的空間，讓您除了享受購物之外的樂趣。</p>
+      </section>
+      <section class="rows">
+        <div class="row">
+          <div class="_img">
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/about/rowImg1_860_540.jpg" alt=""></figure><a href="javascript:void(0)" data-src="../about/detail.html" onclick="specialLibox.open(this)"><span></span>
+              <p>ENTER</p></a>
+          </div>
+          <div class="_text"><a href="javascript:void(0)" data-src="../about/detail.html" onclick="specialLibox.open(this)">
+              <h3>廣場噴水池</h3>
+              <!--後端請注意: 下方字數限制 個字-->
+              <p>國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境...</p></a></div>
+        </div>
+        <div class="row">
+          <div class="_img">
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/about/rowImg2_860_540.jpg" alt=""></figure><a href="javascript:void(0)" data-src="../about/detail.html" onclick="specialLibox.open(this)"><span></span>
+              <p>ENTER</p></a>
+          </div>
+          <div class="_text"><a href="javascript:void(0)" data-src="../about/detail.html" onclick="specialLibox.open(this)">
+              <h3>森林區</h3>
+              <!--後端請注意: 下方字數限制 個字-->
+              <p>國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境...</p></a></div>
+        </div>
+        <div class="row">
+          <div class="_img">
+            <figure><img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/about/rowImg3_860_540.jpg" alt=""></figure><a href="javascript:void(0)" data-src="../about/detail.html" onclick="specialLibox.open(this)"><span></span>
+              <p>ENTER</p></a>
+          </div>
+          <div class="_text"><a href="javascript:void(0)" data-src="../about/detail.html" onclick="specialLibox.open(this)">
+              <h3>挑空區櫥窗秀</h3>
+              <!--後端請注意: 下方字數限制 個字-->
+              <p>國揚以建築業起家，十五年前，為了擴張集團視野，毅然決然跨足其他領域，面對不同的環境...</p></a></div>
+        </div>
+      </section>
+    </article>
+    <article class="traffic">
+      <section class="topTitle">
+        <p class="en">TRAFFIC INFORMATION</p>
+        <form>
+          <div class="dropDown active"><span class="selectMenu">
+              <p>全部資訊</p></span>
+            <ul>
+              <li>行駛交通路線</li>
+              <li>各停車場資訊</li>
+              <li>搭乘大眾工具</li>
+            </ul>
+          </div>
+          <div class="inputArea">
+            <input type="text" placeholder="輸入關鍵字搜尋">
+            <!-- 後端請注意: 下方的onclick 只是展示用 記得要移除 重要的是裡面的function-->
+            <!--後端請注意: 搜尋結果出來後 請啟動 hasResult() 這個function -->
+            <button class="icon-magnifier" type="button" onclick="hasResult();"></button>
+          </div>
+        </form>
+      </section>
+      <section class="links"><a href="https://www.google.com/maps/place/%E6%BC%A2%E7%A5%9E%E7%99%BE%E8%B2%A8/@22.6193594,120.2958923,20z/data=!4m8!1m2!2m1!1z5ryi56We55m-6LKo!3m4!1s0x346e038006ef1e1f:0x4bfa2738d29407d5!8m2!3d22.6193744!4d120.2962693?hl=zh-TW" target="_blank"><span class="icon-location2"></span>
+          <p>查看漢神百貨地圖</p></a><a href="javascript:void(0)"><span class="icon-phone"></span>
+          <p>漢神百貨服務電話：(07) 215-7266</p></a></section>
+      <section class="QAtable">
+        <div class="type">
+          <div class="typeName"><img src="../../upload/fa2/about/typeIcon.png" alt="">
+            <p>行駛交通路線</p>
+          </div>
+          <div class="lists">
+            <div class="list">
+              <div class="question">
+                <p>往外縣市高速公路引導資訊</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>漢神百貨禮券分置介紹 :</p>
+                  <ul>
+                    <li> 
+                      <p>高鐵左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li> 
+                      <p>台鐵新左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li>
+                      <p>由國道中山高速公路南下:</p>
+                      <p>經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                    <li>
+                      <p>由國道3號高速公路往高雄方向 :</p>
+                      <p> 經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。</p>
+                    </li>
+                    <li>
+                      <p>由旗山、美濃往高雄 :</p>
+                      <p>經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text">
+                  <p>漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。</p>
+                </div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/about/answerImg.jpg" alt=""></figure><b>由屏東市往高屏大橋北上 此為地圖圖示</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>外縣市前往漢神路線及停車場動線須知</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>漢神百貨禮券分置介紹 :</p>
+                  <ul>
+                    <li> 
+                      <p>高鐵左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li> 
+                      <p>台鐵新左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li>
+                      <p>由國道中山高速公路南下:</p>
+                      <p>經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                    <li>
+                      <p>由國道3號高速公路往高雄方向 :</p>
+                      <p> 經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。</p>
+                    </li>
+                    <li>
+                      <p>由旗山、美濃往高雄 :</p>
+                      <p>經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text">
+                  <p>漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。</p>
+                </div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/about/answerImg.jpg" alt=""></figure><b>由屏東市往高屏大橋北上 此為地圖圖示</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName"><img src="../../upload/fa2/about/typeIcon2.png" alt="">
+            <p>各停車場資訊</p>
+          </div>
+          <div class="lists">
+            <div class="list">
+              <div class="question">
+                <p>停車場動線與費用須知</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>漢神百貨禮券分置介紹 :</p>
+                  <ul>
+                    <li> 
+                      <p>高鐵左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li> 
+                      <p>台鐵新左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li>
+                      <p>由國道中山高速公路南下:</p>
+                      <p>經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                    <li>
+                      <p>由國道3號高速公路往高雄方向 :</p>
+                      <p> 經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。</p>
+                    </li>
+                    <li>
+                      <p>由旗山、美濃往高雄 :</p>
+                      <p>經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text">
+                  <p>漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。</p>
+                </div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/about/answerImg.jpg" alt=""></figure><b>由屏東市往高屏大橋北上 此為地圖圖示</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>假日特約汽車停車場動線</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>漢神百貨禮券分置介紹 :</p>
+                  <ul>
+                    <li> 
+                      <p>高鐵左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li> 
+                      <p>台鐵新左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li>
+                      <p>由國道中山高速公路南下:</p>
+                      <p>經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                    <li>
+                      <p>由國道3號高速公路往高雄方向 :</p>
+                      <p> 經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。</p>
+                    </li>
+                    <li>
+                      <p>由旗山、美濃往高雄 :</p>
+                      <p>經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text">
+                  <p>漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。</p>
+                </div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/about/answerImg.jpg" alt=""></figure><b>由屏東市往高屏大橋北上 此為地圖圖示</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>新莊汽車停車場動線及費用須知</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>漢神百貨禮券分置介紹 :</p>
+                  <ul>
+                    <li> 
+                      <p>高鐵左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li> 
+                      <p>台鐵新左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li>
+                      <p>由國道中山高速公路南下:</p>
+                      <p>經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                    <li>
+                      <p>由國道3號高速公路往高雄方向 :</p>
+                      <p> 經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。</p>
+                    </li>
+                    <li>
+                      <p>由旗山、美濃往高雄 :</p>
+                      <p>經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text">
+                  <p>漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。</p>
+                </div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/about/answerImg.jpg" alt=""></figure><b>由屏東市往高屏大橋北上 此為地圖圖示</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName"><img src="../../upload/fa2/about/typeIcon3.png" alt="">
+            <p>搭乘大眾工具</p>
+          </div>
+          <div class="lists">
+            <div class="list">
+              <div class="question">
+                <p>搭乘高雄捷運至漢神之指南</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>漢神百貨禮券分置介紹 :</p>
+                  <ul>
+                    <li> 
+                      <p>高鐵左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li> 
+                      <p>台鐵新左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li>
+                      <p>由國道中山高速公路南下:</p>
+                      <p>經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                    <li>
+                      <p>由國道3號高速公路往高雄方向 :</p>
+                      <p> 經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。</p>
+                    </li>
+                    <li>
+                      <p>由旗山、美濃往高雄 :</p>
+                      <p>經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text">
+                  <p>漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。</p>
+                </div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/about/answerImg.jpg" alt=""></figure><b>由屏東市往高屏大橋北上 此為地圖圖示</b>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+              <div class="question">
+                <p>搭乘高雄市公車至漢神之指南</p><span class="icon-play3"></span>
+              </div>
+              <div class="answer" style="display:none">
+                <div class="_text">
+                  <p>漢神百貨禮券分置介紹 :</p>
+                  <ul>
+                    <li> 
+                      <p>高鐵左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li> 
+                      <p>台鐵新左營站 :</p>
+                      <p>高雄捷運左營站→高雄捷運紅線R14巨蛋站，請於5號出口出站。</p>
+                    </li>
+                    <li>
+                      <p>由國道中山高速公路南下:</p>
+                      <p>經鼎金系統交流道→國道10號（左營端方向）→自由路出口→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                    <li>
+                      <p>由國道3號高速公路往高雄方向 :</p>
+                      <p> 經燕巢系統交流道→國道10號（高雄方向）→大中二路→左轉博愛二路。</p>
+                    </li>
+                    <li>
+                      <p>由旗山、美濃往高雄 :</p>
+                      <p>經國道10號高速公路→大中二路→左轉博愛二路（第1停車場入口）。</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="_text">
+                  <p>漢神百貨青年停車場自106年3月1日起，變更為無人化自動收費停車場。出場前請先到計價繳費機計價，再開車離場。購物免費停車辦法：凡當日消費滿500元汽車可免費停車一小時，最高可免費停車六小時。請憑當日消費發票至1F服務台4F卡友服務中心或B3F諮詢台方能辦理停車優惠。</p>
+                </div>
+                <div class="_img">
+                  <figure><img src="../../upload/fa2/about/answerImg.jpg" alt=""></figure><b>由屏東市往高屏大橋北上 此為地圖圖示</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <article class="topNav">
+      <section>
+        <div class="_title">
+          <p class="en">Need any helps?</p>
+          <p class="ch">您需要什麼幫助呢?</p>
+        </div>
+        <ul>
+          <li><a href="javascript:void(0)">
+              <p class="en">Tax Refund Service</p>
+              <p class="ch">退稅服務</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Voucher</p>
+              <p class="ch">禮卷專區</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Become our Member</p>
+              <p class="ch">我想申辦超集卡</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">About Parking</p>
+              <p class="ch">停車優惠</p></a></li>
+          <li><a href="javascript:void(0)">
+              <p class="en">Lost &amp; Found</p>
+              <p class="ch">失物招領</p></a></li>
+        </ul>
+      </section>
+    </article>
+    <article class="ftContent" style="background-image:url('../../assets/img/ftBg_1670_520.jpg')">
+      <section class="webMap">
+        <div class="type">
+          <div class="typeName">
+            <p>ABOUT</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">關於漢神百貨</a></li>
+              <li><a href="javascript:void(0)">交通資訊</a></li>
+              <li><a href="javascript:void(0)">最新消息</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>SERVICE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">服務中心</a></li>
+              <li><a href="javascript:void(0)">聯繫我們</a></li>
+              <li><a href="javascript:void(0)">電子型錄</a></li>
+              <li><a href="javascript:void(0)">服務之星</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>EXPLORE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">樓層導覽</a></li>
+              <li><a href="javascript:void(0)">品牌導覽</a></li>
+              <li><a href="javascript:void(0)">美食導覽</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>COOPERATE</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">廠商專區</a></li>
+              <li><a href="javascript:void(0)">相關企業</a></li>
+              <li><a href="javascript:void(0)">商業合作</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>JOIN US</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">會員專區</a></li>
+              <li><a href="javascript:void(0)">超集卡專區</a></li>
+              <li><a href="javascript:void(0)">人才招募</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="type">
+          <div class="typeName">
+            <p>Online shopping</p>
+          </div>
+          <div class="typeLink">
+            <ul>
+              <li><a href="javascript:void(0)">漢神百貨網路購物</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="infomation">
+        <div class="address">
+          <h6>ADDRESS</h6>
+          <p>高雄市前金區成功一路266-1號</p>
+          <div class="number">
+            <p data-name="電話">07-215-7266</p>
+            <p data-name="服務專線">0800-018-980</p>
+          </div>
+        </div>
+        <div class="businessHours">
+          <h6>BUSINESS HOURS</h6>
+          <ul>
+            <li>
+              <p>週一至週四 11:00 - 22:00</p>
+            </li>
+            <li>
+              <p>週六/例假日 10:30 - 22:30</p>
+            </li>
+            <li>
+              <p>週五/假日前一天 11:00 - 22:30</p>
+            </li>
+            <li>
+              <p>例假最終日 10:30 - 22:00</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="ftBottom">
+        <div class="copyRight"><img src="../../assets/img/ftLogo_160_40.png" alt="">
+          <p>© Hanshin department store co.ltd all right reserve. Design by <a href="https://www.wddgroup.com">WDD</a></p>
+        </div>
+        <div class="follow">
+          <h6>FOLLOW US</h6>
+          <ul>
+            <li><a href="javascript:void(0)"><span class="icon-facebook"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-instagram"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-twitter"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-youtube"></span></a></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <!-- 廣告-->
+    <article class="commercial">
+      <section style="background-image: url('../../upload/fa2/commercialBg_1090_535.jpg')">
+        <div class="liboxClose"><span></span></div>
+        <div class="_slick">
+          <ul class="single-item">
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="kCU3ht6rMMg"></div>
+              <div class="open-box" data-videoid="kCU3ht6rMMg"></div>
+            </li>
+            <li class="item" data-value="img"><a href="javascript:void(0)">
+                <!-- 後端請注意:如果是圖片請照這個格式 可以放gif圖片-->
+                <picture>
+                  <!-- [if IE 9]><video style="display: none;"><![endif]-->
+                  <!-- 後端請注意:手機圖片大小-->
+                  <source srcset="../../upload/fa2/commercialImg_1060_400.jpg" media="(max-width:1024px)">
+                  <!-- 後端請注意:電腦圖片大小 1050*590--><img data-lazy="../../upload/fa2/commercialImg_1060_400.jpg" alt="">
+                </picture></a></li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="VhCr88-MFfM"></div>
+              <div class="open-box" data-videoid="VhCr88-MFfM"></div>
+            </li>
+            <li class="item video-item" data-value="video">
+              <!-- 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任-->
+              <!-- 後端請注意:data-videoid 請填入 youtube 影片的id-->
+              <div class="videoBox" data-videoId="dpfsUCOq75s"></div>
+              <div class="open-box" data-videoid="dpfsUCOq75s"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <artilce class="guideFooter">
+      <ul>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+        <li><a href="javascript:void(0)">
+            <figure><img data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg" alt=""></figure></a></li>
+      </ul>
+    </artilce>
+  </footer>
+</body>
+  <!-- 套件js:我把它弄成一包-->
+  <script src="../../assets/js/nick.js"></script>
+  <!-- 自訂的 js-->
+  <script src="../../assets/js/main.js"></script>
+  <script type="application/ld+json">
+    {  
+        "@context": "http://www.schema.org",
+        "@type": "ProfessionalService",
+        //- 網站名子
+        "name": "hanshin",   
+        //- email
+        "email": "mailto:wdd@wddgroup.com",
+        //- 本站網址
+        "url": "https://www.hanshin.com/",
+        //- logo位置
+        "image": "https://www.hanshin.com/assets/img/fb-creatop.jpg",
+        //- 商品價格區間
+        "priceRange":"500,000~3,000,000",
+        //- 電話
+        "telephone": "+886-4-23223899",
+        //- logo位置
+        "logo": "https://www.hanshin.com/fb-creatop.jpg",
+        //- 地址
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "大容東街90號7樓-1",
+            "addressLocality": "西屯區",
+            "addressRegion": "台中市",
+            "postalCode": "40758",
+            "addressCountry": "中華民國 (台灣)"
+        },
+        //- 銷售據點
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "24.1577281",
+            "longitude": "120.6488368"
+        },
+        //- 據點地圖
+        "hasMap": "https://www.google.com.tw/maps/place/%E5%A8%81%E5%BE%B7%E6%95%B8%E4%BD%8D%E8%A8%AD%E8%A8%88/@24.1577281,120.6488368,15z/data=!4m5!3m4!1s0x0:0x9d235559e0bbc032!8m2!3d24.1577281!4d120.6488368",
+        //- 營業時間
+        "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:30",
+        //- 聯絡方式
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+886-4-23223899",
+            "faxNumber": "+886-4-23223898"
+        },
+        //- 外部相關連結
+        "sameAs": ["https://www.facebook.com/wddgroup/"]
+    }
+  </script>
+<script>
+  function hasResult(){
+      // 重新整理畫面
+      _waypoint.aboutW();
+      _Blazy.aboutW();
+  }
+  
+</script>
+<!--開啟特色空間燈箱-->
+<script>
+  var specialLibox = {
+      open: function (target) {
+          var src = $(target).attr("data-src")
+          $("body").append("<article class='specialLibox'></article>")
+  
+          if (!mobile() && !$("body").hasClass("guide")) {
+              $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+          }else{
+              $("body").css("overflow-y", "hidden")
+          }
+  
+          alreadyHidden = true
+              
+          $.ajax({
+                  // 載入資料
+                  url: src,
+              })
+              .done(function (data) {
+                  // 將資料塞入結構
+                  $(".specialLibox").html(data);
+                  specialLibox.all();
+              });
+      },
+  
+      close_click: function () {
+          $(".specialLibox .liboxClose").click(function () {
+              specialLibox.close();
+          });
+          $(".specialLibox").click(function (e) {
+              if ($(e.target).hasClass("specialLibox")){specialLibox.close(); }
+          })
+      },
+  
+      close: function () {
+          $(".specialLibox").addClass("close");
+          if (!mobile()) {$("body").css({"overflow-y":"visible","padding-right":"0rem"})}
+          else{ $("body").css("overflow-y", "visible")}
+          alreadyHidden = false
+          setTimeout(function () {
+              $(".specialLibox").remove()
+          }, 500)
+      },
+  
+      slick:function(){
+          $(".specialLibox ._slick ul").slick({
+              prevArrow: ".specialLibox ._slick .arrows span.icon-arrowLeft",
+              nextArrow: ".specialLibox ._slick .arrows span.icon-arrowRight",
+              dots:true,
+              speed:700,
+              autoplay: true,
+              autoplaySpeed: 5000,
+              responsive: [{
+                  breakpoint: 1025,
+                  settings: {
+                      arrows: false,
+                  }
+              }
+          ]
+          })
+  
+          $('.specialLibox ._slick ul').on('lazyLoaded', function(){
+              specialLibox.waypoint();
+              specialLibox.Blazy();
+          });
+      },
+  
+      row:function(){
+          $(".specialLibox .rows .row>div:not(.table):nth-child(odd)").each(function () {
+              var thisClassNmae = $(this).attr("class")
+              var nextClassName = $(this).next().attr("class")
+              var targetClassName=(nextClassName == "table") ? thisClassNmae : 
+                                  (nextClassName == undefined) ? thisClassNmae : nextClassName
+              if (thisClassNmae !== targetClassName) {
+                  $(this).addClass("half");
+                  $(this).next().addClass("half");
+              }
+          })
+      },
+  
+      waypoint:function(){
+          eachWaypoint(".specialLibox section .rows .row ._img","80%")
+          eachWaypoint(".specialLibox section .rows .row ._text","80%")
+  
+          function eachWaypoint(target, offsetValue){
+              $(target).each(function (index, element) {
+                  $(element).waypoint({
+                      context: ".specialLibox section",
+                      handler: function () {
+                          $(element).addClass('show');
+                      },
+                      offset: offsetValue
+                  });
+              });
+          }
+      },
+  
+      Blazy:function(){
+          var liboxBLazy = new Blazy({
+              container:".specialLibox section",
+              offset: 100,
+              success: function (ele) {
+                  $(ele).closest("figure").addClass("in");
+                  Waypoint.refreshAll();
+              }
+          });
+      },
+  
+      all:function(){
+          specialLibox.close_click();
+          specialLibox.slick();
+          specialLibox.row();
+          openVideoLibox(".specialLibox section ._slick ul li")
+      }
+  }
+</script>
+</html>

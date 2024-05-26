@@ -1,0 +1,710 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"會員服務",
+            link:"../member/member.html"},
+    ]
+
+    var formLibox = [
+        {
+            h3:"早鳥票",
+            p:"2/12前報名即可享受早鳥票優惠",
+            price:"200"},
+        {
+            h3:"會員票",
+            p:"需為漢神會員",
+            price:"500"},
+    ]
+
+    var interest = [
+        {
+            p: "國際精品",  
+            value:"0"},
+        {
+            p:"化妝品",
+            value:"1"},
+        {
+            p:"紳士服飾･用品",
+            value:"2"},
+        {
+            p:"婦女服飾･用品",
+            value:"3"},
+        {
+            p:"中性服飾･用品(運動、量販、戶外)",
+            value:"4"},
+        {
+            p:"黃金珠寶",
+            value:"5"},
+        {
+            p:"兒童服飾･用品",
+            value:"6"},
+        {
+            p:"家庭、廚房、餐具用品",
+            value:"7"},
+        {
+            p:"瓷器藝品",
+            value:"8"},
+        {
+            p:"寢具、家具、沐浴用品",
+            value:"9"},
+        {
+            p:"家電、照相光學用品",
+            value:"A"},
+        {
+            p:"餐飲食品小吃超市",
+            value:"B"}
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#member.index
+    include ../layout/_header.pug
+    
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+        article.content
+            section
+                .topTitle
+                    p.ch 會員服務
+                    p.en Member area
+                // 活動查詢
+                .activity
+                    ._title
+                        span.icon-search
+                        p 報名活動查詢
+                    .words
+                        p 此處可查詢您在最新消息中活動報名之內容資訊，請輸入底下欄位即可觀看，如有問題洽詢 : 07-215-7266。
+                    form
+                        // 端請注意: 如果要顯示輸入錯誤的項目 請在下方<div class="type"> 加上class "wrong" 如下方所示
+                        .type.wrong
+                            .typeName
+                                p.ch 活動序號
+                                p.en no.
+                            .inputArea
+                                input(type="text")
+                        .type
+                            .typeName
+                                p.ch 報名驗證碼
+                                p.en code
+                            .inputArea
+                                input(type="text")
+                        .type.code
+                            .typeName
+                                p.ch 驗證碼
+                                p.en code
+                            .inputArea
+                                input(type="text" placeholder="點擊圖片即可更換")
+                                div
+                                    img(src="../../upload/fa2/supplier/index/codeImg.png", alt="")
+                        .buttons
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="formLibox.open()")
+                                span.icon-magnifier
+                                p 立即查詢
+                // 會員登入
+                .login
+                    ._title
+                        span.icon-discount
+                        p 超集卡登入
+                    .words
+                        p 1. 外籍人士帳號(ID) : 西元生日碼 + 英文姓氐前2位英文
+                        p 2. 預設密碼 : ID後3碼 + 生日6碼
+                    form
+                        // 端請注意: 如果要顯示輸入錯誤的項目 請在下方<div class="type"> 加上class "wrong" 如下方所示
+                        .type.wrong
+                            .typeName
+                                p.ch 帳號
+                                p.en ID
+                            .inputArea
+                                input(type="text" placeholder="請入您的身分證字號")
+                        .type
+                            .typeName
+                                p.ch 密碼
+                                p.en password
+                            .inputArea
+                                input(type="password" placeholder="請入您的密碼")
+                        .type.code
+                            .typeName
+                                p.ch 驗證碼
+                                p.en code
+                            .inputArea
+                                input(type="text" placeholder="點擊圖片即可更換")
+                                div
+                                    img(src="../../upload/fa2/supplier/index/codeImg.png", alt="")
+                        .forget
+                            a(href=java onclick="liboxs.open(0)") 忘記密碼 ? 按此立即查詢
+                        .buttons
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.open(4)")
+                                span.icon-card
+                                p 申辦漢神超集卡
+                            button(type="button" onclick="location.href='../member/member.html'")
+                                span.icon-person
+                                p 確認登入
+        // 報名表格
+        article.formLibox.check
+            div
+                .liboxClose
+                    span
+                .topTitle
+                    // 活動名稱
+                    .eventName
+                        p.en Booking event
+                        p.ch 足球寶寶爬爬GOGO
+                    // 資訊
+                    .inf
+                        .type
+                            ._title
+                                p.ch 活動場次
+                                p.en Event
+                            div
+                                p 寶寶強壯幼童組
+                        .type
+                            ._title
+                                p.ch 活動地點
+                                p.en Location
+                            div
+                                p 8F 活動會館
+                        .type
+                            ._title
+                                p.ch 活動時間
+                                p.en Time
+                            div
+                                p 2019-02-12(六)  20:00~21:30
+                .form
+                    .verification
+                        ul  
+                            li(data-name="報名序號 : ") A05006
+                            li(data-name="報名驗證碼 : ") 5K67JU6
+                        p 請在 2019-02-12(三) 前至8F活動會館 完成繳費，逾期繳費將失去報名名額。
+                    form
+                        each val in formLibox
+                            .type
+                                // 票類
+                                .typeName
+                                    h3=val.h3
+                                    p=val.p
+                                // 價格
+                                .price
+                                    p(data-name="售價")=val.price
+                                    .count
+                                        p 人數
+                                        div
+                                            p 1
+                                        p 位
+                                // 報名表單
+                                .table
+                                    .list
+                                        .left
+                                        .right
+                                            .box.must
+                                                .name
+                                                    p 姓名
+                                                .inputArea
+                                                    p 王艾熙
+                                            .box.must
+                                                .name
+                                                    p 性別
+                                                .inputArea
+                                                    p 女士
+                                            .box.must
+                                                .name
+                                                    p 生日
+                                                .inputArea
+                                                    p 2016 - 02 -30
+                                            .box
+                                                .name
+                                                    p 電話
+                                                .inputArea
+                                                    p 07-7754321
+                        .buttons
+                            p.total 以上報名人數共<span class="totalNumb">2</span>位，總金額共<span class="totalPrice">700</span>元
+                            a(href="../news/signup.html")
+                                span.icon-text
+                                p 查看活動頁
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="formLibox.close()")
+                                span.icon-hook
+                                p 確認關閉
+        // 會員通用燈箱
+        article.memberFormLibox
+            // 忘記密碼 ↓↓↓↓↓↓↓↓↓↓↓-----------------------------
+            // 會員認證(0)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-key
+                            p.ch 忘記密碼會員認證
+                            p.en Forget password
+                            p.words 請輸入您的帳號，以及填入使用「行動電話」或是「電子信箱」進行驗證手續，即可重設密碼，謝謝您。
+                        form
+                            .item
+                                .name
+                                    p.ch 帳號
+                                    p.en ID
+                                .inputArea
+                                    input(type="text" placeholder="請入您的身分證字號")
+                            .item
+                                .name
+                                    p.ch 信箱 or 手機
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item.code
+                                .name
+                                    p.ch 驗證碼
+                                    p.en code
+                                .inputArea
+                                    input(type="text" placeholder="點擊圖片即可更換")
+                                    div
+                                        img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                            .buttons 
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(1)")
+                                    span.icon-hook
+                                    p 確認送出
+            //驗證碼(1)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-key
+                            p.ch 驗證碼
+                            p.en Verification code
+                            p.words 請查看您的電子信箱驗證信件，將收到的驗證碼填入以下欄位，若3分鐘內仍未收到，可點擊重新發送鈕。
+                        form
+                            .item
+                                .name
+                                    p.ch 信箱
+                                    p.en e-mail
+                                .inputArea
+                                    p Hsan@gmail.com
+                            // 後端請注意: 如果要顯示填寫錯誤的話 請在下方<div class="item"> 加上class "wrong"
+                            .item
+                                ul.vcode
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                //錯誤訊息
+                                p.ps 輸入錯誤
+                            .buttons 
+                                button(type="button")
+                                    span.icon-reset
+                                    p 重新發送
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(2)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 修改密碼(2)
+            .libox
+                section
+                    .box
+                        ._title
+                            span.icon-key
+                            p.ch 修改密碼
+                            p.en Forget password
+                            p.words 請填寫您的新密碼，需為英數字混合共6~10碼，下次如有登入將以此密碼為依據。
+                        form
+                            .item
+                                .name
+                                    p.ch 新密碼
+                                    p.en number
+                                .inputArea
+                                    input(type="password" placeholder="英數字混合共6~10碼")
+                            .item
+                                .name
+                                    p.ch 確認密碼
+                                    p.en code
+                                .inputArea
+                                    input(type="password" placeholder="再次輸入密碼")
+                            .buttons 
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(3)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 密碼修改成功(3)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-hook2
+                            p.ch 密碼修改成功
+                            p.en Successful save
+                            p.words 恭喜您輸入的新密碼已成功儲存，依新密碼重新登入，如有問題洽詢 : 07-215-7266，謝謝您。
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);")
+                                span.icon-hook
+                                p 確認送出
+            // 忘記密碼會員認證 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-----------------------------
+            // 申辦漢神超集卡 ↓↓↓↓↓↓↓↓↓↓↓-----------------------------
+            // 設定帳號密碼(4)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-person2
+                            p.ch 設定帳號密碼
+                            p.en Set account
+                            p.words 1.身分證字號為您未來登入帳號，請確實輸入欄位。<br>2.外籍人士持在台註冊之居留證至卡友服務中心辦理。
+                        form
+                            .item
+                                .name
+                                    p.ch 帳號
+                                    p.en ID
+                                .inputArea
+                                    input(type="password" placeholder="請輸入您的身分證字號")
+                            .item
+                                .name
+                                    p.ch 密碼
+                                    p.en password
+                                .inputArea
+                                    input(type="password" placeholder="限英數字混合共6~10碼")
+                            .item
+                                .name
+                                    p.ch 確認密碼
+                                    p.en check
+                                .inputArea
+                                    input(type="password" placeholder="再次輸入密碼")
+                            .item.code
+                                .name
+                                    p.ch 驗證碼
+                                    p.en code
+                                .inputArea
+                                    input(type="text" placeholder="點擊圖片即可更換")
+                                    div
+                                        img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                            .buttons
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(5)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 會員資料(5)
+            .libox.memberInfo
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-person2
+                            p.ch 會員資料
+                            p.en member information
+                            p.words 1.身分證字號為您未來登入帳號，請確實輸入欄位。<br>2.外籍人士持在台註冊之居留證至卡友服務中心辦理。
+                        form
+                            .item.must
+                                .name
+                                    p.ch 姓名
+                                    p.en name
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item.must
+                                .name
+                                    p.ch 性別
+                                    p.en gender
+                                .inputArea
+                                    .dropDown
+                                        span.selectMenu
+                                            p 請下拉選擇
+                                        ul
+                                            li 男
+                                            li 女
+                            .item.must
+                                .name
+                                    p.ch 生日
+                                    p.en birthday
+                                .inputArea
+                                    // 後端請注意: label 裡的字是給網頁使用者看的 請使用input裡的value
+                                    .sel_date
+                                        label 選擇日期 Date
+                                        input(type="text"  placeholder="選擇日期 Date" readonly="readonly")
+                            .item.must
+                                .name
+                                    p.ch 信箱
+                                    p.en mail
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item.must
+                                .name
+                                    p.ch 市話
+                                    p.en telephone
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item.must
+                                .name
+                                    p.ch 手機
+                                    p.en phone
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item
+                                .name
+                                    p.ch 公司電話
+                                    p.en tel
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item
+                                .name
+                                    p.ch 國籍
+                                    p.en area
+                                .inputArea
+                                    .dropDown
+                                        span.selectMenu
+                                            p 請下拉選擇
+                                        ul
+                                            li 本國
+                                            li 外國
+                            .item.must
+                                .name
+                                    p.ch 郵遞區號
+                                    p.en code
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item.must
+                                .name
+                                    p.ch 通訊地址
+                                    p.en add
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item
+                                .name
+                                    p.ch 婚姻
+                                    p.en marriage
+                                .inputArea
+                                    .dropDown
+                                        span.selectMenu
+                                            p 請下拉選擇
+                                        ul
+                                            li 未婚
+                                            li 已婚
+                                            li 其它
+                            .item
+                                .name
+                                    p.ch 職業類別
+                                    p.en job
+                                .inputArea
+                                    .dropDown
+                                        span.selectMenu
+                                            p 請下拉選擇
+                                        ul
+                                            li 自營業者、個人工作室
+                                            li 私人企業員工
+                                            li 軍公教
+                                            li 專門職業(醫師、律師等)
+                                            li 學生
+                                            li 家管
+                                            li 兼職‧臨時工
+                                            li 代業中、退休
+                                            li 其他
+                            .item
+                                .name
+                                    p.ch 年收入
+                                    p.en income
+                                .inputArea
+                                    .dropDown
+                                        span.selectMenu
+                                            p 請下拉選擇
+                                        ul
+                                            li 30 萬元以下
+                                            li 30-60 萬元(含)
+                                            li 60-100 萬元(含)
+                                            li 100-150 萬元(含)
+                                            li 150-250 萬元(含)
+                                            li 250 萬元以上
+                            .item
+                                .name
+                                    p.ch 與趣
+                                    p.en interest
+                                .inputArea
+                                    button.openInterest(type="button" onclick="member.openInterest(this);")
+                                        p 請選擇(可複選)
+                            .interest
+                                ul
+                                    each val in interest
+                                        li
+                                            input(type="checkbox" name="interest" value=val.value)
+                                            label
+                                                span
+                                                p=val.p
+                                button(type="button" onclick="member.closeInterest(this)")
+                                    span.icon-hook
+                                    p 確認關閉
+                            .item.must.w100
+                                .name
+                                    p.ch 是否接受DM
+                                    p.en whether to accept DM
+                                .inputArea
+                                    .dropDown
+                                        span.selectMenu
+                                            p 請下拉選擇
+                                        ul
+                                            li 是，我願意收到漢神DM
+                                            li 否，我不願意收到漢神DM
+                            .buttons
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(6)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 個人使用條款(6)
+            .libox.terms
+                section
+                    .box
+                        ._title
+                            p.words ※個人資料使用條款 & 漢神超集卡約定事項：<br>本公司於本活動及報名後之相關作業期間，在漢神巨蛋購物廣場，基於本活動之進行及行銷目的，蒐集、處理、利用您及您的子女提供之下列個人資料：辨別類（姓名、電話等）及個人描述類（出生年月日等）等資料，以供本活動身分辨識、電話通知、稅務等相關作業之用；未提供個人資料者，恕無法參加本活動。您所提供之個人資料，得向本公司請求補充或更正之，或請求查詢、閱覽或製給複製本。當前述蒐集之特定目的消失時，您得請求停止蒐集、處理或利用及請求刪除。本活動之個人資料將於活動結束完畢後銷毀之。
+                            p.words(style="color: #cc9933") * 本人確認所填資料正確無誤；且已充分了解個人資料使用條款及漢神超級卡約定事項等內容，並同意及遵守。
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);liboxs.open(5)")
+                                span.icon-X
+                                p 取消返回
+                            button(type="button" onclick="liboxs.close(this);liboxs.open(7)")
+                                span.icon-hook
+                                p 確認送出
+            // 驗證(7)
+            .libox
+                section
+                    .box
+                        ._title
+                            span.icon-key
+                            p.ch 驗證碼
+                            p.en Verification code
+                            p.words 請查看您的行動電話驗證簡訊，將收到的驗證碼填入以下欄位，若3分鐘內仍未收到，可點擊重新發送鈕。
+                        form
+                            .item
+                                .name
+                                    p.ch 手機
+                                    p.en phone
+                                .inputArea
+                                    p 0912345678
+                            // 後端請注意: 如果要顯示填寫錯誤的話 請在下方<div class="item"> 加上class "wrong"
+                            .item.wrong
+                                ul.vcode
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                //錯誤訊息
+                                p.ps 輸入錯誤
+                            .buttons 
+                                button(type="button")
+                                    span.icon-reset
+                                    p 重新發送
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(8)")
+                                    span.icon-hook
+                                    p 確認送出
+            // 成功(8)
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-hook2
+                            p.ch 超集卡註冊成功
+                            p.en Successful sign up
+                            p.words 恭喜您的申請資料已送出，已經可以開始集點，請於30天內至卡友服務中心進行身分驗證並領取漢神超級卡。
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);")
+                                span.icon-hook
+                                p 進行登入
+            // 申辦漢神超集卡 ↑↑↑↑↑↑↑↑↑↑↑-----------------------------
+    include  ../layout/_footer.pug
++script
+// 後端請注意: 下方的js只有會員單元才會有
+script(src="../../assets/js/member.js")
+
+
+script.
+    // 活動報名表格
+    var formLibox ={
+        open: function () {
+            $(".formLibox").addClass("open")
+            if (!mobile() && !$("body").hasClass("guide")) {
+                $("body").css({"overflow-y":"hidden","padding-right":"1rem"})
+            } else {
+                $("body").css("overflow-y", "hidden")
+            }
+            alreadyHidden = true
+
+            formLibox.all();
+        },
+
+        close_click: function () {
+            $(".formLibox .liboxClose").click(function () {
+                formLibox.close()
+            });
+
+            $(".formLibox").click(function (e) {
+                if($(e.target).hasClass("formLibox")){
+                    formLibox.close();
+                }
+            });
+        },
+        
+        close: function () {
+            $(".formLibox").addClass("close").removeClass("open");
+            alreadyHidden = false
+            if (!mobile()) {
+                $("body").css({"overflow-y": "visible","padding-right":"0rem"});
+            } else {
+                $("body").css("overflow-y", "visible");
+            }
+            setTimeout(function () {
+                $(".formLibox").removeClass("close");
+            }, 500)
+        },
+
+        all:function(){
+            formLibox.close_click();
+        }
+    }
+
+
+
+
+|
+|
+</html>

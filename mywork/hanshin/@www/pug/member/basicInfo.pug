@@ -1,0 +1,380 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"會員專區",
+            link:"../member/member.html"},
+    ]
+
+    var unit =[
+        {
+            name: "會員總覽",
+            link:"../member/member.html"},
+        {
+            name: "超集卡點數&遊戲次數",
+            link:"../member/point.html"},
+        {
+            name: "我的贈品",
+            link:"../member/gift.html"},
+        {
+            name: "停車管理",
+            link:""},
+        {
+            name: "基本資料",
+            link:"../member/basicInfo.html"},
+        {
+            name: "修改密碼",
+            link:java},
+        {
+            name: "會員條碼",
+            link:"../member/barCode.html"}
+    ]
+
+    var interest = [
+        {
+            p: "國際精品",  
+            value:"0"},
+        {
+            p:"化妝品",
+            value:"1"},
+        {
+            p:"紳士服飾･用品",
+            value:"2"},
+        {
+            p:"婦女服飾･用品",
+            value:"3"},
+        {
+            p:"中性服飾･用品(運動、量販、戶外)",
+            value:"4"},
+        {
+            p:"黃金珠寶",
+            value:"5"},
+        {
+            p:"兒童服飾･用品",
+            value:"6"},
+        {
+            p:"家庭、廚房、餐具用品",
+            value:"7"},
+        {
+            p:"瓷器藝品",
+            value:"8"},
+        {
+            p:"寢具、家具、沐浴用品",
+            value:"9"},
+        {
+            p:"家電、照相光學用品",
+            value:"A"},
+        {
+            p:"餐飲食品小吃超市",
+            value:"B"}
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#member.basicInfo
+    include ../layout/_header.pug
+
+    main    
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section.topTitle
+                .left
+                    p.ch 會員專區
+                    p.en Member area
+                    p.words 歡迎登入漢神超集卡會員專區，提供您專屬的漢神超集卡點數、遊戲、贈品管理、電子報訂閱及停車查詢等眾多便利及貼心服務。
+                .right
+                    figure
+                        img(src="../../upload/fa2/member/member/picture_170_170.jpg", alt="")
+                    ._text
+                        p(data-name="Welcome , ") 王艾倫
+                        a(href=java)
+                            span.icon-logout
+                            p.en LOGOUT 
+                            p.ch 登出
+                .unit
+                    ul  
+                        each val in unit
+                            li(class=(val==unit[4])?"active":"")
+                                if(val==unit[unit.length-2])
+                                    // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                                    a(href=val.link onclick="liboxs.ajax(this)" data-src="../member/changPassword.html")=val.name
+                                else
+                                    a(href=val.link)=val.name
+        article.content
+            section.overview
+                p.en ACCOUNT
+                p.words 可修改您的個人基本資料或選擇是否訂閱DM等以利提供專屬服務。
+            section.form
+                .ps
+                    p 紅色標註為必填欄位，如漢神聯名卡個人資料請聯絡信用卡公司做修改，謝謝。
+                form
+                    .item.must
+                        .name
+                            p.ch 姓名
+                            p.en name
+                        .inputArea
+                            input(type="text" value="王小明" placeholder="")
+                    .item.must
+                        .name
+                            p.ch 性別
+                            p.en gender
+                        .inputArea
+                            .dropDown.active
+                                span.selectMenu
+                                    p 男
+                                ul
+                                    li 男
+                                    li 女
+                    .item.must
+                        .name
+                            p.ch 生日
+                            p.en birthday
+                        .inputArea
+                            // 後端請注意: label 裡的字是給網頁使用者看的 請使用input裡的value
+                            .sel_date
+                                label 1992/11/23
+                                input(type="text" value="19921123" placeholder="選擇日期 Date" readonly="readonly")
+                    .item.must
+                        .name
+                            p.ch 信箱
+                            p.en mail
+                        .inputArea
+                            input(type="text" placeholder="" value="abc123@gmail.com")
+                    .item.must
+                        .name
+                            p.ch 市話
+                            p.en telephone
+                        .inputArea
+                            input(type="text" placeholder="" value="0422222222")
+                    .item.must
+                        .name
+                            p.ch 手機
+                            p.en phone
+                        .inputArea
+                            input(type="button" value="0800092000" placeholder="點擊更換號碼" onclick="liboxs.open(0)")
+                    .item
+                        .name
+                            p.ch 公司電話
+                            p.en tel
+                        .inputArea
+                            input(type="text" placeholder="")
+                    .item
+                        .name
+                            p.ch 國籍
+                            p.en area
+                        .inputArea
+                            .dropDown.active
+                                span.selectMenu
+                                    p 請下拉選擇
+                                ul
+                                    li 本國
+                                    li 外國
+                    .item.must
+                        .name
+                            p.ch 郵遞區號
+                            p.en code
+                        .inputArea
+                            input(type="text" placeholder="" value="427")
+                    .item.must
+                        .name
+                            p.ch 通訊地址
+                            p.en add
+                        .inputArea
+                            input(type="text" placeholder="" value="在台灣")
+                    .item
+                        .name
+                            p.ch 婚姻
+                            p.en marriage
+                        .inputArea
+                            .dropDown.active
+                                span.selectMenu
+                                    p 請下拉選擇
+                                ul
+                                    li 未婚
+                                    li 已婚
+                                    li 其它
+                    .item
+                        .name
+                            p.ch 職業類別
+                            p.en job
+                        .inputArea
+                            .dropDown.active
+                                span.selectMenu
+                                    p 請下拉選擇
+                                ul
+                                    li 自營業者、個人工作室
+                                    li 私人企業員工
+                                    li 軍公教
+                                    li 專門職業(醫師、律師等)
+                                    li 學生
+                                    li 家管
+                                    li 兼職‧臨時工
+                                    li 代業中、退休
+                                    li 其他
+                    .item
+                        .name
+                            p.ch 年收入
+                            p.en income
+                        .inputArea
+                            .dropDown.active
+                                span.selectMenu
+                                    p 請下拉選擇
+                                ul
+                                    li 30 萬元以下
+                                    li 30-60 萬元(含)
+                                    li 60-100 萬元(含)
+                                    li 100-150 萬元(含)
+                                    li 150-250 萬元(含)
+                                    li 250 萬元以上
+                    .item
+                        .name
+                            p.ch 與趣
+                            p.en interest
+                        .inputArea
+                            button.openInterest.active(type="button" onclick="member.openInterest(this);")
+                                p 請選擇(可複選)
+                    .interest
+                        ul
+                            each val in interest
+                                li
+                                    input(type="checkbox" name="interest" value=val.value)
+                                    label
+                                        span
+                                        p=val.p
+                        button(type="button" onclick="member.closeInterest(this)")
+                            span.icon-hook
+                            p 確認關閉
+                    .item.must.w100
+                        .name
+                            p.ch 是否接受DM
+                            p.en whether to accept DM
+                        .inputArea
+                            .dropDown.active
+                                span.selectMenu
+                                    p 否，我不願意收到漢神DM
+                                ul
+                                    li 是，我願意收到漢神DM
+                                    li 否，我不願意收到漢神DM
+                    .buttons
+                        // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                        button(type="button" onclick="liboxs.open(2)")
+                            span.icon-hook
+                            p 儲存修改
+        article.memberFormLibox
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-tel
+                            p.ch 修改手機號碼
+                            p.en Edit phone
+                            p.words 為了確保您的權益請確實填寫您的手機號碼，系統將傳送簡訊至您的手機進行相關驗證手續。
+                        form
+                            .item
+                                .name
+                                    p.ch 手機
+                                    p.en phone
+                                .inputArea
+                                    input(type="text" placeholder="")
+                            .item.code
+                                .name
+                                    p.ch 驗證碼
+                                    p.en code
+                                .inputArea
+                                    input(type="text" placeholder="點擊圖片即可更換")
+                                    div
+                                        img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                            .buttons 
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(1)")
+                                    span.icon-hook
+                                    p 確認送出
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-tel
+                            p.ch 手機驗證碼
+                            p.en Verification code
+                            p.words 請查看您的手機驗證簡訊，並將收到的驗證碼填入以下欄位，若3分鐘內仍未收到，可點擊重新發送鈕。
+                        form
+                            .item
+                                .name
+                                    p.ch 手機
+                                    p.en phone
+                                .inputArea
+                                    p 0923456789
+                            // 後端請注意: 如果要顯示填寫錯誤的話 請在下方<div class="item"> 加上class "wrong"
+                            .item
+                                ul.vcode
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                    li
+                                        input(type="number" placeholder="0" maxlength="1")
+                                //錯誤訊息
+                                p.ps 輸入錯誤
+                            .buttons 
+                                button(type="button")
+                                    span.icon-reset
+                                    p 重新發送
+                                // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                                button(type="button" onclick="liboxs.close(this);liboxs.open(2)")
+                                    span.icon-hook
+                                    p 確認送出
+            .libox
+                section
+                    .box
+                        .liboxClose
+                            span
+                        ._title
+                            span.icon-hook2
+                            p.ch 基本資料儲存成功
+                            p.en Successful save
+                            p.words 恭喜您輸入的基本資料已成功存入超集卡會員資料中，如有問題洽詢 : 07-215-7266，謝謝您。
+                        .buttons 
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="liboxs.close(this);")
+                                span.icon-hook
+                                p 確認離開
+        article.precautions
+            section.words
+                p 如您有任何意見歡迎填寫 <span>聯絡表單</span>，或撥打 <span>顧客專線0800-018-980</span> 將有專人問您服務，謝謝。
+                // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                button(type="button" onclick="liboxs.ajax(this)" data-src="../member/precautions.html") 漢神超集卡約定事項
+    include  ../layout/_footer.pug
++script
+// 後端請注意: 下方的js只有會員單元才會有
+script(src="../../assets/js/member.js")
+|
+|
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/member/forgetPassword.css">
+    <link rel="stylesheet" href="../../assets/css/member/changeAccount.css">
+</head>
+
+<body id="member" class="changeAccount">
+    <main>
+        <article class="header">
+            <div class="X">
+                <span></span>
+            </div>
+            <div class="_title">
+                <h2>Change Account</h2>
+                <p>更換您的帳號</p>
+            </div>
+            <div class="hdlogo">
+                <a href="../home/index.html">
+                    <img src="../../assets/img/hdLogo.png" alt="">
+                    <h1>franzaward</h1>
+                </a>
+            </div>
+        </article>
+        <article class="content">
+            <section class="stepNav">
+                <ul>
+                    <span class="blueLine"></span>
+                    <!-- 後端請注意:第一個li 一定要有active checked 這兩個class -->
+                    <li class="active checked">
+                        <h5>Step1</h5>
+                        <p>填寫新帳號</p>
+                    </li>
+                    <li>
+                        <h5>Step2</h5>
+                        <p>輸入驗證碼</p>
+                    </li>
+                    <li>
+                        <h5>Step3</h5>
+                        <p>成功更換帳號</p>
+                    </li>
+                </ul>
+                <span class="scrollBar"></span>
+            </section>
+            <section class="tableContent">
+                <form class="step1 step active">
+                    <div class="_title">
+                        <h6>Please fill in your new account information<span>填寫新的帳號</span></h6>
+                        <p>請填寫您欲更換的聯繫信箱與手機號碼，並輸入當前使用的會員密碼。我們將會發送一組驗證碼至新的聯繫信箱，已確認此操作為您本人進行。</p>
+                    </div>
+                    <div class="account type">
+                        <div class="workbox email">
+                            <h5>E-mail 欲更換的聯繫信箱</h5>
+                            <input type="text" placeholder="example@franzaward.com">
+                        </div>
+                        <div class="mobile workbox">
+                            <h5>Mobile 欲更換的手機號碼</h5>
+                            <!-- <input class="countryCode" type="text" placeholder="+886"> -->
+                            <div class="dropList countryCode">
+                                <span class="selectMenu">
+                                    <p>國際碼</p>
+                                </span>
+                                <ul>
+                                    <li>台灣</li>
+                                    <li>大陸</li>
+                                    <li>美國</li>
+                                    <li>英國</li>
+                                    <li>法國</li>
+                                    <li>瓦甘達</li>
+                                    <li>埃及</li>
+                                    <li>土耳其</li>
+                                    <li>沙烏地阿拉伯</li>
+                                </ul>
+                            </div>
+                            <span></span>
+                            <input class="phoneNumb" type="number" placeholder="fill in yout contact number here">
+                        </div>
+                        <div class="workbox password">
+                            <h5>Password 當前密碼</h5>
+                            <input type="text" placeholder="輸入當前使用的會員密碼">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <div class="next">
+                            <!-- 後端請注意:請在此頁尋找activeStep 有說明可看-->
+                            <a href="javascript:void(0)">
+                                <p>Next <span>：輸入驗證碼</span></p>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+                <div class="step2 step">
+                    <div class="_title">
+                        <h6>Confirm Your Identification<span>驗證操作身分</span></h6>
+                        <!-- 後端請注意:下方的span無意義 如果用不到可以刪除 -->
+                        <p>為了驗證是否由本人進行操作，我們發送了六位數的驗證碼至您的信箱 <span>example@franzaward.com</span>若您一直未收到驗證信件，請點擊重新發送，再嘗試一次。
+                        </p>
+                    </div>
+                    <h3>Enter the verification code 請於下方輸入您的驗證碼</h3>
+                    <form class="code">
+                        <ul id="vcode">
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                        </ul>
+                        <div class="note">
+                            <p>NOTICE : 驗證碼輸入錯誤</p>
+                        </div>
+                    </form>
+                    <div class="button">
+                        <a href="javascript:void(0)" class="toStep3 next">
+                            <p>Next<span>：成功更換</span></p>
+                        </a>
+                        <a href="javascript:void(0)" class="resend">
+                            <p>Resend<span>：重新發送驗證碼</span></p>
+                        </a>
+                        <a href="javascript:void(0)" class="toStep1 prev">
+                            <p>Prev<span>：填寫新帳號</span></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="step3 step">
+                    <div class="_title">
+                        <h6>Your Application has Success!<span>帳號已完成更換</span></h6>
+                        <p>恭喜您完成更換帳號的驗證手續，您的聯繫信箱與手機號碼已完成更新。
+                            <br>為確保您的帳號安全，請使用新的帳號重新登入</p>
+                    </div>
+                    <div class="button">
+                        <div class="finish">
+                            <a href="javascript:void(0)">
+                                <p>重新登入</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article class="goTop">
+            <span></span>
+            <p>TOP</p>
+        </article>
+    </main>
+    <script src="../../assets/js/style.js"></script>
+</body>
+
+</html>

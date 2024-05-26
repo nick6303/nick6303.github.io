@@ -1,0 +1,322 @@
+@charset "utf-8";
+
+$base_blue: #236486;
+$base_gray: #3a342e;
+$ft_bg: #004179;
+$base_gold:#d09b37;
+$base_brown:#3a342e;
+
+
+
+
+/*font-size*/
+
+@mixin font-size($size: 16) {
+    font-size: ($size/16) + rem
+}
+
+
+/*font-size*/
+
+
+/*font-weight*/
+
+$font-300: 300;
+$font-600: 600;
+$font-900: 900;
+
+
+
+/*font-weight*/
+
+
+/*RWD*/
+
+$pc: "(min-width:1025px)";
+$pad_proV: "(max-width:1365px)";
+$pad_pro: "(max-width:1024px)";
+$pad_V: "(max-width:1023px)";
+$pad: "(max-width:900px)";
+$phone: "(max-width:767px)";
+$iphone5:"(max-width:350px)";
+$width700:"(max-width:700px)";
+$width800:"(max-width:800px)";
+
+
+
+/*RWD*/
+
+
+/*transiton*/
+
+@mixin trans($move: 0s, $wait: 0s, $type: all, $way: ease) {
+    -webkit-transition: $type $move $way $wait;
+    -moz-transition: $type $move $way $wait;
+    -ms-transition: $type $move $way $wait;
+    -o-transition: $type $move $way $wait;
+    transition: $type $move $way $wait;
+}
+/*transiton*/
+
+
+/*hide word*/
+@mixin hide_word($line:0) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+/*hide word*/
+
+/* display: flex 置中*/
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* display: flex 置中*/
+
+/* display: flex 左右至頂*/
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* display: flex 左右至頂*/
+
+/* display: flex 向左靠*/
+@mixin flex-left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+/* display: flex 向右靠*/
+@mixin flex-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+/* display: flex 左右至頂*/
+
+
+
+
+
+
+
+
+
+/* 偽元素線條*/
+@mixin fakeLine($width:1px, $height:1px, $backgroundColor:#000) {
+    content: "";
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: $backgroundColor;
+}
+/* 偽元素線條*/
+
+
+
+
+
+
+
+
+/* 標題文字設定-------------*/
+
+@mixin title {
+    position: absolute;
+    z-index: 3;
+    transition: .8s ease-out;
+}
+
+@mixin title_p {
+    @include font-size(16);
+    line-height: 1.5;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@mixin title_h2 {
+    @include font-size(90);
+    line-height: 1.5;
+    font-family: 'Ramaraja-Regular';
+    letter-spacing: 2px;
+    @media all and (max-width: 1440px) {
+        @include font-size(84);
+    }
+    @media all and (max-width: 1280px) {
+        @include font-size(80);
+    }
+    @media all and (max-width: 700px) {
+        @include font-size(60);
+        line-height: 1;
+        margin-top: 20px;
+    }
+    @media all and (max-width: 350px) {
+        @include font-size(54);
+    }
+}
+/* 標題文字設定-------------*/
+
+
+
+
+
+/* 圓圈十字--------*/
+
+@mixin cross_span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-top: 56px;
+    position: relative;
+    @media all and (max-width: 900px) {
+        margin-top:40px;
+    }
+}
+
+@mixin cross_span_i($color: #fff) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    transition: all .4s ease;
+    border-radius: 50%;
+    border: 0px solid $color;
+    @media all and (max-width: 1024px) {
+        border: 1px solid $color;
+        width: 40px;
+        height: 40px;
+    }
+    @media all and (max-width: 900px) {
+        border: 1px solid $color;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@mixin cross_span_before($color: #fff) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include fakeLine(0,
+    2px,
+    $color);
+    transition: all .4s ease;
+    @media all and (max-width: 1024px) {
+        width: 16px;
+    }
+    @media all and (max-width: 900px) {
+        width: 12px;
+    }
+}
+
+@mixin cross_span_after($color: #fff) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include fakeLine(2px,
+    0,
+    $color);
+    transition: all .4s ease;
+    @media all and (max-width: 1024px) {
+        height: 16px;
+    }
+    @media all and (max-width: 900px) {
+        height: 12px;
+    }
+}
+
+@mixin crossHover_span_i($color: #fff) {
+    border: 1px solid $color;
+    transition: all .4s ease;
+    width: 40px;
+    height: 40px;
+    @media all and (max-width: 900px) {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@mixin crossHover_span_before {
+    width: 16px;
+    transition: all .4s ease;
+    @media all and (max-width: 900px) {
+        width: 12px;
+    }
+}
+
+@mixin crossHover_span_after {
+    height: 16px;
+    transition: all .4s ease;
+    @media all and (max-width: 900px) {
+        height: 12px;
+    }
+}
+/* 圓圈十字--------*/
+
+
+
+
+
+
+/*文字動畫*/
+
+@mixin wordAnimation {
+    display: flex;
+    overflow: hidden;
+}
+
+@mixin wordAnimation_span($marginRight:16px) {
+    margin-right: $marginRight;
+    display: flex;
+}
+
+@mixin wordAnimation_span_i {
+    margin: 0 1px 0 0;
+    display: block;
+    font-style: normal;
+}
+/*文字動畫*/
+
+
+
+
+
+
+
+/*圓圈內虛線*/
+
+@mixin circle($color:#fff) {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $color;
+    padding: 4px;
+    cursor: pointer;
+}
+
+@mixin circle_span($color: #fff) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px dashed $color;
+}
+/*圓圈內虛線*/
+
+
+

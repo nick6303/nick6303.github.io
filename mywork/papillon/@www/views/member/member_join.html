@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="description" content="網站描敘">
+  <meta name="keywords" content="網站關鍵字">
+  <meta name="format-detection" content="telephone=no">
+  <title>PAPILLON</title>
+
+  <!--[if lt IE 9]><script src="../../assets/js/vendor/html5shiv-master/html5shiv.js"></script><![endif]--><!--讓ie9以下看懂html5標籤-->
+
+  <!-- icon -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/ico/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+  <link rel="icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+
+  <!-- 共用CSS -->
+    <!-- <link rel="stylesheet" href="../../assets/css/icon-style.css"> -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+  <!-- 共用CSS end-->
+
+  <!-- 非共用CSS -->
+
+  <!-- 非共用CSS end-->
+
+
+  <link rel="stylesheet" href="../../assets/css/member.css">
+
+</head>
+
+<body id="member" class="member memberJoin_frame">
+
+  <main>
+
+    <!--登入會員與加入會員 member login and join box-->
+    <article class="m_box" style="background-image: url(../../upload/f2e/member/member-bg2.jpg);">
+
+      <div class="m_box_inner">
+
+        <!--關閉按鈕-->
+        <div class="_close">
+          <!--如果是從member_account過來的 這個close要返回去member_account的頁面-->
+          <a href="../member/index.html">
+            <p>CLOSE</p>
+          </a>
+        </div>
+
+        <!--輸入會員資料區塊 從member_account的 變更郵件及手機號碼 按鈕連接過來時 請後端將此區塊隱藏-->
+        <!--點了"我同意"按鈕後才能點擊"確認註冊"，如果資料未填完全點了"確認註冊"後才秀出"您資料尚未完成填寫"-->
+        <section class="member_login frame_box">
+
+          <!--標題-->
+          <section class="_top">
+              
+            <div class="_title">
+              <h2>JOIN MEMBERS</h2>
+              <p>成為法蝶會員</p>
+            </div>
+        
+          </section>
+
+          <!--提醒訊息-->
+          <div class="information">
+            <p>請正確填寫以下內容，以保障未來您驗證資料，及領取各項優惠。</p>
+          </div>
+        
+          <!--會員註冊表單-->
+          <form class="member_form">
+            <ul class="login_member">
+              <li>
+                <label for="">NAME</label>
+                <input type="text" name="" value="" placeholder="請填寫您的姓名">
+              </li>
+              <li>
+                <label for="">MOBILE</label>
+                <input type="number" name="" value="" placeholder="請填寫您的手機號碼">
+              </li>
+              <li>
+                <label for="">EMAIL</label>
+                <input type="email" name="" value="" placeholder="請填寫您的電子郵件">
+              </li>
+              <li>
+                <label for="">PASSWORD</label>
+                <input type="password" name="" value="" placeholder="請設定英文及數字組成之8個字元新密碼">
+              </li>
+              <li class="dropMenu">
+                <label for="">GENDER</label>
+                <div class="menulist">
+                  <span class="selectMenu arrow-icon"><p>請選擇您的性別</p></span>
+                </div>
+                <ul tabindex="1" class="dropMenu_box">
+                    <li>
+                        <p>紳士</p>
+                    </li>
+                    <li>
+                        <p>淑女</p>
+                    </li>
+                </ul>
+              </li>
+              <li class="dropMenu">
+                <label for="">CITY</label>
+                <div class="menulist">
+                  <span class="selectMenu arrow-icon"><p>請選擇您居住的縣市</p></span>
+                </div>
+                <ul tabindex="1" class="dropMenu_box">
+                  <li>
+                      <p>台北市</p>
+                  </li>
+                  <li>
+                      <p>新北市</p>
+                  </li>
+                  <li>
+                      <p>桃園市</p>
+                  </li>
+                  <li>
+                      <p>台中市</p>
+                  </li>
+                  <li>
+                      <p>台南市</p>
+                  </li>
+                  <li>
+                      <p>高雄市</p>
+                  </li>
+                  <li>
+                      <p>宜蘭縣</p>
+                  </li>
+                  <li>
+                      <p>花蓮縣</p>
+                  </li>
+                  <li>
+                      <p>台東縣</p>
+                  </li>
+                  <li>
+                      <p>澎湖縣</p>
+                  </li>
+                </ul>
+              </li>
+              <li class="member_verification">
+                <input type="text" name="" value="" placeholder="請輸入驗證碼">
+                <img src="../../assets/img/code.jpg" alt="">
+              </li>
+            </ul>
+          </form>
+
+          <!--提醒訊息 ， 資料填寫完畢後 就把 尚未完成填寫 改成 已完成填寫-->
+          <div class="information">
+            <p class="warning" style="font-style: italic; color: #d80b18;">您資料尚未完成填寫</p>
+            <!-- <p class="warning" style="font-style: italic;">您的資料已完成填寫</p> -->
+            <p class="agree_info">我同意收到法蝶珠寶各項優惠訊息，且已經閱讀及瞭解服務條款並同意註冊成為會員。</p>
+          </div>
+
+          <!--icon_btn_group 服務條款 與 我同意-->
+          <div class="icon_btn_group">
+            <a href="javascript:void(0)" class="terms">
+              <div>
+                <span class="icon-i black"></span>
+                <p>服務條款</p>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="tick">
+              <div>
+                <span class="icon-check gray"></span>
+                <p>我同意</p>
+              </div>
+            </a>
+          </div>
+        
+          <!--form_btn 確認註冊-->
+          <div class="form_btn">
+            <a href="javascript:void(0)" class="next_content_btn black one">
+              <div>
+                <p>確認註冊</p>
+              </div>
+            </a>
+          </div>
+
+          <!--服務條款-->
+          <article class="service_term _overlay" >
+
+            <section class="box">
+
+              <!--關閉按鈕-->
+              <div class="_close">
+                <a href="javascript:void(0)">
+                  <p>CLOSE</p>
+                </a>
+              </div>
+
+              <!--標題-->
+              <section class="_top">
+                  
+                <div class="_title">
+                  <h2>TERMS OF SERVICE</h2>
+                  <p>服務條款</p>
+                </div>
+            
+              </section>
+
+              <!---->
+              <div class="content">
+
+                <!--外-->
+                <ul class="out_side">
+
+                  <li class="out_list animate">
+                    <p class="paragraph">法蝶珠寶所經營之電子商務網站，並依據本網站使用條款及其他相關規範或公告提供您相關服務。您第一次購物前，請詳細閱讀並同意本網站使用條款後，再行填寫您的基本資料以完成購物流程。您完成開始購物流程，即表示您已經閱讀、瞭解且同意接受本網站使用條款之全部內容與約定，如不同意本網站使用條款之全部或部分者，請勿填寫基本資料及完成後續購物流程。</p>
+                  </li>
+
+                  <li class="out_list animate">
+                    <p class="paragraph">您同意本公司有權因應營運之需求，隨時調整本網站使用條款，本公司將不會個別通知。本網站使用條款之最新內容，將公布於本網站首頁連結，您於每次進行購物前，均可詳細閱讀，以維護您的權益。您於任何修改或變更之後繼續使用本網站服務，將視為您已經閱讀、瞭解且同意接受相關修改及變更。如您不同意本網站使用條款之修改或變更，請停止使用本網站相關服務。</p>
+                  </li>
+
+                  <li class="out_list animate">
+                    <p class="paragraph">若您尚未滿二十歲，請您在父、母或監護人的陪同下，閱讀本網站使用條款並同意後，才進行相關購物流程。您及法定代理人或監護人均同意後續在本網站之購物行為，屬於日常生活所必須，並擔保已取得法定代理人或監護人之同意。</p>
+                  </li>
+
+                  <li class="out_list animate">
+
+                    <p class="out_title">1.帳號、密碼</p>
+
+                    <ul class="in_side">
+                      <li>
+                        <p class="paragraph">一、本網站為保障交易安全，將以您所填寫之基本資料中的電子郵件信箱為帳號，並由您自行選定一組密碼作為個人登入辨識使用，您可依需要自行變更個人密碼。請勿使用與其他網站相同之密碼，並經常變更您的個人密碼，以維護您帳號的安全。</p>
+                      </li>
+                      <li>
+                        <p class="paragraph">二、您同意就您的帳號及密碼善盡保管及保密之責任，包含但不限於：不洩漏帳戶、密碼予第三人、不與他人共用帳號、密碼、適時登出本網站等。除經證明係第三人違法使用之情形，您須為利用您所設定之正確帳號、密碼登入之使用行為負全部責任，不得任意否認交易。</p>
+                      </li>
+                      <li>
+                        <p class="paragraph">三、您聲明並保證您所填寫之基本資料為您正確且完整的資料，不得使用他人資料，如有違反前開保證，本公司有權暫停或終止您的帳號，並拒絕您使用本公司的服務。</p>
+                      </li>
+                      <li>
+                        <p class="paragraph">四、您的帳號若有被冒用、盜用之情形，應立即通知本公司，以避免損害擴大。本公司將協助暫停該帳號相關交易及後續利用，並於釐清帳號使用問題後，依您的請求重新設定密碼開通使用。</p>
+                      </li>
+                    </ul>
+
+                  </li>
+
+                  <li class="out_list animate">
+
+                    <p class="out_title">2.個人資料保護</p>
+
+                    <ul class="in_side">
+
+                      <p class="paragraph">公司於您每次交易或參加活動時，為提供本公司相關服務及行銷之目的，蒐集、處理及利用您的個人資料。有關個人資料相關應告知事項，請參閱EYESCREAM隱私權保護政策。</p>
+
+                      <p class="paragraph">您同意本公司得不定期發送商品訊息至您的電子郵件位址。若您欲訂閱、停止訂閱或修改相關訂閱規定，您可連結至本網站【首頁/訂閱電子報】進行訂閱或取消。</p>
+
+                      <p class="paragraph">本公司將遵守個人資料保護相關法令的規定，除依本網站使用條款、隱私權政策或法律規定外，不會違法利用您的個人資料。在下列的情況下，本公司有可能會提供您的個人資料給相關機關，或主張其權利受侵害並提示司法機關正式文件之第三人：</p>
+
+                      <li>
+                        <p>一、依法令或受檢警調；司法機關或其他有權機關基於法定程序之需求。</p>
+                      </li>
+                      <li>
+                        <p>二、在緊急況下為維護其他客戶或第三人之合法權益。</p>
+                      </li>
+                      <li>
+                        <p>三、為維護本網站的正常運作。</p>
+                      </li>
+                      <li>
+                        <p>四、為提供本公司相關服務產生的金流、物流或其他協力廠商或合作廠商必要資訊。</p>
+                      </li>
+                      <li>
+                        <p>五、使用者有任何違反政府法令或本網站使用條款之情形。</p>
+                      </li>
+                    </ul>
+
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </section>
+
+          </article>
+
+        </section>
+
+        <!--身分驗證區塊-->
+        <section class="member_identity frame_box not_show">
+
+          <!--標題-->
+          <section class="_top">
+              
+            <div class="_title">
+              <h2>IDENTITY VERIFICATION</h2>
+              <p>會員身分驗證</p>
+            </div>
+        
+          </section>
+
+          <!--提醒訊息-->
+          <div class="information">
+            <p>親愛的會員您好，為了避免您的身分被盜用，我們會通過簡訊發送五位數驗證碼到您的電話0912456789，請於五分鐘內完成驗證，若您尚未收到驗證簡訊，請重新發送驗證碼，或者回到註冊畫面確認您輸入的資料是否正確。</p>
+          </div>
+
+          <!--驗證碼區塊-->
+          <form class="member_form" style="margin-bottom:20px;">
+            <ul id="vcode" class="enter_verification">
+              <li>
+                <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+              </li>
+              <li>
+                <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+              </li>
+              <li>
+                <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+              </li>
+              <li>
+                <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+              </li>
+              <li>
+                <input type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+              </li>
+            </ul>
+          </form>
+
+          <!--驗證碼勾勾 與 倒數計時器-->
+          <div class="tick_countdown">
+
+            <!--一開始都不顯示-->
+            <div class="tick">
+
+              <!--驗證碼輸入正確 加上show(class) 顯示icon-check-->
+              <span class="icon-check"></span>
+
+              <!--驗證碼輸入錯誤 加上show(class) 顯示icon-x-->
+              <span class="icon-x"></span>
+
+            </div>
+
+            <div class="countdown">
+              <p data-m="2"></p>
+              <p data-s="00"></p>
+            </div>
+
+          </div>
+
+          <!--icon_btn_group 確認會員資料 與 重新發送-->
+          <div class="icon_btn_group">
+            <a href="javascript:void(0)" class="back_content_btn">
+              <div>
+                <span class="icon-slick-arrow-left black"></span>
+                <p>確認會員資料</p>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="resend">
+              <div>
+                <span class="icon-refresh gray"></span>
+                <p>重新發送</p>
+              </div>
+            </a>
+          </div>
+
+          <!--form_btn 完成認證-->
+          <div class="form_btn">
+            <a href="javascript:void(0)" class="open_success black one">
+              <div>
+                <p>完成認證</p>
+              </div>
+            </a>
+          </div>
+
+        </section>
+
+        <!--驗證成功區塊-->
+        <section class="member_success not_show">
+
+          <div class="box" style="background-image: url(../../upload/f2e/member/success-bg.jpg);">
+
+            <!--標題-->
+            <section class="_top">
+                
+              <div class="_title">
+                <h2>SUCCESSFUL</h2>
+                <p>會員驗證成功</p>
+              </div>
+          
+            </section>
+
+            <!--提醒訊息-->
+            <div class="information">
+              <p>親愛的會員您好，恭喜您的身分驗證成功，我們已經將您的登入密碼重置，並將新的密碼發送簡訊到您的手機，建議您登入會員之後更改您的登入密碼，祝您購物於快。</p>
+            </div>
+
+            <!--form_btn 立即登入 跳頁-->
+            <div class="form_btn">
+              <a href="../member/index.html" class="black one">
+                <div>
+                  <p>立即登入</p>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </article>
+
+  </main>
+
+
+<!-- 共用 -->
+  <script src="../../assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="../../assets/js/vendor/cgpagechange/cgpagechange.js"></script>
+  <script src="../../assets/js/vendor/waypoints/waypoints.min.js"></script>
+  <script src="../../assets/js/vendor/jquery.nicescroll/jquery.nicescroll.js"></script>
+  <script src="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.js"></script>
+<!-- 共用end -->
+
+<!-- 非共用 -->
+<!-- 非共用end-->
+
+  <script src="../../assets/js/member.js"></script>
+  <script src="../../assets/js/main.js"></script>
+
+</body>
+</html>
+
+
+<!--會員帳號設定 從member_account的 變更郵件及手機號碼 按鈕連接過來時 請後端將此區塊顯示-->
+<section class="member_login frame_box" style="display:none">
+    
+  <!--標題-->
+  <section class="_top">
+      
+    <div class="_title">
+      <h2>ACCOUNT</h2>
+      <p>帳號設定</p>
+    </div>
+
+  </section>
+
+  <!--提醒訊息-->
+  <div class="information">
+    <p>請重新輸入您的會員資料電話以及者電子郵件帳號，我們將為您調整設定。</p>
+  </div>
+
+  <!--會員註冊表單-->
+  <form class="member_form">
+    <ul class="login_member">
+      <li>
+        <label for="">MOBILE</label>
+        <input type="number" name="" value="" placeholder="請填寫您的手機號碼">
+      </li>
+      <li>
+        <label for="">EMAIL</label>
+        <input type="email" name="" value="" placeholder="請填寫您的電子郵件">
+      </li>
+      <li class="member_verification">
+        <input type="text" name="" value="" placeholder="請輸入驗證碼">
+        <img src="../../assets/img/code.jpg" alt="">
+      </li>
+    </ul>
+  </form>
+
+  <!--form_btn 送出修改-->
+  <div class="form_btn">
+    <a href="javascript:void(0)" class="next_content_btn black one">
+      <div>
+        <p>確認註冊</p>
+      </div>
+    </a>
+  </div>
+
+</section>

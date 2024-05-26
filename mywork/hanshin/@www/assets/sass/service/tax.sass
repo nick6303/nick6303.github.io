@@ -1,0 +1,248 @@
+#service.tax
+    .words
+        max-width: 400px
+    .content
+        .topTitle
+            +flex-center
+            flex-direction: column
+        .table
+            margin: auto
+            max-width: 1140px
+            padding: 0 50px
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            ul
+                opacity: 0
+                animation: fadeIn 1s both
+                li
+                    display: flex
+                    padding: 30px 0
+                    position: relative
+                    @media all and (max-width: 700px)
+                        flex-direction: column
+                    &.show
+                        &:first-child:before
+                            animation: w100 1s both 
+                        &:after
+                            animation: w100 1s both .4s
+                        .language
+                            animation: fadeInUp 1.2s both .2s
+                        .note
+                            h6,p
+                                animation: fadeInUp 1.5s both .2s
+                    &:first-child:before
+                        +fakeLine(0%,4px,#959595)
+                        position: absolute
+                        left: 50%
+                        transform: translateX(-50%)
+                        top: 0
+                    &:after
+                        +fakeLine(0%,1px,#959595)
+                        position: absolute
+                        left: 50%
+                        transform: translateX(-50%)
+                        bottom: 0
+                    &:last-child:after
+                        height: 4px
+                    .language
+                        font-size: px(17)
+                        +flex-center
+                        width: 30%
+                        opacity: 0
+                        @media all and (max-width: 700px)
+                            padding: 0 10px 30px
+                            width: 100%
+                            font-size: px(20)
+                        .ch
+                            font-weight: bold
+                        .en
+                            color: #6e6e6e
+                            margin: 0 0 0 5px 
+                    .note
+                        width: 70%
+                        padding: 0 10px 0 60px
+                        font-size: px(15)
+                        letter-spacing: 0.5px
+                        max-width: 650px
+                        @media all and (max-width: 1390px)
+                            padding: 0 10px 0 4vw
+                        @media all and (max-width: 700px)
+                            padding: 0 10px 
+                            width: 100%
+                            text-align: justify
+                        h6
+                            font-size: px(15)
+                            opacity: 0
+                            +JaguarJC-Bold
+                            &:not(:last-child)
+                                margin: 0 0 15px
+                        p
+                            font-size: px(15)
+                            display: flex
+                            align-items: center
+                            flex-wrap: wrap
+                            opacity: 0
+                            &:not(:last-child)
+                                margin: 0 0 30px
+                            a
+                                color: #bc7c2f
+                                display: flex
+                                margin: 5px 0 5px 5px
+                                transition: all .4s ease
+                                &:hover
+                                    letter-spacing: 2px
+                                &:before
+                                    font-size: px(14)
+                                    font-family: 'icomoon'
+                                    content: "\e907"
+                                    margin: 0 5px 0 0
+    // .moreService
+    //     margin: 110px 0 0
+    //     ._title
+    //         +flex-center
+    //         flex-direction: column
+    //         &.show
+    //             .en
+    //                 animation: fadeInDown 1s both 
+    //             .ch
+    //                 animation: fadeInUp 1.2s both 
+    //                 &:after
+    //                     +keyframesWidth(35) 
+    //                     animation: w35 .8s both .2s
+    //         .en
+    //             font-size: px(20)
+    //             font-weight: bold
+    //             opacity: 0
+    //         .ch 
+    //             font-size: px(38)
+    //             opacity: 0
+    //             &:after
+    //                 margin: 20px auto 30px
+    //                 +fakeLine(0px,2px,#575757)
+    //     .link  
+    //         position: relative
+    //         &.show
+    //             &:before,&:after
+    //                 animation: w0 1.2s both 
+    //             ._slick
+    //                 .icon-arrowLeft:before
+    //                     animation: fadeInRight 1.5s both .8s
+    //                 .icon-arrowRight:before
+    //                     animation: fadeInLeft 1.5s both .8s
+    //         &:before,&:after
+    //             +fakeLine(50%,100%,#fff)
+    //             position: absolute
+    //             top: 0
+    //             z-index: 1
+    //         &:before
+    //             left: 0
+    //         &:after
+    //             right: 0
+    //     ._slick
+    //         position: relative
+    //         max-width: 1100px
+    //         width: 100%
+    //         margin: auto
+    //         padding: 0 50px
+    //         @media all and (max-width: 1350px)
+    //             padding: 0 30px
+    //         @media all and (max-width: 700px)
+    //             padding: 0 25px
+    //         @media all and (max-width: 350px)
+    //             padding: 0 
+    //         ul
+    //             .slick-dots
+    //                 bottom: 15px
+    //                 left: 50%
+    //                 transform: translateX(-50%)
+    //                 li
+    //                     margin: 0 5px !important
+    //                     width: 7px
+    //                     height: 7px
+    //                     &:before
+    //                         width: 4px
+    //                         height: 4px
+    //             .slick-list
+    //                 @media all and (max-width: 350px)
+    //                     padding: 0 0 20px
+    //             .slick-track
+    //                 display: flex
+    //                 align-items: center
+    //             .slick-track>li
+    //                 width: 100%
+    //                 position: relative
+    //                 padding: 60px 20px
+    //                 +flex-center
+    //                 @media all and (max-width: 1350px)
+    //                     padding: 4vw 20px 
+    //                 @media all and (max-width: 700px)
+    //                     padding: 30px 0
+    //                 &:before
+    //                     position: absolute
+    //                     top: 0
+    //                     left: -5px
+    //                     +fakeLine(5px,100%,#fff)
+    //                     opacity: 0
+    //                     transition: all .6s ease
+    //                     @media all and (max-width: 700px)
+    //                         display: none
+    //                 &.slick-center:before
+    //                     opacity: 1
+    //                 a
+    //                     display: flex
+    //                     align-items: center
+    //                     figure
+    //                         width: 90px
+    //                         height: 90px
+    //                         background-color: #fff
+    //                         border-radius: 50%
+    //                         +flex-center
+    //                         margin: 0 30px 0 0
+    //                         @media all and (max-width: 500px)
+    //                             width: 70px
+    //                             height: 70px
+    //                             margin: 0 20px 0 0
+    //                     ._text
+    //                         line-height: 1.2
+    //                         width: calc(100% - 120px)
+    //                         @media all and (max-width: 500px)
+    //                             width: calc(100% - 90px)
+    //                         .ch
+    //                             font-size: px(21)
+    //                             font-weight: bold
+    //                             @media all and (max-width: 500px)
+    //                                 font-size: px(18)
+    //                         .en
+    //                             font-size: px(17)
+    //                             color: #818181
+    //                             @media all and (max-width: 500px)
+    //                                 font-size: px(15)
+    //         .arrows
+    //             span
+    //                 position: absolute
+    //                 height: 100%
+    //                 top: 50%
+    //                 transform: translateY(-50%)
+    //                 font-weight: bold
+    //                 font-size: px(26)
+    //                 cursor: pointer
+    //                 +flex-center
+    //                 padding: 0 10px
+    //                 @media all and (max-width: 700px)
+    //                     font-size: px(20)
+    //                 @media all and (max-width: 350px)
+    //                     display: none
+    //                 &.slick-arrow.slick-hidden
+    //                     display: none !important
+    //                 &.icon-arrowLeft
+    //                     left: 30px
+    //                     @media all and (max-width: 1350px)
+    //                         left: 10px
+    //                     @media all and (max-width: 700px)
+    //                         left: 0
+    //                 &.icon-arrowRight
+    //                     right: 30px
+    //                     @media all and (max-width: 1350px)
+    //                         right: 10px
+    //                     @media all and (max-width: 700px)
+    //                         right: 0

@@ -1,0 +1,288 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"顧客服務",
+            link:"../service/index.html"},
+        {
+            title:"聯絡我們",
+            link:"../service/contact.html"},
+    ]
+
+    var moreService = [
+        {
+            img:"../../upload/fa2/service/index/icon1_50_50.png",
+            ch:"1F 服務台",
+            en:"information desk",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon2_50_50.png",
+            ch:"4F 卡友服務中心",
+            en:"card member service center",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon3_50_50.png",
+            ch:"4F 貴賓廳",
+            en:"VIP lounge",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon4_50_50.png",
+            ch:"B3F 諮詢台",
+            en:"information desk",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon5_50_50.png",
+            ch:"失物招領",
+            en:" lost and found",
+            link:"../service/lost.html"},
+        {
+            img:"../../upload/fa2/service/index/icon6_50_50.png",
+            ch:"禮卷專區",
+            en:"gift certificate",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon7_50_50.png",
+            ch:"退稅服務",
+            en:"tax refund service",
+            link:"../service/tax.html"},
+        {
+            img:"../../upload/fa2/service/index/icon8_50_50.png",
+            ch:"停車優惠辦法",
+            en:"parking offer",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon9_50_50.png",
+            ch:"商品券相關注意事項",
+            en:"product ticket",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon10_50_50.png",
+            ch:"貼心服務 設施指南",
+            en:"service facility guide",
+            link:"../service/facility.html"},
+        {
+            img:"../../upload/fa2/service/index/icon11_50_50.png",
+            ch:"常見問題",
+            en:"Q&A",
+            link:"../service/FQ.html"},
+        {
+            img:"../../upload/fa2/service/index/icon12_50_50.png",
+            ch:"購物配送服務",
+            en:"shopping delivery",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon13_50_50.png",
+            ch:"電子發票",
+            en:"electronic invoice",
+            link:"../service/other.html"},
+        {
+            img:"../../upload/fa2/service/index/icon14_50_50.png",
+            ch:"聯絡我們",
+            en:"contact us",
+            link:"../service/contact.html"},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#service.contact
+    include ../layout/_header.pug
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            setion._title(style="background-image:url('../../upload/fa2/service/contact/bannerBg_1670_410.jpg')")
+                p.ch 聯絡我們
+                p.en Contact us
+                p.words 歡迎您提供寶貴的意見，我們必將虛心接受並檢討改進，讓我們有機會可以作的更好!
+        article.content
+            section.topTitle
+                p.en FORM
+                p.words 歡迎您提供寶貴的意見，我們將會以最快的時間答覆您，謝謝
+            section.formContent
+                .ps 
+                    p 請確實填寫以下欄位，有紅色標註為必填欄位。
+                form
+                    .boxs
+                        .box.w_100.card.must
+                            ._title
+                                p.ch 是否為漢神超集卡友
+                                p.en co-branded credit card
+                            .inputArea
+                                .dropDown
+                                    .selectMenu
+                                        p 請下拉選擇
+                                    ul
+                                        li 是
+                                        li 否
+                        .box.must
+                            ._title
+                                p.ch 姓名
+                                p.en name
+                            .inputArea
+                                input(type="text")
+                        .box
+                            ._title
+                                p.ch 性別
+                                p.en gender
+                            .inputArea
+                                .dropDown
+                                    .selectMenu
+                                        p 請下拉選擇
+                                    ul
+                                        li 先生
+                                        li 女士
+                        .box.must
+                            ._title
+                                p.ch 電話
+                                p.en phone
+                            .inputArea
+                                input(type="text")
+                        .box
+                            ._title
+                                p.ch 傳真
+                                p.en fax
+                            .inputArea
+                                input(type="text")
+                        .box.must
+                            ._title
+                                p.ch 信箱
+                                p.en mail
+                            .inputArea
+                                input(type="text")
+                        .box
+                            ._title
+                                p.ch 住址
+                                p.en address
+                            .inputArea
+                                input(type="text")
+                        .box.must
+                            ._title
+                                p.ch 主旨
+                                p.en subject
+                            .inputArea
+                                .dropDown
+                                    .selectMenu
+                                        p 請下拉選擇
+                                    ul
+                                        li 硬體設備 
+                                        li 人員服務 
+                                        li 行銷活動 
+                                        li 貼心建議 
+                        .box.must
+                            ._title
+                                p.ch 樓層
+                                p.en floor
+                            .inputArea
+                                .dropDown
+                                    .selectMenu
+                                        p 請下拉選擇事件樓層
+                                    ul
+                                        -for (var i = 1 ;i<10;i++)
+                                            li=(i+"F")
+                        .box.w_100.must
+                            ._title
+                                p.ch 意見
+                                p.en opinion
+                            .inputArea
+                                textarea(placeholder="請輸入您的寶貴意見...")
+                        .box.w_100.code.must
+                            ._title
+                                p.ch 驗證碼 
+                                p.en code
+                            .inputArea
+                                input(type="text" placeholder="點擊圖片即可更換")
+                                div
+                                    img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                    .buttons 
+                        button(type="reset")
+                            span.icon-reset
+                            p 重新填寫
+                        // 後端請注意: 下方的onclick僅展示用 重要的是裡面的function 
+                        button(type="button" onclick="liboxOpen();")
+                            span.icon-hook
+                            p 確認送出
+        article.moreService
+            section._title
+                p.en 觀看更多服務
+                p.ch More service
+            section.link(style="background: linear-gradient(90deg,#eaecf1,#b0c9fd,#eaecf1)")
+                ._slick
+                    ul
+                        each val in moreService
+                            li
+                                a(href=val.link)
+                                    figure
+                                        img(data-lazy=val.img, alt="")
+                                    ._text
+                                        p.ch=val.ch
+                                        p.en=val.en
+                    .arrows
+                        span.icon-arrowLeft
+                        span.icon-arrowRight
+        article.statement
+            section
+                .box
+                    p 本公司（漢神名店百貨股份有限公司）對於您個人資料的蒐集、處理及利用，將遵守中華民國『個人資料保護法』之規範，並聲明如下：
+                    ul
+                        li 本公司將以為回應您的寶貴意見連繫及處理等相關作業為目的，於本公司營業所在地區及您之居住地區蒐集、處理、使用您提供之姓名、電話號碼、傳真號碼、電子郵件信箱、住址及申訴內容所提及之個人資料。如您不同意提供必需之個人識別或通訊資料，本公司可能無法提供服務，致影響您的權益。
+                        li 您所提供之個人資料，可以依個人資料保護法之規定，在本公司營業時間申請查詢、閱覽或製給複製本，本公司依法得收取必要的費用。若所提供個人資料有變更或不正確時，可以申請補充或更正；當個人資料蒐集之特定目的消失時，除本公司執行業務或法律程序有留存必要，本公司將銷毀您的個人資料，您也可以申請停止蒐集、處理、利用或刪除個人資料。
+                        li 未滿12歲之兒童，因其識別能力及法律常識，尚不足辨識有關個人資料保護之約定及法定應告知事項之利害關係，請由其監護人代為申訴及提供個人資料，以保障其隱私及其他權益。至於未滿20歲之青少年亦建議由成年人審閱後再提供個人資料使用本網站之前述服務。
+                        li 您所提供的資料，將依據本公司資訊安全政策及規範提供最嚴格的管理及保護。
+                    .ps
+                        p 本人已充分了解貴公司上開個人資料使用條款內容，並同意提供上述個人資料作為貴公司處理本人意見反應相關作業之使用。
+                    .buttons
+                        .liboxClose(onclick="liboxClose()")
+                            span
+                            p 取消返回
+                        // 後端請注意: 下方的onclick僅展示用 重要的是裡面的function 
+                        button(type="button" onclick="liboxClose()")
+                            span.icon-hook
+                            p 同意並送出
+    include ../layout/_footer.pug
++script
+script.
+    function liboxOpen(){
+        $(".statement").addClass("open")
+        if (!mobile() && !$("body").hasClass("guide")) {
+            $("body").css({
+                "overflow-y": "hidden",
+                "padding-right": "1rem"
+            })
+        } else {
+            $("body").css("overflow-y", "hidden")
+        }
+    }
+
+    function liboxClose(){
+        $(".statement").removeClass("open").addClass("close")
+        if (!mobile()) {
+            $("body").css({
+                "overflow-y": "visible",
+                "padding-right": "0rem"
+            })
+        } else {
+            $("body").css("overflow-y", "visible")
+        }
+        setTimeout(function () {
+            $(".statement").removeClass("close")
+        }, 400)
+    }
+|
+|
+</html>

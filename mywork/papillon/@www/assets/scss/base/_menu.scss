@@ -1,0 +1,587 @@
+@import "_variable.scss";
+
+
+._menu {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .7);
+    .menu_content,
+    ._slick {
+        width: 50%;
+        background-color: #f2f2f2;
+        opacity: 1;
+    }
+    .menu_content {
+        display: flex;
+        position: relative;
+        &.on {
+            .main_list {
+                width: 60%;
+                transition: all .8s ease;
+            }
+            .child_list {
+                width: 40%;
+                transition: all .8s ease;
+            }
+            &.chang {
+                .child_list {
+                    animation: childListchang 1.2s both;
+                }
+            }
+        }
+        .main_list {
+            width: 100%;
+            position: relative;
+            overflow-y: auto;
+            transition: all .8s ease;
+            .menu_close {
+                position: absolute;
+                cursor: pointer;
+                top: 30px;
+                left: 50px;
+                p {
+                    font-family: 'Cinzel-Bold';
+                    @include font-size(14);
+                    color: #4a4a4a;
+                }
+            }
+            .menu_logo {
+                width: 110px;
+                height: 35px;
+                margin: auto;
+                margin-top: 100px;
+                a {
+                    @include flex-center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .member {
+                margin-top: 30px;
+                font-family: "微軟正黑體";
+                @include font-size(13);
+                color: #4a4a4a;
+                letter-spacing: 1px;
+                .member_box {
+                    @include flex-center;
+                    .member_name,
+                    .gift {
+                        margin: 10px;
+                    }
+                    .gift_box {
+                        &:before {
+                            font-family: 'icomoon';
+                            content: "\e901";
+                            @include font-size(15);
+                        }
+                    }
+                }
+                .member_btn {
+                    @include flex-center;
+                    li {
+                        display: flex;
+                        align-item: center;
+                        &:nth-child(1) {
+                            &:after {
+                                content: "●";
+                                color: #dac07a;
+                                margin: 0 8px;
+                                @include font-size(12);
+                                transform: scale(.2);
+                                display: block;
+                            }
+                        }
+                        .logOut {
+                            border: none;
+                            background-color: transparent;
+                            font-family: "微軟正黑體";
+                            @include font-size(13);
+                            color: #4a4a4a;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+            }
+            ._product,
+            ._explore {
+                width: 180px;
+                margin: auto;
+                margin-top: 50px;
+                letter-spacing: 1px;
+                padding-left: 13px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                font-family: Cinzel-Regular, 微軟正黑體;
+                h2 {
+                    @include font-size(18);
+                }
+                ul {
+                    margin-top: 28px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    li {
+                        display: flex;
+                        cursor: pointer;
+                        &:not(:last-child) {
+                            margin-bottom: 13px;
+                        }
+                        p {
+                            @include font-size(13);
+                            color: #010101;
+                            transition: all .2s ease;
+                        }
+                        &:hover {
+                            p {
+                                color: $base_red;
+                                transition: all .2s ease;
+                            }
+                        }
+                    }
+                }
+            }
+            ._socialMedia {
+                margin-top: 20vh;
+                @include flex-center;
+                flex-direction: column;
+                padding-bottom: 40px;
+                ul {
+                    @include flex-center;
+                    li {
+                        margin: 0 8px;
+                        a {
+                            span {
+                                @include font-size(15);
+                                font-weight: bold;
+                                width: 20px;
+                                height: 20px;
+                                @include flex-center;
+                                border-radius: 2.5px;
+                                transition: all .3s ease;
+                            }
+                        }
+                        &:hover {
+                            .icon-facebook {
+                                color: #fff;
+                                background-color: #3b5998;
+                                transition: all .3s ease;
+                            }
+                            .icon-instagram {
+                                color: #fff;
+                                background-image: linear-gradient( 180deg, #EECE13 10%, #B210FF 100%);
+                                transition: all .3s ease;
+                                font-weight: normal;
+                                &:before {
+                                    content: "\ea92";
+                                }
+                            }
+                            .icon-twitter {
+                                color: #5aaceb;
+                                transition: all .3s ease;
+                            }
+                            .icon-youtube {
+                                color: #e52d27;
+                                transition: all .3s ease;
+                            }
+                        }
+                    }
+                }
+                p {
+                    cursor: pointer;
+                    margin-top: 25px;
+                    font-family: "微軟正黑體";
+                    @include font-size(12);
+                    letter-spacing: 1px;
+                    display: block;
+                    transform: scale(.9);
+                }
+            }
+            .mCSB_scrollTools {
+                left: 0;
+                right: auto;
+                .mCSB_dragger {
+                    .mCSB_dragger_bar {
+                        background-color: #888888;
+                    }
+                }
+            }
+            .mCSB_inside {
+                &>.mCSB_container {
+                    margin-right: 0;
+                }
+            }
+        }
+        .child_list {
+            width: 0%;
+            height: 100vh;
+            background-color: #171717;
+            color: #fff;
+            overflow: hidden;
+            transition: all .6s ease;
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            top: 0;
+            .child_list_box {
+                height: 100%;
+                width: 100%;
+            }
+            .mCSB_inside {
+                width: 100%;
+                &>.mCSB_container {
+                    margin-right: 0;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
+                .mCSB_dragger_bar {
+                    background-color: #222;
+                }
+            }
+            ._back_main_list {
+                @media #{(min-width:700px)} {
+                    display: none;
+                }
+            }
+            .list_title,
+            .category,
+            .style {
+                width: 110px;
+            }
+            .list_title {
+                margin-top: 18vh;
+                h2 {
+                    font-family: "微軟正黑體";
+                    @include font-size(16);
+                    letter-spacing: 1px;
+                    position: relative;
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 130px;
+                        height: 2px;
+                        background-color: #fff;
+                        margin-top: 20px;
+                        margin-left: -15px;
+                    }
+                }
+                a {
+                    margin-top: 50px;
+                    display: block;
+                    p {
+                        font-family: 'Raleway-regular';
+                        @include font-size(13);
+                        transition: all .2s ease;
+                    }
+                    &:hover {
+                        p {
+                            color: $base_red;
+                            transition: all .2s ease;
+                        }
+                    }
+                }
+            }
+            .category,
+            .style {
+                letter-spacing: 1px;
+                h2 {
+                    font-family: 'Cinzel-Regular';
+                    @include font-size(18);
+                }
+                ul {
+                    margin-top: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    li {
+                        display: flex;
+                        &:not(:last-child) {
+                            margin-bottom: 8px;
+                        }
+                        a {
+                            display: block;
+                            p {
+                                font-family: '微軟正黑體';
+                                @include font-size(13);
+                                line-height: 1.5;
+                                transition: all .2s ease;
+                            }
+                        }
+                        &:hover {
+                            a {
+                                display: block;
+                                p {
+                                    color: $base_red;
+                                    transition: all .2s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .category {
+                margin-top: 30px;
+            }
+            .style {
+                margin-top: 45px;
+                padding-bottom: 45px;
+            }
+        }
+    }
+    ._slick {
+        position: relative;
+        height: 100vh;
+        @media #{$pad_pro} {
+            display: none;
+        }
+        ul {
+            width: 100%;
+            height: 100vh;
+            li {
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                ._slick_img {
+                    width: 100%;
+                    height: 100vh;
+                    @include flex-center;
+                }
+                .slogn {
+                    width: 300px;
+                    letter-spacing: 1px;
+                    h2 {
+                        font-family: Cinzel-Regular, 微軟正黑體;
+                        @include font-size(24);
+                        line-height: 1.5;
+                    }
+                    span {
+                        display: block;
+                        height: 1px;
+                        width: 180px;
+                        margin: 10px 0 18px -90px;
+                    }
+                    p {
+                        font-family: '微軟正黑體';
+                        @include font-size(16);
+                        line-height: 1.5;
+                    }
+                    &.top_left,
+                    &.down_left {
+                        h2,
+                        p {
+                            text-align: right;
+                        }
+                        span {
+                            margin: 10px -90px 18px 0;
+                            margin-left: auto;
+                        }
+                    }
+                }
+            }
+        }
+        ._pageCount {
+            position: absolute;
+            width: 30px;
+            bottom: 40px;
+            left: calc(50% - 15px);
+            &:before {
+                content: "";
+                display: block;
+                width: 8px;
+                height: 16px;
+                background-color: $base_red;
+                margin: auto;
+                margin-bottom: 8px;
+            }
+            span {
+                font-family: 'Raleway-Medium';
+                @include font-size(12);
+            }
+        }
+    }
+}
+
+
+// slick內容標題位置
+._menu {
+    ._slick {
+        ul {
+            li {
+                .slogn {
+                    &.top_left,
+                    &.top_right,
+                    &.down_left,
+                    &.down_right {
+                        position: absolute;
+                    }
+                    &.top_left {
+                        top: 10vh;
+                        left: 6vw;
+                    }
+                    &.top_right {
+                        top: 10vh;
+                        right: 6vw;
+                    }
+                    &.down_left {
+                        bottom: 10vh;
+                        left: 6vw;
+                    }
+                    &.down_right {
+                        right: 6vw;
+                        bottom: 10vh;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 平板
+@media only screen and (max-width: 1024px) {
+    ._menu {
+        .menu_content {
+            width: 100vw;
+            .main_list {
+                height: 100vh;
+                .mCustomScrollBox {
+                    @include flex-center;
+                }
+                .mCSB_inside {
+                    &>.mCSB_container {}
+                }
+                .mCSB_scrollTools {
+                    left: auto;
+                    right: 0;
+                }
+                .menu_close {
+                    position: fixed;
+                }
+            }
+        }
+    }
+}
+
+// 平板螢幕尺寸1024與900之間
+@media only screen and (max-width: 1024px) and (min-width: 901px) {
+    ._menu {
+        .menu_content {
+            .child_list {
+                .category,
+                .style {
+                    ul {
+                        li {
+                            &:not(:last-child) {
+                                margin-bottom: 2vh;
+                            }
+                        }
+                    }
+                }
+                .category {
+                    margin-top: 6vh;
+                }
+                .style {
+                    margin-top: 6vh;
+                }
+            }
+        }
+    }
+}
+
+// 手機
+@media only screen and (max-width: 700px) {
+    ._menu {
+        .menu_content {
+            &.on {
+                .main_list,
+                .child_list {
+                    width: 100%;
+                }
+            }
+            .main_list {
+                .mCustomScrollBox {
+                    display: block;
+                }
+                .mCSB_inside {
+                    &>.mCSB_container {
+                        margin-right: 10px;
+                    }
+                }
+                .menu_close {
+                    position: absolute;
+                    left: 30px;
+                }
+            }
+            .child_list {
+                ._back_main_list {
+                    width: 70px;
+                    @include flex-center;
+                    margin-top: 6vh;
+                    margin-left: -50px;
+                    span {
+                        border-radius: 50%;
+                        background-color: #fff;
+                        color: #171717;
+                        width: 20px;
+                        height: 20px;
+                        @include flex-center;
+                        margin-right: 10px;
+                        &:before {
+                            @include font-size(12);
+                            display: block;
+                            transform: scale(.6);
+                            font-weight: bold;
+                        }
+                    }
+                    p {
+                        font-family: 'Raleway-regular';
+                        @include font-size(12);
+                    }
+                }
+                .list_title {
+                    margin-top: 12vh;
+                }
+            }
+        }
+    }
+}
+
+
+// 進場動畫--------------------------------------
+._menu {
+    &.open {
+        display: flex;
+        animation: fadeIn .4s both;
+    }
+}
+
+
+._menu {
+    &.close {
+        display: flex;
+        animation: fadeOut .4s both;
+    }
+}
+
+@keyframes childListchang {
+    0% {
+        width: 40%;
+    }
+    50% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 40%;
+    }
+}

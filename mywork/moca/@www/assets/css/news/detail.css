@@ -1,0 +1,9 @@
+#news.detail .buttonType1 .top {
+  width: 100%; }
+  #news.detail .buttonType1 .top:before, #news.detail .buttonType1 .top:after {
+    height: 100%; }
+  #news.detail .buttonType1 .top .bottom:after {
+    width: 0; }
+  #news.detail .buttonType1 .top p {
+    -webkit-animation: fadeInUp 0.8s both 0.4s;
+    animation: fadeInUp 0.8s both 0.4s; }

@@ -1,0 +1,210 @@
+.register
+    &__content
+        +flex
+        margin: 0 auto
+        flex-wrap: wrap
+        position: relative
+        width: 100%
+        max-width: 1280px
+        background: #f5f7ff
+        margin-top: 50px
+        min-height: 60vh
+
+    &__inner
+        width: 100%
+        max-width: 800px
+        padding-top: 50px
+        padding-bottom: 200px
+        .txt
+            margin: 0 auto
+            max-width: 600px
+            padding: 50px 0 50px
+            text-align: center
+            p
+                font-size: px(14)
+                line-height: 1.5
+            a
+                margin-top: 20px
+                display: inline-flex
+                justify-content: center
+                align-items: center
+                .circle--product_q
+                    margin-left: 10px
+            h6
+                margin-top: 4px
+                font-size: px(12)
+
+
+.chair1
+    animation: chair 2s infinite
+.chair2
+    animation: chair 2s 1s infinite
+        
+@keyframes chair
+    0%
+        opacity: 0
+    50%
+        opacity: 1
+    100%
+        opacity: 0
+
+.diamond01
+    animation: diamond 1s 0s infinite
+.diamond02
+    animation: diamond 1s .5s infinite
+
+
+@keyframes diamond
+    0%
+        opacity: 0
+    50%
+        opacity: 1
+    100%
+        opacity: 0
+
+.goldolive
+    transform-origin: 50% 50%
+    animation: goldolive 1.5s infinite
+    
+.goldolive_inner
+    transform-origin: 50% 50%
+    animation: goldolive2 1s infinite
+
+@keyframes goldolive
+    0%
+        transform: rotateY(0deg) 
+    100%
+        transform: rotateY(180deg)
+
+@keyframes goldolive2
+    0%
+        transform: rotateY(0deg)
+    100%
+        transform: rotateY(-180deg)
+
+.password
+    transform-origin: 50% 50%
+    animation: password 2s infinite
+
+@keyframes password
+    0%
+        transform: rotateY(0deg) 
+    100%
+        transform: rotateY(360deg)
+
+
+.phonekey
+    animation: phonekey 2s infinite
+
+@keyframes phonekey
+    0%
+        opacity: 0
+    50%
+        opacity: 1
+    100%
+        opacity: 0
+
+.personW
+    animation: personW 2s infinite
+
+@keyframes personW
+    0%
+        opacity: 0
+    80%
+        opacity: 1
+    100%
+        opacity: 0
+.thumbs
+    animation: thumbs 1s infinite
+    transform-origin: 0 100%
+    @keyframes thumbs
+        0%
+            transform: rotate(0)
+        33%
+            transform: rotate(-1deg)
+        66%
+            transform: rotate(1deg)
+        100%
+            transform: rotate(0)
+
+.problem_a
+    background: #ffffff
+    width: 100%
+    max-width: 700px
+    background: #252b3f
+    color: #fff
+    padding: 100px
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    box-shadow: 5px 5px 10px #aaa
+    text-align: left
+    +rwd(600)
+        padding: 100px 40px
+    &__wrap
+        display: none
+        position: absolute
+        width: 100%
+        max-width: 700px
+        left: 0
+        top: 0
+        z-index: 3
+    &__title
+        order: 2
+        width: 100%
+        h5
+            font-size: px(12)
+            margin-bottom: 15px
+        h4
+            font-size: px(18)
+            margin-bottom: 20px
+    &__info
+        order: 1
+        width: 100%
+        ul
+        &_l
+            display: inline-block
+            height: 10px
+            width: 1px
+            background: #fff
+            margin: 0 10px
+        li
+            margin-bottom: 15px
+        p
+            font-size: px(15)
+    &__txt
+        order: 3
+        width: 100%
+        padding-top: 30px
+        p
+            font-size: px(14)
+            line-height: 1.5
+    &__close
+        display: inline-block
+        width: 70px
+        height: 70px
+        background: #fff
+        position: absolute
+        right: 0
+        top: 0 
+        cursor: pointer
+        span
+            display: inline-block
+            width: 100%
+            height: 100%
+            position: relative
+            &:before,&:after
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%) rotate(45deg)
+                background: #000
+            &:before
+                height: 1px
+                width: 20px
+            &:after
+                height: 20px
+                width: 1px

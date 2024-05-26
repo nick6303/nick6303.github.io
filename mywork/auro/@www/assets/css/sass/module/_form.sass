@@ -1,0 +1,264 @@
+.theform
+    padding: 0 10px
+    ul
+        +flex
+        flex-wrap: wrap
+    li
+        width: 100%
+        padding: 10px 20px
+        border: 2px solid #f5f7ff
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background: #fff
+        position: relative
+        &.w50
+            width: 50%
+            +rwd(767)
+                width: 100%
+        &.w60
+            width: 60%
+        &.w40
+            width: 40%
+        &.err
+            border: 1px solid #1c42a3
+        &.errTxt
+            background: transparent
+            text-align: right
+            justify-content: flex-end
+            font-size: px(12)
+            padding: 0 20px 10px
+            color: #1c42a3
+        &.must
+            &:before
+                content: '*'
+                position: absolute
+                top: 10px
+                left: 10px
+                font-size: 12px
+
+        &.aligntop
+            align-items: flex-start
+            label
+                margin-top: 10px
+        &.br
+            margin-bottom: 20px
+        &.txt
+            background: transparent
+            text-align: center
+            padding: 30px 20px
+            +flex
+            h4
+                font-size: px(18)
+
+    label
+        flex-grow: 0
+        flex-shrink: 0
+        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+        font-size: px(14)
+        letter-spacing: 0.5px
+
+    label+input
+        padding-left: 20px
+
+        
+    input 
+        flex-grow: 1
+        border: 0
+        padding: 0
+        height: 40px
+        letter-spacing: 1px
+        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+        font-size: px(14)
+        background: transparent
+        &:-moz-placeholder
+            font-size: px(12)
+        &::-moz-placeholder 
+            font-size: px(12)
+        &:-ms-input-placeholder 
+            font-size: px(12)
+        &::-webkit-input-placeholder
+            font-size: px(12)
+    textarea 
+        flex-grow: 1
+        border: 0
+        padding: 10px 20px
+        letter-spacing: 1px
+        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+        font-size: px(14)
+        height: 300px
+        width: 100%
+    .form_dropdown
+        flex-grow: 1
+        position: relative
+    .form_tel
+        width: 60px
+        +flex
+        label
+            width: 20px
+        input 
+            width: calc(100% - 20px)
+        label+input
+            padding-left: 0px
+
+.thepassword
+    ul
+        width: 100%
+        margin: 0 auto
+        max-width: 600px
+        +flex
+        flex-wrap: wrap
+    li
+        // border: 1px solid #000
+        width: 100%
+        padding: 10px 20px
+        margin-bottom: 3px
+        +flex
+        background: #fff
+
+    input 
+        flex-grow: 1
+        border: 0
+        height: 40px
+        font-size: 0.875rem
+        padding: 0px 20px
+        letter-spacing: 1px
+        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+        font-size: px(14)
+        &:-moz-placeholder
+            font-size: px(12)
+        &::-moz-placeholder 
+            font-size: px(12)
+        &:-ms-input-placeholder 
+            font-size: px(12)
+        &::-webkit-input-placeholder
+
+
+.theread
+    padding: 50px 0   
+    ul
+        // border: 1px solid #000
+        width: 100%
+        display: flex
+        justify-content: center
+    li
+        +flex
+        width: 50%
+        a
+            width: 100%
+            max-width: 250px
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            .circle
+                margin-bottom: 20px
+        &.line
+            display: inline-block
+            width: 1px
+            height: 80px
+            background: #000
+            margin: 20px 40px 0
+            
+    h6
+        font-size: px(14)
+        line-height: 1.5
+        text-align: center
+        &.bb
+            border-bottom: 1px solid #000
+.thebtns
+    margin-top: 50px
+    ul
+        +flex
+        li
+            margin: 0 10px
+        a
+            +flex
+            flex-direction: column
+        h6
+            margin-top: 20px
+            font-size: px(14)
+        
+.thelogo
+    width: 100px
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-50%,-50%)
+    svg
+        width: 100%
+        
+.theverfication
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-50%,-50%  )
+    ul
+        +flex
+    li
+        &:not(:last-child):after
+            content: ''
+            display: inline-block
+            width: 2px
+            height: 28px
+            background: #333
+            margin: 0 20px 0 15px
+            transform: skewX( -30deg)
+            opacity: 0.3
+    input
+        font-size: px(48)
+        font-family:  'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+        color: #1b41a2
+        width: 28px
+        border: 0
+        background: transparent
+        &::-webkit-input-placeholder 
+            color: #333
+            opacity: .3
+        &::-moz-placeholder
+            color: #333
+            opacity: .3
+        &:-ms-input-placeholder 
+            color: #333
+            opacity: .3
+        &:-moz-placeholder 
+            color: #333
+            opacity: .3
+    &.err
+        &:after
+            content: '*　驗證碼輸入錯誤'
+            position: absolute
+            left: 50%
+            bottom: 0
+            transform: translate(-50%, 300%)
+            font-size: px(12)
+            color: #1b41a2
+
+
+.thetime
+    +flex
+    flex-direction: column
+    margin-bottom: 80px
+    .time_wrap
+        +flex
+    h4
+        font-size: px(30)
+    h5
+        margin-top: 10px
+        font-size: px(14)
+.thegotop
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translate(-50%,0%)
+    width: 60px
+    height: 60px
+    +flex
+    background: #1b41a2
+    a
+        width: 100%
+        height: 100%
+        +flex
+    h6
+        font-size: px(12)
+        color: #fff

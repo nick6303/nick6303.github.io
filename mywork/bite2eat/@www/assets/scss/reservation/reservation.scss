@@ -1,0 +1,1303 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+header {
+    top: 0px;
+    animation: turnWhite 1s both;
+    position: fixed;
+
+    .linkList ul {
+        @media all and (min-width: 1921px) {
+            padding-top: 20px;
+        }
+
+        @media all and (max-width: 1920px) and (min-width: 1601px) {
+            padding-top: 1vw;
+        }
+
+        @media all and (max-width:1600px) and (min-width: 1381px) {
+            padding-top: .5vw;
+        }
+
+        @media all and (max-width:1380px) {
+            padding-top: 0;
+        }
+    }
+
+    .hd_logo span {
+        padding-top: 1vw;
+
+        @media all and (min-width: 1921px) {
+            padding-top: 20px;
+        }
+
+        @media all and (max-width: 650px) {
+            padding-top: 10px;
+        }
+    }
+}
+
+
+.header {
+    height: 0px;
+    width: 100%;
+}
+
+
+
+.content {
+    padding: 18vw 0 10vw 0;
+    background-color: #fff;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+
+    @media all and (min-width: 1921px) {
+        padding: 330px 0 160px 0;
+    }
+
+    @media all and (max-width: 1024px) {
+        padding: 18vh 0 12vh 0;
+    }
+
+    .BG {
+        position: absolute;
+        top: 4.7vw;
+        left: 0;
+        background-color: #ddaf8d;
+        background-image: url("../../../assets/img/reservation/cotentBg_1835_1264.png");
+        background-repeat: repeat-y;
+        height: 100%;
+        width: calc(100% - 3.6vw);
+        background-size: 100% 100%;
+
+        @media all and (min-width: 1921px) {
+            width: calc(100% - 70px);
+            top: 90px;
+        }
+
+        @media all and (max-width:1380px) {
+            top: 65px;
+        }
+
+        @media all and (max-width:1023px) {
+            width: 100%;
+            background-size: auto;
+        }
+
+        @media all and (max-width:650px) {
+            top: 45px;
+        }
+    }
+}
+
+.topNav,
+.table {
+    max-width: 1095px;
+    margin: auto;
+}
+
+.topNav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+
+    @media all and (max-width: 1200px) {
+        padding: 0 5vw;
+    }
+
+    @media all and (max-width: 1023px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 7.5vw;
+    }
+
+    ._img,
+    ._text {
+        width: 50%;
+
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            max-width: 700px;
+        }
+    }
+
+    ._img {
+        padding: 0 80px 15px 0;
+        @include flex-center;
+        overflow: hidden;
+
+        @media all and (max-width: 1023px) {
+            @include flex-left;
+        }
+
+        &.show img {
+            animation: fadeInUp 1.2s both 1s;
+        }
+    }
+
+    ._text {
+        letter-spacing: 1px;
+
+        h3 {
+            @include font-size(20);
+            font-weight: bold;
+            line-height: 1.5;
+            @include wordAnimation;
+
+            span {
+                @include wordAnimation_span;
+
+                i {
+                    @include wordAnimation_span_i;
+                    animation: fadeInUp .8s both;
+                }
+            }
+        }
+
+        h2 {
+            font-family: 'Ramaraja-Regular';
+            @include font-size(72);
+            line-height: 1.5;
+            @include wordAnimation;
+
+            @media all and (max-width: 700px) {
+                @include font-size(48);
+            }
+
+            span {
+                @include wordAnimation_span;
+
+                i {
+                    @include wordAnimation_span_i;
+                    animation: fadeInUp .8s both;
+                }
+            }
+        }
+
+        p {
+            @include font-size(14);
+            font-weight: lighter;
+            line-height: 1.8;
+            animation: fadeInUp 1.2s both 1s;
+        }
+    }
+
+    .link {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+        width: 50%;
+
+        @media all and (max-width: 1200px) {
+            padding: 0 5vw;
+        }
+
+        @media all and (max-width: 1023px) {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            padding: 60px 0 0 0;
+            width: auto;
+        }
+
+        @media all and (max-width: 550px) {
+            flex-direction: column-reverse;
+        }
+
+        a {
+            margin-right: 15px;
+            width: 230px;
+            height: 45px;
+            background-color: #236486;
+            @include flex-center;
+            border-radius: 25px;
+            @include font-size(14);
+            font-family: CenturyGothic, 微軟正黑體;
+            letter-spacing: 1px;
+            transition: all .4s ease;
+            animation: fadeInUp 2s both .5s;
+
+            @media all and (max-width: 550px) {
+                margin: 0 0 2vh 0;
+            }
+        }
+
+        a.active {
+            background-color: #fff;
+            color: $base_blue;
+        }
+    }
+}
+
+.table {
+    padding: 80px 0 0 0;
+
+    @media all and (max-width: 1200px) {
+        padding: 80px 5vw 0 5vw;
+    }
+
+    @media all and (max-width: 1023px) {
+        padding: 80px 7.5vw 0 7.5vw;
+    }
+
+    @media all and (max-width: 550px) {
+        padding: 8vh 7.5vw 0 7.5vw;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        padding: 0 0 170px 0;
+    }
+
+    .infBg {
+        background-image: url("../../img/reservation/infBg1_370_580.png");
+        width: 380px;
+        background-size: 100% 100%;
+        padding: 20px 15px;
+        margin-top: 120px;
+        opacity: 0;
+        transition: all 1s ease;
+
+        @media all and (max-width: 1023px) {
+            display: none;
+        }
+
+        &.show {
+            animation: fadeInUp 1.4s both .5s;
+        }
+    }
+}
+
+.inf {
+    padding: 60px 30px 0 30px;
+    border: 1px solid $base_gold;
+    position: relative;
+
+    ._img {
+        width: 200px;
+        height: 170px;
+        position: absolute;
+        top: -140px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    ._title {
+        text-align: center;
+
+        h2 {
+            font-family: 'Ramaraja-Regular';
+            @include font-size(24);
+            line-height: 1.5;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s both;
+        }
+
+        p {
+            @include font-size(18);
+            line-height: 1.5;
+            letter-spacing: 1px;
+            animation: fadeInDown 1s both;
+        }
+    }
+
+    .storeinf {
+        height: 50px;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 1s ease;
+
+        &.type1 {
+            opacity: 1;
+            height: 540px;
+        }
+
+        &.type2 {
+            opacity: 1;
+            height: 440px;
+        }
+
+        &.type3 {
+            opacity: 1;
+            height: 640px;
+        }
+    }
+
+    .tel,
+    .address,
+    .openTime,
+    .numbLimit {
+        letter-spacing: 1px;
+        padding: 20px 0 0 30px;
+        position: relative;
+
+        h5 {
+            @include font-size(14);
+            font-weight: bold;
+            font-family: CenturyGothic-bold, 微軟正黑體;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInDown 1s both;
+        }
+
+        p {
+            @include font-size(14);
+            font-family: CenturyGothic, 微軟正黑體;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInDown 1s both;
+        }
+
+        &:before {
+            position: absolute;
+            top: 28px;
+            left: 1px;
+            font-family: 'icomoon';
+            color: $base_gold;
+            animation: fadeInDown 1s both .2s;
+        }
+    }
+
+    .tel {
+        &:before {
+            content: "\e921";
+            @include font-size(12);
+        }
+    }
+
+    .address {
+        &:before {
+            content: "\e923";
+            @include font-size(14);
+        }
+    }
+
+    .openTime {
+        &:before {
+            content: "\e922";
+            @include font-size(14);
+        }
+
+        .weekdays,
+        .weekend {
+            h5 {
+                margin: 10px 0;
+            }
+        }
+    }
+
+    .numbLimit {
+        &:before {
+            content: "\e924";
+            @include font-size(14);
+        }
+    }
+}
+
+
+.tableContent {
+    width: calc(100% - 380px - 3.3vw);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    letter-spacing: 1px;
+    animation: fadeIn 2s both .8s;
+
+    @media all and (max-width: 1023px) {
+        width: 85vw;
+    }
+
+    ._title {
+        display: flex;
+        align-items: center;
+        margin: 75px 0 8px 0;
+        width: 100%;
+        padding: 0 0 0 20px;
+        animation: fadeInUp 2s both .8s;
+
+        @media all and (max-width: 1200px) and (min-width: 1025px){
+            flex-wrap: wrap;
+        }
+
+        @media all and (max-width: 1023px) {
+            margin: 20px 0 8px 0;
+        }
+
+        @media all and (max-width: 700px){
+            flex-wrap: wrap;
+        }
+
+        @media all and (max-width:450px) {
+            padding: 0 15px;
+        }
+
+        @media all and (max-width:400px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        h3 {
+            @include font-size(24);
+            font-family: 'Ramaraja-Regular';
+            margin-right: 8px;
+            line-height: 1.5;
+        }
+
+        h4 {
+            @include font-size(18);
+            padding-bottom: 8px;
+            line-height: 1.5;
+        }
+    }
+
+    .cancel {
+        margin-right: 0;
+        margin-left: auto;
+        width: 100%;
+        max-width: 230px;
+
+        @media all and (max-width: 1200px) and (min-width: 1025px){
+            width: 100%;
+            margin-right: auto;
+            margin-left: 0;
+            margin-top: 20px;
+        }
+
+        @media all and (max-width: 700px){
+            width: 100%;
+            margin-right: auto;
+            margin-left: 0;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-bottom: 8px;
+            width: 100%;
+            height: 45px; 
+            @include flex-center;
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            border-radius: 25px;
+            font-family: CenturyGothic, 微軟正黑體;
+            @include font-size(14);
+            letter-spacing: 1px;
+            overflow: hidden;
+            position: relative;
+            transition: all .5s ease;
+            p {
+                position: relative;
+                z-index: 1;
+            }
+
+            &:before,
+            &:after {
+                position: absolute;
+                top: 0;
+            }
+
+            &:before {
+                border-radius: 25px;
+                left: 0;
+                @include fakeLine(100%, 100%, #3a342e);
+            }
+
+            &:after {
+                transition: all .5s ease;
+                left: -100%;
+                @include fakeLine(100%, 100%, #cb9837);
+            }
+
+            &:hover:after {
+                left: 0;
+            }
+        }
+    }
+
+    &>div:not(.nobg) {
+        position: relative;
+        background-color: #c09372;
+        padding: 0 20px;
+        @include flex-center;
+        margin-top: 8px;
+        height: 40px;
+        transition: all .4s ease;
+
+        @media all and (max-width: 450px) {
+            padding: 0 15px;
+        }
+
+        h5,
+        p,
+        select {
+            @include font-size(14);
+            white-space: nowrap;
+            font-family: CenturyGothic, 微軟正黑體;
+            color: #fff;
+        }
+
+        input,
+        h6 {
+            width: 100%;
+            border: none;
+            margin: 0 15px;
+            background-color: transparent;
+            font-family: CenturyGothic, 微軟正黑體;
+            @include font-size(14);
+            color: #fff;
+
+            &[type="number"] {
+                -moz-appearance: textfield;
+            }
+
+            &::placeholder {
+                color: rgba(255, 255, 255, .5);
+                transition: all .4s ease;
+            }
+
+            &:focus::placeholder {
+                opacity: 0;
+                transition: all .4s ease;
+            }
+        }
+
+        textarea {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            resize: none;
+            height: 180px;
+            color: #fff;
+            @include font-size(14);
+            font-family: CenturyGothic, 微軟正黑體;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+
+        &:hover,
+        &.focus {
+            background-color: $base_blue;
+        }
+    }
+
+    .tel,
+    .time,
+    .childrenSeat,
+    .message {
+        width: 100%;
+    }
+
+    .tel,
+    .time {
+        margin-bottom: 15px;
+    }
+
+    .region,
+    .adult {
+        width: calc(51.5% - 4px);
+
+        @media all and (max-width: 550px) {
+            width: 100%;
+        }
+    }
+
+    .store,
+    .children {
+        width: calc(48.5% - 4px);
+
+        @media all and (max-width: 550px) {
+            width: 100%;
+        }
+    }
+
+    .dropdown:not(.nobg) {
+        padding: 0;
+
+        .selectList,
+        select {
+            position: relative;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+            background-color: transparent;
+            border: none;
+            transition: all .6s ease;
+
+            @media all and (max-width: 450px) {
+                padding: 0 15px;
+            }
+
+            &:after {
+                position: absolute;
+                top: 9px;
+                right: 10px;
+                font-family: 'icomoon';
+                content: "\e910";
+                @include font-size(20);
+                display: block;
+                transition: all .6s ease;
+
+                @media all and (max-width: 1024px) {
+                    display: none;
+                }
+            }
+
+            &.open {
+                background-color: $base_blue;
+
+                &:after {
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+
+        .selectList {
+            @media all and (max-width: 1024px) {
+                display: none;
+            }
+        }
+
+        select {
+            /*移除箭頭樣式*/
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+
+            @media all and (min-width: 1025px) {
+                display: none;
+            }
+        }
+
+        option[selected="selected"] {
+            display: none;
+        }
+
+        ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            height: 200px;
+
+            .mCSB_container {
+                margin: 0;
+            }
+
+            .mCSB_scrollTools {
+                margin: 25px 0 10px 0;
+            }
+
+            .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+                width: 2px;
+            }
+
+            .mCSB_scrollTools .mCSB_draggerRail {
+                background-color: transparent;
+            }
+        }
+
+        option {
+            width: 100%;
+        }
+
+        ul li,
+        select option {
+            background-color: #3a342e;
+            height: 40px;
+            @include flex-left;
+            padding: 0 20px;
+            position: relative;
+            cursor: pointer;
+            transition: all .4s ease;
+            @include font-size(14);
+            font-family: CenturyGothic, 微軟正黑體;
+
+            @media all and (max-width: 450px) {
+                padding: 0 15px;
+                color: #fff;
+            }
+
+            &:not(:first-child):before {
+                position: absolute;
+                top: 0;
+                left: 15px;
+                @include fakeLine(calc(100% - 35px),
+                1px,
+                #666);
+                transition: all .4s ease;
+            }
+
+            &:hover {
+                background-color: $base_blue;
+
+                &+li:before,
+                &:hover:before {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .icon-▼ {
+            position: absolute;
+            top: 12px;
+            right: 10px;
+
+            @media all and (min-width: 1025px) {
+                display: none;
+            }
+        }
+    }
+
+    .name {
+        width: calc(61.4% - 4px);
+
+        @media all and (max-width: 550px) {
+            width: 100%;
+        }
+    }
+
+    .salutation {
+        width: calc(38.6% - 4px);
+
+        @media all and (max-width: 550px) {
+            width: 100%;
+        }
+    }
+
+    .adult,
+    .children,
+    .childrenSeat {
+        h5 {
+            @include flex-center;
+
+            &:after {
+                margin-left: 15px;
+                @include fakeLine(1px,
+                14px,
+                #fff);
+            }
+        }
+    }
+
+    .birthday,
+    .agree {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        height: 40px;
+        margin: 8px 0 15px 0;
+        padding: 0 0 0 15px;
+        animation: fadeInUp 2s both .8s;
+
+        p {
+            font-family: CenturyGothic, 微軟正黑體;
+            @include font-size(14);
+            line-height: 1.5;
+            max-width: calc(100% - 51px);
+        }
+
+        input[type="checkbox"] {
+            width: 36px;
+            height: 34px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]+label {
+            width: 36px;
+            height: 34px;
+            margin-left: 15px;
+            @include flex-center;
+            background-color: #c09372;
+            position: relative;
+            transition: all .4s ease;
+
+            &:before {
+                font-family: 'icomoon';
+                content: "\e914";
+                transform: rotateX(180deg) scale(0.7);
+                @include font-size(12);
+                opacity: 0;
+                transition: all .3s ease;
+            }
+        }
+
+        input[type="checkbox"]:hover {
+            &+label {
+                background-color: $base_blue;
+
+                &:before {
+                    @media all and (min-width: 1024px) {
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+
+        input[type="checkbox"]:checked+label {
+            &:before {
+                opacity: 1;
+                transition: all .2s ease;
+            }
+        }
+    }
+
+    .date:not(.nobg) {
+        width: 100%;
+        padding: 0;
+
+        input {
+            padding: 0 20px;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: pointer;
+            letter-spacing: 2px;
+
+            @media all and (max-width: 450px) {
+                padding: 0 15px;
+            }
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+
+        .icon-▼ {
+            position: absolute;
+            top: 9px;
+            right: 10px;
+            @include font-size(20);
+        }
+    }
+
+    .message:not(.nobg) {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+
+        h5 {
+            padding: 10px 0;
+        }
+    }
+
+    .code:not(.nobg) {
+        width: calc(100% - 100px);
+
+        @media all and (max-width: 620px) {
+            h5 {
+                display: none;
+            }
+
+            input {
+                margin: 0;
+            }
+        }
+    }
+
+    ._img {
+        margin-top: 8px;
+        padding: 0 10px;
+        @include flex-center;
+        cursor: pointer;
+        width: 90px;
+        height: 40px;
+    }
+}
+
+._btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    animation: fadeIn 2s both .8s;
+    @include flex-center;
+
+
+    button {
+        margin: 0 25px;
+        @include flex-center;
+        flex-direction: column;
+        border: none;
+        background-color: transparent;
+        @include font-size(14);
+        color: #fff;
+        letter-spacing: 1px;
+        font-family: CenturyGothic, 微軟正黑體;
+
+        span {
+            margin-bottom: 15px;
+
+            i {
+                @include flex-center;
+                @include circle_span($base_gold);
+            }
+        }
+
+        &:first-child span {
+            @include circle(#3a342e);
+
+            i {
+                position: relative;
+                transform: rotate(45deg);
+
+                &:before,
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:before {
+                    @include fakeLine(14px,
+                    2px,
+                    #fff);
+                }
+
+                &:after {
+                    @include fakeLine(2px,
+                    14px,
+                    #fff);
+                }
+            }
+        }
+
+        &:last-child span {
+            @include circle($base_blue);
+
+            i {
+                &:before {
+                    font-family: 'icomoon';
+                    content: "\e914";
+                    font-style: normal;
+                    @include font-size(12);
+                    transform: scale(.7) rotateX(180deg);
+                }
+            }
+        }
+    }
+}
+
+
+main .cover {
+    background-image: url("../../img/reservation/cover_1920_200.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-top: -80px;
+
+    @media all and (max-width: 1023px) {
+        margin-top: -12vh;
+        background-image: none;
+    }
+
+    @media all and (max-width: 700px) {
+        background-size: cover;
+        margin-top: -12vh;
+    }
+
+    .cover2 {
+        background-image: url("../../img/reservation/cover2_1835_200.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        @media all and (max-width: 1023px) {
+            background-size: auto 100%;
+        }
+
+        @media all and (max-width: 700px) {
+            background-size: cover;
+        }
+    }
+}
+
+
+
+
+
+/* 套件修改*/
+
+
+/*月*/
+
+div.datedropper .picker ul.pick-m {
+    font-family: 'Ramaraja-Regular';
+}
+
+div.datedropper .picker ul.pick-m li {
+    padding-top: 8px;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+/*日*/
+
+div.datedropper .picker ul.pick-d {
+    font-family: 'Ramaraja-Regular';
+}
+
+
+
+
+/*年*/
+
+div.datedropper.picker-fxs ul.pick-y {
+    font-family: 'Ramaraja-Regular';
+}
+
+
+
+
+/*星期*/
+
+div.datedropper .picker ul.pick li span {
+    font-family: 'CenturyGothic';
+}
+
+
+
+
+/*datepicker*/
+
+
+/*主要方塊*/
+
+#ui-datepicker-div {
+    width: calc(1095px - 380px - 3.3vw) !important;
+    color: #fff;
+    background-color: $base_brown;
+    font-family: CenturyGothic-bold, 微軟正黑體;
+    padding: 20px 0;
+    border: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    letter-spacing: 1px;
+
+    @media all and (max-width: 1200px) {
+        width: calc(1095px - 10vw - 380px - 3.3vw) !important;
+    }
+
+    @media all and (max-width: 1095px) {
+        width: calc(90vw - 380px - 3.3vw) !important;
+    }
+
+    @media all and (max-width: 1023px) {
+        width: 85vw !important;
+    }
+}
+
+
+
+
+/*月份標題*/
+
+.ui-widget-header {
+    background-color: transparent !important;
+    border: none;
+}
+
+
+
+
+/*月份標題文字*/
+
+.ui-datepicker .ui-datepicker-title {
+    color: #fff;
+
+    .ui-datepicker-year {
+        margin-right: 5px;
+    }
+}
+
+
+
+
+
+/*箭頭基本設定*/
+
+.ui-datepicker-next.ui-corner-all,
+.ui-datepicker-prev.ui-corner-all {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    @include flex-center;
+
+    &:hover {
+        background-color: $base_blue;
+        font-weight: bold;
+        top: 2px;
+    }
+
+    span {
+        display: none;
+    }
+
+    &:before {
+        font-family: 'icomoon';
+        color: #fff;
+    }
+
+    &.ui-state-disabled {
+        opacity: 0;
+    }
+}
+
+
+
+
+/*前往下個月箭頭*/
+
+.ui-datepicker-next.ui-corner-all {
+    &:hover {
+        right: 2px;
+    }
+
+    span {
+        display: none;
+    }
+
+    &:before {
+        content: "\e909";
+    }
+}
+
+
+
+
+
+
+
+/*前往上個月箭頭*/
+
+.ui-datepicker-prev.ui-corner-all {
+    &:hover {
+        left: 2px;
+    }
+
+    &:before {
+        content: "\e908";
+    }
+}
+
+
+
+
+
+
+
+
+
+/*日期表格*/
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+}
+
+.ui-datepicker td {
+    padding: 5px 1px;
+
+    &:hover {
+        background-color: $base_blue;
+
+        a {
+            color: $base_gold;
+        }
+    }
+}
+
+
+
+
+
+/*第二個月份*/
+
+.ui-datepicker-group-last {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        @include fakeLine(1px,
+        calc(100% - 50px),
+        rgba(255,
+        255,
+        255,
+        .2));
+    }
+}
+
+
+
+
+
+
+/* loading燈箱設定*/
+
+.loadingLibox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(234, 234, 234, 0.7);
+    @include flex-center;
+    flex-direction: column;
+    z-index: 99;
+    animation: fadeIn .5s both;
+
+    &.close {
+        animation: fadeOut .5s both;
+    }
+
+    .en {
+        font-family: 'Ramaraja-Regular';
+        @include font-size(36);
+        line-height: 1.5;
+    }
+
+    .ch {
+        @include font-size(18);
+        line-height: 1.5;
+    }
+}

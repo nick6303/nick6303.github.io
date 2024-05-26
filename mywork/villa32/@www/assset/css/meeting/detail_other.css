@@ -1,0 +1,195 @@
+@charset "utf-8";
+/*每個class 前面都加上.other 是為了避免與前面的detail_business.css互相混到*/
+
+
+
+/*detail_row開始-----------------*/
+
+.other .detail_row {
+    max-width: 1115px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.other .detail_row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.other .detail_row_img,
+.other .detail_row_text {
+    width: 50%;
+}
+
+
+
+
+/*圖片設定*/
+
+.other .detail_row_img {
+    font-size: 0;
+    overflow: hidden;
+}
+
+.other.on .detail_row_img img,
+.other.load .detail_row_img img {
+    transform: translateY(110%);
+}
+
+
+/*文字設定*/
+
+.other .detail_row_text {
+    overflow: hidden;
+}
+
+.other .detail_row:nth-child(even) .detail_row_text {
+    padding-right: 20px;
+}
+
+.other .detail_row:nth-child(odd) .detail_row_text {
+    padding-left: 100px;
+}
+
+.other.on .detail_row_text div,
+.other.load .detail_row_text div {
+    transform: translateY(140%);
+}
+
+.other .detail_row_text h5 {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+}
+
+.other .detail_row_text div>p {
+    font-family: MyriadPro-Regular,微軟正黑體;
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.other .detail_row_text ul li {
+    margin-top: 35px;
+}
+
+.other .detail_row_text ul li p {
+    font-family: MyriadPro-Regular,微軟正黑體;
+    font-size: .875rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.other .detail_row_text ul li p:first-child {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/*detail_row結束-----------------*/
+
+.other .precautions {
+    margin-top: 135px;
+}
+
+.other .precautions_top {
+    max-width: 150px;
+    left: calc(50% - 75px)
+}
+
+.other .precautions_text {
+    max-width: 720px;
+    margin: auto;
+    padding: 50px 20px 10px 20px;
+}
+
+.other.on .precautions_text div,
+.other.load .precautions_text div {
+    transform: translateY(120%);
+}
+
+.other .precautions_text p {
+    margin-bottom: 30px;
+}
+
+
+
+/*waypoint動畫--------*/
+
+.other.on .show .detail_row_img img {
+    animation: allin0 1s both;
+}
+
+.other.on .show .detail_row_text div {
+    animation: allin0 1s both;
+}
+
+.other.on .show .precautions_text div{
+	animation: allin0 1s both .5s;
+}
+
+
+/*退場動畫*/
+.other.off .detail_row_img img{
+	 animation: zoomOut 1s both .6s;
+}
+
+.other.off .detail_row_text div{
+	animation: zoomOut 1s both .4s;
+}
+
+.other.off .precautions_text div{
+	animation: zoomOut 1s both .2s;
+}
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 700px) {
+    /*detail_row-----*/
+    .other .detail_row,
+    .other .detail_row:nth-child(even) {
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .other .detail_row_text,
+    .other .detail_row_img {
+        width: 100%;
+    }
+
+
+    .other .detail_row:nth-child(odd) .detail_row_text,
+    .other .detail_row_text {
+        padding-left: 0;
+        padding-top: 40px;
+    }
+
+    .other .detail_row_text ul li {
+        margin-top: 20px;
+    }
+
+    .other .precautions {
+        margin-top: 60px;
+    }
+
+    .other .precautions_top {
+        max-width: 150px;
+        left: calc(50% - 75px);
+        top: -8px;
+    }
+
+    .other .precautions_text {
+        padding: 40px 20px 5px 20px;
+    }
+
+    .other .precautions_text p {
+        margin-bottom: 15px
+    }
+}

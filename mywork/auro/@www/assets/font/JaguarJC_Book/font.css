@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'jaguarjc_book';
+  src: url('jaguarjc_book.eot');
+  src: url('jaguarjc_book.eot?#iefix') format('embedded-opentype'),
+       url('jaguarjc_book.woff2') format('woff2'),
+       url('jaguarjc_book.woff') format('woff'),
+       url('jaguarjc_book.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face 
+    font-family: 'jaguarjc_book'
+    src: url('../../font/JaguarJC_Book/jaguarjc_book.eot')
+    src: url('../../font/JaguarJC_Book/jaguarjc_book.eot?#iefix') format('embedded-opentype'),
+    url('../../font/JaguarJC_Book/jaguarjc_book.woff2') format('woff2'),
+    url('../../font/JaguarJC_Book/jaguarjc_book.woff') format('woff'),
+    url('../../font/JaguarJC_Book/jaguarjc_book.ttf')
+    font-weight: normal
+    font-style: normal

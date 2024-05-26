@@ -1,0 +1,342 @@
+#member.point
+    main .content
+        .usablePoints,.remainingGames
+            +bgSeting
+            max-width: 950px
+            width: 100%
+            display: flex
+            min-height: 270px
+            padding: 25px 50px
+            box-shadow: 0 0 50px 3px rgba(0,0,0,.1)
+            flex-wrap: wrap
+            opacity: 0
+            @media (max-width: 1300px)
+                padding: 25px 3.5vw
+            @media (max-width: 900px)
+                min-height: 250px
+            @media (max-width: 700px)
+                padding: 25px 5vw
+            &.b-loaded.show
+                animation: fadeInUp 1.2s both .3s
+            ._title
+                width: calc(50% - 20px)
+                padding: 0 0 0 35px
+                +flex-left
+                position: relative
+                margin: 0 20px 0 0
+                @media (max-width: 1300px)
+                    padding: 0 0 0 2.5vw
+                @media (max-width: 700px)
+                    width: 100%
+                    padding: 0
+                .en
+                    font-size: px(30)
+                    color: #b7b7b7
+                    +JaguarJC-Bold
+                    @media (max-width: 900px)
+                        font-size: px(26)
+                .ch
+                    font-size: px(20)
+                    font-weight: bold
+                    @media (max-width: 900px)
+                        font-size: px(18)
+                .ps
+                    font-size: px(15)
+                    color: #666666
+                    position: absolute
+                    bottom: 0
+                    left: 35px
+                    @media (max-width: 1300px)
+                        left: 2.5vw
+                    @media (max-width: 700px)
+                        position: relative
+                        bottom: auto
+                        left: auto
+                        margin: 20px 0 0
+            .info
+                padding: 0 0 0 15px
+                display: flex
+                align-items: center
+                width: 50%
+                @media (max-width: 1279px)
+                    padding: 0
+                @media (max-width: 1024px)
+                    padding: 0 0 0 15px
+                @media (max-width: 700px)
+                    width: 100%
+                    padding: 0
+                    margin: 30px 0 0 
+                ul 
+                    width: 100%
+                    max-width: 320px
+                    @media (max-width: 700px)
+                        max-width: none
+                    li
+                        +flex-space-between
+                        margin: 13px 0
+                        flex-wrap: wrap
+                        h6
+                            font-size: px(17)
+                            @media (max-width: 900px)
+                                font-size: px(16)
+                            @media (max-width: 350px)
+                                font-size: px(15)
+                        p
+                            font-size: px(22)
+                            color: #f46666
+                            margin: 0 0 0 auto
+                            @media (max-width: 900px)
+                                font-size: px(20)
+                            @media (max-width: 350px)
+                                font-size: px(18)
+                            &:after
+                                color: #000
+                                font-size: px(17)
+                                margin: 0 0 0 5px
+                                @media (max-width: 900px)
+                                    font-size: px(16)
+                                @media (max-width: 350px)
+                                    font-size: px(15)
+        .usablePoints
+            margin: 40px auto 0
+            .info
+                ul 
+                    li
+                        p
+                            &:after
+                                content: "點"
+        .remainingGames
+            margin: 25px auto 0
+            .info
+                ul 
+                    li
+                        p
+                            &:after
+                                content: "次"
+        .buttons
+            button
+                @media all and (min-width: 701px)
+                    &:before
+                        animation: none !important
+                    &:after
+                        animation: none !important
+                    b:before,b:after
+                        animation: none !important
+                    span:before,h6,p
+                        animation: none !important
+                    &.show
+                        span:before,h6,p
+                            animation: fadeInUp .8s both .5s !important
+                        &:before
+                            animation: w100 .4s both .1s !important
+                        &:after
+                            animation: w0 .6s both .6s !important
+                        b:before,b:after
+                            animation: h100 .3s both .4s !important
+                &:nth-child(3)
+                    &.show
+                        &:after
+                            animation: gap .5s both .6s !important
+                        i
+                            &:before
+                                left: 0
+                            &:after
+                                right: 0
+                        &.active
+                            overflow: visible
+                            span
+                                color: #da9f57
+                            h6,p
+                                color: #000
+                            i
+                                &:before
+                                    transform: rotate(54deg)
+                                    width: 23px
+                                &:after
+                                    width: 23px
+                                    transform: rotate(-54deg)
+                    &:after
+                        width: 25px
+                    i
+                        display: block
+                        z-index: 1
+                        width: 25px
+                        height: 20px
+                        position: absolute
+                        top: calc(100% - 1px)
+                        left: 50%
+                        transform: translateX(-50%)
+                        overflow: hidden
+                        &:before,&:after
+                            position: absolute
+                            top: 0
+                            transform: rotate(0)
+                            transition: left .2s ease 1s,right .2s ease 1s,transform .8s ease ,width 1.3s ease
+                        &:before
+                            left: -13px
+                            +fakeLine(12.5px,1px,#b2b2b2)
+                            transform-origin: 0 0
+                        &:after
+                            right: -13px
+                            +fakeLine(12.5px,1px,#b2b2b2)
+                            transform-origin: 100% 0
+        .table
+            max-width: 1180px
+            width: 100%
+            margin: 35px auto 0
+            background-color: #e8e8e8
+            padding: 50px 50px 0
+            display: none
+            @media (max-width: 1530px)
+                padding: 50px 3vw 0
+            @media (max-width: 1279px) and (min-width: 1025px), (max-width: 900px)
+                letter-spacing: 0px
+            @media (max-width: 700px)
+                padding: 15px 5vw 0
+            @media (max-width: 350px)
+                padding: 15px 1vw 0
+            .listTable
+                max-width: 890px
+                width: 100%
+                margin: auto
+                text-align: center
+                @media (min-width: 701px)
+                    .date
+                        width: 18.5%
+                    .branch
+                        width: 18.5%
+                    .counter
+                        width: 18.5%
+                    .ticketNum 
+                        width: 18.5%
+                    .type
+                        width: 13%
+                    .seeMore
+                        width: 13%
+                .listhead
+                    display: flex
+                    align-items: center
+                    border-bottom: 4px solid #a4a4a4
+                    padding: 0 0 15px
+                    @media (max-width: 700px)
+                        display: none
+                    p   
+                        font-size: px(15)
+                        position: relative
+                        font-weight: bold
+                        &:not(:first-child):before
+                            position: absolute
+                            top: 50%
+                            left: 0
+                            transform: translateY(-50%)
+                            +fakeLine(1px,25px,#989898)
+                .listbody
+                    .list
+                        display: flex
+                        flex-wrap: wrap
+                        font-size: px(16)
+                        border-bottom: 1px solid #8c8c8c
+                        @media (max-width: 1530px)
+                            font-size: px(15)
+                        @media (max-width: 700px)
+                            padding: 15px 0
+                        &>div:not(.moreInfo)
+                            padding: 15px 5px
+                            +flex-center
+                            @media (max-width: 700px)
+                                padding: 5px
+                                &.ticketNum
+                                    order: 1
+                                    justify-content: flex-start
+                                    &:before
+                                        content: "發票號："
+                                        // font-weight: bold
+                                &.date
+                                    order: 2 
+                                    letter-spacing: 0
+                                    margin: 0 0 0 auto
+                                    @media (max-width: 350px)
+                                        font-size: px(14)
+                                &.branch
+                                    order: 3
+                                    padding: 5px 10px 5px 5px
+                                &.counter
+                                    order: 4
+                                &.type
+                                    order: 5
+                                    width: 100%
+                                    justify-content: flex-start
+                                    &:before
+                                        content: "交易型態："
+                                        // font-weight: bold
+                                &.seeMore
+                                    display: none 
+                        &.active .seeMore
+                            button span
+                                background-color: #dab17b
+                                &:before
+                                    transform: rotateX(180deg)
+                                    color: #fff
+                        .seeMore button
+                            padding: 10px
+                            border: none
+                            background-color: transparent
+                            span
+                                +flex-center
+                                height: 25px
+                                width: 25px
+                                border-radius: 50%
+                                background-color: #b6b6b6
+                                transition: all .5s ease
+                                &:before
+                                    color: #494949
+                                    content: "▼"
+                                    font-size: px(12)
+                                    transition: all .5s ease
+                        .moreInfo
+                            width: 100%
+                            border-top: 1px solid #bdbdbd
+                            display: none
+                            padding: 20px 0
+                            @media (max-width: 700px)
+                                order: 6
+                                width: 100%
+                                display: block
+                                padding: 0 5px
+                                border-top: none
+                            ul
+                                +flex-center
+                                @media (max-width: 700px)
+                                    flex-wrap: wrap
+                                li
+                                    line-height: 1.5
+                                    font-size: px(15)
+                                    color: #605f5f
+                                    margin: 0 30px
+                                    @media (max-width: 1530px)
+                                        margin: 0 2vw
+                                    @media (max-width: 700px)
+                                        width: 50%
+                                        margin: 5px 0
+                                        padding: 0 10px 0 0
+                                        text-align: left
+                                    @media (max-width: 350px)
+                                        padding: 0 5px 0 0
+                                        color: #000
+                                    &:before
+                                        content: attr(data-name)
+                                        font-weight: bold
+                                        color: #000
+                                        @media (max-width: 700px)
+                                            font-weight: normal
+            &>button
+                margin: 45px auto 0 
+                width: 190px
+                height: 40px
+                background-color: #535353
+                border: none
+                color: #fff
+                +flex-center
+                font-size: px(14)
+                span
+                    margin: 0 15px 0 0

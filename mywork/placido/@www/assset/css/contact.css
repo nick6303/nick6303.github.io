@@ -1,0 +1,646 @@
+@charset "utf-8";
+
+
+
+
+
+
+
+
+/*----------------------banner開始---------------------------*/
+
+.banner {
+    position: relative;
+}
+
+.favorite {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.favorite {
+    top: 120px;
+    left: 50px;
+}
+
+.favorite p {
+    font-family: '微軟正黑體';
+    letter-spacing: 1.5px;
+    font-size: .75rem;
+    writing-mode: vertical-lr;
+    margin-bottom: 12px;
+}
+
+.favorite span {
+    font-size: .75rem;
+}
+
+
+
+
+
+
+
+/*----------------------banner結束---------------------------*/
+
+/*---------------------findHiland開始------------------------*/
+.findHiland{
+    /*padding: 23vh 3vw 18vh 3vw;*/
+    padding-top: 8vh;
+}
+
+/*._title{
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+._title h2{
+    font-family: 'JosefinSans-Bold';
+    font-size: 3.4375rem;
+    overflow: hidden;
+}
+
+._title h2 span{
+    display: block;
+}
+
+._title p{
+    font-size: 1.25rem;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+._title p span{
+    display: block;
+}*/
+
+
+/*.inf開始-------------------------*/
+/*.inf{
+    display: flex;
+    margin: auto;
+    margin-top: 16vh;
+    max-width: 1440px;
+}*/
+
+/*文字設定*/
+/*.findHiland_text{
+    width: 45%;
+    padding-left: 110px;
+    padding-top:12vh;
+}*/
+
+
+/*text_title*/
+/*.text_title{
+    letter-spacing: 1px;
+}
+
+.text_title h2{
+    font-size: 2.25rem;
+    font-family: 'JosefinSans-Bold';
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.text_title h2 span{
+    transform: translateX(-100%);
+    display: block;
+}
+
+.text_title h3{
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.text_title h3 span{
+    display: block;
+    transform: translateX(-100%);
+}
+
+.text_title h4{
+    font-size: 1rem;
+    margin-top: 30px;
+    color: #454545;
+    overflow: hidden;
+}
+
+.text_title h4 p{
+    display: block;
+    transform: translateX(-100%);
+}
+
+.text_title h4 p span{
+     font-family: "MyriadPro-Regular";
+     font-size: 1.125rem;
+}
+
+.text_inf{
+    margin-top: 80px;
+}
+
+.text_inf ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.text_inf ul li{
+    letter-spacing: 1px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.text_inf ul li:nth-child(1){
+    width: 100%;
+}
+
+.text_inf ul li div{
+    transform: translateX(-100%);
+}
+
+.text_inf ul li h2{
+    font-size: 1.5rem;
+    font-family: 'JosefinSans-Bold';
+    line-height: 1.5;
+}
+
+.text_inf ul li p{
+    font-family: 'MyriadPro-Regular';
+    font-size: .875rem;
+    line-height: 1.5
+}*/
+
+/*地圖設定*/
+/*._map{
+    width: 55%;
+    height: 500px;
+    overflow: hidden;
+}
+
+._map iframe{
+    height: 100%;
+    width: 100%;
+    transform: translateY(-100%);
+}*/
+
+/*.inf結束-------------------------*/
+
+/*---------------------findHiland結束------------------------*/
+
+
+/*------------------------表格設定開始------------------*/
+
+.message {
+    width: calc(100% - 100px);
+    max-width: 1340px;
+    margin: auto;
+    border: 15px solid #f9f9f9;
+    position: relative;
+    padding-bottom: 180px;
+}
+
+.message_title {
+    width: 360px;
+    height: 70px;
+    background-color: #fff;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 180px);
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.message_title h2 {
+   font-size: 3.4375rem;
+    font-family: 'JosefinSans-Bold';
+    overflow: hidden;
+}
+
+.message_title h2 span {
+    transform: translateY(-100%);
+    display: block; 
+    padding-bottom: 5px;
+}
+
+.message_title p {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.message_title p span {
+    transform: translateY(-100%);
+    display: block;
+}
+
+.input_table {
+    margin: auto;
+    margin-top: 180px;
+    max-width: 900px
+}
+
+.input_table input {
+    border: none;
+    display: inline-block;
+    width: calc(100% - 100px);
+}
+
+.input_table input::placeholder {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    font-family: "微軟正黑體";
+    transition: all .5s ease;
+}
+
+.input_table input:focus::placeholder {
+    transition: all .5s ease;
+}
+
+.input_table p {
+    display: inline-block;
+    width: 70px;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-right: 25px;
+}
+
+.input_table ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input_table ul li {
+    padding-left: 15px;
+}
+
+.input_table>ul li:nth-child(1),
+.input_table>ul li:nth-child(2),
+.input_table>ul li:nth-child(3),
+.input_table ul li:nth-child(4) {
+    width: 50%;
+    height: 60px;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    align-items: center;
+}
+
+.input_table>ul li:nth-child(4) p {
+    letter-spacing: 2.5px;
+}
+
+
+
+
+
+/*單選按鈕設定開始-------------------*/
+
+.input_table ul li div {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.input_table ul li div input[type="radio"] {
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.input_table ul li div input[type="radio"]+label {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    display: block;
+    margin-right: 5px;
+    transform: all .4s ease;
+}
+
+.input_table ul li div input[type="radio"]:checked+label {
+    background-color: #6f0064;
+    transition: all .4s ease;
+}
+
+
+
+
+
+.input_table ul li div p {
+    font-size: .875rem;
+    width: auto;
+}
+
+
+
+
+
+/*單選按鈕設定結束-------------------*/
+
+._address,
+._message,
+._captcha {
+    width: 100%;
+}
+
+._address {
+    height: 60px;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+/*留言*/
+
+._message {
+    height: 125px;
+    border-bottom: 1px solid #cccccc;
+    padding-top: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+._message textarea {
+    height: 100%;
+    width: calc(100% - 100px);
+    border: none;
+    resize: none;
+}
+
+._message textarea::placeholder {
+    font-family: "微軟正黑體";
+    font-size: .75rem;
+}
+
+
+
+
+
+/*驗證碼*/
+
+._captcha {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+._captcha input {
+    width: 50%;
+}
+
+._captcha img {
+    width: auto;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 17.5px);
+}
+
+
+
+
+
+
+/*送出按鈕*/
+
+.send_btn {
+    width: 240px;
+    height: 50px;
+    position: absolute;
+    left: calc(50% - 120px);
+    bottom: -30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.send_btn button {
+    width: calc(50% - 4px);
+    border: none;
+    font-family: 'JosefinSans-Bold';
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.send_btn button:nth-child(1) {
+    background-color: #d4d2d2;
+}
+
+.send_btn button:nth-child(2) {
+    background-color: #6f0064;
+    color: #fff;
+}
+
+
+
+
+
+/*------------------------表格設定結束------------------*/
+
+
+/*進場動畫------------*/
+
+.favorite div {
+    transform: translateX(-100%);
+    animation: left_slidein 1s both .5s;
+}
+
+.message_title h2 span {
+    animation: allin0 .8s both .5s;
+}
+
+.message_title p span {
+    animation: allin0 .8s both .8s;
+}
+
+.input_table{
+    animation: fadeIn .8s both 1.2s;
+}
+
+/*._title h2 span{
+    animation: top_slidein .8s both ;
+}
+
+._title p span{
+    animation: top_slidein .8s both .4s ;
+}*/
+
+
+/*waypoint動畫專區*/
+
+._map.show iframe{
+    animation: allin0 1.2s both .5s ;
+}
+
+/*.show .text_title h2 span{
+    animation: allin0 .8s both .5s;
+}
+
+.show .text_title h3 span{
+    animation: allin0 .8s both .8s;
+}
+
+.show .text_title h4 p{
+    animation: allin0 .8s both 1s;
+}
+
+.show .text_inf ul li div{
+    animation: allin0 .8s both 1.3s;
+}
+*/
+
+
+
+/*------------------max-width: 1024px-----------------------*/
+
+@media only screen and (max-width: 1024px) {
+    main {
+        margin-bottom: 14vh;
+    }
+
+    .favorite {
+        display: none;
+    }
+
+    .findHiland{
+        padding: 8vh 0 0 0;
+    }
+
+    ._title h2{
+        font-size: 2.25rem;
+    }
+
+
+
+
+    /*.inf開始--------------*/
+    .inf{
+        flex-direction: column;
+        margin-top: 12vh;
+    }
+    
+    /*文字設定*/
+    .findHiland_text{
+        width: 100%;
+        padding: 0 10vw;
+    }
+
+    .text_inf ul li{
+        margin-right: 0;
+    }
+
+    .text_inf ul li:nth-child(1),
+    .text_inf ul li:nth-child(2){
+        width:50%;
+    }
+
+    .text_inf ul li:nth-child(3){
+        width: 100%;
+    }
+
+    /*地圖設定*/
+    ._map{
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    ._map iframe{
+    transform: translateY(100%);
+    }
+
+    /*.inf結束--------------*/
+
+    .message {
+        width: calc(100% - 10vw);
+        margin: auto;
+        margin-top: 18vh;
+        margin-bottom: 8vh;
+        padding: 0 5vw 12vh 5vw;
+    }
+
+    .input_table {
+        margin-top: 12vh;
+    }
+}
+
+
+
+
+/*------------------max-width: 700px-----------------------*/
+
+@media only screen and (max-width: 700px) {
+
+    .inf{
+        margin-top: 16vh;
+    }
+
+    .message {
+        width: auto;
+        border: none;
+        margin: 18vh 5vw 16vh 5vw;
+        padding: 8vh 5vw 10vh 5vw;
+    }
+
+    .input_table {
+        margin-top: 6vh;
+    }
+
+    .input_table ul li {
+        padding-left: 0;
+    }
+
+    .input_table>ul li:nth-child(1),
+    .input_table>ul li:nth-child(2),
+    .input_table>ul li:nth-child(3),
+    .input_table>ul li:nth-child(4) {
+        width: 100%;
+    }
+
+    ._message {
+        flex-direction: column;
+    }
+
+    ._message textarea {
+        width: 100%;
+        margin-top: 2vh;
+    }
+
+    ._captcha img {
+        right: 0;
+    }
+
+    .send_btn {
+        width: 200px;
+        height: 40px;
+        left: calc(50% - 100px);
+    }
+
+    .send_btn button {
+        font-size: .875rem;
+    }
+}
+
+
+/*------------------max-width: 700px-----------------------*/
+
+@media only screen and (max-width: 350px) {
+    ._captcha p {
+        margin-right: 5px;
+    }
+}

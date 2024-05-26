@@ -1,0 +1,208 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var topNav = [
+        {
+            en:"Tax Refund Service",
+            ch:"退稅服務",
+            link:"javascript:void(0)"},
+        {
+            en:"About Voucher",
+            ch:"禮卷專區",
+            link:"javascript:void(0)"},
+        {
+            en:"Become our Member",
+            ch:"我想申辦超集卡",
+            link:"javascript:void(0)"},
+        {
+            en:"About Parking",
+            ch:"停車優惠",
+            link:"javascript:void(0)"},
+        {
+            en:"Lost & Found",
+            ch:"失物招領",
+            link:"javascript:void(0)"},
+    ]
+
+    var webMap = [
+        {
+            type:"ABOUT",
+            links:[
+                {   
+                    name:"關於漢神百貨",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"交通資訊",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"最新消息",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"SERVICE",
+            links:[
+                {   
+                    name:"服務中心",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"聯繫我們",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"電子型錄",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"服務之星",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"EXPLORE",
+            links:[
+                {   
+                    name:"樓層導覽",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"品牌導覽",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"美食導覽",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"COOPERATE",
+            links:[
+                {   
+                    name:"廠商專區",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"相關企業",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"商業合作",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"JOIN US",
+            links:[
+                {   
+                    name:"會員專區",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"超集卡專區",
+                    link:"javascript:void(0)"},
+                {   
+                    name:"人才招募",
+                    link:"javascript:void(0)"},
+            ]},
+        {
+            type:"Online shopping",
+            links:[
+                {   
+                    name:"漢神百貨網路購物",
+                    link:"javascript:void(0)"},
+            ]},
+    ]
+
+
+footer
+    article.topNav
+        section
+            ._title
+                p.en Need any helps?
+                p.ch 您需要什麼幫助呢?
+            ul
+                each val in topNav
+                    li
+                        a(href=val.link)
+                            p.en=val.en
+                            p.ch=val.ch
+    article.ftContent(style="background-image:url('../../assets/img/ftBg_1670_520.jpg')")
+        section.webMap
+            each item in webMap
+                .type
+                    .typeName
+                        p=item.type
+                    .typeLink
+                        ul
+                            each val in item.links
+                                li
+                                    a(href=val.link)=val.name
+        section.infomation
+            .address
+                h6 ADDRESS
+                p 高雄市前金區成功一路266-1號
+                .number
+                    p(data-name="電話") 07-215-7266
+                    p(data-name="服務專線") 0800-018-980
+            .businessHours
+                h6 BUSINESS HOURS
+                ul
+                    li
+                        p 週一至週四 11:00 - 22:00
+                    li
+                        p 週六/例假日 10:30 - 22:30
+                    li
+                        p 週五/假日前一天 11:00 - 22:30
+                    li
+                        p 例假最終日 10:30 - 22:00
+        section.ftBottom
+            .copyRight
+                img(src="../../assets/img/ftLogo_160_40.png", alt="")
+                p © Hanshin department store co.ltd all right reserve. Design by 
+                    a(href="https://www.wddgroup.com") WDD
+            .follow
+                h6 FOLLOW US
+                ul
+                    li
+                        a(href=java)
+                            span.icon-facebook
+                    li
+                        a(href=java)
+                            span.icon-instagram
+                    li
+                        a(href=java)
+                            span.icon-twitter
+                    li
+                        a(href=java)
+                            span.icon-youtube
+    // 廣告
+    article.commercial
+        section(style="background-image: url('../../upload/fa2/commercialBg_1090_535.jpg')")
+            .liboxClose
+                span
+            ._slick
+                ul.single-item
+                    li.item.video-item(data-value="video")
+                        // 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任
+                        // 後端請注意:data-videoid 請填入 youtube 影片的id
+                        div.videoBox(data-videoId="kCU3ht6rMMg")
+                        div.open-box(data-videoid="kCU3ht6rMMg")
+                    li.item(data-value="img")
+                        a(href=java)
+                            // 後端請注意:如果是圖片請照這個格式 可以放gif圖片
+                            picture
+                                // [if IE 9]><video style="display: none;"><![endif]
+                                // 後端請注意:手機圖片大小
+                                source(srcset="../../upload/fa2/commercialImg_1060_400.jpg" media="(max-width:1024px)")
+                                // 後端請注意:電腦圖片大小 1050*590
+                                img(data-lazy="../../upload/fa2/commercialImg_1060_400.jpg" alt="")
+                    li.item.video-item(data-value="video")
+                        // 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任
+                        // 後端請注意:data-videoid 請填入 youtube 影片的id
+                        div.videoBox(data-videoId="VhCr88-MFfM")
+                        div.open-box(data-videoid="VhCr88-MFfM")
+                    li.item.video-item(data-value="video")
+                        // 後端請注意:影片尺寸規定 560*315 不照規定上影片 壞掉前端不負責任
+                        // 後端請注意:data-videoid 請填入 youtube 影片的id
+                        div.videoBox(data-videoId="dpfsUCOq75s")
+                        div.open-box(data-videoid="dpfsUCOq75s")
+    artilce.guideFooter
+        ul
+            li
+                a(href=java)
+                    figure
+                        img(data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg", alt="")
+            li
+                a(href=java)
+                    figure
+                        img(data-lazy="../../upload/fa2/guide/footerImg_1080_480.jpg", alt="")

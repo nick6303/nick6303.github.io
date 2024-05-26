@@ -1,0 +1,38 @@
+//shopList
+
+.shopList
+    .shopBannerSlick
+        .list
+            height: 650px
+    .mocaTitleSec
+        padding: 140px 0 0 0
+        margin: 0 0 65px 0
+        .title
+            margin: 0
+            &.show
+                opacity: 1
+                transform: translateY(0px)
+                transition: opacity 1s ease, transform 1s ease
+    .clickScrollArea
+        margin: 0 auto 80px auto
+        &.scrollHide
+            .ps__rail-x,.ps__thumb-x
+                // opacity: 0 !important
+        .box
+            display: flex
+        .link
+            padding: 16px 15px
+            margin: 0
+            white-space: nowrap
+            &:after
+                transition: width .4s ease
+            &.now
+                color: #000
+                .text
+                    &:after
+                        width: calc(100% - 30px)
+    @media (max-width: 767px)
+        .mocaSNav
+            .navBar
+                justify-content: flex-start
+    

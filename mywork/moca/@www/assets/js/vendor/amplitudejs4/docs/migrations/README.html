@@ -1,0 +1,68 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <hr>
+<p>title: Migrating From 3.x To 4.0 - AmplitudeJS Documentation
+meta:</p>
+<ul>
+<li>name: description
+content: AmplitudeJS is the HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design a web audio player the way you want it to look.</li>
+<li>name: og:locale
+content: en_US</li>
+<li>name: og:type
+content: website</li>
+<li>name: og:title
+content: Amplitude.js The Open Source HTML5 Audio Player for the Modern Era</li>
+<li>name: og:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look.</li>
+<li>name: og:url
+content: <a href="https://521dimensions.com/open-source/amplitudejs/docs/migrations">https://521dimensions.com/open-source/amplitudejs/docs/migrations</a></li>
+<li>name: og:site_name
+content: Amplitude.js</li>
+<li>name: og:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: og:image:width
+content: 1200</li>
+<li>name: og:image:height
+content: 630</li>
+<li>name: twitter:card
+content: summary_large_image</li>
+<li>name: twitter:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look. Available for free on Github.</li>
+<li>name: twitter:title
+content: Amplitude.js The HTML Audio Player for the Modern Era</li>
+<li>name: twitter:site
+content: &quot;@521dimensions&quot;</li>
+<li>name: twitter:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: creator
+content: &quot;@521dimensions&quot;</li>
+</ul>
+<hr>
+<h1 id="upgrading-from-3-x-to-4-0">Upgrading from 3.x To 4.0</h1>
+<p>AmplitudeJS 4.0 was one of the biggest releases thus far. We tried to limit the breaking changes, but in order to scale for the future we had to make a few.  I should have every change documented below and the reason why the change was made.</p>
+<h2 id="all-amplitudejs-attributes-have-html5-dataset-prefix">All AmplitudeJS Attributes Have HTML5 Dataset Prefix</h2>
+<p>In order to make AmplitudeJS validated properly by w3 terms, we prefixed all of the attributes on AmplitudeJS elements to have the <code>data-</code> prefix. This makes all of the attributes compatible with the HTML5 dataset API: <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset</a></p>
+<p>What this means is any time you are defining a specific element for a song or playlist, you will have to use <code>data-amplitude-song-index</code> or <code>data-amplitude-playlist</code>. In 3.x releases, these were just <code>amplitude-song-index</code> or <code>amplitude-playlist</code>. In order to work with 4.0 and above, you will have to update these references.</p>
+<h2 id="standard-attributes-for-defining-elements">Standard Attributes For Defining Elements</h2>
+<p>In versions 3.x, we had a variety of different attributes to define an element based on it&#39;s level of use. For example, if we had a global play/pause button it&#39;d be <code>amplitude-main-play-pause=&quot;true&quot;</code> as an attribute. This got really cumbersome with multiple elements existing on either a global level (controlling the entire player), a playlist level (controlling functions within a playlist), a song level (controlling an individual song), and a song in playlist level (controlling a song within a playlist). Now everything is based on a combination of attributes. These are as follows:</p>
+<ul>
+<li>Global Level: <code>class=&quot;amplitude-{specialized-class}&quot;</code></li>
+<li>Playlist Level: <code>class=&quot;amplitude-{specialized-class}&quot; data-amplitude-playlist=&quot;{playlist}&quot;</code></li>
+<li>Song Level: <code>class=&quot;amplitude-{specialized-class}&quot; data-amplitude-song-index=&quot;{songIndex}&quot;</code></li>
+<li>Song In Playlist: <code>class=&quot;amplitude-{specialized-class}&quot; data-amplitude-song-index=&quot;{songIndex}&quot; data-amplitude-playlist=&quot;{playlist}&quot;</code></li>
+</ul>
+<p>These combinations work for all elements that are in AmplitudeJS. Now there are some elements that don&#39;t span all of the scopes. Let&#39;s take an <code>amplitude-volume-up</code> element. This only works on the global level. It wouldn&#39;t make sense to have individual playlist volumes.</p>
+<h2 id="playlist-song-indexes-are-scoped-to-playlist">Playlist Song Indexes Are Scoped To Playlist</h2>
+<p>In versions 3.x song indexes are now scoped to playlists. What this means is that when you use <code>data-amplitude-song-index</code> on a song display IN a playlist, it references the index of the song in the playlist instead of the songs array. For example if song index 1 is used on the &#39;Hip Hop&#39; playlist, it references song index 1 within that playlist. Before it was the index in the songs array.</p>
+<h2 id="next-and-previous-buttons-only-work-in-playlists-if-playlist-is-active">Next And Previous Buttons Only Work In Playlists If Playlist Is Active</h2>
+<p>So there are two levels of next and previous buttons. The global level which will react to the state of the player and the playlist level. If a global level next button or previous button is clicked, it will either go to the next/previous song in the songs array if no playlist is active, or the next/previous song in the playlist if a playlist is active.  Now on the playlist level the buttons only go to the next/previous song in the playlist when clicked and ONLY if the playlist is active. If you click a next/previous button on a playlist that isn&#39;t active, it doesn&#39;t do anything. It will only print a debug message if debug is turned on.</p>
+<h2 id="autoplay-configuration-has-been-removed">Autoplay Configuration Has Been Removed</h2>
+<p>Most browsers do not support autoplay features anymore. The functionality to set up AmplitudeJS for autoplay has been removed. If you initialize with autoplay, it will just be ignored.</p>
+<p>That should be the migrations! If you ran into anything, please reach out and we can lend a hand!</p>
+
+      </body>
+    </html>

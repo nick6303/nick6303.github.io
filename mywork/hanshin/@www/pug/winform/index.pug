@@ -1,0 +1,74 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#winform.detail
+    main
+        //- article.banner
+        //-     section._slick
+        //-             ul
+        //-                 li
+        //-                     figure
+        //-                         img(src="../../upload/fa2/winform/bannerImg_1024_630.jpg", alt="")
+        article.container
+            section.branchLink
+                // 後端請注意: 請在哪一頁 就在哪一個a加上class "active"
+                // 直接換頁
+                a.active(href=java) 漢神百貨活動查詢
+                // 直接換頁
+                a(href=java) 漢神巨蛋活動查詢
+            section.type
+                // 後端請注意: 下方的data-src請放資料ajax的網址
+                ul
+                    li.active(data-src="../winform/commodity.html" onclick="changeType(this)")
+                        p 電子商品券
+                    li(data-src="../winform/point.html"  onclick="changeType(this)")
+                        p 漢神集星樂
+                    li(data-src="../winform/lottery.html"  onclick="changeType(this)")
+                        p 電子摸彩券
+            //表格內容放置處 (ajax資料放置處)
+            section.content
+                include ../winform/commodity.pug
+            //倒數計時
+            section.countDown(data-second="20")
+                p 若沒按鍵動作，於 <span class="second">18</span> 秒自動離開此畫面。
+        //- article.rightBar
+        //-     .buttons
+        //-         button.back(type="button" onclick="back()") 返回
+        //-         a.icon-house(href="../guide/index.html") 
+        //-     p Welcome to Hanshin !
+        //-     figure
+        //-         img(src="../../upload/fa2/winform/logo_120_120.png", alt="")
+        //- iframe(src="../winform/api/test.html", frameborder="0" width="850" height="768")
+    //- include ../layout/_footer.pug
+        
++script
+script.
+    function changeType(target){
+        var src = $(target).attr("data-src")
+
+        $(target).addClass("active").siblings().removeClass("active");
+        $.ajax({
+            url: src
+        }).done(function(data){
+            // 將資料塞入結構
+            $("#winform.detail .container .content").html(data);
+            // 重新啟動function
+            winform.all();
+            dropDown();
+        })
+    }
+
+
+|
+|
+</html>

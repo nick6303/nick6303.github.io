@@ -1,0 +1,1072 @@
+@charset "utf-8";
+
+.product_detail_intro .detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+    z-index: 3;
+    background-color: #fff;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*detail_close開始-------------------*/
+
+.product_detail_intro .detail_close {
+    width: 100px;
+    height: 100px;
+    background-color: #6f0064;
+    position: absolute;
+    right: 1rem;
+    padding-top: 35px;
+    cursor: pointer;
+}
+
+.product_detail_intro.open .detail_close,
+.product_detail_intro.load .detail_close {
+    transform: translateY(-100%);
+}
+
+.product_detail_intro .detail_close div {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.product_detail_intro .detail_close div span {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+}
+
+.product_detail_intro .detail_close div span:nth-child(1) {
+    width: 1px;
+    height: 100%;
+    left: calc(50% - 1px);
+    top: 0;
+}
+
+.product_detail_intro .detail_close div span:nth-child(2) {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: calc(50% - 1px);
+}
+
+.product_detail_intro .detail_close p {
+    text-align: center;
+    font-family: 'JosefinSans-Bold';
+    font-size: .75rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+/*detail_close結束-------------------*/
+
+
+/*intro_slick開始--------------------*/
+
+.intro_slick {
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.load .intro_slick,
+.open .intro_slick {
+    opacity: 0;
+}
+
+
+.intro_slick_arrow {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*選單點點*/
+
+.intro_slick .slick-dots {
+    bottom: 150px;
+    top: auto;
+}
+
+.intro_slick .slick-dots li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.intro_slick .slick-dots li button {
+    position: relative;
+     border: 1px solid rgba(255, 255, 255, 0);
+    padding: 12px 12px 12px 12px;
+    border-radius: 50%;
+    display: block;
+    transition: all .4s ease;
+}
+
+.intro_slick .slick-dots li.slick-active button {
+    border: 1px solid rgba(255, 255, 255,1);
+    transition: all .4s ease;
+}
+
+.intro_slick .slick-dots li button:before {
+    color: #941388;
+    opacity: 1;
+    position: relative;
+    top: 0;
+    left: -4px;
+    width: auto;
+    height: auto;
+    line-height: 0;
+    font-size: 1rem;
+    transform: scale(.5);
+    display: block;
+}
+
+.intro_slick .slick-dots li.slick-active button:before {
+    color: #fff;
+    transition: all .4s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*intro_slick開始--------------------*/
+
+.intro_content {
+    width: 50%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.intro_title {
+    margin-top: 240px;
+    padding-left: 80px;
+    padding-right: 160px;
+}
+
+.intro_title h2 {
+    font-size: 3rem;
+    font-family: 'JosefinSans-Bold';
+    letter-spacing: 1px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.open .intro_title h2 span,
+.load .intro_title h2 span {
+    transform: translateY(-100%);
+    display: block;
+}
+
+.intro_title p {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.open .intro_title p span,
+.load .intro_title p span {
+    transform: translateY(-100%);
+    display: block;
+}
+
+.menu_list_bg {
+    display: none;
+}
+
+.content_title {
+    overflow: hidden;
+}
+
+.content_title h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+}
+
+.content_title h2 span {
+    font-family: 'JosefinSans-Bold';
+    font-size: 1.875rem;
+    letter-spacing: 1px;
+    line-height: 1.5；
+}
+
+.place {
+    margin-top: 22vh;
+    padding-left: 80px;
+    padding-right: 160px;
+}
+
+.place>ul {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+
+.place>ul li {
+    width: 33.33%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.place>ul li p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.place>ul li p:before {
+    content: "●";
+    font-size: .75rem;
+    transform: scale(.4);
+    margin-right: 10px;
+    color: #6f0064;
+}
+
+.place_ps {
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+.place_ps h2 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.open .place_ps h2 span,
+.load .place_ps h2 span {
+    transform: translateY(100%);
+    display: block;
+}
+
+.place_ps p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.features {
+    margin-top: 120px;
+    padding: 120px 160px 120px 80px;
+    background-color: #f9f9f9;
+}
+
+.info {
+    margin-top: 50px;
+}
+
+.info>h2 {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.info>h2:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.info ul li {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.info ul li:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.info ul li h2 {
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    display: inline-block;
+}
+
+.info ul li p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: #666666;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.crafts {
+    margin-top: 100px;
+}
+
+.crafts>h2 {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.crafts>h2:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.crafts ul li {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.crafts ul li:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.crafts ul li h2 {
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.crafts ul li p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: #666666;
+    margin-top: 5px;
+}
+
+.standard {
+    margin-top: 120px;
+    padding-left: 80px;
+    padding-right: 160px;
+}
+
+.standard_table {
+    margin-top: 60px;
+    display: flex;
+}
+
+.table1 {
+    width: 40%;
+}
+
+
+.table1_title {
+    height: 70px;
+    background-color: #6f0064;
+}
+
+.table1_title ul {
+    display: flex;
+}
+
+.table1_title ul li {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.table1_title ul li h2 {
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+
+.table1_title ul li p {
+    font-size: .75rem;
+    letter-spacing: 1px;
+    transform: scale(.9);
+    margin-top: 5px;
+}
+
+.table1_types {
+    border-bottom: 2px solid #6f0064;
+}
+
+.table1_type {
+    height: 60px;
+}
+
+
+.show_table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.table1_type:not(:last-child) .show_table {
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.show_table li {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show_table li p {
+    text-align: center;
+    font-family: 'MyriadPro-Regular';
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: #6f0064;
+}
+
+.hidden_table {
+    display: none;
+}
+
+.table2 {
+    width: 60%;
+}
+
+.table2_title {
+    height: 70px;
+    background-color: #333333;
+}
+
+.table2_title>p {
+    display: none;
+}
+
+.table2_title ul {
+    display: flex;
+}
+
+.table2_title ul li {
+    width: 33.33%;
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;
+}
+
+
+.table2_title ul li h2 {
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+.table2_title ul li p {
+    font-size: .75rem;
+    letter-spacing: 1px;
+    transform: scale(.9);
+    margin-top: 5px;
+}
+
+.table2_types {
+    border-bottom: 2px solid #333333;
+}
+
+.table2_type {
+    height: 60px;
+}
+
+.table2_type:not(:last-child) ul {
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.hidden_span {
+    display: none;
+}
+
+.table2_type ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.table2_type ul li {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table2_type ul li p {
+    font-family: 'MyriadPro-Regular';
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.catalog {
+    margin-top: 120px;
+    padding: 120px 0;
+    background-color: #f9f9f9;
+    padding-left: 80px;
+    padding-right: 160px;
+}
+
+.catalog a {
+    margin-top: 50px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+    position: relative;
+}
+
+.catalog a:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.catalog a:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.catalog a p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.catalog a span:before {
+    font-family: 'icomoon';
+    content: "\e90e";
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+/*進場動畫*/
+
+.product_detail_intro.load .detail {
+    display: flex;
+    animation: height1 1s both;
+}
+
+
+
+.product_detail_intro.open .detail {
+    height: 100%;
+    display: flex;
+}
+
+.product_detail_intro.open .detail_close {
+    animation: allin0 .8s both;
+}
+
+
+.open .intro_slick {
+    animation: fadeIn 1s both;
+}
+
+.open .intro_title h2 span {
+    animation: allin0 .8s both .3s;
+}
+
+.open .intro_title p span {
+    animation: allin0 .8s both .5s;
+}
+
+@keyframes height1 {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+
+
+
+
+/*退場動畫*/
+
+.product_detail_intro.close .detail {
+    display: flex;
+    animation: height0 .8s both .4s;
+}
+
+.product_detail_intro.close .detail_close {
+    animation: zoomOut .5s both;
+}
+
+@keyframes height0 {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .open .place .content_title h2,
+    .load .place .content_title h2 {
+        transform: translateX(-100%);
+    }
+
+    .open .place>ul li p,
+    .load .place>ul li p {
+        transform: translateX(-100%);
+    }
+
+    .open .place_ps p span,
+    .load .place_ps p span {
+        transform: translateY(100%);
+        display: block;
+    }
+
+    /*進場動畫*/
+    .open .place .content_title h2 {
+        animation: allin0 .8s both .3s
+    }
+
+    .open .place>ul li p {
+        animation: allin0 .8s both .8s;
+    }
+
+    .open .place_ps h2 span {
+        animation: allin0 1s both 1.4s;
+    }
+    .open .place_ps p span {
+        animation: allin0 1s both 1.4s;
+    }
+}
+
+
+
+
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+    .product_detail_intro .detail {
+        flex-wrap: wrap;
+        overflow: auto;
+    }
+
+    .product_detail_intro .detail_close {
+        right: 0;
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+        padding-top: 25px;
+        position: fixed;
+    }
+
+    .intro_slick {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .intro_slick_img {
+        height: 54vh;
+    }
+
+
+
+    .intro_slick_arrow {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 10vw;
+    }
+
+    .load .intro_slick_arrow,
+    .open .intro_slick_arrow {
+        transform: translateY(100%);
+    }
+
+    .intro_slick_arrow .icon-arrow-left,
+    .intro_slick_arrow .icon-arrow-right {
+        font-size: 1.875rem;
+        background-color: #fff;
+    }
+
+    .intro_content {
+        width: 100%;
+        height: auto;
+    }
+
+    .intro_title {
+        margin-top: 6vh;
+        padding: 0 10vw;
+        text-align: center;
+    }
+
+    .intro_title h2 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+
+    .intro_title p {
+        margin-top: 15px;
+    }
+
+
+
+    /*下拉式選單開始----------- */
+    .menu_list_bg {
+        display: block;
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 6vh;
+        overflow: hidden;
+    }
+
+    .menu_list {
+        border: 1px solid rgba(0, 0, 0, .1);
+        height: 40px;
+        text-align: center;
+        display: block;
+        position: relative;
+        z-index: 1;
+        font-size: .875rem;
+        letter-spacing: 1px;
+    }
+
+    .open .menu_list,
+    .load .menu_list {
+        transform: translateY(-100%);
+    }
+
+    .selectMenu,
+    .menu_list ul li {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 12px;
+    }
+
+    .selectMenu:after {
+        font-family: 'icomoon';
+        content: "\e904";
+        font-size: .75rem;
+        margin-left: 5px;
+    }
+
+    .selectMenu.open {
+        background-color: rgb(111, 0, 100);
+        color: #fff;
+        border-radius: 3px;
+    }
+
+    .menu_list ul {
+        display: none;
+        width: 100%;
+        margin-top: 1px;
+    }
+
+    .menu_list ul li {
+        width: 100%;
+        height: 40px;
+        margin-right: 0;
+        background-color: #fff;
+    }
+
+    .menu_list ul li:not(:first-child) {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .menu_list ul li:hover {
+        background-color: #960087;
+        color: #fff;
+    }
+
+    .menu_list ul li.active:after {
+        display: none;
+    }
+
+    /*下拉式選單結束----------- */
+    .place {
+        padding: 0 10vw;
+        margin-top: 170px;
+    }
+
+    .content_title h2 {
+        text-align: center;
+    }
+
+    .place>ul li {
+        width: 50%;
+    }
+
+    .features {
+        margin-top: 12vh;
+        padding: 14vh 10vw 12vh 10vw;
+    }
+
+    .info ul li p {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .standard {
+        margin-top: 12vh;
+        padding: 0 10vw;
+    }
+
+    .standard_table {
+        margin-top: 8vh;
+        justify-content: space-between;
+    }
+
+    .table1 {
+        width: 78%;
+    }
+
+    .table1_type {
+        height: auto;
+    }
+
+    .show_table {
+        height: 60px;
+        border-bottom: 1px solid #bdbdbd;
+    }
+
+    .hidden_table {
+        display: none;
+        margin-top: 45px;
+        padding-bottom: 45px;
+        padding-left: 30px;
+    }
+
+    .table1_type:not(:last-child) .hidden_table {
+        border-bottom: 3px solid #bdbdbd;
+    }
+
+    .hidden_table li {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        width: 150px;
+    }
+
+    .hidden_table h2 {
+        font-weight: bold;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-right: 5px;
+        display: inline-block;
+    }
+
+    .hidden_table p {
+        font-size: .75rem;
+        letter-spacing: 1px;
+        display: inline-block;
+    }
+
+    .table2 {
+        width: calc(22% - 5px);
+    }
+
+    .table2_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #6f0064;
+    }
+
+    .table2_title ul {
+        display: none;
+    }
+
+    .table2_title p {
+        display: block;
+        color: #fff;
+        font-size: .875rem;
+        letter-spacing: 1px;
+    }
+
+    .hidden_span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        border-bottom: 1px solid #bdbdbd;
+    }
+
+    .hidden_span span {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #999999;
+        border-radius: 50%;
+    }
+
+    .hidden_span span:after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 1px;
+        background-color: #999999;
+        position: absolute;
+        top: calc(50% - .5px);
+        left: calc(50% - 4px);
+    }
+
+    .hidden_span span:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 8px;
+        background-color: #999999;
+        position: absolute;
+        top: calc(50% - 4px);
+        left: calc(50% - .5px);
+        transition: all .5s ease
+    }
+
+     .hidden_span.on span:before {
+        height: 0px;
+        top: 50%;
+        transition: all .5s ease
+     }
+
+    .table2_type {
+        height: auto;
+    }
+
+    .table2_type ul {
+        display: none;
+        flex-direction: column;
+        margin-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .table2_type ul li {
+        width: 100%;
+        height: 40px;
+    }
+
+    .table2_type:not(:last-child) ul {
+        border-bottom: 3px solid #bdbdbd;
+    }
+
+    .catalog {
+        margin-top: 12vh;
+        padding: 12vh 10vw 12vh 10vw;
+    }
+
+    .catalog h2 {
+        text-align: center;
+    }
+
+
+    /*進場動畫*/
+    .open .intro_slick_arrow {
+        animation: allin0 .8s both .6s;
+    }
+
+    .open .menu_list {
+        animation: allin0 1s both .8s;
+    }
+
+
+    /*退場動畫*/
+}

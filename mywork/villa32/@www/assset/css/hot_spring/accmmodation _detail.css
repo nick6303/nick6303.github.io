@@ -1,0 +1,31 @@
+@charset "utf-8";
+ .accmmodation1{
+	 display: none;
+}
+
+._text{
+	overflow: hidden;
+}
+
+.on ._text p{
+	transform:translateY(100%);
+}
+
+.on .show ._text p{
+	animation:allin0 .8s both .8s;
+}
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+@media only screen and (max-width: 1024px) {
+    .accmmodation1 {
+        display: inline-block;
+        color: #fff;
+        font-family: 'TrajanPro-Regular';
+        font-size: .75rem;
+    }
+
+        .accmmodation1 p {
+        font-size: .75rem;
+        transform: scale(.9);
+    }
+}

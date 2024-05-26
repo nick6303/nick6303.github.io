@@ -1,0 +1,516 @@
+@import "base/_reset.scss";
+@import "base/_variable.scss";
+@import "base/_common.scss";
+
+body {
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+}
+
+
+
+._banner {
+    @include flex-center;
+    height: 100vh;
+    width: 50%;
+    overflow: hidden;
+}
+
+
+._content {
+    width: 50%;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 0 10vw 45px 10vw;
+    ._close {
+        margin: auto;
+        width: 50px;
+        height: 84px;
+        cursor: pointer;
+        &:before {
+            content: "";
+            display: block;
+            height: 60px;
+            width: 1px;
+            background-color: #d2b055;
+            margin: auto;
+        }
+        p {
+            margin-top: 12px;
+            font-family: 'Raleway-regular';
+            @include font-size(12);
+            letter-spacing: .5px;
+            text-align: center;
+        }
+    }
+    ._title {
+        letter-spacing: 1px;
+        margin-top: 65px;
+        text-align: center;
+        @media #{$phone} {
+            margin-top: 8vh;
+        }
+        h2 {
+            @include font-size(32);
+            font-family: 'Cinzel-Regular';
+            line-height: 1.5;
+            &:after {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 1px;
+                background-color: #d2b055;
+                margin: auto;
+            }
+        }
+        p {
+            @include font-size(18);
+            font-family: "微軟正黑體";
+            margin-top: 15px;
+        }
+    }
+}
+
+._table {
+    max-width: 520px;
+    margin: auto;
+    margin-top: 80px;
+    @media #{$phone} {
+        margin-top: 10vh;
+    }
+    ._input {
+        opacity: 0;
+        display: block;
+        &>li {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            letter-spacing: 1px;
+            flex-wrap: wrap;
+            position: relative;
+            @include font-size(14);
+            font-family: "微軟正黑體";
+            &:after {
+                content: "";
+                display: block;
+                height: 1px;
+                width: 100%;
+                background-color: #999999;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+            &>p,
+            input {
+                padding-left: 20px;
+            }
+            input,
+            ._datebox,
+            textarea {
+                width: calc(100% - 150px);
+            }
+            &>p {
+                width: 150px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                position: relative;
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    width: 100%;
+                    background-color: #dfc888;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 1;
+                }
+            }
+            input {
+                border: none;
+                letter-spacing: 1px;
+                &::placeholder {
+                    color: rgba(0, 0, 0, .8);
+                    transition: all .3s ease;
+                    font-family: "微軟正黑體";
+                }
+                &:focus {
+                    &::placeholder {
+                        opacity: 0;
+                        transition: all .4s ease;
+                    }
+                }
+            }
+            ._datebox {
+                color: rgba(0, 0, 0, .8);
+                padding-right: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                ._date {
+                    width: 100%;
+                    cursor: pointer;
+                    height: 100%;
+                }
+                span {
+                    &:after {
+                        font-family: 'icomoon';
+                        content: "\e90b";
+                        @include font-size(18);
+                    }
+                }
+            }
+            &._textarea {
+                height: 125px;
+                flex-wrap: wrap;
+                p {
+                    display: flex;
+                    align-items: flex-start;
+                    padding-top: 20px;
+                }
+                textarea {
+                    height: 125px;
+                    border: none;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                    @include font-size(14);
+                    font-family: "微軟正黑體";
+                    letter-spacing: 1px;
+                    &::placeholder {
+                        color: rgba(0, 0, 0, .8);
+                        transition: all .3s ease;
+                        @include font-size(14);
+                        font-family: "微軟正黑體";
+                    }
+                    &:focus {
+                        &::placeholder {
+                            opacity: 0;
+                            transition: all .4s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ._button {
+        max-width: 350px;
+        margin: auto;
+        margin-top: 45px;
+        display: flex;
+        opacity: 0;
+        li {
+            width: 50%;
+            height: 40px;
+            margin: 0 2px;
+            button {
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: #fff;
+                @include font-size(14);
+                font-family: "微軟正黑體";
+                letter-spacing: 1px;
+            }
+            &:nth-child(1) {
+                button {
+                    background-color: #d80b18;
+                    color: #fff;
+                }
+            }
+            &:nth-child(2) {
+                button {
+                    background-color: #cccccc;
+                    color: #171717;
+                }
+            }
+        }
+    }
+}
+
+
+// 下拉式選單設定
+.menulist {
+    border: none;
+    width: calc(100% - 150px);
+    height: 100%;
+    position: relative;
+    .selectMenu,
+    li {
+        @include font-size(14);
+        font-family: "微軟正黑體";
+        color: rgba(0, 0, 0, .8);
+        padding: 0;
+    }
+    .selectMenu {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding-right: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: all .5s ease;
+        @media #{$phone} {
+            padding: 0 30px 0 0;
+        }
+        @media #{$iphone5} {
+            padding: 0 5px 0 0;
+        }
+        p {
+            line-height: 1.5;
+            padding-left: 20px;
+        }
+        &:after {
+            font-family: 'icomoon';
+            content: "\e90b";
+            @include font-size(18);
+            transition: all .8s ease;
+            @media #{$iphone5} {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-left: 5px;
+            }
+        }
+        &.open {
+            &:after {
+                transform: rotateX(180deg);
+                transition: all .8s ease;
+            }
+        }
+    }
+    ul {
+        display: none;
+        position: absolute;
+        width: 100%;
+        max-height: 170px;
+        overflow-y:auto; 
+        top: 100%;
+        left: 0;
+        background-color: #303030;
+        z-index: 1;
+        padding: 10px 0; 
+        li {
+            margin: 5px 0;
+            cursor: pointer;
+            height:20px;
+            padding: 0 5px;
+            @media #{$pad_pro} {
+                padding: 5px;
+            }
+            &:after {
+                display: none;
+            }
+            p {
+                color: rgba(255, 255, 255, .5);
+                @include font-size(12);
+                font-family: "微軟正黑體";
+                text-align: center;
+                line-height: 1.5;
+                height: 100%;
+                letter-spacing: 1px;
+                transition: all .3s ease;
+                &:after {
+                    display: none;
+                }
+            }
+            &:hover {
+                p {
+                    color: rgba(255, 255, 255, 1);
+                    transition: all .3s ease;
+                }
+            }
+        }
+    }
+}
+.nicescroll-rails-vr{
+    transform:translateX(-4px);
+}
+
+
+// 日期選擇套件設定
+.picker-modal-overlay {
+    width: 50%;
+    background-color: transparent;
+    @media #{$pad_pro} {
+        width: 100%;
+    }
+}
+
+div {
+    &.datedropper {
+        &.picker-modal {
+            left: 75%!important;
+            @media #{$pad_pro} {
+                left: 50%!important;
+            }
+        }
+    }
+}
+
+
+
+// 平板螢幕尺寸1024以下
+@media only screen and (max-width: 1024px) {
+    body {
+        overflow: visible;
+    }
+    main {
+        display: block;
+        position: relative;
+        padding-top: 100px;
+    }
+    ._banner,
+    ._content {
+        width: 100%;
+    }
+    ._banner {
+        height: auto;
+    }
+
+    ._content {
+        overflow-y: visible;
+        padding: 0 5vw 45px 5vw;
+        margin: 0;
+        height: auto;
+        ._close {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 25px);
+        }
+    }
+    ._table {
+        ._input {
+            &>li {
+                input,
+                ._datebox,
+                textarea {
+                    width: calc(100% - 130px);
+                }
+                &>p {
+                    width: 130px;
+                }
+            }
+        }
+    }
+
+    .menulist {
+        width: calc(100% - 130px);
+    }
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    main {
+        padding-top: 70px;
+    }
+
+    ._content {
+        padding: 0 5vw 45px 5vw;
+
+        ._close {
+            height: 54px;
+            &:before {
+                height: 30px;
+            }
+        }
+        ._title {
+            h2 {
+                @include font-size(28);
+            }
+        }
+    }
+}
+
+
+
+// 進場動畫-----------------------------------------------------------
+// ._banner----------------
+._banner {
+    &.show {
+        animation: fadeIn 1s both;
+    }
+}
+
+// ._close-----------------
+._close {
+    animation: fadeIn .8s both .2s;
+    &:before {
+        animation: closeLine .8s both .2s;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    ._close {
+        animation: fadeIn .8s both .3s;
+        &:before {
+            animation: closeLine 1.2s both .3s;
+        }
+    }
+}
+
+@keyframes closeLine {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    @keyframes closeLine {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 30px;
+        }
+    }
+}
+
+
+// ._title------------------
+._title {
+    h2 {
+        animation: fadeInDown 1s both .3s;
+    }
+    p {
+        animation: fadeInDown 1s both .4s;
+    }
+}
+
+// _table--------------------
+@media only screen and (min-width: 1025px) {
+    ._table {
+        ._input {
+            animation: fadeIn 1s both .6s;
+        }
+        ._button {
+            animation: fadeInUp 1.2s both .8s;
+        }
+    }
+}
+
+
+// waypoint動畫專區-----------------------------------------------
+._table {
+    ._input {
+        &.show {
+            animation: fadeInUp 1s both;
+        }
+    }
+    ._button {
+        &.show {
+            animation: fadeInUp 1.2s both;
+        }
+    }
+}

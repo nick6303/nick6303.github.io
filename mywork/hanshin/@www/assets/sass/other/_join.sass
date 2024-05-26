@@ -1,0 +1,202 @@
+#other.join
+    .banner ._title .words
+        max-width: 400px
+    main .content .topTitle
+        padding: 60px 50px 50px
+        position: relative
+        @media all and (max-width: 1024px)
+            padding: 60px 5vw 50px
+        &:after
+            position: absolute
+            top: 100%
+            left: 50%
+            transform: translateX(-50%)
+            +fakeLine(0,0,transparent)
+            border-style: solid
+            border-width: 20px 17.5px 0 17.5px
+            border-color: #fff transparent transparent transparent
+        .buttons
+            +overview_buttons
+    .tableContent
+        padding: 60px 50px 110px
+        background-color: #f0f7fa
+        @media all and(max-width: 1024px)
+            padding: 60px 20px 110px
+        @media all and(max-width: 700px)
+            padding: 60px 10px 110px
+        .list
+            max-width: 1230px
+            margin: auto
+            width: 100%
+            position: relative
+            padding: 54px 0 0
+            .where
+                width: 12%
+            .jobName
+                width: 12%
+            .jobContent
+                width: 35%
+            .contacter
+                width: 30%
+            .seeMore
+                width: 11%
+            .listHeader
+                display: flex
+                align-items: center
+                font-size: px(15)
+                font-weight: bold
+                text-align: center
+                border-bottom: 4px solid #909496
+                padding: 10px 0
+                position: absolute
+                top: 0
+                left: 0
+                z-index: 1
+                width: 100% 
+                background-color: #f0f7fa
+                opacity: 0
+                @media all and (max-width: 1279px) and (min-width: 1025px),all and (max-width: 700px)
+                    display: none
+                &.show
+                    animation: fadeInUp 1s both
+                p
+                    line-height: 2
+                    &:not(:first-child)
+                        border-left: 1px solid #9ca1a3
+                &.fixed
+                    position: fixed
+                &.fixed.bottom
+                    position: absolute
+                    top: auto
+                    bottom: 0
+                    left: 0 !important
+                    width: 100% !important
+            .listBody
+                @media all and (max-width: 1279px) and (min-width: 1025px) ,all and (max-width: 700px)
+                    border-top: 4px solid #909496
+                .job
+                    display: flex
+                    font-size: px(15)
+                    line-height: 1.7
+                    padding: 30px 0
+                    opacity: 0
+                    @media all and (max-width: 1279px) and (min-width: 1025px)
+                        flex-direction: column
+                        padding: 30px 10px
+                    @media all and (max-width: 700px)
+                        flex-direction: column
+                        padding: 30px 5px
+                    &.show
+                        animation: fadeInUp 1s both
+                    &>*
+                        &:not(.jobContent)
+                            +flex-center
+                        &:not(.seeMore)
+                            @media all and (max-width: 1279px) and (min-width: 1025px),all and (max-width: 700px)
+                                border-bottom: 1px solid #c0c6c8
+                                padding: 20px 5px 20px 190px !important
+                            @media all and (max-width: 450px)
+                                padding: 20px 5px !important
+                                &:before
+                                    margin: 0 0 20px
+                        @media all and (max-width: 1279px) and (min-width: 1025px),all and (max-width: 700px)
+                            width: 100%
+                            position: relative
+                            &:before
+                                content: attr(data-name)
+                                max-width: 150px
+                                position: absolute
+                                top: 50%
+                                transform: translateY(-50%)
+                                left: 5px
+                                font-weight: bold
+                                font-size: px(16)
+                        @media all and (max-width: 450px)
+                            flex-direction: column
+                            &:before
+                                max-width: none !important
+                                position: relative
+                                top: auto
+                                left: auto
+                                width: 100%
+                                text-align: center
+                                transform: translateY(0)
+                    &:not(:first-child)
+                        border-top: 4px solid  #c8cdd0
+                    &:last-child
+                        border-bottom: 4px solid #909496
+                    ul
+                        counter-reset: num
+                        li
+                            display: flex
+                            counter-increment: num
+                            word-break: break-all
+                            letter-spacing: 0.5px
+                            &:before
+                                font-family: 'JaguarJC-Bold'
+                                content: counter(num) '.'
+                    .where
+                        text-align: center
+                        padding: 0 20px
+                        @media all and (max-width: 1024px) and (min-width: 701px)
+                            padding: 0 10px
+                    .jobName
+                        text-align: center
+                        padding: 0 20px
+                        @media all and (max-width: 1024px) and (min-width: 701px)
+                            padding: 0 10px
+                    .jobContent
+                        padding: 0 30px 
+                        @media all and (max-width: 1440px) 
+                            padding: 0 20px 
+                        @media all and (max-width: 450px)
+                            display: flex
+                        div
+                            &:not(:last-child)
+                                margin: 0 0 30px
+                            h6
+                                color: #908eed
+                                font-size: px(16)
+                                +JaguarJC-Bold
+                    .contacter
+                        padding: 0 40px 
+                        border-left: 1px solid #c0c6c8
+                        border-right: 1px solid #c0c6c8
+                        @media all and (max-width: 1440px)
+                            padding: 20px 
+                        @media all and (max-width: 1279px) and (min-width: 1025px) ,all and (max-width: 700px)
+                            border-left: none
+                            border-right: none
+                    .seeMore
+                        @media all and (max-width: 1279px) and (min-width: 1025px) ,all and (max-width: 700px)
+                            padding: 0 5px 0 190px
+                            justify-content: flex-start
+                        @media all and (max-width: 450px)
+                            padding: 20px 5px 0
+                            justify-content: center
+                        a
+                            +enterLink
+                            @media all and (max-width: 1279px) and (min-width: 1025px) ,all and (max-width: 700px)
+                                flex-direction: row
+                                width: auto
+                                padding: 20px 0
+                                p
+                                    align-items: center
+                                    margin: 0 0 0 10px
+                            @media all and (max-width: 1279px) 
+                                p
+                                    height: 30px
+    .liboxs .libox
+        background-color: rgba(255, 255, 255, 0.75)
+        cursor: url("../img/icom/x.cur"), default
+        &>div
+            background-image: url('../../upload/fa2/service/lost/liboxBg_800_600.jpg')
+            color: #fff
+            .word ul
+                counter-reset: num
+                li
+                    counter-increment: num
+                    display: flex
+                    // &:before
+                    //     content: counter(num) '. '
+                    //     margin: 0 5px 0 0 

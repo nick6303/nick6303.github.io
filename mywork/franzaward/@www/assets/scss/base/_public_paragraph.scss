@@ -1,0 +1,154 @@
+.paragraph {
+    border: solid 1px #000;
+    width: 100%;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.paragraph_sec {
+    display: flex;
+    width: 100%;
+    &.row_start {
+        alignf-items: flex-start;
+    }
+    &.row_end {
+        align-items: flex-end;
+    }
+    &.line_left {
+        justify-content: flex-start;
+    }
+    &.line_right {
+        justify-content: flex-end;
+    }
+    &.flex_col {
+        flex-direction: column;
+        .paragraph_objblock_frame {
+            display: flex;
+            align-items:flex-start;
+        }
+    }
+}
+
+.paragraph_txtblock {
+    width: 100%;
+}
+
+.paragraph_objblock_frame {
+    .paragraph_objblock_list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        &.row_start {
+            align-items: flex-start;
+        }
+        &.row_end {
+            align-items: flex-end;
+        }
+        &.line_left {
+            justify-content: flex-start;
+        }
+        &.line_right {
+            justify-content: flex-end;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+    b {
+        display: block;
+        font-weight: normal;
+        width: 100%;
+        text-align: right;
+        padding: 20px 25px 0 25px;
+        font-family: Quicksand-Regular, 微軟正黑體;
+        @include font-size(12);
+        color: rgba(0, 0, 0, .8);
+    }
+}
+
+.paragraph_wrapblock {
+    .img_block {}
+    .frame {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+//
+.left_shrink_10 {
+    padding-left: 10%;
+}
+
+.left_shrink_20 {
+    padding-left: 20%;
+}
+
+.left_shrink_30 {
+    padding-left: 30%;
+}
+
+.left_shrink_40 {
+    padding-left: 40%;
+}
+
+.left_shrink_50 {
+    padding-left: 50%;
+}
+
+//
+.right_shrink_10 {
+    padding-right: 10%;
+}
+
+.right_shrink_20 {
+    padding-right: 20%;
+}
+
+.right_shrink_30 {
+    padding-right: 30%;
+}
+
+.right_shrink_40 {
+    padding-right: 40%;
+}
+
+.right_shrink_50 {
+    padding-right: 50%;
+}
+
+//
+.w_100 {
+    width: 100%;
+}
+
+.w_50 {
+    width: 50% !important;
+}
+
+.w_33 {
+    width: 33.33% !important;
+}
+
+.w_25 {
+    width: 25% !important;
+}
+
+//
+.mrg_bottom_50 {
+    margin-bottom: 50px;
+}
+
+//
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}

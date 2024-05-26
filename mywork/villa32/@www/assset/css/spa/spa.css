@@ -1,0 +1,420 @@
+@charset "utf-8";
+
+
+
+/*.banner-------*/
+
+
+.content_bg {
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+
+/*banner結束-----------------------------------*/
+
+
+/*content開始-----------------------------------*/
+
+main article:nth-child(2) {
+    text-align: center;
+    margin-top: 170px;
+    padding: 0 20px;
+    position: relative;
+}
+
+
+
+
+
+/*標題-----*/
+
+.title {
+    overflow: hidden;
+}
+
+.title div {
+    transform: translateY(150%);
+}
+
+.title h4 p:nth-child(1) {
+    font-size: 1.875rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.title h4 p:nth-child(2) {
+    font-size: 1.125rem;
+    margin-top: 10px;
+}
+
+.title div>p {
+    max-width: 580px;
+    margin: auto;
+    margin-top: 40px;
+    font-family: MyriadPro-Regular,微軟正黑體;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    font-size: .875rem;
+}
+
+
+
+
+
+
+
+
+/*.menu_list-------*/
+
+.menu_list {
+    overflow: hidden;
+    margin: 75px 0 55px 0;
+}
+
+.menu_list ul {
+    width: 850px;
+    margin: auto;
+    transform: translateY(100%);
+}
+
+.menu_list ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.menu_list ul li p {
+    font-size: .875rem;
+    color: #ADADAD;
+    position: relative;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.menu_list ul li:hover p {
+    color: #000;
+}
+
+.menu_list ul li p:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: black;
+    transition: .5s ease;
+}
+
+.menu_list ul li:hover p:after {
+    left: 0%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+/*.row內容--------- */
+
+.row {
+    margin: auto;
+    max-width: 1300px;
+    display: flex;
+    /*margin-bottom: -8vh;*/
+    font-size: 0;
+    display: flex;
+    align-items: center;
+}
+
+.row:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.row_img,
+.row_text_bg {
+    width: 50%;
+}
+
+
+
+
+
+
+
+/*右側欄共同間距*/
+
+.row:nth-child(odd) .row_text_bg {
+    padding-left: 70px;
+}
+
+
+.row:nth-child(even) .row_img{
+    padding-right: 70px;
+}
+
+
+
+/*圖片設定*/
+
+.row_img {
+    overflow: hidden;
+}
+
+.row:nth-child(odd) .row_img {
+    padding-left: 70px;
+}
+
+.row_img img {
+    transform: translateY(100%);
+}
+
+
+
+
+/*文字設定*/
+
+.row_text_bg {
+    text-align: left;
+}
+
+.row_text {
+    overflow: hidden;
+}
+
+.row_text div {
+    transform: translateY(101%);
+}
+
+
+
+
+
+/*row1的margin-top是170px*/
+
+.row:nth-child(3) .row_text_bg {
+    text-align: left;
+}
+
+.row:nth-child(odd) .row_text_bg {
+    max-width: 550px;
+}
+
+.row:nth-child(even) .row_text_bg {
+    padding-left: 150px;
+    max-width: 630px;
+    padding-right: 70px;
+}
+
+.row_text h5 {
+    font-size: 1.3125rem;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.row_text p {
+    font-size: .875rem;
+    font-family: MyriadPro-Regular,微軟正黑體;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.row_text span {
+    display: flex;
+    margin-top: 30px;
+}
+
+.row_text span p {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.row_text span p:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: #000;
+    margin-bottom: 25px;
+}
+
+.row_text ul {
+    margin: 35px 0;
+}
+
+.row_text ul li {
+    font-weight: bold;
+}
+
+
+
+.reservation {
+    margin: auto;
+    margin-top: 240px;
+    /*width: 95%;*/
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.reservation div {
+    overflow: hidden;
+}
+
+.reservation div img {
+    transform: translateY(100%);
+}
+
+.reservation p {
+    margin: auto;
+    font-size: .875rem;
+    letter-spacing: .5px;
+    transform: translateY(100%);
+    cursor: pointer;
+}
+
+.reservation span {
+    display: block;
+    height: 1px;
+    width: 0px;
+    background-color: #000;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+
+/*waypoint專區-------------*/
+
+.title.show div {
+    animation: allin0 1.2s forwards;
+}
+
+.menu_list.show ul {
+    animation: allin0 1s both .8s;
+}
+
+
+
+/*在pc版時row1動畫與.title、.menu_list為同組，時間上需互相配合*/
+
+.row:nth-child(3) .row_img.show img {
+    animation: allin0 1.2s both .2s;
+}
+
+.row:nth-child(3) .show .row_text div {
+    animation: allin0 1.2s both .2s;
+}
+
+.row_img.show img {
+    animation: allin0 1.2s both;
+}
+
+.show .row_text div {
+    animation: allin0 1.2s both;
+}
+
+.reservation .show img {
+    animation: allin0 1.2s both;
+}
+
+.reservation.show span {
+    animation: width 1s both .6s;
+}
+
+@keyframes width {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 80px;
+    }
+}
+
+.reservation.show p {
+    animation: allin0 .8s both 1.2s;
+}
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    .content_bg{
+        display: none;
+    }
+    main article:nth-child(2) {
+        margin-top: 120px;
+    }
+    .menu_list {
+        margin: 7vh 0 6vh 0;
+    }
+
+    .menu_list ul li p {
+        color: #000;
+    }
+    .menu_list.show ul li p:after {
+        display: none;
+    }
+    /*row設定開始-----*/
+    .row_img,
+    .row_text_bg {
+        width: 100%;
+    }
+
+    /*原間距歸零*/
+    .row {
+        margin-bottom: 40px;
+        align-items: flex-start;
+    }
+
+    .row,
+    .row:nth-child(even) {
+        flex-direction: column;
+    }
+    /*右側欄共同間距歸零*/
+    .row:nth-child(odd) .row_text_bg,
+    .row:nth-child(even) .row_img {
+        padding-left: 0px;
+    }
+    /*圖片設定*/
+    /*原間距歸零*/
+    .row:nth-child(odd) .row_img {
+        padding: 0px;
+    }
+    .row:nth-child(even) .row_img{
+        padding: 0;
+    }
+    /*文字設定*/
+    /*文字與圖片間距*/
+    .row_text_bg {
+        padding-top: 40px;
+    }
+    .row:nth-child(3) .row_text_bg {
+        padding-top: 40px
+    }
+
+    .row:nth-child(even) .row_text_bg {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .row:nth-child(odd) .row_text_bg,.row:nth-child(even) .row_text_bg{
+        max-width: unset;
+    }
+    .row_text{
+        padding: 0 10px;
+    }
+    .row_text p{
+        max-width: unset;
+    }
+    /*row設定開始-----*/
+    .reservation {
+        margin-top: 60px;
+    }
+}

@@ -1,0 +1,133 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"廠商專區",
+            link:"../supplier/index.html"},
+        {
+            title:"月對帳",
+            link:"../supplier/month.html"},
+    ]
+
+    var unit = [
+        {
+            title:"日對帳",
+            link:"../supplier/day.html"},
+        {
+            title:"月對帳",
+            link:"../supplier/month.html"},
+        {
+            title:"進項發票檔",
+            link:"../supplier/invoice.html"},
+        {
+            title:"修改密碼",
+            link:"../supplier/changepassword.html"},
+        {
+            title:"登出",
+            link:"javascript:void(0)"},
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#supplier.month
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title(style="background-image:url('../../upload/fa2/supplier/bannerTitleBg_1670_410.jpg')")
+                p.ch 廠商專區
+                p.en Supplier area
+                p.words 請先選擇登入的身份，再輸入帳號及密碼，以利提供日、月對帳及進項發票輸入等服務，謝謝。
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val == unit[1])?"active":"")
+                        a(href=val.link)
+                            p=val.title
+        article.topTitle
+            p.en MONTH RECONCILE
+            form
+                // 選擇專櫃
+                // 後端請注意: 如果想讓表格出現紅字 顯示輸入錯誤的項目時 請在 <div class="dropDown"> 或 <div class="inputArea"> 加上class "wrong"
+                // 後端請注意: 因為此區域的帳號分兩種
+                    1.廠商:可控制多個櫃位 所以可以選擇專櫃編號
+                    2.專櫃: 只有一個櫃位 所以下方的選擇專櫃不須出現
+                .dropDown
+                    span.selectMenu
+                        p 下拉選擇專櫃編號
+                    ul
+                        // 後端請注意: 下方的data-counterName 填入專櫃名稱 他會在點擊之後自動帶入到下方的<div class="counterName">中
+                        // 後端請注意: 下方的data-settlement 填入專櫃名稱 他會在點擊之後自動帶入到下方的<div class="settlement">中
+                        li(data-counterName="卡友來店禮" data-settlement="月結") 709000
+                        li(data-counterName="華安" data-settlement="月結") 9527
+                        li(data-counterName="黎明到來的那一天" data-settlement="十日結") 1987
+                        li(data-counterName="就是你" data-settlement="十日結") 5438
+                        li(data-counterName="是芥末日" data-settlement="十日結") 2012
+                // 專櫃名稱
+                .counterName
+                    p 卡友來店禮
+                // 結算日期
+                .settlement
+                    p 月結
+                // 選擇月份
+                // 後端請注意: 如果想讓表格出現紅字 顯示輸入錯誤的項目時 請在 <div class="inputArea"> 加上class "wrong"
+                .inputArea
+                    .sel_date.getMonth
+                        input(type="text"  placeholder="下拉選擇月份" readonly="readonly")
+                        label
+                .button
+                    //後端請注意: 下方的onlick僅展示用 記得要改啊!!!!! 因為很重要所以要說三次
+                    //後端請注意: 下方的onlick僅展示用 記得要改啊!!!!! 因為很重要所以要說三次
+                    //後端請注意: 下方的onlick僅展示用 記得要改啊!!!!! 因為很重要所以要說三次
+                    button(type="button" onclick="document.querySelector('.notice').style.display='none';document.querySelector('.preTable').style.display='block'")
+                        span.icon-magnifier
+                        p 搜尋
+        //後端請注意: 如果未搜尋到結果的話請在下方 <article class="notice"> 加上class "noData"
+        article.notice
+            section(style="background-image: url('../../upload/fa2/supplier/changepassword/formBg_1070_460.jpg')")
+                ._title
+                    img(src="../../upload/fa2/supplier/noticeIcon.png", alt="")
+                    p.ch 注意事項
+                    p.en Precautions
+                // 未尋找到資料
+                .notFound
+                    p 未尋找到資料
+                .words
+                    p 請款發票請於次月4日前寄達本公司，逾時視為當期貨款保留。若遇連續假期，發票請先行傳真至本公司。
+                    p 適逢2月過年長假，1月份帳款請於2月1號晚上於官網對帳並開立發票，如來不及作業請於上班日發票開立完畢，逾時視為當期貨款保留。
+        article.preTable(style="display:none")
+            // 標題
+            section._title
+                p 專櫃每月對帳單(含明細)
+            section.pre
+                pre 統一編號:２３８２７２９０ 專櫃編號:709000 卡友來店禮(應? 對帳年月:107/07 高雄市成功一路二百六十六之１號 連絡地址:高雄市成功一路266之1號 結帳方式:1 月結 電話：０７-２１５７２６６ 電話:07-2159466 傳真:07-2153108 結帳期數:1 傳真：０７-２１３６６１９ 廠商抬頭:漢神名店百貨(股)公司企劃課 統編:23827290 ------------------------------------------------------------------------------------------------- 折 100% % % % % % % % % 抽 0% % % % % % % % % 合計 ------------------------------------------------------------------------------------------------- 28 0 0 0 0 0 0 0 0 0 0 ------------------------------------------------------------------------------------------------- 營 0 0 0 0 0 0 0 0 0 0 淨 0 0 0 0 0 0 0 0 0 0 抽 0 0 0 0 0 0 0 0 0 0 ------------------------------------------------------------------------------------------------- 固定: 另加抽成額 0 扣款: 抽成調整額 0 ------------------------------------------------------------------------------------------------- 分: 攤: 裝潢: 改裝: ------------------------------------------------------------------------------------------------- 其: 他: ------------------------------------------------------------------------------------------------- 應付(未) 0 固定 0 另扣 0 總扣額 0 實付額 0 進項稅額 0 分攤 0 代扣 0 稅額 0 補還 0 發票金額 0 裝潢 0 免稅 發票 0 稅 0 ------------------------------------------------------------------------------------------------- 單據列印日107/08/01 漢神百貨會計課 許梅芬 製 (半月結)發票肆日前寄達 寄信時，請於信封註明”專櫃編號” (月 結)發票肆日前寄達
+            section.download
+                button(type="button")
+                    span.icon-text
+                    p 列印文件
+
+            
+    include ../layout/_footer.pug
++script
+|
+|
+</html>

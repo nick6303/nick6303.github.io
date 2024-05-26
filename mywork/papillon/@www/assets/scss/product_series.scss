@@ -1,0 +1,456 @@
+@import "base/_reset.scss";
+@import "base/_variable.scss";
+@import "base/_header.scss";
+@import "base/_footer.scss";
+@import "base/_common.scss";
+
+._title {
+    margin-top: 80px;
+    text-align: center;
+    letter-spacing: 1px;
+    h2 {
+        @include font-size(32);
+        font-family: 'Cinzel-Regular';
+        &:after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 0px;
+            background-color: #d2b055;
+            margin-left: 50%;
+            margin-top: 5px;
+        }
+    }
+    p {
+        margin-top: 15px;
+        @include font-size(18);
+        font-family: "微軟正黑體";
+    }
+}
+
+
+.detail_nav {
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1540px;
+    padding: 0 50px;
+    @include font-size(13);
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 6;
+    .series {
+        span {
+            margin-right: 5px;
+            font-family: "微軟正黑體";
+
+            &:not(:last-child) {
+                &:after {
+                    content: "/";
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .selectCondition {
+        display: flex;
+        align-items: center;
+        &>p {
+            display: flex;
+            align-items: center;
+            &:before {
+                font-family: 'icomoon';
+                content: "\e900";
+                @include font-size(13);
+                transform: scale(.8);
+                margin-right: 5px;
+            }
+        }
+        .price,
+        .gem,
+        .material {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
+            margin-left: 12px;
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 15px;
+                margin-right: 12px;
+                background-color: #999999;
+            }
+            span {
+                cursor: pointer;
+                display: flex;
+                &:after {
+                    font-family: 'icomoon';
+                    content: "\e90b";
+                    margin-left: 5px;
+                    transition:all .4s ease;
+                }
+                &.open{
+                    &:after {
+                        transform:rotateZ(180deg);
+                        transition:all .4s ease;
+                    }
+                }
+            }
+            ul {
+                display: none;
+                position: absolute;
+                top: calc(100% + 5px);
+                left: calc(50% + 6px);
+                width: 100px;
+                transform: translateX(-50%);
+                background-color: #171717;
+                color: #fff;
+                padding: 15px;
+                li {
+                    cursor: pointer;
+                    height: 20px;
+                    width: 100%;
+                    padding: 2.5px 5px;
+                    @include font-size(12);
+                    color: rgba(255,255,255,.5);
+                    transition:all .4s ease;
+                    &:not(:last-child) {
+                        margin-bottom: 5px;
+                    }
+                    &:hover {
+                        color: rgba(255,255,255,1);
+                        transition:all .4s ease;
+                    }
+                    p {
+                        text-align: center;
+                        line-height: 1.5;
+                    }
+                    &.checked {
+                        color: rgba(255,255,255,1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.prducts {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 110px;
+    max-width: 1540px;
+    padding: 0 40px;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: calc(20% - 20px);
+            margin: 0 10px 80px 10px;
+            padding-bottom: 30px;
+            position: relative;
+            opacity: 0;
+            ._img {
+                max-width: 280px;
+                max-height: 280px;
+                @include flex-center;
+                overflow: hidden;
+                img {
+                    transition: all .8s ease;
+                }
+            }
+            h2,
+            h3 {
+                padding-left: 15px;
+            }
+            h2 {
+                font-family: 'Raleway-SemiBold';
+                @include font-size(15);
+                letter-spacing: 1px;
+                margin-top: 20px;
+                line-height: 1.2;
+            }
+            h3 {
+                font-family: "微軟正黑體";
+                @include font-size(15);
+                color: #404040;
+                letter-spacing: 1px;
+                line-height: 2;
+            }
+            p {
+                font-family: 'Cinzel-Regular';
+                @include font-size(13);
+                letter-spacing: .5px;
+                margin-top: 15px;
+                transition: all .3s ease;
+                font-weight: 600;
+                position: absolute;
+                bottom: 0;
+                left: 15px;
+            }
+            &:hover {
+                ._img {
+                    img {
+                        transform: scale(1.1);
+                        transition: all 1s ease;
+                    }
+                }
+                p {
+                    color: #d80b18;
+                    transition: all .4s ease;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .prducts {
+        margin-bottom: 8vh;
+        ul {
+            li {
+                margin: 0 10px 4vh 10px;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .prducts {
+        ul {
+            li {
+                width: calc(25% - 20px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .detail_nav {
+        justify-content: center;
+        padding: 0;
+        .series {
+            display: none;
+        }
+    }
+    .prducts {
+        padding: 0 2vw;
+        ul {
+            li {
+                width: calc(50% - 10px);
+                margin: 0 5px 4vh 5px;
+                text-align: center;
+                h2 {
+                    margin-top: 2vh;
+                }
+                p {
+                    left: 50%;
+                    width: 100%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .detail_nav {
+        .selectCondition {
+            .price,
+            .gem,
+            .material {
+                margin-left: 10px;
+                &:before {
+                    margin-right: 10px;
+                }
+                span {
+                    p {
+                        max-width: 12vw;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+// 進場動畫-------------------------------------------------------
+// _title------------------------------------
+._title {
+
+    h2 {
+        span {
+            animation: fadeInDown .6s both;
+            display: block;
+        }
+        &:after {
+            animation: titleLine .6s both .4s;
+        }
+    }
+    p {
+        span {
+            animation: fadeInUp .6s both .4s;
+            display: block;
+        }
+    }
+}
+
+ // detail_nav--------------------------------
+.detail_nav {
+    animation: fadeInUp .8s both .5s;
+} // prducts-----------------------------------
+// pc版---
+@media only screen and (min-width:1025px) {
+    .prducts {
+        ul {
+            li {
+                &.show {
+                    animation: fadeIn .8s both;
+                    &:nth-child(1) {
+                        animation: fadeIn .8s both .6s;
+                    }
+                    &:nth-child(2) {
+                        animation: fadeIn .8s both .75s;
+                    }
+                    &:nth-child(3) {
+                        animation: fadeIn .8s both .9s;
+                    }
+                    &:nth-child(4) {
+                        animation: fadeIn .8s both 1.05s;
+                    }
+                    &:nth-child(5) {
+                        animation: fadeIn .8s both 1.2s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ipad pro
+@media only screen and (max-width:1024px) and (min-width:901px){
+    .prducts {
+        ul {
+            li {
+                &.show {
+                    animation: fadeIn .8s both;
+                    &:nth-child(1) {
+                        animation: fadeIn .8s both .6s;
+                    }
+                    &:nth-child(2) {
+                        animation: fadeIn .8s both .75s;
+                    }
+                    &:nth-child(3) {
+                        animation: fadeIn .8s both .9s;
+                    }
+                    &:nth-child(4) {
+                        animation: fadeIn .8s both 1.05s;
+                    }
+                    &:nth-child(5) {
+                        animation: fadeIn .8s both 1.2s;
+                    }
+                    &:nth-child(6) {
+                        animation: fadeIn .8s both 1.35s;
+                    }
+                    &:nth-child(7) {
+                        animation: fadeIn .8s both 1.5s;
+                    }
+                    &:nth-child(8) {
+                        animation: fadeIn .8s both 1.65s;
+                    }
+                    &:nth-child(9) {
+                        animation: fadeIn .8s both 1.8s;
+                    }
+                    &:nth-child(10) {
+                        animation: fadeIn .8s both 1.95s;
+                    }
+                    &:nth-child(11) {
+                        animation: fadeIn .8s both 2.1s;
+                    }
+                    &:nth-child(12) {
+                        animation: fadeIn .8s both 2.25s;
+                    }
+                    &:nth-child(13) {
+                        animation: fadeIn .8s both 2.4s;
+                    }
+                    &:nth-child(14) {
+                        animation: fadeIn .8s both 2.55s;
+                    }
+                    &:nth-child(15) {
+                        animation: fadeIn .8s both 2.7s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:900px) and (min-width:701px){
+		.prducts {
+        ul {
+            li {
+                &.show {
+                    animation: fadeIn .8s both;
+                    &:nth-child(1) {
+                        animation: fadeIn .8s both .6s;
+                    }
+                    &:nth-child(2) {
+                        animation: fadeIn .8s both .75s;
+                    }
+                    &:nth-child(3) {
+                        animation: fadeIn .8s both .9s;
+                    }
+                    &:nth-child(4) {
+                        animation: fadeIn .8s both 1.05s;
+                    }
+                    &:nth-child(5) {
+                        animation: fadeIn .8s both 1.2s;
+                    }
+                    &:nth-child(6) {
+                        animation: fadeIn .8s both 1.35s;
+                    }
+                    &:nth-child(7) {
+                        animation: fadeIn .8s both 1.5s;
+                    }
+                    &:nth-child(8) {
+                        animation: fadeIn .8s both 1.65s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:700px) {
+	.prducts {
+        ul {
+            li {
+                &.show {
+                    animation: fadeIn .8s both;
+                    &:nth-child(1) {
+                        animation: fadeIn .8s both .6s;
+                    }
+                    &:nth-child(2) {
+                        animation: fadeIn .8s both .75s;
+                    }
+                }
+            }
+        }
+    }
+}

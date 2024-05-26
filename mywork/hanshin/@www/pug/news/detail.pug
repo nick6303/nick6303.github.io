@@ -1,0 +1,219 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"最新消息",
+            link:"../news/index.html"},
+        {
+            title:"中獎名單",
+            link:"../news/detail.html"},
+    ]
+
+    var table = [
+        {
+            awards:"都法獎",
+            content:"墾丁都法豪華莊園 - 關山泳池Villa",
+            quota:"04",
+            numb:[
+                "3566-XXXX-XXXX-2101",
+                "4705-XXXX-XXXX-0715",
+                "6006-XXXX-2445",
+                "3566-XXXX-XXXX-2101"
+            ],
+            name:[
+                "蔡X筑",
+                "林X華",
+                "許X如",
+                "鄭X豪",
+            ]
+        },
+        {
+            awards:"晶英獎",
+            content:"高雄晶英國際行館 - 御典侶驛/雙驛住宿券 (市價：17,800元)",
+            quota:"04",
+            numb:[
+                "3566-XXXX-XXXX-2101",
+                "4705-XXXX-XXXX-0715",
+                "6006-XXXX-2445",
+                "3566-XXXX-XXXX-2101"
+            ],
+            name:[
+                "蔡X筑",
+                "林X華",
+                "許X如",
+                "鄭X豪"
+            ]
+        },
+        {
+            awards:"小珊蒂獎",
+            content:"Chez Sandi 法式。小珊蒂 - 8吋經典原味千層蛋糕兌換券2份 (市價：2,200元)",
+            quota:"02",
+            numb:[
+                "6006-XXXX-2445",
+                "3566-XXXX-XXXX-2101"
+            ],
+            name:[
+                "許X如",
+                "鄭X豪"
+            ]
+        }
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#news.detail
+    include ../layout/_header.pug
+    main
+        // 後端請注意: 要讓客戶可以自訂背景圖片和背景顏色
+        // 後端請注意: 要讓客戶可以決定字的顏色 預設是黑色  如果要白色 就在 <section class="banner"> 加上class "white"
+        article.banner.white(style="background-image: url('../../upload/fa2/news/detail/bannerBg_1670_420.jpg');background-color: #ebeaea")
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link)=val.title
+            section._text
+                h1 翻玩經典總抽獎 聖誕優惠中獎名單
+                .inf
+                    .type
+                        ._title
+                            p.ch 活動時間
+                            p.en Time
+                        div
+                            p 108/02/10(四)～108/03/12(二)
+                            p 108/02/20(一)～108/02/28(四)
+                    .location
+                        ._title
+                            p.ch 活動地點 
+                            p.en Location
+                        div
+                            p 8F贈品處 
+                            p 4F卡友服務處
+                    .share
+                        ._title
+                            p.ch 分享
+                            p.en Share to
+                        ul.socialMedia
+                            li
+                                a(href=java)
+                                    span.icon-facebook
+                            li
+                                a(href=java)
+                                    span.icon-twitter
+                            li
+                                a(href=java)
+                                    span.icon-line
+        article._slick
+            ul
+                -for(var i = 0;i<3;i++)
+                    // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                    li(data-videoId=(i==0)?"jIzOIsQWMfg":"")
+                        div
+                            figure
+                                img(data-lazy="../../upload/fa2/news/detail/slickImg_1030_650.jpg", alt="")
+                            b 眾多品牌推出限量禮盒，加碼商品大放送
+            .arrows 
+                span.icon-arrowLeft
+                span.icon-arrowRight
+        article.rows
+            section.row
+                ._text
+                    h6 於全館消費累計滿1,000元  即兌換集星1顆
+                    p 活動當日，於全館消費累計滿1,000元，即兌換集星1顆，以此類推，發票限當日兌換成集星(電子集星直接存入漢神超集卡)，隔日無效，集滿以下星星顆數即可兌換精緻好禮，贈品三或二選一，其中一項兌換完請選其他選項，全部兌完改以其他贈品代替。
+                ._img 
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/news/detail/rowImg1.jpg", alt="")
+                        b 眾多品牌推出限量禮盒，加碼商品大放送
+            section.row
+                ._text
+                    h6 ※聖誕樹/櫥窗票選活動注意事項：
+                    p 1.漢神百貨、非當日、二聯及三聯式、漢來大飯店巨蛋會館、ZARA、H&M、星巴克儲值金額、鼎泰豐、一風堂、丸龜製麵、海港及漢來蔬食之餐券、海底撈、漢神百貨網購消費金額、已開發票禮券及商品券、提貨單、香菸之健康捐、信用卡紅利折抵及超集卡點數折抵金額等，發票兌迄恕不重新合併累計。
+                    p 2.中獎卡號將於抽獎隔日公告於1F服務台旁中獎立牌及漢神巨蛋網站，本次抽獎必須自行對獎，恕不另行通知中獎者。
+                    p 3.中獎資格及權利不得轉讓，獎項不得兌換現金、折換及配送。
+                    p 4.依法規定，中獎人於同一抽獎活動中，中獎之全部獎項總價值超過1,000元者，需以新台幣計價列入本年度個人所得。
+            section.row
+                ._img.w50 
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/news/detail/rowImg2.jpg", alt="")
+                        b 眾多品牌推出限量禮盒，加碼商品大放送
+                ._img.w50 
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/news/detail/rowImg3.jpg", alt="")
+                        b 眾多品牌推出限量禮盒，加碼商品大放送
+            section.row
+                .table
+                    h6 聖誕樹/櫥窗票選 中獎名單
+                    table
+                        thead
+                            tr
+                                td(width="15%") 獎項
+                                td(width="30%") 獎品內容
+                                td(width="8.6%") 名額
+                                td(width="30%") 中獎會員號碼
+                                td(width="16.4%") 姓名
+                        tbody
+                            each val in table
+                                tr
+                                    td(data-name="獎項")=val.awards
+                                    td(data-name="獎品內容")=val.content
+                                    td(data-name="名額")=val.quota
+                                    td(data-name="中獎會員號碼")
+                                        ul
+                                            each item in val.numb
+                                                li=item
+                                    td(data-name="姓名") 
+                                        ul
+                                            each item in val.name
+                                                li=item
+            section.row
+                ._text
+                    h6 ※總抽獎注意事項：
+                    p 1.中獎號碼將於抽獎隔日公告於1F服務台旁中獎立牌及漢神巨蛋網站www.hanshinarena.com.tw，本次抽獎必須自行對獎，恕不另行通知中獎者，且須於開獎後30日內(即108年1月25日以前)兌領獎項，逾期視同放棄，不得領獎。
+                    p 2.中獎者領獎時間為108年1月10日至1月20日每日開店至18:00，中獎者須攜帶中獎聯名卡/超集卡、得獎人身份證影印本壹份(並請攜帶正本至現場以供核對)、得獎人私章(都法獎-墾丁都法豪華莊園關山泳池Villa包棟住宿券中獎者另須攜帶中獎稅金2,880元)至1F服務台進行領獎。
+        article.more
+            section._title
+                p.ch 更多最新消息
+                p.en More news
+            section.links
+                a(href=java)
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/news/newsImg_400_370.jpg", alt="")
+                        .hoverBox
+                            span
+                            p ENTER
+                    ._text
+                        // 後端請注意: 如果未填入文字的話 把下方div移除
+                        // 後端請注意: 下方背景顏色要讓客戶可以換
+                        .slogan(style=('background-color: #a13838')) HOT !
+                        p.type BRANDS
+                        p.name MaxMara 時尚冬裝新上市
+                a(href=java)
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/news/newsImg9_400_370.jpg", alt="")
+                        .hoverBox
+                            span
+                            p ENTER
+                    ._text
+                        p.type Member 
+                        p.name 周年慶全館八折起 卡友享專屬加碼優惠
+
+
+    include ../layout/_footer.pug
++script
+
+
+|
+|
+</html>

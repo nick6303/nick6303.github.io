@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>franzaward</title>
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar.min.js/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- 非共用CSS end-->
+    <!-- 自訂的css -->
+    <link rel="stylesheet" href="../../assets/css/service/registered.css">
+</head>
+
+<body id="service" class="registered">
+    <main>
+        <article class="header">
+            <div class="X">
+                <span></span>
+            </div>
+            <div class="_title">
+                <h2>Registered Account</h2>
+                <p>申請參賽者帳號</p>
+            </div>
+            <div class="hdlogo">
+                <a href="../home/index.html">
+                    <img src="../../assets/img/hdLogo.png" alt="">
+                    <h1>franzaward</h1>
+                </a>
+            </div>
+        </article>
+        <!-- 後端請注意:此處使用方式 在 content 加上相對應的class 就會出現相對應的區塊 1.activeStep1 2.activeStep2  3.activeStep3-->
+        <article class="content activeStep2">
+            <section class="stepNav">
+                <ul>
+                    <span class="blueLine"></span>
+                    <li>
+                        <h5>Step1</h5>
+                        <p>帳號申請與基本資料</p>
+                    </li>
+                    <li>
+                        <h5>Step2</h5>
+                        <p>驗證您的郵件信箱</p>
+                    </li>
+                    <li>
+                        <h5>Step3</h5>
+                        <p>完成帳號申請</p>
+                    </li>
+                </ul>
+                <span class="scrollBar"></span>
+            </section>
+            <section class="tableContent">
+                <form class="step1">
+                    <div class="_title">
+                        <h6>Please fill in your general information<span>帳號申請與基本資料</span></h6>
+                        <p>親愛的參賽者您好，請於下方填寫您的帳號密碼與個人資料，聯繫信箱與手機號碼將成為後續的參賽者帳號。
+                            <br>提醒您若使用免費信箱，將有機率無法接收光點計畫驗證資訊與審核結果通知，為避免損及後續的參賽與使用權益，請斟酌使用並確實填寫表格內容。</p>
+                    </div>
+                    <div class="account type">
+                        <h3 class="required">Account & Password  帳號與密碼資訊</h3>
+                        <div class="email workbox">
+                            <h5>E-mail   常用聯繫信箱</h5>
+                            <input type="text" placeholder="example@franzaward.com">
+                        </div>
+                        <div class="mobile workbox">
+                            <h5>Mobile   聯繫手機號碼</h5>
+                            <!-- <input class="countryCode" type="text" placeholder="+886"> -->
+                            <div class="dropList countryCode">
+                                <span class="selectMenu">
+                                        <p>國際碼</p>
+                                    </span>
+                                <ul>
+                                    <li>台灣</li>
+                                    <li>大陸</li>
+                                    <li>美國</li>
+                                    <li>英國</li>
+                                    <li>法國</li>
+                                    <li>瓦甘達</li>
+                                    <li>埃及</li>
+                                    <li>土耳其</li>
+                                    <li>沙烏地阿拉伯</li>
+                                </ul>
+                            </div>
+                            <span></span>
+                            <input class="phoneNumb" type="number" placeholder="9-1234-5678">
+                        </div>
+                        <!-- 後端請注意:如果輸入的內容適合且成功 請在span class="hook" 加上class checked -->
+                        <div class="password workbox">
+                            <h5>Password   請輸入您的密碼</h5>
+                            <input type="password" placeholder="請將密碼設定至少8位數以上，並包含英文與數字" data-placeholder="至少8位數以上，並包含英文與數字" minlength="8">
+                            <span class="hook checked"></span>
+                        </div>
+                        <!-- 後端請注意:如果輸入的內容適合且成功 請在span class="hook" 加上class checked -->
+                        <div class="confirm workbox">
+                            <h5>Confirm Your Password  請再次輸入您的密碼</h5>
+                            <input type="password" placeholder="請將密碼設定至少8位數以上，並包含英文與數字" data-placeholder="至少8位數以上，並包含英文與數字" minlength="8">
+                            <span class="hook"></span>
+                        </div>
+                        <div class="note">
+                            <p>NOTICE : 輸入密碼與驗證密碼不相符</p>
+                        </div>
+                    </div>
+                    <div class="type basicInf">
+                        <!-- 後端請注意:如果傳輸成功的話 在下方加上class success  如果上傳失敗的話 加上 class failure  就會出現相對應的icon-->
+                        <div class=" upload workbox success">
+                            <a href="javascript:void(0)" class="">
+                                <div>
+                                    <span></span>
+                                    <!-- 後端請注意:下方img放上傳的圖片 -->
+                                    <img src="../../upload/fa2/service/registered/picture.jpg" alt="">
+                                </div>
+                            </a>
+                            <h5>Upload Picture 上傳大頭貼：請點擊按鈕進行檔案上傳</h5>
+                            <h5><b>FORMAT 檔案規格 : JPG 檔案格式，500 X 500 px，容量限制 1MB 以內，解析度為 dpi 72</b></h5>
+                            <span class="hook"></span>
+                        </div>
+                        <div class="workbox name">
+                            <input type="text" placeholder="Family Name   姓">
+                            <span></span>
+                            <input type="text" placeholder="First Name   名">
+                        </div>
+                        <div class="workbox name">
+                            <input type="text" placeholder="Family Name Same as Passport   拼音姓（同護照）">
+                            <span></span>
+                            <input type="text" placeholder="First Name Same as Passport   拼音名（同護照）">
+                        </div>
+                        <div class="workbox gender">
+                            <h5>Gender   生理性別</h5>
+                            <div class="dropList">
+                                <span class="selectMenu">
+                                    <p>Select gender 選擇性別</p>
+                                </span>
+                                <ul>
+                                    <li>Male 男性</li>
+                                    <li>Female 女性</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="workbox birthday">
+                            <h5>Birthday   出生日期</h5>
+                            <div class="dropList year">
+                                <span class="selectMenu">
+                                        <p>Year   年</p>
+                                    </span>
+                                <ul>
+                                    <li>1992</li>
+                                    <li>1993</li>
+                                    <li>1994</li>
+                                    <li>1995</li>
+                                    <li>1996</li>
+                                    <li>1997</li>
+                                </ul>
+                            </div>
+                            <div class="dropList month">
+                                <span class="selectMenu">
+                                        <p>Month   月</p>
+                                    </span>
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                </ul>
+                            </div>
+                            <div class="dropList date">
+                                <span class="selectMenu">
+                                        <p>Date   日</p>
+                                    </span>
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address type">
+                        <h3 class="required">Residential Address  地址資訊</h3>
+                        <div class="birthPlace  workbox">
+                            <h5>Place of Birth 出生地址</h5>
+                            <div class="dropList2">
+                                <span class="selectMenu"><p>Nationality   選擇國籍</p></span>
+                                <div class="box">
+                                    <!-- 亞洲 -->
+                                    <div class="asia">
+                                        <p>亞洲</p>
+                                        <ul>
+                                            <li>台灣</li>
+                                            <li>中國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 美洲 -->
+                                    <div class="america">
+                                        <p>美洲</p>
+                                        <ul>
+                                            <li>美國</li>
+                                            <li>加拿大</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 歐洲 -->
+                                    <div class="europe">
+                                        <p>歐洲</p>
+                                        <ul>
+                                            <li>英國</li>
+                                            <li>法國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 非洲 -->
+                                    <div class="africa">
+                                        <p>非洲</p>
+                                        <ul>
+                                            <li>瓦甘達</li>
+                                            <li>剛果</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 大洋洲 -->
+                                    <div class="oceania">
+                                        <p>大洋洲</p>
+                                        <ul>
+                                            <li>澳洲</li>
+                                            <li>馬來西亞</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="birthDetail  workbox">
+                            <input type="text" placeholder="Detail 寫詳細地址">
+                        </div>
+                        <div class="residentialPlace  workbox">
+                            <h5>Residential Address   通訊地址</h5>
+                            <div class="dropList2">
+                                <span class="selectMenu"><p>Country   選擇國家</p></span>
+                                <div class="box">
+                                    <!-- 亞洲 -->
+                                    <div class="asia">
+                                        <p>亞洲</p>
+                                        <ul>
+                                            <li>台灣</li>
+                                            <li>中國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 美洲 -->
+                                    <div class="america">
+                                        <p>美洲</p>
+                                        <ul>
+                                            <li>美國</li>
+                                            <li>加拿大</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 歐洲 -->
+                                    <div class="europe">
+                                        <p>歐洲</p>
+                                        <ul>
+                                            <li>英國</li>
+                                            <li>法國</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 非洲 -->
+                                    <div class="africa">
+                                        <p>非洲</p>
+                                        <ul>
+                                            <li>瓦甘達</li>
+                                            <li>剛果</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 大洋洲 -->
+                                    <div class="oceania">
+                                        <p>大洋洲</p>
+                                        <ul>
+                                            <li>澳洲</li>
+                                            <li>馬來西亞</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="residentialDetail workbox">
+                            <input type="text" placeholder="Detail 寫詳細地址">
+                        </div>
+                        <div class="asBirth  workbox">
+                            <input type="checkbox">
+                            <label for=""></label>
+                            <p>Residential address same as Place of Birth 與出生地址相同</p>
+                        </div>
+                        <div class="note">
+                            <p>NOTICE : 輸入密碼與驗證密碼不相符</p>
+                        </div>
+                    </div>
+                    <div class="number type">
+                        <h3>Other Contact Number 其他聯繫方式</h3>
+                        <div class="home  workbox">
+                            <h5>Home 住家</h5>
+                            <input type="text" placeholder="Please including area codes   聯繫號碼需包含區碼">
+                        </div>
+                        <div class="office workbox">
+                            <h5>Office 辦公室</h5>
+                            <input type="text" placeholder="Please including area codes   聯繫號碼需包含區碼">
+                        </div>
+                        <div class="fax workbox">
+                            <h5>Fax 傳真機</h5>
+                            <input type="text" placeholder="Please including area codes   聯繫號碼需包含區碼">
+                        </div>
+                    </div>
+                    <div class="method type">
+                        <h3 class="required">How did you learn about FRANZ Rising Star Project?  請請問您從何處得知法藍瓷光點計畫</h3>
+                        <div class="workbox list">
+                            <h5>Method   得知方式</h5>
+                            <div class="dropList">
+                                <span class="selectMenu">
+                                    <p>Select  選擇管道</p>
+                                </span>
+                                <ul>
+                                    <li>FranzRSP Facebook</li>
+                                    <li>British Ceramics Biennial</li>
+                                    <li>University of the Arts London </li>
+                                    <li>Porzellanikon</li>
+                                    <li>NCECA</li>
+                                    <li>KADK</li>
+                                    <li>Danish Architecture and Design School</li>
+                                    <li>NACHE</li>
+                                    <li>Crafts Council of Ireland</li>
+                                    <li>Ceramics Ireland Connection</li>
+                                    <li>School Office </li>
+                                    <li>Google AD </li>
+                                    <!-- 後端請注意:下方的li一定要存在 關西到是否會開啟 下方的input -->
+                                    <li data-isOther="true">Other</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 後端請注意:下方的div只有在對方點選other的時候才會出現 -->
+                        <div class="workbox other" style="display: none;">
+                            <input type="text" placeholder="Please fill in here   請填寫其他方式說明">
+                        </div>
+                    </div>
+                    <div class="next toStep2">
+                        <a href="javascript:void(0)">
+                            <p>Next：驗證您的手機號碼</p>
+                        </a>
+                    </div>
+                </form>
+                <div class="step2">
+                    <div class="_title">
+                        <h6>Confirm Your E-mail<span>驗證您的郵件信箱</span></h6>
+                        <!-- 後端請注意:下方的span無意義 如果用不到可以刪除 -->
+                        <p>為了驗證註冊是否為您本人，我們發送了六位數的驗證碼至您的信箱 <span>example@franzaward.com</span>，若您一直未收到驗證信件，請點擊重新發送，再嘗試一次。</p>
+                    </div>
+                    <h3>Enter the verification code  請於下方輸入您的驗證碼</h3>
+                    <form class="code">
+                        <ul id="vcode">
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                            <li>
+                                <input type="text" placeholder="0" maxlength="1">
+                            </li>
+                        </ul>
+                        <div class="note">
+                            <p>NOTICE : 驗證碼輸入錯誤</p>
+                        </div>
+                    </form>
+                    <div class="button">
+                        <a href="javascript:void(0)" class="toStep1">
+                            <p>Prev<span>：帳號申請與基本資料</span></p>
+                        </a>
+                        <a href="javascript:void(0)" class="resend">
+                            <p>Resend<span>：重新發送驗證碼</span></p>
+                        </a>
+                        <a href="javascript:void(0)" class="toStep3">
+                            <p>Next<span>：完成帳號申請</span></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="step3">
+                    <div class="_title">
+                        <h6>Your Application has Success!<span>帳號申請成功</span></h6>
+                        <p>恭喜您完成參賽者帳號申請，現在便可以開始報名光點計畫，或是到網站的其他單元瀏覽需要的相關資訊。光點計畫的最新動態隨時會寄至您的註冊信箱，請隨時關注大賽動態，以免錯過最新的相關消息！</p>
+                    </div>
+                    <div class="button">
+                        <!-- 回到首頁 -->
+                        <a href="../home/index.html">
+                            <p>回到首頁</p>
+                        </a>
+                        <!-- 開始報名 -->
+                        <!-- 後端請注意:比賽的項目
+                        有可能不只一個 如果不只一個 點下去時啟動 ajaxRegisteredLibox 這個function 開啟RegisteredLibox 且下方的a連結要失效-->
+                        <a href="javascript:void(0)">
+                            <p>開始報名光點計畫</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article class="goTop">
+            <span></span>
+            <p>TOP</p>
+        </article>
+    </main>
+</body>
+</html>

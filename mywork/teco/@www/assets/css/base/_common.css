@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body {
+  -webkit-animation: fadeIn 1s both;
+  animation: fadeIn 1s both;
+  overflow-x: hidden; 
+}
+  
+
+main {
+  display: block; 
+}

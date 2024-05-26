@@ -1,0 +1,238 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+.content {
+    padding: 10vh 100px 0 100px;
+    @media all and (max-width: 1024px) {
+        padding: 8vh 5vw 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding: 10vh 5vw 0 5vw;
+    }
+    ._title {
+        h2 {
+            @include title_h2;
+            span{
+                @include title_h2_span;
+            }
+        }
+        h3 {
+            @include title_h3;
+        }
+    }
+}
+
+
+.linkBox {
+    margin: auto;
+    max-width: 1350px;
+    padding: 60px 60px 0 60px;
+    @media all and (max-width: 1290px) {
+        padding: 60px 0 0 0;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 4vh 10px 0 10px;
+    }
+    @media all and (max-width: 450px) {
+        padding: 4vh 5vw 0 5vw;
+    }
+    @media all and (max-width: 350px) {
+        padding: 4vh 10px 0 10px;
+    }
+    ul {
+        display: flex;
+        @include flex-center;
+        flex-wrap: wrap;
+        li {
+            position: relative;
+            width: calc(50% - 60px);
+            display: flex;
+            justify-content: center;
+            margin: 0 30px 70px 30px;
+            @media all and (max-width: 1024px) {
+                margin:0 2.5vw 5vh 2.5vw;
+                width: calc(50% - 5vw);
+            }
+            @media all and (max-width:650px) {
+                width: 100%;
+                margin-bottom: 5vh;
+            }
+            ._img {
+                @include flex-center;
+            }
+            ._text {
+                position: absolute;
+                bottom: 30px;
+                display: flex;
+                flex-direction: column;
+                letter-spacing: 1px;
+                @media all and (max-width: 900px) {
+                    bottom: 3vw;
+                }
+                @media all and (max-width: 650px) {
+                    bottom: 5vw;
+                }
+                h2,
+                p {
+                    line-height: 1.5;
+                    opacity: 0;
+                }
+                h2 {
+                    @include font-size(25);
+                    font-family: 'MyriadPro-Semibold';
+                    @media all and (max-width: 900px) {
+                        @include font-size(22);
+                    }
+                    @media all and (max-width: 650px) {
+                        @include font-size(25);
+                    }
+                    @media all and (max-width: 450px) {
+                        @include font-size(20);
+                    }
+                }
+                p {
+                    font-family: "微軟正黑體";
+                    font-weight: bold;
+                    @include font-size(18);
+                    @media all and (max-width: 900px) {
+                        @include font-size(16);
+                    }
+                    @media all and (max-width: 650px) {
+                        @include font-size(18);
+                    }
+                    @media all and (max-width: 450px) {
+                        @include font-size(16);
+                    }
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 85px;
+                    height: 6px;
+                    background-color: $base_orange;
+                    margin-top: 15px;
+                    transition: all .8s ease;
+                    opacity: 0;
+                    @media all and (max-width: 900px) {
+                        height: 4px;
+                        margin-top: 1vh;
+                    }
+                }
+            }
+            &:nth-child(odd) {
+                ._text {
+                    left: -15px;
+                    align-items: flex-start;
+                    h2,
+                    p {
+                        padding-left: 50px;
+                        @media all and (max-width: 900px) {
+                            padding-left: calc(15px + 2vw);
+                        }
+                        @media all and (max-width: 650px) {
+                            padding-left: calc(15px + 4vw);
+                        }
+                    }
+                }
+                a:hover ._text:after {
+                    margin-left: 50px;
+                    width: calc(100% - 50px);
+                    transition: all .8s ease;
+                }
+            }
+            &:nth-child(even) {
+                transform: translateY(60px);
+                @media all and (max-width: 1024px) {
+                    transform: translateY(5vw);
+                }
+                @media all and (max-width: 650px) {
+                    transform: translateY(0);
+                }
+                ._text {
+                    right: -15px;
+                    align-items: flex-end;
+                    h2,
+                    p {
+                        padding-right: 50px;
+                        @media all and (max-width: 900px) {
+                            padding-right: calc(15px + 2vw);
+                        }
+                        @media all and (max-width: 650px) {
+                            padding-right: calc(15px + 4vw);
+                        }
+                    }
+                }
+                a:hover ._text:after {
+                    margin-right: 50px;
+                    width: calc(100% - 50px);
+                    transition: all .8s ease;
+                }
+            }
+            &:nth-child(n+3) {
+                ._text {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 進場動畫*/
+
+.content {
+    ._title {
+        h2 {
+            animation: fadeInDown .8s both;
+        }
+        h3 {
+            animation: fadeInDown .8s both .2s;
+        }
+    }
+}
+
+.linkBox {
+    ul {
+        li {
+            &.show {
+                animation: fadeIn 1.4s both;
+                ._text {
+                    h2 {
+                        animation: fadeInUp 1.6s both;
+                    }
+                    p {
+                        animation: fadeInUp 1.6s both .2s;
+                    }
+                }
+                &:nth-child(odd) {
+                    ._text {
+                        &:after {
+                            animation: fadeInRight 1.4s both .2s;
+                        }
+                    }
+                }
+                &:nth-child(even) {
+                    ._text {
+                        &:after {
+                            animation: fadeInLeft 1.4s both .2s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

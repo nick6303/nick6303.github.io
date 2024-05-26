@@ -1,0 +1,107 @@
+//- 常用參數
+
+- java = "javascript:void(0)"
+
+- blazy = "../../assets/img/blazy_blank.svg"
+
+
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
+head(itemscope itemtype="http://schema.org/WebSite")
+    meta(charset="UTF-8")
+    meta(name="language" content="tw")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title 漢神電子書目錄
+    //- css
+    link(rel="stylesheet" href="css/dm.css")
+    link(rel="stylesheet" href="css/iconStyle.css")
+|
+|
+body#catalogs_more
+    main#page
+        section#address
+            ul
+                -for(var i = 1;i<22;i++)
+                    li(data-page=i data-address=("page-"+i))
+        div#book
+            -for(var i = 0;i<20;i++)
+                if (i==0)
+                    div(style=("background-image:url(img/0"+i+".jpg)"))
+                        a(href="https://tw.yahoo.com/" target="_blank" style="top:0;left:0;width:50%;height:50%" title="點擊開啟新分頁")
+                        a(href="https://tw.yahoo.com/" target="_blank" style="top:0;left:50%;width:50%;height:50%" title="點擊開啟新分頁")
+                        a(href="https://tw.yahoo.com/" target="_blank" style="top:50%;left:0%;width:30%;height:50%" title="點擊開啟新分頁")
+                        a(href="https://tw.yahoo.com/" target="_blank" style="top:50%;left:30%;width:70%;height:50%" title="點擊開啟新分頁")
+                else if (i<10 && i>0)
+                    div(style=("background-image:url(img/0"+i+".jpg)"))
+                        a(href="https://tw.yahoo.com/" target="_blank" style="top:10%;left:10%;width:80%;height:80%" title="點擊開啟新分頁")
+                else 
+                    div(style=("background-image:url(img/"+i+".jpg)"))
+    .nav_arrow.prev
+        i.icon-keyboard_arrow_left
+    .nav_arrow.next
+        i.icon-keyboard_arrow_right
+    .overlay#all_pages
+        .btn-close
+            span
+        section.container
+            #menu_holder
+                ul#slider
+                    li(class=("page"+"0"))
+                        figure
+                            img(data-src="img/00.jpg" src="img/00.jpg" width="150")
+                            figcaption=("P"+0)
+                    -for(var i=1 ;i<10;i++)
+                        li(class=("page"+i))
+                            figure
+                                img(data-src=((i*2-1)<10)?("img/0"+(i*2-1)+".jpg"):("img/"+(i*2-1)+".jpg") src=((i*2-1)<10)?("img/0"+(i*2-1)+".jpg"):("img/"+(i*2-1)+".jpg") width="150")
+                                img(data-src=((i*2)<10)?("img/0"+(i*2)+".jpg"):("img/"+(i*2)+".jpg") src=((i*2)<10)?("img/0"+(i*2)+".jpg"):("img/"+(i*2)+".jpg") width="150")
+                                figcaption=("P"+(i*2-1)+"-"+(i*2))
+                    li(class=("page"+"9"))
+                        figure
+                            img(data-src="img/19.jpg" src="img/19.jpg" width="150")
+                            figcaption=("P"+9)
+    footer#footer
+        nav.menu#center
+            ul
+                li
+                    a.icon.icon-zoomin.zoom_in(title="Zoom In")
+                li
+                    a.icon.icon-zoomout.zoom_out(title="Zoom Auto")
+                li
+                    a.icon.icon-search1.zoom_auto(title="Zoom Auto")
+                li
+                    a.icon.icon-menu.show_all(title="Show All Pages")
+
+    script(src="js/jquery.js")
+    script.
+        var rwdWidth = $(window).width()
+        var pw = 1000;
+        var ph = 1415;
+        if (rwdWidth < 1040) {
+        pw = pw
+        ph = ph * 2
+        }
+
+        $(document).bind("mobileinit", function () {
+        $.mobile.ajaxEnabled = false;
+        var interval = setInterval(function () {
+            $.mobile.loading('show', {
+            text: 'loading...',
+            textVisible: true,
+            theme: 'a',
+            html: ""
+            });
+            clearInterval(interval);
+        }, 1);
+        });
+    script(src="js/turn.js")
+    script(src="js/jquery.address.js")
+    script(src="js/dm.js")

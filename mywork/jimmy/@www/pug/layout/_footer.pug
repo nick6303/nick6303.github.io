@@ -1,0 +1,41 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var ftLink = [
+        {
+            name:"聯絡我們",
+            link:"javascript:void(0)"},
+        {
+            name:"下載專區",
+            link:"javascript:void(0)"},
+        {
+            name:"幾米報報",
+            link:"javascript:void(0)"},
+    ]
+
+
+footer
+    article.ftContent
+        section.ftGotop
+            p TOP
+        section.ftLink
+            .link
+                each val in ftLink
+                    a(href=val.link)
+                        p=val.name
+            .socialMedia
+                a(href=java)
+                    span.icon-facebook
+                a(href=java)
+                    span.icon-instagram
+                a(href=java)
+                    span.icon-wechat
+                a(href=java)
+                    span.icon-sina-weibo
+        section.copyright
+            p Copyright © Jimmy S.P.A. Co., Ltd. All Rights Reserved. 
+            p Website designed by 
+                a(href=java) WDD.
+                a.openPrivacy(href=java) 隱私權政策

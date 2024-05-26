@@ -1,0 +1,674 @@
+@charset "utf-8";
+/*class 前面都加上.other 是為了避免與後面的detail_other.css互相混到*/
+
+
+
+.detail {
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    overflow: scroll;
+    background-color: #fff;
+}
+
+
+/*detail_nav開始--------------------------------*/
+
+.detail_nav {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.detail_nav>div {
+    position: relative;
+}
+
+.back {
+    position: absolute;
+    top: 50px;
+    left: 3vw;
+}
+
+.back ul {
+    display: flex;
+}
+
+.back ul li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.back ul li:nth-child(1) {
+    padding-right: 18px;
+}
+
+.back ul li:nth-child(1):after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    margin-left: 18px;
+}
+
+.back ul li p {
+    display: inline-block;
+    color: #fff;
+    font-family: 'TrajanPro-Regular';
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+/*detail選單按鈕開始--------------------------*/
+
+.detail_menu_icom {
+    position: absolute;
+    top: 50px;
+    left: 95vw;
+    overflow: hidden;
+}
+
+.detail_menu_icom .cuisine {
+    display: none;
+}
+
+.icom_box {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+
+
+.icom_box span {
+    position: absolute;
+    left: 0px;
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #fff;
+    transition: all .3s ease-out;
+}
+
+.icom_box span:nth-child(1) {
+    top: 0px;
+    transition: all 1s ease;
+}
+
+.icom_box span:nth-child(2) {
+    top: 50%;
+}
+
+.icom_box span:nth-child(3) {
+    bottom: -1px;
+    transition: all 1s ease;
+}
+
+.icom_box:hover span:nth-child(2) {
+    width: 20px;
+    transition: all .4s ease-out;
+}
+
+
+
+
+
+
+
+
+
+/*取自main.css的menu_icon設定*/
+
+
+/*三條線變X 開始*/
+
+.open .icom_box {
+    width: 30px;
+    height: 14px;
+    /*position: fixed;*/
+    animation: top_slidein 0s ease;
+    /*初始進場動畫歸零*/
+}
+
+.open .icom_box span {
+    width: 30px;
+    top: 50%;
+    background-color: #000;
+    /*transition: all 1s ease;*/
+}
+
+.open .icom_box:hover span {
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+/*浮動nav設定----------*/
+
+.detail_nav.hide {
+    position: fixed;
+    z-index: 1;
+    top: -90px;
+    left: 0;
+    display: block;
+    width: 100vw;
+    opacity: 1;
+    transition: all 1s ease;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+}
+
+.detail_nav.hide p {
+    font-size: .75rem;
+}
+
+.close .detail_nav.hide {
+    transition: all 1s ease 1.4s;
+}
+
+.fixed .detail_nav.hide {
+    opacity: 1;
+    top: 0;
+}
+
+
+
+
+
+
+
+
+
+/*顏色更變設定*/
+
+.detail_nav.hide p {
+    color: #000;
+}
+
+.hide .back ul li:nth-child(1):after {
+    background-color: #000;
+}
+
+.hide.back ul li:nth-child(1):after {
+    background-color: #000;
+}
+
+.hide .icom_box span {
+    background-color: #000;
+}
+
+.hide .back,
+.hide .detail_menu_icom {
+    top: 25px;
+}
+
+
+
+
+
+/*detail_nav結束--------------------------------*/
+
+
+
+
+
+/*detail_content開始--------------------------------*/
+
+.detail_content {
+    margin-top: 170px;
+}
+
+.detail_title_bg {
+    overflow: hidden;
+    margin-bottom: 65px;
+}
+
+.detail_title {
+    text-align: center;
+}
+
+.on .detail_title,
+.load .detail_title {
+    transform: translateY(100%);
+}
+
+.detail_title h4 {
+    font-size: 1.875rem;
+    line-height: 1.5;
+}
+
+.detail_title p {
+    font-family: MyriadPro-Regular,微軟正黑體;
+    font-size: .875rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    line-height: 2.2;
+}
+
+.precautions {
+    position: relative;
+    max-width: 1190px;
+    margin: auto;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.on .precautions,
+.load .precautions {
+    border: 1px solid #dedede;
+}
+
+.precautions_top {
+    width: 320px;
+    position: absolute;
+    top: -8px;
+    left: calc(50% - 160px);
+    overflow: hidden;
+}
+
+.on .precautions_top,
+.load .precautions_top{
+    background-color: #fff;
+}
+
+.precautions_top p {
+    display: block;
+    width: 100%;
+    font-size: .875rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.on .precautions_top p,
+.load .precautions_top p {
+    transform: translateY(100%);
+}
+
+.precautions_text {
+    padding: 50px 20px;
+    overflow: hidden;
+}
+
+.precautions_text p {
+    font-family: MyriadPro-Regular,微軟正黑體;
+    font-size: .875rem;
+    line-height: 2;
+    letter-spacing: .5px;
+    max-width: 830px;
+    margin: auto;
+}
+
+.business.on .precautions_text p,
+.business.load .precautions_text p {
+    opacity: 0;
+}
+
+
+
+
+/*detail_row開始-----------------*/
+
+.business .detail_row {
+    max-width: 1190px;
+    padding: 0 20px;
+    margin: auto;
+    display: flex;
+    font-size: 0;
+    overflow: hidden;
+    align-items: center;
+}
+
+.business .detail_row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.business .detail_row_img,
+.business .detail_row_text_bg {
+    width: 50%;
+}
+
+
+/*圖片設定*/
+
+.business .detail_row_img {
+    overflow: hidden;
+}
+
+.business.on .detail_row_img img,
+.business.load .detail_row_img img {
+    transform: translateY(100%);
+}
+
+
+
+
+/*文字設定*/
+
+.business .detail_row_text_bg {
+    padding-left: 75px;
+}
+
+.business .detail_row_text {
+    overflow: hidden;
+}
+
+.business.on .detail_row_text div,
+.business.load .detail_row_text div {
+    transform: translateY(110%);
+}
+
+.business .detail_row_text div>p {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+}
+
+.business .detail_row_text div>p:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.business .detail_row_text ul li {
+    margin-bottom: 12px;
+    font-size: .875rem;
+    letter-spacing: .5px;
+    font-family: MyriadPro-Regular,微軟正黑體;
+}
+
+
+
+
+
+
+
+
+/*detail_row結束-----------------*/
+
+.make_a_reservation {
+    width: 150px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+
+.make_a_reservation span {
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #000;
+    margin: auto;
+    margin-bottom: 25px;
+    transition: all .5s ease-out;
+}
+
+.make_a_reservation p {
+    font-size: .875rem;
+}
+
+.on .make_a_reservation p {
+    transform: translateY(100%);
+}
+
+
+
+
+/*detail_content結束--------------------------------*/
+
+
+/*detail初進場動畫*/
+
+.load .detail {
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+    transition: all .8s;
+}
+
+.on .detail {
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+}
+
+.on .back {
+    animation: top_slidein 1s both;
+}
+
+/*waypoint專區------*/
+
+.on .detail_title.show {
+    animation: allin0 1s both;
+}
+
+.on .show .precautions_top p {
+    animation: allin0 1s both .2s;
+}
+
+.business.on .show .precautions_text p {
+    animation: fadeInUp 1s both .6s;
+}
+
+.business.on .show .detail_row_img img {
+    animation: allin0 1s both;
+}
+
+.business.on .show .detail_row_text div {
+    animation: allin0 1s both;
+}
+
+.on .make_a_reservation.show span {
+    width: 80px;
+    transition: all .5s ease-out .3s
+}
+
+.on .make_a_reservation.show p {
+    animation: allin0 .5s both .5s;
+}
+
+
+
+/*detail離場動畫*/
+
+.off .detail {
+    height: 0%;
+    opacity: 0;
+    transition: all 1.2s ease .8s;
+}
+
+
+
+
+/*banner部分*/
+
+.off .back {
+    animation: zoomOut .4s forwards;
+}
+
+.off .detail_menu_icom {
+    animation: zoomOut .4s forwards;
+}
+
+
+
+/*content部分*/
+
+.off .detail_title {
+    animation: zoomOut 1s both .2s;
+}
+
+.off .precautions_top p {
+    animation: zoomOut 1s both .2s;
+}
+
+.business.off .precautions_text p {
+    animation: zoomOut 1s both .2s;
+}
+
+.business.off .detail_row_text {
+    animation: zoomOut 1s both .4s;
+}
+
+.business.off .detail_row_img img {
+    animation: zoomOut 1s both .6s;
+}
+
+
+.off .make_a_reservation p {
+    animation: slideOutDown .5s both .3s;
+}
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+@media only screen and (max-width: 1024px) {
+    /*back按鈕設定*/
+    .back {
+        top: 35px;
+        left: 20px;
+    }
+    .back ul li:nth-child(1) {
+        display: none;
+    }
+
+    /*banner三條線選單設定*/
+    .detail_menu_icom {
+        display: flex;
+        align-items: center;
+        left: auto;
+        right: 20px;
+        top: 35px;
+    }
+
+    .icom_box {
+        width: 20px;
+        height: 10px;
+    }
+
+    .icom_box span {
+        width: 20px;
+    }
+    .open .icom_box {
+        width: 20px;
+        height: 10px;
+    }
+    .open .icom_box span {
+        width: 20px;
+        top: 50%;
+    }
+
+    .open .icom_box:hover span {
+        width: 20px;
+    }
+
+    .open .icom_box:hover span:nth-child(1) {
+        width: 20px;
+    }
+
+    .open .icom_box:hover span:nth-child(2) {
+        width: 20px;
+    }
+
+    .detail_menu_icom .cuisine {
+        display: inline-block;
+        color: #fff;
+        font-family: 'TrajanPro-Regular';
+        font-size: .75rem;
+        margin-right: 5px;
+    }
+    .cuisine p {
+        font-size: .75rem;
+        transform: scale(1);
+    }
+    /*浮動選單設定-----------*/
+    .detail_nav.hide {
+        height: 50px;
+    }
+
+    .hide .back,
+    .hide .detail_menu_icom {
+        top: 17px;
+    }
+
+    .detail_content{
+        padding: 0 5vw;
+        margin-top: 14vh;
+    }
+
+    .business .detail_row{
+        padding: 0 ;
+    }
+
+    .business .detail_row_text_bg{
+        padding-left:6vw;
+    }
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+
+    .detail_content {
+        padding: 0 20px;
+        margin-top: 100px;
+    }
+
+    .precautions {
+        margin-bottom: 40px;
+    }
+
+    .precautions_top {
+        max-width: 240px;
+        left: calc(50% - 120px);
+        top: -20px;
+    }
+
+    .precautions_text {
+        padding: 50px 20px 30px 20px;
+    }
+
+    /*detail_row--------*/
+    .business .detail_row,
+    .business .detail_row:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .business .detail_row_text_bg,
+    .business .detail_row_img {
+        width: 100%;
+    }
+
+    .business .detail_row_text_bg {
+        padding: 0 10px;
+        margin-top: 4vh;
+    }
+
+    .make_a_reservation {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}

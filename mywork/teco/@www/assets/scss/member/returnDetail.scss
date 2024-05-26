@@ -1,0 +1,19 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+.order {
+    ul {
+        li {
+            .returned {
+                display: flex !important;
+                color: #000 !important;
+            }
+            &.check{
+                .returned {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+</head>
+
+<body id="vip">
+    <header id="header"></header>
+    <main>
+        <article class="banner_wrap">
+            <div class="banner_vip">
+                <div class="banner_vip__title movein">
+                    <h4 class="txtin">Company Management</h4>
+                    <h5 class="txtin2">企業資料管理</h5>
+                </div>
+            </div>
+        </article>
+
+        <article class="nav_wrap nav_vip">
+            <div class="navbit">
+                <ul>
+                    <li>
+                        <a href="../vip/index.html">
+                            <h4>會員總覽</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vip/info.html">
+                            <h4>會員資料管理</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- 專業用戶 -->
+                        <a href="../vip/company.html">
+                            <h4>企業資料管理</h4>
+                        </a>
+                        <!-- 一般用戶未申請 -->
+                        <!-- <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_oops1.html">
+                                <h4>會員資料管理</h4>
+                            </a> -->
+                        <!-- 審查中 -->
+                        <!-- <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_oops2.html">
+                                <h4>會員資料管理</h4>
+                            </a> -->
+                    </li>
+                    <li>
+                        <a href="../vip/bill.html">
+                            <h4>訂單查詢</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vip/address.html">
+                            <h4>我的地址簿 </h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vip/love.html">
+                            <h4>我的收藏</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vip/redpoint.html">
+                            <h4>紅利點數管理 </h4>
+                        </a>
+                    </li>
+                    <li class="vip_signout">
+                        <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_logout.html">
+                            <h4>會員登出</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="content_wrap ">
+            <div class="vip__content">
+                <div class="vip__inner vip_company">
+                    <div class="title">
+                        <h3>INFORMATION & ADDRESS</h3>
+                        <h4>企業資料與發票寄送地址</h4>
+                        <hr>
+                        <p>請將正確資料詳細填寫於下方表單，以確保後續在使用、驗證與會員福利等權益。完成所有資料的填寫即獲贈紅利點數 100 點唷！</p>
+                    </div>
+                    <div class="theform">
+                        <ul>
+                            <li class="w100">
+                                <label for="name">OCCUPATION 職　業</label>
+                                <div class="form_dropdown">
+                                    <select class="dropdown dropdown_vip">
+                                        <option value="0">塗料專業人士</option>
+                                        <option value="1">油漆老闆</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="w100">
+                                <label for="name">CORPORATION 公司名稱</label>
+                                <input id="name" type="text" placeholder="喬和工程有限公司">
+                            </li>
+                            <li class="w100 br">
+                                <label for="name">TAX ID NUMBER 公司統編</label>
+                                <input id="name" type="text" placeholder="12345578">
+                            </li>
+                            <li class="w100">
+                                <label for="corporation_add">CORPORATION ADDRESS 公司地址</label>
+                                <div class="form_dropdown">
+                                    <select class="dropdown dropdown_vip" data-placeholder="國家">
+                                        <option value=""></option>
+                                        <option value="1">台灣</option>
+                                        <option value="2">美國</option>
+                                        <option value="3">日本</option>
+                                    </select>
+                                </div>
+                                <div class="form_dropdown">
+                                    <select class="dropdown dropdown_vip" data-placeholder="省/洲">
+                                        <option value=""></option>
+                                        <option value="1">台灣省</option>
+                                        <option value="2">台灣省</option>
+                                        <option value="3">日本</option>
+                                    </select>
+                                </div>
+                                <div class="form_dropdown">
+                                    <select class="dropdown dropdown_vip" data-placeholder="縣市">
+                                        <option value=""></option>
+                                        <option value="1">南投縣</option>
+                                        <option value="2">台中縣</option>
+                                        <option value="3">台南縣</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="w100 br">
+                                <input id="" type="text" placeholder="請輸入詳細地址">
+                            </li>
+                            <li class="w100">
+                                <label for="corporation_add">ADDRESS OF BILL 發票寄送地址</label>
+                                <div class="form_dropdown">
+                                    <select class="dropdown dropdown_vip" data-placeholder="國家">
+                                        <option value=""></option>
+                                        <option value="1">台灣</option>
+                                        <option value="2">美國</option>
+                                        <option value="3">日本</option>
+                                    </select>
+                                </div>
+                                <div class="form_dropdown">
+                                    <select class="dropdown dropdown_vip" data-placeholder="省/洲">
+                                        <option value=""></option>
+                                        <option value="1">台灣省</option>
+                                        <option value="2">台灣省</option>
+                                        <option value="3">日本</option>
+                                    </select>
+                                </div>
+                                <div class="form_dropdown">
+                                    <select class="dropdown dropdown_vip" data-placeholder="縣市">
+                                        <option value=""></option>
+                                        <option value="1">南投縣</option>
+                                        <option value="2">台中縣</option>
+                                        <option value="3">台南縣</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="w100 br">
+                                <input id="" type="text" placeholder="請輸入詳細地址">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="thebtns">
+                        <ul class="list">
+                            <li class="focus">
+                                <a href="javascript:void(0);" class="vipBtn" data-lbox="../layout/viplbox_circle_success.html">
+                                    <div class="circle circle--40 circle--v">
+                                        <span></span>
+                                    </div>
+                                    <h6>儲存設定</h6>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer id="footer"></footer>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="../../assets/js/vendor/slick/slick.js"></script>
+    <script src="../../assets/js/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../../assets/js/vendor/blazy.js"></script>
+    <script src="../../assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/imagesloaded.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/cgpagechange.js"></script>
+    <script src="../../assets/js/vendor/lbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <!-- 主要 -->
+    <script src="../../assets/js/main.js"></script>
+    <!-- 個別 -->
+    <script src="../../assets/js/vip.js"></script>
+
+
+</body>
+
+</html>

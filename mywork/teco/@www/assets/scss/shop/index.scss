@@ -1,0 +1,301 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+.shoppingCart {
+    width: 74%;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 130px;
+    @include flex-center;
+    flex-direction: column;
+
+    @media all and (min-width: 1921px) {
+        max-width: calc(100% - 460px);
+    }
+
+    @media all and (max-width: 1024px) {
+        width: 100%;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        padding-bottom: 0;
+    }
+
+    ._title,
+    .productList,
+    .gifts,
+    .purchase,
+    .discount,
+        {
+        max-width: 1080px;
+        width: 100%;
+    }
+
+    ._title {
+        margin-top: 80px;
+        text-align: center;
+
+        .en {
+            // @include title_en("CenturyGothic",normal,#868686);
+            @include title_en
+            animation: fadeInDown 1.2s both .2s;
+        }
+
+        .ch {
+            @include title_ch;
+            animation: fadeInDown 1s both .4s;
+        }
+    }
+
+    .gifts,
+    .purchase,
+    .discount,
+    .productList {
+        margin-top: 90px;
+
+        @media all and (max-width: 1024px) {
+            margin-top: 50px;
+        }
+
+        &.show {
+            form {
+                animation: hidden 0s both 2.2s;
+            }
+
+            .customizedProuduct,
+            .normalProduct {
+                animation: fadeInDown 1.2s both;
+            }
+        }
+
+
+
+        .customizedProuduct,
+        .normalProduct {
+            padding-left: 2vw;
+            padding-right: 7vw;
+            position: relative;
+            display: flex;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            align-items: center;
+            position: relative;
+            transition: background .4s ease;
+            opacity: 0;
+
+            @media all and (min-width: 1921px) {
+                padding-left: 45px;
+                padding-right: 140px;
+            }
+
+            @media all and (max-width: 1024px) {
+                padding-left: 10px;
+                padding-right: 70px;
+            }
+
+            @media all and (max-width: 600px) {
+                padding-left: 10px;
+                padding-right: 10px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding-bottom: 30px;
+                padding-top: 30px;
+            }
+
+            &:not(:last-child):after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                @include fakeLine(100%, 1px, #e8e6e6);
+            }
+
+            ._img {
+                width: 26%;
+
+                @media all and (max-width: 1100px) {
+                    display: none;
+                }
+
+                img {
+                    margin: auto;
+                }
+            }
+
+            .name {
+                width: 46%;
+                padding: 0 1vw 0 4vw;
+                @include flex-left;
+
+                @media all and (min-width: 1921px) {
+                    padding: 0 0 0 80px;
+                }
+
+                @media all and (max-width: 1100px) {
+                    width: 60%;
+                    padding: 0 1vw 0 0;
+                }
+
+                @media all and (max-width: 600px) {
+                    width: 100%;
+                    padding: 0 0 20px 0;
+                }
+
+                .openOrder {
+                    @include flex-center;
+                    cursor: pointer;
+                    margin-bottom: 10px;
+
+                    p {
+                        color: #005098;
+                        @include font-size(12);
+                        font-weight: bold;
+                        margin-right: 10px;
+                        padding-top: 2px;
+                    }
+
+                    span {
+                        width: 25px;
+                        height: 25px;
+                        background-color: #005098;
+                        border-radius: 50%;
+                        color: #fff;
+                        @include flex-center;
+                        @include font-size(12);
+                        transform: scale(0.8);
+                    }
+                }
+
+                a {
+                    .modelNumb {
+                        font-family: 'CenturyGothic-Bold';
+                        color: rgba(0, 0, 0, .6);
+                        @include font-size(14);
+                        line-height: 1.8;
+                    }
+
+                    .productName {
+                        @include font-size(18);
+                        font-weight: bold;
+                        font-family: "微軟正黑體";
+                        line-height: 1.8;
+                    }
+
+                    .ps {
+                        @include font-size(13);
+                        color: #686868;
+                    }
+                }
+            }
+
+            .amount {
+                width: 16%;
+
+                @media all and (max-width: 1100px) {
+                    width: 22%;
+                }
+
+                @media all and (max-width: 600px) {
+                    width: 60px;
+                }
+            }
+
+            .price {
+                width: 12%;
+                text-align: right;
+                padding: 0 5px;
+                @include font-size(22);
+                font-family: 'CenturyGothic-Bold';
+
+                @media all and (max-width: 1400px) {
+                    @include font-size(20);
+                }
+
+                @media all and (max-width: 1100px) {
+                    width: 18%;
+                    padding: 0;
+                }
+
+                @media all and (max-width: 600px) {
+                    width: calc(100% - 100px);
+                }
+                &:before{
+                    content: "$";
+                }
+            }
+
+            .remove {
+                position: absolute;
+                top: calc(50% - 15px);
+                right: calc(3.5vw - 15px);
+                cursor: pointer;
+
+                @media all and (min-width: 1921px) {
+                    right: 55px;
+                }
+
+                @media all and (max-width:1024px) {
+                    right: 10px;
+                }
+
+                @media all and (max-width:600px) {
+                    display: none;
+                }
+
+                span {
+                    position: relative;
+                    display: block;
+                    transform: rotate(45deg);
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #9d9d9d;
+                    border-radius: 50%;
+                    transition: all .4s ease;
+
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: all .4s ease;
+                    }
+
+                    &:before {
+                        @include fakeLine(12px, 1px, #acacac);
+                    }
+
+                    &:after {
+                        @include fakeLine(1px, 12px, #acacac);
+                    }
+                }
+
+                &:hover span {
+                    background-color: #000;
+                    border: 1px solid #000;
+
+                    &:before,
+                    &:after {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .productList {
+        &.show:after {
+            animation: w100 1s both 2s;
+
+        }
+
+        &:after {
+            margin: auto;
+            @include fakeLine(0%, 4px, #000);
+
+            @media all and (max-width: 1024px) {
+                display: none;
+            }
+        }
+    }
+}

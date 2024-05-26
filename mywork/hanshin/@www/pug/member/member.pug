@@ -1,0 +1,185 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"會員專區",
+            link:"../member/member.html"},
+    ]
+
+    var unit =[
+        {
+            name: "會員總覽",
+            link:"../member/member.html"},
+        {
+            name: "超集卡點數&遊戲次數",
+            link:"../member/point.html"},
+        {
+            name: "我的贈品",
+            link:"../member/gift.html"},
+        {
+            name: "停車管理",
+            link:""},
+        {
+            name: "基本資料",
+            link:"../member/basicInfo.html"},
+        {
+            name: "修改密碼",
+            link:java},
+        {
+            name: "會員條碼",
+            link:"../member/barCode.html"}
+    ]
+
+    var rows = [
+        {
+            img:"../../upload/fa2/member/member/rowImg_750_450.jpg",
+            imgLink:"javascript:void(0)",
+            type:"Smart回饋",
+            title_en:"Card points & games",
+            title_ch:"超集卡點數&遊戲次數",
+            ul:[
+                {
+                    ch:"點數補登",
+                    en:"Repair"},
+                {
+                    ch:"點數轉移",
+                    en:"Transfer"},
+                {
+                    ch:"消費紀錄",
+                    en:"Record"},
+            ]},
+        {
+            img:"../../upload/fa2/member/member/rowImg2_750_450.jpg",
+            imgLink:"javascript:void(0)",
+            type:"Smart消費",
+            title_en:"My CARD’s gifts",
+            title_ch:"我的贈品",
+            ul:[
+                {
+                    ch:"注意事項",
+                    en:"Notice"},
+                {
+                    ch:"贈品補登",
+                    en:"Repair"},
+                {
+                    ch:"電子商品券",
+                    en:"Ticket"},
+            ]},
+        {
+            img:"../../upload/fa2/member/member/rowImg3_750_450.jpg",
+            imgLink:"javascript:void(0)",
+            type:"便捷服務",
+            title_en:"Parking management",
+            title_ch:"停車管理 ",
+            ul:[
+                {
+                    ch:"常用車號",
+                    en:"Car number"},
+                {
+                    ch:"抵銷點數",
+                    en:"Discount"},
+                {
+                    ch:"注意事項",
+                    en:"Notice"},
+            ]},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#member.member
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section.topTitle
+                .left
+                    p.ch 會員專區
+                    p.en Member area
+                    p.words 歡迎登入漢神超集卡會員專區，提供您專屬的漢神超集卡點數、遊戲、贈品管理、電子報訂閱及停車查詢等眾多便利及貼心服務。
+                .right
+                    figure
+                        img(src="../../upload/fa2/member/member/picture_170_170.jpg", alt="")
+                    ._text
+                        p(data-name="Welcome , ") 王艾倫
+                        a(href=java)
+                            span.icon-logout
+                            p.en LOGOUT 
+                            p.ch 登出
+                .unit
+                    ul  
+                        each val in unit
+                            li(class=(val==unit[0])?"active":"")
+                                if(val==unit[unit.length-2])
+                                    // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                                    a(href=val.link onclick="liboxs.ajax(this)" data-src="../member/changPassword.html")=val.name
+                                else
+                                    a(href=val.link)=val.name
+        article.content
+            section.overview
+                .rows
+                    each item in rows
+                        .row
+                            ._img
+                                figure
+                                    img.b-lazy(src=blazy data-src=item.img, alt="")
+                                a(href=item.imgLink)
+                                    span
+                                    p ENTER
+                            ._text
+                                ._title
+                                    p.type=item.type
+                                    p.en=item.title_en
+                                    p.ch=item.title_ch
+                                    ul
+                                        each val in item.ul
+                                            li
+                                                a(href=item.imgLink)
+                                                    p.ch=val.ch
+                                                    p.en=val.en
+                .infAndPassword
+                    .inf
+                        ._title
+                            p.type 專屬為您
+                            p.en Member information
+                            p.ch 基本資料
+                            a(href="../member/basicInfo.html")
+                                span.icon-text
+                                p 查看資料
+                    .password
+                        ._title
+                            p.type 尊榮服務
+                            p.en Change my password
+                            p.ch 修改密碼 
+                            // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                            button(type="button" onclick="liboxs.ajax(this)" data-src="../member/changPassword.html")
+                                span.icon-pen
+                                p 進行修改
+        article.precautions
+            section.words
+                p 如您有任何意見歡迎填寫 <span>聯絡表單</span>，或撥打 <span>顧客專線0800-018-980</span> 將有專人問您服務，謝謝。
+                // 後端請注意: 下方的點擊開啟的燈箱 因為很多頁都用的到 所以已ajax方式呈現 請在下方data-src填入ajax資料位置
+                button(type="button" onclick="liboxs.ajax(this)" data-src="../member/precautions.html") 漢神超集卡約定事項
+    include  ../layout/_footer.pug
++script
+// 後端請注意: 下方的js只有會員單元才會有
+script(src="../../assets/js/member.js")
+|
+|
+</html>

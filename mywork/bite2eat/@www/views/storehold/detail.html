@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>bite2eat</title>
+    <!-- icon -->
+    <!--    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/ico/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/ico/favicon.png"> -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/perfect-scrollbar/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/photo-sphere-viewer/photo-sphere-viewer.min.css">
+    <!-- 非共用CSS end-->
+    <link rel="stylesheet" href="../../assets/css/storehold/detail.css">
+</head>
+
+<body id="storehold" class="detail">
+    <!-- 後端請注意:main的背景顏色要讓客戶決定 -->
+    <main style="background-color:#1a5676">
+        <article class="header">
+            <section class="booking">
+                <span class="icon-reservation_nav_b"></span>
+                <h2>立即預約</h2>
+                <h3>RESERVE</h3>
+            </section>
+            <section class="backAndMenu">
+                <div class="back">
+                    <a href="../menu/index.html">
+                        <p>
+                            back <span>據點總覽</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="burger">
+                    <div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </section>
+            <section class="hd_logo">
+                <a href="../home/index.html">
+                    <span></span>
+                </a>
+            </section>
+        </article>
+        <article class="banner short">
+            <section class="banner_text">
+                <h5>台中公益店</h5>
+                <h3>gong-yi</h3>
+            </section>
+            <section class="pointNav">
+                <ul>
+                    <li id="slick360" class="active">
+                        <span class="icon-picture"></span>
+                        <div class="_text">
+                            <h5>photo</h5>
+                            <p>環境導覽</p>
+                        </div>
+                    </li>
+                    <li id="storeInf">
+                        <span class="icon-face"></span>
+                        <div class="_text">
+                            <h5>information</h5>
+                            <p>營業資訊</p>
+                        </div>
+                    </li>
+                    <li id="specialMenu">
+                        <span class="icon-pizza"></span>
+                        <div class="_text">
+                            <h5>special</h5>
+                            <p>限定菜色</p>
+                        </div>
+                    </li>
+                    <li id="experience">
+                        <span class="icon-eat"></span>
+                        <div class="_text">
+                            <h5>experience</h5>
+                            <p>店內體驗</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article class="slick360">
+            <section class="sideSlick">
+                <ul>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="mainSlick">
+                <!-- 後端請注意:此處有的是360度圖片 有的是普通的圖片 -->
+                <!-- <svg >
+                    <defs>
+                        <clipPath id="a1">
+                            <path d="M1300,809.999H0c0,0,0-293.318,0-405.5C0,292.318,0,0,0,0h1300V809.999z"/>
+                        </clipPath>
+                    </defs>
+                </svg> -->
+                <ul class="picture active">
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="deg360">
+                    <li>
+                        <!-- 後端請注意:src為放360圖片的位置 id可隨意取沒關西-->
+                        <div id="img1" class="img360" src="../../upload/fa2/storehold/detail/50A35436-BF10-44BE-B969-AE5D2877A5EA.jpg"></div>
+                    </li>
+                    <li>
+                        <div id="img2" class="img360" src="../../upload/fa2/storehold/detail/Bryce-Canyon-By-Jess-Beauchemin.jpg"></div>
+                    </li>
+                    <li>
+                        <!-- 後端請注意:src為放360圖片的位置 id可隨意取沒關西-->
+                        <div id="img3" class="img360" src="../../upload/fa2/storehold/detail/1.jpg"></div>
+                    </li>
+                    <li>
+                        <div id="img4" class="img360" src="../../upload/fa2/storehold/detail/2.jpg"></div>
+                    </li>
+                    <li>
+                        <!-- 後端請注意:src為放360圖片的位置 id可隨意取沒關西-->
+                        <div id="img5" class="img360" src="../../upload/fa2/storehold/detail/3.jpg"></div>
+                    </li>
+                    <li>
+                        <div id="img6" class="img360" src="../../upload/fa2/storehold/detail/4.jpg"></div>
+                    </li>
+                    <li>
+                        <div id="img7" class="img360" src="../../upload/fa2/storehold/detail/5.jpg"></div>
+                    </li>
+                </ul>
+                <div class="arrow isImg">
+                    <span class="icon-arrow_left"></span>
+                    <span class="icon-arrow_right"></span>
+                    <div class="turn360 active">
+                        環景導覽
+                    </div>
+                    <div class="turnImg">
+                        相片導覽
+                    </div>
+                </div>
+            </section>
+            <section class="sideSlick">
+                <ul>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img">
+                            <img data-lazy="../../upload/fa2/storehold/detail/360SlickImg1_1300_810.jpg">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article class="storeInf">
+            <section class="contact">
+                <div class="tel">
+                    <h4>contact</h4>
+                    <h5>聯繫電話</h5>
+                    <p>02-7737-8837</p>
+                </div>
+                <div class="address">
+                    <h4>address</h4>
+                    <h5>分店地址</h5>
+                    <p>台北市中山區復興南路一段 22.24 號</p>
+                </div>
+                <div class="googleMap">
+                    <!-- 後端請注意:請填上網址 -->
+                    <a href="javascript:void(0)" target="_blank">
+                        <span>open in google map</span>
+                    </a>
+                </div>
+            </section>
+            <section class="openTime">
+                <div class="_title">
+                    <h4>business hour</h4>
+                    <h5>營業時間</h5>
+                </div>
+                <div class="Weekdays">
+                    <h5>周一至周五</h5>
+                    <p>中午 11:00-16:45 ( Last order 15:45</p>
+                    <p>晚上 17:30-21:45 ( Last order 20:45</p>
+                </div>
+                <!-- 後端請注意:有些店鋪沒有周末營業時間 如沒有請移除div -->
+                <div class="weekend">
+                    <h5>周六與周日</h5>
+                    <p>中午 11:00-16:30 ( Last order 15:45</p>
+                    <p>晚上 17:00-21:30 ( Last order 20:45</p>
+                </div>
+            </section>
+        </article>
+        <article class="content">
+            <section class="bg"></section>
+            <section class="specialMenu">
+                <div class="_title">
+                    <h2>special menu</h2>
+                    <h5>公益店限定餐點</h5>
+                </div>
+                <ul>
+                    <li>
+                        <div class="_text">
+                            <!-- 英文 -->
+                            <h4>Pizza with wine pickled berries</h4>
+                            <!-- 中文 -->
+                            <h3>酒漬莓果加佐內披薩</h3>
+                            <!-- 配方中文 -->
+                            <h5>綜合莓果、蘭姆酒、瑞可塔啟思</h5>
+                            <!-- 配方英文 -->
+                            <p>Mixed Berries, Rum, Ricotta Cheese</p>
+                            <!-- 價格 -->
+                            <div class="dishPrice">
+                                NTD 199
+                            </div>
+                        </div>
+                        </div>
+                        <div class="_img">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/storehold/detail/specialMenuImg1_200_200.png" alt="">
+                            <!-- 開啟詳細介紹 -->
+                            <div class="openDetailLibox">
+                                <p>DETAIL 詳細介紹</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_text">
+                            <!-- 英文 -->
+                            <h4>Spaghetti in XO silver anchovy Sauce</h4>
+                            <!-- 中文 -->
+                            <h3>XO 銀帶飛魚麵</h3>
+                            <!-- 配方中文 -->
+                            <h5>綜合莓果、蘭姆酒、瑞可塔啟思</h5>
+                            <!-- 配方英文 -->
+                            <p>Mixed Berries, Rum, Ricotta Cheese</p>
+                            <!-- 辣度 如果沒有請移除 -->
+                            <div class="spicy">
+                                <!-- 後端請注意:此處需可讓客戶決定要有幾個span符號-->
+                                <span></span>
+                            </div>
+                            <!-- 價格 -->
+                            <div class="dishPrice">
+                                NTD 199
+                            </div>
+                        </div>
+                        <div class="_img">
+                            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/storehold/detail/specialMenuImg2_200_200.png" alt="">
+                            <!-- 開啟詳細介紹 -->
+                            <div class="openDetailLibox">
+                                <p>DETAIL 詳細介紹</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="experience">
+                <div class="_title">
+                    <h2>experience</h2>
+                    <h5>店內體驗</h5>
+                </div>
+                <div class="_text">
+                    <p>薄多義公益店共有三層，每一層皆有不同的設計，一樓是地中海風格的裝潢，適合家庭、多人聚餐，二樓則有各式情境包廂座位，每一間都有特別的主題，在品嘗美食的時候能處處發覺薄多義挑選擺適的用心，三樓則是具有溫度感的鄉村風格座位，大量的乾燥花最適合拍照取景，另提供戶外座位使用。</p>
+                </div>
+            </section>
+            <section class="imgSlick">
+                <ul>
+                    <li>
+                        <!-- 後端請注意:圖片上面的hover icon 要讓客戶可以選 請在 _img 上加上相對應的class 1.fb 2.Ig -->
+                        <div class="_img fb">
+                            <!-- 圖片建議大小440*570以內 -->
+                            <img src="../../upload/fa2/storehold/detail/imgSlickImg1_440_570.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img Ig">
+                            <img src="../../upload/fa2/storehold/detail/imgSlickImg2_440_350.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img fb">
+                            <img src="../../upload/fa2/storehold/detail/imgSlickImg3_440_460.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img Ig">
+                            <img src="../../upload/fa2/storehold/detail/imgSlickImg4_440_390jpg.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="_img fb">
+                            <img src="../../upload/fa2/storehold/detail/imgSlickImg5_440_510pg.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="next">
+                <div class="goTop">
+                    <span></span>
+                </div>
+                <a href="../reservation/index.html">
+                    <div class="_text">
+                        <p>right now</p>
+                        <h2>reservation</h2>
+                        <h3>立即預約</h3>
+                    </div>
+                </a>
+            </section>
+        </article>
+    </main>
+    <script src="../../assets/js/style.js"></script>
+</body>
+</html>

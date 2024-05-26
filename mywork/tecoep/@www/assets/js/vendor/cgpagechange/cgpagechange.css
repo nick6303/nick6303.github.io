@@ -1,0 +1,232 @@
+/*----- cgpagechange A -----*/
+
+
+/*轉場*/
+
+#endbg {
+    width: 100vw;
+    height: 110vh;
+    position: fixed;
+    z-index: 1111111;
+    top: -12px;
+    left: 0;
+}
+
+#endbg .box1 {
+    width: 100%;
+    height: 33.33%;
+    background-color: #fff;
+    margin-top: -1px;
+    animation: blockIn 1s both;
+}
+
+#endbg .box2 {
+    width: 100%;
+    height: 12.5%;
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+#endbg .box2 .smallbox {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+#endbg .box2:nth-child(odd) .smallbox {
+    animation: test1 1s both;
+}
+
+#endbg .box2:nth-child(even) .smallbox {
+    animation: test2 1s both;
+}
+
+.cglogo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    animation: toggleFade 1s both .8s;
+}
+
+@keyframes toggleFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+
+@keyframes test1 {
+    0% {
+        transform: translateY(-100%);
+        clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 0%);
+    }
+    100% {
+        clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes test2 {
+    0% {
+        transform: translateY(-100%);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes blockIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+
+
+/*進場*/
+
+#startbg {
+    width: 100vw;
+    height: 110vh;
+    position: fixed;
+    z-index: 1111111;
+    top: -12px;
+    left: 0;
+}
+
+#startbg .box1 {
+    width: 100%;
+    height: 33.33%;
+    margin-top: -1px;
+    background-color: #fff;
+    animation: blockOut 1s both;
+}
+
+#startbg .box2 {
+    width: 100%;
+    height: 12.5%;
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+#startbg .box2 .smallbox {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+#startbg .box2:nth-child(odd) .smallbox {
+    animation: test1-1 .8s both;
+}
+
+#startbg .box2:nth-child(even) .smallbox {
+    animation: test2-1 .8s both;
+}
+
+
+@keyframes test1-1 {
+    0% {
+        clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+    100% {
+        transform: translateY(100%);
+        clip-path: polygon(0% 100%, 100% 0, 100% 100%, 0% 0%);
+    }
+}
+
+@keyframes test2-1 {
+    0% {
+        clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+    100% {
+        transform: translateY(100%);
+        clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 0%);
+    }
+}
+
+
+
+@keyframes blockOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+/*******************************************/
+
+
+/*                                         */
+
+
+/*              cgpagechange B             */
+
+
+/*                偽燈箱動畫               */
+
+
+/*                                         */
+
+
+/*******************************************/
+
+.fakeLiboxOpen {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: #fff;
+    animation: fakeLiboxOpen 1s both;
+}
+
+@keyframes fakeLiboxOpen {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.fakeLiboxClose {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: #fff;
+    animation: fakeLiboxClose .8s both;
+}
+
+@keyframes fakeLiboxClose {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}

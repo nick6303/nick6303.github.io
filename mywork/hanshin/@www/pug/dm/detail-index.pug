@@ -1,0 +1,242 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"電子型錄",
+            link:"../dm/index.html"},
+        {
+            title:"斜槓進行式  Sale流行品最後折扣",
+            link:"../dm/detail-index.html"},
+    ]
+
+    var unit = [
+        {
+            title:"型錄首頁",
+            link:"../dm/detail-index.html"},
+        {
+            title:"美妝主打星",
+            link:"../dm/detail-unit.html"},
+        {
+            title:"名品珠寶",
+            link:"../dm/detail-unit.html"},
+        {
+            title:"春漾家居 ",
+            link:"../dm/detail-unit.html"},
+        {
+            title:"春食饗宴",
+            link:"../dm/detail-unit.html"},
+        {
+            title:"聯合特賣",
+            link:"../dm/detail-unit.html"},
+        {
+            title:"摩登行頭",
+            link:"../dm/detail-unit.html"},
+        {
+            title:"本期全部產品",
+            link:"../dm/detail-all.html"},
+    ]
+
+    var commercial =[
+        {
+            className: "big",
+            img:"../../upload/fa2/dm/detail-index/commercialBigImg_1130_530.jpg"},
+        {
+            className: "small",
+            img:"../../upload/fa2/dm/detail-index/commercialSmallImg_555_410.jpg"},
+        {
+            className: "small",
+            img:"../../upload/fa2/dm/detail-index/commercialSmallImg2_555_410.jpg"},
+        {
+            className: "big",
+            img:"../../upload/fa2/dm/detail-index/commercialBigImg2_1130_530.jpg"},
+    ]
+
+    var product = [
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg_230_250.jpg",
+            slogan:"HOT !",
+            sloganBg:"#a13838",
+            name:"MAKE UP FOR EVER 超進化無瑕瞬效保濕精華 12ml",
+            price:["1,400","1,320"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg2_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"kiehl’s 超進化全能精華霜50ml",
+            price:["3,200","2,800"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg3_230_250.jpg",
+            slogan:"HOT !",
+            sloganBg:"#a13838",
+            name:"clinique 無油光三步驟限量組 100ml",
+            price:["1,400","1,320"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg4_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"ANCOME 絕對完美玫瑰潤色護唇膏",
+            price:["1,090"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg5_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"LANCOME 超進化肌因賦活露 30ml",
+            price:["3,590"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg6_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"clinique 無油光三步驟限量組 100ml",
+            price:["1,400","1,320"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg7_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"LANCOME 絕對完美黃金玫瑰鑽白乳霜 50ml",
+            price:["11,590"]},
+        {
+            img:"../../upload/fa2/dm/detail-index/productImg8_230_250.jpg",
+            slogan:"",
+            sloganBg:"",
+            name:"LA MER海洋拉娜 亮眼活膚精華旅行特惠組",
+            price:["12,400","10,320"]},
+    ]
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#dm.detail-index
+    include ../layout/_header.pug
+
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section.cover
+                .left
+                    figure
+                        img(src="../../upload/fa2/dm/detail-index/bannerImg_950_1090.jpg", alt="")
+                .right
+                    ._title
+                        h2 斜槓進行式  Sale流行品最後折扣
+                        p 我是斜槓，自己的生活自己決定 ! 多樣產品最終折扣， 錯過可惜，搭配漢神超級卡，集點更快速。
+                    .inf
+                        .date
+                            .type
+                                p.ch 活動期間
+                                p.en Date
+                            .time
+                                p 2019/03/16(四)～2019/04/17(二)
+                        .share
+                            .type
+                                p.ch 分享
+                                p.en Share to
+                            ul.socialMedia
+                                li
+                                    a(href="javascript:void(0)")
+                                        span.icon-facebook
+                                li
+                                    a(href="javascript:void(0)")
+                                        span.icon-twitter
+                                li
+                                    a(href="javascript:void(0)")
+                                        span.icon-line
+                        .read
+                            .type
+                                p.ch 翻閱本期型錄
+                                p.en Read
+                            a.book(href="../dm/book.html" target="_blank") ENTER
+                        .other
+                            .type
+                                p.ch 觀看其他型錄
+                                p.en Other
+                            .dropDown
+                                .selectMenu
+                                    p 全部類別
+                                ul
+                                    -for(var i = 1;i< 5;i++)
+                                        li 
+                                            a(href="../dm/detail-index.html") 斜槓進行式  Sale流行品最後折扣
+        article.unit
+            ul
+                each val in unit
+                    li(class=(val == unit[0])?"active":"")
+                        a(href=val.link)
+                            p=val.title
+        article.content
+            setion.topTitle
+                .buttons
+                    button.active(type="button")
+                        span.icon-square
+                        p 區塊顯示
+                    button(type="button")
+                        span.icon-list2
+                        p 列表顯示
+            section.commercial
+                //後端請注意:此處有兩種模式
+                    1.大 big (自己一排)
+                    2.小 small (兩個一排)
+                each val in commercial
+                    .box(class=val.className)
+                        a(href="../dm/detail.html")
+                            figure
+                                img.b-lazy(src=blazy data-src=val.img alt="")
+            section.product
+                //區塊顯示
+                .block.active
+                    ul
+                        each val in product
+                            li
+                                a(href="../dm/detail.html")
+                                    figure
+                                        img.b-lazy(src=blazy data-src=val.img , alt="")
+                                    if (val.slogan !=="")
+                                        // 後端請注意: 下方的slogan如果沒有內容的話 請移除
+                                        .slogan(style=("background-color:"+val.sloganBg))
+                                            p=val.slogan
+                                    h6=val.name
+                                    .price
+                                        each item in val.price
+                                            p=(item+"元")
+                .list
+                    ul
+                        each val in product
+                            li
+                                a(href="../dm/detail.html")
+                                    figure
+                                        img.b-lazy(src=blazy data-src=val.img , alt="")
+                                    ._text
+                                        if (val.slogan !=="")
+                                            // 後端請注意: 下方的slogan如果沒有內容的話 請移除
+                                            .slogan(style=("background-color:"+val.sloganBg))
+                                                p=val.slogan
+                                        h6=val.name
+                                        .price
+                                            each item in val.price
+                                                p=(item+"元")
+    
+    include ../layout/_footer.pug
+
++script
+
+
+|
+|
+</html>

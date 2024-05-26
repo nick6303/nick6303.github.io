@@ -1,0 +1,144 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>callbacks.md</title>
+      </head>
+      <body>
+        <hr>
+<p>title: Callbacks - AmplitudeJS Documentation
+meta:</p>
+<ul>
+<li>name: description
+content: Amplitude.js is the HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design a web audio player the way you want it to look.</li>
+<li>name: og:locale
+content: en_US</li>
+<li>name: og:type
+content: website</li>
+<li>name: og:title
+content: Amplitude.js The Open Source HTML5 Audio Player for the Modern Era</li>
+<li>name: og:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look.</li>
+<li>name: og:url
+content: <a href="https://521dimensions.com/open-source/amplitudejs/docs/configuration/callbacks.html">https://521dimensions.com/open-source/amplitudejs/docs/configuration/callbacks.html</a></li>
+<li>name: og:site_name
+content: Amplitude.js</li>
+<li>name: og:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: og:image:width
+content: 1200</li>
+<li>name: og:image:height
+content: 630</li>
+<li>name: twitter:card
+content: summary_large_image</li>
+<li>name: twitter:description
+content: Amplitude.js is the open source HTML5 audio player for the modern era. Using no dependencies, take control of the browser and design an audio player the way you want it to look. Available for free on Github.</li>
+<li>name: twitter:title
+content: Amplitude.js The HTML Audio Player for the Modern Era</li>
+<li>name: twitter:site
+content: &quot;@521dimensions&quot;</li>
+<li>name: twitter:image
+content: <a href="https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png">https://521dimensions.com/img/open-source/amplitudejs/og-image-amplitudejs.png</a></li>
+<li>name: creator
+content: &quot;@521dimensions&quot;</li>
+</ul>
+<hr>
+<h1 id="callbacks">Callbacks</h1>
+<p>There are a variety of callbacks that AmplitudeJS calls at certain times and
+the developer can bind to.</p>
+<table>
+<thead>
+<tr>
+<th>Callback</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>before_play</td>
+<td>Occurs before the play method is called</td>
+</tr>
+<tr>
+<td>after_play</td>
+<td>Occurs after the play method is called</td>
+</tr>
+<tr>
+<td>before_stop</td>
+<td>Occurs before the stop method is called</td>
+</tr>
+<tr>
+<td>after_stop</td>
+<td>Occurs after the stop method is called</td>
+</tr>
+<tr>
+<td>time_update</td>
+<td>Occurs when the time has updated</td>
+</tr>
+<tr>
+<td>album_change</td>
+<td>Occurs when an album changes</td>
+</tr>
+<tr>
+<td>song_change</td>
+<td>Occurs when a song has been changed</td>
+</tr>
+<tr>
+<td>time_updated</td>
+<td>Occurs when the current song time has been updated</td>
+</tr>
+<tr>
+<td>playlist_changed</td>
+<td>Occurs when the active playlist has changed</td>
+</tr>
+<tr>
+<td>song_repeated</td>
+<td>Occurs when the now playing song has been repeated</td>
+</tr>
+</tbody>
+</table>
+<p>To bind to a callback you add a function to your callbacks object with the key
+of one of the callbacks listed above. That key will be a function. When the
+callback is called, the function the user passes will be run. For example,
+after the user clicks play we want to increase the play count. I&#39;d set up a
+callback that has a method to increase the play count:</p>
+<pre><code class="lang-javascript">var playCount = 0;
+
+Amplitude.init({
+         &quot;songs&quot;: [
+                 {
+                         &quot;name&quot;: &quot;Song Name 1&quot;,
+                         &quot;artist&quot;: &quot;Artist Name&quot;,
+                         &quot;album&quot;: &quot;Album Name&quot;,
+                         &quot;url&quot;: &quot;/song/url.mp3&quot;,
+                         &quot;cover_art_url&quot;: &quot;/cover/art/url.jpg&quot;
+                 },
+                 {
+                         &quot;name&quot;: &quot;Song Name 2&quot;,
+                         &quot;artist&quot;: &quot;Artist Name&quot;,
+                         &quot;album&quot;: &quot;Album Name&quot;,
+                         &quot;url&quot;: &quot;/song/url.mp3&quot;,
+                         &quot;cover_art_url&quot;: &quot;/cover/art/url.jpg&quot;
+                 },
+                 {
+                         &quot;name&quot;: &quot;Song Name 3&quot;,
+                         &quot;artist&quot;: &quot;Artist Name&quot;,
+                         &quot;album&quot;: &quot;Album Name&quot;,
+                         &quot;url&quot;: &quot;/song/url.mp3&quot;,
+                         &quot;cover_art_url&quot;: &quot;/cover/art/url.jpg&quot;
+                 }
+         ],
+         &quot;callbacks&quot;: {
+             &#39;after_play&#39;: function(){
+                 playCount++;
+                 alert( playCount );
+             }
+         }
+ });
+</code></pre>
+<p>Every time the play button is called, the song will begin to play and after
+all the code has been run, the callback will increase the play count.</p>
+<p>The &#39;time_update&#39; callback is super helpful because this gets triggered when
+the song time updates. This can be used to call other AmplitudeJS events such
+as song played percentage and set 3rd party visualizations.</p>
+
+      </body>
+    </html>

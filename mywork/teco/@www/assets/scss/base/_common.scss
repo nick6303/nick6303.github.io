@@ -1,0 +1,2303 @@
+/* 自訂的css*/
+
+div.datedropper {
+    font-family: 'CenturyGothic', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif;
+
+}
+
+
+@import "_variable.scss";
+
+main#customize .p_top:not(:first-child) {
+    padding-top: 0;
+    transition: 0;
+}
+
+
+#member {
+    .topTitle {
+        margin-top: 130px;
+        text-align: center;
+        @include flex-center;
+        flex-direction: column;
+        padding: 0 50px;
+
+        @media all and(max-width: 1024px) {
+            padding: 0 5vw;
+        }
+
+        @media all and (max-width: 900px) {
+            margin-top: 80px;
+            padding: 0;
+        }
+
+        .en {
+            @include title_en;
+            animation: fadeInDown 1.2s both .3s;
+        }
+
+        .ch {
+            @include title_ch;
+            animation: fadeInDown 1s both 0.5s;
+        }
+
+        div {
+            @include flex-center;
+            max-width: 100%;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            margin-top: 35px;
+            animation: fadeInDown 1s both 0.8s;
+
+            .ps__rail-x,
+            .ps__rail-y {
+                display: none !important;
+            }
+
+            li {
+                padding: 0 20px;
+                position: relative;
+
+                &>* {
+                    padding: 10px 0;
+                    position: relative;
+                    @include font-size(14);
+                    white-space: nowrap;
+                    display: block;
+
+                    &:after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        @include fakeLine(0%, 2px, #000);
+                        transition: all .4s ease;
+                    }
+                }
+
+                &:not(:first-child):before {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    @include fakeLine(2px, 16px, #e7e7e7);
+                }
+            }
+
+            @media all and (min-width:1025px) {
+                &:hover li.active>*:after {
+                    width: 0;
+                }
+
+                &:hover li.active:hover>*:after,
+                li:hover>*:after {
+                    width: 100%;
+                }
+            }
+
+            li.active>*:after {
+                width: 100%;
+                animation: horizontalShow 1s both 1.2s;
+            }
+        }
+    }
+}
+
+
+button.withLine,
+a.withLine {
+    @include flex-center;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    padding: 0 10px 8px 10px;
+    margin: 0 10px;
+    transition: all .4s ease;
+    @include font-size(14);
+
+    span {
+        margin-right: 10px;
+        animation: fadeInUp .8s both 1.6s;
+        opacity: 0;
+
+        &.iconN-hook {
+            @include font-size(12);
+        }
+    }
+
+    p {
+        opacity: 0;
+        animation: fadeInUp .8s both 1.6s;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &:before {
+        @include fakeLine(100%, 1px, #000);
+        transition: all .6s ease;
+        animation: horizontalShow 1.2s both 1.2s;
+        clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+        -ms-animation: fadeIn 1s both 1.2s;
+    }
+
+    &:after {
+        @include fakeLine(0%, 1px, #000);
+    }
+
+    &:hover {
+        &:before {
+            transition: all 0s ease;
+            width: 0;
+        }
+
+        &:after {
+            animation: navmeun 1.2s ease infinite;
+        }
+    }
+}
+
+
+
+.topNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    @include flex-right;
+    padding: 5vh 4vw 0 4vw;
+    z-index: 1;
+
+    @media all and (min-width: 1921px) {
+        padding: 6vh 75px 0 75px;
+    }
+
+    @media all and (max-height: 850px) {
+        padding: 4vh 30px 0 30px;
+    }
+
+    @media all and (max-width: 700px) {
+        padding: 25px 15px 0 15px;
+    }
+
+    @media all and (max-width: 350px) {
+        padding: 20px 10px 0 10px;
+    }
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include fakeLine(100%, 5px, $base_blue);
+        box-shadow: 0 0 80px 40px #fff;
+
+        @media all and (max-width: 700px) {
+            box-shadow: 0 0 40px 20px #fff;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include fakeLine(100%, 1px, rgba(92, 92, 92, .2));
+        animation: fadeIn 2s both .8s;
+    }
+
+    .back {
+        padding: 0 8px 10px 8px;
+        position: relative;
+        @include font-size(12);
+        font-family: 'CenturyGothic-Bold';
+        @include flex-center;
+        cursor: pointer;
+        animation: navdown 1.2s forwards;
+
+        span {
+            @include cross(14px, 14px);
+            display: block;
+            transform: rotate(45deg);
+            margin-right: 12px;
+
+            &:before {
+                @include cross_before(100%, #2b2b2b);
+            }
+
+            &:after {
+                @include cross_after(100%, #2b2b2b);
+            }
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:before {
+            transition: all .6s ease;
+            @include fakeLine(100%, 2px, #000);
+            animation: horizontalShow 1.2s both;
+        }
+
+        &:after {
+            @include fakeLine(0%, 2px, #000);
+        }
+
+        &:hover {
+            &:before {
+                width: 0;
+                transition: all 0s ease;
+            }
+
+            &:after {
+                animation: navmeun 1.2s ease infinite;
+            }
+        }
+    }
+}
+
+
+
+.customizeOrderLibox {
+    @include basicLibox;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.8);
+    @include flex-center;
+    animation: fadeIn .7s both;
+
+    @media all and (max-width: 1050px) {
+        background-color: #fff;
+    }
+
+    &.close {
+        animation: fadeOut .4s both;
+    }
+
+    section {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 1050px;
+        width: 100%;
+        max-height: 100vh;
+        padding: 100px 50px;
+        position: relative;
+        overflow-y: auto;
+
+        @media all and (max-width: 1050px) {
+            position: static;
+        }
+
+        @media all and (max-width: 700px) {
+            padding: 100px 5vw;
+        }
+
+        .topNav {
+            position: absolute;
+            width: auto;
+            top: 0;
+            left: auto;
+            right: 0;
+            padding: 20px 40px 0 40px;
+
+            @media all and (max-width: 700px) {
+                padding: 20px 5vw 0 5vw;
+            }
+
+            &:before,
+            &:after {
+                display: none;
+            }
+
+            .back {
+                color: #000;
+            }
+        }
+
+        ._img {
+            max-height: 240px;
+            max-width: 240px;
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        ._title {
+            margin-top: 20px;
+            text-align: center;
+
+            .en {
+                @include font-size(22);
+            }
+
+            .ch {
+                @include font-size(16);
+                font-weight: bold;
+            }
+        }
+
+        ul,
+        .totalPrice {
+            max-width: 520px;
+            width: 100%;
+            padding-left: 90px;
+            padding-right: 60px;
+
+            @media all and (max-width: 700px) {
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+        }
+
+        ul {
+            margin-top: 30px;
+            position: relative;
+            padding-top: 15px;
+            padding-bottom: 20px;
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include fakeLine(100%, 1px, #e8e6e6);
+            }
+
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                @include fakeLine(100%, 4px, #545454);
+            }
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin: 10px 0;
+
+                p {
+                    @include font-size(14);
+
+                    &.name {
+                        position: relative;
+                        max-width: calc(100% - 90px);
+
+                        &:before {
+                            position: absolute;
+                            top: 0;
+                            left: -10px;
+                            content: "╴";
+                            font-weight: bold;
+                        }
+                    }
+
+                    &.price {
+                        max-width: 90px;
+                        text-align: right;
+                        &:before {
+                            content: "$";
+                        }
+                    }
+                }
+            }
+        }
+
+        .totalPrice {
+            @include flex-space-between;
+            margin-top: 15px;
+
+            p {
+                @include font-size(14);
+            }
+
+            .numb {
+                @include font-size(16);
+                font-family: 'CenturyGothic-Bold';
+                &:before{
+                    content: "$";
+                }
+            }
+        }
+    }
+}
+
+
+
+.sureLibox {
+    position: absolute;
+    display: none;
+    top: calc(100% + 10px);
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1;
+    animation: fadeIn .4s both;
+
+    @media all and (max-width: 900px) {
+        right: 0;
+        transform: translateX(0);
+    }
+
+    &.close {
+        animation: fadeOut .4s both;
+    }
+
+    div {
+        background-color: #fff;
+        box-shadow: 0 0 7px 3px rgba(0, 0, 0, .35);
+        padding: 15px 0 5px 0;
+        @include flex-center;
+        flex-wrap: wrap;
+        width: 120px;
+
+        p {
+            @include font-size(13);
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            margin: 10px 10px 0;
+
+            &.no {
+                padding: 5px 0;
+
+                i {
+                    display: block;
+                    transform: rotate(45deg);
+                    @include cross(22px, 22px);
+
+                    &:before {
+                        @include cross_before(100%, #000)
+                    }
+
+                    &:after {
+                        @include cross_after(100%, #000)
+                    }
+                }
+            }
+
+            &.yes {
+                @include font-size(14);
+                padding: 8px 0;
+            }
+        }
+    }
+}
+
+
+
+.amount {
+    @include flex-center;
+    @include font-size(16);
+    font-family: 'CenturyGothic-Bold';
+
+    input {
+        width: auto;
+        border: none;
+        width: 20px;
+        text-align: center;
+        @include font-size(16);
+        background-color: transparent;
+        font-family: 'CenturyGothic-Bold';
+
+        @media all and (max-width: 600px) {
+            width: 100%;
+            display: block;
+            padding: 5px;
+            border: .1rem solid #e6e6e6;
+            border-radius: .4rem;
+            box-shadow: 0 2px 2px #e6e6e6 inset;
+        }
+    }
+
+    button {
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: relative;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+
+        @media all and (max-width: 600px) {
+            display: none;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.decrease {
+            &:after {
+                @include fakeLine(10px, 2px, #999999);
+            }
+        }
+
+        &.add {
+            &:before {
+                @include fakeLine(2px, 10px, #999999);
+            }
+
+            &:after {
+                @include fakeLine(10px, 2px, #999999);
+            }
+        }
+    }
+}
+
+#shop,
+#member {
+    .show .listhead {
+
+        .en,
+        .ch {
+            animation: fadeInUp 1s both 0.6s;
+        }
+
+        &:after {
+            animation: w100 1s both .4s;
+        }
+    }
+
+    .listhead {
+        @include flex-space-between;
+        padding-bottom: 20px;
+        position: relative;
+        padding-left: 2vw;
+        padding-right: 7vw;
+
+        @media all and (min-width: 1921px) {
+            padding-left: 45px;
+            padding-right: 140px;
+        }
+
+        @media all and (max-width: 1024px) {
+            padding-left: 10px;
+            padding-right: 70px;
+        }
+
+        @media all and (max-width: 600px) {
+            padding-left: 10px;
+            padding-right: 10px;
+            justify-content: center;
+        }
+
+
+
+        div {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            white-space: nowrap;
+
+            @media all and (max-width: 600px) {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+
+        .en {
+            @include font-size(16);
+            color: #868686;
+            opacity: 0;
+        }
+
+        .ch {
+            @include font-size(18);
+            font-weight: bold;
+            margin-left: 15px;
+            opacity: 0;
+        }
+
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @include fakeLine(0%, 4px, #000);
+        }
+    }
+}
+
+#shop {
+    display: flex;
+    position: relative;
+
+    @media all and (max-width: 1024px) {
+        flex-direction: column;
+        padding-bottom: 200px;
+    }
+
+    .orderDetail {
+        background-color: #ebebeb;
+        @include flex-center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 100vw;
+        transform: translateX(-100%);
+        z-index: 1;
+        max-height: 100vh;
+        height: 100%;
+        max-width: 460px;
+        width: 25%;
+        padding: 0 50px;
+        padding-top: 110px !important;
+
+        @media all and (max-width: 1440px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @media all and (max-width: 1024px) {
+            position: fixed;
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            max-width: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0 calc(5vw + 10px);
+            padding-top: 20px !important;
+            padding-bottom: 20px;
+        }
+
+        @media all and (max-width: 350px) {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+
+        &.bottom {
+            position: absolute;
+            top: auto;
+            bottom: 0;
+
+            @media all and (max-width: 1024px) {
+                .buttons {
+                    margin-top: 40px;
+                    height: 85px;
+                }
+            }
+
+            @media all and (max-width: 600px) {
+                .buttons {
+                    margin-top: 25px;
+                }
+            }
+        }
+
+        ._title {
+            @include flex-center;
+            max-width: 330px;
+            width: 100%;
+            position: relative;
+            padding: 0 0 20px 0;
+
+            @media all and (max-width: 1150px) and (min-width: 1025px) {
+                flex-direction: column;
+            }
+
+            @media all and (max-width: 1024px) {
+                max-width: none;
+                width: 50%;
+                padding: 0;
+                justify-content: flex-start;
+            }
+
+            @media all and (max-width: 600px) {
+                width: 100%; // justify-content: center;
+            }
+
+            .en {
+                @include font-size(16);
+                animation: fadeInUp 1s both 1s;
+
+                @media all and (max-width: 1300px) {
+                    @include font-size(15);
+                }
+
+                @media all and (max-width: 1200px) {
+                    @include font-size(14);
+                }
+            }
+
+            .ch {
+                @include font-size(18);
+                margin-left: 15px;
+                animation: fadeInUp 1s both 1s;
+
+                @media all and (max-width: 1300px) {
+                    @include font-size(16);
+                    margin-left: 10px;
+                }
+
+                @media all and (max-width: 1200px) {
+                    @include font-size(14);
+                }
+
+                @media all and (max-width: 1150px) and (min-width: 1025px) {
+                    margin-left: 0;
+                }
+            }
+
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                @include fakeLine(0%, 4px, #000);
+                animation: w100 1s both .6s;
+
+                @media all and (max-width: 1024px) {
+                    display: none;
+                }
+            }
+        }
+
+        .totalPrice {
+            @include flex-center;
+            padding: 40px 0 0 0;
+            overflow: hidden;
+
+            @media all and (max-width: 1200px) and (min-width: 1025px) {
+                flex-direction: column;
+                padding: 30px 0 0 0;
+            }
+
+            @media all and (max-width: 1024px) {
+                padding: 0;
+                width: 50%;
+                justify-content: flex-end;
+            }
+
+            @media all and (max-width: 600px) {
+                width: 100%;
+                padding: 10px 0 0 0;
+                justify-content: space-between;
+            }
+
+            p {
+                font-weight: bold;
+                @include font-size(18);
+                animation: fadeInDown 1s both 1s;
+
+                @media all and (max-width: 1300px) {
+                    @include font-size(16);
+                }
+            }
+
+            .numb {
+                @include font-size(40);
+                font-family: 'CenturyGothic-Bold';
+                margin-left: 40px;
+                animation: slideInUp 1s both 1s;
+
+                @media all and (max-width: 1500px) {
+                    margin-left: 30px;
+                    @include font-size(36);
+                }
+
+                @media all and (max-width: 1400px) {
+                    @include font-size(32);
+                    margin-left: 20px;
+                }
+
+                @media all and (max-width: 1300px) {
+                    @include font-size(28);
+                }
+
+                @media all and (max-width: 1200px) and (min-width: 1025px) {
+                    margin-left: 0px;
+                    margin-top: 5px;
+                }
+
+                @media all and (max-width: 350px) {
+                    @include font-size(24);
+                }
+                &:before{
+                    content: "$";
+                }
+            }
+
+            button {
+                width: 30px;
+                height: 30px;
+                border: 1px solid #000;
+                border-radius: 50%;
+                background-color: transparent;
+                margin-left: 20px;
+                @include flex-center;
+                animation: fadeInDown 1s both 1s;
+
+                @media all and (min-width: 1025px) {
+                    display: none;
+                }
+
+                span {
+                    @include cross(12px, 12px);
+
+                    &:before {
+                        @include cross_before(100%, #000);
+                    }
+
+                    &:after {
+                        transition: all 0.8s ease;
+                        @include cross_after(100%, #000);
+                    }
+                }
+
+                &.active {
+                    span:after {
+                        height: 0;
+                    }
+                }
+            }
+        }
+
+        .others {
+            max-width: 330px;
+            width: 100%;
+            counter-reset: other;
+
+            @media all and (max-width: 1024px) {
+                max-width: none;
+            }
+
+            div {
+                padding: 10px 25px 0 25px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                overflow: hidden;
+                position: relative;
+                counter-increment: other;
+
+                @media all and (max-height: 730px) and (min-width:1025px) {
+                    padding: 10px 5px 0 5px;
+                }
+
+                @media all and (max-width: 600px) {
+                    padding: 10px 10px 0 10px;
+                }
+
+                @media all and (max-width: 350px) {
+                    padding: 10px 5px 0 5px;
+                }
+
+                p {
+                    @include font-size(16);
+                    font-weight: bold;
+                    color: rgba(0, 0, 0, .8);
+                    padding: 10px 0;
+
+                    @media all and (min-width: 1025px) {
+                        animation: fadeInDown 1s both 1s;
+                    }
+
+                    @media all and (max-height: 730px) and (min-width:1025px) and (max-width:1279px) {
+                        max-width: calc(100% - 110px);
+                    }
+
+                    &:before {
+                        content: "0"counter(other);
+                        font-family: 'CenturyGothic-Bold';
+                        color: #555555;
+                        margin-right: 5px;
+                    }
+                }
+
+                .numb {
+                    @include font-size(20);
+                    font-family: 'CenturyGothic-Bold';
+                    color: rgba(0, 0, 0, .6);
+                    min-width: 100px;
+                    text-align: right;
+                    margin-left: auto;
+                    margin-right: 0;
+                    padding: 10px 0;
+
+                    @media all and (min-width: 1025px) {
+                        animation: slideInUp 1s both 1s;
+                    }
+                    
+                }
+
+                &.gift {
+                    margin-top: 35px;
+                    padding-top: 20px;
+
+                    @media all and (max-height: 730px) and (min-width:1025px) and (max-width:1279px) {
+                        margin-top: 20px;
+                        padding-top: 10px;
+                    }
+
+                    @media all and (max-width: 600px) {
+                        margin-top: 20px;
+                        padding-top: 10px;
+                    }
+
+                    &:before {
+                        @include fakeLine(0%, 1px, #000);
+                        position: absolute;
+                        top: 0%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        animation: w100 1s both .6s;
+
+                        @media all and (max-width: 1024px) {
+                            width: 0;
+                            animation: w0 .5s both;
+                        }
+                    }
+                    .numb:before{
+                        content: "$";
+                    }
+
+                    &.active {
+                        &:before {
+                            animation: w100 1s both .2s;
+                        }
+                    }
+                }
+                &.purchase .numb:before{
+                    content: "+$";
+                }
+                &.discount .numb:before{
+                    content: "-$";
+                }
+            }
+        }
+
+        .buttons {
+            @include flex-center;
+            margin-top: 70px;
+            overflow: hidden;
+
+            @media all and (max-height: 700px) and (min-width: 1025px) {
+                margin-top: 40px;
+            }
+
+            @media all and (max-width: 1024px) {
+                transition: all 0.8s ease;
+                margin-top: 0;
+                height: 0;
+            }
+
+            a {
+                width: 100px;
+                height: 100px;
+                @include flex-center;
+                flex-direction: column;
+                border: 8px solid #b0b0b0;
+                border-radius: 50%;
+                margin: 0 1.3vw;
+                animation: fadeIn 1.4s both 1.2s;
+                position: relative;
+
+                @media all and (min-width: 1921px) {
+                    margin: 0 25px;
+                }
+
+                @media all and (max-width: 1150px) {
+                    width: 85px;
+                    height: 85px;
+                }
+
+                @media all and (max-width: 600px) {
+                    margin: 0 5vw;
+                    border: 6px solid #b0b0b0;
+                }
+
+                &:hover b {
+                    animation: radar 0.4s both;
+                    animation-timing-function: linear;
+                }
+
+                b {
+                    position: absolute;
+                    display: block;
+                    width: calc(100% + 16px);
+                    height: calc(100% + 16px);
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                    border: 8px solid #313131;
+                    clip-path: polygon(50% 50%, 0% 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+                    animation: radarReverse 0.4s both;
+                    animation-timing-function: linear;
+                }
+
+                p {
+                    @include font-size(14);
+                    font-weight: bold;
+                    margin-top: 3px;
+
+                    @media all and (max-width: 1150px) {
+                        @include font-size(12);
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+}
+
+
+.dropDown {
+    position: relative;
+    display: block;
+
+    .selectMenu {
+        @include flex-center;
+        cursor: pointer;
+
+        b {
+            @include cross(8px, 8px);
+            display: block;
+            margin-left: 5px;
+
+            &:before {
+                @include cross_before(100%, #545454);
+            }
+
+            &:after {
+                @include cross_after(100%, #545454);
+            }
+        }
+    }
+
+    ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: none;
+        z-index: 10;
+        max-height: 200px;
+        overflow: hidden;
+        background-color: #000;
+        color: #fff;
+
+        .mCSB_scrollTools {
+            width: 6px;
+
+            .mCSB_dragger .mCSB_dragger_bar {
+                width: 3px;
+            }
+        }
+
+        li {
+            padding: 5px 10px;
+            @include flex-center;
+            @include font-size(14);
+            cursor: pointer;
+            transition: all .4s ease;
+            line-height: 2;
+
+            &:first-child {
+                padding-top: 10px;
+            }
+
+            &:last-child {
+                padding-bottom: 10px;
+            }
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+}
+
+
+.afterPay {
+    @include basicLibox;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 100;
+    padding-top: 0 !important;
+    animation: fadeIn .4s both;
+
+    @media all and (max-width: 800px) {
+        background-color: #fff;
+    }
+
+    &.complete,
+    &.unchecked {
+        display: flex;
+    }
+
+    &.complete .complete,
+    &.unchecked .unchecked {
+        display: block;
+    }
+
+    section {
+        max-height: 100vh;
+        max-width: 800px;
+        width: 100%;
+        background-color: #fff;
+        padding: 60px 50px;
+        text-align: center;
+        overflow-y: auto;
+        display: none;
+
+        @media all and (max-width: 1024px) {
+            padding: 60px 5vw;
+        }
+
+        .title {
+            span {
+                @include libox_title_span;
+
+                &.iconN-gift:before {
+                    animation: fadeInDown 1s both .5s;
+                }
+
+                &.iconN-pay:before {
+                    animation: fadeInUp 1s both .4s;
+                }
+            }
+
+            .en {
+                @include libox_title_en;
+            }
+
+            .ch {
+                @include libox_title_ch;
+            }
+        }
+
+        .words {
+            margin: auto;
+            margin-top: 30px;
+            max-width: 500px;
+            @include font-size(16);
+            animation: fadeInUp 1s both 1s;
+        }
+
+        .buttons {
+            @include flex-center;
+            margin-top: 60px;
+
+            a {
+                position: relative;
+                padding: 0 10px 5px 10px;
+                @include flex-center;
+                cursor: pointer;
+                color: rgba(0, 0, 0, 1);
+                font-family: CenturyGothic, 微軟正黑體;
+                margin: 0 10px;
+
+                span {
+                    margin-right: 10px;
+                    animation: fadeInUp .8s both 1.6s;
+                }
+
+                p {
+                    @include font-size(14);
+                    animation: fadeInUp .8s both 1.6s;
+                }
+
+                &:before,
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &:before {
+                    @include fakeLine(100%, 1px, #000);
+                    transition: all .6s ease;
+                    animation: horizontalShow 1.2s both 1.2s;
+                }
+
+                &:after {
+                    @include fakeLine(0%, 1px, #000);
+                }
+
+                &:hover {
+                    &:before {
+                        transition: all 0s ease;
+                        width: 0;
+                    }
+
+                    &:after {
+                        animation: navmeun 1.2s ease infinite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+.loading {
+    @include basicLibox;
+    @include flex-center;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 100;
+    padding-top: 0 !important;
+    animation: fadeIn .4s both;
+
+    @media all and (max-width: 800px) {
+        background-color: #fff;
+    }
+
+    section {
+        max-height: 100vh;
+        max-width: 660px;
+        width: 100%;
+        background-color: #fff;
+        padding: 80px 50px 100px 50px;
+        text-align: center;
+        overflow-y: auto;
+
+        .title {
+            @include flex-center;
+            flex-direction: column;
+
+            span {
+                @include libox_title_span(42);
+                position: relative;
+                padding: 5px 5px 0 0;
+                overflow: hidden;
+                animation: fadeIn 1s both .3s;
+
+                &:before {
+                    @include font-size(42);
+                    font-weight: bold;
+                    animation: fadeInLeft 1s both .5s;
+                    display: block;
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    animation: rolling 1s infinite;
+                    animation-timing-function: linear;
+                }
+            }
+
+            .en {
+                @include libox_title_en;
+            }
+
+            .ch {
+                @include libox_title_ch;
+            }
+        }
+
+        .words {
+            margin: auto;
+            margin-top: 30px;
+            max-width: 500px;
+            @include font-size(16);
+            animation: fadeInUp 1s both 1s;
+            @include flex-center;
+
+            p {
+                position: relative;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    animation: wordsBefore 1.2s infinite;
+                }
+            }
+        }
+    }
+}
+
+@keyframes wordsBefore {
+    0% {
+        content: ""
+    }
+
+    33% {
+        content: "."
+    }
+
+    66% {
+        content: ".."
+    }
+
+    100% {
+        content: "..."
+    }
+}
+
+
+
+
+.forgetLibox,
+.verifyLibox,
+.infManageLibox {
+    @include basicLibox;
+    z-index: 100;
+    background-color: rgba(37, 37, 37, .97);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding-top: 0 !important;
+
+    &.open {
+        display: flex;
+        animation: fadeIn .4s both;
+    }
+
+    &.close {
+        display: flex;
+        animation: fadeOut .4s both;
+    }
+
+    .topNav {
+
+        &:before,
+        &:after {
+            display: none;
+        }
+
+        .back {
+            color: #fff;
+
+            &:before,
+            &:after,
+            span:before,
+            span:after {
+                background-color: #fff;
+            }
+        }
+    }
+
+    section:not(.topNav) {
+
+        color: #fff;
+        display: none;
+        align-items: center;
+        flex-direction: column;
+        padding: 70px 50px;
+        overflow-y: auto;
+        max-height: 100%;
+
+        @media all and (max-width: 1024px) {
+            padding: 60px 5vw;
+        }
+
+        &.active {
+            display: flex;
+        }
+
+        &.close {
+            display: flex;
+
+            ._title .en,
+            ._title .ch,
+            .words,
+            .buttons {
+                animation: fadeOutUp 0.4s both;
+            }
+        }
+
+        ._title {
+            text-align: center;
+
+            .en {
+                @include title_en("CenturyGothic-Bold", normal, #fff);
+                animation: fadeInUp 1s both 0.4s;
+            }
+
+            .ch {
+                @include title_ch;
+                color: #fff;
+                animation: fadeInUp 1s both 0.6s;
+            }
+        }
+
+        .words {
+            text-align: center;
+            max-width: 530px;
+            width: 100%;
+            margin-top: 40px;
+            @include font-size(14);
+            animation: fadeInUp 1s both 0.8s;
+        }
+
+        form {
+            @include font-size(14);
+            margin-top: 45px;
+            width: 100%;
+
+            input {
+                background-color: transparent;
+            }
+        }
+
+        .buttons {
+            @include flex-center;
+            margin-top: 60px;
+            @include font-size(14);
+
+            a,
+            button {
+                @include flex-center;
+                border: none;
+                background-color: transparent;
+                color: #fff;
+
+                &:before,
+                &:after {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &.findPassowrd {
+            &.close {
+                .inputBox {
+                    animation: fadeOutUp 0.4s both;
+                }
+            }
+
+            form {
+                max-width: 360px;
+
+                .inputBox {
+                    padding: 15px 20px;
+                    @include flex(flex-start, center);
+                    background-color: #fff;
+                    margin: 3px 0;
+                    position: relative;
+                    animation: fadeInUp 1s both 1s;
+
+                    p {
+                        color: #000;
+                        width: 60px;
+                        margin-right: 40px;
+
+                        @media all and (max-width: 400px) {
+                            margin-right: 20px;
+                        }
+                    }
+
+                    &:not(.code) input {
+                        width: calc(100% - 100px);
+
+                        @media all and (max-width: 400px) {
+                            width: calc(100% - 80px);
+                        }
+                    }
+
+                    &.code {
+                        input {
+                            width: calc(100% - 160px);
+
+                            @media all and (max-width: 400px) {
+                                width: calc(100% - 80px);
+                            }
+                        }
+
+                        div {
+                            width: 60px;
+                            height: 25px;
+                            cursor: pointer;
+
+                            @media all and (max-width: 400px) {
+                                position: absolute;
+                                top: calc(100% + 10px);
+                                right: 5px;
+                            }
+                        }
+                    }
+
+                    input {
+                        border: none;
+                    }
+                }
+            }
+
+            .words {
+                max-width: 360px;
+            }
+        }
+
+        &.verification {
+            &.close {
+
+                form ul,
+                .countUp {
+                    animation: fadeOutUp 0.4s both;
+                }
+            }
+
+            form {
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-top: 25px;
+                    animation: fadeInUp 1s both 1s;
+
+                    li {
+                        width: 65px;
+                        height: 65px;
+                        border: 1px solid #fff;
+                        border-radius: 50%;
+                        @include flex-center;
+                        margin: 0 26px;
+
+                        @media all and (max-width: 700px) {
+                            margin: 0 10px;
+                            width: 50px;
+                            height: 50px;
+                        }
+
+                        @media all and (max-width: 350px) {
+                            margin: 0 5px;
+                        }
+
+                        input {
+                            font-family: 'CenturyGothic-Bold';
+                            @include font-size(40);
+                            background-color: transparent;
+                            border: none;
+                            color: #fff;
+                            text-align: center;
+                            width: 100%;
+
+                            @media all and (max-width: 700px) {
+                                @include font-size(30);
+                            }
+                        }
+                    }
+                }
+
+                .countUp {
+                    @include flex-center;
+                    margin-top: 25px;
+                    color: #ef980e;
+                    @include font-size(18);
+                    animation: fadeInUp 1s both 1s;
+
+                    .minute:after {
+                        content: ":";
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.messageContent {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 70px 50px 120px;
+
+    @media all and (max-width: 1024px) {
+        padding: 70px 5vw 120px;
+    }
+
+    .addMessage {
+        overflow: hidden;
+        position: relative;
+
+        &:after {
+            @include fakeLine(0, 4px, #000);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: w100 .8s both .2s;
+        }
+
+        form {
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 45px 10px 30px 45px;
+            animation: fadeInDown 1.2s both .6s;
+
+            @media all and (max-width: 700px) {
+                padding: 30px 10px 30px 5vw;
+            }
+
+
+            &>div {
+                display: flex;
+                margin-bottom: 20px;
+
+                @media all and (max-width: 700px) {
+                    flex-direction: column;
+                    margin-bottom: 30px;
+                }
+
+                p {
+                    width: 150px;
+                    @include font-size(18);
+                    font-weight: bold;
+                }
+
+                textarea {
+                    @include font-size(14);
+                    font-family: 'CenturyGothic', '微軟正黑體';
+                    font-weight: bold;
+                    border: none;
+                    background-color: transparent;
+                    width: calc(100% - 150px);
+                    line-height: 2;
+                    padding-right: 10px;
+
+                    @media all and (max-width: 700px) {
+                        width: 100%;
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            button {
+                margin: 0 20px 0 auto;
+                @include font-size(12);
+                font-family: 'CenturyGothic-Bold';
+                color: rgba(0, 0, 0, .8);
+
+                &:before,
+                &:after {
+                    height: 2px;
+                }
+            }
+        }
+    }
+
+    .messageList {
+        .subject {
+            padding: 0 25px 15px;
+            position: relative;
+
+            p {
+                @include font-size(18);
+                font-weight: bold;
+                opacity: 0;
+
+                &:before {
+                    margin-right: 15px;
+                    content: attr(data-name);
+                }
+            }
+
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                @include fakeLine(0%, 4px, #000);
+            }
+        }
+
+        ._text {
+            .name {
+                text-transform: uppercase;
+                @include font-size(14);
+                color: #005098;
+                font-family: CenturyGothic-Bold, 微軟正黑體;
+            }
+
+            .words {
+                @include font-size(14);
+                font-family: "微軟正黑體";
+
+                p {
+                    line-height: 1.8;
+                }
+            }
+
+            .date {
+                @include font-size(13);
+                color: #9b9b9b;
+                margin-top: 5px;
+
+                @media all and (max-width: 700px) {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+.billList .list,
+.return .list {
+    max-width: 1330px;
+    margin: auto;
+    padding: 60px 50px 170px;
+    counter-reset: num;
+
+    @media all and (max-width: 1024px) {
+        padding: 60px 5vw 100px;
+    }
+
+    .box {
+        margin: 0 0 10px;
+        background-color: #f7f7f7;
+        @include flex-center;
+        padding: 40px 60px;
+        opacity: 0;
+
+        @media all and (max-width: 1330px) {
+            padding: 40px 4vw;
+        }
+
+        @media all and (max-width: 900px) {
+            flex-direction: column;
+        }
+
+        &.red .dateAndStatus,
+        &.red .nameAndStatus,
+        &.red .numb {
+            color: #cd0001;
+        }
+
+        .numb {
+            width: 10%;
+            font-family: 'CenturyGothic-Bold';
+            @include font-size(25);
+
+            @media all and (max-width: 1024px) {
+                @include font-size(20);
+            }
+
+            @media all and (max-width: 1024px) {
+                width: 7%;
+            }
+
+            @media all and (max-width: 900px) {
+                width: 100%;
+                text-align: center;
+            }
+
+            &:after {
+                content: ".";
+            }
+        }
+
+        .dateAndStatus,
+        .nameAndStatus {
+            padding: 0 20px 0 0;
+
+            @media all and (max-width: 900px) {
+                width: 100%;
+                text-align: center;
+                margin: 15px 0 20px;
+            }
+
+            h6 {
+                font-family: CenturyGothic-Bold, 微軟正黑體;
+                line-height: 1.5;
+            }
+
+            p {
+                @include font-size(14);
+            }
+        }
+
+        .inf {
+            @include font-size(14);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+            padding-right: 20px;
+            word-break: break-all;
+            position: relative;
+
+            @media all and (max-width: 900px) {
+                width: 100%;
+                padding: 10px 0 10px calc(50% + 5vw);
+            }
+
+            @media all and (max-width: 350px) {
+                padding: 10px 0 10px 50%
+            }
+
+            &:before {
+                content: attr(data-name);
+                color: rgba(0, 0, 0, .6);
+                font-weight: bold;
+                margin-bottom: 10px;
+
+                @media all and (max-width: 900px) {
+                    position: absolute;
+                    top: 10px;
+                    left: 15vw;
+                    margin-bottom: 0px;
+                }
+            }
+            p{
+                &:before{
+                    content: "$";
+                }
+            }
+        }
+
+        a {
+            margin: 0;
+            padding: 0 5px 8px;
+
+            @media all and (max-width: 900px) {
+                margin: 30px 0 0;
+            }
+
+            &:before,
+            span,
+            p {
+                animation: none;
+            }
+        }
+
+        &.show {
+            animation: fadeIn 1s both;
+
+            .numb {
+                animation: fadeInDown 1.2s both;
+            }
+
+            .dateAndStatus h6,
+            .nameAndStatus h6,
+            .nameAndStatus p,
+            .dateAndStatus p {
+                animation: fadeInDown 1.2s both .2s;
+            }
+
+            .inf {
+                animation: fadeInDown 1.2s both .4s;
+            }
+
+            a:before {
+                animation: horizontalShow 1.2s both 0.8s;
+            }
+
+            a span,
+            a p {
+                animation: fadeInUp .8s both 1.2s;
+            }
+        }
+    }
+}
+
+.billDetail,
+.returnDetail {
+    .topNav {
+        &:before {
+            box-shadow: none;
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .content {
+        counter-reset: num;
+        max-width: 1230px;
+        margin: auto;
+        padding: 0 50px 160px;
+
+        @media all and (max-width: 1024px) {
+            padding: 0 5vw 160px;
+        }
+
+        @media all and (max-width: 900px) {
+            padding: 0 5vw 100px;
+        }
+
+        section {
+            counter-increment: num;
+            margin-top: 100px;
+
+            &.show {
+                .listhead div:first-child:before {
+                    animation: fadeInUp 1s both 0.6s;
+                }
+
+                &>ul li {
+                    animation: fadeInDown 1.2s both;
+                }
+            }
+
+            &>ul {
+                overflow: hidden;
+
+                li {
+                    opacity: 0;
+                }
+            }
+
+            .listhead {
+                padding-right: 45px !important;
+                padding-left: 60px !important;
+
+                @media all and (max-width: 1279px) {
+                    padding-right: 15px !important;
+                    padding-left: 20px !important;
+                }
+
+                @media all and (max-width: 700px) {
+                    justify-content: center !important;
+                }
+
+                div:first-child:before {
+                    content: "0"counter(num);
+                    display: block;
+                    font-family: 'CenturyGothic-Bold';
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    margin-right: 10px;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .shipping {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+    
+            li {
+                background-color: #f8f8f8;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 35px 60px;
+                width: 50%;
+                text-align: left;
+                border-bottom: 2px solid #fff;
+    
+                @media all and (max-width: 1024px) {
+                    padding: 35px 5vw;
+                }
+    
+                @media all and (max-width: 900px) {
+                    width: 100%;
+                }
+    
+                @media all and (max-width: 700px) {
+                    // padding: 35px 10px;
+                }
+    
+                &:first-child {
+                    padding: 40px 60px 35px;
+    
+                    @media all and (max-width: 1024px) {
+                        padding: 40px 5vw 35px;
+                    }
+    
+                    @media all and (max-width: 700px) {
+                        padding: 35px 10px;
+                    }
+                }
+    
+                h6 {
+                    width: 150px;
+                    @include font-size(18);
+                    line-height: 1.5;
+    
+                    @media all and (max-width: 400px) {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+    
+                div {
+                    width: calc(100% - 150px);
+    
+                    @media all and (max-width: 400px) {
+                        width: 100%;
+                    }
+                }
+    
+                p {
+                    @include font-size(14);
+                    color: rgba(0, 0, 0, .6);
+                    padding: 0 0 5px 0;
+    
+                    &:before {
+                        content: attr(data-name);
+                    }
+                }
+            }
+        }
+    
+        .withLine {
+            margin: 50px auto 0;
+        }
+    }
+    .order {
+        .listhead .price,
+        ul li .price {
+            width: calc(25% - 130px);
+            text-align: right;
+            justify-content: flex-end !important;
+    
+            @media all and (max-width: 1024px) {
+                width: 110px;
+            }
+    
+            @media all and (max-width:700px) {
+                width: calc(100% - 100px);
+            }
+        }
+    
+        .listhead .edit,
+        ul li .edit {
+            width: 130px;
+            text-align: center;
+            margin-left: 5%;
+    
+            @media all and (max-width: 700px) {
+                width: 100%;
+            }
+        }
+    
+        .listhead {
+            @media all and (max-width: 700px) {
+    
+                .edit,
+                .price {
+                    display: none !important;
+                }
+            }
+    
+            .ocerview {
+                width: 70%;
+                justify-content: flex-start !important;
+    
+                @media all and (max-width: 1024px) {
+                    width: calc(95% - 240px);
+                }
+    
+                @media all and (max-width:700px) {
+                    width: 100%;
+                    justify-content: center !important;
+                }
+            }
+        }
+    
+        ul {
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 40px 45px 40px 55px;
+                position: relative;
+    
+                @media all and (max-width: 1279px) {
+                    padding: 40px 15px 40px 20px;
+                }
+    
+                @media all and (max-width: 600px) {
+                    padding: 40px 10px;
+                }
+    
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    @include fakeLine(100%, 1px, #e8e6e6);
+                }
+    
+                ._img {
+                    width: 240px;
+                    @include flex-center;
+    
+                    @media all and (max-width: 1024px) {
+                        display: none;
+                    }
+    
+                    img {
+                        margin: auto;
+                    }
+                }
+    
+                .name {
+                    width: calc(63% - 240px);
+                    padding: 0 20px 0 110px;
+                    @include flex-left;
+    
+                    @media all and (max-width: 1024px) {
+                        width: calc(85% - 240px);
+                        padding: 0 20px 0 0;
+                    }
+    
+                    @media all and (min-width: 1025px) {
+                        &:first-child {
+                            width: 63%;
+                            padding: 0 20px 0 80px;
+                        }
+                    }
+    
+                    @media all and (max-width:700px) {
+                        width: 100%;
+                        padding: 0 0 20px 0;
+                    }
+    
+                    .ps {
+                        color: #005098;
+                        @include font-size(12);
+                        font-weight: bold;
+                        margin-bottom: 15px;
+                        display: none;
+                    }
+    
+                    .openOrder {
+                        display: none;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        margin-bottom: 15px;
+                        p {
+                            color: #005098;
+                            @include font-size(12);
+                            font-weight: bold;
+                            margin-right: 10px;
+                            padding-top: 2px;
+                        }
+    
+                        span {
+                            width: 25px;
+                            height: 25px;
+                            background-color: #005098;
+                            border-radius: 50%;
+                            color: #fff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 0.75rem;
+                            transform: scale(0.8);
+                        }
+                    }
+    
+                    .modelNumb {
+                        font-family: 'CenturyGothic-Bold';
+                        color: rgba(0, 0, 0, 0.6);
+                        font-size: 0.875rem;
+                        line-height: 1.8;
+                    }
+    
+                    .productName {
+                        font-size: 1.125rem;
+                        font-weight: bold;
+                        font-family: "微軟正黑體";
+                        line-height: 1.8;
+                    }
+                }
+    
+                .amount {
+                    width: 7%;
+    
+                    @media all and (max-width: 1024px) {
+                        width: 10%;
+                    }
+    
+                    @media all and (max-width:900px) {
+                        &:before {
+                            content: "X";
+                        }
+                    }
+    
+                    @media all and (max-width:700px) {
+                        width: 100px;
+                        justify-content: flex-start;
+                    }
+                }
+    
+                .price {
+                    font-size: 1.375rem;
+                    font-family: 'CenturyGothic-Bold';
+                    &:before{
+                        content: "$"
+                    }
+                }
+    
+                .edit {
+                    @include flex-center;
+                    flex-direction: column;
+    
+                    @media all and (max-width: 700px) {
+                        flex-direction: row;
+                        // justify-content: flex-end;
+                    }
+    
+                    &>* {
+                        margin: 10px 0;
+    
+                        @media all and (max-width: 700px) {
+                            margin: 50px 10px 10px;
+                        }
+                    }
+    
+                    .check,
+                    .returned {
+                        @include flex-center;
+                        @include font-size(14);
+                        color: #e90b0b;
+                        display: none;
+    
+                        span {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                &.check {
+                    .edit {
+                        button {
+                            display: none;
+                        }
+    
+                        .check {
+                            display: flex;
+                        }
+                    }
+                }
+                &.purchase .ps{
+                    display: block;
+                }
+            }
+        }
+    }
+    
+}

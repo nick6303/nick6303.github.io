@@ -1,0 +1,265 @@
+//- 常用參數
+include ../layout/_var.pug
+
+- 
+    var headerLink = [
+        {
+            name:"最新消息",
+            link:"javascript:void(0)"},
+        {
+            name:"漢神百貨",
+            link:"javascript:void(0)"},
+        {
+            name:"漢神巨蛋",
+            link:"javascript:void(0)"},
+        {
+            name:"漢神網路購物",
+            link:"javascript:void(0)"},
+    ]
+
+    var news = [
+        {
+            slogan:{bg:"",p:""},
+            img:"../../upload/fa2/index/newImg1_420_390.jpg",
+            type:"漢神百貨 , BRANDS",
+            title:"MIKIMOTO 新品上市",
+            words:"透過珍珠描繪日與夜之間的微妙變化，寫意且抽象地勾勒出令人神往的自然風采..."},
+        {
+            slogan:{bg:"",p:""},
+            img:"../../upload/fa2/index/newImg2_420_390.jpg",
+            type:"漢神百貨 , EVENTS",
+            title:"情挑誘光水唇膏  推出全新12色！",
+            words:"YSL會員消費新品唇膏即可獲得奢華緞面絲絨唇膏"},
+        {
+            slogan:{bg:"#ba863c",p:"SALE !"},
+            img:"../../upload/fa2/index/newImg3_420_390.jpg",
+            type:"漢神百貨 , BRANDS",
+            title:"購物回饋篇 x  HEARTS ON FIRE",
+            words:"購買Optima系列商品即享最高$10,000購物回饋"},
+        {
+            slogan:{bg:"",p:""},
+            img:"../../upload/fa2/index/newImg1_420_390.jpg",
+            type:"漢神百貨 , BRANDS",
+            title:"MIKIMOTO 新品上市",
+            words:"透過珍珠描繪日與夜之間的微妙變化，寫意且抽象地勾勒出令人神往的自然風采..."},
+    ]
+
+    var substation = [
+        {
+            img:"../../upload/fa2/index/substationImg1_1050_590.jpg",
+            bg:"../../upload/fa2/index/substationBg1_800_590.jpg",
+            en:"Hanshin Department Store",
+            ch:"漢神百貨",
+            words:"創造新新生活讓夢想在這裡發光， 定位國際級都會型百貨，提供齊全的商品及完整貼心的服務機能，開啟百貨業的新紀元"},
+        {
+            img:"../../upload/fa2/index/substationImg2_1050_590.jpg",
+            bg:"../../upload/fa2/index/substationBg2_800_590.jpg",
+            en:"Hanshin Arena Shopping Plaza",
+            ch:"漢神巨蛋購物廣場",
+            words:"創造新新生活讓夢想在這裡發光， 定位國際級都會型百貨，提供齊全的商品及完整貼心的服務機能，開啟百貨業的新紀元"},
+        {
+            img:"../../upload/fa2/index/substationImg3_1050_590.jpg",
+            bg:"../../upload/fa2/index/substationBg3_800_590.jpg",
+            en:"Hanshin Online Shopping",
+            ch:"漢神百貨網路購物",
+            words:"創造新新生活讓夢想在這裡發光， 定位國際級都會型百貨，提供齊全的商品及完整貼心的服務機能，開啟百貨業的新紀元"},
+    ]
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#index.index
+    main
+        article.header
+            section.logo
+                a(href=java)
+                    figure
+                        img(src="../../upload/fa2/index/logo.png", alt="")
+            section.links
+                ul
+                    each item in headerLink
+                        li
+                            a(href=item.link)=item.name
+            section.buttons
+                a(href=java)
+                    span.icon-magnifier
+                    p 搜尋
+                a(href=java)
+                    span.icon-person
+                    p 會員
+        article.content
+            section.banner
+                ._slick
+                    ul
+                        li
+                            // 後端請注意: 圖片如果是深色圖的話  請在下方 data-imgColor 填入 dark 文字顏色就會變白色 (因為很重要所以要說三次)
+                            // 後端請注意: 圖片如果是深色圖的話  請在下方 data-imgColor 填入 dark 文字顏色就會變白色 (因為很重要所以要說三次)
+                            // 後端請注意: 圖片如果是深色圖的話  請在下方 data-imgColor 填入 dark 文字顏色就會變白色 (因為很重要所以要說三次)
+                            picture(data-imgColor="dark")
+                                // [if IE 9]><video style="display: none;"><![endif]
+                                // 後端請注意:手機圖片大小
+                                source(srcset="../../upload/fa2/index/bannerRWD_1100_1300.jpg" media="(max-width:1024px)")
+                                // 後端請注意:電腦圖片大小
+                                img(src="../../upload/fa2/index/banner_1920_750.jpg" alt="")
+                            .slogan
+                                h6 漢神百貨 , BRANDS
+                                h5 End of Season Discount Auction
+                                p 季末感恩拍賣  滿2000送200
+                        li
+                            picture(data-imgColor="")
+                                // [if IE 9]><video style="display: none;"><![endif]
+                                // 後端請注意:手機圖片大小
+                                source(srcset="../../upload/fa2/index/bannerRWD_1100_1300.jpg" media="(max-width:1024px)")
+                                // 後端請注意:電腦圖片大小
+                                img(src="../../upload/fa2/index/banner_1920_750.jpg" alt="")
+                            // 後端請注意: 如果客戶他想要讓文字靠右的話 就在下方填上 class "right"
+                            .slogan.right
+                                h6 漢神百貨 , BRANDS
+                                h5 End of Season Discount Auction
+                                p 季末感恩拍賣  滿2000送200
+            // 後端請注意:如需重整slick 請使用resetSlick() 這個function
+            section.news
+                ._title
+                    p.ch 最新消息
+                    p.en News & Events
+                    ul
+                        li.active 全部分站 
+                        li 漢神百貨
+                        li 漢神巨蛋
+                ._slick
+                    ul
+                        // 後端請注意: 如要更新內容 請不要刪除ul 刪它裡面的東西
+                        each val in news
+                            li
+                                a(href=java)
+                                    if (val.slogan.p !== "")
+                                        // 後端請注意: 如果未填入文字的話 把下方div移除
+                                        // 後端請注意: 下方背景顏色要讓客戶可以換
+                                        .slogan(style=('background-color:'+val.slogan.bg))=val.slogan.p
+                                    figure
+                                        img(data-lazy=val.img, alt="")
+                                    ._text
+                                        p.type=val.type 
+                                        p.title=val.title
+                                        // 字數限制 55字
+                                        p.words=val.words
+            section.substation
+                ._title
+                    p.ch 漢神分站
+                    p.en HANSHIN substation
+                .rows
+                    each val in substation
+                        .row
+                            ._text.b-lazy(data-src=val.bg  ,class=(val == substation[substation.length-1])?"blackWords":"")
+                                p.ch=val.ch
+                                p.en=val.en
+                                p.words=val.words
+                                .socialMedia
+                                    ul
+                                        li
+                                            a(href=java)
+                                                span.icon-facebook
+                                        li
+                                            a(href=java)
+                                                span.icon-instagram
+                                        li
+                                            a(href=java)
+                                                span.icon-line
+                                    a.enter(href=(val==substation[substation.length-1])?"https://tw.mall.yahoo.com/store/%E6%BC%A2%E7%A5%9E%E7%99%BE%E8%B2%A8:hanshin":"../home/index.html")
+                                        div
+                                            p.up ENTER
+                                            p.down ENTER
+                            figure
+                                img.b-lazy(src=blazy data-src=val.img, alt="")
+                                // 裝飾方塊
+                                span
+                                a(href=(val==substation[substation.length-1])?"https://tw.mall.yahoo.com/store/%E6%BC%A2%E7%A5%9E%E7%99%BE%E8%B2%A8:hanshin":"../home/index.html")
+        article.footer.b-lazy(data-src="../../upload/fa2/index/footerBg_1920_190.jpg")
+            section.copyRight
+                img(src="../../upload/fa2/index/logo2.png", alt="")
+                p © Hanshin department store co.ltd all right reserve. <br> Design by 
+                    a(href="https://www.wddgroup.com") WDD
+            section.right
+                div
+                    h6 Substation
+                    ul
+                        li
+                            a(href=java) 漢神百貨
+                        li
+                            a(href=java) 漢神巨蛋
+                        li
+                            a(href=java) 漢神百貨網路購物
+                div
+                    h6 related business
+                    ul
+                        li
+                            a(href=java) 海外分店
+                        li
+                            a(href=java) 國揚建設
+                        li
+                            a(href=java) 漢來飯店
+                        li
+                            a(href=java) 漢來美食
++script
+script.
+    function resetSlick(){
+        $(".news ._slick ul").slick('unslick');
+    }
+
+// 結構化標籤
+script(type="application/ld+json").
+    {  
+        "@context": "http://www.schema.org",
+        "@type": "ProfessionalService",
+        //- 網站名子
+        "name": "whitehorse",   
+        //- email
+        "email": "mailto:wdd@wddgroup.com",
+        //- 本站網址
+        "url": "https://www.wddgroup.com/",
+        //- logo位置
+        "image": "https://www.wddgroup.com/assets/img/fb-creatop.jpg",
+        //- 商品價格區間
+        "priceRange":"500,000~3,000,000",
+        //- 電話
+        "telephone": "+886-4-23223899",
+        //- logo位置
+        "logo": "https://www.wddgroup.com/fb-creatop.jpg",
+        //- 地址
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "大容東街90號7樓-1",
+            "addressLocality": "西屯區",
+            "addressRegion": "台中市",
+            "postalCode": "40758",
+            "addressCountry": "中華民國 (台灣)"
+        },
+        //- 銷售據點
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "24.1577281",
+            "longitude": "120.6488368"
+        },
+        //- 據點地圖
+        "hasMap": "https://www.google.com.tw/maps/place/%E5%A8%81%E5%BE%B7%E6%95%B8%E4%BD%8D%E8%A8%AD%E8%A8%88/@24.1577281,120.6488368,15z/data=!4m5!3m4!1s0x0:0x9d235559e0bbc032!8m2!3d24.1577281!4d120.6488368",
+        //- 營業時間
+        "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:30",
+        //- 聯絡方式
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+886-4-23223899",
+            "faxNumber": "+886-4-23223898"
+        },
+        //- 外部相關連結
+        "sameAs": ["https://www.facebook.com/wddgroup/"]
+    }
+|
+|
+</html>

@@ -1,0 +1,211 @@
+#other.cooperation
+    .banner ._title .words 
+        max-width: 380px
+    .content 
+        .topTitle div
+            display: none
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            &.active
+                display: flex
+            .words
+                max-width: 460px
+        .formContent
+            padding: 50px 50px 75px
+            max-width: 1140px
+            width: calc(100% - 100px)
+            background-color: #efefef
+            border: 1px solid #e1bf95
+            display: none
+            margin-bottom: 110px
+            @media all and (max-width: 1024px)
+                width: calc(100% - 10vw)
+                padding: 50px 5vw 75px
+            &.active
+                display: flex
+            form
+                max-width: 870px
+                .boxs
+                    .box
+                        ._title
+                            width: 190px
+                        .inputArea
+                            width: calc(100% - 190px)
+                            border-left: 5px solid #efefef
+                            
+                        &.file .inputArea
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            .mCSB_container
+                                    display: flex
+                                    margin-bottom: 10px
+                            .mCSB_scrollTools.mCSB_scrollTools_horizontal
+                                height: 4px
+                                .mCSB_dragger_bar
+                                    margin: 0
+                                    background-color: #ccc
+                                .mCSB_draggerRail
+                                    background-color: transparent
+                                    margin: 0
+                            .fileName
+                                width: calc(100% - 70px)
+                                @media all and (max-width: 600px)
+                                    width: calc(100% - 60px)
+                            ul
+                                display: flex
+                                li
+                                    position: relative
+                                    background-color: #d4a060
+                                    border-radius: 5px
+                                    margin: 0 5px 0 0 
+                                    display: flex
+                                    align-items: center
+                                    color: #fff
+                                    font-size: px(15)
+                                    line-height: 2
+                                    input
+                                        position: absolute
+                                        top: 0
+                                        left: 0
+                                        opacity: 0
+                                        z-index: -1
+                                        width: 0
+                                        height: 0
+                                    p
+                                        white-space: nowrap
+                                        padding: 0 0 0 10px
+                                    button
+                                        background-color: transparent
+                                        border: none
+                                        padding: 10px
+                                        span
+                                            +cross(12px,12px)
+                                            display: block
+                                            transform: rotate(45deg)
+                                            &:before
+                                                +cross_before(100%,#000)
+                                            &:after
+                                                +cross_after(100%,#000)
+                            .button
+                                width: 50px
+                                position: relative
+                                margin: 0 10px 0 auto
+                                padding: 10px
+                                @media all and (max-width: 600px)
+                                    margin: 0 0 0 auto
+                                button
+                                    +cross(30px,30px)
+                                    border-radius: 50%
+                                    display: block
+                                    background-color: transparent
+                                    border: 1px solid #a7a7a7
+                                    &:before
+                                        +cross_before(12px,#000)
+                                    &:after
+                                        +cross_after(12px,#000)
+        .links
+            max-width: 1240px
+            margin: 0 auto 40px
+            padding: 0 50px
+            display: none
+            @media all and (max-width: 1024px)
+                padding: 0 5vw
+            &.active
+                display: block
+            ul
+                display: flex
+                flex-wrap: wrap
+                li
+                    width: 50%
+                    padding: 0 50px
+                    margin-bottom: 80px
+                    // @media all and (max-width: 1440px)
+                    //     padding: 0 37.5px
+                    @media all and (max-width: 1279px)
+                        padding: 0 2vw
+                    @media all and (max-width: 1024px)
+                        padding: 0 3vw
+                    @media all and (max-width: 700px)
+                        padding: 0 2vw
+                    @media all and (max-width: 560px)
+                        width: 100%
+                        padding: 0
+                    &.show.in
+                        figure
+                            animation: fadeInDown 1.2s both
+                        ._text
+                            .name
+                                animation: fadeInUp 1s both 1s
+                            .words
+                                animation: fadeInUp 1s both 1.2s
+                    a
+                        display: block
+                        overflow: hidden
+                        &:hover
+                            figure .hoverBox
+                                opacity: 1
+                                span:before
+                                    width: 100%
+                                    transition: all .4s ease .1s
+                                span:after
+                                    height: 100%
+                                    transition: all .4s ease .1s
+                                p
+                                    transform: translateY(0)
+                        figure
+                            position: relative
+                            font-size: 0
+                            opacity: 0
+                            @media all and (max-width: 1279px)
+                                height: calc()
+                            @media all and (max-width: 1024px)
+                                height: calc()
+                            @media all and (max-width: 700px)
+                                height: calc()
+                            @media all and (max-width: 560px) 
+                                height: calc()
+                            .hoverBox
+                                position: absolute
+                                top: 0
+                                left: 0
+                                width: 100%
+                                height: 100%
+                                background-color: rgba(0,0,0,.7)
+                                +flex-center
+                                flex-direction: column
+                                color: #ffffff
+                                font-size: px(15)
+                                opacity: 0
+                                transition: all .4s ease
+                                span
+                                    +cross(42px,42px)
+                                    margin: 0 0 20px 
+                                    &:before
+                                        transition: all .4s ease
+                                        +cross_before(0%,#fff)
+                                    &:after
+                                        transition: all .4s ease
+                                        +cross_after(0%,#fff)
+                                p
+                                    transition: all .4s ease
+                                    transform: translateY(10px)
+                        ._text
+                            padding: 20px 10px 0
+                            @media all and (max-width: 700px)
+                                padding: 10px 5px 0
+                            .name
+                                font-size: px(22)
+                                font-family: "微軟正黑體"
+                                font-weight: bold
+                                opacity: 0
+                                @media all and (max-width: 700px)
+                                    font-size: px(20)
+                                &:after
+                                    +fakeLine(20px,1px,#000)
+                                    margin: 10px 0
+                            .words
+                                font-size: px(15)
+                                letter-spacing: 0.5px
+                                opacity: 0

@@ -1,0 +1,285 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+.banner {
+    .banner_slogan {
+         h2 {
+           @include banner_slogan_h2;
+         }
+         h3{
+           @include banner_slogan_h3;
+         }
+    }
+}
+
+
+.content {
+    padding: 0 100px 0 100px;
+    @media all and (max-width: 1024px) {
+        padding: 0 5vw 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding: 0 5vw 0 5vw;
+    }
+    ._title {
+        margin-top: 100px;
+        h2 {
+            @include title_h2;
+        }
+        h3 {
+            @include title_h3;
+        }
+    }
+}
+
+
+
+.QA_table {
+    margin: auto;
+    margin-top: 30px;
+    max-width: 1140px;
+    padding: 0 60px;
+    @media all and (max-width: 1140px) {
+        padding: 0 5vw;
+    }
+}
+
+
+
+
+
+.question {
+    display: flex;
+    position: relative;
+    @media all and (max-width: 700px) {
+        flex-direction:column;
+        padding-bottom: 4vh;
+    }
+    .questionName {
+        width: 30%;
+        padding: 30px 0 30px 50px;
+        letter-spacing: 1px;
+        @media all and (max-width: 1024px) {
+            width: 25%;
+            padding: 3vw 0 3vw 3vw;
+        }
+        @media all and (max-width: 700px) {
+            width: 100%;
+            padding: 4vh 0 2vh 5vw;
+        }
+        h2 {
+            font-family: 'MyriadPro-Semibold';
+            @include font-size(25);
+            line-height: 1.5;
+            color: rgba(0, 0, 0, .3);
+        }
+        p {
+            font-family: "微軟正黑體";
+            @include font-size(16);
+            line-height: 1.5;
+            font-weight: bold;
+        }
+    }
+    .questionContent {
+        width: 75%;
+        @media all and (max-width: 1024px) {
+            width: 80%;
+        }
+        @media all and (max-width: 700px) {
+            width: 100%;
+        }
+        ul {
+            overflow: hidden;
+            li {
+                padding: 0 40px 10px 50px;
+                letter-spacing: 1px;
+                @media all and (max-width: 1024px) {
+                    padding: 0 2vw 1vw 50px;
+                }
+                @media all and (max-width: 900px) {
+                    padding: 0 10px 10px 5vw;
+                }
+                .Q,
+                .A p {
+                    display: flex;
+                    align-items: flex-start;
+                    &:before {
+                        margin-right: 15px;
+                        font-family: 'MyriadPro-Semibold';
+                        @include font-size(16);
+                        line-height: 1.5;
+                        margin-top: 1px;
+                    }
+                }
+                .Q {
+                    position: relative;
+                    padding: 30px 40px 20px 0;
+                    cursor: pointer;
+                    @media all and (max-width: 1024px) {
+                        padding: 3vw 40px 2vw 0;
+                    }
+                    @media all and (max-width:700px) {
+                        padding: 3vh 40px 2vh 0;
+                    }
+                    p {
+                        line-height: 1.5;
+                        max-width: calc(100% - 26px);
+                        font-weight: bold;
+                    }
+                    &:before {
+                        content: "Q";
+                        color: $base_blue;
+                    }
+                    &:after {
+                        font-family: 'icomoon';
+                        content: "\e905";
+                        color: #004179;
+                        @include font-size(12);
+                        width: 16px;
+                        height: 16px;
+                        display: block;
+                        @include flex-center;
+                        position: absolute;
+                        top: 30px;
+                        right: 0;
+                        transition: all .4s ease;
+                    }
+                    &.open {
+                        &:after {
+                            transform: rotateX(180deg);
+                            transition: all .4s ease;
+                            color: $base_orange;
+                        }
+                    }
+                }
+                .A {
+                    display: none;
+                    margin-bottom: 15px;
+                    @media all and (max-width: 1024px) {
+                        margin-bottom: 1.5vw;
+                    }
+                    p {
+                        line-height: 1.8;
+                        padding-right: 40px;
+                        color: #191d27;
+                        font-family: "微軟正黑體";
+                        @include font-size(15);
+                        &:before {
+                            content: "A";
+                            color: $base_orange;
+                        }
+                    }
+                }
+                &:not(:last-child) {
+                    border-bottom: 1px solid #e5e5e5;
+                }
+            }
+        }
+    }
+    &:first-child:before,
+    &:last-child:after {
+        content: "";
+        display: block;
+        background-color: #000;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+    }
+    &:first-child:before {
+        top: 0;
+        left: 0;
+    }
+    &:last-child:after {
+        bottom: 0;
+        left: 0;
+    }
+    &:not(:first-child) {
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 進場動畫*/
+
+.content {
+    .top_nav {
+        ._series {
+            animation: fadeInUp 1s both 1s;
+        }
+        ._back {
+            animation: fadeInRight 1s both 1s;
+        }
+    }
+    ._title {
+        h2 {
+            animation: fadeInDown 1.4s both;
+        }
+        h3 {
+            animation: fadeInDown 1.4s both .2s;
+        }
+        .menulist {
+            animation: fadeInDown 1.4s both .5s;
+        }
+    }
+}
+
+.question {
+    &.show {
+        .questionName {
+            animation: fadeInLeft 1s both;
+        }
+        .questionContent {
+            ul {
+                li {
+                    animation: fadeInLeft 1.2s both;
+                }
+            }
+        }
+        &:first-child:before {
+            animation: w100 1.2s both .2s;
+        }
+        &:not(:first-child):before {
+            animation: w100 1.2s both .2s;
+        }
+        &:last-child:after {
+            animation: fadeIn 2s both 1.3s;
+        }
+    }
+}
+
+
+
+@keyframes w100 {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}

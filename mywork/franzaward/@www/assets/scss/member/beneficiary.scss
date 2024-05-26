@@ -1,0 +1,107 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+header {
+    .hdLink {
+        display: none;
+    }
+    .burgerMenu {
+        @media all and (min-width: 1025px) {
+            left: 101px;
+            div {
+                animation: fadeInUp 1s both .8s;
+            }
+        }
+    }
+}
+
+main {
+    padding: 150px 0 150px 0;
+    position: relative;
+    @media all and (max-width: 1600px) {
+        padding: 150px 0 150px 230px;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 150px 0;
+    }
+}
+
+
+
+
+#member.beneficiary article.content .tableContent {
+    .workbox {
+        @media all and (max-width: 700px) {
+            flex-direction:column;
+        }
+    }
+    h5 {
+        width: 165px;
+        @media all and (max-width: 700px) {
+            width:100%;
+        }
+    }
+    input {
+        width: calc(100% - 205px);
+        @media all and (max-width: 700px) {
+            width:100%;
+            margin-left: 0;
+            margin-top: 15px;
+        }
+    }
+    .dropdown {
+        h5 {
+            width: 205px;
+            padding: 15px 0 15px 40px;
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+                width: 100%;
+            }
+        }
+        .dropList {
+            width: calc(100% - 205px);
+            @media all and (max-width: 700px) {
+                width:100%;
+            }
+        }
+    }
+    .foreign {
+        margin-bottom: 12px;
+        display: none;
+        input {
+            padding: 15px 40px;
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+            }
+        }
+    }
+    .domestic {
+        display: flex;
+        h5 {
+            width: 205px;
+            padding: 15px 0 15px 40px;
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+                width: 100%;
+            }
+        }
+        input {
+            width: calc(100% - 245px);
+            padding: 15px 40px 15px 0;
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+                width: 100%;
+            }
+        }
+    }
+    .accountInf {
+        margin-top: 0;
+        &:before {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="tw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="網站標題名稱" />
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="copyright" content="作者名子">
+    <title>bite2eat</title>
+    <!-- icon -->
+    <!--    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/ico/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/ico/favicon.png"> -->
+    <!-- 共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/datedropper/datedropper.min.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/datedropper/my-style.css">
+    <link rel="stylesheet" href="../../assets/css/reservation/reservationLibox.css">
+    <!-- 非共用CSS end-->
+    <link rel="stylesheet" href="../../assets/css/reservation/reservation.css">
+    <link rel="stylesheet" href="../../assets/css/contact/contact.css">
+</head>
+
+<body id="contact" class="index">
+    <header class="whiteBg"></header>
+    <main>
+        <!-- 假的空白header -->
+        <article class="header"></article>
+        <article class="content">
+            <section class="BG"></section>
+            <section class="topNav">
+                <div class="_img">
+                    <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/contact/top_img_420_190.png" alt="">
+                </div>
+                <div class="_text">
+                    <h3>聯繫薄多義</h3>
+                    <h2>Contact</h2>
+                    <p>有任何服務需求，請隨時與我們聯繫，詳細填寫您寶貴的意見以及想法，薄多義將誠摯了解您的需求與建言。</p>
+                </div>
+                <div class="link">
+                    <a class="active" href="../contact/index.html">Contact  聯繫薄多義</a>
+                    <a href="../reservation/index.html">Reservation  預約薄多義</a>
+                </div>
+            </section>
+            <section class="table">
+                <form action="">
+                    <div class="tableContent">
+                        <div class="_title nobg">
+                            <h3>Reservation detail  </h3>
+                            <h4>您的建議與想法</h4>
+                        </div>
+                        <!-- 姓名 -->
+                        <div class="name">
+                            <h5>預訂大名  Name</h5>
+                            <input type="text">
+                        </div>
+                        <!-- 稱謂 -->
+                        <div class="salutation dropdown">
+                            <span class="selectList"><p>稱謂  Salutation</p></span>
+                            <ul>
+                                <li>先生</li>
+                                <li>小姐</li>
+                            </ul>
+                            <select name="" id="">
+                                <!-- 後端請注意:第一個option為預設值無意義 物動-->
+                                <option selected="selected">稱謂 Salutation</option>
+                                <option value="">先生</option>
+                                <option value="">小姐</option>
+                            </select>
+                            <span class="icon-▼"></span>
+                        </div>
+                        <!-- 電話 -->
+                        <div class="tel">
+                            <h5>聯繫電話  Mobile / Tel</h5>
+                            <input type="text">
+                        </div>
+                        <!-- 信箱 -->
+                        <div class="email">
+                            <h5>聯繫信箱  E-mail</h5>
+                            <input type="text">
+                        </div>
+                        <!-- 主旨 -->
+                        <!-- 地區 -->
+                        <div class="subject dropdown">
+                            <span class="selectList"><p>請選擇您的建議主旨  Subject</p></span>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <select name="" id="">
+                                <!-- 後端請注意:第一個option為預設值無意義 物動-->
+                                <option selected="selected">請選擇您的建議主旨 Subject</option>
+                                <option value="">台中</option>
+                                <option value="">台北</option>
+                            </select>
+                            <span class="icon-▼"></span>
+                        </div>
+                        <!-- 內容 -->
+                        <div class="message">
+                            <h5>意見內容  Your message for us</h5>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <!-- 驗證碼 -->
+                        <div class="code">
+                            <h5>驗證碼  Verification code</h5>
+                            <input type="text" placeholder="點擊圖片即可獲得新的驗證碼">
+                        </div>
+                        <!-- 驗證碼圖片 -->
+                        <div class="_img nobg">
+                            <img src="../../upload/fa2/reservation/codeImg_70_35.png" alt="">
+                        </div>
+                    </div>
+                    <div class="infBg">
+                        <div class="inf">
+                            <div class="_img">
+                                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/fa2/contact/infImg_225_180.png" alt="">
+                            </div>
+                            <div class="_title">
+                                <h2>FOLLOW US</h2>
+                                <p>追蹤我們</p>
+                            </div>
+                            <div class="socialMedia">
+                                <a class="fb" href="javascript:void(0)"></a>
+                                <a class="ig" href="javascript:void(0)"></a>
+                            </div>
+                            <div class="wed">
+                                info@bite2eatpizza.com
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_btn">
+                        <button type="reset">
+                            <span>
+                                <i></i>    
+                            </span> 重新填寫
+                        </button>
+                        <button type="submit">
+                            <span>
+                                <i></i>    
+                            </span> 確認送出
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </article>
+         <article class="cover">
+            <section class="cover2"> </section>
+        </article>
+    </main>
+    <footer></footer>
+</body>
+<script src="../../assets/js/style.js"></script>
+
+</html>

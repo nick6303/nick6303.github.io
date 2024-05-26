@@ -1,0 +1,291 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+.order {
+    ul {
+        li {
+            &.customized {
+                .openOrder {
+                    display: flex !important;
+                }
+                .edit {
+                    button {
+                        display: none;
+                    }
+                }
+            }
+
+            &.check {
+                .edit {
+                    button {
+                        display: none;
+                    }
+
+                    .check {
+                        display: flex;
+                    }
+                }
+            }
+
+            &.returned {
+                ._img {
+                    opacity: 0.5;
+                }
+
+                .name,
+                .amount,
+                .price {
+                    opacity: 0.3;
+                }
+
+                .edit {
+                    button {
+                        display: none;
+                    }
+
+                    .returned {
+                        display: flex;
+                    }
+                }
+            }
+
+            &.gift {
+                .ps:before {
+                    content: attr(data-gift);
+                }
+
+                .edit {
+                    button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.discount {
+    ul {
+        li {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 45px 30px 55px;
+            border-bottom: 2px solid #f2f2f2;
+
+            @media all and (max-width: 1279px) {
+                padding: 40px 15px 30px 20px;
+            }
+
+            @media all and (max-width:900px) {
+                padding: 30px 15px 30px 20px;
+            }
+
+            @media all and (max-width:700px) {
+                padding: 30px 10px;
+                align-items: center;
+            }
+
+            .title {
+                width: 160px;
+                @include font-size(18);
+
+                @media all and (max-width: 900px) {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .words {
+                @include font-size(14);
+                color: #666666;
+                width: 45%;
+
+                @media all and (max-width: 900px) {
+                    width: calc(88% - 260px);
+                }
+
+                @media all and (max-width: 600px) {
+                    width: 100%;
+                }
+            }
+
+            .inputArea {
+                @include font-size(14);
+                font-weight: bold;
+                width: calc(25% - 30px);
+                text-align: right;
+
+                @media all and (max-width: 900px) {
+                    width: 180px;
+                    margin: 0 40px;
+                }
+
+                @media all and (max-width: 600px) {
+                    width: 60%;
+                    margin: 20px 0;
+                    text-align: left
+                }
+            }
+
+            .price {
+                @include font-size(22);
+                width: calc(30% - 130px);
+                font-family: 'CenturyGothic-Bold';
+                text-align: right;
+
+                @media all and (max-width: 900px) {
+                    width: 12%;
+                }
+
+                @media all and (max-width: 600px) {
+                    width: 40%;
+                }
+                &:before{
+                    content:"$";
+                }
+            }
+        }
+    }
+}
+
+
+.cancelLibox {
+    @include basicLibox;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .6);
+    display: none;
+    z-index: 100;
+    padding-top: 0 !important;
+
+    &.open {
+        display: flex;
+        animation: fadeIn .4s both;
+    }
+
+    &.close {
+        display: flex;
+        animation: fadeOut .4s both .4s;
+
+        ._title span,
+        ._title span:before {
+            animation: fadeOut 0.6s both;
+        }
+
+        ._title .en,
+        ._title .ch,
+        .words,
+        form div,
+        button {
+            animation: fadeOutUp .4s both;
+        }
+    }
+
+    section {
+        background-color: #fff;
+        padding: 60px 50px;
+        width: 100%;
+        max-width: 740px;
+
+        @media all and (max-width: 1024px) {
+            padding: 60px 5vw;
+        }
+
+        @media all and (max-width: 740px) {
+            height: 100%;
+        }
+
+        @include flex-center;
+        flex-direction: column;
+
+        ._title {
+            text-align: center;
+
+            span {
+                @include libox_title_span;
+                animation: spanBorder 1.2s both 0.8s;
+                overflow: hidden;
+
+                &:before {
+                    opacity: 0;
+                    animation: fadeInUp 1s both 1s;
+                }
+            }
+
+            .en {
+                @include libox_title_en;
+            }
+
+            .ch {
+                @include libox_title_ch;
+            }
+        }
+
+        .words {
+            @include font-size(14);
+            text-align: center;
+            margin: 20px auto 0;
+            color: rgba(0, 0, 0, .8);
+            animation: fadeInUp 1s both 1s;
+            max-width: 480px;
+        }
+
+        form {
+            @include flex-center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 30px;
+            max-width: 530px;
+            animation: fadeInUp 1.2s both .8s;
+
+            div {
+                padding: 30px 10px 30px 50px;
+                width: 100%;
+                display: flex;
+                border-top: 4px solid #000;
+                background-color: #f8f8f8;
+                margin-bottom: 30px;
+
+                p {
+                    @include font-size(16);
+                    width: 60px;
+                    font-weight: bold;
+                }
+
+                textarea {
+                    width: calc(100% - 60px);
+                    height: 120px;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0 10px 0;
+                    @include font-size(14);
+
+                    &::placeholder {
+                        color: rgba(0, 0, 0, 0.6);
+                    }
+                }
+            }
+        }
+
+        .why.up {
+
+            ._title .en,
+            ._title .ch,
+            .words,
+            form div,
+            button {
+                animation: fadeOutUp .5s both;
+            }
+        }
+
+        .success,
+        .fail {
+            .withLine {
+                margin: 50px auto 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,361 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+header {
+    .hdLink {
+        display: none;
+    }
+    .burgerMenu {
+        @media all and (min-width: 1025px) {
+            left: 101px;
+            div {
+                animation: fadeInUp 1s both .8s;
+            }
+        }
+    }
+}
+
+
+
+main {
+    padding: 150px 0 150px 0;
+    position: relative;
+    @media all and (max-width: 1600px) {
+        padding: 150px 0 150px 230px;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 150px 0;
+    }
+}
+
+
+#juge.information article.content .tableContent {
+    .workbox {
+        a {
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+            }
+            &:after {
+                font-family: 'icomoon';
+                content: "\e906";
+                @include font-size(22);
+                color: #7e7e7e;
+                float: right;
+                margin-right: 0;
+                margin-left: auto;
+            }
+            p {
+                @include font-size(14);
+                line-height: 1.5;
+                margin-right: 40px;
+                @media all and (max-width: 700px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    .birthPlace {
+        padding: 0;
+        @media all and (max-width: 700px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        h5 {
+            width: 180px;
+            padding: 15px 0px 15px 40px;
+            @media all and (max-width: 900px) {
+                width: 100%;
+            }
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+            }
+        }
+        .dropList2 {
+            width: calc(100% - 180px);
+            @media all and (max-width: 900px) {
+                width: 100%;
+            }
+            @media all and (max-width: 700px) {
+                padding: 0 0 0 5vw;
+            }
+            .selectMenu {
+                padding: 15px 40px 15px 40px;
+                @media all and (max-width: 700px) {
+                    padding: 15px 5vw 15px 0;
+                }
+            }
+        }
+    }
+    .position {
+        padding: 0;
+        @media all and (max-width: 900px) {
+            flex-direction:column;
+        }
+        h5 {
+            width: 180px;
+            padding: 15px 0px 15px 40px;
+            @media all and (max-width: 900px) {
+                width: 100%;
+            }
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+            }
+        }
+        input {
+            width: calc(100% - 180px);
+            padding: 15px 40px;
+            margin-left: 0;
+            @media all and (max-width: 900px) {
+                width: 100%;
+            }
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+            }
+        }
+    }
+}
+
+.account {
+    .contactInf ul {
+        display: flex;
+        @media all and (max-width: 550px) {
+            flex-direction: column;
+        }
+        li {
+            width: 50%;
+            @include flex-center;
+            flex-direction: column;
+            padding: 35px 0;
+            @media all and (max-width: 550px) {
+                width: 100%;
+            }
+            &:not(:last-child) {
+                position: relative;
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(0, -50%);
+                    @include fakeLine(1px,
+                    100%,
+                    #cccccc);
+                    @media all and (max-width: 550px) {
+                        top: 100%;
+                        right: 50%;
+                        transform: translate(50%, 0%);
+                        width: 60vw;
+                        height: 1px;
+                        min-width: 210px;
+                    }
+                }
+            }
+            span {
+                color: $base_blue;
+                &.icon-paperplane {
+                    @include font-size(52);
+                    margin-bottom: 40px;
+                }
+                &.icon-phone {
+                    @include font-size(72);
+                    margin-bottom: 25px;
+                }
+            }
+            p,
+            input {
+                @include font-size(16);
+                line-height: 1.5;
+                text-align: center;
+                margin-left: 0 !important;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+            input {
+                @include font-size(18);
+            }
+        }
+    }
+    .change {
+        @include flex-space-between;
+        padding: 0 !important;
+        margin-top: 60px;
+        @media all and (max-width: 800px) {
+            flex-direction:column;
+        }
+        @media all and (max-width: 550px) {
+            margin-top: 20px;
+        }
+        .workbox {
+            width: calc(50% - 4px);
+            margin: 0 2px!important;
+            @media all and (max-width: 800px) {
+                width: 100%;
+                margin: 4px 0 0 0!important;
+            }
+            a {
+                padding: 30px 40px !important;
+                @media all and (max-width: 700px) {
+                    padding: 30px 5vw !important;
+                }
+                &:before {
+                    font-family: 'icomoon';
+                    @include font-size(30);
+                    color: #5b5b5b;
+                    margin-right: 20px;
+                    transition: all .4s ease;
+                }
+            }
+            &.account a:before {
+                content: "\e913";
+            }
+            &.password a:before {
+                content: "\e914";
+            }
+            &:hover a:before {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+.basicInf {
+    .picture {
+        display: flex;
+        align-items: center;
+        padding: 0 40px 0 0 !important;
+        margin-bottom: 35px !important;
+        @media all and (max-width: 700px) {
+            padding: 0 5vw 0 0 !important;
+        }
+        @media all and (max-width: 550px) {
+            flex-direction: column;
+            padding: 0 !important;
+        }
+        a {
+            position: relative;
+            width: 430px !important;
+            height: 550px !important;
+            max-width: 100%;
+            padding: 0 !important;
+            @media all and (max-width: 480px) {
+                max-height: calc(115vw - 5px);
+            }
+            &:after {
+                position: absolute;
+                top: calc(50% - 17.5px);
+                right: -17.5px;
+                @include flex-center;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: #fff;
+                box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+                content: "\e918" !important;
+                font-size: 0.75rem !important;
+                color: $base_blue !important;
+                padding-left: 2px;
+                @media all and (max-width: 550px) {
+                    top: auto;
+                    bottom: 5px;
+                    right: 5px;
+                }
+            }
+            div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        ._text {
+            width: calc(100% - 430px);
+            @media all and (max-width: 550px) {
+                width: 100%;
+                margin-top: 40px;
+            }
+        }
+        h5 {
+            width: 100% !important;
+            font-size: 1rem !important;
+            padding: 5px 0 5px 65px !important;
+            @media all and (max-width: 900px) {
+                padding: 5px 0 5px 5vw !important;
+            }
+            @media all and (max-width: 550px) {
+                padding: 5px 5vw !important;
+            }
+            b {
+                @include font-size(13);
+                color: #646464 !important;
+                line-height: 1.5;
+                transition: all .4s ease;
+            }
+        }
+    }
+}
+
+.longword {
+    margin-top: 0 !important;
+    padding: 35px 0 0 0 !important;
+    &:before {
+        display: none !important;
+    }
+    .textarea {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 40px;
+        @media all and (max-width: 700px) {
+            padding: 20px 5vw;
+        }
+        h5 {
+            width: 100% !important;
+        }
+        textarea {
+            width: 100%;
+            height: 250px;
+            margin-top: 15px;
+            border: none;
+            background-color: transparent;
+            font-family: Philosopher-Regular, 微軟正黑體;
+            @include font-size(14);
+            letter-spacing: 1px;
+            line-height: 2;
+            padding: 0 20px 0 0;
+            transition: all .4s ease;
+            @media all and (max-width: 800px) {}
+            &::placeholder {
+                @include font-size(14);
+                font-family: Philosopher-Regular, 微軟正黑體;
+                transition: all .4s ease;
+            }
+            &:focus::placeholder {
+                opacity: 0;
+            }
+        }
+        &.active textarea,
+        &:hover textarea {
+            color: #fff;
+            &::placeholder {
+                color: #fff;
+            }
+        }
+    }
+}
+
+

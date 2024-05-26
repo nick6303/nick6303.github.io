@@ -1,0 +1,196 @@
+.lbox_style_menu
+    // min-height: 101vh
+    background: #fff
+    position: relative
+    display: flex
+    align-items: stretch
+    height: auto
+    min-height: 101vh
+    +rwd(767)
+        flex-wrap: wrap
+    &:after
+        content: ''
+        display: inline-block
+        min-height: inherit
+        font-size: 0
+        +rwd(767)
+            display: none
+    .menu_header
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 70px
+        +flex
+        justify-content: flex-end
+    .hiNane
+        padding: 0 20px
+        +flex
+        +rwd(767)
+            display: none
+        img
+            width: 45px
+            height: 45px
+            border-radius: 50% 
+            margin-right: 15px
+        h4
+            font-size: px(12)
+            letter-spacing: 1px
+    .goBack
+        position: absolute
+        width: 70px
+        height: 70px
+        left: 0
+        top: 0
+        background: #cccccc
+        cursor: pointer
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(-50%,-50%) rotate(45deg)
+    .menu_img
+        margin-top: 70px
+        display: inline-block
+        width: 33.33%
+        background-size: cover
+        background-position: 100% 100%
+        transition: .5s
+        +rwd(767)
+            margin-top: 0
+        +rwd(600)
+            width: 20%
+        +rwd(500)
+            width: 10%
+        +rwd(400)
+            width: 30px
+    .menu_txt
+        width: 66.66%
+        margin-top: 70px
+        +flex
+        padding-left: 10%
+        transition: .5s
+        +rwd(1024)
+            padding-left: 5%
+        +rwd(767)
+            padding-left: 20%
+        +rwd(600)
+            margin-top: 100px
+            width: 80%
+            padding-left: 15%
+        +rwd(500)
+            width: 90%
+            padding-left: 10%
+        +rwd(400)
+            width: calc(100% - 30px)
+        .link
+            h4,h6
+                font-size: px(24)
+                letter-spacing: 1px
+                position: relative
+                &:after
+                    content: ''
+                    background: #127863
+                    position: absolute
+                    width: 0%
+                    height: 50%
+                    top: 45%
+                    left: 100%
+                    transition: width .5s , left .5s
+                    opacity: .4
+            h5
+                font-size: px(18)
+                letter-spacing: 1px
+                margin-bottom: 10px
+            h6
+                font-size: px(16)
+                letter-spacing: 1px
+    .menu_list_wrap
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        flex-wrap: wrap
+        width: 100%
+        max-width: 640px
+
+        .link
+            display: flex
+            flex-direction: column
+            a
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                &:hover
+                    h4:after,h6:after
+                        left: 0%
+                        width: 100%
+                        transition: width .5s , left .0s
+                        
+    .menu_list
+        width: 50%
+        +rwd(767)
+            order: 2
+            width: 100%
+        li
+            margin-bottom: 50px
+            +rwd(600)
+                margin-bottom: 40px
+    .menu_list_q
+        width: 50%
+        +flex
+        flex-wrap: wrap
+        +rwd(767)
+            order: 2
+            width: 100%
+            margin-bottom: 50px
+        li:first-child
+            margin-bottom: 30px
+            width: 100%
+        li:nth-child(4)
+            margin-bottom: 45px
+            +rwd(600)
+                margin-bottom: 15px
+        li
+            margin-bottom: 15px
+            width: 100%
+            +rwd(600)
+                width: 50%
+    .menu_list_buy
+        margin-bottom: 50px
+        +rwd(767)
+            order: 1
+        h6
+            font-size: px(14)
+            letter-spacing: 1px
+            span
+                color: #1a42a3
+    .menu__footer
+        width: 100%
+        height: 70px
+        display: none
+        +rwd(767)
+            display: flex
+#particles-js
+    position: absolute
+    right: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50% 50%
+

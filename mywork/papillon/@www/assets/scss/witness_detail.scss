@@ -1,0 +1,525 @@
+@import "base/_reset.scss";
+@import "base/_variable.scss";
+@import "base/_common.scss";
+
+
+body {
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+}
+
+
+
+._banner {
+    @include flex-center;
+    height: 100vh;
+    width: 50%;
+    overflow: hidden;
+}
+
+._inf {
+    padding-right: 10vw;
+    padding-left: calc(15vw + 70px);
+    margin-left: -7vw;
+    width: calc(50% + 140px);
+    height: 100vh;
+    overflow-y: scroll;
+    @media #{(min-width: 1921px)} {
+        padding-left: calc(15vw + 140px);
+        margin-left: -140px;
+    }
+    ._close {
+        margin: auto;
+        width: 50px;
+        height: 84px;
+        cursor: pointer;
+        &:before {
+            content: "";
+            display: block;
+            width: 1px;
+            background-color: #d2b055;
+            margin: auto;
+        }
+        p {
+            margin-top: 12px;
+            font-family: 'Raleway-regular';
+            @include font-size(12);
+            letter-spacing: .5px;
+            text-align: center;
+        }
+    }
+    ._title {
+        letter-spacing: 1px;
+        margin-top: 65px;
+        text-align: center;
+        h2 {
+            @include font-size(32);
+            font-family: 'Cinzel-Regular';
+            line-height: 1.5;
+            &:after {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 1px;
+                background-color: #d2b055;
+                margin: auto;
+            }
+        }
+        h3 {
+            @include font-size(18);
+            font-family: "微軟正黑體";
+            margin-top: 15px;
+        }
+        &>p {
+            margin-top: 30px;
+            @include font-size(14);
+            font-family: "微軟正黑體";
+            color: #333333;
+        }
+        .socialMedia {
+            margin-top: 12px;
+        }
+    }
+    ._text {
+        margin-top: 70px;
+        p {
+            @include font-size(14);
+            font-family: "微軟正黑體";
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+    }
+    .location {
+        margin-top: 12vh;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            li {
+                @include font-size(13);
+                letter-spacing: 1px;
+                &:first-child {
+                    margin-right: 10px;
+                }
+                p {
+                    font-family: 'Raleway-SemiBold';
+                    @include flex-center;
+                    flex-wrap: wrap;
+                    line-height: 1.5;
+                    span {
+                        font-family: "微軟正黑體";
+                    }
+                }
+                a {
+                    @include flex-center;
+                    &:after {
+                        font-family: 'icomoon';
+                        content: "\e913";
+                        @include font-size(16);
+                        color: #333333;
+                        margin-left: 12px;
+                    }
+                    &:hover {
+                        &:after {
+                            animation: bounce 1s both;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .product {
+        padding-top: 9vh;
+        position: relative;
+        padding-bottom: 120px;
+        &:before {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #dfc888;
+            margin-left: -80px;
+        }
+        ._img {
+            width: 15vw;
+            max-width: 280px;
+            height: 15vw;
+            max-height: 280px;
+            position: absolute;
+            top: 0;
+            left: calc(-15vw - 70px);
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, .25);
+            overflow: hidden;
+            @media #{(min-width: 1921px)}{
+                left: -340px;
+            }
+            img {
+                transition: all .8s ease;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                    transition: all 1s ease;
+                }
+            }
+        }
+        ._intro {
+            margin-top: 50px;
+            letter-spacing: 1px;
+            h2 {
+                font-family: 'Raleway-SemiBold';
+                line-height: 1.5;
+                @include font-size(15);
+            }
+            h3 {
+                font-family: "微軟正黑體";
+                line-height: 1.5;
+                @include font-size(15);
+                color: #404040;
+            }
+            .more {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+// location hover動畫
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -50%, 0);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -30%, 0);
+    }
+
+    90% {
+        transform: translate3d(0, -10%, 0);
+    }
+}
+
+
+
+// 平板螢幕尺寸1024以下
+@media only screen and (max-width: 1024px) {
+    body {
+        overflow: visible;
+    }
+    main {
+        display: block;
+        position: relative;
+        padding-top: 100px;
+    }
+    ._banner,
+    ._inf {
+        width: 100%;
+    }
+
+    ._banner {
+        height: auto;
+    }
+
+    ._inf {
+        overflow-y: visible;
+        padding: 0 10vw;
+        margin: 0;
+        height: auto;
+        ._close {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 25px);
+        }
+
+        ._text {
+            opacity: 0;
+            p {
+                max-width: 700px;
+                margin: auto;
+            }
+        }
+
+        .location {
+            margin: auto;
+            margin-top: 6vh;
+            max-width: 700px;
+            opacity: 0;
+            ul {
+                li {
+                    width: 50%;
+                    p {
+                        justify-content: flex-start;
+                    }
+                    a {
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+
+        .product {
+            margin-top: 6vh;
+            &:before {
+                margin-left: 0;
+                width: 0;
+            }
+            ._img {
+                left: 0;
+                width: 30vw;
+                height: 30vw;
+                opacity: 0;
+            }
+            ._intro {
+                padding-left: calc(30vw + 70px);
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    main {
+        padding-top: 70px;
+    }
+    ._inf {
+        padding: 0 5vw;
+
+        ._close {
+            height: 54px;
+        }
+
+        ._title {
+            h2 {
+                @include font-size(28);
+            }
+        }
+
+        ._text {
+            p {
+                padding: 0 10px;
+            }
+        }
+
+        .location {
+            margin-top: 8vh;
+            ul {
+                flex-direction: column;
+                align-items: center;
+                padding-left: 10px;
+                li {
+                    width: 100%;
+                    &:first-child {
+                        margin-right: 0;
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 2.5vh;
+                    }
+                    p {
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                    a {
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:after {
+                            margin-left: 15px;
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 40px 0 14.5vh 0;
+            margin-top: 12vh;
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            ._img {
+                position: relative;
+                top: auto;
+                left: auto;
+                height: 33.33vw;
+                width: 33.33vw;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            ._intro {
+                width: calc(100% - 33.33vw);
+                padding-left: 30px;
+                margin-top: 0;
+                h3 {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// 進場動畫-----------------------------------------------------------
+// ._banner----------------
+._banner {
+    &.show {
+        animation: fadeIn 1s both;
+    }
+}
+
+
+// ._close-----------------
+._close {
+    animation: fadeIn .8s both .2s;
+    &:before {
+        animation: closeLine .8s both .2s;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    ._close {
+        animation: fadeIn .8s both .3s;
+        &:before {
+            animation: closeLine 1.2s both .3s;
+        }
+    }
+}
+
+@keyframes closeLine {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    @keyframes closeLine {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 30px;
+        }
+    }
+}
+
+
+// ._title------------------
+._title {
+    h2 {
+        animation: fadeInDown 1s both .3s;
+    }
+    h3 {
+        animation: fadeInDown 1s both .4s;
+    }
+    p {
+        animation: fadeInDown .8s both .5s;
+    }
+    .socialMedia {
+        animation: fadeInDown 1s both .6s;
+    }
+} // ._text,.location---------
+@media only screen and (min-width: 1025px) {
+    ._text,
+    .location {
+        animation: fadeIn 1.2s both .8s;
+    }
+}
+
+
+@media only screen and (min-width: 1025px) {
+    .product {
+        &:before {
+            animation: productLine 1s ease-out both 1s;
+        }
+        ._img {
+            animation: fadeIn 1s both .8s;
+        }
+        ._intro {
+            animation: fadeInUp 1s both 1s;
+        }
+    }
+}
+
+@keyframes productLine {
+    0% {
+        width: 1px;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    @keyframes productLine {
+        0% {
+            width: 1px;
+            margin-left: 50%;
+        }
+        100% {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+// waypoint動畫專區-----------------------------------------------
+// ._text----------------
+._text {
+    &.show {
+        animation: fadeInUp 1.2s both;
+    }
+}
+
+// .location-------------
+.location {
+    &.show {
+        animation: fadeInUp 1.2s both .5s;
+    }
+}
+
+.product {
+    &.show {
+        &:before {
+            animation: productLine .8s cubic-bezier(0.075, 0.82, 0.165, 1) both .6s;
+        }
+        ._img {
+            animation: fadeIn 1.2s both ease .1s;
+        }
+        ._intro {
+            animation: fadeInUp 1s both .2s;
+        }
+    }
+}

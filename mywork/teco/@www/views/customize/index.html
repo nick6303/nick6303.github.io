@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TECO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link href="../../assets/img/favicon-20170414044912706.ico" rel="icon" type="image/x-icon">
+    <!--slick-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick.css" />
+    <!--fons-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/fontAwesome/font-awesome.css" />
+    <!--semanticwp-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.css" />
+    <!--mCustomScrollbar-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.css" />
+    <!--style.css-->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <!-- 自訂的css -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/customize/index.css" />
+</head>
+
+<body class="fontM" id="top">
+    <main id="customize" class="index">
+        <article class="topNav">
+            <section class="back" onclick="history.back()">
+                <span></span>
+                <p>CLOSE</p>
+            </section>
+            <section class="dot">
+                <ul>
+                    <li class="active">
+                        <span></span>
+                    </li>
+                    <li>
+                        <span></span>
+                    </li>
+                    <li>
+                        <span></span>
+                    </li>
+                    <li>
+                        <span></span>
+                    </li>
+                    <i></i>
+                </ul>
+            </section>
+        </article>
+        <article class="banner">
+            <section class="productImg">
+                <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/customize/index/productImg_300_110.png"
+                    alt="">
+            </section>
+            <section class="_title">
+                <p class="en">Choose Your Space</p>
+                <p class="ch">選擇您的室內空調</p>
+            </section>
+            <section class="_text">
+                <p class="words">請透過以下選項找出最接近您的居家條件，我們提供了坪數、挑高、頂樓、西曬樓層以及冷氣機種選擇功能，希望找到最適合您的室內空調。</p>
+                <p class="ps">註1：此為一般使用情況下之建議結果, 特殊或營業場所不含在此內。</p>
+                <p class="ps">註2：高熱源環境 (如人數多或室內陳列因素等)，建議提高冷房額定能力之需求。</p>
+            </section>
+            <section class="goSelect allset" onclick="goNextArea(this)">
+                <span class="iconN-cart"></span>
+                <p>前往挑選</p>
+            </section>
+        </article>
+        <!-- 丈量空間 -->
+        <article class="measuring">
+            <section class="_title">
+                <span class="iconN-measure"></span>
+                <p class="en">Measuring</p>
+                <p class="ch">丈量您的空間</p>
+                <p class="words">步驟一，請選擇適合您的丈量方式</p>
+            </section>
+            <section class="left">
+                <div class="openForm">
+                    <span class="numb">01</span>
+                    <div class="_img">
+                        <img class="house" src="../../upload/customize/index/measuring_left_house_290_240.png" alt="">
+                        <img class="width" src="../../upload/customize/index/measuring_left_house_width_290_240.png"
+                            alt="">
+                        <img class="length" src="../../upload/customize/index/measuring_left_house_length_290_240.png"
+                            alt="">
+                        <img class="high" src="../../upload/customize/index/measuring_left_house_high_290_240.png" alt="">
+                    </div>
+                    <p class="en">Length, width and height</p>
+                    <p class="ch">選擇長寬高計算</p>
+                </div>
+                <form>
+                    <div class="_text">
+                        <p>方法一，請輸入以下參數，我們將試算出最適合您的冷氣需求</p>
+                    </div>
+                    <div class="length workbox">
+                        <p>長</p>
+                        <input type="number" placeholder="0">
+                        <p>公尺</p>
+                    </div>
+                    <div class="width workbox">
+                        <p>寬</p>
+                        <input type="number" placeholder="0">
+                        <p>公尺</p>
+                    </div>
+                    <!-- <p class="ps">室內挑高之房型，使冷氣能逸散之空間增加，故估算不能以傳統高度做選擇考量</p> -->
+                    <div class="high workbox">
+                        <h6>高<span>(是否為挑高樓層，3.2公尺以上)</span></h6>
+                        <ul>
+                            <li>
+                                <input type="radio" name="high">
+                                <label>
+                                    <span class="iconN-hook"></span>
+                                    <p>是</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" name="high">
+                                <label>
+                                    <span class="iconN-hook"></span>
+                                    <p>否</p>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="next" type="button" onclick="goNextArea(this)">
+                        <span class="iconN-hook"></span>
+                        <p>SEND</p>
+                    </button>
+                </form>
+            </section>
+            <section class="right">
+                <div class="openForm">
+                    <span class="numb">02</span>
+                    <div class="_img">
+                        <img src="../../upload/customize/index/measuring_right_img_190_170.png" alt="">
+                    </div>
+                    <p class="en">Room size</p>
+                    <p class="ch">選擇坪數計算</p>
+                </div>
+                <form>
+                    <div class="_text">
+                        <p>方法二，請輸入以下參數，我們將試算出最適合您的冷氣需求</p>
+                    </div>
+                    <div class="ping workbox">
+                        <p>坪數</p>
+                        <input type="number" placeholder="0">
+                        <p>坪</p>
+                    </div>
+                    <button class="next" type="button" onclick="goNextArea(this)">
+                        <span class="iconN-hook"></span>
+                        <p>SEND</p>
+                    </button>
+                </form>
+            </section>
+        </article>
+        <!-- 是否為頂樓 -->
+        <article class="topfloor">
+            <section class="left">
+                <picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="" media="(max-width:800px)">
+                    <img src="../../upload/customize/index/topfloorBg_960_1080.jpg" alt="">
+                </picture>
+            </section>
+            <section class="right">
+                <div class="box">
+                    <div class="_title">
+                        <span class="iconN-roof"></span>
+                        <p class="en">Top Floor</p>
+                        <p class="ch">選擇您的空間</p>
+                        <p class="ps">若是房間位於頂樓，又未做好隔熱措施，牆壁將在白天吸收大量太陽直射的熱量，在晚上時熱量就開始散發入內，在夏季顯得更為炎熱</p>
+                        <p class="words">步驟二，請選擇以下條件，我們將試算出最適合您的冷氣需求</p>
+                    </div>
+                    <form>
+                        <div class="workbox">
+                            <h6>是否為頂樓</h6>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="topfloor">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>是</p>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="topfloor">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>否</p>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <button class="prev" type="button" onclick="backToPrevArea(this)">
+                                <span class="iconN-return"></span>
+                                <p>BACK</p>
+                            </button>
+                            <button class="next" type="button" onclick="goNextArea(this)">
+                                <span class="iconN-hook"></span>
+                                <p>SEND</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </article>
+        <!-- 是否西曬 -->
+        <article class="westernsun">
+            <section class="left">
+                <picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="" media="(max-width:800px)">
+                    <img src="../../upload/customize/index/westernsunBg_960_1080.jpg" alt="">
+                </picture>
+            </section>
+            <section class="right">
+                <div class="box">
+                    <div class="_title">
+                        <span class="iconN-sun"></span>
+                        <p class="en">Western Sun</p>
+                        <p class="ch">選擇您的空間</p>
+                        <p class="ps">若房間向西，下午時太陽將長時間直射家中，直接透過窗戶傳入，且牆壁在此時正大量吸收熱量，晚上熱量就會散發入內，因此溫度比其他房間高很多。</p>
+                        <p class="words">步驟三，請選擇以下條件，我們將試算出最適合您的冷氣需求</p>
+                    </div>
+                    <form>
+                        <div class="workbox">
+                            <h6>是否為西曬方位</h6>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="westernsun">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>是</p>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="westernsun">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>否</p>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <button class="prev" type="button" onclick="backToPrevArea(this)">
+                                <span class="iconN-return"></span>
+                                <p>BACK</p>
+                            </button>
+                            <button class="next" type="button" onclick="goNextArea(this)">
+                                <span class="iconN-hook"></span>
+                                <p>SEND</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </article>
+        <!-- 冷氣使用型態 -->
+        <article class="type">
+            <section class="left">
+                <img src="../../upload/customize/index/typeBg_960_1080.jpg" alt="">
+            </section>
+            <section class="right">
+                <div class="box">
+                    <div class="_title">
+                        <span class="iconN-air_conditioning"></span>
+                        <p class="en">Type</p>
+                        <p class="ch">選擇您的冷氣需求</p>
+                        <p class="words">步驟四，請選擇以下條件，我們將挑選出最適合您的商品</p>
+                    </div>
+                    <form>
+                        <div class="workbox model">
+                            <h6>冷氣機型</h6>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="model">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>冷氣專用</p>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="model">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>冷暖氣兼用</p>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="workbox efficacy">
+                            <h6>高熱源環境 (如人數多或室內陳列因素等)，建議提高冷房額定能力</h6>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="efficacy">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>增加冷氣額定需求</p>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="efficacy">
+                                    <label>
+                                        <span class="iconN-hook"></span>
+                                        <p>正常冷房額定需求</p>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <button class="prev" type="button" onclick="backToPrevArea(this)">
+                                <span class="iconN-return"></span>
+                                <p>BACK</p>
+                            </button>
+                            <button class="next" type="button">
+                                <span class="iconN-hook"></span>
+                                <p>完成送出</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </article>
+    </main>
+    <article class="notice">
+        <section>
+            <div class="_text">
+                <p class="en">Notice</p>
+                <p class="ch">選擇坪數條件</p>
+                <p class="words">親愛的用戶你好，如要輸入坪數欄位，我們將刪除你剛選擇的資料頁面，已輸入的條件將會重新整理，不再保留。</p>
+            </div>
+            <div class="button">
+                <ul>
+                    <li class="yes">
+                        <span class="iconN-hook"></span>
+                        <p>確認選擇</p>
+                    </li>
+                    <li class="no">
+                        <span></span>
+                        <p>取消選擇</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </article>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vedor/jquery-1.11.3.min.js"></script>
+    <!--共用-->
+    <script src="../../assets/js/vedor/slick/slick.js"></script>
+    <script src="../../assets/js/vedor/bLazy/bLazy.js"></script>
+    <script src="../../assets/js/vedor/waypoints.min.js"></script>
+    <script src="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../assets/js/vedor/jquery.easings.min.js"></script>
+    <script src="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.js"></script>
+    <script src="../../assets/js/vedor/prefixfree.min.js"></script>
+    <script src="../../assets/js/vedor/picturefill.min.js"></script>
+    <!--main js-->
+    <script src="../../assets/js/main.js"></script>
+    <!-- 非共用的套件js -->
+    <script src="../../assets/js/vedor/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <!--自訂的js-->
+    <script src="../../assets/js/nick.js"></script>
+    <!-- 轉換區塊 -->
+    <script>
+        // 到下一個區塊
+        function goNextArea(target) {
+            if ($(target).hasClass("allset")) {
+
+                $(target).closest("article").addClass("done")
+
+                var i = $(target).closest("article").index() + 1
+                var article = document.querySelectorAll("main article");
+
+                $(article[i]).addClass("active").removeClass("done")
+
+
+                $(".topNav .dot").addClass("active")
+
+                if (i > 2) {
+                    var x = $(target).closest("article").index() - 1
+
+                    var top = x * 22 + 11
+
+                    $(".topNav .dot ul i").css("top", top);
+                    $(".topNav .dot ul li").eq(x).addClass("active").siblings().removeClass("active");
+                }
+            } else {
+                alert("尚未選取完成");
+            }
+        }
+
+        // 回到上一個區塊
+        function backToPrevArea(target) {
+            $(target).closest("article").removeClass("active")
+            var i = $(target).closest("article").index() - 1
+            var article = document.querySelectorAll("main article");
+            $(article[i]).addClass("active").removeClass("done")
+
+            if (i > 1) {
+
+                var x = $(target).closest("article").index() - 3
+                var top = x * 22 + 11
+
+                $(".topNav .dot ul i").css("top", top);
+                $(".topNav .dot ul li").eq(x).addClass("active").siblings().removeClass("active");
+            }
+        }
+    </script>
+    <!-- 檢測是否完成填寫 -->
+    <script>
+        $("input").each(function () {
+            detection(this);
+            $(this).on('keyup', function () {
+                detection(this);
+            });
+
+            $(this).on('change', function () {
+                detection(this);
+            });
+        });
+
+        // 檢測這個form是否完成填寫
+        function detection(target) {
+            $this = $(target)
+            if ($this.attr("type") == "radio") {
+                var length = $this.closest("ul").find("input[type='radio']:checked").length
+                if (length > 0) {
+                    $this.closest(".workbox").addClass("checked");
+                }else{
+                    $this.closest(".workbox").removeClass("checked");
+                }
+            }
+
+
+            if ($this.attr("type") == "text" || $this.attr("type") == "number") {
+                if ($this.val() != "") {
+                    $this.closest(".workbox").addClass("checked");
+                } else {
+                    $this.closest(".workbox").removeClass("checked");
+                }
+            }
+
+            var workbox = $this.closest("form").find(".workbox");
+            // 判斷input是否完成
+            for (var i = 0; i < workbox.length; i++) {
+                // 完成input
+                if ($(workbox[i]).hasClass("checked")) {
+                    var x = workbox.length - 1
+                    if (i == x) {
+                        $this.closest("form").find(".next").addClass("allset")
+                    }
+
+                }
+                // 未完成input
+                else {
+                    $this.closest("form").find(".next").removeClass("allset")
+                    // 直接終止for迴圈
+                    break
+                }
+            }
+        }
+    </script>
+    <!-- 完成送出 -->
+    <script>
+        $(document).ready(function () {
+            $(".type .right form .button .next").click(function () {
+                if ($(this).hasClass("allset")) {
+                    // 後端請注意:請在下方填入下一頁的網址
+                    var href = "../customize/result.html"
+                    // 轉場特效
+                    pagechange(href);
+                } else {
+                    alert("尚未選取完成");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

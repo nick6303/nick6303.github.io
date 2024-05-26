@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Philosopher-Bold';
+  src: url('../assets/font/Philosopher/Bold/Philosopher-Bold.woff2') format('woff2'),
+       url('../assets/font/Philosopher/Bold/Philosopher-Bold.woff') format('woff'),
+       url('../assets/font/Philosopher/Bold/Philosopher-Bold.ttf') format('truetype'),
+       url('../assets/font/Philosopher/Bold/Philosopher-Bold.otf') format('otf'),
+       url('../assets/font/Philosopher/Bold/Philosopher-Bold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

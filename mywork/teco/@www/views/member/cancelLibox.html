@@ -1,0 +1,58 @@
+<section>
+    <div class="why">
+        <div class="_title">
+            <p class="en">Cancel</p>
+            <p class="ch">取消訂單</p>
+        </div>
+        <div class="words">
+            <p>親愛的會員你好，您確定要取消訂單編號2018101500001的購買嗎?</p>
+        </div>
+        <form>
+            <div>
+                <p>備註</p>
+                <textarea placeholder="輸入您取消訂單的原因或商品問題"></textarea>
+            </div>
+            <!-- 後端請注意:
+                1.如果取消成功的話 請啟動 cancelLibox.success(); 
+                2.如果取消失敗的話 請啟動 cancelLibox.fail(); 
+            -->
+            <button type="button" class="withLine" onclick="cancelLibox.fail();">
+                <span class="iconN-trashcan"></span>
+                <p>確認取消</p>
+            </button>
+            <button type="button" class="withLine liboxClose">
+                <span class="icon-cart"></span>
+                <p>我在想想</p>
+            </button>
+        </form>
+    </div>
+    <div class="success" style="display:none">
+        <div class="_title">
+            <span class="iconN-cancelSucess"></span>
+            <p class="en">Cancel</p>
+            <p class="ch">取消成功</p>
+        </div>
+        <div class="words">
+            <p>親愛的會員你好，您的訂單編號2018101500001已成功取消</p>
+        </div>
+        <button type="button" class="withLine liboxClose">
+            <span class="iconN-order"></span>
+            <p>訂單明細</p>
+        </button>
+    </div>
+    <div class="fail" style="display:none">
+        <div class="_title">
+            <span class="iconN-service"></span>
+            <p class="en">Cancel</p>
+            <p class="ch">取消失敗</p>
+        </div>
+        <div class="words">
+            <p>親愛的會員你好，本訂單包含客製化商品，本產品不符合7天無條件退貨的規定，請聯絡專人客服，我們會由專人為您處理。<br>
+                聯絡客服：02-123456789</p>
+        </div>
+        <button type="button" class="withLine liboxClose">
+            <span class="iconN-order"></span>
+            <p>訂單明細</p>
+        </button>
+    </div>
+</section>

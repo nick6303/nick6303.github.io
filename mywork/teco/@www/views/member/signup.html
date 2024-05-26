@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TECO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link href="../../assets/img/favicon-20170414044912706.ico" rel="icon" type="image/x-icon">
+    <!--slick-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick.css" />
+    <!--fons-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/fontAwesome/font-awesome.css" />
+    <!--semanticwp-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.css" />
+    <!--mCustomScrollbar-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.css" />
+    <!--style.css-->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/member/signup.css" />
+</head>
+
+<main id="member" class="signup">
+    <article class="topNav">
+        <section class="back" onclick="history.back()">
+            <span></span>
+            <p>CLOSE</p>
+        </section>
+    </article>
+    <article class="join">
+        <section>
+            <div class="_title">
+                <p class="en">Join Us</p>
+                <p class="ch">加入會員</p>
+            </div>
+            <div class="words">
+                <p>你好，請將基本資料填寫於下方表單，手機號碼將成為會員帳號，並確保您的資訊正確無誤，意保障後續再使用、查詢、優惠等會員權益，謝謝!</p>
+            </div>
+            <form>
+                <div class="inputBoxs">
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>姓　　名</p>
+                        <input type="text" placeholder="王東元">
+                    </div>
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>手機號碼</p>
+                        <input type="text" placeholder="0912 345 678">
+                    </div>
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>電子信箱</p>
+                        <input type="text" placeholder="A123456789@XXX.com">
+                    </div>
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>聯絡電話</p>
+                        <input type="text" placeholder="02 - 23456789#123">
+                    </div>
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>密　　碼</p>
+                        <input type="text" placeholder="請輸入你註冊的密碼">
+                    </div>
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>確認密碼</p>
+                        <input type="text" placeholder="請輸入你註冊的密碼">
+                    </div>
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>連絡地址</p>
+                        <div class="dropDowns">
+                            <span class="dropDown county">
+                                <span class="selectMenu">
+                                    <p>選擇縣市 +</p>
+                                </span>
+                                <ul>
+                                    <li>台北</li>
+                                    <li>台中</li>
+                                    <li>高雄</li>
+                                    <li>台北</li>
+                                    <li>台中</li>
+                                    <li>高雄</li>
+                                    <li>台北</li>
+                                    <li>台中</li>
+                                    <li>高雄</li>
+                                    <li>台北</li>
+                                    <li>台中</li>
+                                    <li>高雄</li>
+                                </ul>
+                            </span>
+                            <span class="dropDown towns">
+                                <span class="selectMenu">
+                                    <p>選擇鄉鎮市區 +</p>
+                                </span>
+                                <ul>
+                                    <li>潭子區</li>
+                                    <li>太平區</li>
+                                    <li>南區</li>
+                                    <li>潭子區</li>
+                                    <li>太平區</li>
+                                    <li>南區</li>
+                                    <li>潭子區</li>
+                                    <li>太平區</li>
+                                    <li>南區</li>
+                                    <li>潭子區</li>
+                                    <li>太平區</li>
+                                    <li>南區</li>
+                                    <li>潭子區</li>
+                                    <li>太平區</li>
+                                    <li>南區</li>
+                                </ul>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="inputBox" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <input type="text" placeholder="台北市南港區三重路19-9號5樓">
+                    </div>
+                    <div class="inputBox code" onfocusin="this.classList.add('active')" onfocusout="this.classList.remove('active')">
+                        <p>驗 證 碼</p>
+                        <input type="text" placeholder="點擊圖片可更新驗證碼">
+                        <div>
+                            <img src="../../upload/member/code.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="agree">
+                    <div>
+                        <input type="checkbox">
+                        <label>
+                            <span class="iconN-hook"></span>
+                        </label>
+                    </div>
+                    <p>已閱讀及了解<span class="openTerms">服務條款</span>並同意註冊成為會員並同意收到樺隴實業的各項優惠跟相關訊息</p>
+                </div>
+                <div class="buttons">
+                    <button type="reset" class="withLine">
+                        <span class="iconN-X"></span>
+                        <p>重新填寫</p>
+                    </button>
+                    <button type="button" class="withLine" onclick="verifyLibox.open();strat_countdown('.countUp');">
+                        <span class="iconN-hook"></span>
+                        <p>確定註冊</p>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </article>
+    <article class="verifyLibox">
+        <section class="topNav">
+            <div class="back" onclick="verifyLibox.close(this)">
+                <span></span>
+                <p>CLOSE</p>
+            </div>
+        </section>
+        <section class="verification">
+            <div class="_title">
+                <p class="en">Identuty Verification</p>
+                <p class="ch">會員身分驗證</p>
+            </div>
+            <div class="words">
+                <p>親愛的會員您好，為了避免您的身分被盜用，我們會透過e-mail發送五位驗證碼到<span>TECO@gmail.com</span>，請於五分鐘內完整驗證，若您未收到信箱通知，請重新發送，或者回到上一頁畫面確認您輸入的資料是否正確。</p>
+            </div>
+            <form>
+                <ul id="vcode">
+                    <li><input type="text" placeholder="0" maxlength="1"></li>
+                    <li><input type="text" placeholder="0" maxlength="1"></li>
+                    <li><input type="text" placeholder="0" maxlength="1"></li>
+                    <li><input type="text" placeholder="0" maxlength="1"></li>
+                    <li><input type="text" placeholder="0" maxlength="1"></li>
+                </ul>
+                <!-- 後端請注意:如果要暫停倒數的話 請將 var noStop 變false 他原本是true  停止之後要再啟動的話 記得要再把它變true 詳細方法請看下方註解-->
+                <!-- 停止 var noStop = false -->
+                <div class="countUp">
+                    <!-- 後端請注意:data-m 請填入分鐘 -->
+                    <p class="minute" data-m="0"></p>
+                    <!-- 後端請注意:data-s 請填入秒數 -->
+                    <p class="second" data-s="30"></p>
+                </div>
+                <div class="buttons">
+                    <!-- 後端請注意:如果要啟動倒數計時器的話，請起啟動strat_countdown(目標target,想啟動的function) 這個東西 下面的onclick為範例-->
+                    <button type="button" class="withLine" onclick="strat_countdown('.countUp')">
+                        <span class="iconN-resend"></span>
+                        <p>重新發送</p>
+                    </button>
+                    <!-- 後端請注意:onclick 只是暫時 重要的是裡面的function -->
+                    <button type="button" class="withLine" onclick="toNext(this)">
+                        <span class="iconN-hook"></span>
+                        <p>確認送出</p>
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="success">
+            <div class="_title">
+                <p class="en">Successful</p>
+                <p class="ch">會員驗證成功</p>
+            </div>
+            <div class="words">
+                <p>親愛的會員您好，恭喜您身分驗證成功，我們已經將您的登入密碼重置，並將新的密碼發送電子郵件到您的信箱，建議您登入會員之後，更改您的登入密碼。</p>
+            </div>
+            <div class="buttons">
+                <button class="withLine LiboxClose" onclick="window.location.href='index.html'">
+                    <span class="iconN-hook"></span>
+                    <p>立即登入</p>
+                </button>
+            </div>
+        </section>
+    </article>
+    <article class="terms">
+        <section>
+            <div class="topNav">
+                <div class="back">
+                    <span></span>
+                    <p>CLOSE</p>
+                </div>
+            </div>
+            <div class="_title">
+                <p class="en">Terms Of Service</p>
+                <p class="ch">東元會員服務條款</p>
+            </div>
+            <ul>
+                <li>
+                    <h6>會員服務條款</h6>
+                    <div class="_text">
+                        <p>• 本會員服務條款所稱之「會員」，為依照本站所定之加入會員程序加入完成並通過認證者。</p>
+                        <p>• 當您使用本站服務時，即表示您同意及遵守本服務條款的規定事項及相關法律之規定。</p>
+                        <p>• 本站保留有審核加入會員資格之權利，另外已加入會員者，本站亦保留有解除其會員資格之權利。</p>
+                        <p>• 本會員服務條款之修訂，適用於所有會員，當本站修訂本服務條款時，將於本站上公告。</p>
+                        <p>尊重並依據本網站「隱私權保護聲明」保護您的隱私(請參閱「隱私權保護聲明」條款)。</p>
+                    </div>
+                </li>
+                <li>
+                    <h6>隱私權保護</h6>
+                    <div class="_text">
+                        <p>• 使用本站所提供之會員服務時，於加入會員時所登錄之帳號及密碼使用之。</p>
+                    </div>
+                </li>
+                <li>
+                    <h6>會員</h6>
+                    <div class="_text">
+                        <p>• 會員須善盡帳號及密碼的使用與管理之責任。對於使用該會員之帳號及密碼(無關於會員本身或其他人)利用本站服務所造成或衍生之所有行為及結果，會員須自行負擔全部責任。</p>
+                        <p>• 會員之帳號及密碼遺失，或發現無故遭第三者盜用時，應立即通知本站連絡掛失，因未即時通知，導致本站無法有效防止及修改時，所造成的所有損失，會員應自負全責。</p>
+                        <p>• 每次結束使用本服務，執行會員之登出並關閉視窗，以確保您的會員權益。</p>
+                        <p>• 盜用第三者會員之帳號及密碼，導致第三者或本公司遭其他第三人或行政機關之調查或追訴時，第三者會員或本公司有權向您請求損害賠償，包括但不限於訴訟費用、律師費及商譽損失等。</p>
+                    </div>
+                </li>
+                <li>
+                    <h6>會員登錄資料</h6>
+                    <div class="_text">
+                        <p>• 會員登錄資料須提供您本人正確、最新及完整的資料。</p>
+                        <p>• 會員登錄資料不得有偽造、不實等之情事(ex如個人資料及信用卡資料)，一經發現本公司可拒絕其加入會員資格之權利。並得以暫停或終止其會員資格，若違反中華民國相關法律，亦將依法追究。</p>
+                        <p>• 會員基本資料(ex:住址，電話及其他登錄資料)有變更時，請不定期更新相關個人資料，確保其正確及完整性。若您提供的資料有錯誤或不符等現象，本網站有權暫停或終止您的帳號，並拒絕您繼續使用本服務。</p>
+                        <p>• 未經會員本人同意，本公司原則上不會將涉及個人隱私之資料開示給第三者，唯資料共用原則...等不在此限(請參閱本站「隱私權保護聲明」相關規定)。</p>
+                        <p>• 會員應妥善保管密碼，不可將密碼洩露或提供給他人知道或使用；以同一個會員身分證字號和密碼使用本服務所進行的所有行為，都將被認為是該會員本人和密碼持有人的行為。</p>
+                        <p>• 會員如果發現或懷疑有第三人使用其會員身分證字號或密碼，應該立即通知本公司，採取必要的必要的防範措施。但上述通知不得解釋為本公司對會員負有任何形式之賠償或補償之責任或義務。</p>
+                    </div>
+                </li>
+                <li>
+                    <h6>使用行為</h6>
+                    <div class="_text">
+                        <p>• 您使用本服務之一切行為必須符合當地或國際相關法令規範；對於使用者的一切行為，您須自行負擔全部責任。</p>
+                        <p>• 您同意絕不為非法之目的或以非法方式使用本服務，與確實遵守中華民國相關法規及網際網路之國際慣例，並保證不得利用本服務從事侵害他人權益或違法之行為。</p>
+                        <p>• 您於使用本站會員服務時應遵守以下限制：</p>
+                        <p>　a.有損他人人格或商標權、著作權等智慧財產權或其他權利內容。</p>
+                        <p>　b.使用違反公共秩序或善良風俗或其他不法之文字。</p>
+                        <p>　c.強烈政治、宗教色彩的偏激言論。</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </article>
+</main>
+<!--主要jQuery-->
+<script src="../../assets/js/vedor/jquery-1.11.3.min.js"></script>
+<!--共用-->
+<script src="../../assets/js/vedor/slick/slick.js"></script>
+<script src="../../assets/js/vedor/bLazy/bLazy.js"></script>
+<script src="../../assets/js/vedor/waypoints.min.js"></script>
+<script src="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../assets/js/vedor/jquery.easings.min.js"></script>
+<script src="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.js"></script>
+<script src="../../assets/js/vedor/prefixfree.min.js"></script>
+<script src="../../assets/js/vedor/picturefill.min.js"></script>
+<script>
+    document.createElement("picture");
+</script>
+<!--非共用-->
+<script src="../../assets/js/vedor/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+<!--main js-->
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/nick.js"></script>
+<script>
+    function toNext(ele) {
+        $(ele).closest("section").removeClass("active").addClass("close");
+        setTimeout(function () {
+            $(ele).closest("section").removeClass("close");
+            $(ele).closest("section").next().addClass("active");
+        }, 400)
+    }
+
+    var verifyLibox = {
+        open: function () {
+            $(".verifyLibox").addClass("open");
+            $(".verifyLibox").find("section").eq(1).addClass("active").siblings().removeClass("active");
+        },
+
+        close: function (ele) {
+            $(ele).closest("article").removeClass("open").addClass("close");
+            setTimeout(function () {
+                $(ele).closest("article").removeClass("close");
+            }, 400);
+        }
+    }
+</script>
+</body>
+
+</html>

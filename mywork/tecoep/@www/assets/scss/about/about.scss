@@ -1,0 +1,883 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+.select_nav {
+    height: calc(26px + 5vh);
+    position: relative;
+    ul {
+        li {
+            width: calc(33.33% - 1px);
+            @media all and (max-width: 900px) {
+                width: 100vw;
+                height: calc(26px + 5vh);
+                margin: 2px 0;
+            }
+        }
+    }
+}
+
+
+
+.content {
+    padding: 14vh 5vw 0 5vw;
+    @media all and (max-width: 1024px) {
+        padding: 8vh 5vw 0 5vw;
+    }
+    @media all and (max-width: 700px) {
+        padding: 10vh 5vw 0 5vw;
+    }
+    .history,
+    .awards {
+        ._title {
+            h2 {
+                animation: fadeInDown 1.4s both;
+            }
+            h3 {
+                animation: fadeInDown 1.4s both .2s;
+            }
+        }
+    }
+    ._title {
+        margin: auto;
+        max-width: 850px;
+        h2 {
+            @include title_h2;
+            span {
+                @include title_h2_span;
+            }
+        }
+        h3 {
+            @include title_h3;
+        }
+    }
+    .introduction,
+    .history,
+    .awards {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 東元電機介紹 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+.introduction ._title.show {
+    h2 {
+        animation: fadeInDown 1.4s both;
+    }
+    h3 {
+        animation: fadeInDown 1.4s both .2s;
+    }
+}
+
+.introduction_content {
+    margin: auto;
+    margin-top: 60px;
+    max-width: 1420px;
+    ._text {
+        letter-spacing: 1px;
+        text-align: justify;
+        h2 {
+            font-weight: bold;
+            @include font-size(24);
+            line-height: 1.5;
+            @media all and (max-width: 500px) {
+                @include font-size(22);
+            }
+            @media all and (max-width: 400px) {
+                @include font-size(20);
+            }
+        }
+        h3 {
+            font-family: 'MyriadPro-Regular';
+            color: #858585;
+            line-height: 1.5;
+            @include font-size(18);
+            @media all and (max-width: 500px) {
+                @include font-size(16);
+            }
+        }
+        span {
+            display: block;
+            background-color: $base_orange;
+            height: 6px;
+            width: 0px;
+            opacity: 0;
+            margin: 35px 0 35px -40px;
+            @media all and (max-width: 850px) {
+                margin: 2vh 0 2vh -5vw;
+            }
+            @media all and (max-width: 500px) {
+                margin: 3vh 0 3vh -5vw;
+            }
+        }
+        p {
+            @include font-size(16);
+            line-height: 1.8;
+            font-family: "微軟正黑體";
+        }
+        &.show {
+            h2 {
+                animation: fadeInUp 1.6s both;
+            }
+            h3 {
+                animation: fadeInUp 1.6s both .2s;
+            }
+            span {
+                opacity: 1;
+                width: 80px;
+                transition: all 1.4s ease .5s;
+            }
+            p {
+                animation: fadeInUp 1.8s both .4s;
+            }
+        }
+    }
+    .show ._img,
+    .right.show {
+        animation: fadeInUp 2s both;
+    }
+    .idea,
+    .center,
+    .threeS {
+        display: flex;
+    }
+    .idea {
+        .left {
+            width: 53.5%;
+            @media all and (max-width: 850px) {
+                width: 100%;
+            }
+            ._text {
+                padding: 120px 10px 0 40px;
+                @media all and (max-width: 1540px) {
+                    padding: 8.4vw 10px 0 40px;
+                }
+                @media all and (max-width: 850px) {
+                    padding: 0 2vw;
+                    margin-top: 4vh;
+                }
+            }
+        }
+        .right {
+            width: 46.5%;
+            padding-left: 120px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            animation-delay: .2s;
+            @media all and (max-width: 1540px) {
+                padding-left: 8.4vw;
+            }
+            @media all and (max-width: 850px) {
+                display: none;
+            }
+        }
+    }
+    .center {
+        margin-top: 90px;
+        align-items: center;
+        @media all and (max-width: 850px) {
+            flex-direction:column;
+        }
+        ._img {
+            width: 53.5%;
+            @media all and (max-width: 850px) {
+                width: 100%;
+            }
+        }
+        ._text {
+            width: 46.5%;
+            padding: 0 10px 0 120px;
+            @media all and (max-width: 1540px) {
+                padding-left: calc(40px + 5vw);
+            }
+            @media all and (max-width: 850px) {
+                width: 100%;
+                padding: 0 2vw;
+                margin-top: 4vh;
+            }
+        }
+    }
+    .threeS {
+        margin-top: 120px;
+        flex-direction: row-reverse;
+        align-items: center;
+        @media all and (max-width: 850px) {
+            flex-direction:column;
+        }
+        ._img,
+        ._text {
+            width: 50%;
+            @media all and (max-width: 850px) {
+                width: 100%;
+            }
+        }
+        ._img {
+            ul {
+                @include flex-space-between;
+                @media all and (max-width: 600px) {
+                    flex-direction: column;
+                }
+                li {
+                    width: calc(33.33% - 4px);
+                    padding: 60px 0 80px 0;
+                    @include flex-center;
+                    flex-direction: column;
+                    background-color: #eeeeee;
+                    text-align: center;
+                    @media all and (max-width: 1540px) {
+                        padding: 4vw 0 5vw 0;
+                    }
+                    @media all and (max-width: 600px) {
+                        width: 100%;
+                        flex-direction: row;
+                        padding: 4vh 0 5vh 0;
+                        margin: 4px;
+                        div,
+                        span {
+                            width: 50%;
+                        }
+                        div {
+                            padding-right: 8vw;
+                        }
+                    }
+                    span {
+                        @include font-size(70);
+                        @media all and (max-width: 600px) {
+                            @include font-size(80);
+                        }
+                    }
+                    h2 {
+                        margin: 20px 0 0 0;
+                        font-family: 'MyriadPro-Semibold';
+                        @include font-size(32);
+                        line-height: 1.5;
+                        @media all and (max-width: 600px) {
+                            margin: 0;
+                        }
+                    }
+                    p {
+                        @include font-size(15);
+                        line-height: 1.5;
+                    }
+                    &.show {
+                        animation: fadeIn .4s both;
+                        span,
+                        div {
+                            animation: fadeInUp 1.6s both .2s;
+                        }
+                    }
+                }
+            }
+        }
+        ._text {
+            padding: 0 40px 0 40px;
+            @media all and (max-width: 1540px) {
+                padding:0 2.6vw 0 40px;
+            }
+            @media all and (max-width: 850px) {
+                padding: 0 2vw;
+                margin-top: 4vh;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ 東元電機介紹 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 東元電機事記 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+.history_nav {
+    @include flex-center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    position: relative;
+    opacity: 0;
+    z-index: 2;
+    animation: fadeInDown 1.4s both .4s;
+    div {
+        @include flex-center;
+        margin: 0 0 15px 0;
+        cursor: pointer;
+        p {
+            @include font-size(18);
+            transition: all .4s ease;
+            letter-spacing: 1px;
+            font-family: "微軟正黑體";
+            font-weight: bold;
+        }
+        &:not(:first-child) {
+            padding-left: 30px;
+        }
+        &:not(:last-child) {
+            &:after {
+                content: "";
+                display: block;
+                width: 5px;
+                height: 30px;
+                background-color: #e5e5e5;
+                margin-left: 30px;
+            }
+        }
+        &:hover {
+            @media all and (min-width: 901px) {
+                p {
+                    color: $base_blue;
+                    transition: all .4s ease;
+                }
+            }
+        }
+        &.checked {
+            p {
+                color: $base_blue;
+            }
+        }
+    }
+}
+
+
+
+.history_content {
+    margin: auto;
+    margin-top: 60px;
+    max-width: 1000px;
+    .years {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    .year {
+        display: flex;
+        position: relative;
+        @media all and (max-width: 700px) {
+            flex-direction:column;
+        }
+
+        &:before {
+            @include fakeLine(0%, 1px, #000);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: w100 2s both .2s;
+            @media all and (max-width: 700px) {
+                display: none;
+            }
+        }
+        &:after {
+            @include fakeLine(0%, 3px, #000);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: w18 2s both .2s;
+            @media all and (max-width: 700px) {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        h2 {
+            width: 18%;
+            @include flex-center;
+            position: relative;
+            animation: fadeInDown 1.8s both;
+            @media all and (max-width: 700px) {
+                width: 100%;
+                padding-top: 4vh;
+            }
+        }
+        ul {
+            padding: 15px 0;
+            width: 82%;
+            overflow: hidden;
+            @media all and (max-width: 700px) {
+                width: 100%;
+            }
+            li {
+                padding: 20px;
+                display: flex;
+                font-family: "微軟正黑體";
+                @include font-size(16);
+                letter-spacing: 1px;
+                line-height: 1.8;
+                text-align: justify;
+                animation: fadeInLeft 1.8s both;
+                @media all and (max-width: 700px) {
+                    padding: 20px 10px;
+                    animation: fadeInUp 1.8s both;
+                }
+                &:before {
+                    @include fakeLine(5px, 1px, $base_orange);
+                    margin: 13px 8px 13px 0;
+                }
+                &:not(:last-child) {
+                    border-bottom: 1px solid #e5e5e5;
+                }
+            }
+        }
+    }
+}
+
+@keyframes w100 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes w18 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 18%;
+    }
+}
+
+@media all and (max-width: 700px) {
+    @keyframes w18 {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ 東元電機事記 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 我們的榮耀 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
+.content {
+    .awards {}
+}
+
+.awards_content {
+    margin: auto;
+    max-width: 1620px;
+    margin-top: 60px;
+    ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        li {
+            width: calc(33.33% - 10vw);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            margin: 0 5vw 8.5vw 5vw;
+            @media all and (min-width: 1921px) {
+                width: calc(33.33% - 133px);
+                margin: 0 100px 165px 100px;
+            }
+            @media all and (max-width: 1024px) {
+                width: calc(50% - 10vw);
+                max-width: unset;
+            }
+            @media all and (max-width: 700px) {
+                width: 100%;
+                margin: 0 0 8.5vw 0;
+            }
+            ._img,
+            h2,
+            p {
+                transition: all .4s ease;
+            }
+            ._img {
+                width: 100%;
+                max-width: 350px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                @media all and (max-width: 700px) {
+                    height:auto;
+                }
+                img {
+                    width: auto;
+                    height: auto;
+                    max-height: 300px;
+                    max-width: 350px;
+                    @media all and (max-width: 1800px) {
+                        max-width:19.4vw;
+                        max-height: 16.6vw;
+                    }
+                    @media all and (max-width: 1024px) {
+                        max-width: 34.1vw;
+                        max-height: 29.3vw;
+                    }
+                    @media all and (max-width: 700px) {
+                        max-height: 50vh;
+                        max-width: 100%;
+                    }
+                }
+            }
+            h2,
+            p {
+                @include font-size(18);
+                letter-spacing: 1px;
+                line-height: 1.5;
+                font-family: MyriadPro-Regular, 微軟正黑體;
+            }
+            h2 {
+                margin-top: 40px;
+                font-weight: bold;
+            }
+            .hoverBox {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include flex-center;
+                background-color: transparent;
+                transition: all .4s ease;
+            }
+            span {
+                border: 1px solid transparent;
+                border-radius: 50%;
+                @include flex-center;
+                padding: 0px;
+                transition: all .4s ease;
+                i {
+                    position: relative;
+                    background-color: $base_orange;
+                    height: 0px;
+                    width: 0px;
+                    border-radius: 50%;
+                    display: block;
+                    transition: all .4s ease;
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: all .3s ease;
+                    }
+                    &:before {
+                        @include fakeLine(0px, 2px, #fff);
+                    }
+                    &:after {
+                        @include fakeLine(2px, 0px, #fff);
+                    }
+                }
+            }
+            &:hover {
+                .hoverBox {
+                    background-color: rgba(255, 255, 255, .4);
+                }
+                span {
+                    border: 1px solid $base_orange;
+                    padding: 4px;
+                    i {
+                        width: 35px;
+                        height: 35px;
+                        &:before,
+                        &:after {
+                            transition: all .3s ease .3s;
+                        }
+                        &:before {
+                            width: 12px;
+                        }
+                        &:after {
+                            height: 12px;
+                        }
+                    }
+                }
+            }
+            &.show {
+                ._img {
+                    animation: fadeInUp 2s both;
+                }
+                h2 {
+                    animation: fadeInUp 2s both .4s;
+                }
+                p {
+                    animation: fadeInUp 2s both .6s;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ 我們的榮耀 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+/*我們的榮耀燈箱*/
+
+.awardsLibox {
+    @include libox;
+    background-color: rgba(0, 0, 0, .8);
+    justify-content: center;
+    align-items: center;
+    .liboxContent {
+        background-color: #fff;
+        position: relative;
+        @include flex-center;
+        overflow: hidden;
+        @media all and (max-width: 1260px) {
+            display: block;
+            .mCSB_container {
+                margin: 0;
+                padding: 60px;
+                @include flex-center;
+                flex-direction: column;
+            }
+        }
+        @media all and (max-width: 1000px) {
+            .mCSB_container {
+                padding: 50px 5vw;
+            }
+        }
+        .liboxClose {
+            @include close;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            span {
+                @include close_span;
+                &:before {
+                    @include close_span_before;
+                }
+                &:after {
+                    @include close_span_after;
+                }
+            }
+        }
+    }
+    ._img {
+        @include flex-center;
+        padding: 60px;
+        @media all and (max-width: 1260px) {
+            padding:0;
+        }
+        img {
+            height: auto;
+            width: auto;
+            max-height: 500px;
+            max-width: 700px;
+            @media all and (max-width: 1000px) {
+                max-width:100%;
+                max-height: unset;
+            }
+        }
+    }
+    ._text {
+        letter-spacing: 1px;
+        padding: 25px 70px 0 40px;
+        max-width: 440px;
+        @media all and (max-width: 1260px) {
+            @include flex-center;
+            flex-direction: column;
+            max-width: unset;
+            padding: 25px 15px 0 15px;
+        }
+        h2,
+        h3,
+        p {
+            font-family: "微軟正黑體";
+            line-height: 1.5;
+        }
+        h2 {
+            font-weight: bold;
+            @include font-size(20);
+        }
+        h3 {
+            @include font-size(20);
+        }
+        p {
+            @include font-size(16);
+            color: #8c8c8c;
+            margin-top: 20px;
+        }
+        .link {
+            margin-top: 70px;
+            a {
+                width: 180px;
+                height: 40px;
+                background-color: #000;
+                color: #fff;
+                @include font-size(13);
+                letter-spacing: 1px;
+                @include flex-center;
+            }
+        }
+    }
+    &.open {
+        display: flex;
+        animation: fadeIn .4s both;
+        .liboxContent {
+            animation: awardsLiboxOpen 1s both .3s;
+            .liboxClose {
+                animation: slideInDown 1s both 1s;
+            }
+            ._img {
+                animation: fadeInUp 2s both 1s;
+                @media all and (max-width: 1260px) {
+                    animation: fadeIn 2s both 1s;
+                }
+            }
+            ._text {
+                h2 {
+                    animation: fadeInDown 2s both 1s;
+                }
+                h3 {
+                    animation: fadeInDown 2s both 1s;
+                }
+                p {
+                    animation: fadeInUp 2s both 1s;
+                }
+                .link {
+                    animation: fadeInUp 2s both 1.5s;
+                }
+            }
+        }
+    }
+    &.close {
+        display: flex;
+        animation: fadeOut .4s both .8s;
+        .liboxContent {
+            animation: awardsLiboxClose .8s both .4s;
+            .liboxClose {
+                animation: slideOutUp .4s both;
+            }
+            ._img {
+                animation: fadeOut .4s both;
+            }
+            ._text {
+                h2,
+                h3,
+                p,
+                .link {
+                    animation: fadeOutUp .4s both;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes awardsLiboxOpen {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 620px;
+        opacity: 1;
+    }
+}
+
+@keyframes awardsLiboxClose {
+    0% {
+        opacity: 1;
+        height: 620px;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@media all and (max-width: 1260px) {
+    @keyframes awardsLiboxOpen {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+        100% {
+            height: 890px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes awardsLiboxClose {
+        0% {
+            opacity: 1;
+            height: 890px;
+        }
+        100% {
+            height: 0;
+            opacity: 0;
+        }
+    }
+}
+
+@media all and (max-height: 1000px) and (max-width: 1260px) {
+    @keyframes awardsLiboxOpen {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+        100% {
+            height: 100vh;
+            opacity: 1;
+        }
+    }
+
+    @keyframes awardsLiboxClose {
+        0% {
+            opacity: 1;
+            height: 100vh;
+        }
+        100% {
+            height: 0;
+            opacity: 0;
+        }
+    }
+}

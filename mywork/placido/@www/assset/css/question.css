@@ -1,0 +1,719 @@
+@charset "utf-8";
+
+
+/*----------------------banner開始---------------------------*/
+
+.banner {
+    position: relative;
+}
+
+.favorite,
+.scrolldown {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.favorite {
+    top: 120px;
+    left: 50px;
+}
+
+.favorite p,
+.scrolldown p {
+    font-family: '微軟正黑體';
+    letter-spacing: 1.5px;
+    font-size: .75rem;
+    writing-mode: vertical-lr;
+    margin-bottom: 12px;
+}
+
+.scrolldown p {
+    letter-spacing: 5px;
+}
+
+.favorite span {
+    font-size: .75rem;
+}
+
+
+.scrolldown {
+    bottom: 7vh;
+    left: 50px;
+    text-align: center;
+}
+
+.scrolldown span {
+    font-size: 2.75rem;
+    color: #95338b;
+}
+
+.banner_img {
+    margin-left: 130px;
+    margin-right: 3vw;
+}
+
+.banner_slide {
+    width: 50px;
+    height: 90px;
+    position: absolute;
+    bottom: -45px;
+    left: calc(50% - 25px);
+    cursor: pointer;
+}
+
+.banner_slide span {
+    display: block;
+    width: 1px;
+    background-color: #000;
+    margin-left: calc(50% - 1px);
+}
+
+
+
+/*----------------------banner結束---------------------------*/
+
+
+/*----------------------content開始---------------------------*/
+
+.contnet {
+    margin-top: 100px;
+}
+
+/*._title*/
+
+._title {
+    text-align: center;
+}
+
+._title h2 {
+    font-family: 'JosefinSans-Bold';
+    font-size: 3rem;
+    letter-spacing: 1px;
+
+    overflow: hidden;
+}
+
+._title h2 span {
+    display: block;
+}
+
+._title p {
+    font-family: "微軟正黑體";
+    font-size: 1.25rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+._title p span {
+    display: block;
+}
+
+._title>span {
+    display: none;
+}
+
+
+
+/*.menu_list*/
+
+.menu_list_bg {
+    margin-top: 35px;
+    overflow: hidden;
+}
+
+.menu_list {
+    display: flex;
+    justify-content: center;
+    font-family: "微軟正黑體";
+    font-size: .875rem;
+    letter-spacing: 1px;
+    transform: translateY(-100%);
+}
+
+.menu_list ul {
+    display: inline-block;
+}
+
+.menu_list ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.menu_list ul li:last-child {
+    margin-right: 0;
+}
+
+.menu_list ul li p {
+    transition: all .5s ease;
+    font-weight: 400;
+}
+
+.menu_list ul li:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #6f0064;
+    margin-top: 5px;
+    margin-left: 50%;
+    transition: all .5s ease;
+}
+
+.menu_list ul li:hover:after,
+.menu_list ul li.active:after {
+    width: 100%;
+    margin-left: 0;
+    transition: all .5s ease;
+}
+
+.menu_list>span {
+    margin-left: 25px;
+}
+
+/*-------------------------問題開始---------------------------*/
+
+.row{
+	max-width: 1180px;
+	margin: auto;
+	display: flex;
+	padding: 0 80px 0 50px;
+	margin-top: 140px;
+}
+
+.row:first-child{
+	margin-top: 110px;
+}
+
+/*問題標題設定*/
+.row_title_bg{
+	width: 20%;
+    overflow: hidden;
+}
+
+.row_title{
+	width: 160px;
+	height: 160px;
+	background-color:#eeeeee;
+	padding: 30px 0 0 30px;
+    transform: translateX(-100%);
+}
+
+._nub h2{
+	font-family: 'JosefinSans-SemiBold';
+	font-size: 3rem;
+	letter-spacing: 1px;
+}
+
+._nub p{
+	font-family: 'JosefinSans-Bold';
+	font-size: .75rem;
+	letter-spacing: .5px;
+}
+
+.row_title>p{
+	font-weight: bold;
+	font-size: 1.125rem;
+	letter-spacing: 1px;
+	margin-top: 20px;
+	color: #666666;
+}
+
+/*問題內容設定-------------*/
+.row_inf{
+	width: 80%;
+}
+
+.row_inf ul{
+    overflow: hidden;
+    padding-left: 11px;
+    margin-left: -11px;
+}
+
+.row_inf ul:before{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #666666;
+}
+
+.row_inf ul li{
+	padding: 20px 0;
+	position: relative;
+    transform:translateX(-110%); 
+}
+
+.row_inf ul li:not(:first-child):before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+}
+
+.row_inf ul li h2,.row_inf ul li h3,.row_inf ul li>span{
+	display: inline-block;
+}
+
+.row_inf ul li h2{
+	font-family: 'JosefinSans-Bold';
+	font-size: 1.5rem;
+	color: #888888;
+	width: 10px;
+	margin-right: 21px;
+	text-align: center;
+	transition: all .5s ease;
+}
+
+
+
+.row_inf ul li h3{
+	font-size: 1rem;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	font-weight: bold;
+	transition: all .5s ease;
+}
+
+
+
+.row_inf ul li>span{
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	transition: all .5s ease;
+}
+
+
+
+.row_inf ul li>span:before,
+.row_inf ul li>span:after{
+	content: "";
+	display: block;
+	background-color: #666666
+}
+
+
+
+.row_inf ul li>span:before{
+	width: 10px;
+	height: 2px;
+	margin-top: calc(50% - 1px );
+	margin-left: calc(50% - 5px);
+	transition: all .6s ease;
+}
+
+
+.row_inf ul li>span:after{
+	width: 2px;
+	height: 10px;
+	margin-left: calc(50% - 1px);
+	margin-top:  -6px;
+	transition: all .5s ease;
+}
+
+
+
+
+
+/*答案內容設定---------------*/
+._ans{
+	margin-top: 20px;
+	position: relative;
+    overflow: hidden;
+	padding-left: 13px;
+	margin-left: -13px;
+    display: none;
+}
+
+._ans>p{
+	max-width: 680px;
+	display: inline-block;
+	margin-left: 40px;
+	font-size: .875rem;
+	letter-spacing: 1px;
+	line-height: 2;
+    margin-top: 8px;
+}
+
+._ans>span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	color: #fff;
+	border-radius: 50%;
+	background-color: #6f0064;
+	padding-top: 14px;
+	font-size: .75rem;
+	transform: scale(.9);
+	letter-spacing: .5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*hover動作設定---------------------*/
+
+
+/*點選後的動作設定------------------*/
+
+.row_inf ul li.on h2{
+    color: #6f0064;
+    transition: all .5s ease;
+}
+
+.row_inf ul li.on h3{
+    color: #6f0064;
+    transition: all .5s ease;
+}
+
+.row_inf .on>span{
+    background-color: #000;
+    transition: all .6s ease;
+}
+
+.row_inf .on>span:before{
+    background-color:#fff;
+    transition: all .5s ease; 
+}
+
+.row_inf .on>span:after{
+    opacity: 0;
+    transition: all .6s ease;
+}
+
+/*-------------------------問題結束---------------------------*/
+/*----------------------content結束---------------------------*/
+
+
+/*初進場動畫---------------*/
+
+.banner_img {
+    animation: fadeIn 1.5s both .2s;
+}
+
+.favorite div,
+.scrolldown div {
+    transform: translateX(-100%);
+    animation: left_slidein 1s both .5s;
+}
+
+.banner_slide span {
+    animation: slideLine .8s both 1s;
+}
+
+@keyframes slideLine {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+._title h2 span {
+    animation: top_slidein .8s both 1.4s;
+}
+
+._title p span {
+    animation: top_slidein .8s both 1.8s;
+}
+
+.menu_list {
+    animation: top_slidein .8s both 2s;
+}
+
+/*waypoint動畫專區*/
+
+.show .row_title{
+    animation: allin0 .7s both ;
+}
+
+.show .row_inf ul:before{
+    width: 100%;
+    transition: all 1s ease .2s;
+}
+
+.show .row_inf ul li{
+    animation: allin0 1.2s both .6s;
+}
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+
+    .favorite {
+        display: none;
+    }
+
+    .scrolldown {
+        display: none;
+    }
+
+    .banner_img {
+        margin-left: 40px;
+        margin-right: 0;
+        height: calc(100vh - 310px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .banner_img img.b-lazy.b-loaded {
+        width: auto;
+        height: 100%;
+    }
+
+    .banner_slide {
+        bottom: -35px;
+    }
+
+    .banner_slide span {
+        height: 70px;
+    }
+
+
+    /*.contnet----------------*/
+    .contnet {
+        margin-top: 70px;
+        padding: 0 20px;
+    }
+
+    ._title {
+        overflow: hidden;
+    }
+    
+    ._title h2{
+        font-size: 2.5rem;
+    }
+
+    ._title>span {
+        transform: translateY(100%);
+        display: block;
+        margin-top: 15px;
+        animation: allin0 .6s both 2s
+    }
+
+    .menu_list_bg {
+        margin-top: 15px;
+    }
+
+    .menu_list ul {
+        display: block;
+        width: 320px;
+        margin: auto;
+    }
+
+    .menu_list ul li:hover:after {
+        width: 0%;
+        margin-left: 0;
+        transition: all .5s ease;
+    }
+
+    .menu_list>span {
+        display: none;
+    }
+
+    .menu_list {
+        animation: top_slidein .8s both 2s;
+    }
+
+
+/*問題開始------------------*/
+
+
+    .row{
+        flex-direction: column;
+        padding:0;
+        margin-top: 100px;
+    }
+
+    .row:not(:last-child):after{
+        content: "";
+        display: block;
+        width: 0%;
+        height: 2px;
+        background-color: #666666;
+        margin-top: 80px;
+        margin-left: 50%
+    }
+
+     .row.show:after{
+        width: 100%;
+        margin-left: 0;
+        transition: all 1s ease 1.2s;
+     }
+
+    .row_title_bg{
+        width: auto;
+    }
+
+    .row_title{
+        width: 80px;
+        height: 80px;
+        padding:13px 0 0 0;
+        position: relative;
+        transform: translateY(100%);
+    }
+
+    ._nub{
+        text-align: center;
+    }
+
+    ._nub h2{
+        font-size: 2.5rem;
+    }
+
+     ._nub p{
+        font-size: .875rem;
+     }
+
+     .row_title>p{
+        position: absolute;
+        top: 0;
+        left:100%;
+        width:calc(100vw - 120px);
+        font-size: 1.375rem;
+        color: #000;
+        margin-left: 20px;
+        margin-top: 25px;
+     }
+
+     .row_inf{
+        width: 100%;
+        margin-top:40px;
+     }
+
+    .row_inf ul{
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .row_inf ul li h2{
+        font-size: 1.125rem;
+        vertical-align:top;
+        line-height: 1.5;
+    }
+
+    .row_inf ul li h3{
+        width: calc(100% - 60px);
+    }
+
+
+
+    .row_inf ul li>span{
+        width: 20px;
+        height: 20px;
+    }
+
+    ._ans{
+        width: 100%;
+        padding-left:0;
+        margin-left:0;
+    }
+
+    ._ans>p{
+        margin:0 30px 0 35px;
+    }
+
+    ._ans>span{
+        transform: scale(0.75);
+        width: 35px;
+        height: 35px;
+        padding-top:11px;
+        top: -4px;
+        left: -4px;
+    }
+
+/*問題開始------------------*/    
+
+
+
+
+
+
+
+}
+
+
+
+@media only screen and (min-width: 701px) {
+    .selectMenu {
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 700px) {
+	 /*下拉式選單*/
+    .menu_list_bg {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .menu_list {
+        border: 1px solid rgba(0, 0, 0, .1);
+        height: 40px;
+        text-align: center;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .selectMenu,
+    .menu_list ul li {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 12px;
+    }
+
+	.selectMenu:after{
+		font-family: 'icomoon';
+		content: "\e904";
+		font-size: .75rem;
+		margin-left: 5px;
+	}
+
+    .selectMenu.open {
+        background-color: rgb(111, 0, 100);
+        color: #fff;
+        border-radius: 3px;
+    }
+
+    .menu_list ul {
+        display: none;
+        width: 100%;
+        margin-top: 1px;
+    }
+
+    .menu_list ul li {
+        width: 100%;
+        height: 40px;
+        margin-right: 0;
+        background-color:#fff;
+    }
+
+    .menu_list ul li:not(:first-child) {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .menu_list ul li:hover {
+        background-color: #960087;
+        color: #fff;
+    }
+
+    .menu_list ul li.active:after {
+        display: none;
+    }
+}

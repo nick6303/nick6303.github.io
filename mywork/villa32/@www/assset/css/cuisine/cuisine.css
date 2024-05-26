@@ -1,0 +1,301 @@
+@charset "utf-8";
+
+/*content開始-----------------------------------*/
+
+main article:nth-child(2) {
+    text-align: center;
+    margin-top: 170px;
+    padding: 0 20px
+}
+
+
+
+
+/*標題-----*/
+
+.title {
+    overflow: hidden;
+}
+
+.title div {
+    transform: translateY(100%);
+}
+
+.title h4 {
+    font-size: 1.875rem;
+    line-height: 1.5;
+}
+
+.title p {
+    max-width: 560px;
+    margin: auto;
+    margin-top: 35px;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    line-height:2.2;
+    letter-spacing: 1px;
+    font-size: .875rem;
+}
+
+
+
+
+
+
+/*.menu_list-------*/
+
+.menu_list {
+    overflow: hidden;
+    margin: 75px 0 55px 0;
+}
+
+.menu_list ul {
+    width: 700px;
+    margin: auto;
+    transform: translateY(100%);
+}
+
+
+
+.menu_list ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.menu_list ul li p {
+    font-size: .875rem;
+    color: #ADADAD;
+    position: relative;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.menu_list ul li:hover p {
+    color: #000;
+}
+
+.menu_list ul li p:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: black;
+    transition: .5s ease;
+}
+
+.menu_list ul li:hover p:after {
+    left: 0%;
+    width: 100%;
+}
+
+
+
+/*.row內容--------- */
+
+.row {
+    margin: auto;
+    max-width: 990px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.row_img,
+.row_text_bg {
+    width:50%;
+    overflow: hidden;
+}
+
+.row_img {
+    font-size: 0;
+}
+
+.row_img img {
+    transform: translateY(100%);
+}
+
+
+
+/*內容文字設定*/
+
+.row_text {
+    max-width: 480px;
+    height: 100%;
+    text-align: left;
+    transform: translateY(100%);
+}
+
+.row:nth-child(even) .row_text {
+    margin-left: 60px;
+}
+
+
+.text_title p {
+    font-size: 1.375rem;
+    letter-spacing: 1px;
+}
+
+.row_text>p {
+    margin-top: 30px;
+    font-size: .875rem;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+
+
+/*餐廳介紹開始-------*/
+
+.row_text>ul {
+    margin: 20px 0;
+}
+
+.row_text>ul li {
+    margin: 10px 0;
+    font-family: MyriadPro-Regular, 微軟正黑體;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+
+
+
+/*餐廳介紹結束-------*/
+
+.row_text span {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: #000;
+    margin: 30px 0;
+}
+
+._link {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+._link p {
+    font-size: .875rem;
+    letter-spacing: .5px;
+}
+
+._link ul li {
+    display: inline-flex;
+    padding-right: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+._link ul li p {
+    display: inline-block;
+}
+
+._link ul li:after {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 1px;
+    background-color: #000;
+    margin-left: 15px;
+}
+
+._link ul li:last-child:after {
+    display: none;
+}
+
+
+
+/*waypoint專區-------------*/
+
+.title.show div {
+    animation: allin0 1s forwards;
+}
+
+.menu_list.show ul {
+    animation: allin0 1s both .2s;
+}
+
+.row_img.show img {
+    animation: allin0 1.2s both .2s;
+}
+
+.show .row_text {
+    animation: allin0 1.2s both .2s;
+}
+
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+    main article:nth-child(2) {
+        margin-top: 120px;
+        padding: 0 5vw;
+    }
+    .menu_list {
+        margin: 7vh 0 6vh 0;
+    }
+
+    .row:nth-child(odd) .row_text{
+        margin-left: 2vw;
+    }
+
+    .row:nth-child(even) .row_text{
+        margin-left: 5vw;
+    }
+
+    footer {
+        margin-top: 8vh;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .row_text_bg {
+        justify-content: flex-start;
+    }
+    .row,
+    .row:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .row_img,
+    .row_text_bg {
+        width: 100%;
+    }
+
+    .row_text_bg {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .row_text {
+        max-width: 100%;
+    }
+
+    .row:nth-child(odd) .row_text ,.row:nth-child(even) .row_text {
+        margin-left: 10px;
+        margin-top: 4vh;
+    }
+
+    ._link ul {
+        line-height: 1.5
+    }
+
+    ._link ul li {
+        padding-right: 10px;
+    }
+
+    ._link ul li:after {
+        margin-left: 10px;
+    }
+}

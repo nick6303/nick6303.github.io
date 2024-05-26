@@ -1,0 +1,157 @@
+.catalog
+    &__content
+    &__inner
+        width: 100%
+        max-width: 1280px
+        margin: 0px auto 140px
+        >ul.img
+            >li
+                padding: 100px 0
+                position: relative
+                +rwd(600)
+                    padding: 50px 0
+                &:nth-child(2n)
+                    .catalog_box
+                        justify-content: flex-end
+                        .img
+                            justify-content: flex-end
+                            transform: rotateY(-10deg) translateZ(500px)
+                            +rwd(600)
+                                transform: none
+                            &.turnon
+                                transform: rotateY(0deg) translateZ(500px)
+                                +rwd(600)
+                                    transform: none
+                    .txtfixed
+                        transform: translate(-50%,-50%) rotateY(-90deg) translateZ(150px)
+                        +rwd(600)
+                            transform: none
+                        &.turnon
+                            transform: translate(-50%,-50%) rotateY(0deg) translateZ(150px)
+                            +rwd(600)
+                                transform: none
+        .rpoint
+            position: absolute
+            top: 50%
+            height: 30vh
+            transform: translateY(-50%)
+            // border: 10px solid #000
+
+        .txtfixed
+            padding: 70px 90px
+            text-align: center
+            display: inline-block
+            width: 100%
+            max-width: 600px
+            position: fixed
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%) rotateY(90deg) translateZ(150px)
+            opacity: 0
+            transition: transform .5s .5s , opacity .5s 
+            +rwd(600)
+                position: static
+                opacity: 1
+                transform: none
+            &.turnon
+                opacity: 1
+                transition: transform .5s , opacity .25s
+                transform: translate(-50%,-50%) rotateY(0deg) translateZ(150px)
+                +rwd(600)
+                    transform: none
+
+            &:before
+                content: ''
+                display: inline-block
+                background: #ffffff
+                height: 100%
+                width: 100%
+                position: absolute
+                top: 0
+                left: 0
+                z-index: -1
+                opacity: 0
+                transition: .5s
+            h6
+                color: #1b41a2
+                font-size: px(14)
+                margin-bottom: 30px
+                span
+                    margin: 0 10px
+            h3
+                font-size: px(32)
+                line-height: 1.25
+                margin-bottom: 25px
+                letter-spacing: 2px
+            h4
+                font-size: px(18)
+                letter-spacing: 1px
+            hr
+                display: inline-block
+                width: 60px
+                background: #d1d9ec
+                border: 0
+                height: 0
+                margin: 0
+                transition: .25s
+            p
+                font-size: px(14)
+                line-height: 1.5
+                margin-bottom: 20px
+                max-height: 0px
+                overflow: hidden
+                transition: .5s
+            ul
+                margin-top: 10px
+                width: 100%
+                display: inline-flex
+                justify-content: center
+                align-items: center
+                li
+                    margin: 0 20px
+                a
+                    display: inline-flex
+                    justify-content: center
+                    align-items: center
+                    flex-direction: column
+                    h6
+                        margin-top: 20px
+            &:hover
+                &:before
+                    opacity: 1
+                hr
+                    height: 1px
+                    margin: 30px auto
+                p
+                    max-height: 150px
+            >div
+                +flex
+                flex-direction: column
+                div
+                    margin-bottom: 20px
+
+
+
+
+
+.catalog_box
+    font-size: 0
+    text-align: center
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    width: 100%
+    .img
+        display: flex
+        transform: rotateY(10deg) translateZ(500px)
+        width: 100%
+        transition: 1s
+        align-items: center
+        justify-content: flex-start
+        +rwd(600)
+            transform: none
+        img
+            width: 100%
+            max-width: 700px
+        &.turnon
+            transform: rotateY(0deg) translateZ(500px)

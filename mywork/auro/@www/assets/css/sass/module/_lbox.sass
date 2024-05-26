@@ -1,0 +1,1513 @@
+.lbox
+    position: fixed
+    top: 0
+    left: 100%
+    width: 100%
+    height: 100%
+    z-index: 999
+    transition:  left .5s 
+    overflow: hidden
+    &.nocg
+        left: 0
+        display: none
+        .lbox__inner
+            &:before,&:after
+                display: none
+    &__wrap
+        position: relative
+        height: 100%
+        overflow-x: hidden
+        // scroll-behavior: smooth
+        font-size: 0
+
+
+    &__inner   
+        position: relative
+        &:before,&:after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            transition: width .5s
+        &:before
+            background: #fff
+            z-index: 4
+        &:after
+            background: $CblueM
+            z-index: 3
+        .on &
+            &:before
+                width: 0%
+                transition-delay: .25s
+            &:after
+                width: 0%
+                transition-delay: .5s
+        .newon &
+            &:before
+                right: 0
+                left: auto
+                width: 100%
+                transition-delay: .0s
+            &:after
+                right: 0
+                left: auto
+                width: 100%
+                transition-delay: .0s
+
+.lbox.on
+    left: 0
+
+
+.lbox
+    &__header
+        display: flex
+        justify-content: center
+        position: absolute
+        width: 100%
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        ul
+            display: flex
+        li
+            +flex
+            padding: 0 20px
+            position: relative
+            &:not(:last-child):after
+                content: ''
+                height: 10px
+                width: 1px
+                background: blue
+                position: absolute
+                right: 0
+            h5
+                font-size: px(13)
+                letter-spacing: .5px
+        h4
+            font-size: 0.75rem
+        &--float
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            z-index: 2
+            ul
+                background: #252b3f
+                color: #fff
+            .lbox__close
+                background: #f0f0f0
+                span:before,span:after
+                    background: #9d9d9d
+    &__closeBtn
+        background: #cccccc
+        display: inline-block
+        height: 60px
+        width: 60px
+        cursor: pointer
+        a
+            display: inline-block
+            width: 100%
+            height: 100%
+        span
+            display: inline-block
+            width: 100%
+            height: 100%
+            position: relative
+            transition: .5s
+            &:hover
+                transform: rotate3d(0, 1, 0, 180deg)
+            &:before
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%) rotate(45deg)
+                height: 1px
+                width: 50%
+                background: #fff
+            &:after
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%) rotate(135deg)
+                height: 1px
+                width: 50%
+                background: #fff
+        
+    &__footer
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        ul
+            display: flex
+            li
+                display: inline-block
+                height: 60px
+                width: 60px
+                background: #252b3f
+                color: #fff
+                transition: .25s
+                position: relative
+                svg
+                    fill: #fff
+                &:first-child
+                    background: #1b41a2
+                &:first-child:after
+                    display: none
+                &:last-child:after
+                    display: none
+                &:after
+                    content: ''
+                    right: 0
+                    top: calc(50% - 5px)
+                    display: inline-block
+                    height: 10px
+                    width: 1px
+                    background: #fff
+                    position: absolute
+                    z-index: 2
+        a
+            width: 100%
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            h5
+                padding-top: 6px
+                line-height: 1
+                color: #fff
+                font-size: px(14)
+            
+            
+            
+                
+
+// styleA
+.lbox_style_A
+    +flex
+    flex-direction: column
+    background: #fff
+    .banner
+        width: 100%
+        height: 100vh
+        div
+            width: 100%
+            height: 100%
+            +flex
+            background-color: #000 
+            background-position: 50% 50%
+            background-size: cover
+            background-attachment: fixed
+    .boxw
+        width: 100%
+        max-width: 1100px
+        padding: 0 5%
+        margin-bottom: 40px
+        &.recommand 
+            background: #fff
+            box-shadow: none
+            transform: none
+            opacity: 1
+            margin-bottom: 80px
+            .title
+                padding-top: 0px
+
+
+    .title
+        padding-top: 115px
+        text-align: center
+        margin-bottom: 0
+        h4
+            font-size: px(22)
+            margin-bottom: 20px
+        h5
+            font-size: px(14)
+        ul
+            +flex
+    .hr
+        padding: 0
+        margin: 50px 0
+        hr
+            background: #e5e5e5
+            display: inline-block
+            width: 100%
+            height: 10px
+            border: 0
+
+    .slick
+        position: relative
+        .slick_style_lboxA_dot
+            position: absolute
+            top: 50%
+            right: 5%
+            transform: translateY(-50%)
+            
+
+        img
+            width: 100%
+    .txt  
+        h4
+            font-size: px(18)
+            margin-bottom: 15px
+            line-height: 1.5
+            font-weight: 700
+        p
+            font-size: px(14)
+            line-height: 1.5
+        &.remarks
+            opacity: 0.5
+
+    .img
+        img
+            width: 100%
+        h4
+            font-size: px(14)
+            text-align: right
+            padding-top: 10px
+            opacity: 0.5
+        h3
+            font-size: px(18)
+            line-height: 1.5
+            margin-bottom: 40px
+            font-weight: 700
+        p
+            font-size: px(14)
+
+        ul
+            display: flex
+            justify-content: space-between
+            align-content: center
+            li
+                width: 100%
+                &:first-child:nth-last-child(1)
+                    width: 100%
+                &:first-child:nth-last-child(2),&:first-child:nth-last-child(2) ~ li
+                    width: calc(50% - 3px)
+        .txt
+            height: 100%
+            padding: 0 50px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            >h4
+                text-align: left
+    .video
+        position: relative
+        &:after
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            display: inline-block
+            width: 100%
+            height: 100%
+            background: #000
+            opacity: 0.8
+        >div
+            position: absolute
+            left: 50%
+            top: 50%    
+            transform: translate(-50%,-50%)
+
+    .more
+        text-align: center
+        padding: 50px 0 100px
+        h3
+            font-size: px(28)
+            margin-bottom: 20px
+        h5
+            font-size: px(18)
+            margin-bottom: 40px
+            
+    .other
+        width: 100%
+        // overflow-x: hidden
+        >ul
+            display: flex
+            +rwd(768)
+                flex-wrap: wrap
+            >li
+                width: 100%
+                background: #f2f2f2
+                border: 1px solid #fff
+                transition: .5s
+                &:first-child
+                    +rwd(768)
+                        transform: translate( -10% , 0%)
+                        transition-delay: .25s
+                    a
+                        display: flex
+                        justify-content: flex-end
+                &:last-child
+                    +rwd(768)
+                        transform: translate( 10% , 0%)
+                        transition-delay: .25s
+                    a
+                        display: flex
+                        justify-content: flex-start
+                        text-align: right
+                        ul
+                            justify-content: flex-end
+                &:hover
+                    transform: translate( 0 , -10%)
+                    +rwd(768)
+                        transform: translate( 0 , 0%)
+                        transition-delay: 0s
+        a
+            display: inline-block
+            width: 100%
+            height: 100%
+            padding: 70px
+            color: inherit
+            div
+                max-width: 250px
+                +rwd(768)
+                    max-width: none
+            ul
+                display: flex
+        h5
+            font-size: px(14)
+            margin-bottom: 15px
+        h4
+            font-size: px(18)
+            line-height: 1.5
+            
+
+.lboxVideo
+    background: rgba(0,0,0,.7)
+    .goBack
+        position: absolute
+        width: 40px
+        height: 40px
+        top: 0
+        right: calc(50% - 20px) 
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(0%,-50%) rotate(45deg)
+
+    .lbox_video
+        width: 100%
+        height: 100vh
+        display: flex
+        justify-content: center
+        align-items: center
+    iframe
+        height: 80vh
+        width: 80vw
+
+.lboxPicture
+    background: rgba(0,0,0,.7)
+    .goBack
+        position: absolute
+        width: 60px
+        height: 60px
+        right: calc(50% - 20px)
+        top: 0
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(0%,-50%) rotate(45deg)
+
+    .img
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 200px 0
+        img
+            width: 100%
+            max-width: 650px
+
+.lboxThe5
+    background: rgba(0,0,0,.7)
+
+.lbox_conversion
+    height: 100vh
+    +flex
+    +rwd(767)
+        align-items: flex-start
+.lboxConversion
+    background: rgba(0,0,0,.7)
+    .goBack
+        position: absolute
+        width: 60px
+        height: 60px
+        right: 0
+        top: 0
+        z-index: 2
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(0%,-50%) rotate(45deg)
+.conversion_wrap
+    width: 100%
+    max-width: 1024px
+.conversion_inner
+    background: #fff
+    width: 100%
+    height: 100%
+    // max-width: 1024px
+    display: flex
+    justify-content: center
+    align-items: stretch
+    position: relative
+    +rwd(767)
+        height: auto
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    .left
+        display: inline-flex
+        flex-direction: column
+        justify-content: space-between
+        width: 40%
+        +rwd(767)
+            flex-direction: row
+        >div
+            display: inline-block
+            width: 100%
+            height: calc(50% - 1px)
+            +flex
+            flex-direction: column
+            padding: 80px 0
+            +rwd(767)
+                height: auto
+                width: 50%
+        +rwd(767)
+            width: 100%
+    .right
+        width: 60%
+        position: relative
+        +rwd(767)
+            width: 100%
+        .content
+            height: 100%
+            padding: 100px 0px 50px
+            position: relative
+            +flex
+            flex-direction: column
+            .title
+                padding: 0 60px
+                text-align: center
+                +rwd(767)
+                    padding: 0 30px
+                h3
+                    font-size: px(32)
+                    margin-bottom: 15px
+                    letter-spacing: 2px
+                h4
+                    font-size: px(18)
+                hr
+                    border: 0
+                    width: 60px
+                    height: 1px
+                    background: #8da0d0
+                    margin: 25px auto
+                p
+                    font-size: px(14)
+                    line-height: 1.5
+                    margin-bottom: 30px
+            >hr
+                border: 0
+                width: calc(100% - 120px)
+                height: 4px
+                background: #e5e5e5
+                margin: 10px 0
+            .calc_a
+                width: 100%
+                padding: 15px 0
+                +flex
+                position: relative
+                >div
+                    width: 50%
+                    display: flex
+                    flex-direction: column
+                    padding: 0 20px
+                .area
+                    align-items: flex-end
+                .hr
+                    display: inline-block
+                    height: 25px
+                    width: 1px
+                    background: #000
+                    padding: 0
+                    align-self: flex-end
+                    margin-bottom: 10px
+                    bottom: 0
+                    left: 50%
+                    position: absolute
+                .cap
+                    align-items: flex-start
+                h4
+                    font-size: px(14)
+                    margin-bottom: 10px
+                h3
+                    font-size: px(30)
+                    letter-spacing: 2px
+                    color: #1b41a2
+            .calc_q
+                display: inline-block
+                height: 100%
+                width: 100%
+                padding: 0 45px 0 75px
+                position: relative
+                +flex
+                flex-direction: column
+                +rwd(767)
+                    padding: 0 0px 0 30px
+                .txt
+                    padding-right: 30px
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    width: 100%
+                    height: 45px
+                    margin-bottom: 20px
+                    +rwd(500)
+                        flex-direction: column
+                        height: auto
+                    a
+                        +flex
+
+                    h4
+                        font-size: px(16)
+                        font-weight: 700
+                        letter-spacing: 2px
+                        +rwd(500)
+                            margin-bottom: 20px
+                    h5
+                        font-size: px(14)
+                        margin-right: 20px
+                .space_size
+                    width: 100%
+                    height: 300px
+                    overflow: auto
+                    +flex
+                .space_size_inner
+                    display: inline-block
+                    width: 100%
+                    padding-right: 30px
+                    .space_size_x   
+                        position: relative
+                        width: 40px
+                        background: #fff
+                        flex-grow: 0
+                        flex-shrink: 0
+                        h5
+                            transform: rotate(45deg)
+                            font-size: px(20)
+
+
+                .space_size_mxn
+                    font-size: px(14)
+                    +flex
+                    flex-wrap: wrap
+                    width: 100%
+                    li
+                        width: 100%
+                        background: #f0f0f0
+                        display: flex
+                        justify-content: center
+                        align-items: stretch
+                        margin-bottom: 20px
+                        >div
+                            +flex
+                            width: 100%
+                    
+                            
+                .space_size_m2
+                    font-size: px(14)
+                    +flex
+                    flex-wrap: wrap
+                    width: 100%
+                    li
+                        width: 100%
+                        background: #f0f0f0
+                        display: flex
+                        justify-content: center
+                        align-items: stretch
+                        margin-bottom: 20px
+                        >div
+                            +flex
+                            width: 100%
+                            &.space_size_01
+                                width: 30%
+                            &.space_size_02
+                                width: 70%
+
+
+                .space_size_01
+                    input
+                        border: 0px
+                        width: 100%
+                        padding: 15px 0 15px 20px
+                        background: #f0f0f0
+                        border-right: 2px solid #fff
+                        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+                .space_size_02
+                    label
+                        padding: 15px 20px 15px 10px
+                        flex-grow: 0
+                        flex-shrink: 0
+                        background: #f0f0f0
+                        
+                    input
+                        padding: 15px 0 15px 20px
+                        border: 0px
+                        flex-grow: 1
+                        width: 100%
+                        background: #f0f0f0
+                        font-family: 'jaguarjc_book', '微軟正黑體', 'Microsoft JhengHei', Arial, sans-serif, serif
+                        
+
+                
+        .conversion_btns
+            height: 50px
+            position: absolute
+            bottom: 0
+            width: 100%
+            +flex
+            >div
+                height: 100%
+                width: 50%
+                background: #000
+                
+                &:first-child
+                    background: #252b3f
+                &:last-child
+                    background: #1b41a2
+            a
+                width: 100%
+                height: 100%
+                +flex
+                color: #fff
+                font-size: px(14)
+                letter-spacing: 2px
+
+
+    .mxn
+        background: #dfebff
+        transition: 1s
+        &:hover
+            background: #65B3CA
+            svg
+                fill: #fff
+                opacity: .5
+            h5
+                color: #fff
+                opacity: .5
+        &.focus
+            background: #65B3CA
+            svg
+                fill: #fff
+                opacity: 1
+            h5
+                color: #fff
+                opacity: 1
+
+        svg
+            opacity: 0.3
+            fill: #999
+        .mxn1
+            width: 220px
+            margin-left: 10px
+            margin-bottom: 20px
+            max-width: calc(100% - 20px)
+        .mxn2
+            width: 110px
+            margin-bottom: 20px
+            height: 40px
+            
+        h5
+            font-size: px(14)
+            color: #999
+            opacity: 0.4
+
+        
+    .m2
+        background: #dfebff
+        transition: 1s
+        &:hover
+            background: #65B3CA
+            svg
+                fill: #fff
+                opacity: .5
+            h5
+                color: #fff
+                opacity: .5
+        &.focus
+            background: #65B3CA
+            svg
+                fill: #fff
+                opacity: 1
+            h5
+                color: #fff
+                opacity: 1
+        svg
+            opacity: 0.3
+            fill: #999
+        .m21
+            width: 180px
+            margin-right: 30px
+            margin-bottom: 20px
+            max-width: calc(100% - 20px)
+            +rwd(450)
+                margin-right: 0px
+        .m22
+            height: 55px
+            width: 55px
+            margin-bottom: 20px
+        h5
+            font-size: px(14)
+            color: #999
+            opacity: 0.4
+
+.lboxajaxop
+    background: rgba(0,0,0,.5)
+.lboxajaxop2
+    background: rgba(0,0,0,.5)
+    
+.lbox_ajax
+    height: 100vh
+    +flex
+    &.long
+        height: auto
+        min-height: 101vh
+        &:after
+            content: ''
+            display: inline-block
+            min-height: inherit
+            font-size: 0
+    &.afs
+        align-items: flex-start
+    &.lbox_circle2
+        flex-direction: column
+
+.choose_wrap
+    background: #fff
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    max-width: 700px
+    position: relative
+    .choose
+        width: 100%
+        padding: 80px 20px 50px
+        text-align: center
+        h3
+            font-size: px(32)
+            margin-bottom: 20px
+        h4
+            font-size: px(18)
+    .choose_vip 
+        width: 50%
+        h5
+            font-size: px(20)
+            margin-bottom: 15px
+        h6
+            font-size: px(16)
+            margin-bottom: 15px
+        p
+            margin-top: 15px
+            font-size: px(14)
+            line-height: 1.5
+            text-align: center
+            max-width: 250px
+        a
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 100px 20px
+            width: 100%
+            height: 100%
+        &:hover
+            img
+                transition: .5s
+                transform: rotateY(180deg)
+
+    .choose_basic_vip
+        background: #f5f7ff
+    .choose_pro_vip
+        background: #64b3ca
+        a
+            color: #fff
+    
+    .goBack
+        position: absolute
+        width: 60px
+        height: 60px
+        right: 0
+        top: 0
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(0%,-50%) rotate(45deg)
+
+
+.memberterms_wrap
+    background: #fff
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    max-width: 960px
+    position: relative
+    +rwd(600)
+        height: 100%
+    .memberterms
+        width: 100%
+        text-align: center
+        padding: 60px
+        +rwd(1024)
+            padding: 60px 40px
+        +rwd(767)
+            padding: 60px 40px 40px
+        h3
+            font-size: px(32)
+            margin-bottom: 20px
+        h4
+            font-size: px(18)
+    .hr
+        width: 100%
+        height: 5px
+        padding: 0 60px
+        margin-bottom: 50px
+        +rwd(1024)
+            padding: 0 40px
+            margin-bottom: 30px
+        +rwd(767)
+            padding: 0 20px
+            margin-bottom: 20px
+        div
+            display: inline-block
+            width: 100%
+            height: 100%
+            background: #e5e5e5
+    >.txt_wrap
+        position: relative
+        max-height: 50vh
+        margin-right: 30px
+        >.txt
+            padding: 60px
+            margin-bottom: 20px
+            padding-right: 30px
+            h4
+                font-size: px(16)
+                line-height: 1.25
+                margin-bottom: 20px
+            p
+                font-size: px(14)
+                line-height: 1.75
+    .memberterms_btms
+        width: 100%
+        +rwd(600)
+            position: absolute
+            left: 0
+            bottom: 0
+        ul
+            +flex
+        li
+            width: 100%
+            padding: 20px 0
+            &:first-child
+                background: #252b3f
+            &:last-child
+                background: #1b41a2
+            a
+                +flex
+                width: 100%
+                height: 100%
+                color:  #Fff
+                h5
+                    font-size: px(14)
+    .goBack
+        position: absolute
+        width: 60px
+        height: 60px
+        right: 0
+        top: 0
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(0%,-50%) rotate(45deg)
+
+
+
+
+
+
+.vip_lbox
+// .vip_circle_wrap
+//     display: flex
+//     justify-content: center
+//     align-items: center
+//     height: 100%
+//     width: 100%
+
+.vip_circle
+    // width: 100%
+    width: 400px
+    height: 400px
+    +flex
+    flex-direction: column
+    background: #fff
+    position: relative
+    border-radius: 50%  
+    overflow: hidden
+    &:after
+        content: ''
+        width: 100%
+        padding-bottom: 100%
+    .txt
+        +flex
+        flex-direction: column
+        .img
+            width: 80px
+            margin-bottom: 20px
+            svg
+                width: 100%
+        h4
+            font-size: px(32)
+            letter-spacing: 2px
+            margin-bottom: 15px
+        h5
+            font-size: px(18)
+    .thebtns
+        margin-top: 25px
+        h6
+            margin-top: 10px
+
+    .vip_circle_success
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        .thumbs
+            animation: thumbs 1s infinite
+            transform-origin: 0 100%
+            @keyframes thumbs
+                0%
+                    transform: rotate(0)
+                33%
+                    transform: rotate(-1deg)
+                66%
+                    transform: rotate(1deg)
+                100%
+                    transform: rotate(0)
+        .txt
+            .img
+                width: 80px
+                height: 100px
+    .vip_address_oops
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 60%
+        .address_oops
+            animation: addoops 1s infinite
+            transform-origin: 50% 50%
+            @keyframes addoops
+                0
+                    transform: rotateY(0deg)
+                100%
+                    transform: rotateY(360deg)
+
+        .txt
+            .img
+                width: 80px
+                height: 80px
+            hr
+                height: 1px
+                width: 60px
+                background: #9AACD8
+                border: 0
+                margin: 20px auto 
+            p
+                font-size: px(14)
+                line-height: 1.5
+                text-align: center
+
+    .vip_circle_logout
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        .logout
+            animation: logout 2s infinite
+            transform-origin: 100% 0
+            @keyframes logout
+                0%
+                    transform: rotateY(0deg)
+                50%
+                    transform: rotateY(60deg)
+                100%
+                    transform: rotateY(0deg)
+        .txt
+            .img
+                width: 50px
+                height: 60px
+    .vip_circle_oops
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        .txt
+            .img
+                width: 70px
+                height: 62px
+    .vip_conversion_oops
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        .txt
+            .img
+                width: 100px
+                height: 60px
+
+    &.vip_conversion
+        width: 450px
+        height: 450px
+        hr
+            height: 1px
+            width: 60px
+            background: #9AACD8
+            border: 0
+            margin: 20px auto 
+        p
+            font-size: px(14)
+            line-height: 1.5
+            text-align: center
+
+
+
+.vip_photo
+    width: 100%
+    max-width: 550px
+    +flex
+    flex-direction: column
+    background: #fff
+    padding: 50px 20px
+    position: relative
+    .goBack
+        position: absolute
+        width: 60px
+        height: 60px
+        right: 0
+        top: 0
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(0%,-50%) rotate(45deg)
+    .img_wrap
+        margin: 50px 0
+        +flex
+        flex-direction: column
+        position: relative
+        .img
+            border-radius: 50%
+            box-shadow: 0 0 0 5px #fff
+            overflow: hidden
+            font-size: 0
+        .circle--info
+            position: absolute
+            bottom: 0
+            right: 0
+    .txt
+        text-align: center
+        width: 100%
+        max-width: 400px
+        +flex
+        flex-direction: column
+        h3
+            font-size: px(32)
+            margin-bottom: 15px
+            letter-spacing: 1px
+        h4
+            font-size: px(18)
+            letter-spacing: 1px
+        hr
+            display: inline-block
+            width: 60px
+            height: 1px
+            background: #889cd0
+            margin: 20px auto
+            border: 0
+        h5
+            font-size: px(14)
+            line-height: 1.5
+            margin-bottom: 15px
+        h6
+            font-size: px(12)
+            line-height: 1.5
+            border-bottom: 1px solid #000
+    .thebtns
+        margin-top: 30px
+
+.viplbox_address
+    background: #fff
+    +flex
+    flex-direction: column
+    width: 100%
+    max-width: 700px
+    position: relative
+    padding-top: 70px
+    .goBack
+        position: absolute
+        width: 60px
+        height: 60px
+        right: 0
+        top: 0
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 21px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0%) rotate(45deg)
+        &:after
+            width: 1px
+            height: 21px
+            left: 50%
+            top: 50%
+            transform: translate(0%,-50%) rotate(45deg)
+        &.goBack2
+            display: none
+    &.step3
+        .goBack1
+            display: none
+        .goBack2
+            display: block
+    .title
+        padding: 20px 0
+        text-align: center
+        display: none
+        h3
+            font-size: px(32)
+            margin-bottom: 15px
+            letter-spacing: 2px
+            font-weight: 500
+        h4
+            font-size: px(18)
+    &.step1
+        .title1
+            display: block
+    &.step2
+        .title2
+            display: block
+    &.step3
+        .title3 
+            display: block
+
+    .address3
+        width: 100%
+        padding: 20px 50px
+        ul
+            width: 100%
+            display: inline-flex
+            justify-content: center
+        li
+            margin: 0 25px
+            cursor: pointer
+            &.focus
+                .img
+                    border: 5px solid #e5e5e5
+        .img
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            width: 70px
+            height: 70px
+            border-radius: 50% 
+            margin-bottom: 10px
+            transition: .5s
+            border: 0px solid #e5e5e5
+            img
+                width: 30px
+        h5
+            font-size: px(14)
+
+    &.step2
+        .address3
+            pointer-events: none
+            ul
+                li
+                    display: none
+                    &.focus
+                        display: inline-block
+
+    .theform
+        width: 100%
+        padding: 0 50px
+        margin-bottom: 20px
+        li
+            background: #f5f7ff
+            padding: 5px 20px
+            margin-bottom: 5px;
+    &.step2
+        .theform
+            pointer-events: none
+    .add_btms
+        width: 100%
+        display: none
+        ul
+            +flex
+        li
+            width: 100%
+            
+            &:first-child
+                background: #252b3f
+            &:last-child
+                background: #1b41a2
+            a
+                +flex
+                width: 100%
+                height: 100%
+                color:  #Fff
+                padding: 20px 0
+                h5
+                    font-size: px(14)
+    &.step1
+        .add_btms1
+            display: block
+    &.step2
+        .add_btms2
+            display: block
+    &.step3
+        .add_btms3 
+            display: block
+
+.viplbox_bill
+    background: #fff
+    +flex
+    flex-direction: column
+    width: 100%
+    position: relative
+    padding-top: 70px
+    .title
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        margin-top: 30vh
+        h4
+            font-size: px(40)
+            letter-spacing: 2px
+            margin-bottom: 10px
+        h5
+            font-size: px(22)
+            letter-spacing: 1px
+    .bill
+        &__content
+            +flex
+            margin: 0 auto
+            flex-wrap: wrap
+            position: relative
+            width: 100%
+            max-width: 1280px
+            background: #f5f7ff
+            margin-top: 50px
+            min-height: 60vh
+
+        &__inner
+            width: 100%
+            max-width: 800px
+            padding-top: 50px
+            padding-bottom: 200px
+            .txt
+                margin: 0 auto
+                max-width: 600px
+                padding: 50px 0 50px
+                text-align: center
+                p
+                    font-size: px(14)
+                    line-height: 1.5
+                a
+                    margin-top: 20px
+                    display: inline-flex
+                    justify-content: center
+                    align-items: center
+                    .circle--product_q
+                        margin-left: 10px
+                h6
+                    margin-top: 4px
+                    font-size: px(12)
+
+.lbox_circle2
+    .vip_circle
+        &:first-child
+            transform: translateY(40px)
+        &:last-child
+            transform: translateY(-40px)
+.vip_circle_circle_add1
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 60%
+    background: #242b3e
+    color: #fff
+    .adddd
+        +flex
+        flex-direction: column
+        .title
+            width: 100%
+            display: flex
+            justify-content: space-between
+        hr
+            border: 0
+            height: 4px
+            width: 100%
+            background: #ccd8dd
+            margin: 20px 0
+        h4
+            font-size: 1.375rem
+        h5
+            font-size: 1.125rem
+        .txt
+            align-items: flex-start
+            h4
+                font-size: px(12)
+                margin-bottom: 10px
+                font-weight: 700
+                letter-spacing: 1px
+            h3
+                font-size: px(14)
+                margin-bottom: 20px
+                line-height: 1.5
+
+.vip_circle_circle_add2
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 60%
+
+.vip_circle_circle_love1
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 60%
+    .img
+        max-width: 150px
+        margin: 0 auto
+        img
+            width: 100%
+    .txt
+        padding: 30px 0 5px
+        text-align: center
+        h3
+            font-size: px(18)
+            margin-bottom: 15px
+        h4
+            font-size: px(14)
+            margin-bottom: 15px
+.vip_circle_circle_love2
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 60%

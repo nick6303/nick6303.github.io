@@ -1,0 +1,142 @@
+
+$base_color: #d2b055
+$base_blue: #33a1db
+$base_gray: #f2f2f2
+$ft_bg: #004179
+$base_orange: #ea5703
+$base_green: #32ac68
+
+
+/*font-size*/
+
+@mixin font-size($size: 16) 
+    font-size: ($size/16) + rem
+
+@function px($px)
+    @return $px / 16 * 1rem
+
+
+
+/*RWD*/
+
+$pc: "(min-width:1025px)"
+$pad_proV: "(max-width:1365px)"
+$pad_pro: "(max-width:1024px)"
+$pad_V: "(max-width:1023px)"
+$pad: "(max-width:900px)"
+$phone: "(max-width:767px)"
+$iphone5: "(max-width:350px)"
+
+
+
+$width700: "(max-width:700px)"
+$width800: "(max-width:800px)"
+/*RWD*/
+
+
+/*transiton*/
+@mixin trans($move: 0s, $wait: 0s, $type: all, $way: ease) 
+    -webkit-transition: $type $move $way $wait
+    -moz-transition: $type $move $way $wait
+    -ms-transition: $type $move $way $wait
+    -o-transition: $type $move $way $wait
+    transition: $type $move $way $wait
+/*transiton*/
+
+
+/*hide word*/
+@mixin hide_word($line:0) 
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: $line
+    -webkit-box-orient: vertical
+/*hide word*/
+
+
+/* display: flex 置中*/
+@mixin flex-center 
+    display: flex
+    justify-content: center
+    align-items: center
+/* display: flex 置中*/
+
+
+/* display: flex 左右至頂*/
+@mixin flex-space-between 
+    display: flex
+    justify-content: space-between
+    align-items: center
+/* display: flex 左右至頂*/
+
+
+/* display: flex 向左靠*/
+@mixin flex-left 
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    flex-direction: column
+/* display: flex 向左靠*/
+
+
+/* display: flex 向右靠*/
+@mixin flex-right 
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    flex-direction: column
+/* display: flex 向右靠*/
+
+
+/* 偽元素線條*/
+@mixin fakeLine($width:1px, $height:1px, $backgroundColor:#000) 
+    content: ""
+    display: block
+    width: $width
+    height: $height
+    background-color: $backgroundColor
+/* 偽元素線條*/
+
+
+/*基礎燈箱設定*/
+@mixin basicLibox($width:100vw, $height:100%) 
+    position: fixed
+    top: 0
+    left: 0
+    width: $width
+    height: $height
+/*基礎燈箱設定*/
+
+
+/*十字*/
+@mixin cross($width:26px, $height:26px) 
+    position: relative
+    width: $width
+    height: $height
+
+@mixin cross_before($width:26px, $color:#959595) 
+    @include fakeLine($width, 2px, $color)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+@mixin cross_after($height:26px, $color:#959595) 
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    @include fakeLine(2px, $height, $color)
+/*十字*/
+
+
+@mixin title_en
+    font-family: FuturaPT-Heavy
+    font-size: px(36)
+    @media all and (max-width: 700px)
+        font-size: px(26)
+
+@mixin title_ch
+    font-size: px(18)
+    @media all and (max-width: 700px)
+        font-size: px(16)

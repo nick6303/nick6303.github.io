@@ -1,0 +1,301 @@
+.product
+    &__nav
+        width: 100%
+        max-width: 1000px
+        padding-top: 80px
+        display: flex
+        flex-direction: column
+        align-items: center
+        .title
+            width: 100%
+            max-width: 640px 
+            padding: 0 20px 
+            margin-bottom: 40px
+            position: relative
+            display: flex
+            flex-direction: column
+            align-items: center
+            h3
+                font-size: px(34)
+                margin-bottom: 15px
+                letter-spacing: 1px
+            h4
+                font-size: px(20)
+            hr
+                margin: 35px auto
+                display: inline-block
+                width: 60px
+                height: 1px
+                background: #8da0d0
+                border: 0
+            h5
+                font-size: px(14)
+                line-height: 1.5
+
+        ul
+            display: flex
+            justify-content: center
+            +rwd(767)
+                flex-wrap: wrap
+            li
+                width: 0%
+                background: #f5f7ff
+                margin: 1px
+                transition: width .5s ,transform .5s .5s
+                transform: rotateY(180deg) translateZ(50px)
+                overflow: hidden
+                +rwd(767)
+                    // width: calc(50% - 2px)
+                    // min-width: auto
+                svg
+                    fill: #1a42a3 
+                &:hover
+                    .circle
+                        background: #1a42a3
+                        svg
+                            fill: #fff
+                    .Ispace
+                        width: 0
+                        transform-origin: 50% 50%
+                        animation: Ispace 2s infinite
+                    .Icolor
+                        animation: Icolor 1s infinite
+                    .Icases
+                        animation: Icases 1s infinite
+                    .Icategory
+                        animation: Icategory 1s infinite
+            &.movein
+                li
+                    // width: calc(25% - 2px)
+                    width: 100%
+                    transform: rotateY(0deg) translateZ(0px)
+                    // +rwd(767)
+                    //     width: calc(50% - 2px)
+                a
+                    opacity: 1
+
+            a
+                opacity: 0
+                padding: 50px
+                +flex
+                flex-direction: column
+                width: 100%
+                height: 100%
+                transition-delay: .75s
+                +rwd(767)
+                    padding:  50px 0
+            h4
+                font-size: px(20)
+                margin: 15px auto 10px
+            p
+                font-size: px(16)
+                white-space: nowrap
+
+    &__content
+        width: 100%
+    &__title
+        padding: 50px 0 0
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        h4
+            font-size: px(34)
+            margin-bottom: 15px
+            letter-spacing: 1px
+        h5
+            font-size: px(20)
+
+    &__inner
+        width: 100%
+        max-width: 1280px
+        margin: 50px auto 0px
+        position: relative
+        z-index: 2
+        >ul
+            display: flex
+            flex-wrap: wrap
+            width: 100%
+            >li
+                width: 100%
+                display: flex
+                opacity: 0
+                transition: 2s
+                &.movein
+                    opacity: 1
+                &:not(:last-child)
+                    margin-bottom: 20px
+                &.w50
+                    width: 50%
+                    +rwd(767)
+                        width: 100%
+                &:hover
+                    .product_box__txt
+                        background: inherit
+                    .product_box--circle
+                        img
+                            transform: scale(1.1)
+    &__more
+        +flex
+        flex-direction: column
+        margin-top: -100px
+        padding: 250px  0  150px
+        background: #F4F7FE
+        box-shadow: 50px 0 0 #fff inset, 0 0 0  inset, 0 0 0  inset, -50px 0 0 #fff inset
+        position: relative
+        z-index: 1
+        +rwd(767)
+            margin-top: 0px
+            padding: 80px 40px 100px
+            box-shadow: 40px 0 0 #fff inset, 0 40px 0 #fff inset, 0 -40px 0 #fff inset, -40px 0 0 #fff inset
+        h3
+            font-size: px(28)
+            margin-bottom: 15px
+        h5
+            font-size: px(18)
+            margin-bottom: 35px
+        h4
+            font-size: px(14)
+
+        h3,h5,.btns_s2
+            opacity: 0
+            transform: translateY(50px)
+            transition: 1s
+            transition-delay: .5s
+        &:after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: #fff
+            transition: 1s
+        &.movein
+            h3,h5,.btns_s2
+                opacity: 1
+                transform: translateY(0px)
+            &:after
+                height: 0
+
+
+.product_box
+    width: 100%
+    padding: 0
+    position: relative
+    transition: .5s
+    +flex
+    flex-wrap: wrap
+    &__img
+        position: relative
+        width: 100%
+        &:after
+            content: ''
+            display: inline-block
+            height: 0
+            width: 100%
+            padding-bottom: 52.8%
+            +rwd(767)
+                    padding-bottom: 99.5%
+            .w50 &
+                padding-bottom: 99.5%
+        img
+            position: absolute
+            top: 0
+            left: 0
+            transition: .5s
+            width: 100%
+    &__txt
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 60%
+        margin: 0 auto
+        max-width: 400px
+        +flex
+        flex-direction: column
+        text-align: center
+        transition: .5s
+        +rwd(767)
+            max-width: none
+            position: static
+            transform: none
+            width: 100%
+            padding: 20px
+            box-shadow: 0 0 0 20px #fff inset
+        &--right
+            right: 10%
+            left: auto
+            transform: translate(0%,-50%)
+            +rwd(767)
+                transform: none
+        &--left
+            left: 10%
+            right: auto
+            transform: translate(0%,-50%)
+            +rwd(767)
+                transform: none
+    a
+        color: #fff
+        width: 100%
+        padding: 50px 30px 10px
+    h4,h5,hr,p
+        opacity: 0
+        transform: translateY(30px)
+        transition: .5s
+        .movein &
+            opacity: 1
+            transform: translateY(0px)
+    h4
+        font-size: px(28) 
+        margin-bottom: 15px
+        transition-delay: 1s
+    h5
+        font-size: px(18) 
+        transition-delay: 1.25s
+    hr
+        display: inline-block
+        border: 0px
+        height: 1px
+        width: 60px
+        margin: 30px 0
+        background: #fff
+        transition-delay: 1.5s
+    p
+        width: 100%
+        font-size: px(14) 
+        margin-bottom: 50px
+        line-height: 2
+        letter-spacing: .5px
+        transition-delay: 1.75s
+        overflow : hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 4
+        -webkit-box-orient: vertical
+        word-break: break-all
+        -webkit-box-orient: vertical
+    &--circle
+        flex-direction: column
+        padding: 0 80px
+        +rwd(767)
+            padding: 0
+        .product_box
+            &__img
+                border-radius: 50%
+                overflow: hidden
+                &:before
+                    display: none
+                img
+                    .movein &
+                        border-radius: 50%
+
+            &__txt
+                position: relative
+                width: 100%
+                transform: translate(0%,0%)
+                top: auto
+                left: auto
+        a
+            color: #000

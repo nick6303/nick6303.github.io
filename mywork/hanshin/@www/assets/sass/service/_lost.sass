@@ -1,0 +1,159 @@
+#service.lost
+    .banner ._title .words
+        max-width: 400px
+    main .content
+        .topTitle
+            padding: 60px 50px 50px
+            position: relative
+            @media all and (max-width: 1024px)
+                padding: 60px 5vw 50px
+            &:after
+                position: absolute
+                top: 100%
+                left: 50%
+                transform: translateX(-50%)
+                +fakeLine(0,0,transparent)
+                border-style: solid
+                border-width: 20px 17.5px 0 17.5px
+                border-color: #fff transparent transparent transparent
+            .buttons
+                +overview_buttons
+        .table
+            background-color: #f5f5f5
+            padding: 65px 40px 90px
+            +flex-center
+            flex-direction: column
+            @media all and (max-width: 1024px)
+                padding: 65px 10px 90px
+            ._search
+                &.show
+                    h6
+                        animation: fadeInDown 1s both
+                    form .dropDown
+                        &:after
+                            animation: w100 1s both .4s
+                        .selectMenu
+                            animation: fadeInUp 0.8s both 1s
+                h6 
+                    text-align: center
+                    font-size: px(25)
+                    font-weight: bold
+                    opacity: 0
+                    @media all and (max-width: 700px)
+                        font-size: px(22)
+                form
+                    margin: 25px auto 0
+                    width: 255px
+                    position: relative
+                    z-index: 2
+            .list
+                max-width: 1040px
+                width: 100%
+                margin: 50px 0 0
+                text-align: center
+                position: relative
+                padding: 52px 0 0
+                @media all and (max-width: 700px)
+                    padding: 0
+                &.show .listContent ul li,&.show .listHeader
+                    animation: fadeInUp 1s both 
+                p
+                    letter-spacing: 0
+                .listHeader p,.listContent ul li p
+                    &:nth-child(1)
+                        width: 17%
+                    &:nth-child(2)
+                        width: 17%
+                    &:nth-child(3)
+                        width: 30%
+                    &:nth-child(4)
+                        width: 18%
+                    &:nth-child(5)
+                        width: 18%
+                .listHeader
+                    border-bottom: 4px solid #ababab
+                    position: absolute
+                    top: 0
+                    left: 0
+                    z-index: 1
+                    width: 100% 
+                    height: 52px
+                    padding: 10px 0
+                    display: flex
+                    font-size: px(15)
+                    background-color: #f5f5f5
+                    opacity: 0
+                    @media all and (max-width: 700px)
+                        display: none
+                    &.fixed
+                        position: fixed
+                    &.fixed.bottom
+                        position: absolute
+                        top: auto
+                        bottom: 0
+                        left: 0 !important
+                        width: 100% !important
+                    p
+                        padding: 0 5px
+                        font-weight: bold
+                        +flex-center
+                    p:not(:last-child)
+                        border-right: 1px solid #9f9f9f
+                .listContent
+                    @media all and (max-width: 700px)
+                        border-top: 4px solid #ababab
+                    ul li
+                        border-bottom: 1px solid #ababab
+                        display: flex
+                        padding: 20px 0
+                        opacity: 0
+                        @media all and (max-width: 700px)
+                            padding: 10px 0
+                            display: block
+                        &:last-child
+                            border-bottom: 4px solid #ababab
+                    p
+                        padding: 0 5px
+                        @media all and (max-width: 700px)
+                            width: 100% !important
+                            text-align: left
+                            padding: 10px 0 10px 50vw
+                            position: relative
+                            &:before
+                                position: absolute
+                                top: 11px
+                                left: 4vw
+                                content: attr(data-name)
+                                font-size: px(16)
+                                display: block
+                                line-height: 1.5
+                                max-width: 45vw
+                        &.size15px
+                            font-size: px(15)
+                        &.size16px
+                            font-size: px(16)
+                        &.size17px
+                            font-size: px(17)
+    .liboxs .libox 
+        background-color: rgba(255,255,255,.75)
+        color: #fff 
+        cursor: url("../img/icom/x.cur"), default
+        .box
+            background-image: url('../../upload/fa2/service/lost/liboxBg_800_600.jpg')
+            cursor: default
+        ._title 
+            span 
+                color: #da9f57
+        &>div
+            .word 
+                p,ul li
+                    line-height: 2
+                ul li
+                    position: relative
+                    padding: 0 0 0 16px
+                    &:before
+                        +fakeLine(4px,4px,#858585)
+                        border-radius: 50%  
+                        position: absolute
+                        top: 14px
+                        left: 6px

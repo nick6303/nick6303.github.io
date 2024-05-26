@@ -1,0 +1,874 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+header .hdLink {
+    display: none;
+}
+
+main {
+    article:not(.timeline) {
+        @media all and (max-width: 1550px) and (min-width: 1025px) {
+            margin-left: calc(5.5vw + 60px);
+            margin-right: calc(5.5vw + 60px);
+        }
+    }
+}
+
+
+main {
+    padding: 150px 0 ;
+    background-image: url("../../../upload/fa2/home/bg1_1920_1080.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    .formTable {
+        max-width: 1190px;
+        height: 700px;
+        margin: auto;
+        padding: 110px 70px 220px 70px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, .1);
+        background-color: #fff;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        @media all and (max-width: 1550px) {
+            padding: 110px 2vw 220px 2vw;
+        }
+        @media all and (max-width: 1280px) {
+            margin: 0 3.5vw 150px 3.5vw;
+            padding: 110px 5vw 220px 5vw;
+        }
+        @media all and (max-width: 1024px) {
+            padding: 215px 5vw 220px 5vw; 
+        }
+        @media all and (max-width: 640px) {
+            height: 700px;
+        }
+        @media all and (max-width: 500px) {
+            padding: 20vh 5vw 24vh 5vw;
+        }
+        @media all and (max-width: 325px) {
+            height: 640px;
+            padding: 20vh 5vw 24vh 5vw;
+        }
+        &.closeSignUp{
+            justify-content: center;
+            .tableNav ul li:last-child,
+            .tableNav ul li:first-child:after,
+            .logIn:after,
+            .signUp{
+                display: none;
+            }
+        }
+        .tableNav {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            @media all and (min-width: 1025px) {
+                display: none;
+            }
+            @media all and (max-width: 500px) {
+                top: 8vh;
+            }
+            ul {
+                @include flex-center;
+                li {
+                    color: #c3c3c3;
+                    padding: 1vw 5vw;
+                    h2,
+                    p {
+                        line-height: 1.5;
+                        transition: all 1s ease;
+                        text-align: center;
+                        letter-spacing: 1px;
+                    }
+                    h2 {
+                        @include font-size(36);
+                        @media all and (max-width: 400px) {
+                            @include font-size(30);
+                        }
+                        @media all and (max-width: 320px) {
+                            @include font-size(28);
+                        }
+                    }
+                    p {
+                        @include font-size(16);
+                        @media all and (max-width: 400px) {
+                            @include font-size(14);
+                        }
+                    }
+                    &:first-child {
+                        position: relative;
+                        &:after {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            @include fakeLine(1px,
+                            100%,
+                            #cccccc);
+                        }
+                    }
+                    &.active {
+                        color: $base_blue;
+                    }
+                }
+            }
+        }
+        ._text {
+            letter-spacing: 1px;
+            h2,
+            h3 {
+                line-height: 1.5;
+                color: #c3c3c3;
+                transition: all 1s ease;
+                white-space: nowrap;
+                @media all and (max-width: 1024px) {
+                    display: none;
+                }
+            }
+            h2 {
+                @include font-size(50);
+                @media all and (max-width: 1280px) {
+                    @include font-size(36);
+                }
+            }
+            h3 {
+                @include font-size(18);
+                margin-bottom: 30px;
+                @media all and (max-width: 1280px) {
+                    @include font-size(16);
+                }
+            }
+            div {
+                overflow: hidden;
+                display: none;
+                width: 0;
+                p {
+                    @include font-size(14);
+                    line-height: 1.5;
+                    font-family: "微軟正黑體";
+                    height: 42px;
+                    width: 560px;
+                    max-width: none !important;
+                    @media all and (max-width: 1550px) {
+                        width: 41vw;
+                    }
+                    @media all and (max-width: 1280px) {
+                        height: 63px;
+                    }
+                    @media all and (max-width: 1024px) {
+                        width: 80vw;
+                    }
+                    @media all and (max-width: 640px) {
+                        height: 63px;
+                    }
+                    @media all and (max-width: 435px) {
+                        height: 84px;
+                    }
+                    @media all and (max-width: 325px) {
+                        height: 105px;
+                    }
+                }
+            }
+            &:hover {
+                h2,
+                h3 {
+                    color: $base_blue;
+                }
+            }
+        }
+        .logIn,
+        .signUp {
+            @include flex-center;
+            flex-direction: column;
+            padding: 30px 70px;
+            max-width: 700px;
+            transition: width 1s ease;
+            animation: fadeIn 1s both .5s;
+            @media all and (max-width: 1550px) {
+                padding: 30px 3vw;
+            }
+            @media all and (max-width: 1280px) {
+                padding: 30px 5vw;
+                max-width: 55vw;
+            }
+            @media all and (max-width: 1200px) {
+                max-width: none;
+            }
+            @media all and (max-width: 1024px) {
+                display: none;
+                padding: 0;
+            }
+            &:not(.active) {
+                cursor: pointer;
+            }
+            .note {
+                display: flex;
+                justify-content: flex-end;
+                color: $base_blue;
+                font-family: Quicksand-Bold, 微軟正黑體;
+                @include font-size(13);
+                line-height: 2;
+                margin-top: 10px;
+                padding: 0 15px 0 0;
+                width: 100%;
+            }
+            form {
+                width: 100%;
+                display: none;
+                width: 0;
+                &>ul {
+                    width: 560px;
+                    height: 103px;
+                    transition: all 1s ease;
+                    @media all and (max-width: 1550px) {
+                        width: 41vw;
+                    }
+                    @media all and (max-width: 1024px) {
+                        width: 80vw;
+                    }
+                    @media all and (max-width: 800px) {
+                        height: 183px;
+                    }
+                    &>li {
+                        width: 100%;
+                        height: 50px;
+                        padding: 0 30px;
+                        margin: 1px 0;
+                        @include flex-space-between;
+                        transition: all .4s ease;
+                        @media all and (max-width: 800px) {
+                            height: auto;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            padding: 0 5vw;
+                        }
+                        &>p {
+                            white-space: nowrap;
+                        }
+                        p {
+                            @include font-size(14);
+                            letter-spacing: 1px;
+                            line-height: 1.5;
+                            color: rgba(0, 0, 0, .5);
+                            transition: all .4s ease;
+                            @media all and (max-width: 800px) {
+                                padding:20px 0;
+                                width: 100%;
+                            }
+                        }
+                        input {
+                            border: none;
+                            background-color: transparent;
+                            color: rgba(0, 0, 0, .5);
+                            letter-spacing: 1px;
+                            @include font-size(14);
+                            @media all and (max-width: 800px) {
+                                width: 100%;
+                                padding: 0 0 20px 0;
+                            }
+                            &::placeholder {
+                                transition: all .4s ease .1s;
+                                font-family: Philosopher-Regular, 微軟正黑體;
+                            }
+                            &:focus::placeholder {
+                                opacity: 0;
+                                transition: all .4s ease;
+                            }
+                        }
+                        &:hover,
+                        &.active {
+                            input,
+                            p {
+                                color: rgba(255, 255, 255, .8);
+                            }
+                            input::placeholder {
+                                color: rgba(255, 255, 255, .6);
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                @media all and (max-width: 1024px) {
+                    display: flex;
+                }
+                ._text {
+                    h2,
+                    h3 {
+                        color: $base_blue;
+                    }
+                    div {
+                        display: block;
+                        animation: pIn 1.5s both;
+                        animation-timing-function: liner;
+                        @media all and (max-width: 1024px) {
+                            animation: pIn 1s both;
+                        }
+                    }
+                }
+                form {
+                    display: block;
+                    animation: ulIn 1.5s both;
+                    animation-timing-function: liner;
+                    @media all and (max-width: 1024px) {
+                        animation: ulIn 1s both;
+                    }
+                }
+            }
+            &.out {
+                @media all and (max-width: 1024px) {
+                    display: flex;
+                }
+                ._text {
+                    div {
+                        display: block;
+                        animation: pOut 1.5s both;
+                        animation-timing-function: liner;
+                        @media all and (max-width: 1024px) {
+                            animation: pOut 1s both;
+                        }
+                    }
+                }
+                form {
+                    display: block;
+                    animation: ulOut 1.5s both;
+                    animation-timing-function: liner;
+                    @media all and (max-width: 1024px) {
+                        animation: ulOut 1s both;
+                    }
+                }
+            }
+        }
+        /*背景顏色*/
+        .logIn form>ul>li,
+        .signUp form>ul>li.email,
+        .signUp form>ul>li.tel div {
+            background-color: #f2f2f2;
+        }
+        .logIn {
+            position: relative;
+            &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include fakeLine(1px,
+                100%,
+                #cccccc);
+                @media all and(max-width: 1024px) {
+                    display: none;
+                }
+            }
+            form>ul>li {
+                input {
+                    width: 100%;
+                    margin-left: 40px;
+                    @media all and(max-width: 800px) {
+                        margin-left: 0px;
+                        &.password::placeholder {
+                            @include font-size(30);
+                        }
+                    }
+                }
+                &:hover,
+                &.active {
+                    background-color: $base_blue;
+                }
+            }
+        }
+        .signUp {
+            position: relative;
+            z-index: 1;
+            &:before {
+                position: absolute;
+                top: 0;
+                left: -1px;
+                @include fakeLine(1px,
+                100%,
+                #cccccc);
+                @media all and(max-width: 1024px) {
+                    display: none;
+                }
+            }
+            form>ul>li {
+                display: flex;
+                @media all and (max-width: 800px) {
+                    height: auto;
+                }
+                &.tel {
+                    padding: 0;
+                    @media all and (max-width: 800px) {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                    }
+                    div {
+                        height: 100%;
+                        @include flex-space-between;
+                        transition: all .4s ease;
+                        @media all and (max-width: 800px) {
+                            display: flex;
+                            flex-direction: column;
+                            p {
+                                width: 100%;
+                                padding: 15px 0;
+                            }
+                        }
+                        &.left {
+                            width: calc(60% - 1px);
+                            padding: 0 0 0 30px;
+                            position: relative;
+                            @media all and (max-width: 800px) {
+                                width: 100%;
+                                padding: 0;
+                                p {
+                                    padding: 15px 5vw;
+                                }
+                            }
+                            .dropList {
+                                width: 130px;
+                                padding: 0 10px 0 30px;
+                                position: static;
+                                @media all and (max-width: 800px) {
+                                    width: 100% !important;
+                                    padding: 0;
+                                }
+                                .selectMenu {
+                                    height: 100%;
+                                    @media all and (max-width: 800px) {
+                                        padding: 0 5vw 0 0;
+                                    }
+                                    &:after {
+                                        transition: all .4s ease;
+                                        color: rgba(0, 0, 0, 0.5);
+                                    }
+                                }
+                                ul li {
+                                    padding: 10px 30px 10px 30px;
+                                    &:first-child {
+                                        padding: 15px 30px 10px 30px;
+                                    }
+                                    &:last-child {
+                                        padding: 10px 30px 15px 30px;
+                                    }
+                                    @media all and (max-width: 800px) {
+                                        padding: 10px 5vw 10px 5vw;
+                                        &:first-child {
+                                            padding: 15px 5vw 10px 5vw;
+                                        }
+                                        &:last-child {
+                                            padding: 10px 5vw 15px 5vw;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.right {
+                            width: calc(40% - 1px);
+                            padding: 0 30px;
+                            @media all and (max-width: 800px) {
+                                width: 100%;
+                                padding: 0 5vw;
+                            }
+                        }
+                    }
+                    &:hover .left .dropList .selectMenu:after {
+                        color: #fff;
+                    }
+                }
+                &.email input {
+                    width: 100%;
+                    @media all and (max-width: 800px) {
+                        padding: 20px 0;
+                    }
+                }
+                &.tel:hover div,
+                &.tel.active div,
+                &.email:hover,
+                &.email.active {
+                    background-color: $base_blue;
+                }
+            }
+        }
+        .button {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            @media all and (max-width: 500px) {
+                bottom:8vh;
+            }
+            ul {
+                display: flex;
+                animation: fadeInUp 2s both .5s;
+                li {
+                    overflow: hidden;
+                    a,
+                    button {
+                        @include flex-center;
+                        flex-direction: column;
+                        border: none;
+                        background-color: transparent;
+                        margin: 0 15px;
+                        p {
+                            text-align: center;
+                            @include font-size(14);
+                            letter-spacing: 1px;
+                            line-height: 1.5;
+                            font-family: Philosopher-Bold, 微軟正黑體;
+                            white-space: nowrap;
+                        }
+                        span {
+                            @include flex-center;
+                            width: 35px;
+                            height: 35px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    .forget {
+                        transition: all .4s ease;
+                        span {
+                            border: 1px solid #cccccc;
+                            border-radius: 50%;
+                            &:before {
+                                content: "?";
+                                font-family: 'Quicksand-Light';
+                                display: block;
+                            }
+                        }
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                    .check span,
+                    .start span {
+                        position: relative;
+                        &:before,
+                        &:after {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        &:before {
+                            @include fakeLine(1px,
+                            28px,
+                            #7f7f7f);
+                        }
+                        &:after {
+                            @include fakeLine(28px,
+                            1px,
+                            #7f7f7f);
+                        }
+                    }
+                    &:first-child {
+                        display: flex;
+                    }
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@keyframes pIn {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+    30% {
+        width: 0;
+        height: 42px;
+        opacity: .5;
+        overflow: hidden;
+    }
+    99% {
+        overflow: hidden;
+    }
+    100% {
+        width: 560px;
+        height: 42px;
+        opacity: 1;
+        overflow: visible;
+    }
+}
+
+
+@keyframes pOut {
+    0% {
+        width: 560px;
+        height: 42px;
+        opacity: 1;
+    }
+    30% {
+        width: 560px;
+        height: 0;
+        opacity: .5;
+    }
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+
+@keyframes ulIn {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin-top: 0;
+        overflow: hidden;
+    }
+    30% {
+        width: 0;
+        height: 103px;
+        opacity: .5;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    99% {
+        overflow: hidden;
+    }
+    100% {
+        width: 560px;
+        height: 103px;
+        opacity: 1;
+        margin-top: 30px;
+        overflow: visible;
+    }
+}
+
+
+@keyframes ulOut {
+    0% {
+        width: 560px;
+        height: 103px;
+        opacity: 1;
+        margin-top: 30px;
+    }
+    30% {
+        width: 560px;
+        height: 0;
+        opacity: .5;
+        margin-top: 30px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin-top: 0;
+    }
+}
+
+
+@media all and (max-width: 1550px) {
+    @keyframes pIn {
+        0% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        30% {
+            width: 0;
+            height: 42px;
+            opacity: .5;
+            overflow: hidden;
+        }
+        99% {
+            overflow: hidden;
+        }
+        100% {
+            width: 41vw;
+            height: 42px;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+    @keyframes pOut {
+        0% {
+            width: 41vw;
+            height: 42px;
+            opacity: 1;
+        }
+        30% {
+            width: 41vw;
+            height: 0;
+            opacity: .5;
+        }
+        100% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    }
+
+
+    @keyframes ulIn {
+        0% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            margin-top: 0;
+            overflow: hidden;
+        }
+        30% {
+            width: 0;
+            height: 103px;
+            opacity: .5;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+        99% {
+            overflow: hidden;
+        }
+        100% {
+            width: 41vw;
+            height: 103px;
+            opacity: 1;
+            margin-top: 30px;
+            overflow: visible;
+        }
+    }
+
+
+    @keyframes ulOut {
+        0% {
+            width: 41vw;
+            height: 103px;
+            opacity: 1;
+            margin-top: 30px;
+        }
+        30% {
+            width: 41vw;
+            height: 0;
+            opacity: .5;
+            margin-top: 30px;
+        }
+        100% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            margin-top: 0;
+        }
+    }
+}
+
+
+@media all and (max-width: 1280px) {
+    @keyframes pIn {
+        0% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        30% {
+            width: 0;
+            height: 63px;
+            opacity: .5;
+            overflow: hidden;
+        }
+        99% {
+            overflow: hidden;
+        }
+        100% {
+            width: 41vw;
+            height: 63px;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+    @keyframes pOut {
+        0% {
+            width: 41vw;
+            height: 63px;
+            opacity: 1;
+        }
+        30% {
+            width: 41vw;
+            height: 0;
+            opacity: .5;
+        }
+        100% {
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    }
+}
+
+
+@media all and (max-width: 1024px) {
+    @keyframes pIn {
+        0% {
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        99% {
+            overflow: hidden;
+        }
+        100% {
+            width: 80vw;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+
+    @keyframes pOut {
+        0% {
+            width: 80vw;
+            opacity: 1;
+        }
+        100% {
+            width: 0;
+            opacity: 0;
+        }
+    }
+
+    @keyframes ulIn {
+        0% {
+            width: 0;
+            opacity: 0;
+            margin-top: 0px;
+            overflow: hidden;
+        }
+        99% {
+            overflow: hidden;
+        }
+        100% {
+            width: 80vw;
+            opacity: 1;
+            margin-top: 30px;
+            overflow: visible;
+        }
+    }
+
+    @keyframes ulOut {
+        0% {
+            width: 80vw;
+            opacity: 1;
+            margin-top: 30px;
+        }
+        100% {
+            width: 0;
+            opacity: 0;
+            margin-top: 0px;
+        }
+    }
+}

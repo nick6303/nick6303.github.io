@@ -1,0 +1,1144 @@
+
+body
+    padding-left: 250px
+    @media all and (max-width: 1024px)
+        padding: 50px 0 0 0 
+    header .guideLogo
+        display: none
+        position: absolute
+        top: 50px
+        left: 50px
+        z-index: 11
+        animation: fadeIn 2s both .4s
+    &.guide
+        padding: 0 0 480px
+        header .hdContent
+            display: none
+        // 返回按鈕出現
+        &#news.detail,
+        &#floor.detail,
+        &#service:not(.index),
+        &#dm:not(.index),
+        &#food.detail
+            header .sideButton .back
+                display: flex
+        // 導覽機會出現logo的單元
+        &#news.index,
+        &#floor.index,
+        &#service.index,
+        &#service.tax,
+        &#service.other,
+        &#service.facility,
+        &#dm.index,
+        &#card.index,
+        &#search.index,
+        &#food.index
+            header .guideLogo
+                display: block
+
+
+// 側邊按鈕    
+header .sideButton
+    position: fixed
+    bottom: 30px
+    left: calc(98vw - 55px)
+    z-index: 10
+    color: #fff
+    opacity: 0
+    overflow: hidden
+    display: none
+    transition: opacity .4s ease,tranform 0s 
+    @media all and (min-width: 1921px)
+        left: calc(100vw - 100px)
+    @media all and (max-width: 1024px)
+        bottom: 5px
+        right: 5px
+        left: auto
+    section:not(.socialMedia)
+        +flex-center
+        width: 55px
+        height: 55px
+    &.in
+        display: block
+        animation: fadeIn .4s both 
+    .socialMedia 
+        background-color: #233153
+        position: relative
+        flex-direction: column
+        @media all and (max-width: 1024px)
+            display: none !important
+        &:hover
+            button
+                height: 0
+            .link a span
+                height: 55px
+        button
+            transition: all .4s ease 
+            width: 55px
+            height: 55px
+            border: none
+            background-color: transparent
+            color: #fff
+            overflow: hidden
+        .link a 
+            &:hover span
+                opacity: 1
+            span
+                overflow: hidden
+                width: 55px
+                height: 0
+                +flex-center
+                opacity: 0.25
+                transition: all .4s ease
+    .openSearch
+        background-color: #233153
+        position: relative
+        cursor: pointer
+        @media all and (max-width: 1024px)
+            display: none !important
+        &:before
+            position: absolute
+            top: 0
+            left: calc(50% - 17.5px)
+            +fakeLine(35px,1px,#777e93)
+    .DM
+        background-color: #8b8989
+        @media all and (max-width: 1024px)
+            display: none !important
+    .goTop
+        background-color: #585858
+        cursor: pointer
+        @media all and (max-width: 1024px)
+            font-size: px(14)
+            letter-spacing: 0
+            height: 50px !important
+            width: 50px !important
+        @media all and (max-width: 700px)
+            font-size: px(12)
+            height: 40px !important
+            width: 40px !important
+    
+// 側邊按鈕 導覽機設定開始 -----------------------   
+body:not(.guide) header .sideButton
+    .back,.toHome,.arrows
+        display: none !important
+body.guide 
+    // 回首頁按鈕不出現
+    &#guide.index header .sideButton .toHome
+        display: none
+    header .sideButton
+        bottom: auto
+        top: 400px
+        left: auto
+        right: 10px
+        z-index: 12
+        transform: translate(0)
+        opacity: 1
+        display: block
+        animation: none !important
+        padding: 140px 0 0
+        section:not(.socialMedia)
+            width: 65px
+            height: 65px
+        .socialMedia,.DM,.goTop
+            display: none
+        .openSearch,.back,.toHome,.arrows button
+            border-radius: 50%
+            margin: 5px 0
+        .back,.toHome
+            background-color: #233153
+        .openSearch
+            background-color: #a5835a
+            &:before
+                display: none
+        .back
+            display: none
+            font-size: px(15)
+            position: absolute
+            top: 0
+            left: 0
+        .toHome
+            position: absolute
+            top: 70px
+            left: 0
+            font-size: px(28)
+        .arrows
+            display: block
+            height: auto !important
+            button
+                background-color: #6a6b6c
+                border: none
+                +flex-center
+                width: 65px
+                height: 65px
+                color: #fff
+                &:before
+                    font-family: 'icomoon'
+                    content: "\e928"
+                    font-size: px(12)
+                    display: block
+                &.up:before
+                    transform: scale(0.55)
+                &.down:before
+                    transform: scale(0.55) rotateX(180deg)
+// 側邊按鈕 導覽機設定結束 -----------------------
+
+
+
+header .hdContent
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 10
+    height: 100vh
+    width: 250px
+    color: #fff
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    padding: 50px 0
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: space-between
+    @media all and (min-width: 1025px) and (max-height:800px)
+        padding: 30px 0
+    @media all and (max-width: 1024px)
+        width: 100%
+        height: 50px
+        flex-direction: row
+        justify-content: space-between
+        padding: 0 calc(2vw + 50px) 0 5vw
+    @media all and (max-width: 700px)
+        padding: 0 40px 0 5vw
+
+
+header .hdContent .top
+    +flex-center
+    flex-direction: column
+    width: 100%
+    @media all and (max-width: 1024px)
+        width: auto
+    .logo
+        max-width: 100px
+        a
+            animation: fadeInDown 1s both .4s
+            display: block
+            @media all and (max-width: 1024px)
+                padding: 10px 0
+        img
+            &:last-child
+                display: none
+            @media all and (max-width: 1024px)
+                max-height: 30px
+                &:first-child
+                    display: none
+                &:last-child
+                    display: block
+    .openMenu
+        width: 100%
+        +flex-center
+        font-size: px(14)
+        margin: 50px 0 0 
+        padding: 15px 0
+        cursor: pointer
+        position: relative
+        @media all and (min-width: 1025px) and (max-height:800px)
+            margin: 30px 0 0 
+        @media all and (max-width: 1024px)
+            width: 50px
+            height: 50px
+            background-color: transparent
+            position: absolute
+            top: 50%
+            right: 2vw
+            transform: translateY(-50%)
+            margin: 0
+            padding: 0
+            font-size: px(20)
+        @media all and (max-width: 700px)
+            right: 0
+            width: 40px
+        &:before
+            +fakeLine(0%,100%,#a5835a)
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+            animation: w100 0.6s both .2s
+            @media all and (max-width: 1024px)
+                display: none
+        &>*
+            display: block
+            animation: fadeInUp 1s both 1s
+            @media all and (max-width: 1024px)
+                transform: translateY(-200%)
+                animation: allin 1s both
+        span
+            display: block
+            margin-right: 20px
+            @media all and (max-width: 1024px)
+                margin-right: 0
+        p
+            @media all and (max-width: 1024px)
+                display: none
+    .socialMedia
+        margin: 20px 0 0 
+        display: flex
+        justify-content: center
+        width: 100%
+        @media all and (max-width: 1024px)
+            display: none
+        ul
+            display: flex
+            align-items: center
+            justify-content: space-around
+            min-width: 180px
+            max-width: 100%
+            li
+                margin: 0 5px
+                font-size: px(18)
+                animation: flipInY 1s both  1s
+                a
+                    padding: 8px 
+                    display: block
+                    span
+                        display: block
+                        transition: color .3s ease,transform .8s ease
+                    &:hover span
+                        color: $base_gold
+                        transform: rotateY(360deg)
+                .icon-instagram
+                    font-size: px(20)
+
+header .hdContent .list
+    height: calc(100% - 430px)
+    width: 250px
+    padding: 20% 0 25px
+    +flex-center
+    @media all and (min-width: 1025px) and (max-height:800px)
+        height: calc(100% - 350px)
+    @media all and (max-width: 1024px)
+        display: none
+    ul 
+        max-height: 100%
+        li
+            +flex-center
+            width: 249px
+            overflow: hidden
+            a
+                opacity: 0
+                animation: fadeInDown 0.8s both  2s
+                transition: all .3s ease
+                &:hover
+                    letter-spacing: 4px
+            &:not(:last-child)
+                margin-bottom: 20px
+
+header .hdContent .bottom
+    padding: 0 30px
+    @media all and (max-width: 1024px)
+        display: flex
+        padding: 0
+    .buttons
+        display: flex
+        a
+            width: 50%
+            +flex-center
+            overflow: hidden
+            @media all and (max-width: 1024px)
+                width: 50px
+                height: 50px
+                order: 2
+            &:hover
+                span:before
+                    transform: rotateY(360deg)
+            &:first-child
+                @media all and (max-width: 1024px)
+                    display: none
+            &:not(:first-child)
+                // border-left: 1px solid #6f6859
+                position: relative
+                @media all and (max-width: 1024px)
+                    border-left: none
+                    font-size: px(24)
+                @media all and (max-width: 700px)
+                    width: 40px
+                &:before
+                    position: absolute
+                    top: 0
+                    left: 0
+                    +fakeLine(1px,0%,#6f6859)
+                    animation: h100 .6s both 1s 
+                    @media all and (max-width: 1024px)
+                        display: none
+            &>*
+                opacity: 0.4
+                transform: translateY(-150%)
+                animation: allin .8s both 1.2s
+                @media all and (max-width: 1024px)
+                    opacity: 1
+                    animation: allin 1s both .1s
+            span
+                margin-right: 10px
+                @media all and (max-width: 1024px)
+                    margin-right: 0
+                &:before
+                    display: block
+                    transition: all .8s ease
+            p
+                font-size: px(14)
+                @media all and (max-width: 1024px)
+                    display: none
+    .openSelectStore
+        padding: 15px 0
+        text-align: center
+        font-size: px(16)
+        margin: 30px 0 0  
+        position: relative
+        @media all and (min-width: 1025px) and (max-height:800px)
+            margin: 10px 0 0  
+            padding: 10px 0
+        @media all and (max-width: 1024px)
+            display: none
+        &:hover p
+            letter-spacing: 3px
+        &:before,&:after
+            position: absolute
+            +fakeLine(0,1px,#6f6859)
+            animation: w100 .8s both 1.2s
+        &:before
+            top: 0
+            left: 0
+        &:after
+            bottom: 0
+            right: 0
+        p
+            transition: all .4s ease
+            animation: fadeInUp 1s both 1.4s
+    .openTime
+        padding: 35px 0 0
+        +flex-center
+        flex-direction: column
+        @media all and (min-width: 1025px) and (max-height:800px)
+            padding: 15px 0 0
+        @media all and (max-width: 1024px)
+            display: none
+        span
+            font-size: px(15)
+            margin-bottom: 15px
+            color: rgba(255,255,255,.4)
+            animation: fadeInUp 1.5s both 1.3s
+            @media all and (min-width: 1025px) and (max-height:800px)
+                margin-bottom: 10px
+        p
+            animation: fadeInUp 1.5s both 1.3s
+            font-size: px(16)
+
+
+
+
+
+header .selectStore .buttons,header .hdMenu .topButton
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    .liboxClose,a p
+        +flex-center
+        width: 180px    
+        height: 60px
+        cursor: pointer
+        @media all and (max-width: 600px)
+            width: 50vw
+            height: 40px
+    .liboxClose
+        background-color: #272727
+        span
+            +cross(28px,28px)
+            display: block
+            transform: rotate(45deg)
+            @media all and (max-width: 600px)
+                width: 24px
+                height: 24px
+            &:before
+                +cross_before(100%,#fff)
+            &:after
+                +cross_after(100%,#fff)
+    a
+        font-size: px(15)
+        font-weight: bold
+        overflow: hidden
+        @media all and (max-width: 600px)
+            font-size: px(14)
+        p
+            background-color: #dcdcdb
+
+// 選擇分館
+header .selectStore
+    +basicLibox
+    z-index: 12
+    background-color: #fff
+    overflow-y: auto
+    padding: 100px 50px 90px
+    background-image: url('../../upload/fa2/selectStoreBg_1920_1080.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    display: none
+    @media all and (max-width: 1279px)
+        padding: 100px 30px 90px
+    @media all and (max-width: 1024px)
+        padding: 100px 15px 90px
+    @media all and (max-width: 450px)
+        padding: 100px 0px 60px
+    &.open
+        animation: fadeIn .4s both
+        display: block
+        .buttons
+            .liboxClose
+                animation: slideInDown .8s both .2s
+            a p
+                animation: slideInLeft 1.2s both .8s
+        ._title
+            .ch
+                animation: fadeInDown 1s both .2s
+            .en
+                animation: fadeInUp 1s both .4s
+                &:after
+                    +keyframesWidth(40)
+                    animation: w40 .8s both .8s
+            ul
+                animation: fadeInUp 1s both .6s
+        ._slick
+            ul li
+                figure
+                    animation: fadeInUp 1.2s both .6s
+                ._text
+                    .ch 
+                        animation: fadeInUp 1s both 1.2s
+                    .en
+                        animation: fadeInUp 1s both 1.4s
+                .socailMedia 
+                    animation: fadeInUp 1s both 1.6s
+                &.slick-center
+                    figure 
+                        animation-delay: .4s
+                    ._text
+                        .ch 
+                            animation-delay: 1s
+                        .en
+                            animation-delay: 1.2s
+                    .socailMedia 
+                        animation-delay: 1.4s
+            .arrows
+                .icon-arrowLeft
+                    animation: fadeInRight 1s both 1.8s
+                .icon-arrowRight
+                    animation: fadeInLeft 1s both 1.8s
+    &.close 
+        display: block
+        animation: fadeOut .6s both .4s
+        .buttons
+            .liboxClose,a p
+                animation: slideOutUp .8s both 
+        ._title .ch,._title .en,._title ul
+            animation: fadeOutUp .4s both 
+        ._title:after
+            width: 40px
+        ._slick
+            ul li
+                animation: fadeOut .4s both
+            .arrows
+                .icon-arrowLeft
+                    animation: fadeOutRight .4s both
+                .icon-arrowRight
+                    animation: fadeOutLeft .4s both
+    .content
+        width: 100%
+        min-height: 100%
+        +flex-center
+        flex-direction: column
+    ._title
+        +flex-center
+        flex-direction: column
+        text-align: center
+        .ch
+            font-size: px(22)
+            font-weight: bold
+            padding: 0 10px
+            @media all and (max-width: 600px)
+                font-size: px(20)
+        .en
+            font-size: px(38)
+            line-height: 1.5
+            padding: 0 10px
+            margin: 0 auto 20px
+            position: relative
+            @media all and (max-width: 600px)
+                font-size: px(34)
+            @media all and (max-width: 450px)
+                margin: 0 auto 10px
+            &:after
+                position: absolute
+                bottom: -20px
+                left: 50%
+                transform: translateX(-50%)
+                +fakeLine(0px,3px,#000)
+        ul
+            display: flex
+            font-size: px(15)
+            margin: 35px 0 0
+            max-width: 100vw
+            li
+                color: #818181
+                transition: all .4s ease
+                cursor: pointer
+                margin: 0 10px
+                padding: 0 5px 
+                white-space: nowrap
+                &:after
+                    +fakeLine(0,2px ,#d1964f)
+                    transition: all .4s ease
+                    margin: 5px auto 0
+            li:hover,&:hover li.active:hover,li.active
+                color: #000
+                &:after
+                    width: 100%
+            &:hover li.active
+                color: #818181
+                &:after
+                    width: 0
+    ._slick
+        margin: auto
+        padding: 0 50px
+        max-width: 1600px
+        width: 100%
+        position: relative
+        @media all and (max-width: 1440px)
+            margin: 30px auto 0
+        @media all and (max-width: 450px)
+            padding: 0
+        ul
+            .slick-track
+                padding: 15px 0 40px
+                margin: auto
+            .slick-dots
+                bottom: 0
+                left: 10px
+            li
+                +flex-center
+                flex-direction: column
+                transition: all .8s ease 
+                margin: 0 40px
+                @media all and (max-width: 1600px)
+                    margin: 0 20px
+                @media all and (min-width: 1279px)
+                    &.slick-center
+                        transform: translateY(40px)
+                        &:last-child:not(.down),&:first-child:not(.down)
+                            transform: translateY(0)
+                    &:nth-child(2),
+                        transform: translateY(40px)
+                @media all and (max-width: 450px)
+                    margin: 0 15px
+                    &.slick-center figure p span
+                        transform: translateY(0)
+                a:hover figure p span
+                    transform: translateY(0)
+                figure
+                    position: relative
+                    p
+                        position: absolute
+                        bottom: 45px
+                        left: -35px
+                        display: block
+                        overflow: hidden
+                        @media all and (max-width: 1600px)
+                            left: -15px
+                        span
+                            background-color: #181818
+                            color: #ffffff
+                            padding: 5px 60px 5px 20px
+                            transform: translateY(101%)
+                            display: block
+                            transition: all .4s ease .1s
+                            @media all and (max-width: 1600px)
+                                padding: 5px 40px 5px 20px
+                ._text
+                    padding: 25px 0 0 
+                    .ch
+                        font-size: px(22)
+                        font-weight: bold
+                        @media all and (max-width: 1600px)
+                            font-size: px(20)
+                        @media all and (max-width: 350px)
+                            font-size: px(18)
+                    .en
+                        font-size: px(22)
+                        color: rgba(0,0,0,.5)
+                        @media all and (max-width: 1600px)
+                            font-size: px(20)
+                            margin: 5px 0 0
+                        @media all and (max-width: 350px)
+                            font-size: px(18)
+                .socailMedia 
+                    margin: 20px 0 0
+                    @media all and (max-width: 1600px)
+                        margin: 15px 0 0
+                    a
+                        color: #ababac
+                        transition: all .4s ease
+                        font-size: px(20)
+                        &:not(:last-child)
+                            margin: 0 30px 0 0
+                        &:hover
+                            color: #d7a65b
+        .arrows
+            span
+                position: absolute  
+                top: calc(45% - 20px)
+                border-radius: 50%
+                background-color: #cfcfcf
+                width: 40px
+                height: 40px
+                color: #474747
+                cursor: pointer
+                font-weight: bold
+                @media all and (max-width: 450px)
+                    display: none
+                &:before
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                &.icon-arrowLeft
+                    left: 0
+                &.icon-arrowRight
+                    right: 0
+
+// 搜尋燈箱
+body.guide header .searchLibox section
+    min-height: unset
+    position: absolute
+    top: 15%
+    left: 50%
+    transform: translateX(-50%)
+
+header .searchLibox
+    display: none
+    +basicLibox
+    background-color: rgba(0,0,0,.8)
+    z-index: 12
+    overflow-y: auto
+    &.open
+        display: block
+        animation: fadeIn .4s both 
+        section
+            @media (max-width: 930px)
+                animation: slideInRight 1s both 
+    &.close
+        display: block
+        animation: fadeOut .4s both 
+    section
+        background-image: url('../../upload/fa2/searchBg_930_1080.jpg')
+        +bgSeting
+        min-height: 100%
+        max-width: 930px
+        width: 100%
+        padding: 80px 50px
+        margin: auto
+        +flex-center
+        flex-direction: column
+        position: relative
+        @media (max-width: 1024px)
+            padding: 80px 5vw
+        .liboxClose
+            width: 180px
+            height: 60px
+            background-color: #272727
+            +flex-center
+            position: absolute
+            top: 0
+            left: 0
+            cursor: pointer
+            @media all and (max-width: 600px)
+                width: 100px
+                height: 40px
+            span
+                +cross(26px,26px)
+                display: block
+                transform: rotate(45deg)
+                @media all and (max-width: 600px)
+                    width: 24px
+                    height: 24px
+                &:before
+                    +cross_before(100%,#fff)
+                &:after
+                    +cross_after(100%,#fff)
+        ._title,.forms
+            max-width: 630px
+            width: 100%
+        ._title
+            +flex-center
+            flex-direction: column
+            text-align: center
+            .ch
+                font-size: px(25)
+                font-weight: bold
+                @media (max-width: 600px)
+                    font-size: px(22)
+            .en
+                font-size: px(50)
+                @media (max-width: 600px)
+                    font-size: px(42)
+                &:after
+                    +fakeLine(40px,3px,#000)
+                    margin: 10px auto 30px
+            .words
+                font-size: px(15)
+                max-width: 300px
+            .buttons
+                margin: 60px auto 
+                +flex-center
+                width: 100%
+                button
+                    border: none
+                    width: 50%
+                    height: 55px
+                    +flex-center
+                    @media (max-width: 600px)
+                        height: 45px
+                    &:first-child
+                        background-color: #d3b28b
+                    &:last-child
+                        background-color: #5282b2
+                    p
+                        font-size: px(15)
+                        color: #fff
+                        &:after
+                            margin: auto
+                            transition: all .5s ease
+                            +fakeLine(0%,2px,#fff)
+                            @media (max-width: 600px)
+                                height: 1px
+                button:hover,button.active,&:hover button.active:hover
+                    p:after
+                        width: 100%
+                &:hover button.active p:after
+                    width: 0
+        form
+            flex-wrap: wrap
+            width: 100%
+            +flex-center
+            .box
+                width: 50%
+                margin: 0 0 80px
+                @media (max-width: 600px)
+                    width: 100%
+                    margin: 0 0 40px
+                @media (min-width: 601px)
+                    &:nth-child(odd)
+                        padding: 0 45px 0 0
+                    &:nth-child(even)
+                        padding: 0 0 0 45px
+                &:not(:first-child)
+                    position: relative
+                    @media (max-width: 600px)
+                        padding: 40px 0 0
+                    &:before
+                        position: absolute
+                        top: 50%
+                        left: 0
+                        transform: translate(-50%,-50%)
+                        content: "Or"
+                        font-size: px(17)
+                        text-align: center
+                        @media (max-width: 600px)
+                            top: 0
+                            left: 50%
+                            transform: translate(-50%,0)
+                &:nth-child(odd):nth-last-child(2)
+                    padding: 40px 0 0
+                    width: 100%
+                    max-width: 420px
+                    @media (max-width: 600px)
+                        max-width: none
+                    &:before
+                        top: 0
+                        left: 50%
+                        transform: translate(-50%,0)
+                .dropDown,.inputArea
+                    width: 100%
+                .dropDown 
+                    .selectMenu
+                        opacity: 1
+                        border-bottom: 3px solid #000
+                .inputArea
+                    display: flex
+                    align-items: center
+                    border-bottom: 3px solid #000
+                    padding: 0 0 8px
+                    span
+                        width: 45px
+                        height: 30px
+                        +flex-center
+                        border-right: 1px solid #c2c0c2
+                        font-size: px(13)
+                        font-weight: bold
+                    input
+                        background-color: transparent
+                        border: none
+                        width: calc(100% - 45px)
+                        text-align: center
+            .buttons
+                width: 100%
+                +flex-center
+                @media (max-width: 600px)
+                    margin: 20px 0 0
+                button
+                    border: none
+                    background-color: #181818
+                    color: #fff
+                    font-size: px(15)
+                    width: 130px
+                    height: 30px
+                    +flex-center
+
+
+// 主選單
+header .hdMenu
+    +basicLibox
+    background-color: rgba(0,0,0,.8)
+    z-index: 12
+    overflow-y: auto
+    display: none
+    cursor: url("../img/icom/Xw.cur"), default
+    &.open
+        display: block
+        animation: fadeIn .4s both 
+        .content
+            animation: fadeInLeft 1s both
+            .floorIntro
+                animation: floorIn 1s both .2s
+                @keyframes floorIn
+                    0% 
+                        opacity: 0
+                        transform: translate(-25%,-50%)
+                    100%
+                        opacity: 1
+                        transform: translate(0%,-50%)
+        .topButton
+            animation: slideInDown .8s both .4s
+    &.close
+        display: block
+        animation: fadeOut .4s both .4s
+        .content
+            animation: fadeOutLeft .6s both 
+            .floorIntro
+                animation: floorOut .4s both 
+                @keyframes floorOut
+                    0% 
+                        opacity: 1
+                        transform: translate(0%,-50%)
+                    100%
+                        opacity: 0
+                        transform: translate(-25%,-50%)
+        .topButton
+            animation: slideOutUp .4s both 
+    .topButton
+        position: fixed
+        z-index: 1
+        cursor: default
+    .content
+        background-color: #fff
+        max-width: 770px
+        width: 100%
+        min-height: 100%
+        padding: 100px 80px 50px
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+        position: relative
+        cursor: default
+        @media (max-width: 770px)
+            padding: 100px 8vw 50px
+        &>*
+            max-width: 510px
+            width: 100%
+        .login,.logout
+            display: none
+            align-items: center
+            flex-wrap: wrap
+            &.active
+                display: flex
+            &:before
+                font-family: 'icomoon'
+                content: "\e906"
+                font-size: px(28)
+                color: #6b6a6a
+                @media (max-width: 510px)
+                    font-size: px(26)
+            &>p
+                font-size: px(24)
+                color: #616161
+                @media (max-width: 510px)
+                    font-size: px(20)
+            .buttons
+                margin-left: 25px
+                display: flex
+                font-size: px(18)
+                font-weight: bold
+                @media (max-width: 510px)
+                    width: 100%
+                    margin-left: 0
+                    padding: 10px 0 0 5px
+                    font-size: px(16)
+                .name:before
+                    content: "Hi, "
+                a,p
+                    position: relative
+                    line-height: 1.5
+                    &:not(:last-child)
+                        padding-right: 14px
+                        &:after
+                            position: absolute
+                            top: 50%
+                            right: 0
+                            transform: translateY(-50%)
+                            +fakeLine(1px,18px,#a8a8a8)
+                    &:not(:first-child)
+                        padding-left: 14px
+        .mainLink
+            margin: 30px 0 50px
+            @media (max-width: 510px)
+                margin: 50px 0 70px
+            ul
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                li
+                    &:not(:last-child)
+                        margin-bottom: 10px
+                    a
+                        +flex-center
+                        font-size: px(20)
+                        padding: 5px 0
+                        @media (max-width: 510px)
+                            font-size: px(17)
+                        .ch
+                            font-weight: bold
+                        .en
+                            margin-left: 10px
+                            color: #d6d6d6
+        .bottom
+            .about
+                ul
+                    display: flex
+                    flex-wrap: wrap
+                    li
+                        font-size: px(15)
+                        display: flex
+                        align-items: center
+                        margin: 10px 0 10px
+                        a
+                            white-space: nowrap
+                        &:not(:last-child):after
+                            margin: 0 12px
+                            +fakeLine(1px,17px,#bfbfbf)
+            .socialMedia
+                display: flex
+                align-items: center
+                margin: 25px 0 0
+                @media (max-width: 510px) 
+                    flex-direction: column
+                    align-items: flex-start
+                p
+                    font-size: px(17)
+                    margin: 0 10px 0 0
+                ul
+                    display: flex
+                    li
+                        font-size: px(20)
+                        margin: 0 10px
+                        @media (max-width: 510px) 
+                            margin: 20px 20px 0 0
+                        a
+                            padding: 5px 
+                            +flex-center
+                            @media (max-width: 510px) 
+                                padding: 0
+                            span
+                                display: block
+                                transition: all .6s ease
+                                color: #bfbfbf
+                            &:hover
+                                span
+                                    color: #b8803b
+                                    transform: rotateY(360deg)
+        .floorIntro
+            position: absolute
+            top: 50%
+            left: calc(100% - 135px)
+            transform: translateY(-50%)
+            width: 375px
+            background-color: #424855
+            color: #fff
+            padding: 0 40px 20px
+            display: flex
+            align-items: center
+            flex-direction: column
+            @media (max-width: 1030px)
+                display: none
+            ._title
+                text-align: center
+                padding: 40px 0
+                border-bottom: 1px solid #a37d51
+                width: 100%
+                @media (max-height: 850px) and (min-width: 1025px)
+                    padding: 20px 0 30px
+                p
+                    font-size: px(48)
+                    @media (max-height: 850px) and (min-width: 1025px)
+                        font-size: px(40)
+                span
+                    font-size: px(20)
+                    @media (max-height: 850px) and (min-width: 1025px)
+                        font-size: px(16)
+            ul  
+                margin: 25px 0
+                // display: flex
+                // align-items: center
+                // flex-direction: column
+                max-height: calc(100vh - 240px)
+                overflow-y: auto
+                @media (max-height: 850px) and (min-width: 1025px)
+                    max-height: calc(100vh - 150px)
+                li
+                    margin: 5px 0
+                    a   
+                        display: flex
+                        align-items: flex-end
+                        .floor
+                            color: #cbae8b
+                            font-size: px(30)
+                            width: 50px
+                            text-align: right
+                            letter-spacing: 0.5px
+                            @media (max-height: 850px) and (min-width: 1025px)
+                                font-size: px(26)
+                        .name
+                            // width: 90px
+                            font-size: px(18)
+                            padding: 0 0 6px 10px
+                            @media (max-height: 850px) and (min-width: 1025px)
+                                padding: 0 0 5px 10px
+
+// 訂閱電子報
+header .subscribe
+    z-index: 13
+    cursor: url("../img/icom/Xw.cur"), default
+    section
+        cursor: default
+        background-image: url("../../upload/fa2/supplier/index/forgetLiboxBg_850_720.jpg")

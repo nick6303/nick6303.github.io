@@ -1,0 +1,118 @@
+//- 常用參數
+include ../layout/_var.pug
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"廠商專區",
+            link:"../supplier/index.html"},
+    ]
+
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#supplier.index
+    include ../layout/_header.pug
+
+    main(style="background-image:url('../../upload/fa2/supplier/index/bg_1670_1050.jpg')")
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title
+                p.ch 廠商專區
+                p.en Supplier area
+                p.words 請先選擇登入的身份，再輸入帳號及密碼，以利提供日、月對帳及進項發票輸入等服務，謝謝。
+        article.form
+            section
+                form
+                    .type
+                        .typeName
+                            p.ch 帳號
+                            p.en member
+                        .inputArea
+                            input(type="text")
+                    .type
+                        .typeName
+                            p.ch 密碼
+                            p.en password
+                        .inputArea
+                            input(type="password")
+                    .type
+                        .typeName
+                            p.ch 驗證碼
+                            p.en code
+                        .inputArea.code
+                            input(type="text" placeholder="點擊圖片即可更換")
+                            // 後端請注意: 驗證圖片請放在下方的div裡面
+                            div
+                                img(src="../../upload/fa2/supplier/index/codeImg.png", alt="")
+                    .forget
+                        a(href=java onclick="forgetLibox.open()") 忘記密碼 ? 按此立即查詢
+                    .buttons
+                        button(type="reset")
+                            span.icon-reset
+                            p 重新填寫
+                        button(type="button" onclick="")
+                            span.icon-person
+                            p 確認登入
+        //忘記密碼
+        article.forgetLibox
+            section(style="background-image:url('../../upload/fa2/supplier/index/forgetLiboxBg_850_720.jpg')")
+                .box
+                    .liboxClose
+                        span
+                    ._title
+                        span.icon-key
+                        p.ch 忘記密碼
+                        p.en Forget password
+                        p.words 請填寫您的帳號及信箱，我們將寄送一組新的密碼至您的信箱，若登入後需要修改密碼，可至單元內頁修改，謝謝您。
+                    form
+                        .item
+                            .name
+                                p.ch 帳號
+                                p.en name
+                            .inputArea
+                                input(type="text" placeholder="")
+                        .item
+                            .name
+                                p.ch 信箱
+                                p.en E-mail
+                            .inputArea
+                                input(type="text" placeholder="")
+                        .item.code
+                            .name
+                                p.ch 驗證碼
+                                p.en code
+                            .inputArea
+                                input(type="text" placeholder="點擊圖片即可更換")
+                                div
+                                    img(src="../../upload/fa2/service/contact/codeImg_70_30.jpg", alt="")
+                        .buttons 
+                            button(type="reset")
+                                span.icon-reset
+                                p 重新填寫
+                            // 後端請注意: onclick事件本身並不重要 重要的是裡面的 function
+                            button(type="button" onclick="forgetLibox.close();")
+                                span.icon-person
+                                p 寄送新密碼
+
+    include ../layout/_footer.pug
++script
+|
+|
+</html>

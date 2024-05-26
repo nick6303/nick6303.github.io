@@ -1,0 +1,685 @@
+@charset "utf-8";
+
+
+
+
+/*----------------------banner開始---------------------------*/
+
+.banner {
+    position: relative;
+}
+
+.favorite {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.favorite {
+    top: 120px;
+    left: 50px;
+}
+
+.favorite p {
+    font-family: '微軟正黑體';
+    letter-spacing: 1.5px;
+    font-size: .75rem;
+    writing-mode: vertical-lr;
+    margin-bottom: 12px;
+    -ms-writing-mode: tb-lr;
+}
+
+.favorite span {
+    font-size: .75rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------banner結束---------------------------*/
+
+
+/*----------------------content開始---------------------------*/
+
+.content_bg {
+    margin: 0 50px 0 130px;
+    padding-bottom: 16vh;
+    width: calc(100% - 130px - 3vw);
+    background-color: #f9f9f9;
+}
+
+.content {
+    padding-top: 160px;
+    max-width: 1440px;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*._title*/
+
+._title {
+    text-align: center;
+}
+
+._title h2 {
+    font-family: 'JosefinSans-Bold';
+    font-size: 3rem;
+    letter-spacing: 1px;
+
+    overflow: hidden;
+}
+
+._title h2 span {
+    display: block;
+    line-height: 1.2;
+}
+
+._title p {
+    font-family: "微軟正黑體";
+    font-size: 1.25rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+._title p span {
+    display: block;
+    transform: translateY(-100%);
+}
+
+._title>span {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.menu_list*/
+
+.menu_list_bg {
+    margin-top: 35px;
+    overflow: hidden;
+}
+
+.menu_list {
+    display: flex;
+    justify-content: center;
+    font-family: "微軟正黑體";
+    font-size: .875rem;
+    letter-spacing: 1px;
+    transform: translateY(-100%);
+}
+
+.menu_list ul {
+    display: inline-block;
+}
+
+.menu_list ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.menu_list ul li:last-child {
+    margin-right: 0;
+}
+
+.menu_list ul li p {
+    transition: all .5s ease;
+    font-weight: 400;
+}
+
+.menu_list ul li:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #6f0064;
+    margin-top: 5px;
+    margin-left: 50%;
+    transition: all .5s ease;
+}
+
+.menu_list ul li:hover:after,
+.menu_list ul li.active:after {
+    width: 100%;
+    margin-left: 0;
+    transition: all .5s ease;
+}
+
+.menu_list>span {
+    margin-left: 25px;
+}
+
+._text {
+    margin-top: 10vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+._text div {
+    transform: translateY(-100%);
+}
+
+._text h2 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+._text p {
+    font-size: .875rem;
+    max-width: 530px;
+    margin: auto;
+    margin-top: 35px;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+.rows {
+    margin-top: 12vh;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.row:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 120px;
+}
+
+
+
+
+
+
+/*圖片設定*/
+
+.row_img_bg {
+    width: 65%;
+    max-height: 465px;
+    height: 50vh;
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.row:nth-child(odd) .row_img_bg {
+    padding-left: 150px;
+}
+
+.row:nth-child(even) .row_img_bg {
+    padding-right: 150px;
+}
+
+.row:nth-child(odd) .row_img {
+    transform: translateX(-150%);
+}
+
+.row:nth-child(even) .row_img {
+    transform: translateX(150%);
+}
+
+.row_img img {
+    transition: all 1s ease;
+}
+
+.row_img:hover img {
+    transform: scale(1.1);
+    transition: all 5s ease;
+}
+
+
+
+
+
+
+
+/*文字設定*/
+
+.row_text {
+    width: 35%;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+
+.row>span {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: #f1f1f1;
+    position: absolute;
+}
+
+.row:nth-child(odd)>span {
+    top: 8.75%;
+    right: 6.5%
+}
+
+.row:nth-child(even)>span {
+    bottom: 8.75%;
+    left: 6.5%;
+}
+
+
+.row:nth-child(odd) .row_text {
+    padding-right: 3.5%;
+}
+
+.row:nth-child(even) .row_text {
+    padding-left: 3.5%;
+}
+
+.row_text div {
+    transform: translateY(-100%);
+}
+
+.row_text h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.row_text div>p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.row_text>a {
+    overflow: hidden;
+}
+
+.row_text>a span {
+    display: block;
+    width: 160px;
+    height: 40px;
+    margin: auto;
+    margin-top: 80px;
+    padding-top: 12px;
+    transform: translateY(100%);
+    transition: all .5s ease;
+}
+
+.row:nth-child(odd) .row_text>a span {
+    background-color: #93bbde
+}
+
+.row:nth-child(even) .row_text>a span {
+    background-color: #a7b32e;
+}
+
+
+.row_text>a span p {
+    font-weight: bold;
+    color: #fff;
+    font-size: .875rem;
+}
+
+
+.row_text>a span:hover {
+    width: 200px;
+    transition: all .5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+/*進場動畫------------*/
+
+.favorite div {
+    transform: translateX(-100%);
+    animation: left_slidein 1s both .5s;
+}
+
+._title h2 span {
+    animation: top_slidein .8s both .4s;
+}
+
+._title p span {
+    animation: top_slidein .8s both .8s;
+}
+
+.menu_list {
+    animation: top_slidein .8s both 1s;
+}
+
+._text div {
+    animation: top_slidein .8s both 1.2s;
+}
+
+
+
+
+
+
+/*waypoint動畫專區*/
+
+.show .row_img {
+    animation: allin0 1.2s forwards;
+}
+
+.row.show>span {
+    width: 35%;
+    transition: all 1s ease
+}
+
+.show .row_text div {
+    animation: allin0 1s both .6s;
+}
+
+.show .row_text>a span {
+    animation: allin0 1s both 1.2s;
+}
+
+
+
+
+
+/*----------------------content結束---------------------------*/
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+    .favorite {
+        display: none;
+    }
+    /*.contnet----------------*/
+    .content_bg {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
+    .top {
+        background-color: #f9f9f9;
+        margin-right: -20px;
+        padding: 8vh 0 8vh 0;
+        position: relative;
+    }
+
+    ._title {
+        overflow: hidden;
+        margin-left: -5vw;
+    }
+    ._title h2 {
+        font-size: 2.5rem;
+    }
+
+    ._title>span {
+        transform: translateY(100%);
+        display: block;
+        margin-top: 15px;
+        animation: allin0 .6s both 2s
+    }
+
+    .menu_list_bg {
+        margin-left: -5vw;
+    }
+
+    .menu_list ul {
+        display: block;
+        margin: auto;
+    }
+
+    .menu_list ul li:hover:after {
+        width: 0%;
+        margin-left: 0;
+        transition: all .5s ease;
+    }
+
+    .menu_list>span {
+        display: none;
+    }
+
+    .menu_list {
+        animation: allin0 .8s both 1s;
+    }
+
+    ._text {
+        margin-top: 6vh;
+    }
+    /*----------------------row開始---------------------------*/
+    .rows {
+        padding: 0;
+        margin-top: 12vh;
+    }
+
+    .row,
+    .row:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+
+    .row:not(:last-child) {
+        margin-bottom: 14vh;
+    }
+
+    .row_text,
+    .row_img_bg,
+    .row:nth-child(odd) .row_img_bg,
+    .row:nth-child(even) .row_img_bg {
+        width: 100%;
+        padding: 0;
+    }
+
+    .row:nth-child(odd)>span,
+    .row:nth-child(even)>span {
+        display: none;
+    }
+
+
+    /*圖片設定*/
+    .row:nth-child(odd) .row_img_bg,
+    .row:nth-child(even) .row_img_bg {
+        height: 31vh;
+    }
+
+
+    .row:nth-child(odd) .row_img,
+    .row:nth-child(even) .row_img {
+        transform: translateY(-100%);
+    }
+    /*文字設定*/
+    .row_text {
+        margin-top: 6vh;
+        width: 80%;
+    }
+
+    .row:nth-child(odd) .row_text,
+    .row:nth-child(even) .row_text {
+        padding: 0;
+    }
+
+    .row_text>a span {
+        margin-top: 6vh;
+    }
+
+
+
+
+
+
+    /*----------------------row結束---------------------------*/
+    /*waypoint動畫專區*/
+    .show .row_img {
+        animation: allin0 1.2s forwards;
+    }
+
+    .row_text.show div {
+        animation: allin0 1s both;
+    }
+
+    .row_text.show>a span {
+        animation: allin0 1s both .6;
+    }
+}
+
+
+@media only screen and (min-width: 701px) {
+    .selectMenu {
+        display: none;
+    }
+    ._text>span {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .top {
+        padding: 30vh 0;
+        position: relative;
+    }
+    .top>span {
+        display: block;
+        width: 50px;
+        height: 90px;
+        left: calc(50% - 2.5vw - 25px);
+        top: calc(100% - 45px);
+        position: absolute;
+    }
+
+    .top>span:after {
+        content: "";
+        display: block;
+        width: 1px;
+        background-color: #000;
+        margin: auto;
+        animation: line0 .5s both 1.2s;
+    }
+
+
+    @keyframes line0 {
+        0% {
+
+            height: 0;
+        }
+        100% {
+            height: 90px;
+        }
+    }
+
+    ._text {
+        margin-top: calc(80px + 6vh);
+    }
+
+    ._text div {
+        animation: allin0 .8s both 1.4s;
+    }
+
+
+    /*下拉式選單*/
+    .menu_list_bg {
+        margin-right: auto;
+        margin-left: -5vw;
+        margin-top: 15px;
+    }
+
+    .menu_list {
+        width: 70%;
+        margin: auto;
+        border: 1px solid rgba(0, 0, 0, .1);
+        height: 40px;
+        text-align: center;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .selectMenu,
+    .menu_list ul li {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 12px;
+    }
+
+    .selectMenu:after {
+        font-family: 'icomoon';
+        content: "\e904";
+        font-size: .75rem;
+        margin-left: 5px;
+    }
+
+    .selectMenu.open {
+        background-color: rgb(111, 0, 100);
+        color: #fff;
+        border-radius: 3px;
+    }
+
+    .menu_list ul {
+        display: none;
+        width: 100%;
+        margin-top: 1px;
+    }
+
+    .menu_list ul li {
+        width: 100%;
+        height: 40px;
+        margin-right: 0;
+        background-color: #fff;
+    }
+
+    .menu_list ul li:not(:first-child) {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .menu_list ul li:hover {
+        background-color: #960087;
+        color: #fff;
+    }
+
+    .menu_list ul li.active:after {
+        display: none;
+    }
+}

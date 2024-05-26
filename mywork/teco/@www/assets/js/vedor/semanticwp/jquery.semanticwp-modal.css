@@ -1,0 +1,43 @@
+.swpmodal-overlay,
+.swpmodal-container {position: fixed;left: 0;top: 0;right: 0;bottom: 0;z-index: 1000;}
+.swpmodal-container {overflow: auto;}
+*:first-child + html .swpmodal-container {height: 100%}
+.swpmodal-container_i {display: block;height: 100%;margin: 0 auto;}
+.swpmodal-container_i:after{content: ''; display: inline-block; height: 100%; vertical-align: middle;  }
+.swpmodal-container_i2 {display: inline-block; vertical-align: middle; width:100%;}
+
+.swpmodal-error {padding:20px; border-radius: 3px; background:#000; color:#fff; opacity:0;}
+.swpmodal-preloader { width:80px; height:80px; margin-left: auto; margin-right: auto; border-radius:10px; background: rgba(0,0,0,0.6) url('preloader.gif') no-repeat 50% 50%;}
+
+.swpmodal-close{display: block; position: absolute; width:25px; height: 25px; top:5%; right:5%; z-index: 2;}
+.zoomClose{display: none}
+#cross {position: absolute; height: 100%; width: 100%; transform: rotate(45deg);}
+#cross span{background:#000;  -webkit-transition: all .5s ease; transition: all .5s ease;}
+#cross span:nth-child(1) {height: 30px;width: 1px;position: absolute;left: 14px;  animation: h30 .5s ease }
+#cross span:nth-child(2) {width: 30px; height: 1px; position: absolute; top: 14px; animation: w30 1.5s ease}
+
+@media only screen and (max-width: 1170px) {
+.zoomClose{display: block;}
+}
+
+@-webkit-keyframes h30 {
+  from {opacity: 0; height:0;}
+  to {opacity: 1; height: 30px;}
+}
+
+@keyframes h30 {
+  from {opacity: 0; height:0;}
+  to {opacity: 1; height: 30px;}
+}
+.h30 { -webkit-animation-name: h30; animation-name: h30; }
+
+@-webkit-keyframes w30 {
+  from {opacity: 0; width:0;}
+  to {opacity: 1; width: 30px;}
+}
+
+@keyframes w30 {
+  from {opacity: 0; width:0;}
+  to {opacity: 1; width: 30px; }
+}
+.w30 { -webkit-animation-name: w30; animation-name: w30; }

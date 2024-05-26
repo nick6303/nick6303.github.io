@@ -1,0 +1,135 @@
+#dm.detail-index
+    &.guide
+        .banner .cover .right .inf .share
+            display: none
+    .banner .breadcrumbs
+        @media (max-width: 1480px)
+            display: none
+    .banner .cover
+        display: flex
+        @media (max-width: 1200px)
+            flex-direction: column
+        .left
+            figure
+                img
+                    height: calc(100vh - 72px)
+                    max-height: 960px
+                    @media (max-width: 1200px)
+                        width: 100%
+                        height: auto
+                        max-height: unset
+        .right
+            flex: 1 1 0
+            @media (max-width: 1200px) and (min-width: 701px)
+                flex: none
+                display: flex
+            ._title,.inf
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: flex-start
+                @media (max-width: 1200px) and (min-width: 701px)
+                    width: 50%
+                &>*
+                    max-width: 570px
+                    width: 100%
+                    margin: 0 auto
+                    padding: 0 40px
+                    @media (max-width: 1024px)
+                        padding: 0 4vw
+            ._title
+                height: calc(100% - 350px)
+                padding: 80px 0 0
+                @media (max-width: 1480px)
+                    height: calc(100% - 400px)
+                    padding: 0
+                @media (max-width: 1200px)
+                    height: auto
+                    padding: 50px 0 
+                h2
+                    font-size: px(32)
+                    font-weight: bold
+                    animation: fadeInUp 1.2s both 1s
+                    @media (max-width: 1480px)
+                        font-size: px(28)
+                    @media (max-width: 1200px)
+                        font-size: px(24)
+                    &:not(:last-child)
+                        &:after
+                            margin: 10px 0 20px
+                            +fakeLine(0px,3px,#000)
+                            +keyframesWidth(40)
+                            animation: w40 .6s both 1.5s
+                p
+                    font-size: px(15)
+                    animation: fadeInUp 1.2s both 1.2s 
+            .inf
+                height: 350px
+                background-color: #eeeeee
+                @media (max-width: 1480px)
+                    height: 400px
+                @media (max-width: 1200px)
+                    height: auto
+                    padding: 50px 0 
+                &>div
+                    display: flex
+                    align-items: center
+                    flex-wrap: wrap
+                    margin: 5px auto
+                    &>*:last-child
+                        margin: 10px 0 
+                    .type
+                        +flex-center
+                        margin-right: 10px
+                        .ch
+                            font-weight: bold
+                            font-size: px(17)
+                            color: rgba(0,0,0,.8)
+                        .en
+                            font-size: px(17)
+                            color: #8a8a8a
+                            margin-left: 5px
+                    .time
+                        +flex-center
+                        color: rgba(0,0,0,.8)
+                        font-size: px(16)
+                        &:before
+                            margin-right: 10px
+                            +fakeLine(4px,17px,#ea68a2)
+                    .socialMedia
+                        +flex-center
+                        li 
+                            &:not(:last-child)
+                                margin-right: 10px
+                            a
+                                padding: 5px
+                                display: block
+                                span
+                                    display: block
+                                    color: #9b9b9b
+                                    transition: transform .8s ease,color .4s ease
+                                &:hover span
+                                    transform: rotateY(360deg)
+                                    color: #ca934f
+                    .book
+                        background-color: #181818
+                        color: #fff
+                        padding: 8px 40px 8px 20px
+                        font-size: px(15)
+                    &.other
+                        margin-top: 15px
+                    .dropDown
+                        width: 100%
+                        border-bottom: 3px solid #000
+                        .selectMenu
+                            opacity: 1
+                            padding: 5px 0 5px 5px 
+                            p
+                                color: #000
+                                padding: 0 10px
+    main .content
+        .topTitle
+            margin: 50px auto 30px
+            padding: 0
+            @media all and (max-width: 1024px)
+                padding: 0

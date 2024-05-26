@@ -1,0 +1,251 @@
+//css search
+
+.searchFakeBox
+  color: #fff
+  overflow: hidden
+  visibility: hidden
+  position: fixed
+  left: 0
+  top: 0
+  z-index: -1
+  width: 100vw
+  height: calc(var(--vh, 1vh) * 100)
+  &.open
+    z-index: 10
+    visibility: visible
+    .bg
+      background-color: rgba(232, 52, 52, 0.95)
+      transition: background-color .5s ease
+    .srTitleBox
+      opacity: 1
+      transition: opacity .5s ease .3s
+    .typeBtnArea
+      opacity: 1
+      transition: opacity .5s ease .5s
+    .inputArea
+      opacity: 1
+      transition: opacity .5s ease .5s
+      &:after
+        width: 100%
+        transition: width 1s ease .5s
+    .searchTip
+      opacity: 1
+      transition: opacity .5s ease .5s
+    .hightLightArea
+      .name
+        opacity: 1
+        transition: opacity .5s ease .7s
+      .listFrame
+        opacity: 1
+        transition: opacity .5s ease .9s
+  &.close
+    .bg
+      background-color: rgba(232, 52, 52, 0)
+      transition: background-color .5s ease .2s
+    .srTitleBox
+      opacity: 0
+      transition: opacity .5s ease
+    .typeBtnArea
+      opacity: 0
+      transition: opacity .5s ease
+    .inputArea
+      opacity: 0
+      transition: opacity .5s ease
+    .searchTip
+      opacity: 0
+      transition: opacity .5s ease
+    .hightLightArea
+      opacity: 0
+      transition: opacity .5s ease
+  .mCSB_scrollTools
+    opacity: 0 !important
+  .for_scroll
+    width: 100%
+    position: relative
+  .bg
+    background-color: rgba(232, 52, 52, 0)
+    width: 100%
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+  .chrisCloseBtn
+    cursor: pointer
+    width: 34px
+    height: 34px
+    position: fixed
+    right: 38px
+    top: 38px
+    .iconBox:before, .iconBox:after
+      background-color: #fff
+      margin: 0
+  .container
+    min-height: 100vh
+    position: relative
+  .containerBox
+    width: 90%
+    max-width: 900px
+    margin: 0 auto
+    padding: 160px 0 0 0
+  .searchTip
+    margin-top: 15px
+    font-size: 12px
+    padding-left: 10px
+    opacity: 0
+  .srTitleBox
+    font-family: 'FuturaPT-Heavy','微軟正黑體'
+    text-align: center
+    margin: 0 0 60px 0
+    opacity: 0
+    .title
+      +fs(50)
+    .subTitle
+      +fs(30)
+  .typeBtnArea
+    display: flex
+    justify-content: center
+    margin: 0 0 85px 0
+    opacity: 0
+    .btn
+      cursor: pointer
+      border-radius: 999px
+      border: solid 1px #fff
+      width: 120px
+      height: 46px
+      margin: 0 10px
+      display: flex
+      align-items: center
+      justify-content: center
+      position: relative
+      overflow: hidden
+      transition: color .5s ease
+      &.choose
+        color: #000
+        background-color: #fff
+      &:hover
+        color: #000
+        background-color: #fff
+
+        animation-name: a-tilt
+        animation-duration: .4s
+        animation-timing-function: ease-out
+  .inputArea
+    position: relative
+    display: flex
+    align-items: center
+    padding: 0 10px
+    opacity: 0
+    &:after
+      content: ''
+      display: block
+      background-color: #fff
+      width: 0%
+      height: 1px
+      position: absolute
+      left: 50%
+      bottom: 0
+      transform: translateX(-50%)
+    input
+      color: #fff
+      background-color: rgba(0,0,0,0)
+      border: none
+      width: calc(100% - 40px)
+      height: 35px
+      padding: 0 0 15px 0
+    .icon
+      cursor: pointer
+      font-size: 16px
+      position: relative
+      display: block
+      width: 40px
+      height: 38px
+      margin: 0 0 15px 0
+      transition: transform .5s ease
+      &:before
+        transform: rotate(90deg)
+        display: inline-block
+        position: absolute
+        right: -10px
+        top: 50%
+        transform: translateY(-50%) rotate(90deg)
+      &:after
+        content: ''
+        display: block
+        background-color: #fff
+        width: 40px
+        height: 1px
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+      &:hover
+        transform: translateY(-3px)
+  .hightLightArea
+    padding: 70px 10px 100px 10px
+    .name
+      +fs(24)
+      font-family: 'FuturaPT-Heavy','微軟正黑體'
+      margin: 0 0 50px 0
+      opacity: 0
+    .listFrame
+      display: inline-flex
+      flex-direction: column
+      opacity: 0
+      .title
+        +fs(18)
+        color: #ffd1d1
+      .subTitle
+        +fs(13)
+        color: #ffadad
+      .list
+        margin: 0 0 40px 0
+        transition: transform .5s ease
+        &:last-child
+          margin: 0
+        &:hover
+          transform: translateY(-3px)
+  ::placeholder /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ffd1d1
+    font-family: 'FuturaPT-Book', '微軟正黑體'
+    opacity: 1
+  :-ms-input-placeholder /* Internet Explorer 10-11 */
+    color: #ffd1d1
+    font-family: 'FuturaPT-Book', '微軟正黑體'
+  ::-ms-input-placeholder /* Microsoft Edge */
+    color: #ffd1d1
+    font-family: 'FuturaPT-Book', '微軟正黑體'
+  @media (max-width: 767px)
+    .chrisCloseBtn
+      position: absolute
+    .containerBox
+      width: 87%
+    .srTitleBox
+      .title
+        line-height: 1.2
+  @media (max-width: 500px)
+    .containerBox
+      padding: 50px 0 0
+    .typeBtnArea
+      margin: 0 0 55px
+    .chrisCloseBtn
+      right: 20px
+      top: 20px
+    .srTitleBox
+      margin: 0 0 30px
+      .title
+          margin-bottom: 20px
+          +fs(36)
+      .subTitle
+          +fs(24)
+
+
+
+@keyframes a-tilt
+  0%, 100%
+    transform: rotate()
+  40%
+    transform: rotate(1.6deg)
+  75%
+    transform: rotate(-2.4deg)
+
+

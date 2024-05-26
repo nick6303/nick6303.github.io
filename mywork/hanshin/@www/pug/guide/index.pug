@@ -1,0 +1,124 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-   
+    var bannerButton = [
+        {
+            icon:"icon-car",
+            ch:"尋找車位",
+            en:"Park"},
+        {
+            icon:"icon-parking",
+            ch:"停車折抵",
+            en:"Discount"},
+        {
+            icon:"icon-man",
+            ch:"會員中心",
+            en:"Member"},
+    ]
+
+    var content = [
+        {
+            img:"../../upload/fa2/guide/contentImg1_100_100.png",
+            ch:"找品牌",
+            en:"Floor Guide",
+            link:"../floor/index.html"
+            },
+        {
+            img:"../../upload/fa2/guide/contentImg2_100_100.png",
+            ch:"吃美味",
+            en:"Gourmet Guide",
+            link:"../food/index.html"},
+        {
+            img:"../../upload/fa2/guide/contentImg3_100_100.png",
+            ch:"找活動",
+            en:"Events",
+            link:"../news/index.html"},
+        {
+            img:"../../upload/fa2/guide/contentImg4_100_100.png",
+            ch:"看促銷",
+            en:"Promotions",
+            link:"../news/index.html"},
+        {
+            img:"../../upload/fa2/guide/contentImg5_100_100.png",
+            ch:"看DM",
+            en:"Online DM",
+            link:"../dm/index.html"},
+        {
+            img:"../../upload/fa2/guide/contentImg6_100_100.png",
+            ch:"享服務",
+            en:"Service",
+            link:"../service/index.html"},
+        {
+            img:"../../upload/fa2/guide/contentImg7_100_100.png",
+            ch:"卡友禮",
+            en:"Member Gifts",
+            link:"../news/index.html"},
+        {
+            img:"../../upload/fa2/guide/contentImg8_100_100.png",
+            ch:"卡別介紹",
+            en:"Cards",
+            link:"../card/index.html"},
+        {
+            img:"../../upload/fa2/guide/contentImg9_100_100.png",
+            ch:"玩遊戲",
+            en:"Game",
+            link:"javascript:void(0)"},
+        {
+            img:"../../upload/fa2/guide/contentLogo.png",
+            ch:"olivo 年中折扣",
+            en:"AD Banner",
+            link:"javascript:void(0)"},
+        {
+            img:"../../upload/fa2/guide/contentLogo2.png",
+            ch:"雅詩蘭黛",
+            en:"AD Banner",
+            link:"javascript:void(0)"},
+    ]
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#guide.index
+    include ../layout/_header.pug
+    
+    main(style="background-image: url('../../upload/fa2/guide/bg_1080_1600.jpg')")
+        article.banner
+            section._slick
+                ul
+                    -for(var i=0;i<2;i++ )
+                        li
+                            a(href=java)
+                                figure
+                                    img(src="../../upload/fa2/guide/bannerImg_1080_380.jpg", alt="")
+            section.button
+                ul
+                    each val in bannerButton
+                        li
+                            a(href=java)
+                                span(class=val.icon)
+                                p.ch=val.ch
+                                p.en=val.en
+        article.content
+            ul
+                each val in content
+                    li
+                        div
+                            figure
+                                img.b-lazy(src=blazy data-src=val.img, alt="")
+                            p.ch=val.ch
+                            p.en=val.en
+                        a(href=val.link)
+    include  ../layout/_footer.pug
++script
+|
+|
+</html>

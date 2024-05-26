@@ -1,0 +1,265 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+
+main {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100vh;
+    background-image: url("../../../upload/f2e/employee/index/bg_1920_1080.jpg");
+    background-size: cover;
+    background-position: left top;
+    background-attachment: fixed;
+    @media all and (max-width: 1279px) {
+        overflow: auto;
+    }
+    @media all and (max-width: 1023px) {
+        padding: 10vw;
+    }
+    @media all and (max-width: 500px) {
+        padding: 8vw 5vw;
+    }
+}
+
+
+
+
+
+._text,
+.form {
+    position: absolute;
+}
+
+._text {
+    top: calc(50% - 320px);
+    left: calc(50% - 480px);
+    z-index: 1;
+    background-color: rgba(255, 255, 255, .5);
+    padding: 60px 190px 50px 80px;
+    letter-spacing: 1px;
+    @include flex-left;
+    @media all and (max-width: 1279px) {
+        top: 11.25vw;
+        left: calc(50% - 380px);
+        padding: 60px 140px 50px 80px;
+    }
+    @media all and (max-width: 1023px) {
+        position: relative;
+        left: auto;
+        top: auto;
+        padding: 6vh 12vw;
+    }
+    @media all and (max-width: 500px) {
+        padding: 4vh 8vw;
+    }
+    .logo {
+        padding-bottom: 50px;
+        position: relative;
+        @media all and (max-width: 500px) {
+            padding-bottom: 5vh;
+            img {
+                width: 45vw;
+                max-width: 210px;
+            }
+        }
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            @include fakeLine(100%,
+            3px,
+            $base_orange);
+        }
+    }
+    h2 {
+        margin-top: 30px;
+        font-family: MyriadPro-Regular, 微軟正黑體;
+        @include font-size(30);
+        line-height: 1.5;
+        font-weight: bold;
+        letter-spacing: 2px;
+        @media all and (max-width: 500px) {
+            @include font-size(26);
+            margin-top: 4vh;
+        }
+    }
+    h3 {
+        @include font-size(18);
+        font-weight: bold;
+        line-height: 1.5;
+        margin-top: 35px;
+        @media all and (max-width: 500px) {
+            margin-top: 4vh;
+        }
+    }
+    ul {
+        max-width: 340px;
+        margin-top: 25px;
+        @media all and (max-width: 1023px) {
+            max-width: 100%;
+        }
+        @media all and (max-width: 500px) {
+            margin-top: 2vh;
+        }
+        li {
+            display: flex;
+            margin-bottom: 5px;
+            span,
+            p {
+                @include font-size(14);
+                font-family: 微軟正黑體;
+                line-height: 1.8;
+            }
+        }
+    }
+}
+
+
+.form {
+    z-index: 2;
+    top: calc(50% - 160px);
+    left: calc(50% + 60px);
+    background-color: #003b7f;
+    letter-spacing: 1px;
+    @include flex-center;
+    flex-direction: column;
+    padding: 80px 100px;
+    @media all and (max-width: 1279px) {
+        top: calc(11.25vw + 530px);
+        left: calc(50% - 60px);
+        margin-bottom: 11.25vw;
+    }
+    @media all and (max-width: 1023px) {
+        position: relative;
+        left: auto;
+        top: auto;
+        padding: 6vh 12vw;
+        margin-top: 6vh;
+    }
+    @media all and (max-width: 500px) {
+        padding: 6vh 5vw;
+    }
+    form {
+        width: 310px;
+        @media all and (max-width: 1023px) {
+            width: 100%;
+        }
+    }
+    h2,
+    h3 {
+        color: #fff;
+        font-family: MyriadPro-Semibold, 微軟正黑體;
+        line-height: 1.5;
+        text-align: center;
+    }
+    h2 {
+        @include font-size(30);
+    }
+    h3 {
+        @include font-size(14);
+        font-weight: bold;
+        margin: auto;
+        margin-top: 30px;
+        color: #bcc0c9;
+        max-width: 270px;
+    }
+    ul {
+        margin-top: 25px;
+        li {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0;
+            margin-bottom: 15px;
+            p {
+                width: 110px;
+                font-family: 'MyriadPro-Light';
+                @include font-size(12);
+                padding-left: 25px;
+                font-weight: bold;
+            }
+            input {
+                width: calc(100% - 150px);
+                border: none;
+                @include font-size(12);
+                letter-spacing: 1px;
+                &::placeholder {
+                    color: #b1b1b1;
+                    transition: all .4s ease;
+                }
+                &:focus::placeholder {
+                    opacity: 0;
+                    transition: all .4s ease;
+                }
+            }
+            &.password {
+                position: relative;
+               .showPassWord {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    right: 5px;
+                    transform: translateY(-50%);
+                    @include flex-center;
+                    cursor: pointer;
+                    input{
+                    	display: none;
+                    }
+                    &:before,
+                    &:after {
+                        font-family: 'icomoon';
+                    }
+                    &:before {
+                        content: "\e9d1";
+                    }
+                    &:after {
+                        content: "\e9ce";
+                        display: none;
+                    }
+                    &.show {
+                        &:before {
+                            content: "\e9d1";
+                            display: none;
+                        }
+                        &:after {
+                            content: "\e9ce";
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    button {
+        width: 100%;
+        border: none;
+        background-color: #292929;
+        color: #fff;
+        @include font-size(12);
+        padding: 10px 0;
+    }
+}
+
+
+
+
+
+
+
+/*進場動畫*/
+
+main {
+    animation: fadeIn 2s both;
+}
+
+._text {
+    animation: fadeInUp 2s both .4s;
+}
+
+.form {
+    animation: fadeInUp 2s both .7s;
+}

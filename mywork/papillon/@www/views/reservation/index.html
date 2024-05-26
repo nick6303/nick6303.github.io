@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <meta name="format-detection" content="telephone=no">
+    <title>PAPILLON</title>
+    <!--[if lt IE 9]><script src="../../assets/js/vendor/html5shiv-master/html5shiv.js"></script><![endif]-->
+    <!--讓ie9以下看懂html5標籤-->
+    <!-- icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/img/ico/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/ico/favicon.png">
+    <!-- 共用CSS -->
+    <!-- <link rel="stylesheet" href="../../assets/css/icon-style.css"> -->
+    <link rel="stylesheet" href="../../assets/js/vendor/cgpagechange/cgpagechange.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/slick/slick-theme.css">
+    <!-- 共用CSS end-->
+    <!-- 非共用CSS -->
+    <link rel="stylesheet" href="../../assets/js/vendor/easydropdown/easydropdown.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/datedropper/datedropper.css">
+    <link rel="stylesheet" href="../../assets/js/vendor/datedropper/my-style.css">
+    <!-- 非共用CSS end-->
+    <link rel="stylesheet" href="../../assets/css/reservation.css">
+</head>
+
+<body id="reservation" class="index">
+    <main>
+        <article class="_banner">
+            <img class="b-lazy" src="../../assets/img/blazy_blank.svg" data-src="../../upload/f2e/reservation/banner1_960_1080.jpg" alt="">
+        </article>
+        <article class="_content">
+            <div class="_close" onclick="history.back()">
+                <p>CLOSE</p>
+            </div>
+            <div class="_title">
+                <h2>APPOINTMENT</h2>
+                <p>預約鑑賞</p>
+            </div>
+            <form class="_table">
+                <ul class="_input">
+                    <!-- 姓名 -->
+                    <li>
+                        <p>姓名</p>
+                        <input type="text" placeholder="請輸入您的姓名">
+                    </li>
+                    <!-- 電話 -->
+                    <li>
+                        <p>電話</p>
+                        <input type="number" placeholder="請輸入您的電話">
+                    </li>
+                    <!-- e-mail -->
+                    <li>
+                        <p>E-MAIL</p>
+                        <input type="email" placeholder="請輸入您的E-MAIL">
+                    </li>
+                    <!-- 前往分店 -->
+                    <li class="searchStore">
+                        <p>希望前往分店</p>
+                        <div class="menulist">
+                            <span class="selectMenu"><p>請選擇分店</p></span>
+                            <ul>
+                                <!-- 此處內容須讓客戶可新增 -->
+                                <li>
+                                    <p>台北店</p>
+                                </li>
+                                <li>
+                                    <p>台中店</p>
+                                </li>
+                                <li>
+                                    <p>高雄店</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- 前往日期 -->
+                    <li>
+                        <p>希望前往日期</p>
+                        <div class="_datebox">
+                            <input type="text" data-max-year="" data-min-year="" data-lang="zh" class="_date" data-large-mode="true" data-theme="my-style" data-init-set="false" data-translate-mode="true" data-modal="true" data-lock="from" placeholder="請選擇日期"><span></span></div>
+                    </li>
+                    <!-- 尋覓商品 -->
+                    <li class="searchProduct">
+                        <p>尋覓之商品</p>
+                        <div class="menulist">
+                            <span class="selectMenu"><p>請選擇</p></span>
+                            <ul>
+                                <!-- 此處內容須讓客戶可新增 -->
+                                <li>
+                                    <p>婚戒</p>
+                                </li>
+                                <li>
+                                    <p>對戒</p>
+                                </li>
+                                <li>
+                                    <p>高級珠寶</p>
+                                </li>
+                                <li>
+                                    <p>項鍊吊墜</p>
+                                </li>
+                                <li>
+                                    <p>耳環手鍊</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- 人數 -->
+                    <li>
+                        <p>來店人數</p>
+                        <input type="number" placeholder="請輸入來店人數">
+                    </li>
+                    <!-- 是否第一次嗎? -->
+                    <li class="firstTime">
+                        <p>是否初次來店</p>
+                        <div class="menulist">
+                            <span class="selectMenu"><p>請選擇</p></span>
+                            <ul>
+                                <li>
+                                    <p>是</p>
+                                </li>
+                                <li>
+                                    <p>否</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- 內容 -->
+                    <li class="_textarea">
+                        <p>詢問內容</p>
+                        <textarea placeholder="請輸入您的內容"></textarea>
+                    </li>
+                </ul>
+                <ul class="_button">
+                    <li>
+                        <button type="submit">立即預約</button>
+                    </li>
+                    <li>
+                        <button type="reset">清除重填</button>
+                    </li>
+                </ul>
+            </form>
+        </article>
+    </main>
+    <!-- 共用 -->
+    <script src="../../assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="../../assets/js/vendor/jquery.easings.min.js"></script>
+    <script src="../../assets/js/vendor/cgpagechange/cgpagechange.js"></script>
+    <script src="../../assets/js/vendor/waypoints/waypoints.min.js"></script>
+    <script src="../../assets/js/vendor/blazy/blazy.min.js"></script>
+    <script src="../../assets/js/vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="../../assets/js/vendor/slick/slick.min.js"></script>
+    <!-- 共用end -->
+    <!-- 非共用 -->
+    <script src="../../assets/js/vendor/datedropper/datedropper.js"></script>
+    <script src="../../assets/js/vendor/easydropdown/jquery.easydropdown.js"></script>
+    <script src="../../assets/js/vendor/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <!-- 非共用end-->
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

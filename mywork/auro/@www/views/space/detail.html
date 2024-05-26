@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vendor/slick/slick-theme.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+</head>
+
+<body id="space" class="detail">
+    <main>
+        <article class="showBox">
+            <section class="colorBox" style="background: #e83a27 "></section>
+            <section class="roomImg">
+                <img src="../../upload/f2e/space/roomImg_1366_1080.png" alt="">
+            </section>
+        </article>
+        <article class="selectBox">
+            <!-- 選擇房間照片 -->
+            <section class="selecRoom">
+                <form>
+                    <div class="where">
+                        <div class="outDoor" onclick="space.selectPlace(this)">
+                            <p>室外</p>
+                        </div>
+                        <div class="inDoor active" onclick="space.selectPlace(this)">
+                            <p>室內</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdownList outDoor" style="display:none">
+                            <select class="dropdown dropdown_all" data-placeholder="欲粉刷的空間">
+                                <option></option>
+                                <option value="1">室外</option>
+                                <option value="2">室外</option>
+                                <option value="3">室外</option>
+                                <option value="4">室外</option>
+                            </select>
+                        </div>
+                        <div class="dropdownList inDoor" style="display:block">
+                            <select class="dropdown dropdown_all" data-placeholder="欲粉刷的空間">
+                                <option></option>
+                                <option value="1">客廳</option>
+                                <option value="2">臥房</option>
+                                <option value="3">浴室</option>
+                                <option value="4">廚房</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="countUp">
+                    <p class="en">SEARCH RESULT</p>
+                    <p class="ch">有<span class="numb"></span>個空間符合您的設定條件</p>
+                </div>
+                <div class="scrollBox">
+                    <ul>
+                        <!-- 後端請注意:li的內容如果需要更換的話 請啟動 reset(); 這個function -->
+                        <li data-img="../../upload/f2e/space/roomImg_1366_1080.png">
+                            <div class="_img">
+                                <img src="../../upload/f2e/space/room1_320_250.jpg" alt="">
+                                <div class="hoverBox">
+                                    <div class="hook">
+                                        <div>
+                                            <img src="../../assets/img/hook.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-img="../../upload/f2e/space/roomImg_1366_1080.png">
+                            <div class="_img">
+                                <img src="../../upload/f2e/space/room2_320_250.jpg" alt="">
+                                <div class="hoverBox">
+                                    <div class="hook">
+                                        <div>
+                                            <img src="../../assets/img/hook.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-img="../../upload/f2e/space/roomImg_1366_1080.png">
+                            <div class="_img">
+                                <img src="../../upload/f2e/space/room3_320_250.jpg" alt="">
+                                <div class="hoverBox">
+                                    <div class="hook">
+                                        <div>
+                                            <img src="../../assets/img/hook.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="arrows">
+                        <span class="slick-left">
+                            <img src="../../assets/img/arrow_left.png" alt="">
+                        </span>
+                        <span class="slick-right">
+                            <img src="../../assets/img/arrow_right.png" alt="">
+                        </span>
+                    </div>
+                </div>
+            </section>
+            <section class="selectColor">
+                <h6>SELECT COLOR 選擇您欲粉刷的顏色</h6>
+                <div class="mainColor">
+                    <ul>
+                        <!-- 後端請注意:li的內容如果需要更換的話 請啟動 reset(); 這個function -->
+                        <li style="background:linear-gradient(#e83a27,#f39501);"></li>
+                        <li style="background:linear-gradient(#eb0c28,#fb3472);"></li>
+                        <li style="background:linear-gradient(#e83a27,#f39501);"></li>
+                        <li style="background:linear-gradient(#eb0c28,#fb3472);"></li>
+                        <li style="background:linear-gradient(#e83a27,#f39501);"></li>
+                        <li style="background:linear-gradient(#eb0c28,#fb3472);"></li>
+                        <li style="background:linear-gradient(#e83a27,#f39501);"></li>
+                        <li style="background:linear-gradient(#eb0c28,#fb3472);"></li>
+                        <li style="background:linear-gradient(#e83a27,#f39501);"></li>
+                        <li style="background:linear-gradient(#eb0c28,#fb3472);"></li>
+                    </ul>
+                </div>
+                <div class="detailColor">
+                    <div class="back" style="background:linear-gradient(#eb0c28,#fb3472);">
+                        <span></span>
+                        <p>BACK 回上一步</p>
+                    </div>
+                    <div class="scrollBox">
+                        <ul>
+                            <!-- 後端請注意:li的內容如果需要更換的話 請啟動 reset(); 這個function -->
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                            <li style="background: rgb(158, 49, 71)"></li>
+                            <li style="background: rgb(221, 147, 156)"></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article class="buttonBox">
+            <ul>
+                <li class="room">
+                    <p>選擇空間</p>
+                </li>
+                <li class="color">
+                    <p>選擇顏色</p>
+                </li>
+                <li class="inf" data-src="infLibox.html" onclick="openInfLibox(this)">
+                    <p>了解當前產品</p>
+                </li>
+            </ul>
+        </article>
+        <!-- 回到上一頁 -->
+        <article class="close" onclick="history.back()">
+            <span></span>
+        </article>
+    </main>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="../../assets/js/vendor/slick/slick.js"></script>
+    <script src="../../assets/js/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../../assets/js/vendor/blazy.js"></script>
+    <script src="../../assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/masonry/imagesloaded.pkgd.min.js"></script>
+    <script src="../../assets/js/vendor/cgpagechange.js"></script>
+    <script src="../../assets/js/vendor/lbox.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="../../assets/js/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <!-- 主要 -->
+    <script src="../../assets/js/main.js"></script>
+    <!-- 個別 -->
+    <script src="../../assets/js/nick.js"></script>
+    <!-- 當前產品燈箱 -->
+    <script>
+        function openInfLibox(ele) {
+            if ($(ele).hasClass("checked")) {
+                $("body").append("<article class='infLibox'></article>");
+                var src = $(ele).attr("data-src")
+                $.ajax({
+                        url: src,
+                    })
+                    .done(function (data) {
+                        $(".infLibox").html(data);
+                        infLibox.all();
+                    });
+            }
+        }
+
+        var infLibox = {
+            open: function () {
+                $(".infLibox").addClass("on");
+                $("body").css("overflow-y", "hidden")
+            },
+
+            close_click() {
+                $(".infLibox .liboxClose,.infLibox section .back").click(function () {
+                    infLibox.close();
+                });
+
+                $(".infLibox").click(function (e) {
+                    if ($(e.target).hasClass("infLibox")) {
+                        infLibox.close();
+                    }
+                });
+            },
+
+            close: function () {
+                $(".infLibox").removeClass("on");
+                $(".infLibox").addClass("off");
+                $("body").css("overflow-y", "visible");
+                setTimeout(function () {
+                    $(".infLibox").remove();
+                }, 800)
+            },
+
+            slick: function () {
+                $(".infLibox ._slick ul").slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    prevArrow: ".infLibox ._slick .arrow_left",
+                    nextArrow: ".infLibox ._slick .arrow_right",
+                    responsive: [{
+                            breakpoint: 900,
+                            settings: {
+                                slidesToShow: 2,
+                            }
+                        },
+                        {
+                            breakpoint: 500,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        },
+                    ]
+                });
+            },
+
+            resetSlick: function () {
+                $(".infLibox ._slick ul").slick('unslick');
+                infLibox.slick();
+            },
+
+            scroll: function () {
+                if ($(window).width() > 1100) {
+                    $(".infLibox section").niceScroll({
+                        cursorcolor: "#ccc",
+                        horizrailenabled: false,
+                        cursorborder: "transparent",
+                        cursorwidth: "4px",
+                    });
+                }
+            },
+
+            all: function () {
+                infLibox.open();
+                infLibox.close_click();
+                infLibox.slick();
+                infLibox.scroll();
+            }
+        }
+    </script>
+    <!-- 資料更換重整 -->
+    <script>
+        function reset() {
+            space.roomReset();
+            space.selecRoom();
+            space.selectColor();
+        }
+    </script>
+</body>
+
+</html>

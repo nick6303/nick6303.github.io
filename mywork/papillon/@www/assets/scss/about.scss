@@ -1,0 +1,536 @@
+@import "base/_reset.scss";
+@import "base/_variable.scss";
+@import "base/_header.scss";
+@import "base/_footer.scss";
+@import "base/_common.scss";
+
+
+
+main {
+    padding-top: 0;
+}
+
+
+
+._banner {
+    position: relative;
+    ._banner_bg {
+        @include flex-center;
+        width: 100%;
+        height: calc(90vw + 260px);
+        max-height: 1680px;
+        overflow: hidden;
+        flex-wrap: wrap;
+        @media #{(max-width: 1024px)} {
+            height: calc(430px + 56.25vh);
+        }
+        @media #{(max-width: 700px)} {
+            height: calc(700px + 50vh);
+        }
+        img {
+            height: 100%;
+            max-width: 1000%;
+            width: auto;
+            @media #{(min-width: 1921px)} {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .banner_content {
+        width: 100%;
+        position: absolute;
+        top: 43vh;
+        left: 0;
+        color: #fff;
+        text-align: center;
+        @include flex-center;
+        flex-direction: column;
+        @media #{(max-width: 1024px)} {
+            top: 25vw;
+        }
+        @media #{(max-width: 700px)} {
+            padding: 0 5vw;
+            top: 25vh;
+        }
+        ._title {
+            letter-spacing: 1px;
+            ._logo {
+                width: 265px;
+                height: 85px;
+                margin: auto;
+                @media #{(max-width: 700px)} {
+                    width: 50vw;
+                    height: auto;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            h2 {
+                @include font-size(42);
+                font-family: "微軟正黑體";
+                margin-top: 20px;
+                letter-spacing: 6px;
+                line-height: 1.5;
+                @media #{(max-width: 1280px)} {
+                    @include font-size(32);
+                }
+                @media #{(max-width: 700px)} {
+                    @include font-size(28);
+                }
+            }
+            p {
+                @include font-size(22);
+                font-family: "微軟正黑體";
+                margin-top: 60px;
+                line-height: 1.5;
+                letter-spacing: 2px;
+                @media #{(max-width: 1280px)} {
+                    @include font-size(20);
+                }
+                @media #{(max-width: 700px)} {
+                    @include font-size(16);
+                }
+                span {
+                    @include font-size(30);
+                    font-family: "標楷體";
+                    @media #{(max-width: 1280px)} {
+                        @include font-size(28);
+                    }
+                }
+            }
+        }
+        ._img {
+            max-width: 1080px;
+            width: 56.25vw;
+            @media #{(max-width: 700px)} {
+                width: 50vh;
+            }
+        }
+        ._text {
+            letter-spacing: 1px;
+            margin-top: -30px;
+            @media #{(max-width: 700px)} {
+                margin-top: 2vh;
+            }
+            h2 {
+                @include font-size(26);
+                font-family: "微軟正黑體";
+                line-height: 1.5;
+                @media #{(max-width: 700px)} {
+                    @include font-size(24);
+                }
+                &:after {
+                    @include _title_h2_line;
+                    margin-top: 5px;
+                }
+            }
+            p {
+                @include font-size(16);
+                font-family: "微軟正黑體";
+                margin: auto;
+                margin-top: 40px;
+                max-width: 630px;
+                line-height: 1.8;
+                @media #{(max-width: 700px)} {
+                    @include font-size(14);
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+    ._banner_srcollDown {
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 50px);
+        width: 100px;
+        height: 82px;
+        cursor: pointer;
+        p {
+            color: #fff;
+            font-family: 'Raleway-regular';
+            @include font-size(12);
+            display: block;
+            transform: scale(.91);
+            letter-spacing: 1px;
+        }
+        &:after {
+            content: "";
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+            width: 1px;
+            height: 60px;
+            background-color: $base_color;
+        }
+        &:hover {
+            &:after {
+                animation: scrollDown 1.2s infinite;
+            }
+        }
+    }
+}
+/*bannerscrollDown進場動畫*/
+
+@keyframes scrollDown {
+    0% {
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - .5px);
+    }
+    50% {
+        height: 0px;
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - .5px);
+    }
+    51% {
+        height: 0px;
+        position: absolute;
+        bottom: 60px;
+        left: calc(50% - .5px);
+    }
+    100% {
+        height: 60px;
+        position: absolute;
+        bottom: 0px;
+        left: calc(50% - .5px);
+    }
+}
+
+
+._content {
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 140px;
+    padding: 0 60px 200px 60px;
+    @media #{(max-width: 1024px)} {
+        margin-top: 10vh;
+        padding: 0 5vw 12vh 5vw;
+    }
+    @media #{(max-width: 700px)} {
+        margin-top: 8vh;
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        @media #{(max-width: 700px)} {
+            flex-direction: column;
+        }
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            @media #{(max-width: 700px)} {
+                flex-direction: column;
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: 100px;
+            @media #{(max-width: 700px)} {
+                margin-bottom: 10vh;
+            }
+        }
+        .row_img,
+        .row_text {
+            width: 50%;
+        }
+        .row_img {
+            overflow: hidden;
+            img {
+                @media #{(max-width: 700px)} {
+                    transform: translateY(100%);
+                }
+            }
+        }
+        .row_text {
+            overflow: hidden;
+            @media #{(max-width: 700px)} {
+                margin-top: 5vh;
+            }
+            .text_box {
+                display: flex;
+                align-items:flex-start;
+                flex-direction:column;
+                letter-spacing: 1px;
+                max-width: 420px;
+                opacity: 0;
+                h2 {
+                    font-family: 'Cinzel-Regular';
+                    @include font-size(32);
+                    line-height: 1.2;
+                    color: #010101;
+                    @media #{(max-width: 1024px)} {
+                        @include font-size(30);
+                    }
+                    &:after {
+                        @include _title_h2_line;
+                        margin-left: 0;
+                        @media #{(max-width: 1024px)} {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+                h3 {
+                    @include font-size(18);
+                    margin-top: 16px;
+                }
+                h4 {
+                    @include font-size(14);
+                    margin-top: 40px;
+                    line-height: 1.5;
+                    max-width: 420px;
+                }
+                .more {
+                    margin-top: 90px;
+                    @media #{(max-width: 70px)} {
+                        margin-top: 10vh;
+                    }
+                }
+            }
+        }
+        &.story {
+            .row_img {
+                img {
+                    transform: translateY(100%);
+                }
+            }
+            .row_text {
+                padding-left: 120px;
+                @media #{(max-width: 1024px)} {
+                    padding-left: 10vw;
+                }
+            }
+        }
+        &.design {
+            .row_img {
+                padding-left: 60px;
+                @media #{(max-width: 1024px)} {
+                    padding-left: 6vw;
+                }
+                img {
+                    transform: translateX(-150%);
+                }
+            }
+            .row_text {
+                padding-left: 200px;
+                @media #{(max-width: 1024px)} {
+                    padding-left: 6vw;
+                }
+            }
+        }
+        &.service {
+            .row_img {
+                padding-right: 130px;
+                @media #{(max-width: 1024px)} {
+                    padding-right: 3vw;
+                }
+                img {
+                    transform: translateY(100%);
+                }
+            }
+            .row_text {
+                @media #{(max-width: 1024px)} {
+                    padding-left: 10vw;
+                }
+            }
+        }
+        &.quality {
+            .row_img {
+                img {
+                    transform: translateY(100%);
+                }
+            }
+            .row_text {
+                padding-left: 120px;
+                @media #{(max-width: 1024px)} {
+                    padding-left: 2vw;
+                    padding-right: 6vw;
+                }
+                h2 {
+                    &:after {
+                        margin-top: 5px;
+                        @media #{(max-width: 1024px)} {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        &.charity {
+            .row_img {
+                padding-left: 210px;
+                padding-right: 60px;
+                @media #{(max-width: 1024px)} {
+                    padding-left: 6vw;
+                    padding-right: 6vw;
+                }
+                img {
+                    transform: translateX(150%);
+                }
+            }
+            .row_text {
+                padding-left: 60px;
+                @media #{(max-width: 1024px)} {
+                    padding-left: 6vw;
+                }
+            }
+        }
+        &.story,
+        &.design,
+        &.service,
+        &.quality,
+        &.charity {
+            .row_img,
+            .row_text {
+                @media #{(max-width: 700px)} {
+                    padding: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+/* 進場動畫 */
+
+._banner {
+    animation: fadeIn .6s both;
+    .banner_content {
+        ._title {
+            ._logo {
+                animation: fadeInUp .8s both .1s;
+            }
+            h2 {
+                animation: fadeInUp 1s both .3s;
+            }
+            p {
+                animation: fadeInUp 1s both .5s;
+            }
+        }
+        ._img {
+            animation: imgFadeIn 1.4s both .6s;
+        }
+        ._text {
+            h2 {
+                animation: fadeInUp 1s both 1.2s;
+                &:after {
+                    animation: titleLine 1s both 1.4s
+                }
+            }
+            p {
+                animation: fadeInUp .8s both 1.4s;
+            }
+        }
+    }
+    ._banner_srcollDown {
+        animation: fadeIn .8s both 1.6s;
+        &:after {
+            animation: srcollDownIn .8s both 1.6s;
+        }
+    }
+}
+/* 鑽戒圖片動畫*/
+
+@keyframes imgFadeIn {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    100% {}
+}
+/* srcollDown線條進場動畫*/
+
+@keyframes srcollDownIn {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 60px;
+    }
+}
+/*waypoint動畫專區*/
+
+._content {
+    .story,
+    .design,
+    .service,
+    .quality,
+    .charity {
+        .row_img {
+            &.show {
+                img {
+                    @media #{(min-width: 701px)} {
+                        animation: slidein 1.2s both .2s;
+                        /* ie特有圖片進場動畫*/
+                        -ms-animation:fadeInUp 1s both .2s;
+                    }
+                    @media #{(max-width: 700px)} {
+                        animation: slidein 1.2s both;
+                        /* ie特有圖片進場動畫*/
+                        -ms-animation:fadeInUp 1s both;
+                    }
+                }
+            }
+        }
+        /*h2底下的那條線*/
+        .row_text {
+            &.show {
+                .text_box {
+                    h2 {
+                        &:after {
+                            @media #{(min-width: 701px)} {
+                                animation: titleLine .8s both 1.4s;
+                            }
+                            @media #{(max-width: 700px)} {
+                                animation: titleLine .8s both;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .story,
+    .service,
+    .quality {
+        .row_text {
+            &.show {
+                .text_box {
+                    @media #{(min-width: 701px)} {
+                        animation: fadeInUp .8s both .8s;
+                    }
+                    @media #{(max-width: 700px)} {
+                        animation: fadeInUp .8s both;
+                    }
+                }
+            }
+        }
+    }
+    .design,
+    .charity {
+        .row_text {
+            &.show {
+                .text_box {
+                    @media #{(min-width: 701px)} {
+                        animation: fadeInUp .8s both 1s;
+                    }
+                    @media #{(max-width: 700px)} {
+                        animation: fadeInUp .8s both;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@keyframes titleLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 20px;
+    }
+}

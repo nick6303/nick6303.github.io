@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TECO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="網站描敘">
+    <meta name="keywords" content="網站關鍵字">
+    <link href="../../assets/img/favicon-20170414044912706.ico" rel="icon" type="image/x-icon">
+    <!--slick-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/slick/slick.css" />
+    <!--fons-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/fontAwesome/font-awesome.css" />
+    <!--semanticwp-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.css" />
+    <!--mCustomScrollbar-->
+    <link rel="stylesheet" type="text/css" href="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.css" />
+    <!--style.css-->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <!-- 自訂的css -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/member/billDetail.css" />
+</head>
+
+<body class="fontM" id="top">
+    <main id="member" class="billDetail">
+        <article class="topNav">
+            <section class="back" onclick="history.back()">
+                <span></span>
+                <p>CLOSE</p>
+            </section>
+        </article>
+        <article class="topTitle">
+            <p class="en">Order Detail</p>
+            <p class="ch">訂單明細</p>
+        </article>
+        <article class="content">
+            <section class="shipping">
+                <div class="listhead">
+                    <div>
+                        <p class="en">Shipping</p>
+                        <p class="ch">訂單明細</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <h6>訂單資訊</h6>
+                        <div>
+                            <p data-name="訂單編號：">201810220001</p>
+                            <p data-name="訂單狀態：">待出貨</p>
+                            <p data-name="訂單金額：">$88,888</p>
+                            <p data-name="交易序號：">201810220001</p>
+                            <p data-name="付款方式 : ">信用卡</p>
+                            <p data-name="款項狀態 : ">第一期款項完成</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>宅配資訊</h6>
+                        <div>
+                            <p data-name="宅配公司：">黑貓宅急便</p>
+                            <p data-name="宅配編號：">201810220001</p>
+                            <p data-name="廢四機回收：">需要回收</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>預計到貨時間</h6>
+                        <div>
+                            <p data-name="時間：">2018/10/22</p>
+                            <p data-name="時段：">上午</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>收件人資訊</h6>
+                        <div>
+                            <p data-name="收件人姓名：">王東元</p>
+                            <p data-name="收件人地址：">407 西屯區四川路66號2樓</p>
+                            <p data-name="收件人電話：">04 12345678</p>
+                            <p data-name="收件人手機：">0988 123 456</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>發票內容</h6>
+                        <div>
+                            <p data-name="發票：">個人載具發票</p>
+                            <p data-name="載具號碼：">3KK4LV2</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>發票收件人</h6>
+                        <div>
+                            <p data-name="收件人姓名：">王東元</p>
+                            <p data-name="收件人地址：">407 西屯區四川路66號2樓</p>
+                            <p data-name="收件人電話：">04 12345678</p>
+                            <p data-name="收件人手機：">0988 123 456</p>
+                        </div>
+                    </li>
+                </ul>
+                <button type="button" class="withLine openCancelLibox" data-src="cancelLibox.html">
+                    <span class="iconN-edit"></span>
+                    <p>取消訂單</p>
+                </button>
+            </section>
+            <section class="order">
+                <div class="listhead">
+                    <div class="ocerview">
+                        <p class="en">Order Ocerview</p>
+                        <p class="ch">商品明細</p>
+                    </div>
+                    <div class="price">
+                        <p class="en">Price</p>
+                        <p class="ch">價格</p>
+                    </div>
+                    <div class="edit">
+                        <p class="en">Cancel</p>
+                        <p class="ch">退換貨</p>
+                    </div>
+                </div>
+                <ul>
+                    <!-- 後端請注意:下方li有4種商品
+                        1.普通商品 甚麼都不用做
+                        2.客製化商品 customized 需在li加上class "customized" 注意!!客製化商品無法退換貨
+                        3.加購商品 purchase 需在li加上class "purchase"
+                        4.贈品 gift 需在li加上class "gift" 注意!!贈品無法退換貨
+                    -->
+                    <!-- 後端請注意:
+                        1.審核退貨中的商品  需在li加上class "check"
+                        2.已退貨的商品  需在li加上class "returned" -->
+                    <li>
+                        <!-- 1.普通商品 甚麼都不用做-->
+                        <div class="_img">
+                            <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                            <img src="../../upload/shop/fridgeImg_140_200.png" alt="">
+                        </div>
+                        <div class="name">
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                                <p class="productName">雅適變頻ZR冷暖/11-13坪冷專系列</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">66,700</div>
+                        <div class="edit">
+                            <button type="button" class="withLine return openCancelLibox"  data-src="cancelLibox.html">
+                                <span class="iconN-returned"></span>
+                                <p>申請退貨</p>
+                            </button>
+                            <button type="button" class="withLine exchange openCancelLibox"  data-src="cancelLibox.html">
+                                <span class="iconN-exchange"></span>
+                                <p>申請換貨</p>
+                            </button>
+                            <div class="check">
+                                <span class="iconN-returned"></span>
+                                <p>審核中</p>
+                            </div>
+                            <div class="returned">
+                                <span class="iconN-returned"></span>
+                                <p>已退貨</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="check">
+                        <!-- 1.審核退貨中的商品  需在li加上class "check" -->
+                        <div class="_img">
+                            <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                            <img src="../../upload/shop/giftImg1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                                <p class="productName">雅適變頻ZR冷暖/11-13坪冷專系列</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">66,700</div>
+                        <div class="edit">
+                            <button type="button" class="withLine return openCancelLibox"  data-src="cancelLibox.html">
+                                <span class="iconN-returned"></span>
+                                <p>申請退貨</p>
+                            </button>
+                            <button type="button" class="withLine exchange openCancelLibox" data-src="cancelLibox.html">
+                                <span class="iconN-exchange"></span>
+                                <p>申請換貨</p>
+                            </button>
+                            <div class="check">
+                                <span class="iconN-returned"></span>
+                                <p>審核中</p>
+                            </div>
+                            <div class="returned">
+                                <span class="iconN-returned"></span>
+                                <p>已退貨</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="returned">
+                        <!-- 2.已退貨的商品  需在li加上class "returned" -->
+                        <div class="_img">
+                            <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                            <img src="../../upload/shop/giftImg2_40_100.png" alt="">
+                        </div>
+                        <div class="name">
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                                <p class="productName">雅適變頻ZR冷暖/11-13坪冷專系列</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">66,700</div>
+                        <div class="edit">
+                            <button type="button" class="withLine return openCancelLibox" data-src="cancelLibox.html">
+                                <span class="iconN-returned"></span>
+                                <p>申請退貨</p>
+                            </button>
+                            <button type="button" class="withLine exchange openCancelLibox" data-src="cancelLibox.html">
+                                <span class="iconN-exchange"></span>
+                                <p>申請換貨</p>
+                            </button>
+                            <div class="check">
+                                <span class="iconN-returned"></span>
+                                <p>審核中</p>
+                            </div>
+                            <div class="returned">
+                                <span class="iconN-returned"></span>
+                                <p>已退貨</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="customized">
+                        <!--  2.客製化商品 customized 需在li加上class "customized" -->
+                        <div class="_img">
+                            <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                            <img src="../../upload/customize/customized/standardImg2_680_240.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p class="ps" data-gift="贈送商品" data-purchase="加購商品"></p>
+                            <!-- 後端請注意:data-src 放燈箱網址 -->
+                            <div class="openOrder" data-src="../shop/customizeOrderLibox.html">
+                                <p>客製化訂單</p>
+                                <span>i</span>
+                            </div>
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                                <p class="productName">雅適變頻ZR冷暖/11-13坪冷專系列</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">66,700</div>
+                        <div class="edit">
+                            <button type="button" class="withLine return openCancelLibox"  data-src="cancelLibox.html">
+                                <span class="iconN-returned"></span>
+                                <p>申請退貨</p>
+                            </button>
+                            <button type="button" class="withLine exchange openCancelLibox" data-src="cancelLibox.html">
+                                <span class="iconN-exchange"></span>
+                                <p>申請換貨</p>
+                            </button>
+                            <div class="check">
+                                <span class="iconN-returned"></span>
+                                <p>審核中</p>
+                            </div>
+                            <div class="returned">
+                                <span class="iconN-returned"></span>
+                                <p>已退貨</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="purchase">
+                        <!-- 3.加購商品 purchase 需在li加上class "purchase" -->
+                        <div class="_img">
+                            <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                            <img src="../../upload/shop/giftImg4_100_100.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p class="ps">加購商品</p>
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                                <p class="productName">雅適變頻ZR冷暖/11-13坪冷專系列</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">66,700</div>
+                        <div class="edit">
+                            <button type="button" class="withLine return openCancelLibox" data-src="cancelLibox.html">
+                                <span class="iconN-returned"></span>
+                                <p>申請退貨</p>
+                            </button>
+                            <button type="button" class="withLine exchange openCancelLibox" data-src="cancelLibox.html">
+                                <span class="iconN-exchange"></span>
+                                <p>申請換貨</p>
+                            </button>
+                            <div class="check">
+                                <span class="iconN-returned"></span>
+                                <p>審核中</p>
+                            </div>
+                            <div class="returned">
+                                <span class="iconN-returned"></span>
+                                <p>已退貨</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="gift">
+                        <!-- 4.贈品 gift 需在li加上class "gift" 注意!!贈品無法退換貨 -->
+                        <div class="_img">
+                            <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                            <img src="../../upload/shop/juicerImg_90_160.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p class="ps">贈送商品</p>
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">66,700</div>
+                        <div class="edit">
+                        </div>
+                    </li>
+                    <li class="gift">
+                        <!-- 4.贈品 gift 需在li加上class "gift" 注意!!贈品無法退換貨 -->
+                        <!-- <div class="_img"> -->
+                        <!-- 後端請注意:如果沒有圖片的話 請把 div 移除 -->
+                        <!-- <img src="../../upload/customize/customized/standardImg2_680_240.png" alt="">
+                        </div> -->
+                        <div class="name">
+                            <p class="ps">贈送商品</p>
+                            <a href="javascript:void(0)">
+                                <p class="modelNumb">MS63IH-ZR MA63IH-ZR</p>
+                                <p class="productName">雅適變頻ZR冷暖/11-13坪冷專系列</p>
+                            </a>
+                        </div>
+                        <!-- 數量 -->
+                        <div class="amount">1</div>
+                        <div class="price">0</div>
+                        <div class="edit">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="discount">
+                <div class="listhead">
+                    <div>
+                        <p class="en">Discount</p>
+                        <p class="ch">優惠折抵</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <div class="title">
+                            <p>滿萬折百</p>
+                        </div>
+                        <div class="words">
+                            <p>因應全台百貨公司周年慶活動開跑，即日起至2018/10/25止，網路商店滿一萬送五百</p>
+                        </div>
+                        <div class="inputArea">
+                            <p>符合滿一萬送五百</p>
+                        </div>
+                        <div class="price">2,000</div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <p>會員紅利折抵</p>
+                        </div>
+                        <div class="words">
+                            <p>會員購買商品後，皆可以從會員紅利點數選擇進行折扣優惠</p>
+                        </div>
+                        <div class="inputArea">
+                            <p>巴拉巴拉巴拉巴拉</p>
+                        </div>
+                        <div class="price">1,000</div>
+                    </li>
+                    </div>
+            </section>
+        </article>
+    </main>
+    <!--主要jQuery-->
+    <script src="../../assets/js/vedor/jquery-1.11.3.min.js"></script>
+    <!--共用-->
+    <script src="../../assets/js/vedor/slick/slick.js"></script>
+    <script src="../../assets/js/vedor/bLazy/bLazy.js"></script>
+    <script src="../../assets/js/vedor/waypoints.min.js"></script>
+    <script src="../../assets/js/vedor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../assets/js/vedor/jquery.easings.min.js"></script>
+    <script src="../../assets/js/vedor/semanticwp/jquery.semanticwp-modal.min.js"></script>
+    <script src="../../assets/js/vedor/prefixfree.min.js"></script>
+    <script src="../../assets/js/vedor/picturefill.min.js"></script>
+    <!--main js-->
+    <script src="../../assets/js/main.js"></script>
+    <!-- 非共用的套件js -->
+    <script src="../../assets/js/vedor/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <!--自訂的js-->
+    <script src="../../assets/js/nick.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".openCancelLibox").click(function () {
+                var src = $(this).attr("data-src")
+                $("body").append("<article class='cancelLibox'></article>")
+                $.ajax({
+                        url: src,
+                    })
+                    .done(function (data) {
+                        $(".cancelLibox").html(data);
+                        cancelLibox.all();
+                    });
+            });
+        });
+
+        var cancelLibox = {
+
+            open: function () {
+                $(".cancelLibox").addClass("open");
+                if (!mobile()) {
+                    $("body").css({
+                        "overflow-y": "hidden",
+                        "padding-right": "1rem"
+                    });
+                } else {
+                    $("body").css("overflow-y", "hidden");
+                }
+            },
+
+            close_click:function(){
+                $(".liboxClose").click(function(){
+                    cancelLibox.close();
+                });
+
+                $(".cancelLibox").click(function(e){
+                    if($(e.target).hasClass("cancelLibox")){
+                        cancelLibox.close();
+                    }
+                });
+            },
+
+            close: function (ele) {
+                $(".cancelLibox").removeClass("open").addClass("close");
+                if (!mobile()) {
+                    $("body").css({
+                        "overflow-y": "visible",
+                        "padding-right": "0rem"
+                    });
+                } else {
+                    $("body").css("overflow-y", "visible");
+                }
+                setTimeout(function () {
+                    $(".cancelLibox").remove();
+                }, 800);
+            },
+
+            success:function(){
+                $(".why").addClass("up");
+                $(".why").delay(300).slideUp(500);
+                $(".success").delay(300).slideDown(500);
+            },
+
+            fail:function(){
+                $(".why").addClass("up");
+                $(".why").delay(300).slideUp(500);
+                $(".fail").delay(300).slideDown(500);
+            },  
+
+            all: function () {
+                cancelLibox.open();
+                cancelLibox.close_click();
+            }
+        }
+    </script>
+</body>
+
+</html>

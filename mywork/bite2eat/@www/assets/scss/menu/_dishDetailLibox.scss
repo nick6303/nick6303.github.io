@@ -1,0 +1,380 @@
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+
+.dishMoreLibox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    color: #fff;
+    background-color: rgba(234, 234, 234, .7);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @media all and (max-height: 850px) and (min-width: 1025px) {
+        align-items:flex-start;
+    }
+    @media all and (max-width: 1024px) {
+        display: block;
+    }
+    ._img {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        @include flex-center;
+        z-index: 1;
+        @media all and (max-width: 1024px) {
+            position: relative;
+            top: auto;
+            left: auto;
+            width: 100%;
+            height: auto;
+        }
+        img {
+            @media all and (max-aspect-ratio: 151/85) and (min-width: 1025px) {
+                height: 100%;
+                width: auto;
+                max-width: unset;
+            }
+            @media all and (max-width: 1024px) {
+                width: 100%;
+            }
+        }
+        .liboxClose {
+            display: none;
+            @media all and (max-width: 1024px) {
+                display: block;
+                position: fixed;
+                top: 30px;
+                right: 15px;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.dishMoreLibox {
+    .liboxClose {
+        @include circle;
+        position: absolute;
+        top: -25px;
+        right: -25px;
+        span {
+            display: block;
+            transform: rotate(45deg);
+            position: relative;
+            @include circle_span($base_gold);
+            &:before,
+            &:after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &:before {
+                @include fakeLine(16px,
+                2px,
+                $base_gold);
+            }
+            &:after {
+                @include fakeLine(2px,
+                16px,
+                $base_gold);
+            }
+        }
+    }
+    .box {
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, .2);
+        padding: 50px 0 0 0;
+        @media all and (max-width: 1024px) {
+            padding: 0;
+        }
+    }
+    .inf {
+        position: relative; // top: 50%;
+        left: calc(50% - 60px); // transform: translateY(-50%);
+        width: 590px;
+        padding: 25px;
+        margin: 50px 0;
+        z-index: 1;
+        display: block;
+        @media all and (max-width: 1024px) {
+            position:relative;
+            top: auto;
+            left: auto;
+            width: 75%;
+            margin: 0 auto;
+            transform: translateY(0);
+        }
+        @media all and (max-width: 900px) {
+            width: 100%;
+            margin: 0;
+        } // @media all and (max-height: 850px) and (min-width: 1025px) {
+        //     top: calc(50% + 50px);
+        //     transform:translateY(0);
+        // }
+        @media all and (max-width: 700px) {
+            padding: 5vw;
+        }
+    }
+}
+
+.dishMoreLibox {
+    .inf {
+        .liboxClose {
+            @media all and (max-width: 1024px) {
+                display: none;
+            }
+        }
+        .enName {
+            width: 500px;
+            margin: 0 0 0 -25px;
+            padding: 25px 0;
+            @media all and (max-width: 1024px) {
+                max-width: calc(100vw - 80px);
+                margin: -25px 20px 0 20px;
+                padding: 0;
+                width: auto;
+            }
+            @media all and (max-width: 900px) {
+                width: 80vw;
+            }
+            @media all and (max-width: 700px) {
+                margin: -5vw 2.5vw 0 2.5vw;
+            }
+            h2 {
+                transform: translateX(-40px);
+                font-family: 'Ramaraja-Regular';
+                @include font-size(54);
+                letter-spacing: 3px;
+                @media all and (max-width: 1024px) {
+                    margin:0 0 0 0;
+                    padding: 0 15px;
+                    transform: translateY(-20px);
+                    animation: fadeIn 1s both;
+                }
+                @media all and (max-width: 700px) {
+                    padding: 0 2.5vw;
+                    @include font-size(48);
+                }
+            }
+        }
+        ._text {
+            padding: 20px 50px 60px 50px;
+            letter-spacing: 1px;
+            position: relative;
+            @media all and (max-width: 700px) {
+                padding:10px 5vw 8vh 5vw;
+            }
+            h3 {
+                @include font-size(18);
+                line-height: 1.5;
+                margin-bottom: 6vh;
+            }
+            h4 {
+                @include font-size(14);
+                line-height: 1.8;
+                font-family: CenturyGothic, 微軟正黑體;
+                opacity: .8;
+            }
+            .spicy {
+                position: absolute;
+                top: 28px;
+                right: 50px;
+                @media all and (max-width: 1024px) {
+                    position: relative;
+                    top: auto;
+                    right: auto;
+                    margin-top: 4vh;
+                }
+                span:before {
+                    font-family: 'icomoon';
+                    content: "\e915";
+                    @include font-size(14);
+                    color: #e00000;
+                }
+            }
+            .intro {
+                margin-top: 35px;
+                min-height: 250px;
+                &:before {
+                    @include fakeLine(100%,
+                    1px,
+                    #fff);
+                    margin-bottom: 40px;
+                    @media all and(max-width: 700px) {
+                        width: calc(100% + 10px);
+                        transform: translateX(-5px);
+                    }
+                }
+                p {
+                    @include font-size(14);
+                    letter-spacing: 1px;
+                    line-height: 1.5;
+                    opacity: .8;
+                    text-align: justify;
+                }
+            }
+            .socialMedia {
+                display: flex;
+                align-items: center;
+                margin-top: 40px;
+                p {
+                    @include font-size(12);
+                    font-family: 'CenturyGothic';
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+                ul {
+                    padding: 0 10px;
+                    @include flex-center;
+                    li {
+                        padding: 0 8px;
+                        cursor: pointer;
+                        a:before {
+                            @include font-size(12);
+                            font-family: 'icomoon';
+                            opacity: .2;
+                            transition: all .4s ease;
+                        }
+                        &.facebook a:before {
+                            content: "\ea90";
+                        }
+                        &.line a:before {
+                            content: "\e911";
+                        }
+                        &.twitter a:before {
+                            content: "\ea96";
+                        }
+                        &:hover a:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            ._price {
+                @include font-size(20);
+                letter-spacing: 1px;
+                position: absolute;
+                right: 50px;
+                bottom: 60px;
+                @media all and (max-width: 700px) {
+                    right: 5vw;
+                    bottom: 8vh;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 燈箱進場動畫*/
+
+.dishMoreLibox {
+    &.open {
+        animation: fadeIn 1s both;
+        ._img {
+            img {
+                animation: fadeInLeft 1s both .4s;
+            }
+            .liboxClose {
+                animation: flipInX 2s both .9s;
+            }
+        }
+        .inf {
+            animation: infIn 1s both .4s;
+        }
+    }
+    &.close {
+        animation: fadeOut 0.8s both .3s;
+        ._img {
+            img {
+                animation: fadeOutLeft .6s both;
+            }
+            .liboxClose {
+                animation: flipOutX .6s both;
+            }
+        }
+        .inf {
+            animation: infOut .6s both;
+        }
+    }
+}
+
+
+@keyframes infIn {
+    0% {
+        transform: translate(50%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0%, 0);
+        opacity: 1;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    @keyframes infIn {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+}
+
+@keyframes infOut {
+    0% {
+        transform: translate(0%, 0);
+    }
+    100% {
+        transform: translate(50%, 0);
+        opacity: 0;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    @keyframes infOut {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%);
+        opacity: 0;
+    }
+}

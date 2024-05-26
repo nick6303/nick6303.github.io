@@ -1,0 +1,60 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+header {
+    .hdLink {
+        display: none;
+    }
+    .burgerMenu {
+        @media all and (min-width: 1025px) {
+            left: 101px;
+            div {
+                animation: fadeInUp 1s both .8s;
+            }
+        }
+    }
+}
+
+main {
+    padding: 150px 0 150px 0;
+    position: relative;
+    @media all and (max-width: 1600px) {
+        padding: 150px 0 150px 230px;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 150px 0;
+    }
+}
+
+
+
+
+
+
+/*就學資訊*/
+
+.studyInf {
+    .schollCountry {
+        @media all and (max-width: 700px) {
+            align-items: flex-start;
+        }
+        h5 {
+            padding: 15px 0 15px 40px;
+            @media all and (max-width: 700px) {
+                padding: 15px 0 15px 5vw;
+            }
+        }
+    }
+    .workbox {
+        @media all and (max-width: 700px) {
+            flex-direction: column;
+            input {
+                margin-left: 0 !important;
+                margin-top: 15px;
+            }
+        }
+    }
+}

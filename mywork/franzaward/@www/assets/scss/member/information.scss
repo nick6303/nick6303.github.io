@@ -1,0 +1,747 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_header.scss";
+@import "../base/_footer.scss";
+@import "../base/_common.scss";
+
+
+header {
+    .hdLink {
+        display: none;
+    }
+    .burgerMenu {
+        @media all and (min-width: 1025px) {
+            left: 101px;
+            div {
+                animation: fadeInUp 1s both .8s;
+            }
+        }
+    }
+}
+
+main {
+    padding: 150px 0 150px 0;
+    position: relative;
+    @media all and (max-width: 1600px) {
+        padding: 150px 0 150px 230px;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 150px 0;
+    }
+}
+
+#member.information article.content .tableContent {
+    .workbox {
+        a {
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw;
+            }
+            &:after {
+                font-family: 'icomoon';
+                content: "\e906";
+                @include font-size(22);
+                color: #7e7e7e;
+                float: right;
+                margin-right: 0;
+                margin-left: auto;
+            }
+            p {
+                @include font-size(14);
+                line-height: 1.5;
+                margin-right: 40px;
+                @media all and (max-width: 700px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    .birthPlace,
+    .residentialPlace {
+        @media all and (max-width: 700px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        h5 {
+            padding: 15px 0 15px 40px;
+            @media all and (max-width: 700px) {
+                padding: 15px 0 15px 5vw;
+            }
+        }
+    }
+    h5 {
+        width: 300px;
+        @media all and (max-width: 700px) {
+            width: 100%;
+        }
+    }
+    .dropList2 {
+        width: calc(100% - 300px);
+        @media all and (max-width: 700px) {
+            width: 100%;
+            padding: 0 0 0 5vw;
+        }
+        .selectMenu {
+            padding: 15px 40px 15px 40px;
+            @media all and (max-width: 700px) {
+                padding: 15px 5vw 15px 0;
+            }
+        }
+    }
+    .upload {
+        margin-bottom: 12px !important;
+    }
+    .residentialPlace,
+    .home,
+    .birthPlace {
+        margin-top: 12px !important;
+    }
+    .birthDetail,
+    .residentialDetail {
+        padding: 15px 40px;
+        @media all and (max-width: 700px) {
+            padding: 15px 5vw;
+        }
+        input {
+            font-family: Quicksand-Regular, 微軟正黑體;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*帳號*/
+
+.account {
+    .contactInf ul {
+        display: flex;
+        @media all and (max-width: 550px) {
+            flex-direction: column;
+        }
+        li {
+            width: 50%;
+            @include flex-center;
+            flex-direction: column;
+            padding: 35px 0;
+            @media all and (max-width: 550px) {
+                width: 100%;
+            }
+            &:not(:last-child) {
+                position: relative;
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(0, -50%);
+                    @include fakeLine(1px,
+                    100%,
+                    #cccccc);
+                    @media all and (max-width: 550px) {
+                        top: 100%;
+                        right: 50%;
+                        transform: translate(50%, 0%);
+                        width: 60vw;
+                        height: 1px;
+                        min-width: 210px;
+                    }
+                }
+            }
+            span {
+                color: $base_blue;
+                &.icon-paperplane {
+                    @include font-size(52);
+                    margin-bottom: 40px;
+                }
+                &.icon-phone {
+                    @include font-size(72);
+                    margin-bottom: 25px;
+                }
+            }
+            p,
+            input {
+                @include font-size(16);
+                line-height: 1.5;
+                text-align: center;
+                margin-left: 0 !important;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+            input {
+                @include font-size(18);
+            }
+        }
+    }
+    .change {
+        @include flex-space-between;
+        padding: 0 !important;
+        margin-top: 60px;
+        @media all and (max-width: 800px) {
+            flex-direction:column;
+        }
+        @media all and (max-width: 550px) {
+            margin-top: 20px;
+        }
+        .workbox {
+            width: calc(50% - 4px);
+            margin: 0 2px!important;
+            @media all and (max-width: 800px) {
+                width: 100%;
+                margin: 4px 0 0 0!important;
+            }
+            a {
+                padding: 30px 40px !important;
+                @media all and (max-width: 700px) {
+                    padding: 30px 5vw !important;
+                }
+                &:before {
+                    font-family: 'icomoon';
+                    @include font-size(30);
+                    color: #5b5b5b;
+                    margin-right: 20px;
+                    transition: all .4s ease;
+                }
+            }
+            &.account a:before {
+                content: "\e913";
+            }
+            &.password a:before {
+                content: "\e914";
+            }
+            &:hover a:before {
+                color: #fff;
+            }
+        }
+    }
+    &.block {
+        .blockAccount {
+            background-color: #103964 !important;
+            color: #fff;
+            a:after {
+                color: #fff !important;
+            }
+            p.hiddenMessage {
+                display: block !important;
+                @media all and (max-width: 700px) {
+                    display: flex !important;
+                }
+            }
+            p.showMessage {
+                display: none !important;
+            }
+        }
+    }
+    &.delet {
+        .blockAccount {
+            display: none !important;
+        }
+        .deletAccount {
+            background-color: #103964 !important;
+            color: #fff;
+            a:after {
+                color: #fff !important;
+            }
+            p.hiddenMessage {
+                display: block !important;
+                @media all and (max-width: 700px) {
+                    display: flex !important;
+                }
+            }
+            p.showMessage {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.blockAccount,
+.deletAccount,
+.backup {
+    p.hiddenMessage {
+        display: none !important;
+    }
+    p.backingMessage {
+        display: none !important;
+    }
+}
+
+.backup {
+    &.backing {
+        color: #797979;
+        p.showMessage {
+            display: none !important;
+        }
+        p.backingMessage {
+            display: block !important;
+            @media all and (max-width: 700px) {
+                display:flex !important;
+            }
+        }
+        a:after {
+            content: "\e911" !important;
+        }
+    }
+    &.canDownload {
+        background-color: #103964 !important;
+        color: #fff !important;
+        p.hiddenMessage {
+            display: block !important;
+            @media all and (max-width: 700px) {
+                display:flex !important;
+            }
+        }
+        p.showMessage,
+        p.backingMessage {
+            display: none !important;
+        }
+        a:after {
+            content: "\e90c" !important;
+            color: #fff !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*電子報*/
+
+.newsletter {
+    .box {
+        @include flex-space-between;
+        padding: 0 !important;
+        @media all and (max-width: 800px) {
+            flex-direction:column;
+        }
+    }
+    .workbox {
+        margin: 0 !important;
+        width: calc(50% - 2px);
+        @media all and (max-width: 800px) {
+            width: 100%;
+            margin: 4px !important;
+        }
+        a {
+            padding: 30px 40px !important;
+            @media all and (max-width: 700px) {
+                padding: 30px 5vw !important;
+            }
+            &:after {
+                display: none;
+            }
+        }
+        span {
+            float: right;
+            margin-right: 0;
+            margin-left: auto;
+        }
+        .hook {
+            &:before {
+                color: #7e7e7e !important;
+                transition: all .4s ease;
+            }
+            &.checked:before {
+                color: $base_blue !important;
+            }
+
+        }
+        &:last-child span {
+            position: relative;
+            display: block;
+            width: 24px;
+            height: 24px;
+            transform: rotate(45deg);
+            &:before,
+            &:after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all .4s ease;
+            }
+            &:before {
+                @include fakeLine(100%,
+                1px,
+                #7e7e7e);
+            }
+            &:after {
+                @include fakeLine(1px,
+                100%,
+                #7e7e7e);
+            }
+            &.checked {
+                &:before,
+                &:after {
+                    background-color: $base_blue;
+                    color: #fff;
+                }
+            }
+        }
+        &:hover,&.active {
+            &:last-child span:before,
+            &:last-child span:after,
+            {
+                background-color: #fff;
+            }
+            .hook:before {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*個人資料*/
+
+.basicInf {
+    .picture {
+        display: flex;
+        align-items: center;
+        padding: 40px 135px !important;
+        margin-bottom: 12px !important;
+        @media all and (max-width: 900px) {
+            padding: 40px 10vw !important;
+        }
+        @media all and (max-width: 700px) {
+            padding: 40px 5vw !important;
+        }
+        @media all and (max-width: 550px) {
+            flex-direction: column;
+        }
+        a {
+            width: 170px !important;
+            height: 170px !important;
+            position: relative;
+            &:after {
+                position: absolute;
+                bottom: 20px;
+                right: -3px;
+                @include flex-center;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: #fff;
+                box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+                content: "\e918" !important;
+                font-size: 0.75rem !important;
+                color: $base_blue !important;
+                padding-left: 2px;
+                @media all and (max-width: 550px) {
+                    bottom:-5px;
+                    right: 0px;
+                }
+            }
+            div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                border-radius: 50%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        ._text {
+            width: calc(100% - 170px);
+            @media all and (max-width: 550px) {
+                width: 100%;
+                margin-top: 40px;
+            }
+        }
+        h5 {
+            width: 100% !important;
+            font-size: 1rem !important;
+            padding: 5px 0 5px 65px !important;
+            @media all and (max-width: 900px) {
+                padding: 5px 0 5px 5vw !important;
+            }
+            @media all and (max-width: 550px) {
+                padding: 5px 0 !important;
+            }
+            b {
+                @include font-size(13);
+                color: #646464 !important;
+                line-height: 1.5;
+                transition: all .4s ease;
+            }
+        }
+    }
+    .home,
+    .office,
+    .fax {
+        @media all and (max-width: 800px) {
+            padding: 0 !important;
+            flex-direction: column;
+            h5,
+            input {
+                width: 100% !important;
+
+                margin-left: 0 !important;
+            }
+            h5 {
+                padding: 15px 5vw 10px 5vw;
+            }
+            input {
+                padding: 10px 5vw 15px 5vw;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/*燈箱設定開始*/
+
+.accountLibox {
+    @include basicLibox;
+    @include flex-center;
+    z-index: 11;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    &.open {
+        display: flex;
+        animation: fadeIn .4s both;
+        .libox1,
+        .libox2 {
+            animation: fadeIn .5s both;
+        }
+    }
+    &.close {
+        display: flex;
+        animation: fadeOut .4s both .4s;
+    }
+    .libox1,
+    .libox2 {
+        width: 580px;
+        max-width: 100vw;
+        background-color: #103964;
+        color: #fff;
+        position: relative;
+        letter-spacing: 1px;
+        display: none;
+        max-height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+        @media all and (max-width: 550px) {
+            height: 100vh;
+        }
+        &.open {
+            display: flex !important;
+        }
+        &.close {
+            display: flex !important;
+            animation: fadeOut .4s both;
+        }
+        .liboxClose {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            cursor: pointer;
+            @media all and (max-width: 700px) {
+                top: 5vw;
+                right: 5vw;
+            }
+            span {
+                display: block;
+                @include cross(30px, 30px);
+                transform: rotate(45deg);
+                &:before {
+                    @include cross_before(100%, #8398ae);
+                }
+                &:after {
+                    @include cross_after(100%, #8398ae);
+                }
+            }
+        }
+        ._title {
+            line-height: 1.5;
+            text-align: center;
+            padding: 80px 0 0 0;
+            .en,
+            .ch {
+                padding: 0 120px;
+                @media all and (max-width: 700px) {
+                    padding: 0 5vw;
+                }
+            }
+            .en {
+                @include font-size(28);
+                @media all and (max-width: 700px) {
+                    @include font-size(24);
+                }
+            }
+            .ch {
+                @include font-size(22);
+                margin-top: 5px;
+                @media all and (max-width: 700px) {
+                    @include font-size(18);
+                }
+            }
+        }
+        ._text {
+            padding: 35px 50px;
+            @media all and (max-width: 700px) {
+                padding: 35px 5vw;
+            }
+            p {
+                line-height: 1.8;
+                @include font-size(14);
+                font-family: Quicksand-Regular, 微軟正黑體;
+                text-align: left;
+            }
+        }
+        .button {
+            margin-top: 65px;
+            background-color: #fff;
+            padding: 35px 0;
+            @media all and (max-width: 700px) {
+                margin-top: 30px;
+            }
+            ul {
+                @include flex-center;
+                li {
+                    margin: 0 35px;
+                    @media all and (max-width: 700px) {
+                        margin: 0 5vw;
+                        width: 140px;
+                    }
+                    button {
+                        border: none;
+                        background-color: transparent;
+                        @include flex-center;
+                        flex-direction: column;
+                        @include font-size(14);
+                        font-weight: bold;
+                        font-family: Philosopher-Regular, 微軟正黑體;
+                        letter-spacing: 1px;
+                        line-height: 1.5;
+                        margin: auto;
+                        @media all and (max-width: 350px) {
+                            @include font-size(12);
+                        }
+                        span {
+                            margin-bottom: 10px;
+                        }
+                    }
+                    &.back,
+                    &.continue {
+                        span:before {
+                            background-color: transparent;
+                            display: none;
+                        }
+                        span:after {
+                            top: auto;
+                            left: auto;
+                            transform: translate(0);
+                            position: relative;
+                            font-family: 'icomoon';
+                            background-color: transparent;
+                        }
+                    }
+                    &.back {
+                        span:after {
+                            content: "\e905";
+                            @include font-size(24);
+                            color: #1f79a6;
+                        }
+                    }
+                    &.continue {
+                        span:after {
+                            content: "\e906";
+                            @include font-size(24);
+                            color: #1f79a6;
+                        }
+                    }
+                    &.ok {
+                        span {
+                            @include cross(28px, 28px);
+                            display: block;
+                            &:before {
+                                @include cross_before(100%, #01679a);
+                            }
+                            &:after {
+                                @include cross_after(100%, #01679a);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .libox2 {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        .button {
+            margin-top: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/*帳號燈箱設定結束*/

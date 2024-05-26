@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+/*.detail_row開始-------------------*/
+
+.aromatherapist .detail_row {
+    max-width: 990px;
+    margin: auto;
+    display: flex;
+    position: relative;
+}
+
+.aromatherapist .detail_row:after{
+	content:"";
+	display: block;
+	width: 0%;
+	height: 1px;
+	background-color:#cccccc;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transition: all .5s ease-out;
+}
+
+.aromatherapist .detail_row:last-child:after {
+    display: none;
+}
+
+.aromatherapist .detail_row:nth-child(odd) {
+    flex-direction: row-reverse;
+    padding-top: 70px;
+    padding-bottom: 110px;
+}
+
+.aromatherapist .detail_row:nth-child(even) {
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+.aromatherapist .detail_row:nth-child(2) {
+    padding-top: 35px;
+}
+
+
+/*圖片設定*/
+
+.aromatherapist .detail_row_img {
+    width: 30%;
+    overflow: hidden;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.aromatherapist.load .detail_row_img img,
+.aromatherapist.on .detail_row_img img{
+    transform: translateY(150%);
+}
+
+
+/*文字設定*/
+
+.aromatherapist .detail_row_text {
+    width: 70%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aromatherapist .detail_row:nth-child(even) .detail_row_text {
+    padding-left: 75px;
+}
+
+.aromatherapist.load .detail_row_text div,
+.aromatherapist.on .detail_row_text div{
+	transform: translateY(100%);
+    opacity: 0;
+}
+
+
+.aromatherapist .detail_row_text h5 {
+    font-size: 1.3125rem;
+}
+
+.aromatherapist .detail_row_text p {
+    max-width: 610px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    font-size: .875rem;
+    font-family: MyriadPro-Regular,微軟正黑體;
+    margin-top: 25px;
+}
+
+
+/*.detail_row結束-------------------*/
+
+
+/*waypoint專區-------------*/
+
+.aromatherapist .detail_row.show:after{
+	width: 100%;
+	left: 0;
+	transition: all 1s ease-out .2s;
+}
+
+.aromatherapist.on .show .detail_row_img img{
+    animation: allin0 1.2s both .2s;
+}
+
+.aromatherapist.on .show .detail_row_text div{
+    transform: translateY(0);
+    transition: all 1.2s ease .2s;
+    opacity: 1;
+}
+
+
+/*退場動畫*/
+.aromatherapist.off .detail_row_text {
+    animation: zoomOut 1s both .4s;
+}
+
+.aromatherapist.off .detail_row_img img {
+    animation: zoomOut 1s both .6s;
+}
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+@media only screen and (max-width: 1024px) {
+
+    .aromatherapist .detail_row:nth-child(even) .detail_row_text{
+        padding-left: 4vw;
+    }
+     .aromatherapist .detail_row:nth-child(odd) .detail_row_text{
+         padding-right: 4vw;
+     }
+}
+/*---------max-width: 700px--------------------------------------------------------*/
+
+@media only screen and (max-width: 700px) {
+    .aromatherapist .detail_row:nth-child(odd),
+    .aromatherapist .detail_row:nth-child(even) {
+        flex-direction: column;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .aromatherapist .detail_row_img,
+    .aromatherapist .detail_row_text {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .aromatherapist .detail_row:nth-child(even) .detail_row_text,
+    .aromatherapist .detail_row:nth-child(odd) .detail_row_text {
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+
+    .aromatherapist .detail_row_text p {
+        max-width: 100%;
+    }
+
+    .make_a_reservation {
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+}

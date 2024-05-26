@@ -1,0 +1,85 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+
+
+
+
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#food.detail
+    include ../layout/_header.pug
+
+    main
+        // 後端請注意: 要讓客戶可以自訂背景圖片和背景顏色
+        // 後端請注意: 要讓客戶可以決定字的顏色 預設是黑色  如果要白色 就在 <section class="banner"> 加上class "white"
+        article.banner(style="background-image: url('');background-color: #d0e1ff")
+            section._text
+                h1 屯京拉麵
+                .inf
+                    .type
+                        ._title
+                            p.ch 櫃位電話
+                            p.en Tel
+                        div
+                            p 07-2153106
+                    .location
+                        ._title
+                            p.ch 櫃位地點 
+                            p.en Location
+                        div
+                            p B1F食品佳餚館 
+        article._slick
+            ul
+                -for(var i = 0;i<3;i++)
+                    // 後端請注意 如果是影片的話 請在下方data-videoId填入影片id
+                    li(data-videoId=(i==0)?"jIzOIsQWMfg":"")
+                        div
+                            figure
+                                img(data-lazy="../../upload/fa2/food/detail/slickImg_1030_650.jpg", alt="")
+                            b 堅持日本原味的拉麵，希望顧客們可以品嘗到喜愛濃郁口感
+            .arrows 
+                span.icon-arrowLeft
+                span.icon-arrowRight
+        article.rows
+            section.row
+                ._text
+                    h6 日本創業逾23年的超人氣拉麵「屯京拉麵」
+                    p 是由社長菅野克弘、副社長菅野元弘兩兄弟共同創立。堅持日本原味的「屯京拉麵」希望顧客們可以品嘗到喜愛濃郁口感、真正道地的日本拉麵，每一碗份量十足，就是要您好好感受「平價、美味、飽足」，而且加量不加價，尤其代表性的東京豚骨拉麵及魚豚拉麵從麵條、湯頭。
+            section.row
+                ._img.w50 
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/food/detail/rowImg2.jpg", alt="")
+                        b 代表性的東京豚骨拉麵及魚豚拉麵條
+                ._img.w50 
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/food/detail/rowImg.jpg", alt="")
+                        b 純正的日本風味  百吃不厭的東京拉麵！
+            section.row
+                ._img
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/food/detail/rowImg3.jpg", alt="")
+                        b 代表性的東京豚骨拉麵及魚豚拉麵條
+            section.row
+                ._text
+                    h6 品嘗到濃郁口感  真正道地的日本拉麵
+                    p 在日本創業逾23年的超人氣拉麵─「屯京拉麵」，是由社長菅野克弘、副社長菅野元弘兩兄弟共同創立。堅持日本原味的「屯京拉麵」希望顧客們可以品嘗到喜愛濃郁口感、真正道地的日本拉麵，每一碗份量十足，就是要您好好感受「平價、美味、飽足。
+                ._img
+                    figure
+                        img.b-lazy(src=blazy data-src="../../upload/fa2/food/detail/rowImg4.jpg", alt="")
+                        b 純正的日本風味  百吃不厭的東京拉麵！
+    include ../layout/_footer.pug
++script
+
+
+|
+|
+</html>

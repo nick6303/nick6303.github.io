@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Ramaraja-Regular';
+    src: url('../../../assets/font/Ramaraja/regular/Ramaraja-Regular.svg') format('svg'),
+    url('../../../assets/font/Ramaraja/regular/Ramaraja-Regular.ttf') format('truetype'),
+    url('../../../assets/font/Ramaraja/regular/Ramaraja-Regular.woff') format('woff'),
+    url('../../../assets/font/Ramaraja/regular/Ramaraja-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

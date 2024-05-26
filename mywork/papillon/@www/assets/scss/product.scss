@@ -1,0 +1,538 @@
+@import "base/_reset.scss";
+@import "base/_variable.scss";
+@import "base/_header.scss";
+@import "base/_footer.scss";
+@import "base/_common.scss";
+
+.product_title {
+    margin-top: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+
+    h2 {
+        font-family: 'Cinzel-Regular';
+        @include font-size(32);
+
+        &:after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 1px;
+            background-color: #d2b055;
+            margin: auto;
+            margin-top: 5px;
+        }
+    }
+    p {
+        font-family: '微軟正黑體';
+        margin-top: 15px;
+    }
+}
+
+
+// 播放按鈕設定
+.topAd_img,
+.type1_bigImg,
+.type2_img,
+.type3_img {
+    position: relative;
+    span {
+        display: none;
+        &._video {
+            display: block;
+            @include font-size(16);
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            color: #d2b055;
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #d2b055;
+            border-radius: 50%;
+            transition: all .4s ease;
+            &:before {
+                margin-left: 3px;
+            }
+        }
+    }
+    &:hover {
+        span {
+            &._video {
+                color: #fff;
+                background-color: #d2b055;
+                transition: all .4s ease;
+            }
+        }
+    }
+}
+
+
+// 圖片hover效果
+.topAd_img,
+.type1_bigImg,
+.type1_smallImg,
+.type2_img,
+.type3_img {
+    overflow: hidden;
+    img {
+        transition: all 1s ease;
+    }
+    &:hover {
+        img {
+            transform: scale(1.1);
+            transition: all 1s ease;
+        }
+    }
+}
+
+
+
+.topAd {
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 70px;
+    position: relative;
+    .topAd_text {
+        letter-spacing: 1px;
+        position: absolute;
+        h2 {
+            font-family: 'Cinzel-Regular';
+            @include font-size(34);
+        }
+        p {
+            font-family: '微軟正黑體';
+            @include font-size(16);
+            margin-top: 15px;
+            line-height: 2;
+        } // 文字位置設定
+        &.left_top {
+            top: 40px;
+            left: 60px;
+        }
+
+        &.right_top {
+            top: 40px;
+            right: 60px;
+            text-align: right;
+        }
+
+        &.left_down {
+            left: 60px;
+            bottom: 40px;
+        }
+
+        &.right_down {
+            right: 60px;
+            bottom: 40px;
+            text-align: right;
+        }
+    }
+}
+
+
+
+// 文字位置設定
+.left_top {
+    top: 40px;
+    left: 60px;
+}
+
+.right_top {
+    top: 40px;
+    right: 60px;
+    text-align: right;
+}
+
+.left_down {
+    left: 60px;
+    bottom: 100px;
+}
+
+.right_down {
+    right: 60px;
+    bottom: 100px;
+    text-align: right;
+}
+
+.content {
+    max-width: 90%;
+    padding: 0 5%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+// 瀑布流格式設定
+.grid-item {
+    width: calc(50% - 35px); // margin: 0 30px 60px 30px;
+    // margin-bottom: 70px;
+}
+
+.products {
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 100px; // 文字內容設定
+    ._text {
+        letter-spacing: 1px;
+        position: absolute;
+        h2 {
+            font-family: 'Cinzel-Regular';
+            @include font-size(34);
+        }
+        p {
+            font-family: "微軟正黑體";
+            @include font-size(16);
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+    } // type1:大圖配小圖
+    .type1 {
+        position: relative;
+        padding-bottom: 70px; // 為了配隔流瀑行版面 原本的margin-bottom改 留白方式顯示
+        // height: calc(40.4vw + 60px);
+        height: 840px;
+        opacity: 0;
+        .type1_bigImg {
+            // height: 36.7vw;
+            height: 700px;
+        }
+        .type1_smallImg {
+            position: absolute;
+            bottom: 80px;
+            height: 280px;
+            width: 280px;
+            box-shadow: 8px 8px 8px rgba(0,0,0,.26);
+            &.left {
+                left: 60px;
+            }
+            &.right {
+                right: 60px;
+            }
+        }
+    } // type2:只有小圖
+    .type2 {
+        position: relative; // 為了配隔流瀑行版面 原本的margin-bottom改 留白方式顯示
+        // height: calc(18.65vw + 60px);
+        height: 420px;
+        overflow: hidden;
+        opacity: 0;
+        .type2_text {
+            position: absolute;
+        }
+    } // type3:只有大圖
+    .type3 {
+        position: relative; // 為了配隔流瀑行版面 原本的margin-bottom改 留白方式顯示
+        // height: calc(40.4vw + 60px);
+        height: 840px;
+        overflow: hidden;
+        opacity: 0;
+    }
+}
+
+
+// 進場動畫
+.product_title h2 {
+    animation: fadeInDown .8s both .1s;
+}
+
+.product_title p {
+    animation: fadeInDown .8s both .5s;
+}
+
+.topAd {
+    animation: fadeInUp 1s both .5s;
+}
+
+// b-lazy動畫
+.type1.show {
+    animation: fadeInUp 1s both;
+}
+
+.type2.show {
+    animation: fadeInUp 1s both;
+}
+
+.type3.show {
+    animation: fadeInUp 1s both;
+}
+
+
+
+
+
+@media only screen and (max-width: 1440px) {
+    .content {
+        max-width: 100%;
+        padding: 0;
+    }
+    .products {
+        margin: 100px 5vw 0 5vw;
+        .type1 {
+            height: calc(45.3vw + 120px);
+            padding-bottom: 190px;
+            .type1_bigImg {
+                height: 42.8vw; // height: auto;
+            }
+            .type1_smallImg {
+                width: 14.5vw;
+                height: 14.5vw;
+                &.left {
+                    left: 4vw;
+                }
+                &.right {
+                    right: 4vw;
+                }
+            }
+        }
+        .type2 {
+            height: calc(22.65vw + 60.04px); // height: auto;
+        }
+        .type3 {
+            height: calc(45.3vw + 120px); // height: auto;
+            .type3_img {
+                height: calc(45.3vw + 50px);
+                img {
+                    height: 100%;
+                    width: auto
+                }
+            }
+        }
+    }
+
+    .topAd {
+        margin: 70px 5vw 0 5vw;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .topAd_text {
+        h2 {
+            @include font-size(32);
+        }
+        p {
+            @include font-size(16);
+        }
+    }
+
+    .products {
+        ._text {
+            h2 {
+                @include font-size(32);
+            }
+            p {
+                @include font-size(16);
+            }
+        }
+        .type1 {
+            height: calc(45.3vw + 90px);
+            .type1_smallImg {
+                bottom: 50px;
+
+            }
+        }
+        .type2 {
+            height: calc(22.65vw + 45.04px);
+        }
+        .type3 {
+            height: calc(45.3vw + 90px);
+        }
+    } // 文字位置設定
+    .left_top {
+        top: 40px;
+        left: 40px;
+    }
+
+    .right_top {
+        top: 40px;
+        right: 40px;
+        text-align: right;
+    }
+
+    .left_down {
+        left: 40px;
+        bottom: 100px;
+    }
+
+    .right_down {
+        right: 40px;
+        bottom: 100px;
+        text-align: right;
+    } // 瀑布流格式設定
+    .grid-item {
+        width: calc(50% - 20px); // margin: 0 30px 60px 30px;
+        // margin-bottom: 70px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .products {
+        margin: 6vw 5vw 0 5vw;
+        ._text {
+            letter-spacing: 1px;
+            position: absolute;
+            h2 {
+                font-family: 'Cinzel-Regular';
+                @include font-size(28);
+            }
+            p {
+                font-family: "微軟正黑體";
+                @include font-size(14);
+                margin-top: 5px;
+                line-height: 1.8;
+            }
+        }
+    } // 文字位置設定
+    .left_top {
+        top: 4vw;
+        left: 4vw;
+    }
+
+    .right_top {
+        top: 4vw;
+        right: 4vw;
+        text-align: right;
+    }
+
+    .left_down {
+        left: 4vw;
+        bottom: 8vw;
+    }
+
+    .right_down {
+        right: 4vw;
+        bottom: 8vw;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .products {
+        ._text {
+            h2 {
+                @include font-size(24);
+            }
+            p {
+                @include font-size(14);
+            }
+        }
+    } // 文字位置設定
+    .left_top {
+        top: 2vw;
+        left: 2vw;
+    }
+
+    .right_top {
+        top: 2vw;
+        right: 2vw;
+        text-align: right;
+    }
+
+    .left_down {
+        left: 2vw;
+        bottom: 8vw;
+    }
+
+    .right_down {
+        right: 2vw;
+        bottom: 8vw;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .topAd {
+        .topAd_img {
+            span {
+                &._video {
+                    padding: 25px;
+                }
+            }
+        }
+        .topAd_text {
+            position: relative;
+            text-align: center;
+            &.left_top,
+            &.right_top,
+            &.left_down,
+            &.right_down {
+                top: auto;
+                left: auto;
+                right: auto;
+                bottom: auto;
+            }
+            h2 {
+                @include font-size(28);
+                margin-top: 15px;
+            }
+            p {
+                @include font-size(16);
+                margin-top: 5px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+
+
+    .grid-item {
+        width: 100%;
+        margin-bottom: 45px;
+    }
+    .products {
+        margin: 8vw 5vw 0 5vw;
+        .type1 {
+            height: auto;
+            padding-bottom: 8vw;
+            .type1_bigImg {
+                height: auto;
+            }
+            .type1_smallImg {
+                bottom: 0;
+                width: 30vw;
+                height: 30vw;
+                &.left {
+                    left: 8vw;
+                }
+                &.right {
+                    right: 8vw;
+                }
+            }
+        }
+        .type2 {
+            height: auto;
+        }
+        .type3 {
+            height: auto;
+            .type3_img {
+                height: auto;
+                img {
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    } // 文字位置設定
+    .left_top {
+        top: 4vw;
+        left: 4vw;
+    }
+
+    .right_top {
+        top: 4vw;
+        right: 4vw;
+        text-align: right;
+    }
+
+    .left_down {
+        left: 4vw;
+        bottom: 4vw;
+    }
+
+    .right_down {
+        right: 4vw;
+        bottom: 4vw;
+        text-align: right;
+    }
+}

@@ -1,0 +1,156 @@
+//- 常用參數
+include ../layout/_var.pug
+
+
+-
+    var breadcrumbs =[
+        {
+            title:"首頁",
+            link:"../home/index.html"},
+        {
+            title:"搜尋結果",
+            link:"../search/index.html"},
+    ]
+
+    var news = [
+        {
+            img:"../../upload/fa2/news/newsImg_400_370.jpg",
+            slogan:{
+                p:"HOT !",
+                bg:"#a13838"
+            },
+            type:"BRANDS",
+            title:"MaxMara 時尚冬裝新上市",
+            words:"購買新品滿3000折300元，再送高級質感圍巾"},
+        {
+            img:"../../upload/fa2/news/newsImg2_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"EVENTS",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送 ! 活動自01-10到02-15，全館八折起，歡迎蒞臨漢神百貨"},
+        {
+            img:"../../upload/fa2/news/newsImg3_400_370.jpg",
+            slogan:{
+                p:"SALE !",
+                bg:"#3c3b52"
+            },
+            type:"Member",
+            title:"周年慶全館八折起 卡友享專屬加碼優惠",
+            words:"活動自11/10到11/23，全館八折起，再享瘋狂回饋"},
+        {
+            img:"../../upload/fa2/news/newsImg4_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"BRANDS",
+            title:"MaxMara 時尚冬裝新上市",
+            words:"購買新品滿3000折300元，再送高級質感圍巾，全館八折起，歡迎蒞臨漢神百貨"},
+        {
+            img:"../../upload/fa2/news/newsImg5_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"EVENTS",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送 !"},
+        {
+            img:"../../upload/fa2/news/newsImg6_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"Member",
+            title:"周年慶全館八折起全館折扣，再享瘋狂回饋 ! 還有限定商品",
+            words:""},
+        {
+            img:"../../upload/fa2/news/newsImg7_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"BRANDS",
+            title:"Kiehl's 保濕冬季新上市",
+            words:""},
+        {
+            img:"../../upload/fa2/news/newsImg8_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"EVENTS",
+            title:"聖誕優惠開跑囉！",
+            words:"眾多品牌推出限量禮盒，加碼商品大放送 ! 活動自01/10到02/15，全館八折起"},
+        {
+            img:"../../upload/fa2/news/newsImg9_400_370.jpg",
+            slogan:{
+                p:"",
+                bg:""
+            },
+            type:"Member",
+            title:"周年慶全館八折起 卡友享專屬加碼優惠",
+            words:"活動自11/10到11/23，全館八折起，再享瘋狂回饋"},
+    ]
+
+    
+doctype html
+|
+|
+<html lang="en">
+|
+|
++head
+|
+|
+body#search.index
+    include ../layout/_header.pug
+    
+    main
+        article.banner
+            section.breadcrumbs
+                ul
+                    each val in breadcrumbs
+                        li
+                            a(href=val.link )=val.title
+            section._title(style="background-image:url('../../upload/fa2/')") 
+                p.ch 搜尋結果
+                p.en Search results
+                p.words 根據您輸入的關鍵字，以下總共有<span class="numb">4</span>種搜尋結果
+                button.openSearch(type="button")
+                    span.icon-magnifier
+                    p 重新搜尋
+        //尋找訊息
+        article.newsContent
+            section
+                ul
+                    each val in news
+                        li
+                            a(href="../news/detail.html")
+                                if (val.slogan.p !== "")
+                                    // 後端請注意: 如果未填入文字的話 把下方div移除
+                                    // 後端請注意: 下方背景顏色要讓客戶可以換
+                                    .slogan(style=('background-color:'+val.slogan.bg))=val.slogan.p
+                                figure
+                                    img.b-lazy(src=blazy data-src=val.img, alt="")
+                                    .hoverBox
+                                        span
+                                        p ENTER
+                                ._text
+                                    p.type=val.type 
+                                    p.title=val.title
+                                    // 字數限制 40字
+                                    p.words=val.words
+        // 提示文字: 當數量為0時 會自動出現
+        article.notFound
+            section.ps
+                p 找不到您想搜尋的品牌嗎 ? 歡迎撥打<span>顧客專線 0800-018-980</span>將有專人問您服務，謝謝。
+
+    include ../layout/_footer.pug
++script
+|
+|
+</html>

@@ -1,0 +1,169 @@
+//privacy
+
+
+.privacyFakeBox
+  // background-color: #fff
+  overflow: hidden
+  visibility: hidden
+  position: fixed
+  left: 0
+  top: 0
+  z-index: -1
+  width: 100vw
+  height: 100vh
+  &.open
+    z-index: 10
+    visibility: visible
+    .bg
+      width: 100%
+      transition: width .6s ease
+    .chrisCloseBtn
+      transform: translateY(0px)
+      transition: transform 1.3s ease .9s
+    .priTitle
+      opacity: 1
+      transform: translateY(0px)
+      transition: opacity 1s ease .6s, transform 1s ease .6s
+    .priSubTitle
+      opacity: 1
+      transform: translateY(0px)
+      transition: opacity 1s ease .9s, transform 1s ease .9s
+    .goldCross
+      .title
+        opacity: 1
+        transform: translateY(0px)
+        transition: opacity 1s ease .5s, transform 1s ease .5s
+      .crossInfo
+        opacity: 1
+        transition: opacity 1s ease .9s
+      .crossWave
+        opacity: 1
+        transform: translateY(0px)
+        transition: opacity 1.2s ease 1.3s, transform 1.2s ease 1.3s
+  &.close
+    .bg
+      width: 0%
+      transition: width .5s ease .2s
+    .chrisCloseBtn
+      opacity: 0
+      transition: opacity .5s ease
+    .containerBox
+      opacity: 0
+      transition: opacity .5s ease
+      
+  .mCSB_inside>.mCSB_container
+    margin: 0
+  .for_scroll
+    position: relative
+  .bg
+    background-color: #fff
+    width: 0
+    height: 100%
+    position: absolute
+    left: 50%
+    top: 0
+    transform: translateX(-50%)
+  .chrisCloseBtn
+    cursor: pointer
+    position: absolute
+    right: 110px
+    top: 50px
+    padding: 20px 0
+    transform: translateY(-200px)
+  .container
+    padding: 110px
+    position: relative
+  .containerBox
+    max-width: 780px
+    margin: 0 auto
+
+  .priTitleBox
+    margin: 0 0 110px 0
+    text-align: center
+  .priTitle
+    +fs(36)
+    font-weight: 900
+    font-family: 'FuturaPT-Heavy','微軟正黑體'
+    margin: 0 0 10px 0
+    opacity: 0
+    transform: translateY(100px)
+  .priSubTitle
+    +fs(18)
+    opacity: 0
+    transform: translateY(100px)
+
+  .goldCross
+    margin: 0 0 120px 0
+    &.show
+      .title
+        opacity: 1
+        transform: translateY(0px)
+        transition: opacity 1s ease .5s, transform 1s ease .5s
+      .crossInfo
+        opacity: 1
+        transition: opacity 1s ease .9s
+      .crossWave
+        opacity: 1
+        transform: translateY(0px)
+        transition: opacity 1.2s ease 1.3s, transform 1.2s ease 1.3s
+    &:last-child
+      margin: 0
+    .title
+      text-align: center
+      margin: 0 0 18px 0
+      opacity: 0
+      transform: translateY(100px)
+      .name
+        +fs(22)
+        font-weight: 900
+    .crossInfo
+      +fs(15)
+      font-weight: 900
+      margin: 0 0 20px 0
+      opacity: 0
+
+  .crossWave
+    border-top: solid 3px #000
+    border-bottom: solid 3px #000
+    opacity: 0
+    transform: translateY(150px)
+    .waveTitle
+      +fs(17)
+      font-weight: 900
+      padding: 18px 0
+    .list
+      border-bottom: solid 1px #b5b5b5
+      position: relative
+      &:last-child
+        border-bottom: none
+      &.openIt
+        .open
+          opacity: 0
+      .bar
+        display: flex
+        align-items: flex-start
+      .open
+        +fs(30)
+        cursor: pointer
+        padding: 14px 0
+        margin-left: auto
+      .close
+        cursor: pointer
+        position: absolute
+        right: 0
+        bottom: 35px
+        padding: 10px 0
+    .content
+      padding: 0 0 30px 0
+      position: relative
+      display: none
+    .conText
+      +fs(15)
+      line-height: 1.7
+      padding: 0 0 18px 0
+
+  @media (max-width: 767px)
+    .chrisCloseBtn
+      right: 7%
+    .container
+      padding: 110px 7%

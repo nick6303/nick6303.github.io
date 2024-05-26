@@ -1,0 +1,546 @@
+@import "base/_reset.scss";
+@import "base/_variable.scss";
+@import "base/_common.scss";
+@import "base/_header.scss";
+@import "base/_footer.scss";
+
+
+
+/*--------------------------member共通--------------------------*/
+.member main {
+    padding: 0;
+}
+
+
+/*關閉按鈕*/
+.member ._close {
+    cursor: pointer;
+    width: 50px;
+    height: 84px;
+    margin: auto;
+    a:before {
+        content: "";
+        width: 1px;
+        background-color: #d2b055;
+        margin: auto;
+        animation: closeLine .8s both .2s;
+
+        display: block;
+    }
+    a:hover p {
+        color: $base_color;
+    }
+    p {
+        @include font-size(12);
+        letter-spacing: .5px;
+        text-align: center;
+        padding-top: 12px;
+        @include trans(.5s);
+    }
+}
+
+
+
+
+
+.form_btn {
+    @include font-size(13);
+    margin: 0 auto;
+    max-width: 290px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .one {
+        width: 100%;
+    }
+    .two {
+        width: 50%;
+    }
+    p {
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .black {
+        background-color: #303030;
+        color: #fff;
+    }
+    .gray {
+        background-color: #ccc;
+        color: #000;
+    }
+}
+
+
+
+.contact .m_box {
+    padding: 200px 0 200px 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media #{$phone} {
+        padding: 150px 0 200px 0;
+    }
+}
+
+.contact ._top {
+    margin: 0 0 70px 0;
+}
+
+
+.m_box {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .m_box_inner {
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    .not_show {
+        height: 0;
+        overflow: hidden;
+    }
+}
+
+.m_box .title {
+    h2 {
+        text-align: center;
+    }
+}
+
+.m_box .frame_box {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.m_box .information {
+    text-align: center;
+}
+
+.m_box .member_form {
+    .login_member {
+        border-top: solid 4px #000;
+        width: 100%;
+        max-width: 355px;
+        margin: 0 auto;
+    }
+    li {
+        border-bottom: solid 1px #000;
+        padding: 0 20px;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        @media #{$phone} {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &.dropMenu,&.calender {
+            position: relative;
+        }
+    }
+    label {
+        @include font-size(14);
+        font-family: 'Cinzel-Regular','微軟正黑體';
+        width: 35%;
+        text-align: left;
+        @media #{$phone} {
+            width: 100%;
+            padding-top: 14px;
+        }
+    }
+    input {
+        @include font-size(14);
+        // font-family: 'Cinzel-Regular','微軟正黑體';
+        width: 65%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 20px 0;
+        @media #{$phone} {
+            width: 100%;
+            padding: 14px 0;
+        }
+    }
+    input:placeholder {
+        color: #000;
+    }
+    input::-webkit-input-placeholder {
+        color: #000;
+    }
+    input:-moz-placeholder {
+        color: #000;
+    }
+    input::-moz-placeholder {
+        color: #000;
+    }
+    input:-ms-input-placeholder {
+        color: #000;
+    }
+}
+
+
+.box_1 {
+    .information {
+        @include font-size(13);
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 20px auto;
+        .warning {
+            margin: 0 0 55px 0;
+        }
+        .agree_info {
+            margin: 0 0 45px 0;
+        }
+    }
+    .member_form {
+        margin: 0 0 20px 0;
+    }
+}
+
+.member_form {
+    .dropMenu {
+        @include font-size(14);
+        .menulist {
+            width: 65%;
+            text-align: left;
+            @media #{$phone} {
+                width: 100%;
+            }
+            .selectMenu {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                padding: 20px 0;
+    
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .dropMenu ul {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #303030;
+        max-height: 140px;
+
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 1;
+
+        display: none;
+        li {
+            cursor: pointer;
+            border-bottom: none;
+            text-align: center;
+        }
+        li:hover {
+            p {
+                color: #fff;
+            }
+        }
+        p {
+            width: 100%;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
+            @include trans(.5s);
+        }
+    }
+    .calender {
+        input {
+            cursor: pointer;
+        }
+    }
+    .arrow-icon:after {
+        font-family: 'icomoon';
+        content: "\e90b";
+        font-size: 1.125rem;
+
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include trans(.8s);
+    }
+}
+/*--------------------------member共通--------------------------*/
+
+
+
+
+
+/*  contact  */
+.contact .frame_box {
+    width: 50%;
+    max-width: 510px;
+    margin: 0 30px;
+    padding: 70px 15px;
+    background-color: #fff;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media #{$pad_V} {
+        width: 100%;
+        margin: 0 auto 40px auto;
+    }
+    @media #{$phone} {
+        height: auto;
+        padding: 60px 15px;
+    }
+    .form_btn {
+        width: 100%;
+    }
+}
+.contact .title {
+    h2 {
+        @include font-size(28);
+        font-family: '微軟正黑體';
+        margin-bottom: 20px;
+    }
+}
+.contact .info {
+    @include font-size(14);
+    text-align: center;
+    line-height: 1.6;
+    width: 100%;
+    max-width: 686px;
+    margin: 0 auto 70px auto;
+    @media #{$pad_V} {
+        padding: 0 13vw;
+    }
+    @media #{$phone} {
+        padding: 0 10vw;
+    }
+}
+.contact .box_1 {
+    position: relative;
+    .textBox {
+        padding: 20px;
+        textarea {
+            width: 100%;
+            height: 160px;
+            border: none;
+            letter-spacing: 1.5px;
+        }
+    }
+}
+.contact .box_2 {
+    .message {
+        margin: 0 0 45px 0;
+        p {
+            @include font-size(13);
+            color: #333333;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+            margin: 0 auto 28px auto;
+            width: 100%;
+            max-width: 350px;
+            @media #{$phone} {
+                max-width: 280px;
+            }
+        }
+    }
+    .QR_code {
+        padding: 28px 0;
+        .img {
+            a {
+                max-width: 110px;
+                max-height: 110px;
+                margin: 0 auto;
+                display: block;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .time_box {
+        margin-bottom: 40px;
+        .time {
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        p {
+            @include font-size(14);
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+        .title {
+            font-weight: $font-900;
+        }
+    }
+    .community_link {
+        margin-bottom: 55px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+            margin: 0 12px;
+        }
+        li a:hover {
+            color: $base_red;
+        }
+    }
+}
+
+.work_1 {
+    display: flex;
+    justify-content: center;
+    @media #{$pad_V} {
+        flex-direction: column;
+    }
+    @media #{$phone} {
+        padding: 0 10px;
+    }
+}
+.work_1 .member_form {
+    margin-bottom: 50px;
+}
+.work_1 .member_authen {
+    font-style: italic;
+
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+
+    transform: translateX(-50%);
+    @media #{$phone} {
+        bottom: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+@keyframes openBox {
+    0% {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        padding: 0 8% 0 8%;
+    }
+    100% {
+        max-height: 2000px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes closeBox {
+    0% {
+        max-height: 2000px;
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        padding: 0 8% 0 8%;
+    }
+}
+@keyframes getIn {
+    0% {
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        z-index: 12;
+        visibility: visible;
+    }
+}
+@keyframes getOut {
+    0% {
+        opacity: 1;
+        z-index: 12;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+}
+@keyframes boxIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes boxOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes showIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes showOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        z-index: 13;
+    }
+    100% {
+        opacity: 1;
+        z-index: 13;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        z-index: 13;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+@keyframes frameIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes frameOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

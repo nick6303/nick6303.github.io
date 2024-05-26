@@ -1,0 +1,832 @@
+.hamburger
+    +flex
+    flex-direction: column
+    justify-content: space-between
+    height: 11px
+    width: 23px
+    span
+        width: 100% 
+        height: 1px
+        opacity: 0.7
+        background: #fff
+        transition: .5s
+        &:nth-child(2)
+            transform: translateX(3px)
+.header__hamburger:hover 
+    span
+        opacity: 1
+        &:nth-child(2)
+            transform: translateX(0px)
+    
+
+
+.circle
+    border-radius: 50%
+    border: 1px solid #000
+    transition: .2s
+    +flex
+    &--60
+        width: 60px
+        height: 60px
+    &--50
+        width: 50px
+        height: 50px
+    &--40
+        width: 41px
+        height: 41px
+    &--30
+        width: 30px
+        height: 30px
+    &--20
+        width: 20px
+        height: 20px
+        border: 0
+    &--15
+        width: 15px
+        height: 15px
+        border: 0
+    &--search
+        cursor: pointer
+        border: 1px solid #fff
+        background: #b2b2b2
+        svg
+            fill: #fff
+        &:hover
+            border: 1px solid #b2b2b2
+            box-shadow: inset 0px 0px 0px 2px #fff
+    &--add
+        position: relative
+        border: 1px solid #b2b2b2
+        span
+            width: 15px
+            height: 1px
+            background: $Cblue
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+            transition: .5s
+            &:last-child
+                transform: translate(-50%,-50%) rotate(90deg)
+        &:hover
+            border: 1px solid #b2b2b2
+            box-shadow: inset 0px 0px 0px 2px #fff,inset 0px 0px 0px 3px $Cblue
+            transform: rotate(90deg)
+            span
+                width: 20px
+
+    &--add2
+        border: 1px solid transparent
+        background: #fff
+        &:hover
+            border: 1px solid transparent
+            box-shadow: inset 0px 0px 0px 2px #fff,inset 0px 0px 0px 3px #aaa
+    &--wishlist
+        background: #2d2d2d
+        position: relative
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #fff
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 16px
+                height: 1px
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+            &:after
+                width: 1px
+                height: 16px
+                left: 50%
+                top: 50%
+                transform: translate(-50%,-50%)
+
+    &--service_add
+        position: relative
+        border: 0px
+        background: $Cblue
+        span
+            background: #fff
+            position: absolute
+            transition: .5s
+            &:first-child
+                width: 16px
+                height: 1px
+                top: 50%
+                left: calc(50% - 8px)
+            &:last-child
+                width: 1px
+                height: 16px
+                top: calc(50% - 8px)
+                left: 50%3
+
+    &--service_bit
+        border: 0
+        background: $Cblue 
+        box-shadow: inset 0px 0px 0px 18px #fff
+        transition: .5s
+        position: relative
+        &:after,&:before
+            content: ''
+            position: absolute
+            background: #fff
+            font-size: 0
+            transition: .5s
+            transition-delay: .25s
+        &:before
+            width: 0px
+            height: 1px
+            top: 50%
+            left: 50%
+            transform: translate(-50%,0px)
+        &:after
+            width: 1px
+            height: 0px
+            left: 50%
+            top: 50%
+            transform: translate(0,-50%)
+        &:hover
+            box-shadow: inset 0px 0px 0px 1px #fff 
+            &:before
+                width: 17px
+            &:after
+                height: 17px
+
+    &--about_bit
+        background: $Cblue 
+        box-shadow: inset 0px 0px 0px 1px #d4dbed, inset 0px 0px 0px 18px #fff
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #fff
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 0px
+                height: 1px
+                top: 20px
+                left: 50%
+                transform: translate(-50%,0)
+            &:after
+                width: 1px
+                height: 0px
+                left: 20px
+                top: 50%
+                transform: translate(0%,-50%)
+        &:hover
+            box-shadow: inset 0px 0px 0px 0px #fff 
+            span
+                &:before
+                    width: 17px
+                &:after
+                    height: 17px
+        .focus &
+            box-shadow: inset 0px 0px 0px 0px #fff 
+            span
+                &:before
+                    width: 17px
+                &:after
+                    height: 17px
+                    
+
+
+        &.circle--about_bit2
+            background: transparent
+            box-shadow: inset 0px 0px 0px 1px #fff 
+            &:after
+                content: ''
+                position: absolute
+                top: 18px
+                left: 18px
+                height: 5px
+                width: 5px
+                border-radius: 50%
+                background: #fff    
+                transition: 1s
+            &:hover
+                box-shadow: inset 0px 0px 0px 18px transparent
+                &:after
+                    opacity: 0
+
+    &--info
+        border: 0
+        background: #2d2d2d
+        color: #fff
+        span
+            position: relative
+            width: 20px
+            height: 20px
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #fff
+                font-size: 0
+            &:before
+                width: 100%
+                height: 1px
+                left: 50%
+                top: 50%
+                transform: translate(-50%,-50%)
+            &:after
+                width: 1px
+                height: 100%
+                left: 50%
+                top: 50%
+                transform: translate(-50%,-50%)
+
+
+    &--service_down
+        position: relative
+        border: 1px solid #cbd5ed
+
+
+    &--bit
+        border: 1px solid transparent
+        background: #fff
+        box-shadow: inset 0px 0px 0px 17px $Cblue , inset 0px 0px 0px 2px $Cblue
+        transition: .5s
+        &:hover
+            box-shadow: inset 0px 0px 0px 2px #fff , inset 0px 0px 0px 17px $Cblue
+            border: 1px solid $Cblue
+
+
+            
+    &--product
+        border: 1px solid #c9d3ed
+        background: #fff
+        
+    &--product_detail_add_b
+        position: relative
+        background: #000
+        margin: 0 10px
+        span
+            width: 16px
+            height: 1px
+            background: #fff
+            position: absolute
+            top: calc(50% - 1px)
+            left: calc(50% - 8px)
+            transition: .5s
+            &:last-child
+                width: 1px
+                height: 16px
+                top: calc(50% - 8px)
+                left: calc(50% - 1px)
+    &--product_detail_add_w
+        position: relative
+        background: #fff
+        border: 1px solid #000
+        margin: 0 10px
+        span
+            width: 16px
+            height: 1px
+            background: #000
+            position: absolute
+            top: calc(50% - 1px)
+            left: calc(50% - 8px)
+            transition: .5s
+            &:last-child
+                width: 1px
+                height: 16px
+                top: calc(50% - 8px)
+                left: calc(50% - 1px)
+    &--product_detail_download
+        position: relative
+        background: #000
+        border: 0
+        margin: 0 10px
+        svg
+            fill: #fff
+    &--product_q
+        margin-left: 20px
+        display: inline-flex
+        background: #000
+        vertical-align: middle
+        cursor: pointer
+        &:before
+            content: '?'
+            color: #fff
+            font-size: 12px
+        &:hover
+            background: #1b41a2
+    &--product_rwd
+        cursor: pointer
+        position: relative
+        span
+            width: 16px
+            height: 1px
+            background: #000
+            position: absolute
+            top: calc(50% - 1px)
+            left: calc(50% - 8px)
+            transition: .5s
+            &:last-child
+                width: 1px
+                height: 16px
+                top: calc(50% - 8px)
+                left: calc(50% - 1px)
+        .open &
+            span
+                &:last-child
+                    transform: rotate(90deg)
+
+    &--video_play
+        background: #fff
+        position: relative
+        z-index: 2
+        cursor: pointer
+        border: 0
+        &:before
+            content: ''
+            display: inline-block
+            margin-left: 3px
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 4.5px 0 4.5px 7px
+            border-color: transparent transparent transparent #1b41a2
+    &--ori
+        background: #fff
+        position: relative
+        z-index: 2
+        cursor: pointer
+        border: 0
+        &:before
+            content: ''
+            margin-left: 3px
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 4px 3.5px 0 3.5px
+            border-color: #007bff transparent transparent transparent
+
+    &--v
+        background: #fff
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        box-shadow: inset 0px 0px 0px 1px #d4dbed, inset 0px 0px 0px 18px #fff
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: $Cblue 
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 1px
+                height: 11px
+                left: 20px
+                top: 50%
+                transform-origin: 0 100%
+                transform: translate(0px,-50%) rotate(35deg)
+            &:after
+                width: 1px
+                height: 11px
+                left: 20px
+                top: 50%
+                transform-origin: 0 100%
+                transform: translate(0px,-50%) rotate(-35deg)
+        .focus &
+            background: $Cblue 
+            box-shadow: none
+            span
+                &:after,&:before
+                    background: #fff
+    &--v2
+        background: transparent
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        box-shadow: inset 0px 0px 0px 1px #d4dbed, inset 0px 0px 0px 18px transparent
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #999
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 1px
+                height: 11px
+                left: 20px
+                top: 50%
+                transform-origin: 0 100%
+                transform: translate(0px,-50%) rotate(35deg)
+            &:after
+                width: 1px
+                height: 11px
+                left: 20px
+                top: 50%
+                transform-origin: 0 100%
+                transform: translate(0px,-50%) rotate(-35deg)
+        .focus &
+            background: #444
+            box-shadow: none
+            span
+                &:after,&:before
+                    background: #fff
+    &--vr
+        background: #fff
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        box-shadow: inset 0px 0px 0px 1px #d4dbed, inset 0px 0px 0px 18px #fff
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: $Cblue 
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 11px
+                height: 1px
+                left: 20px
+                top: 50%
+                transform-origin: 0% 0
+                transform: translate(-50%,0%) rotate(-35deg)
+            &:after
+                width: 11px
+                height: 1px
+                left: 20px
+                top: 50%
+                transform-origin: 0% 0
+                transform: translate(-50%,0%) rotate(35deg)
+        .focus &
+            background: $Cblue 
+            box-shadow: none
+            span
+                &:after,&:before
+                    background: #fff
+    &--conversionadd
+        background: #ccc
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #fff
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 15px
+                height: 1px
+                left: 50%
+                top: 50%
+                transform-origin: 0% 0
+                transform: translate(-50%,-50%)
+            &:after
+                width: 1px
+                height: 15px
+                left: 50%
+                top: 50%
+                transform-origin: 0% 0
+                transform: translate(-50%,-50%)
+    &--billadd
+        background: #294CA8
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #fff
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 15px
+                height: 1px
+                left: 50%
+                top: 50%
+                transform-origin: 0% 0
+                transform: translate(-50%,-50%)
+            &:after
+                width: 1px
+                height: 15px
+                left: 50%
+                top: 50%
+                transform-origin: 0% 0
+                transform: translate(-50%,-50%)
+    &--billx
+        background: #fff
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        border: 1px solid rgba(41, 76, 168, 0.2)
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #294CA8
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 15px
+                height: 1px
+                left: 50%
+                top: 50%
+                transform-origin: 50% 50%
+                transform: translate(-50%,-50%) rotate(45deg)
+            &:after
+                width: 1px
+                height: 15px
+                left: 50%
+                top: 50%
+                transform-origin: 50% 50%
+                transform: translate(-50%,-50%) rotate(45deg)
+    &--shopping
+        background: $Cblue 
+        box-shadow: inset 0px 0px 0px 0px #fff 
+        transition: .5s
+        position: relative
+        border: 0
+        font-size: 0
+        span
+            width: 100%
+            height: 100%
+            &:after,&:before
+                content: ''
+                position: absolute
+                background: #fff
+                font-size: 0
+                transition: .5s
+                transition-delay: .25s
+            &:before
+                width: 17px
+                height: 1px
+                top: 20px
+                left: 50%
+                transform: translate(-50%,0)
+            &:after
+                width: 1px
+                height: 17px
+                left: 20px
+                top: 50%
+                transform: translate(0%,-50%)
+        &:hover
+            box-shadow: inset 0px 0px 0px 2px $Cblue, inset 0px 0px 0px 4px #fff
+            span
+                &:before
+                    width: 17px
+                &:after
+                    height: 17px
+        &.circle--shopping2
+            background: #fff
+            box-shadow: inset 0px 0px 0px 1px #000
+            span
+                &:after,&:before
+                    background: #000
+        &.circle--shopping3
+            background: transparent
+            box-shadow: inset 0px 0px 0px 1px #1b41a2
+            span
+                &:after,&:before
+                    background: #1b41a2
+                .open &
+                    &:after
+                        transform: translate(0%,-50%) rotate(90deg)
+
+
+
+    &--facebook
+        border: 1px solid #ffffff
+        fill: #fff
+        opacity: 0.7
+        &:hover
+            border: 1px solid #3b5998
+            fill: #3b5998
+    &--twitter
+        border: 1px solid #ffffff
+        fill: #fff
+        opacity: 0.7
+        &:hover
+            border: 1px solid #1da1f2
+            fill: #1da1f2
+    &--youtube
+        border: 1px solid #ffffff
+        fill: #fff
+        opacity: 0.7
+        &:hover
+            border: 1px solid #ff0000
+            fill: #ff0000
+    &--instagram
+        border: 1px solid #ffffff
+        fill: #fff
+        opacity: 0.7
+        &:hover
+            border: 1px solid #f77737
+            fill: #f77737
+    &--line
+        border: 1px solid #ffffff
+        fill: #fff
+        opacity: 0.7
+        &:hover
+            border: 1px solid #00c300
+            fill: #00c300
+
+
+// 黏在一起 有點點
+.btns
+    display: inline-block
+    ul
+        display: flex
+    li
+        display: flex
+        align-items: center
+        position: relative
+        &:not(:last-child):after
+            content: ''
+            display: inline-block
+            height: 2px
+            width: 2px
+            border-radius: 50%
+            background: $Cblue
+            position: absolute
+            right: -1px
+        &:last-child:first-child
+            a
+                padding: 5px 15px
+        h4
+            font-size: px(14)
+            margin: 0
+        &.focus
+            a
+                span
+                    &:before
+                        background: inherit
+    a
+        position: relative
+        padding: 5px 25px
+        color: inherit
+        span
+            &:before
+                content: ''
+                position: absolute
+                height: 5px
+                width: 100%
+                bottom: -10px
+                right: 0 
+                background: #dcdee5
+                transition: .5s
+    &.colorstory
+        ul
+            justify-content: center
+        li
+            &:not(:last-child):after
+                background: #fff
+
+            &.focus
+                a
+                    span
+                        &:before
+                            background: #fff
+                            
+        a
+            span
+                &:before
+                    background: rgba(255,255,255,.5)
+                    height: 3px
+
+    &.recommand__btn
+        ul
+            justify-content: center
+        li
+            &.focus
+                a
+                    span
+                        &:before
+                            background: #1c41a2
+                &:last-child:first-child
+                    a
+                        span
+                            &:before
+                                background: #1c41a2
+        a
+            span
+                &:before
+                    background: #dcdee5
+
+// 散開 有點點
+.btns_s2
+    display: inline-block
+    text-align: center
+    ul
+        display: flex
+    li
+        display: flex
+        align-items: center
+        position: relative
+        &:not(:last-child):after
+            content: ''
+            display: inline-block
+            height: 2px
+            width: 2px
+            border-radius: 50%
+            background: $Cblue
+            position: absolute
+            right: -1px
+        h4
+            font-size: px(14)
+            margin: 0
+        &.focus 
+            a:before
+                background: $Cblue
+    a
+        position: relative
+        padding: 10px 20px
+        margin: 0 20px
+        &:before
+            content: ''
+            position: absolute
+            height: 5px
+            width: 100%
+            bottom: -10px
+            right: 0 
+            background: #e5e5e5
+            transition: .5s
+
+
+// 燈箱 有反轉喔
+.btns_lbox
+    display: inline-block
+    ul
+        display: flex
+    li
+        display: flex
+        align-items: center
+        position: relative
+        &:not(:last-child):after
+            content: ''
+            display: inline-block
+            height: 2px
+            width: 2px
+            border-radius: 50%
+            background: $Cblue
+            position: absolute
+            right: -1px
+        h4
+            font-size: px(14)
+            margin: 0
+        &.focus 
+            a:before
+                background: $Cblue
+    a
+        position: relative
+        padding: 10px 0px
+        margin: 0 20px
+        &:before
+            content: ''
+            position: absolute
+            height: 5px
+            width: 100%
+            bottom: -10px
+            right: 0 
+            background: #e5e5e5
+            transition: .5s
+    &--anti
+        a
+            &:before
+                bottom: auto
+                top: -10px

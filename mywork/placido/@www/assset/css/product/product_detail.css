@@ -1,0 +1,463 @@
+@charset "utf-8";
+
+
+
+
+
+/*----------------------banner開始---------------------------*/
+
+.banner {
+    position: relative;
+}
+
+.favorite {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.favorite {
+    top: 120px;
+    left: 50px;
+}
+
+.favorite p {
+    font-family: '微軟正黑體';
+    letter-spacing: 1.5px;
+    font-size: .75rem;
+    margin-bottom: 12px;
+    -ms-writing-mode: tb-lr;
+    -webkit-writing-mode: vertical-lr;
+}
+
+.favorite span {
+    font-size: .75rem;
+}
+
+
+
+/*----------------------banner結束---------------------------*/
+
+
+/*----------------------content開始---------------------------*/
+
+.content {
+    background-color: #f3f3f3;
+    margin: 0 3vw 0 130px;
+    padding: 160px 160px 0 80px;
+}
+
+
+
+
+/*._title*/
+
+._title {
+    text-align: center;
+}
+
+._title h2 {
+    font-family: 'JosefinSans-Bold';
+    font-size: 3rem;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+._title h2 span {
+    display: block;
+    transform: translateY(-110%);
+    padding-bottom: 5px;
+    line-height: 1.5;
+}
+
+._title p {
+    font-family: "微軟正黑體";
+    font-size: 1.25rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+._title p span {
+    display: block;
+    transform: translateY(-100%);
+}
+
+._title>span {
+    display: none;
+}
+
+
+
+
+/*introduction*/
+
+.introduction {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 170px;
+    overflow: hidden;
+}
+
+.introduction div {
+    transform: translateY(-100%);
+}
+
+.introduction div h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.introduction div p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666666;
+    margin-top: 10px;
+}
+
+
+/*.introduction span {
+    font-size: .8125rem;
+    font-family: 'MyriadPro-Regular';
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #666666;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-left: calc(50% - 50px);
+    transform: translateY(100%);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.introduction span:after {
+    font-family: 'icomoon';
+    content: "\ea0c";
+    font-size: 1rem;
+    margin-left: 10px;
+}*/
+
+.introduction span {
+    margin: auto;
+    margin-top: 15px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    background-color: #6f0064;
+    position: relative;
+    border-radius: 50%;
+    transform: translateY(100%);
+    cursor: pointer;
+}
+
+.introduction span:before,
+.introduction span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.introduction span:before {
+    height: 12px;
+    width: 2px;
+}
+
+.introduction span:after {
+    height: 2px;
+    width: 12px;
+}
+
+.rows {
+    margin: auto;
+    margin-top: 140px;
+    max-width: 1020px;
+}
+
+.row {
+    padding-bottom: 45px;
+    overflow: hidden;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 75px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.row>h2 {
+    text-align: center;
+    font-family: 'MyriadPro-Regular';
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    transform: translateY(-100%);
+}
+
+.row ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row ul li {
+    width: calc(25% - 6px);
+    margin: 0 3px 30px 3px;
+    text-align: center;
+}
+
+.row_text {
+    overflow: hidden;
+}
+
+.row_text div {
+    transform: translateY(100%);
+    cursor: pointer;
+}
+
+.row ul li h2 p {
+    font-family: 'MyriadPro-Regular';
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    display: inline-block;
+}
+
+.row ul li h2 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.row ul li span {
+    position: relative;
+}
+
+.row ul li span:before {
+    font-family: 'icomoon';
+    content: "\e906";
+    color: #6f0064;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.row ul li span:after {
+    content: "\e908";
+    font-family: 'icomoon';
+    color: #6f0064;
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    top: calc(50% - .5rem);
+    left: calc(50% - .5rem);
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.row ul li.checked span:after {
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.row_img {
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.row_img img {
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+}
+
+
+
+/*----------------------content結束---------------------------*/
+
+
+/*進場動畫------------*/
+
+.favorite div {
+    transform: translateX(-100%);
+    animation: left_slidein 1s both .5s;
+}
+
+._title h2 span {
+    animation: top_slidein .8s both .4s;
+}
+
+._title p span {
+    animation: top_slidein .8s both .8s;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .introduction div {
+        animation: top_slidein .8s both 1s;
+    }
+
+    .introduction span {
+        animation: bottom_slidein .5s both 1s;
+    }
+    .introduction span:before {
+        animation: h12 .5s both 1.2s;
+    }
+    .introduction span:after {
+        animation: w12 .5s both 1.2s;
+    }
+}
+
+@keyframes h12 {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+@keyframes w12 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 12px;
+    }
+}
+
+
+
+/*waypoint動畫專區*/
+
+.show .row_img img {
+    animation: allin0 1s both;
+}
+
+.show .row_text div {
+    animation: allin0 .8s both .5s;
+}
+
+.row>h2.show {
+    animation: allin0 .5s both;
+}
+
+
+
+
+/*---------max-width: 1024px--------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+    .favorite {
+        display: none;
+    }
+
+    .content {
+        margin: 0 5vw;
+        padding: 0 5vw;
+        background-color: transparent;
+    }
+
+    ._title {
+        margin: 0 -10vw 0 -5vw;
+        padding: 28vh 10vw 0 10vw;
+        background-color: #f3f3f3;
+        height: 70vh;
+        position: relative;
+    }
+
+    ._title h2 {
+        font-size: 2.5rem;
+    }
+
+    ._title h2 span {
+        line-height: 1.2;
+    }
+
+    ._title p {
+        margin-top: 0;
+    }
+
+    ._title>span {
+        display: block;
+        width: 50px;
+        position: absolute;
+        top: calc(100% - 45px);
+        left: calc(50% - 25px - 2.5vw);
+    }
+
+    ._title>span:after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 0px;
+        background-color: #000;
+        margin: auto;
+    }
+
+    .introduction {
+        margin-top: 28vh;
+    }
+
+    .rows {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .row {
+        padding-bottom: 30px;
+    }
+
+    .row ul {
+        flex-wrap: wrap;
+    }
+
+    .row ul li {
+        width: calc(50% - 20px);
+        margin: 0 10px 45px 10px;
+    }
+
+    .small .row_img img {
+        width: 20vw;
+        height: 100%;
+    }
+
+    /*進場動畫*/
+    ._title>span:after {
+        animation: height90 .8s both 1s;
+    }
+
+    /*waypoint動畫專區*/
+    .introduction.show div {
+        animation: allin0 .8s both 1s;
+    }
+
+    .introduction.show span {
+        animation: allin0 .5s both 1s;
+    }
+
+    .introduction.show span:before {
+        animation: h12 .5s both 1.2s;
+    }
+
+    .introduction.show span:after {
+        animation: w12 .5s both 1.2s;
+    }
+
+    @keyframes height90 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 90px;
+        }
+    }
+}

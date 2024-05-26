@@ -1,0 +1,381 @@
+@import "../base/_reset.scss";
+@import "../base/_variable.scss";
+@import "../base/_common.scss";
+
+.topNav {
+
+    &::before,
+    &:after {
+        display: none;
+    }
+}
+
+.join {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 0 !important;
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../../upload/member/signupBg_1920_980.jpg");
+    @include flex-center;
+
+    @media all and (max-width: 1024px) {
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+    }
+
+    @media all and (max-width: 900px) {
+        background-color: #fff;
+        background-image: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    section {
+        background-color: #fff;
+        max-width: 1120px;
+        width: 100%;
+        @include flex-center;
+        flex-direction: column;
+        padding: 65px 50px;
+        animation: fadeIn 1s both 0.4s;
+
+        @media all and (max-width: 1024px) {
+            padding: 65px 5vw;
+        }
+        @media all and (max-width: 500px) {
+            padding: 80px 5vw 65px;
+        }
+
+        ._title {
+            @include flex(center, flex-end);
+
+            p {
+                line-height: 1;
+            }
+
+            .en {
+                @include font-size(33);
+                font-family: 'CenturyGothic-Bold';
+                margin-right: 20px;
+            }
+
+            .ch {
+                @include font-size(24);
+                font-weight: bold;
+            }
+        }
+
+        .words {
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+            @include font-size(14);
+            margin-top: 45px;
+        }
+
+        form {
+            max-width: 850px;
+            width: 100%;
+            margin-top: 35px;
+            @include flex-center;
+            flex-direction: column;
+            @include font-size(14);
+
+            .inputBoxs {
+                display: flex;
+                flex-wrap: wrap;
+
+                .inputBox {
+                    width: calc(50% - 2px);
+                    margin: 1px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 0 20px;
+                    background-color: #f2f2f2;
+                    border: 2px solid #f2f2f2;
+                    transition: all .4s ease;
+                    @media all and (max-width: 900px) {
+                        width: calc(100% - 2px);
+                    }
+                    @media all and (max-width: 700px) {
+                        padding: 0 15px;
+                    }
+                    &>p {
+                        padding: 15px 0 ;
+                        width: 60px;
+                        margin-right: 40px;
+                        @media all and (max-width: 900px) {
+                            margin-right: 30px;
+                        }
+                        @media all and (max-width:400px) {
+                            margin-right: 20px;
+                        }
+                    }
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        width: calc(100% - 100px);
+                        padding: 15px 0 ;
+                        @media all and (max-width: 900px) {
+                            width: calc(100% - 90px);
+                        }
+
+                        @media all and (max-width:400px) {
+                            width: calc(100% - 80px);
+                        }
+                    }
+
+                    &.active,
+                    &:hover {
+                        background-color: #fff;
+                    }
+                    .dropDowns {
+                        @include flex-space-between;
+                        width: 100%;
+                        width: calc(100% - 100px);
+                        @media all and (max-width:400px) {
+                            width: calc(100% - 80px);
+                        }
+                        @media all and (max-width: 900px) and (min-width: 400px) {
+                            align-items: flex-end;
+                            padding-right: 20px;
+                            width: calc(100% - 90px);
+                        }
+                        @media all and (max-width:450px) {
+                            margin-left: 0;
+                        }
+                        .dropDown {
+                            height: 100%;
+                            padding: 15px 0;
+                            .selectMenu {
+                                height: 100%;
+                                color: rgba(0, 0, 0, 0.6);
+                                white-space: nowrap;
+                                
+                                &.checked {
+                                    color: #000;
+                                }
+                            }
+    
+                            &.county {
+                                width: 75px;
+                                @media all and (max-width:900px){
+                                    width: 100%;
+                                }
+                                .selectMenu {
+                                    justify-content: flex-start;
+                                    @media all and (max-width:900px){
+                                        justify-content: center
+                                    }
+                                }
+                            }
+                            &.towns {
+                                width: 100px;
+                                @media all and (max-width:900px){
+                                    width: 100%;
+                                }
+                                .selectMenu {
+                                    justify-content: flex-end;
+                                    @media all and (max-width:900px){
+                                        justify-content: center
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.code {
+                        position: relative;
+                        width: 100%;
+                        input {
+                            width: calc(100% - 160px);
+
+                            @media all and (max-width: 400px) {
+                                width: calc(100% - 80px);
+                            }
+                        }
+                        div {
+                            width: 60px;
+                            height: 25px;
+                            cursor: pointer;
+                            @media all and (max-width: 400px) {
+                                position: absolute;
+                                top: calc(100% + 10px);
+                                right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .agree {
+                @include font-size(14);
+                @include flex-center;
+                margin-top: 30px;
+
+                @media all and (max-width: 400px) {
+                    margin-top: 50px;
+                }
+
+                div {
+                    margin-right: 25px;
+                    position: relative;
+
+                    input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+
+                    label {
+                        width: 23px;
+                        height: 23px;
+                        @include flex-center;
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        color: #ccc;
+                        transition: all .4s ease;
+
+                        span {
+                            @include font-size(12);
+                            transform: scale(0.58);
+                        }
+                    }
+
+                    input:checked+label {
+                        background-color: #005098;
+                        color: #fff;
+                    }
+
+                    @media all and (min-width:1025px) {
+                        input:hover+label {
+                            background-color: #005098;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .openTerms{
+                    color: #005098;
+                    cursor: pointer;
+                }
+            }
+
+            .buttons {
+                margin-top: 60px;
+                @include flex-center;
+            }
+        }
+    }
+}
+
+
+.terms {
+    padding: 0;
+    overflow-y: auto;
+    @include basicLibox;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+    &.open{
+        display: block;
+        animation:fadeIn 0.4s both ;
+    }
+    &.close{
+        display: block;
+        animation:fadeOut .4s both ;
+    }
+
+    section {
+        background-color: #fff;
+        max-width: 1400px;
+        margin: 140px auto;
+        position: relative;
+        padding: 120px 50px 80px;
+        overflow: hidden;
+        @media all and (max-width:1400px){
+            margin:0 auto;
+            padding: 100px 50px 80px;
+        }
+        @media all and (max-width:1024px){
+            padding: 100px 5vw 80px;
+        }
+        @media all and (max-width:500px){
+            padding: 80px 5vw 65px;
+        }
+        .topNav {
+            position: absolute;
+            width: auto;
+            top: 0;
+            left: auto;
+            right: 0;
+            padding: 20px 40px 0 40px;
+            @media all and (max-width:500px){
+                padding: 20px 5vw 0 5vw;
+            }
+        }
+
+        ._title {
+            .en {
+                @include title_en;
+            }
+
+            .ch {
+                @include title_ch;
+            }
+        }
+
+        ul {
+            max-width: 930px;
+            margin: 70px auto 0;
+            counter-reset:num;
+            li {
+                margin-bottom: 30px;
+                counter-increment:num; 
+                h6 {
+                    @include font-size(18);
+                    font-weight: bold;
+                    font-family: "微軟正黑體";
+                    line-height: 2;
+                    padding: 5px 50px;
+                    border-bottom: 1px solid #d9d9d9;
+                    @media all and (max-width: 930px){
+                        padding: 5px 5vw;
+                    }
+                    @media all and (max-width: 500px){
+                        padding: 5px 10px;
+                    }
+                    &:before{
+                        content:"0" counter(num) " . ";
+                    }
+                }
+
+                ._text {
+                    padding: 10px 50px;
+                    @include font-size(14);
+                    color: #4a4a4a;
+                    @media all and (max-width: 930px){
+                        padding: 10px 5vw; 
+                    }
+                    @media all and (max-width: 500px){
+                        padding: 10px; 
+                    }
+                    p {
+                        line-height: 2.2;
+                    }
+                }
+            }
+        }
+    }
+}

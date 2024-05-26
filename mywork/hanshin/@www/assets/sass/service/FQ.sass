@@ -1,0 +1,29 @@
+#service.FQ
+    .banner ._title .words
+        max-width: 400px
+    .content
+        .topTitle
+            background-color: #f9eedf
+            padding: 60px 50px 10px
+            position: relative
+            &:after
+                position: absolute
+                top: 100%
+                left: 50%
+                transform: translateX(-50%)
+                +fakeLine(0,0,transparent)
+                border-style: solid
+                border-width: 20px 17.5px 0 17.5px
+                border-color: #f9eedf transparent transparent transparent
+            .en
+                position: relative
+                padding: 0 0 30px
+                &:before
+                    position: absolute
+                    bottom: 20px
+                    left: 50%
+                    transform: translateX(-50%)
+                    +fakeLine(40px,1px,#575757) 
+                    animation: w40 .8s both .8s
+            form
+                +form

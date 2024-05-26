@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Philosopher-Italic';
+  src: url('../assets/font/Philosopher/Italic/Philosopher-Italic.woff2') format('woff2'),
+       url('../assets/font/Philosopher/Italic/Philosopher-Italic.woff') format('woff'),
+       url('../assets/font/Philosopher/Italic/Philosopher-Italic.ttf') format('truetype'),
+       url('../assets/font/Philosopher/Italic/Philosopher-Italic.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

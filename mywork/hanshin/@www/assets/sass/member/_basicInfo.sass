@@ -1,0 +1,172 @@
+#member.basicInfo .content
+    .form
+        max-width: 1060px
+        width: 100%
+        margin: 40px auto 0
+        background-color: #fff
+        box-shadow: 0 0 50px 3px rgba(0,0,0,.1)
+        padding: 50px 50px 80px
+        animation: fadeInUp 1.5s both .8s
+        +flex-center
+        flex-direction: column
+        @media (max-width: 1024px)
+            padding: 50px 5vw 80px
+        .ps
+            +flex-center
+            margin: 0 0 20px
+            &:before
+                +fakeLine(30px,30px)
+                content: "i"
+                +flex-center
+                font-size: px(18)
+                background-color: #707070
+                color: #fff
+                border-radius: 50%
+                margin: 0 10px 0 0 
+            p
+                font-size: px(15)
+                width: calc(100% - 40px)
+        form
+            max-width: 750px
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            .item
+                width: calc(50% - 20px)
+                display: flex
+                justify-content: space-between
+                position: relative
+                @media (max-width: 980px)
+                    width: 100%
+                @media (max-width: 500px)
+                    flex-direction: column
+                &.w100
+                    width: 100%
+                    .name
+                        width: calc(50% - 60px)
+                        @media (max-width: 500px)
+                            width: 100%
+                    .inputArea
+                        width: calc(50% + 55px)
+                        @media (max-width: 500px)
+                            width: 100%
+                &:not(:last-child)
+                    margin: 0 0 10px
+                &.must .name:before
+                    content: "*"
+                    color: #ff4b4b
+                    position: absolute
+                    top: 25px
+                    left: 15px
+                    @media (max-width: 500px)
+                        left: 5px
+                .name:after,.inputArea:after,#vcode:after,.vcode:after
+                    +fakeLine(0%,1px,#fe5c5c)
+                    position: absolute
+                    bottom: -1px
+                    left: 50%
+                    transform: translateX(-50%)
+                .name:after
+                    @media (max-width: 500px)
+                        display: none
+                &.wrong
+                    >div:after, #vcode:after, .vcode:after
+                        width: 100%
+                .name
+                    display: flex
+                    align-items: flex-start
+                    font-size: px(15)
+                    padding: 20px 0 10px 25px
+                    width: calc(40% - 5px)
+                    position: relative
+                    border-bottom: 1px solid #d4a060
+                    position: relative
+                    @media (max-width: 980px)
+                        flex-direction: column
+                    @media (max-width: 500px)
+                        border-bottom: none
+                        width: 100%
+                        padding: 20px 0 0 15px
+                    .ch 
+                        font-weight: bold
+                        color: #2b2b2b
+                        margin: 0 5px 0 0
+                    .en
+                        color: #8e8c8c
+                .inputArea
+                    width: 60%
+                    border-bottom: 1px solid #d4a060
+                    position: relative
+                    @media (max-width: 500px)
+                        width: 100%
+                    &>p,input
+                        width: calc(100% - 20px)
+                        padding: 20px 0 10px 20px
+                        font-size: px(15)
+                        line-height: 1.5
+                        @media (max-width: 500px)
+                            padding: 10px 0 10px 15px
+                    input
+                        background-color: transparent
+                        border: none
+                        text-align: left
+                        &::placeholder
+                            color: #b4b4b4
+                            transition: all .4s ease
+                        &:focus::placeholder
+                            opacity: 0
+                    &>p
+                        &:after
+                            content: attr(data-ps)
+                    .dropDown
+                        width: 100%
+                        padding: 20px 0 0 20px
+                        font-size: px(15)
+                        line-height: 1.5
+                        @media (max-width: 500px)
+                            padding: 10px 0 0 15px
+                        .selectMenu
+                            opacity: 1
+                            &:after
+                                border-left: none
+                                color: #5e5e5e
+                            p
+                                margin: 0 
+                                text-align: left
+                                &:after
+                                    display: none
+                    .openInterest 
+                        +openInterest 
+                .dropDown ul 
+                    .mCSB_container
+                        margin: 0 3px 0 0 !important
+                    .mCSB_scrollTools
+                        right: 3px
+                .sel_date 
+                    positon: relative
+                    input
+                        position: relative
+                        opacity: 0
+                    label
+                        line-height: 1.5
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        padding: 20px 0 10px 20px
+                        font-size: px(15)
+                        @media (max-width: 500px)
+                            padding: 10px 0 10px 15px
+            .buttons
+                display: flex
+                justify-content: center
+                margin: 70px auto 0
+                max-width: 400px
+                width: 100%
+                a,button
+                    +formButton
+                    &:first-child span
+                        font-size: px(18)
+                    &:last-child span
+                        font-size: px(20)

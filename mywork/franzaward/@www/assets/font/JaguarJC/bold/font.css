@@ -1,0 +1,11 @@
+﻿/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+
+@font-face {
+    font-family: "JaguarJC Bold";
+    src: url("JaguarJC-Bold.eot?") format("eot"),
+    url("JaguarJC-Bold.woff") format("woff"),
+    url("JaguarJC-Bold.ttf") format("truetype"),
+    url("JaguarJC-Bold.svg#JaguarJCBold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}

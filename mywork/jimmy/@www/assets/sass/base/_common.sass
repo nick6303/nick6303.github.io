@@ -1,0 +1,96 @@
+body 
+    overflow-x: hidden
+    animation: fadeIn 1s both
+
+// scrollbar隱藏
+.ps__rail-x,.ps__rail-y
+    display: none !important
+
+// slick點點
+.slick-dots
+    width: auto
+    display: flex
+    li
+        width: 4px
+        height: 4px
+        margin: 0 7px !important
+        &.slick-active
+            &:before
+                opacity: 1
+        &:before
+            position: absolute
+            top: 50%
+            left: 50%
+            border-radius: 50%
+            +fakeLine(4px,4px,#fff)
+            transform: translate(-50%,-50%)
+            transition: all .4s ease
+            opacity: 0.3
+        button
+            display: none
+
+// 下拉式選單 開始-----------------------------
+.dropDown
+    position: relative
+    &:after
+        +borderBottom(0%,3px,#000)
+        // animation: w100 1s both .8s
+    &.active
+        .selectMenu p
+            color: #000
+    .selectMenu
+        padding: 0 0 8px
+        +flex-center
+        cursor: pointer
+        opacity: 0
+        // animation: fadeInUp 0.8s both 1.2s
+        &.open:after
+            transform: rotateX(180deg)
+        p
+            font-size: px(15)
+            color: rgba(0,0,0,.5) 
+            text-align: center
+            width: calc(100% - 40px)
+            position: relative
+            &:after
+                +fakeLine(1px,25px,#c4c4c4)
+                position: absolute
+                top: 50%
+                right: 0
+                transform: translateY(-50%)
+        &:after
+            content: "▼"
+            height: 25px
+            width: 40px
+            +flex-center
+            // border-left: 1px solid #c4c4c4
+            font-size: px(12)
+            transition: all .5s ease
+    ul
+        display: none
+        position: absolute
+        z-index: 1
+        top: 100%
+        left: 0
+        width: 100%
+        max-height: 300px
+        overflow-y: auto
+        background-color: #1b1b1b
+        padding: 5px 0
+        .mCSB_container
+            margin: 0 40px 0 0 !important
+        .mCSB_scrollTools
+            right: 40px 
+            .mCSB_dragger .mCSB_dragger_bar
+            width: 3px
+        li
+            padding: 10px 15px
+            text-align: center
+            cursor: pointer
+            color: #fff
+            transition: all .4s ease
+            font-size: px(15)
+            line-height: 1.5
+            &:hover
+                color: $base_gold
+// 下拉式選單 結束-----------------------------

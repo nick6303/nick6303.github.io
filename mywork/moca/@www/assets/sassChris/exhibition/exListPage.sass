@@ -1,0 +1,719 @@
+//exListPage
+
+.exListPageBody
+    .clickScrollArea
+        margin: 0 auto 50px auto
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        .box
+            margin: 0 0 20px 0
+            padding: 0
+        .link
+            &.now
+                color: #000
+                &:after
+                    width: 100%
+    .searchBtnBox
+        +fs(12)
+        cursor: pointer
+        color: #fff
+        display: flex
+        justify-content: center
+        align-content: center
+        p
+            color: #000
+            +fs(15)
+            padding-left: 10px
+        .box
+            background-color: #000
+            border-radius: 50%
+            width: 27px
+            height: 27px
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: transform .5s linear
+            margin: 0
+            &:hover
+                transform: scale(1.1)
+    .bgbg
+        background-color: #f9f9f9
+        width: 100%
+        padding-top: 120px
+
+    .listFrameBox
+        background-color: #f9f9f9
+        margin: 0 0 150px 0
+        .list
+            display: flex
+            &:hover
+                .imgFrame
+                    .img
+                        transform: scale(1.1)
+                .moreBtn
+                    color: #e83434
+            &.showOnline
+                .online
+                    display: flex
+            &.showFull
+                .fullBox
+                    display: flex
+            &.show
+                .imgKing
+                    opacity: 1
+                    transition: opacity 1.5s ease
+                .imgFrame
+                    .img
+                        transition: transform 1s ease
+                .titleBox
+                    .imgTitle
+                        opacity: 1
+                        transform: translateY(0px)
+                        transition: opacity 1s ease, transform 1s ease
+                    .imgSubTitle
+                        opacity: 1
+                        transform: translateY(0px)
+                        transition: opacity 1s ease .3s, transform 1s ease .3s
+                .dateBox
+                    opacity: 1
+                    transition: opacity 1s ease .6s
+                .moreBtn
+                    opacity: 1
+                    transition: opacity 1s ease .8s, color .5s ease
+        .imgKing
+            width: 50%
+            overflow: hidden
+            opacity: 0
+        .imgFrame
+            position: relative
+            overflow: hidden
+            display: flex
+            align-items: center
+            justify-content: center
+            .img
+                max-height: 520px
+                transition: transform 1s ease
+        .textFrame
+            background-color: #f9f9f9
+            width: 50%
+            padding: 30px 30px 70px 10%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            position: relative
+        .moreBtn
+            +fs(20)
+            color: #b3b3b3
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            position: absolute
+            right: 50px
+            bottom: 50px
+            opacity: 0
+            transition: color .5s ease
+        .titleBox
+            margin: 0 0 40px 0
+            .imgTitle
+                +fs(26)
+                opacity: 0
+                transform: translateY(100px)
+            .imgSubTitle
+                +fs(14)
+                opacity: 0
+                transform: translateY(100px)
+        .dateBox
+            display: flex
+            align-items: flex-end
+            opacity: 0
+            @media all and (max-width: 1024px)
+                margin-bottom: 20px
+            .line
+                background-color: #000
+                width: 36px
+                height: 1px
+                margin: 0 10px 14px 10px
+            .year
+                +fs(15)
+                font-family: 'FuturaPT-Light','微軟正黑體'
+            .day
+                +fs(30)
+                font-family: 'MyriadPro-Regular','微軟正黑體'
+                .en
+                    +fs(17)
+                    font-family: 'FuturaPT-Light','微軟正黑體'
+    
+    .listFrameBox2
+        display: flex
+        flex-wrap: wrap
+        width: 100%
+        max-width: 1560px
+        margin: 0 auto
+        .list
+            width: 33.33%
+            margin: 0 35px 95px 35px
+            max-width: 450px
+            opacity: 0
+            &.show
+                opacity: 1
+                transition: opacity 1s ease
+            &:hover
+                .imgFrame
+                    .img
+                        transform: scale(1.1)
+                        transition: transform 1s ease
+            &.show
+                .imgKing
+                    opacity: 1
+                    transition: opacity 1s ease
+            &.showOnline
+                .online
+                    display: flex
+            &.showFull
+                .fullBox
+                    display: flex
+        .imgKing
+            opacity: 0
+        .imgFrame
+            .img
+                max-height: 280px
+                margin: 0 auto
+                transition: transform 1s ease
+    
+
+    .imgKing
+        overflow: hidden
+        position: relative
+        .online
+            +fs(14)
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+            color: #fff
+            background-color: #000
+            width: 200px
+            height: 40px
+            display: none
+            align-items: center
+            justify-content: center
+            position: absolute
+            right: 0
+            bottom: 0
+    .fullBox
+        +fs(14)
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        color: #fff
+        background-color: rgba(0,0,0,0.6)
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        display: none
+        align-items: center
+        justify-content: center
+        .box
+            border: solid 1px #fff
+            min-width: 100px
+            min-height: 90px
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            span
+                &:first-child
+                    margin-bottom: 5px
+                &:last-child
+                    margin-bottom: 0
+    @media (max-width: 1580px)
+        &[data-page="eventList"], &[data-page="exhibitionList"]
+            .listFrameBox2
+                width: 90%
+                .list
+                    width: calc(33.33% - 70px)
+    @media (max-width: 1365px)
+        .listFrameBox
+            .textFrame
+                padding: 30px 30px 45px 6%
+            .moreBtn
+                bottom: 30px
+        
+        &[data-page="eventList"], &[data-page="exhibitionList"]
+            .listFrameBox2
+                .list
+                    width: calc(33.33% - 40px)
+                    margin: 0 20px 95px 20px
+    @media (max-width: 1023px)
+        .listFrameBox
+            .list
+                flex-direction: column
+                align-items: center
+                margin: 0 0 20px 0
+            .imgKing
+                order: 0
+                width: 75%
+            .textFrame 
+                order: 1
+                width: 75%
+        
+        &[data-page="eventList"], &[data-page="exhibitionList"]
+            .listFrameBox2
+                width: 100%
+                .list
+                    width: calc(50% - 70px)
+                    margin: 0 35px 95px 35px
+    @media (max-width: 767px)
+        .listFrameBox
+            .imgKing
+                width: 100%
+            .textFrame 
+                width: 100%
+        
+        &[data-page="eventList"], &[data-page="exhibitionList"]
+            .listFrameBox2
+                width: 90%
+                .list
+                    width: 100%
+                    margin: 0 auto 60px auto
+
+.exListPageBody
+    .secMac
+        width: 100%
+        max-width: 1560px
+        margin: 0 auto 150px auto
+        .listFrameBox2
+            display: block
+            &:after
+                content: "."
+                clear: both
+                visibility: hidden
+                display: block
+                height: 0
+                position: relative
+            .imgFrame
+                .img
+                    margin: 0 auto
+            .list
+                margin: 0
+                max-width: none
+                float: left
+            .boxH3
+                height: 505px
+                display: inline-flex
+                flex-direction: column
+            .center
+                display: flex
+                flex-direction: column
+                align-items: center
+            .wFull
+                width: 100%
+                padding: 20px 35px
+                .imgFrame
+                    .img
+                        max-height: 735px
+            .wHalf
+                width: 50%
+                max-width: 780px
+                padding: 20px 35px
+                .imgFrame
+                    .img
+                        max-height: 380px
+            .w450 
+                padding: 20px 35px
+                width: 33.33%
+                max-width: 520px
+                .showBox
+                    flex-direction: column
+                .imgFrame
+                    .img
+                        max-height: 240px
+            .h2
+                .imgFrame
+                    .img
+                        max-height: 925px
+            .h1
+                &.center
+                    .imgFrame
+                        .img
+                            max-height: 270px
+    .fBox
+        margin: 0 0 100px 0
+        .list
+            margin: 0 35px
+    .showBox
+        display: inline-flex
+        align-items: baseline
+        padding: 19px 0 0 0
+        width: 100%
+        height: 125px
+    .textBox
+        font-weight: 900
+    .textFrame 
+        padding: 20px 0 0 0
+    .titleBox
+        font-weight: 900
+        margin: 0 0 15px 0
+        .imgTitle
+            +fs(20)
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 4
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+        .imgSubTitle
+            +fs(12)
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 4
+            -webkit-box-orient: vertical
+            word-break: break-all
+            -webkit-box-orient: vertical
+    .pTitle
+        +fs(20)
+        margin: 0 0 5px 0
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        word-break: break-all
+        -webkit-box-orient: vertical
+    .pSubTitle
+        +fs(12)
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+        word-break: break-all
+        -webkit-box-orient: vertical
+    .whenBox
+        +fs(14)
+        font-family: 'FuturaPT-Light','微軟正黑體'
+        font-weight: 900
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        line-height: 1.5
+        height: 42px
+        .dateBox
+            padding-right: 10px
+    .whenBoxB
+        margin: 0 30px 0 0
+        font-weight: 900
+        font-family: 'FuturaPT-Light','微軟正黑體'
+        display: flex
+        .year
+            +fs(15)
+        .when
+            +fs(24)
+            display: flex
+            flex-direction: column
+            .day
+                font-family: 'MyriadPro-Regular','微軟正黑體'
+            .en
+                +fs(16)
+        .line
+            display: block
+            background-color: #000
+            width: 35px
+            height: 1px
+            margin: 0 5px
+            align-self: flex-end
+            margin-bottom: 12px
+    @media (max-width: 1580px)
+        .listFrameBox2
+            width: 100%
+            .list
+                width: auto
+    @media (max-width: 1200px)
+        .whenBoxB
+            margin: 0 20px 0 0
+            .when
+                +fs(20)
+                .line
+                    width: 20px
+    @media (max-width: 1100px)
+        .secMac
+            .listFrameBox2
+                .boxH3
+                    height: auto
+                .wFull
+                    padding: 18px 35px
+                .w450
+                    width: 50%
+                    padding: 18px 35px
+                .wHalf
+                    padding: 18px 35px
+    @media (max-width: 1024px)
+        .showBox
+            display: flex
+            flex-direction: column
+            .textBox
+                order: 0
+                margin: 0 0 10px 0
+            .whenBoxB
+                order: 1
+        .secMac
+            .listFrameBox2
+                .boxH3
+                    height: auto
+                .wFull
+                    padding: 18px 35px
+                .w450
+                    width: 50%
+                    padding: 18px 35px
+        .whenBoxB
+            .when
+                +fs(20)
+        .pTitle
+            +fs(17)
+        .titleBox
+            .imgTitle
+                +fs(17)
+    @media (max-width: 767px)
+        .secMac
+            .listFrameBox2
+                display: flex
+                justify-content: center
+                flex-wrap: wrap
+                .wFull
+                    padding: 25px 35px
+                .wHalf
+                    width: 100%
+                    padding: 25px 35px
+                .w450
+                    width: 100%
+                    padding: 25px 35px
+        .titleBox
+            .imgTitle
+                -webkit-line-clamp: 2
+            .imgSubTitle
+                -webkit-line-clamp: 2
+        .pTitle
+            -webkit-line-clamp: 2
+        .pSubTitle
+            -webkit-line-clamp: 2
+        
+.searchKFC .ctrlBtnArea .chrisCloseBtn.btn.white
+    position: absolute
+    top: 40px
+    right: 40px
+    background: rgba(0,0,0,0)
+    width: auto
+    flex-direction: row-reverse
+    &::before
+        display: none
+    .iconBox::after,.iconBox::before
+        background-color: #fff
+        width: 35px
+    p
+        color: #fff
+        padding-right: 10px
+        font-family: 'FuturaPT-Light','微軟正黑體'
+
+.searchKFC
+    color: #fff
+    z-index: -1
+    &.open
+        z-index: 10 
+        .bg
+            width: 100%
+            transition: width .8s ease
+        .ctrlBtnArea
+            opacity: 1
+            transition: opacity 1.5s ease 1.5s
+        .searchTitle
+            opacity: 1
+            transform: translateY(0px)
+            transition: transform 1.2s ease .5s, opacity 1.2s ease .5s
+        .bananaBox
+            .banana
+                opacity: 1
+                transition: opacity .5s ease .7s
+            .listBox
+                .list
+                    opacity: 1
+    &.close
+        .bg
+            width: 0
+            transition: width .8s ease .3s
+        .ctrlBtnArea
+            opacity: 0
+            transition: opacity .7s ease
+        .searchTitle
+            opacity: 0
+            transition: opacity .5s ease
+        .bananaBox
+            opacity: 0
+            transition: opacity .5s ease
+    &.history
+        .chooseBox
+            height: auto
+            opacity: 1
+            visibility: visible
+            transition: opacity 1.2s ease .8s
+            .year
+                margin: 0 auto 120px auto
+    .bg
+        background-color: rgba(233,62,62,0.95)
+        width: 0
+        height: 100%
+        position: absolute
+        left: 50%
+        top: 0
+        z-index: -1
+        transform: translateX(-50%)
+    .for_scroll
+        min-height: 100vh
+    .container
+        width: 100%
+        max-width: 1000px
+        margin: 0 auto
+        padding: 120px 0
+    .ctrlBtnArea
+        display: flex
+        justify-content: center
+        opacity: 0
+        .iconBox
+            width: 28px
+            height: 28px
+            &:before, &:after
+                width: 28px
+                margin: 0
+                position: absolute
+                left: 0
+                top: 50%
+        .text
+            +fs(15)
+            font-family: 'FuturaPT-Heavy','微軟正黑體'
+        .btn
+            cursor: pointer
+            border-radius: 50%
+            width: 76px
+            height: 76px
+            margin: 0 10px
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            position: relative
+            &:before
+                content: ''
+                display: block
+                border-radius: 50%
+                width: 60px
+                height: 60px
+                position: absolute
+                left: 50%
+                top: 50%
+                transform: translate(-50%,-50%)
+        .white
+            color: #000
+            background-color: #fff
+            &:before
+                border: dashed 1px #000
+            .text
+                +fs(12)
+        .black
+            color: #fff
+            background-color: #000
+            &:before
+                border: dashed 1px #fff
+    .mCSB_inside>.mCSB_container
+        margin: 0
+    
+    .searchTitle
+        +fs(52)
+        font-family: 'FuturaPT-Heavy','微軟正黑體'
+        text-align: center
+        margin: 0 0 130px 0
+        opacity: 0
+        transform: translateY(100px)
+        .cn
+            +fs(50)
+    .chooseBox
+        height: 0
+        opacity: 0
+        visibility: hidden
+        .textYear
+            +fs(20)
+            text-align: center
+            margin: 0 0 20px 0
+        .year
+            width: 380px
+            // margin: 0 auto 120px auto
+            .character
+                +fs(50)
+                font-family: 'FuturaPT-Light','微軟正黑體'
+                margin: 0 auto
+            .dropShow
+                border-bottom: solid 1px #fff
+                .showBox
+                    width: 100%
+                    text-align: center
+            .list
+                .character
+                    +fs(30)
+    .bananaBox
+        margin: 0 0 130px 0
+        .banana
+            display: flex
+            align-items: center
+            padding: 30px 100px 30px 50px
+            border-bottom: solid 1px #f49f9f
+            opacity: 0
+            &:last-child
+                border-bottom: none
+            .name
+                +fs(20)
+                font-weight: 900
+                padding: 0 80px 0 0
+                white-space: nowrap
+        .listBox
+            display: flex
+            flex-wrap: wrap
+            .list
+                +fs(18)
+                color: #f49f9f
+                cursor: pointer
+                display: flex
+                align-items: center
+                padding: 5px 20px
+                opacity: 0
+                p
+                    padding-left: 10px
+                &.choose
+                    color: #fff
+                    .square
+                        background-color: #fff
+                        border: solid 1px #fff
+            .square
+                border: solid 1px #f49f9f
+                display: block
+                width: 17px
+                height: 17px
+    @media (max-width: 1023px)
+        .bananaBox
+            width: 90%
+            margin: 0 auto 130px auto
+    @media (max-width: 767px)
+        .searchTitle
+            padding: 0 5%
+        .chooseBox
+            width: 90%
+            margin: 0 auto
+            .year
+                width: 100%
+        .bananaBox
+            .banana
+                padding: 30px 0
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                .name
+                    white-space: unset
+                    min-width: 130px
+                    padding: 0 20px
+                    margin: 0 0 10px 0
